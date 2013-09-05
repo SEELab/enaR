@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{color}
+\usepackage{cite}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\usepackage{pdflscape}        %single page landscape
+                                %mode \begin{landscape} \end{landscape}
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{multicol} % \begin{multicols}{number of columns} \end{multicols}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{Sweave}
+\newcommand{\etal}{\textit{et al.}}
+\usepackage{hyperref}  %\hyperref[label_name]{''link text''}
+                       %\hyperlink{label}{anchor caption}
+                       %\hypertarget{label}{link caption}
+\linespread{1.5}
+
+\title{git enaR: a workflow}
+\author{M.K. Lau}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+%\setcounter{tocdepth}{3}  %%activate to number sections
+%\tableofcontents
+
+%\thispagestyle{empty}
+%\setcounter{page}{0}
+%\setcounter{secnumdepth}{-1}  %activate to start numbering from one
+%on the second page
+
+
+%\section{}
+%\subsection{}
+
+%% %%Figure construction
+%% <<echo=false,results=hide,label=fig1,include=false>>=
+%% @ 
+
+
+%% %%Figure plotting
+%% \begin{figure} 
+%% \begin{center} 
+%% <<label=fig1,fig=TRUE,echo=false>>=
+%% <<fig1>> 
+%% @ 
+%% \end{center} 
+%% \caption{}
+%% \label{fig:one}
+%% \end{figure}
+
+
+%% %%Activate for bibtex vibliography
+%% \cite{goossens93}
+%% \bibliographystyle{plain}
+%% \bibliography{/Users/Aeolus/Documents/bibtex/biblib}
+
+
+\end{document}  
+
+
