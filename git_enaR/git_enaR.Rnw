@@ -106,7 +106,7 @@ hard rules, but generally changes should be committed grouped together
 based on tasks (e.g. ``Fixed a bug in a function.''). Google ``git
 best practices'' for more info.
 
-\section{How do I use git with github for enaR?}
+\section{How do I git with enaR?}
 
 \textbf{.gitignore}
 
@@ -164,10 +164,37 @@ will want to ``push'' them onto the server so that other users can
 access them. To do this use:
 
 \begin{verbatim}
-
+git push origin
 \end{verbatim}
 
+Depending on what instructions you used to setup git, this may produce
+an fial, error and/or warning. Hopefully not though.
+
+If this succeeds, your information from your branch should be
+propogated up onto the github server. These changes can then be merged
+into the main project repository.
+
 \textbf{Pull enaR origin and merge}
+
+If you have already cloned a version of the project onto your local
+machine, you will want to update it when you start working on it again
+at some point. To do this you will need to ``pull'' the origin off the
+server and merge it with your local version. This can be accomplished
+by first switching to your local repository and then checking out your
+branch:
+
+\begin{verbatim}
+git checkout mybranch
+\end{verbatim}
+
+And then you can pull from the server:
+
+\begin{verbatim}
+git pull origin
+\end{verbatim}
+
+Again, depending on your setup, you might need to alter the previous
+line of code for this to work.
 
 \textbf{The perks of using github}
 
