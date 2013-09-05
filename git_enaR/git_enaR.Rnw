@@ -209,6 +209,15 @@ git pull origin
 Again, depending on your setup, you might need to alter the previous
 line of code for this to work.
 
+\textbf{Using SSH}
+
+By default, git uses HTTPS for security reasons. To switch to SSH and
+not have to constantly enter your security info use the following:
+
+\begin{verbatim}
+git remote set-url origin
+\end{verbatim}
+
 
 \end{document}  
 
