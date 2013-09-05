@@ -130,11 +130,56 @@ emacs.
 
 \textbf{Clone enaR}
 
+To bring a copy onto your local machine run: 
+
+\begin{verbatim}
+git clone git://github.com/MKLau/enaR
+\end{verbatim}
+
+Note: It is also possible to do this on the github using the ``fork''
+option. This is useful for working on other peoples projects in a way
+that will keep their code untouched but allow you to save to the
+github server.
+
 \textbf{Checkout a branch}
+
+Now, you will need to isolate your work from the ``master'' copy of
+the repository. To do this you will need to create a branch by
+running:
+
+\begin{verbatim}
+git checkout -b mycopy
+\end{verbatim}
+
+You can also delete a branch, which you are no longer on, with:
+
+\begin{verbatim}
+git branch -D mycopy
+\end{verbatim}
 
 \textbf{Push a branch to the origin}
 
+Once you have made your changes and committed them (see above), you
+will want to ``push'' them onto the server so that other users can
+access them. To do this use:
+
+\begin{verbatim}
+
+\end{verbatim}
+
 \textbf{Pull enaR origin and merge}
+
+\textbf{The perks of using github}
+
+\begin{itemize}
+\item GUI
+\item Track and control users (add/remove collaborators)
+\item Web hosting
+\item Automatic page generator
+\item 1GB storage
+\item wiki
+\item Can it play with CRAN?
+\end{itemize}
 
 \end{document}  
 
