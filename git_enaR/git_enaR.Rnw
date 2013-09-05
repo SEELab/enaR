@@ -164,7 +164,7 @@ will want to ``push'' them onto the server so that other users can
 access them. To do this use:
 
 \begin{verbatim}
-git push origin
+git push
 \end{verbatim}
 
 Depending on what instructions you used to setup git, this may produce
