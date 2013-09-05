@@ -65,6 +65,19 @@ The gist of git is:
 \item Merge your changes with the project (git merge origin)
 \end{enumerate}
 
+\section{The perks of using github}
+
+\begin{itemize}
+\item GUI
+\item Track and control users (add/remove collaborators)
+\item Web hosting
+\item Automatic page generator
+\item 1GB storage
+\item wiki
+\item Can it play with CRAN?
+\end{itemize}
+
+
 \hypersetup{linkcolor=green}
 
 \section{What do I do first?}
@@ -196,17 +209,6 @@ git pull origin
 Again, depending on your setup, you might need to alter the previous
 line of code for this to work.
 
-\textbf{The perks of using github}
-
-\begin{itemize}
-\item GUI
-\item Track and control users (add/remove collaborators)
-\item Web hosting
-\item Automatic page generator
-\item 1GB storage
-\item wiki
-\item Can it play with CRAN?
-\end{itemize}
 
 \end{document}  
 
