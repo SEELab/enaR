@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: enaR.aux
+The style file: ecology.bst
+Database file #1: srbbib_abb.bib
+Database file #2: srb.bib
+You've used 81 entries,
+            2788 wiz_defined-function locations,
+            1092 strings with 18248 characters,
+and the built_in function-call counts, 49403 in all, are:
+= -- 4187
+> -- 2349
+< -- 58
++ -- 794
+- -- 686
+* -- 3595
+:= -- 7819
+add.period$ -- 322
+call.type$ -- 81
+change.case$ -- 562
+chr.to.int$ -- 78
+cite$ -- 81
+duplicate$ -- 3549
+empty$ -- 3403
+format.name$ -- 944
+if$ -- 9708
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 725
+newline$ -- 486
+num.names$ -- 335
+pop$ -- 1361
+preamble$ -- 1
+purify$ -- 550
+quote$ -- 0
+skip$ -- 1086
+stack$ -- 0
+substring$ -- 2671
+swap$ -- 1718
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 714
+warning$ -- 0
+while$ -- 392
+width$ -- 0
+write$ -- 1133
