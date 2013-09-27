@@ -41,10 +41,14 @@ balance <-
     x%v%'output' <- T.bal[1:n,(n+1)]
     x%v%'respiration' <- T.bal[1:n,(n+2)]
     x%v%'storage' <- x%v%'storage'
-    x%n%'balanced' <- TRUE
-                                        #Orientation
-    return(x)
+                                        #check for balancing and return output
+    if (ssCheck(x)){
+      x%n%'balanced' <- TRUE
+      return(x)
+    }else{
+      warning('Model was not balanced.')}
+      x%n%'balanced' <- FALSE
+      return(x)
   }
-
 
 }

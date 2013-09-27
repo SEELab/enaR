@@ -46,6 +46,7 @@ balance <-
       x%n%'balanced' <- TRUE
       return(x)
     }else{
+                                        #return false for unbalanced models
       warning('Model was not balanced.')}
       x%n%'balanced' <- FALSE
       return(x)
