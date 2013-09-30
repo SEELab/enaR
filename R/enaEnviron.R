@@ -8,12 +8,14 @@
 enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){
                                         #check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
-
                                         #Check for balancing
   if (balance.override){}else{
     if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
     if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
   }
+                                        #Assume 'rc' orientation of flows
+                                        #transpose flows for calculations (Patten School)
+  x%n%'flow' <- t(x%n%'flow')
                                         #calculate enaFlow
   oo <- get.orient() #original orientation
   set.orient('internal')

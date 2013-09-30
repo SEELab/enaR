@@ -4,6 +4,7 @@
 # 
 # M. Lau July 2011 | DEH edited Feb 2013
 # ---------------------------------------------------
+# v2.01
 
 enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){
                                         #check for network class
@@ -14,8 +15,10 @@ enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balanc
     if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
     if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
   }
+                                        #Assume 'rc' orientation of flows
+                                        #transpose flows for calculations (Patten School)
+                                        #x%n%'flow' <- t(x%n%'flow')
                                         #calculate enaFlow
-  x%n%'flow' <- t(x%n%'flow')
   oo <- get.orient() #original orientation
   set.orient('internal')
   F <- enaFlow(x)
