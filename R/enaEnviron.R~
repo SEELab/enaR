@@ -15,6 +15,7 @@ enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balanc
     if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
   }
                                         #calculate enaFlow
+  x%n%'flow' <- t(x%n%'flow')
   oo <- get.orient() #original orientation
   set.orient('internal')
   F <- enaFlow(x)
