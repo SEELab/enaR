@@ -1,20 +1,18 @@
 ###Editing main-mee13.pdf
 
-For Matt
-
-For Stuart
++ Suggest switching paragraph starting at Line 20 with paragraph
+  starting at Line 34
 + Line 71, update version number to newest release
 + Line 59 href overflow
 + Lines 85-97, equations might be better not embedded or as a new
   figure showing the data structure
-+ Line 104 (check througout), package names and functions should be \texttt 
++ Line 104 (check througout including Table 1), package names and functions should be \texttt 
 + Line 175 Merge with previous paragraph
-+ Line 217, add git invite (see below)
++ Line 192, Should mention vegan and bipartite
++ Line 210, Change "enaRand" to "enaR and"
++ Line 217, Should we add GitHub information?
 + Fig. 1b, x axis label change to "Ecosystem Models (ranked)"
 + Fig. 2, I like this figure
 
 
-git invite
 
-We welcome the participation of Project development is currently being
-managed via GitHub (https://github.com/TheSeeLab/enaR).
