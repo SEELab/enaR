@@ -1,4 +1,6 @@
 ###Building and checking
 
+#After running enaR_checks.R, run the following before submitting to CRAN:
+
 R CMD build --resave-data ../../pkg
 R CMD check --as-cran ./enaR_*.tar.gz
