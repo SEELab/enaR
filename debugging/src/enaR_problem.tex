@@ -1,0 +1,355 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  CFRE ENA manuscript
+%  for Ecological Modeling (sp. ed.)
+%  Dave Hines 5/15/2013
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{article}
+%\usepackage[super, sort]{natbib}
+%\bibpunct{(}{)}{;}{a}{,}{,} % required for natbib
+\bibliographystyle{elsart-harv}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage[]{graphicx}
+\usepackage{lineno}
+\usepackage{natbib} %bib package
+\usepackage{amsmath,amssymb} %math package 
+\usepackage{setspace}  %necessary for double spacing
+%\doublespacing
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{\texttt{enaR} problem - enaEnviron()}
+\author{Hines}
+\date{October 1, 2013}
+\maketitle
+
+\section{Problem}
+
+Here, I document an issue with the enaEnviron() function for
+\texttt{enaR v2.0} so that we can deal with it in the future.  The
+function returns outputs that make little since (sometimes the output
+even has negative flows, as I will demonstrate) and do not represent
+the correct partitioning of the flows in a network.  The issue arose
+somewhere between \texttt{enaR} versions 1.01 and 2.0, and I think it
+may be related to the addition of the 'rc' and 'school' orientations,
+but I can't confirm this.  Below I provide examples of how the
+software was working in version 1.01, but is failing in version 2.0 in
+both the oligohaline Cape Fear River Estuary (CFRE) nitrogen cycling
+model and the oyster model.
+
+\subsection{Oyster reef model}
+
+Here I show the results of the unit environ calculations for the oyster
+reef model included in the \texttt{enaR} package using different
+versions of \texttt{R} and \texttt{enaR}.   I show the input microbiota environ
+for the oyster reef model as an example for each software configuration.
+
+\subsubsection{\texttt{R} version 2.15.3, \texttt{enaR} version 1.01}
+
+Oyster reef model, unit microbiota input environ:
+
+\[
+\begin{array}{ccccccc}
+-1 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & -1.1 & 0 & 0 & 0 & 1.1 & 0 \\
+0 & 0.04 & -.29 & 0 & 0 & 0.25 & 0 \\
+0 & 0.05 & 0.03 & -0.12 & 0 & 0.03 & 0 \\
+0.02 & 0 & 0 & 0.01 & -0.02 & 0 & 0 \\
+0.98 & 0 & 0.26 & 0.11 & 0.02 & -1.4 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}
+\]
+
+The order of the compartments here is 1) filter feeders, 2)
+microbiota, 3) meiofauna, 4) deposit feeders, 5) predators, 6)
+Deposited detritus.  The seventh column is the input vector (z) and
+the seventh row is the output vector (y).  This is the correct version
+of the input environ for microbiota.  Notice that there is only one
+output (microbiota).  There is only one input (filter feeders) because
+that is the only input to the system.  The negative values along the
+principle diagonal are the negative throughflows for each compartment.
+
+\subsubsection{\texttt{R} version 3.0.1, \texttt{enaR} version 2.0}
+
+Oyster reef model, unit microbiota input environ:  
+
+\[
+\begin{array}{ccccccc}
+0.055 & 0 & 0 & 0 & -0.0004 & -0.15 & -0.039 \\
+0 & -.63 & 0.32 & 0.32 & 0 & 0 & 0 \\
+0 & 0 & 0.03 & -0.004 & 0 & -0.02 & 0 \\
+0 & 0 & 0 & -0.102 & 0.008 & 0.09 & 0 \\
+0 & 0 & 0 & 0 & 0.189 & -0.189 & 0 \\
+0 & -0.17 & -0.15 & -0.01 & 0 & 0.33 & 0 \\
+-0.05 & 0.8 & -0.19 & -0.19 & -0.19 & -0.19 & 0 \\
+\end{array}
+\]
+
+For the above environ, \texttt{set.orient} was set to
+\texttt{``school''}.  Clearly the environ produced by the above
+calculation is FUBAR, as there are flows where there should be none
+and there are some flows that are negative.  This problem persists
+with \texttt{set.orient} set to \texttt{``rc''}, and the results are
+identical, just in the opposite orientation.
+
+\subsection{Oligohaline CFRE nitrogen cycling model}
+
+Here I show the results of the realized environ calculations for the
+denitrification environ in the CFRE nitrogen cycling model.  All of
+the environs are messed up, but here I show the denitrification
+environ because it may help to diagnose the problem.  This model has
+14 nodes, 6 of which are ``ghost nodes'' that were added to the original
+model structure to maintain resolution of multiple removal processes
+from a single node.  The denitrification environ uses on such ghost
+node, and gives a very odd result.
+
+\subsubsection{\texttt{R} version 2.15.3, \texttt{enaR} version 1.01}
+
+Oligohaline CFRE nitrogen cycling model, realized denitrification input environ:  
+
+\tiny
+
+\[
+\begin{array}{ccccccccccccccc}
+  -0.03 & 0 & 0.004 & 0.006 & 0.17 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 &
+  0.16  \\
+  0.02 & -7.75 & 0 & 0 & 0 & 0.16 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 7.7
+  \\
+  0.04 & 0.22 & -3.15 & 0.17 & 0 & 0 & 2.72 & 0 & 0 & 0 & 0 & 0 & 0 & 0
+  & 0 \\
+  0 & 0 & 0.08 & -10.4 & 0 & 0 & 0 & 4.39 & 0 & 0 & 0 & 0 & 0 & 0 & 5.99
+  \\
+  0.28 & 0 & 0 & 0 & -82.6 & 2.03 & 7.67 & 7.83 & 0 & 0 & 0 & 0 & 0 & 0
+  & 64.7 \\
+  0 & 7.53 & 0 & 0 & 76.9 & -176.86 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 &
+  92.4 \\
+  0 & 0 & 3.07 & 0 & 5.49 & 2.81 & -13.49 & 2.11 & 0 & 0 & 0 & 0 & 0 & 0
+  & 0 \\
+  0 & 0 & 0 & 10.29 & 0 & 0 & 3.09 & -14.34 & 0 & 0 & 0 & 0 & 0 & 0 &
+  0.95 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 172 & 0 & 0 & 0 & 0 & -172 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 172 & 0 & 0 & 0 & 0 \\
+\end{array}
+\]
+
+\normalsize
+
+The nodes in the above environ calculation are 1) W-NH$_4$, 2)
+W-NO$_x$, 3) W-M, 4) W-ON, 5) S-NH$_4$, 6) S-NO$_x$, 7) S-M, 8) S-ON,
+9) anammox-ghost1, 10) anammox-ghost2, 11) denitrification-ghost, 12)
+S-NO$_x$-buirial-ghost, 13) S-M-burial-ghost, and 14) S-ON-burial-ghost.
+This is the proper realized input environ for denitrification in the
+CFRE model.  There is only one output (denitrification), and all
+the proper inputs and internal fluxes show up.
+
+\subsubsection{\texttt{R} version 3.0.1, \texttt{enaR} version 2.0}
+
+Oligohaline CFRE nitrogen cycling model, realized denitrification
+input environ:  
+
+\tiny
+
+\[
+\begin{array}{ccccccccccccccc}
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -172 & 0 & 0 & 0 & 172 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 172 & 0 & 0 & 0 & 0 \\
+\end{array}
+\]
+
+\normalsize
+
+In the above environ, there is no system activity, accept for in the
+ghost node itself.  This may help to identify the problem, as somehow
+we are adding an input to this node and cutting it off from the rest
+of the network.  Structurally, there is no boundary input to node 11
+(the denitrification ghost node), but here it shows that 172 units of
+flow enter from the boundary, then immediately exit the node.  Are we
+assigning the boundary inputs wrong somewhere?
+
+\section{Working code: \texttt{CFREcoupling}}
+
+Below is the code I used for the \texttt{CFREcoupling} function I used
+to conduct the sensitivity analysis for the L\&O paper.  This function
+calculated the desired environs by hand, but did so based off of the
+\texttt{enaEnviron} function.  For whatever reason, the code works in
+the \texttt{CFREcoupling} function, but not in the \texttt{enaEnviron}
+function.
+
+code:
+
+\begin{verbatim}
+# Coupling Calculation
+# INPUT = 14 node CFRE network object
+# OUTPUT = percent coupling of: NTR-DNT | NTR-AMX | DNRA-AMX
+# 
+# DEH August 2013
+# ---------------------------------------------------
+
+CFREcoupling <- function(x = 'network object', err.tol = 1e-10,balance.override=FALSE){
+                                        #check for network class
+  if (class(x) != 'network'){warning('x is not a network class object')}
+
+                                          #Check for balancing
+  if (balance.override){}else{
+    if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
+    if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
+  }
+
+  F <- enaFlow(x)   # calculate enaFlow
+                                    ##### Denitrification environ #####
+    
+      dNP <- diag(F$NP[11,]) #diagonalized N matrix
+      DNT <- dNP %*% F$GP         # calculate internal environ flows
+      DNT <- DNT - dNP      # place negative environ throughflows on the principle diagonal
+      DNT <- cbind(DNT,apply((-DNT),1,sum)) #attach z column
+      DNT <- rbind(DNT,c(apply((-DNT),2,sum))) #attach y row
+      DNT[15,15] <- 0 #add zero to bottom right corner to complete matrix
+      DNT[abs(DNT) < err.tol] <- 0 #ignor numerical error
+          #add labels to matrices
+          labels <- c(rownames(F$GP))
+          colnames(DNT) = c(labels, 'z')
+          rownames(DNT) = c(labels, 'y')
+	 DNT = DNT * unpack(x)$y[11]
+    
+         ##### Anammox environ #####
+    
+      dNP <- diag(F$NP[9,]) #diagonalized N matrix
+      AMX5 <- dNP %*% F$GP         # calculate internal environ flows
+      AMX5 <- AMX5 - dNP      # place negative environ throughflows on the principle diagonal
+      AMX5 <- cbind(AMX5,apply((-AMX5),1,sum)) #attach z column
+      AMX5 <- rbind(AMX5,c(apply((-AMX5),2,sum))) #attach y row
+      AMX5[15,15] <- 0 #add zero to bottom right corner to complete matrix
+      AMX5[abs(AMX5) < err.tol] <- 0 #ignor numerical error
+          #add labels to matrices
+          labels <- c(rownames(F$GP))
+          colnames(AMX5) = c(labels, 'z')
+          rownames(AMX5) = c(labels, 'y')
+	 AMX5 = AMX5 * unpack(x)$y[9]
+    
+      dNP <- diag(F$NP[10,]) #diagonalized N matrix
+      AMX6 <- dNP %*% F$GP         # calculate internal environ flows
+      AMX6 <- AMX6 - dNP      # place negative environ throughflows on the principle diagonal
+      AMX6 <- cbind(AMX6,apply((-AMX6),1,sum)) #attach z column
+      AMX6 <- rbind(AMX6,c(apply((-AMX6),2,sum))) #attach y row
+      AMX6[15,15] <- 0 #add zero to bottom right corner to complete matrix
+      AMX6[abs(AMX6) < err.tol] <- 0 #ignor numerical error
+          #add labels to matrices
+          labels <- c(rownames(F$GP))
+          colnames(AMX6) = c(labels, 'z')
+          rownames(AMX6) = c(labels, 'y')
+	 AMX6 = AMX6 * unpack(x)$y[10]
+	 
+	 AMX = AMX5 + AMX6
+	    
+     # Nitrification coupled to denitrification
+     NTR.DNT = (DNT[6,5]/(DNT[15,11]+DNT[7,6]+DNT[2,6]+DNT[5,6]))
+     #NTR.DNT.A = NTR.DNT * unpack(x)$y[11]
+
+     # Nitrification coupled to anammox
+     NTR.AMX = (AMX[6,5]/((AMX[15,9]+AMX[15,10])+AMX[7,6]+AMX[2,6]+AMX[5,6]))
+     #NTR.AMX.A = NTR.AMX * (unpack(x)$y[9] + unpack(x)$y[10])
+
+     # DNRA coupled to anammox
+     DNRA.AMX = (AMX[5,6]/((AMX[15,9]+AMX[15,10])+AMX[7,6]+AMX[2,6]+AMX[5,6]))
+     #DNRA.AMX.A = DNRA.AMX * (unpack(x)$y[9] + unpack(x)$y[10])
+
+
+     # Set up output
+     out = c(NTR.DNT, NTR.AMX, DNRA.AMX)
+
+  return(out)
+
+}
+\end{verbatim}
+
+
+\section{Working code: \texttt{environ}}
+
+Below is the code for the \texttt{environ} function in \texttt{enaR}
+version 1.01.  
+
+code:
+
+
+\begin{verbatim}
+function (x = "network object", input = TRUE, output = TRUE, 
+    err.tol = 1e-10, balance.override = FALSE) 
+{
+    if (class(x) != "network") {
+        warning("x is not a network class object")
+    }
+    if (balance.override) {
+    }
+    else {
+        if (any(list.network.attributes(x) == "balanced") == 
+            FALSE) {
+            x %n% "balanced" <- ssCheck(x)
+        }
+        if (x %n% "balanced" == FALSE) {
+            warning("Model is not balanced")
+            stop
+        }
+    }
+    F <- enaFlow(x)
+    if (input == TRUE) {
+        EP <- list()
+        for (i in (1:nrow(F$NP))) {
+            dNP <- diag(F$NP[i, ])
+            EP[[i]] <- dNP %*% F$GP
+            EP[[i]] <- EP[[i]] - dNP
+            EP[[i]] <- cbind(EP[[i]], apply((-EP[[i]]), 1, sum))
+            EP[[i]] <- rbind(EP[[i]], c(apply((-EP[[i]]), 2, 
+                sum)))
+            EP[[i]][nrow(EP[[i]]), ncol(EP[[i]])] <- 0
+            EP[[i]][abs(EP[[i]]) < err.tol] <- 0
+        }
+        names(EP) <- rownames(F$GP)
+    }
+    if (output == TRUE) {
+        E <- list()
+        for (i in (1:nrow(F$N))) {
+            dN <- diag(F$N[, i])
+            E[[i]] <- F$G %*% dN
+            E[[i]] <- E[[i]] - dN
+            E[[i]] <- cbind(E[[i]], apply((-E[[i]]), 1, sum))
+            E[[i]] <- rbind(E[[i]], c(apply((-E[[i]]), 2, sum)))
+            E[[i]][nrow(E[[i]]), ncol(E[[i]])] <- 0
+            E[[i]][abs(E[[i]]) < err.tol] <- 0
+        }
+        names(E) <- rownames(F$G)
+    }
+    if (input == TRUE & output == TRUE) {
+        out <- list(input = EP, output = E)
+    }
+    else if (input == TRUE & output == FALSE) {
+        out <- EP
+    }
+    else if (input == FALSE & output == TRUE) {
+        out <- E
+    }
+    return(out)
+}
+\end{verbatim}
+
+\end{document}

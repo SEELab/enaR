@@ -5,26 +5,22 @@
 # M. Lau July 2011 | DEH edited Feb 2013
 # ---------------------------------------------------
 
-enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){
+enaEnviron <- function(x = 'network object', input = TRUE, output = TRUE, type='unit', err.tol = 1e-10,balance.override=FALSE){
                                         #check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
+
                                         #Check for balancing
   if (balance.override){}else{
     if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
     if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
   }
-                                        #Assume 'rc' orientation of flows
-                                        #Don't transpose flows for calculations, they will be transposed in enaFlow
-                                        #calculate enaFlow with RC input
-  user.orient <- get.orient()
-  set.orient('rc')
+                                        #calculate enaFlow
+  x%n%'flow' <- t(x%n%'flow')
+  oo <- get.orient() #original orientation
+  set.orient('internal')
   F <- enaFlow(x)
-  set.orient(user.orient)
-                                        #Transpose for calculations in Patten school
-  F$G <- t(F$G)
-  F$GP <- t(F$GP)
-  F$N <- t(F$N)
-  F$NP <- t(F$NP)
+  if (oo == 'school'){oo <- 'internal'}
+  set.orient(oo)
                                         #Unit environ calculations
   if (input == TRUE){
                                         #Input perspective
@@ -92,7 +88,8 @@ enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balanc
     print('WARNING: Invalid input in type, input ignored')
   }
                                         #re-orient matrices
-  if (user.orient == 'rc'){
+  orient <- get.orient()
+  if (orient == 'rc'){
     for (i in 1:length(out)){
       for (j in 1:length(out[[i]])){
         out[[i]][[j]] <- t(out[[i]][[j]])

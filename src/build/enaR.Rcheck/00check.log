@@ -1,0 +1,8 @@
+* using log directory ‘/Users/Aeolus/projects/enaR/src/build/enaR.Rcheck’
+* using R version 3.0.1 (2013-05-16)
+* using platform: x86_64-apple-darwin10.8.0 (64-bit)
+* using session charset: UTF-8
+* checking for file ‘enaR/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘enaR’ version ‘2.1’
+* checking CRAN incoming feasibility ...

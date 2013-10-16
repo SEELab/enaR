@@ -1,0 +1,5 @@
+%\VignetteIndexEntry{enaR}
+\documentclass{article} 
+\begin{document} 
+%%%For vignette Sweave file, email Matt Lau (mkl48[at]nau.edu)
+\end{document}

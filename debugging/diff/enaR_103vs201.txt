@@ -1,0 +1,99 @@
+8c8
+< enaEnviron <- function(x = 'network object', input = TRUE, output = TRUE, type='unit', err.tol = 1e-10,balance.override=FALSE){
+---
+> enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){
+12c12
+<                                           #Check for balancing
+---
+>                                         #Check for balancing
+17,19c17,24
+< 
+<   F <- enaFlow(x)   # calculate enaFlow
+<                                         #Unit environ calculations                                                                          
+---
+>                                         #calculate enaFlow
+>   x%n%'flow' <- t(x%n%'flow')
+>   oo <- get.orient() #original orientation
+>   set.orient('internal')
+>   F <- enaFlow(x)
+>   if (oo == 'school'){oo <- 'internal'}
+>   set.orient(oo)
+>                                         #Unit environ calculations
+30,34c35,39
+<       EP[[i]][abs(EP[[i]]) < err.tol] <- 0 #ignor numerical error
+<         #add labels to matrices
+<           labels <- c(rownames(F$GP))
+<           colnames(EP[[i]]) = c(labels, 'z')
+<           rownames(EP[[i]]) = c(labels, 'y')
+---
+>       EP[[i]][abs(EP[[i]]) < err.tol] <- 0 #ignore numerical error
+>                                         #add labels to matrices
+>       labels <- c(rownames(F$GP))
+>       colnames(EP[[i]]) = c(labels, 'z')
+>       rownames(EP[[i]]) = c(labels, 'y')
+36,37c41,42
+< 
+<     #rownames(EP) <- names(EP)
+---
+>                                         #add environ names
+>     names(EP) <- labels
+50,52c55,58
+<           labels <- c(rownames(F$G))
+<           colnames(E[[i]]) = c(labels, 'z')
+<           rownames(E[[i]]) = c(labels, 'y')
+---
+>                                         #add labels to matrices
+>       labels <- c(rownames(F$G))
+>       colnames(E[[i]]) = c(labels, 'z')
+>       rownames(E[[i]]) = c(labels, 'y')
+54,55c60,61
+< 
+<     #rownames(E) <- names(E)
+---
+>                                         #add environ names
+>     names(E) <- labels
+61,62c67,68
+<     	for (i in (1:nrow(F$N))){
+<       EP[[i]] <- EP[[i]]*unpack(x)$y[i] #Construct realized environ
+---
+>       for (i in (1:nrow(F$N))){
+>         EP[[i]] <- EP[[i]]*unpack(x)$y[i] #Construct realized environ
+64c70
+<      }
+---
+>     }
+67,69c73,75
+<     	for (i in (1:nrow(F$N))){
+<       E[[i]] <- E[[i]]*unpack(x)$z[i]
+<      }
+---
+>       for (i in (1:nrow(F$N))){
+>         E[[i]] <- E[[i]]*unpack(x)$z[i]
+>       }
+71,72c77,78
+<    }
+<                                            #Wrap-up output into list  
+---
+>   }
+>                                         #Wrap-up output into list  
+82,84c88,99
+<   	print('WARNING: Invalid input in type, input ignored')
+<   	}
+< 
+---
+>     print('WARNING: Invalid input in type, input ignored')
+>   }
+>                                         #re-orient matrices
+>   orient <- get.orient()
+>   if (orient == 'rc'){
+>     for (i in 1:length(out)){
+>       for (j in 1:length(out[[i]])){
+>         out[[i]][[j]] <- t(out[[i]][[j]])
+>       }
+>     }
+>   }else{}
+>                                         #output
+86d100
+< 
+87a102
+> 
