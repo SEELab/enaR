@@ -39,19 +39,7 @@ Maintainer: ‘Matthew K. Lau <enaR.maintainer@gmail.com>’
 * checking Rd metadata ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
-* checking for code/documentation mismatches ... WARNING
-Codoc mismatches from documentation object 'bal':
-bal
-  Code: function(T.star = "extended, unbalanced matrix", method =
-                 c("input", "output"))
-  Docs: function(x = "extended matrix", method = c("input", "output"))
-  Argument names in code not in docs:
-    T.star
-  Argument names in docs not in code:
-    x
-  Mismatches in argument names:
-    Position: 1 Code: T.star Docs: x
-
+* checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
@@ -63,18 +51,6 @@ bal
 * checking examples ... OK
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
-* checking running R code from vignettes ... ERROR
-Errors in running code in vignettes:
-when running code in ‘enaR.Rnw’
-  ...
-[1] BALANCED
-[1] AVG2
-[1] AVG2
-[1] AVG2
-[1] AVG2
-[1] AVG2
-
-Java requested System.exit(130), closing R.
-
-... incomplete output.  Crash?
-
+* checking running R code from vignettes ... OK
+* checking re-building of vignette PDFs ... OK
+* checking PDF version of manual ... OK

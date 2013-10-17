@@ -9,5 +9,5 @@ Description: Functions for the analysis of ecological networks
 Depends: R (>= 2.10), sna, network, MASS, stringr, xlsx
 Suggests: codetools, igraph
 License: GPL-2
-Packaged: 2013-10-17 19:16:49 UTC; Aeolus
-Built: R 3.0.1; ; 2013-10-17 19:30:57 UTC; unix
+Packaged: 2013-10-17 19:53:28 UTC; Aeolus
+Built: R 3.0.1; ; 2013-10-17 19:55:09 UTC; unix
