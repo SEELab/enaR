@@ -24,12 +24,12 @@ balance <-
     if (method == 'AVG'){  ##Using the AVG method
       T.bal = 0.5 * (bal(T,'input') + bal(T,'output'))
     }else if (method == 'AVG2'){   ##Using the AVG2 method
-      T.bal <- 0.5 *  (bal((0.5 * bal(T,'input') + 0.5 * T),'input')
+      T.bal <- 0.5 *  (bal((0.5 * bal(T,'output') + 0.5 * T),'input')
                        + bal((0.5 * bal(T,'input') + 0.5 * T),'output'))
     }else if (method == 'IO'){   ##Using the IO method
       T.bal <- bal((0.5 * bal(T,'input') + 0.5 * T),'output')
     }else if (method == 'OI'){   ##Using the OI method
-      T.bal <- bal((0.5 * bal(T,'input') + 0.5 * T),'input')
+      T.bal <- bal((0.5 * bal(T,'output') + 0.5 * T),'input')
     }else if (method == 'I'){  # using the Input method
       T.bal <- bal(T,'input')
     }else if (method == 'O'){
@@ -38,8 +38,9 @@ balance <-
                                         #convert balanced model into network class
     x%n%'flow' <- T.bal[1:n,1:n]
     x%v%'input' <- T.bal[(n+3),1:n]
-    x%v%'output' <- T.bal[1:n,(n+1)]
+    x%v%'export' <- T.bal[1:n,(n+1)]
     x%v%'respiration' <- T.bal[1:n,(n+2)]
+    x%v%'output' <- (x%v%'export' + x%v%'respiration')
     x%v%'storage' <- x%v%'storage'
                                         #check for balancing and return output
     if (ssCheck(x)){

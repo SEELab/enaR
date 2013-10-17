@@ -2,45 +2,50 @@
 # INPUT = network model in extended format
 # OUTPUT = balanced model in extended format
 # NOTE: this is the work horse for balance.R
-# M. Lau | July 2011
+# Original: M. Lau | July 2011
+# Re-written: M. Lau | 17Oct2013 
 # ---------------------------------------------------
-bal <-
-  function(x='extended matrix',method=c('input','output')){
 
-  T <- x  # extended flow matrix
-
+bal <- function(T.star='extended, unbalanced matrix',method=c('input','output')){
+  
   if (length(method > 1)){method <- method[1]}
-  if (method == 'input'){}else if (method == 'output'){T <- t(T)}  # transpose matrix to use output method
-                                        #Divide T[1:N,1:(N+3)] by the row sum to obtain F*
-  N <- nrow(T)-3
-  rs <- apply(T[1:N,1:(N+3)],1,sum) #row sum
-  F.star <- T[1:N,1:(N+3)] / rs
-                                        # SRB is adding the following line back
-  F.star[is.na(F.star)] <- 0 #NA values produced by 0 denominators become 0
-                                        #Transpose T[1:N,1:N] and subtract the identity matrix to get R
-  R <- F.star[1:N,1:N]  # create identity matrix
-  I <- R*0
-  diag(I) <- 1
-  R <- t(F.star[1:N,1:N]) - I
-                                        #Invert R
+  if (method == 'output'){T.star <- t(T.star)}else{}  # transpose matrix to use output method
+
+                                        #From Allesina and Bondavalli 2003
+                                        #Step 1. Check balancing
+                                        #Done in balance()
+                                        #Step 2. Get F.star
+  F.star <- T.star
+  N <- nrow(T.star) - 3
+  for (i in 1:N){
+    for (j in 1:(N+3)){
+      F.star[i,j] <- T.star[i,j] / apply(T.star,1,sum)[i]
+    }
+  }
+                                        #Step 3. Get R
+  
+  I.R <- diag(rep(1,N)) #F.star[1:N,1:N] identity matrix 
+  R <- t(F.star[1:N,1:N]) - I.R
+                                        #Step 4. Invert R
   R <- ginv(R)
-                                        #There seems to be a LOT of rounding error.  
-                                        #SRB is removing it. (Aug. 1, 2011)
-  R[which(abs(R)<=1e-09)] <- 0
-
-                                        #STEP 5  Revision by SRB (Aug.1, 2011)
-  R <- -1*R %*% diag(apply(T[(N+1):(N+3),1:N],2,sum))  # as in bal_input.m
-
-                                        # (STEP 6) Sum the ith row to build vector U
+                                        #Step 5. Multiply every rij by its corresponding input and change sign
+  for (i in 1:nrow(R)){
+    for (j in 1:nrow(R)){
+      R[i,j] <- -(R[i,j] * (T.star[N+1,j]+T.star[N+2,j]+T.star[N+3,j]))
+    }
+  }
+                                        #Step 6. Build U vector
   U <- apply(R,1,sum)
-                                        #Multiply each f*ij by it's corresponding uij
-  FU <- F.star * U     
-                                        #Coalesce balanced flows with inputs and outputs
-  T.bal <- T
-  T.bal[1:nrow(FU),] <- FU
+                                        #Step 7. Multiply F.star by corresponding U
+  T.star.bal <- T.star
+  for (i in 1:N){
+    for (j in 1:(N+3)){
+      T.star.bal[i,j] <- F.star[i,j] * U[i]
+    }
+  }
                                         #Final transposition if method == output
-  if (method == 'input'){}else if (method == 'output'){T.bal <- t(T.bal)}
+  if (method == 'output'){T.star.bal <- t(T.star.bal)}else{}
                                         #  
-  return(T.bal)
+  return(T.star.bal)
 
 }
