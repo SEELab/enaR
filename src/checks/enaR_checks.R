@@ -1,5 +1,6 @@
 ###enaR checks
 ###11Oct2013
+rm(list=ls())
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args)!=1){args[1] <- 2}
 err.tolerance <- as.numeric(args[1]) #in number of digits rounded
@@ -15,7 +16,37 @@ rownames(flo) <- colnames(flo) <- rownames(oyster%n%'flow')[fb.order]
 liv <- (oyster%v%'living')[fb.order]
 fb.oyster <- pack(flow=flo,input=z,output=y,
                   export=rep(0,length(liv)),respiration=y,storage=x,living=liv)
-###Checks
+                                        #Allesina and Bondavalli 2003
+extended.mat <- matrix(c(0,73.161, 25.504, 24.029, 0, 
+                         25.640, 0, 25.958, 23.899, 0,
+                         0,0, 0, 0, 0,
+                         0, 0, 0, 0, 0,
+                         104.383, 0, 0, 0, 0),
+                       nrow=5,byrow=T)
+rownames(extended.mat) <- colnames(extended.mat) <- c('X1','X2','N+1','N+2','N+3')
+em.net <- pack(flow=extended.mat[1:2,1:2],input=extended.mat[5,1:2],
+               export=extended.mat[1:2,3],respiration=extended.mat[1:2,4],
+               living=c(TRUE,TRUE),storage=c(0,0))
+Tbal.in <- matrix(c(0,26.506,0,0,104.383,
+                     78.048,0,0,0,0,
+                     27.208,26.835,0,0,0,
+                     25.634,24.706,0,0,0,
+                     0,0,0,0,0),
+                   nrow=5)
+Tbal.out <- matrix(c(0,24.414,0,0,99.390,
+                      74.271,0,0,0,0,
+                      25.504,25.958,0,0,0,
+                      24.029,23.899,0,0,0,
+                      0,0,0,0,0),
+                    nrow=5)
+Tbal.star <- as.extended(em.net)
+Tbal.avg <- 0.5 * (Tbal.in + Tbal.out)
+Tbal.io <- bal(((0.5*Tbal.in) + (0.5*Tbal.star)),method='output')
+Tbal.oi <- bal(((0.5*Tbal.out) + (0.5*Tbal.star)),method='input')
+Tbal.avg2 <- 0.5 * (Tbal.io + Tbal.oi)
+#############
+#####Checks
+###
 set.orient('rc')
                                         #Check model
 checks <- list(F=abs(t(fb.oyster%n%'flow')) - F)
@@ -28,7 +59,6 @@ names(checks)[1:4] <- c('F','x','z','y')
 ## checks <- list(checks,(oyster%v%'storage')[fb.order] - x)
 ## checks <- list(checks,(oyster%v%'input')[fb.order] - z)
 ## checks <- list(checks,(oyster%v%'respiration')[fb.order] - y)
-                                        #Balance
                                         #fb.oyster <- balance(fb.oyster)
                                         #Flow
                                         #output in RC
@@ -81,6 +111,62 @@ names(checks)[19:22] <- paste('school',c('E1','E2','EP1','EP2'),sep='_')
                                         #t(enaEnviron(fb.oyster))[[]][[]]-SE[,,1]
                                         #input
                                         #t(enaEnviron(fb.oyster))[[]][[]]-SEP[,,1]
+                                        #Balancing
+                                        #Balance 
+checks[[23]] <- as.extended(em.net)-extended.mat
+names(checks)[23] <- 'as.extended'
+                                        #
+checks[[24]] <- round(bal(as.extended(em.net),method='input'),3) - Tbal.in
+checks[[25]] <- round(bal(as.extended(em.net),method='output'),3) - Tbal.out
+checks[[26]] <- (round(0.5 * (bal(as.extended(em.net),method='input') + bal(as.extended(em.net),method='output')),3) - Tbal.avg)
+names(checks)[24:26] <- c('bal input','bal output','bal avg')
+                                        #
+checks[[27]] <- round(as.extended(balance(em.net,method='AVG')),3) - Tbal.avg
+checks[[28]] <- round(as.extended(balance(em.net,method='IO')),3) - Tbal.io
+checks[[29]] <- round(as.extended(balance(em.net,method='OI')),3) - Tbal.oi
+checks[[30]] <- round(as.extended(balance(em.net,method='AVG2')),3) - Tbal.avg2
+names(checks)[27:30] <- c('balance AVG','balance IO','balance OI','balance AVG2')
+                                        #
+checks[[31]] <- ssCheck(em.net) + FALSE
+checks[[32]] <- ((ssCheck(balance(em.net)) == 0) + FALSE)
+names(checks)[31:32] <- c('ssCheck unbalanced','ssCheck balanced')
+                                        # add storage check
+enaStorage(fb.oyster)$X - x 
+t(enaStorage(fb.oyster)$C) - C
+t(enaStorage(fb.oyster)$P) - P
+t(enaStorage(fb.oyster)$S) - S
+t(enaStorage(fb.oyster)$Q) - Q
+t(enaStorage(fb.oyster)$CP) - CP
+t(enaStorage(fb.oyster)$PP) - PP
+t(enaStorage(fb.oyster)$SP) - SP
+t(enaStorage(fb.oyster)$QP) - QP
+enaStorage(fb.oyster)$dt - dt
+                                        #enaStorage(fb.oyster)$ns
+                                        # add structure check
+t(enaStructure(fb.oyster)$A) - A
+                                        #enaStructure(fb.oyster)$ns -ns
+                                        # add utility check
+t(enaUtility(fb.oyster,type='flow')$D) - D
+t(enaUtility(fb.oyster,type='flow')$U) - U
+t(enaUtility(fb.oyster,type='flow')$Y) - Y
+t(enaUtility(fb.oyster,type='storage')$DS) - DS
+t(enaUtility(fb.oyster,type='storage')$US) - US
+t(enaUtility(fb.oyster,type='storage')$YS) - YS
+                                        # network stats
+## all.ns <- get.ns(fb.oyster)
+## ep.ns <-
+## c(ep[1:5],NA,NA,NA,NA,NA,NA,NA,NA,ep[12],ep[6],NA,NA,ep[7],NA,NA,NA,NA,ep[15:16],ep[18],ep[19],ep[14],ep[13],ep[8:9],rep(NA,32))
+## ep.ns <- round(cbind(as.numeric(all.ns),ep.ns),5)
+## rownames(ep.ns) <- names(all.ns)
+                                        # add ascendency check
+
+                                        # add MTI check
+                                        # add TST check
+
+                                        # add TSE check
+
+                                        # storage environs (see environs above)
+
 check.out <- unlist(lapply(lapply(checks,round,digits=err.tolerance),function(x) all(x==0)))
 if (all(check.out)){
   print('')

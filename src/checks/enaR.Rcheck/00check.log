@@ -4,7 +4,7 @@
 * using session charset: UTF-8
 * checking for file ‘enaR/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘enaR’ version ‘2.1’
+* this is package ‘enaR’ version ‘2.3’
 * checking CRAN incoming feasibility ... OK
 Maintainer: ‘Matthew K. Lau <enaR.maintainer@gmail.com>’
 * checking package namespace information ... OK

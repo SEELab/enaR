@@ -4,8 +4,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpEglTAQ/Rd2pdf206
-33e91022e/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpxSuhib/Rd2pdf233
+a604a7039/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -175,8 +175,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpEglTAQ/Rd2pdf206
-33e91022e/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpxSuhib/Rd2pdf233
+a604a7039/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -353,8 +353,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpEglTAQ/Rd2pdf206
-33e91022e/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpxSuhib/Rd2pdf233
+a604a7039/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -514,7 +514,7 @@ ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Rd2.pdf (36 pages, 151644 bytes).
+Output written on Rd2.pdf (36 pages, 151641 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2011] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (99 entries accepted, 0 rejected).
@@ -526,8 +526,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpEglTAQ/Rd2pdf206
-33e91022e/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpxSuhib/Rd2pdf233
+a604a7039/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -687,8 +687,8 @@ ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Rd2.pdf (36 pages, 151643 bytes).
+Output written on Rd2.pdf (36 pages, 151637 bytes).
 Transcript written on Rd2.log.
 Saving output to 'enaR-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-//RtmpEglTAQ/Rd2pdf20633e91022e'
+You may want to clean up by 'rm -rf /var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-//RtmpxSuhib/Rd2pdf233a604a7039'

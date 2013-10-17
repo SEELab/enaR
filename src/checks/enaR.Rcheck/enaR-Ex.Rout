@@ -804,7 +804,7 @@ $Living
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  10.07 0.468 10.093 0 0 
+Time elapsed:  10.052 0.486 10.11 0 0 
 > grDevices::dev.off()
 null device 
           1 
