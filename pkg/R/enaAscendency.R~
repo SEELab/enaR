@@ -18,6 +18,7 @@ enaAscendency <- function(x='network object'){
   ami <- mat.or.vec(N,N) # initialize ascendency matrix
   oh <- mat.or.vec(N,N) # initialize overhead matrix
   cap <- mat.or.vec(N,N) # initialize capacity matrix
+  
                                         #calculate total system throughPUT
   TSTp <- sum(T.ulan)
   

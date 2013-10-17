@@ -1,6 +1,16 @@
 ###Building and checking
 
-#After running enaR_checks.R, run the following before submitting to CRAN:
+#Install from src
+R CMD install ../../pkg
+
+#enaR checks script (default tolerance is 2 digits)
+
+Rscript enaR_checks.R 
+
+#After running enaR_checks.R, run the following:
+#Make sure that you are in enaR/src/checks
 
 R CMD build --resave-data ../../pkg
 R CMD check --as-cran ./enaR_*.tar.gz
+
+#

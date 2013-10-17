@@ -2,7 +2,7 @@
 ###11Oct2013
 rm(list=ls())
 args <- commandArgs(trailingOnly = TRUE)
-if (length(args)!=1){args[1] <- 2}
+if (length(args)!=1){args[1] <- 1}
 err.tolerance <- as.numeric(args[1]) #in number of digits rounded
 library(enaR)
 data(oyster)
@@ -131,27 +131,30 @@ checks[[31]] <- ssCheck(em.net) + FALSE
 checks[[32]] <- ((ssCheck(balance(em.net)) == 0) + FALSE)
 names(checks)[31:32] <- c('ssCheck unbalanced','ssCheck balanced')
                                         # add storage check
-enaStorage(fb.oyster)$X - x 
-t(enaStorage(fb.oyster)$C) - C
-t(enaStorage(fb.oyster)$P) - P
-t(enaStorage(fb.oyster)$S) - S
-t(enaStorage(fb.oyster)$Q) - Q
-t(enaStorage(fb.oyster)$CP) - CP
-t(enaStorage(fb.oyster)$PP) - PP
-t(enaStorage(fb.oyster)$SP) - SP
-t(enaStorage(fb.oyster)$QP) - QP
-enaStorage(fb.oyster)$dt - dt
-                                        #enaStorage(fb.oyster)$ns
+checks[[33]] <- enaStorage(fb.oyster)$X - x 
+checks[[34]] <- t(enaStorage(fb.oyster)$C) - C
+checks[[35]] <- t(enaStorage(fb.oyster)$P) - P
+checks[[36]] <- t(enaStorage(fb.oyster)$S) - S
+checks[[37]] <- t(enaStorage(fb.oyster)$Q) - Q
+checks[[38]] <- t(enaStorage(fb.oyster)$CP) - CP
+checks[[39]] <- t(enaStorage(fb.oyster)$PP) - PP
+checks[[40]] <- t(enaStorage(fb.oyster)$SP) - SP
+checks[[41]] <- t(enaStorage(fb.oyster)$QP) - QP
+checks[[42]] <- enaStorage(fb.oyster)$dt - dt
+names(checks)[33:42] <- c('X','C','P','S','Q','CP','PP','SP','QP','dt')
+                                        # enaStorage(fb.oyster)$ns
                                         # add structure check
-t(enaStructure(fb.oyster)$A) - A
+checks[[43]] <- t(enaStructure(fb.oyster)$A) - A
+names(checks)[43] <- 'A'
                                         #enaStructure(fb.oyster)$ns -ns
                                         # add utility check
-t(enaUtility(fb.oyster,type='flow')$D) - D
-t(enaUtility(fb.oyster,type='flow')$U) - U
-t(enaUtility(fb.oyster,type='flow')$Y) - Y
-t(enaUtility(fb.oyster,type='storage')$DS) - DS
-t(enaUtility(fb.oyster,type='storage')$US) - US
-t(enaUtility(fb.oyster,type='storage')$YS) - YS
+checks[[44]] <- t(enaUtility(fb.oyster,type='flow')$D) - D
+checks[[45]] <- t(enaUtility(fb.oyster,type='flow')$U) - U
+checks[[46]] <- t(enaUtility(fb.oyster,type='flow')$Y) - Y
+checks[[47]] <- t(enaUtility(fb.oyster,type='storage')$DS) - DS
+checks[[48]] <- t(enaUtility(fb.oyster,type='storage')$US) - US
+checks[[49]] <- t(enaUtility(fb.oyster,type='storage')$YS) - YS
+names(checks)[44:49] <- c('D','U','Y','DS','US','YS')
                                         # network stats
 ## all.ns <- get.ns(fb.oyster)
 ## ep.ns <-
@@ -159,14 +162,13 @@ t(enaUtility(fb.oyster,type='storage')$YS) - YS
 ## ep.ns <- round(cbind(as.numeric(all.ns),ep.ns),5)
 ## rownames(ep.ns) <- names(all.ns)
                                         # add ascendency check
-
+                                        # Mondego Estuary (Zostera sp. meadows)
+                                        # values are from Patricio et al. 2006
+data(troModels)
+checks[[50]] <- enaAscendency(troModels[[39]]) - c(1.525,16574.23,22579,39126,0.423,0.5770809)
+names(checks)[50] <- 'ascendency AMI ASC OH CAP ASC.CAP OH.CAP' 
                                         # add MTI check
-                                        # add TST check
-
-                                        # add TSE check
-
                                         # storage environs (see environs above)
-
 check.out <- unlist(lapply(lapply(checks,round,digits=err.tolerance),function(x) all(x==0)))
 if (all(check.out)){
   print('')
@@ -178,5 +180,7 @@ if (all(check.out)){
   print('')
   print('')
   print('Error exceeds tolerance')
-  print(names(check.out)[check.out==FALSE])
+  max.err <- data.frame(max.err=unlist(lapply(checks[check.out==FALSE],max)))
+  rownames(max.err) <- names(check.out)[check.out==FALSE]
+  print(max.err)
 }
