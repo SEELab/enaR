@@ -21,8 +21,6 @@ pack <- function(flow,input=NA,output=NA,export=NA,respiration=NA,storage=NA,liv
       output <- respiration
     }
   }
-                                        #Add rownames
-  if (length(rownames(flow))==0){rownames(flow) <- colnames(flow) <- as.character(1:nrow(flow))}
                                         #Compiling the objects into a list
   x <- list('flow' = as.matrix(flow),'input' = input,'export' = export,
             'respiration' = respiration, 'storage' = storage,'output'=output,'living'=living)

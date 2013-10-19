@@ -16,6 +16,19 @@ rownames(flo) <- colnames(flo) <- rownames(oyster%n%'flow')[fb.order]
 liv <- (oyster%v%'living')[fb.order]
 fb.oyster <- pack(flow=flo,input=z,output=y,
                   export=rep(0,length(liv)),respiration=y,storage=x,living=liv)
+                                        #For MTI, from Ulanowicz et al. 1990
+fig2a <- pack(
+              flow=matrix(
+                c(0,0,0,
+                  40,0,0,
+                  20,0,0),
+                nrow=3),
+              input=c(100,0,0),
+              output=c(40,40,20),
+              export=c(0,0,0),
+              respiration=c(40,40,20),
+              storage=c(0,0,0),
+              living=c(TRUE,TRUE,TRUE))
                                         #Allesina and Bondavalli 2003
 extended.mat <- matrix(c(0,73.161, 25.504, 24.029, 0, 
                          25.640, 0, 25.958, 23.899, 0,
@@ -168,6 +181,12 @@ data(troModels)
 checks[[50]] <- enaAscendency(troModels[[39]]) - c(1.525,16574.23,22579,39126,0.423,0.5770809)
 names(checks)[50] <- 'ascendency AMI ASC OH CAP ASC.CAP OH.CAP' 
                                         # add MTI check
+                                        # values from Ulanowicz et al. 1990
+enaMTI(fig2a)
+G <- 
+FP
+Q
+M
                                         # storage environs (see environs above)
 check.out <- unlist(lapply(lapply(checks,round,digits=err.tolerance),function(x) all(x==0)))
 if (all(check.out)){
