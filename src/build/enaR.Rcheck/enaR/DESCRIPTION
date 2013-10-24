@@ -10,3 +10,4 @@ Depends: R (>= 2.10), sna, network, MASS, stringr, xlsx
 Suggests: codetools, igraph
 License: GPL-2
 Packaged: 2013-10-23 21:17:07 UTC; Aeolus
+Built: R 3.0.1; ; 2013-10-24 20:10:29 UTC; unix

@@ -7,11 +7,11 @@
   Dependency for the \code{balance} function.
 }
 \usage{
-bal(x = "extended matrix", method = c("input", "output"))
+bal(T.star = "extended, unbalanced matrix", method = c("input", "output"))
 }
 \arguments{
-  \item{x}{
-    Extended matrix from as.extended.
+  \item{T.star}{
+    Extended, unbalanced matrix.
   }
   \item{method}{
     Balance by inputs or outputs.

@@ -13,4 +13,5 @@ Rscript enaR_checks.R
 R CMD build --resave-data ../../pkg
 R CMD check --as-cran ./enaR_*.tar.gz
 
-#
+#Pushing up onto CRAN
+#http://CRAN.R-project.org/submit.html

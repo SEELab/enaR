@@ -14,14 +14,17 @@ enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balanc
     if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
   }
                                         #Assume 'rc' orientation of flows
-                                        #transpose flows for calculations (Patten School)
-  x%n%'flow' <- t(x%n%'flow')
-                                        #calculate enaFlow
-  oo <- get.orient() #original orientation
-  set.orient('internal')
+                                        #Don't transpose flows for calculations, they will be transposed in enaFlow
+                                        #calculate enaFlow with RC input
+  user.orient <- get.orient()
+  set.orient('rc')
   F <- enaFlow(x)
-  if (oo == 'school'){oo <- 'internal'}
-  set.orient(oo)
+  set.orient(user.orient)
+                                        #Transpose for calculations in Patten school
+  F$G <- t(F$G)
+  F$GP <- t(F$GP)
+  F$N <- t(F$N)
+  F$NP <- t(F$NP)
                                         #Unit environ calculations
   if (input == TRUE){
                                         #Input perspective
@@ -89,8 +92,7 @@ enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balanc
     print('WARNING: Invalid input in type, input ignored')
   }
                                         #re-orient matrices
-  orient <- get.orient()
-  if (orient == 'rc'){
+  if (user.orient == 'rc'){
     for (i in 1:length(out)){
       for (j in 1:length(out[[i]])){
         out[[i]][[j]] <- t(out[[i]][[j]])
