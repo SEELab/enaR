@@ -464,7 +464,7 @@ living status. This missing information will prevent the use of some
 \textit{enaR} functions.  
 
 Here is an example of using these functions:
-<<>>=
+<<eval=false>>=
 data(oyster)
 # write oyster reef model to a csv file
 write.nea(oyster, file.name="oyster.csv")

@@ -12,7 +12,6 @@
 \usepackage[T1]{fontenc}
 \usepackage{sidecap}
 \renewcommand{\floatpagefraction}{0.8}
-\usepackage{Sweave}
 \title{Vignette: enaR}
 \author{S.R. Borrett and M.K. Lau}
 %\date{}                                           % Activate to display a given date or no date

@@ -32,7 +32,7 @@ plot(f.net,displaylabels=TRUE,label.cex=0.85,arrowhead.cex=0.65,
 
 
 ###################################################
-### code chunk number 2: enaR.Rnw:151-152
+### code chunk number 2: enaR.Rnw:150-151
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 # set plotting parameters
@@ -63,7 +63,7 @@ plot(f.net,displaylabels=TRUE,label.cex=0.85,arrowhead.cex=0.65,
 
 
 ###################################################
-### code chunk number 3: enaR.Rnw:182-188
+### code chunk number 3: enaR.Rnw:181-187
 ###################################################
   rm(list=ls())
 par(mfrow=c(1,1))
@@ -74,13 +74,13 @@ options("prompt" = "> ", "continue" = "+  ")
 
 
 ###################################################
-### code chunk number 4: enaR.Rnw:191-192
+### code chunk number 4: enaR.Rnw:190-191
 ###################################################
 library(enaR)
 
 
 ###################################################
-### code chunk number 5: enaR.Rnw:281-297
+### code chunk number 5: enaR.Rnw:280-296
 ###################################################
 # generate the flow matrix
 flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
@@ -101,13 +101,13 @@ fake.model
 
 
 ###################################################
-### code chunk number 6: enaR.Rnw:303-304
+### code chunk number 6: enaR.Rnw:302-303
 ###################################################
 attributes(fake.model)
 
 
 ###################################################
-### code chunk number 7: enaR.Rnw:311-316
+### code chunk number 7: enaR.Rnw:310-315
 ###################################################
 fake.model%v%'output'
 
@@ -117,19 +117,19 @@ fake.model%v%'living'
 
 
 ###################################################
-### code chunk number 8: enaR.Rnw:321-322
+### code chunk number 8: enaR.Rnw:320-321
 ###################################################
 fake.model%n%'flow'
 
 
 ###################################################
-### code chunk number 9: enaR.Rnw:330-331
+### code chunk number 9: enaR.Rnw:329-330
 ###################################################
 unpack(fake.model)  
 
 
 ###################################################
-### code chunk number 10: enaR.Rnw:349-357
+### code chunk number 10: enaR.Rnw:348-356
 ###################################################
 ## --- Check to see if the model is balanced ---#
 ssCheck(fake.model)
@@ -142,39 +142,39 @@ fake.model <- force.balance(fake.model)
 
 
 ###################################################
-### code chunk number 11: enaR.Rnw:377-379
+### code chunk number 11: enaR.Rnw:376-378
 ###################################################
 scor.model <- readLines('http://people.uncw.edu/borretts/data/oyster.dat')
 m <- read.scor(scor.model,from.file=FALSE)
 
 
 ###################################################
-### code chunk number 12: enaR.Rnw:386-387
+### code chunk number 12: enaR.Rnw:385-386
 ###################################################
 unpack(m)
 
 
 ###################################################
-### code chunk number 13: enaR.Rnw:392-394
+### code chunk number 13: enaR.Rnw:391-393
 ###################################################
 data(oyster)
 m <- oyster
 
 
 ###################################################
-### code chunk number 14: enaR.Rnw:407-408 (eval = FALSE)
+### code chunk number 14: enaR.Rnw:406-407 (eval = FALSE)
 ###################################################
 ##   m <- read.wand('./MDmar02_WAND.xls')
 
 
 ###################################################
-### code chunk number 15: enaR.Rnw:434-435 (eval = FALSE)
+### code chunk number 15: enaR.Rnw:433-434 (eval = FALSE)
 ###################################################
 ##   m <- read.enam('./MDMAR02.xlsx')
 
 
 ###################################################
-### code chunk number 16: enaR.Rnw:467-475 (eval = FALSE)
+### code chunk number 16: enaR.Rnw:466-474 (eval = FALSE)
 ###################################################
 ## data(oyster)
 ## # write oyster reef model to a csv file
@@ -227,7 +227,7 @@ rm(opar)             # remove changes to the plotting parameters
 
 
 ###################################################
-### code chunk number 19: enaR.Rnw:533-534
+### code chunk number 19: enaR.Rnw:532-533
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 data(oyster)  # load data
@@ -237,7 +237,7 @@ plot(m)       # plot network data object (uses plot.network)
 
 
 ###################################################
-### code chunk number 20: enaR.Rnw:536-537
+### code chunk number 20: enaR.Rnw:535-536
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 # set colors to use
@@ -269,7 +269,7 @@ rm(opar)             # remove changes to the plotting parameters
 
 
 ###################################################
-### code chunk number 21: enaR.Rnw:599-602
+### code chunk number 21: enaR.Rnw:598-601
 ###################################################
 St <- enaStructure(m)
 attributes(St)
@@ -277,7 +277,7 @@ St$ns
 
 
 ###################################################
-### code chunk number 22: enaR.Rnw:665-671
+### code chunk number 22: enaR.Rnw:664-670
 ###################################################
   F <- enaFlow(m)
 attributes(F)
@@ -288,7 +288,7 @@ F$NP     # input-oriented integral flow matrix
 
 
 ###################################################
-### code chunk number 23: enaR.Rnw:678-681
+### code chunk number 23: enaR.Rnw:677-680
 ###################################################
 attach(F)
 G
@@ -296,19 +296,19 @@ detach(F)
 
 
 ###################################################
-### code chunk number 24: enaR.Rnw:688-689
+### code chunk number 24: enaR.Rnw:687-688
 ###################################################
 mExp(F$G,2)
 
 
 ###################################################
-### code chunk number 25: enaR.Rnw:701-702
+### code chunk number 25: enaR.Rnw:700-701
 ###################################################
   enaAscendency(oyster)
 
 
 ###################################################
-### code chunk number 26: enaR.Rnw:732-735
+### code chunk number 26: enaR.Rnw:731-734
 ###################################################
   S <- enaStorage(m)
 attributes(S)
@@ -316,7 +316,7 @@ S$ns
 
 
 ###################################################
-### code chunk number 27: enaR.Rnw:792-795
+### code chunk number 27: enaR.Rnw:791-794
 ###################################################
 UF <- enaUtility(m,eigen.check=TRUE,type="flow")  
 US <- enaUtility(m,eigen.check=TRUE,type="storage")  
@@ -324,7 +324,7 @@ attributes(UF)
 
 
 ###################################################
-### code chunk number 28: enaR.Rnw:842-845
+### code chunk number 28: enaR.Rnw:841-844
 ###################################################
 E <- enaEnviron(m)
 attributes(E)
@@ -332,28 +332,28 @@ E$output[1]
 
 
 ###################################################
-### code chunk number 29: enaR.Rnw:853-855
+### code chunk number 29: enaR.Rnw:852-854
 ###################################################
 tet <- TET(m)
 show(tet)
 
 
 ###################################################
-### code chunk number 30: enaR.Rnw:862-864
+### code chunk number 30: enaR.Rnw:861-863
 ###################################################
 tes <- TES(m)
 show(tes)
 
 
 ###################################################
-### code chunk number 31: enaR.Rnw:872-874
+### code chunk number 31: enaR.Rnw:871-873
 ###################################################
 C <- enaControl(m)               
 attributes(C)
 
 
 ###################################################
-### code chunk number 32: enaR.Rnw:887-892
+### code chunk number 32: enaR.Rnw:886-891
 ###################################################
                                         #conduct mixed trophic impacts
 mti <- enaMTI(oyster)
@@ -363,7 +363,7 @@ mti$M
 
 
 ###################################################
-### code chunk number 33: enaR.Rnw:901-904
+### code chunk number 33: enaR.Rnw:900-903
 ###################################################
   mti <- enaMTI(oyster,eigen.check=FALSE)
 attributes(mti)
@@ -371,21 +371,21 @@ mti$M  # shows the total impact matrix
 
 
 ###################################################
-### code chunk number 34: enaR.Rnw:933-935
+### code chunk number 34: enaR.Rnw:932-934
 ###################################################
 ns <- get.ns(m)
 str(ns)    # examine the structure of ns
 
 
 ###################################################
-### code chunk number 35: enaR.Rnw:941-943
+### code chunk number 35: enaR.Rnw:940-942
 ###################################################
 oyster.ena <- enaAll(oyster)
 names(oyster.ena)
 
 
 ###################################################
-### code chunk number 36: enaR.Rnw:951-957
+### code chunk number 36: enaR.Rnw:950-956
 ###################################################
 F <- enaFlow(oyster)
 
@@ -413,7 +413,7 @@ rm(opar)  # remove the plotting parameters
 
 
 ###################################################
-### code chunk number 38: enaR.Rnw:983-984
+### code chunk number 38: enaR.Rnw:982-983
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 # set plotting parameters
@@ -431,7 +431,7 @@ rm(opar)  # remove the plotting parameters
 
 
 ###################################################
-### code chunk number 39: enaR.Rnw:1005-1019
+### code chunk number 39: enaR.Rnw:1004-1018
 ###################################################
 ###Check the current orientation
 get.orient()
@@ -450,7 +450,7 @@ set.orient('rc')
 
 
 ###################################################
-### code chunk number 40: enaR.Rnw:1057-1068
+### code chunk number 40: enaR.Rnw:1056-1067
 ###################################################
 ### Import the model sets
 data(bgcModels)
@@ -466,13 +466,13 @@ summary(x)
 
 
 ###################################################
-### code chunk number 41: enaR.Rnw:1242-1243
+### code chunk number 41: enaR.Rnw:1241-1242
 ###################################################
 data(troModels)
 
 
 ###################################################
-### code chunk number 42: enaR.Rnw:1252-1268
+### code chunk number 42: enaR.Rnw:1251-1267
 ###################################################
 # balance models as necessary
 m.list <- lapply(troModels,balance)
@@ -493,7 +493,7 @@ F.list[[1]]
 
 
 ###################################################
-### code chunk number 43: enaR.Rnw:1274-1278
+### code chunk number 43: enaR.Rnw:1273-1277
 ###################################################
 # Example of extracting just specific information - Indirect Effects Ratio
 IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[8]))
@@ -502,14 +502,14 @@ head(IDs)
 
 
 ###################################################
-### code chunk number 44: enaR.Rnw:1282-1284
+### code chunk number 44: enaR.Rnw:1281-1283
 ###################################################
 # Here is a list containing only the output-oriented integral flow matrices
 N.list <- lapply(m.list,function(x) enaFlow(x)$N)
 
 
 ###################################################
-### code chunk number 45: enaR.Rnw:1291-1298
+### code chunk number 45: enaR.Rnw:1290-1297
 ###################################################
 # Collecting and combining all network statistics
 ns.list <- lapply(m.list,get.ns) # returns as list
@@ -543,7 +543,7 @@ rm(opar)  # remove the plotting parameters
 
 
 ###################################################
-### code chunk number 47: enaR.Rnw:1329-1330
+### code chunk number 47: enaR.Rnw:1328-1329
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
@@ -566,7 +566,7 @@ rm(opar)  # remove the plotting parameters
 
 
 ###################################################
-### code chunk number 48: enaR.Rnw:1356-1359
+### code chunk number 48: enaR.Rnw:1355-1358
 ###################################################
 betweenness(oyster)
 
@@ -593,7 +593,7 @@ rm(opar)
 
 
 ###################################################
-### code chunk number 50: enaR.Rnw:1387-1388
+### code chunk number 50: enaR.Rnw:1386-1387
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 m <- troModels[[38]]
@@ -613,7 +613,7 @@ rm(opar)
 
 
 ###################################################
-### code chunk number 51: enaR.Rnw:1398-1403
+### code chunk number 51: enaR.Rnw:1397-1402
 ###################################################
 centralization(oyster, degree)
 
@@ -635,7 +635,7 @@ plot(g)  # uses iGraph plot tools
 
 
 ###################################################
-### code chunk number 53: enaR.Rnw:1429-1430
+### code chunk number 53: enaR.Rnw:1428-1429
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 library(igraph)
@@ -648,7 +648,7 @@ plot(g)  # uses iGraph plot tools
 
 
 ###################################################
-### code chunk number 54: enaR.Rnw:1435-1455
+### code chunk number 54: enaR.Rnw:1434-1454
 ###################################################
 # betweenness centrality (calculated by iGraph and sna)
 betweenness(g) 

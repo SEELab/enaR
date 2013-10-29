@@ -19,7 +19,11 @@ bal <- function(T.star='extended, unbalanced matrix',method=c('input','output'))
   N <- nrow(T.star) - 3
   for (i in 1:N){
     for (j in 1:(N+3)){
-      F.star[i,j] <- T.star[i,j] / apply(T.star,1,sum)[i]
+      if (apply(T.star,1,sum)[i] == 0){
+        F.star[i,j] <- 0
+      }else{
+        F.star[i,j] <- T.star[i,j] / apply(T.star,1,sum)[i]
+      }
     }
   }
                                         #Step 3. Get R
