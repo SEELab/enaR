@@ -23,7 +23,8 @@ file.name='../debugging/data/Namibia output for Stuart.dat'
 # load model
 m <- read.scor(file.name)          # read in model
 m <- balance(m)                    # balances model if needed
-m <- force.balance(m)                    # balances model if needed
+m%n%'balanced' <- TRUE
+#m <- force.balance(m,max.itr=20)                    # balances model if needed
 
 # perform analyses
 All <- list()
@@ -32,8 +33,8 @@ All$F <- enaFlow(m)                # flow analysis
 All$S <- enaStorage(m)
 All$U <- enaUtility(m,eigen.check=FALSE)
 All$C <- enaControl(m)
-All$mti <- mixedTrophicImpacts(m,eigen.check=FALSE)
-All$E <- environ(m)
+All$mti <- enaMTI(m,eigen.check=FALSE)
+All$E <- enaEnviron(m)
 
 # writes output to a txt file.  
 zz <- file("tmp.txt",open="wt")

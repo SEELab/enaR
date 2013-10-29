@@ -29,14 +29,12 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
                                         #Input perspective
     T <- Ti + apply(flow,1,sum) 
     GP <- flow / T
-    if (zero.na){GP[is.na(GP)] <- 0}else{}
     I <- GP * 0; diag(I) <- 1
     NP <- ginv((I - GP))
     
                                         #Output perspective
     T <- apply(flow,2,sum) + Tj
     G <- t(t(flow) / T)
-    if (zero.na){G[is.na(G)] <- 0}else{}
     I <- G * 0; diag(I) <- 1
     N <- ginv((I - G))
 

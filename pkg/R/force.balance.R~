@@ -12,7 +12,7 @@ force.balance <- function(x,tol=5,max.itr=10,method='AVG2'){
     n.itr <- n.itr + 1
   }
   if (n.itr>=max.itr){
-    warning('Maximum iterations reached.')
+    warning('Maximum iterations reached.',quote=FALSE)
   }else{
     return(x)
   }
