@@ -9,8 +9,8 @@
 # Steenbeek, Oct. 22, 2013: Auto-install enaR
 # ========================================================================
 
-# install.packages("enaR")
-# update.package()
+## install.packages("enaR")
+## update.packages()
 
 # prepare
 rm(list=ls())
@@ -23,8 +23,7 @@ file.name='../debugging/data/Namibia output for Stuart.dat'
 # load model
 m <- read.scor(file.name)          # read in model
 m <- balance(m)                    # balances model if needed
-m%n%'balanced' <- TRUE
-#m <- force.balance(m,max.itr=20)                    # balances model if needed
+if (m%n%'balanced'){}else{m <- force.balance(m,max.itr=10)} # iterates balancing procedure
 
 # perform analyses
 All <- list()
@@ -41,6 +40,4 @@ zz <- file("tmp.txt",open="wt")
 sink(zz)
 show(All)
 sink()
-unlink(fn)
-
-
+unlink(zz)

@@ -14,7 +14,7 @@ ssCheck <- function(x,tol=5,more=FALSE,zero.na=TRUE){
   T <- as.extended(x) #convert to extended format
   if (zero.na){T[is.na(T)] <- 0}
   n <- get.network.attribute(x,'n') #get the number of nodes
-  Tin <- sum(T[nrow(T),]) #in throughflow
+  Tin <- sum(T[nrow(T),1:n]) #in throughflow
   Tout <- sum(T[1:n,c(n+1,n+2)]) #out throughflow
   d <- abs(Tin - Tout) # SSerror difference
   pe <- (d / (Tin+Tout))*100 # SSerror as percent of total throughflow
