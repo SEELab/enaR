@@ -8,7 +8,7 @@
   information into a network class object for analyses.
 }
 \usage{
-pack(flow,input=NA,output=NA,export=NA,respiration=NA,storage=NA,living=NA)
+pack(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA)
 }
 \arguments{
   \item{flow}{
