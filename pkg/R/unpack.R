@@ -12,7 +12,7 @@ unpack <- function(x='network object'){
   respiration[is.na(respiration)] <- 0
   export <- x%v%'export'
   export[is.na(export)] <- 0
-  output <- respiration + export
+  output <- x%v%'output'   #respiration + export
   storage <- x%v%'storage'
   living <- x%v%'living'
   return(list("F"=flow,"z"=input,"r"=respiration,"e"=export,"y"=output,"X"=storage,'Living'=living))
