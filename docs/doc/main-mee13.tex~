@@ -38,16 +38,25 @@ urlcolor=red]{hyperref}
 % ---- FRONT MATTER -----
 
 \title{\enaR: An \R\ package for Ecological Network Analysis}
-\author{Stuart R. Borrett$^{a,*}$ and Matthew K. Lau$^b$ \\
- {\footnotesize $^a$ Department of Biology and Marine Biology, University of North
-Carolina Wilmington, Wilmington, NC, 28403} \\
- {\footnotesize $^b$ Department of Biological Sciences, Northern Arizona
-  University, 617 S.\ Beaver St., Flagstaff, AZ, 86011} \\
- {\footnotesize $^*$ Corresponding author, borretts@uncw.edu}
-}
+\author{Stuart R. Borrett$^{a,*}$ and Matthew K. Lau$^b$
+  \\ {\footnotesize $^a$ Department of Biology and Marine Biology,
+    University of North Carolina Wilmington, Wilmington, NC, 28403}
+  \\ {\footnotesize $^b$ Department of Biological Sciences and the
+    Merriam-Powell Center for Environmental Research, Northern Arizona
+    University, 617 S.\ Beaver St., Flagstaff, AZ, 86011}
+  \\ {\footnotesize $^*$ Corresponding author, borretts@uncw.edu} }
 
 % ------------------------
 \begin{document}
+
+%% \textbf{Title Page}
+
+%% \begin{description}
+%%   \item[\textbf{Title}]: \enaR: An \R\ package for Ecological Network Analysis
+%%   \item[\textbf{Running Title}]: R ecological network analysis package 
+%%   \item[\textbf{Word Count}] 
+%% \end{description}
+
 \maketitle
 
 \begin{spacing}{2}
@@ -55,25 +64,30 @@ Carolina Wilmington, Wilmington, NC, 28403} \\
 
 \tableline
 \section*{Abstract}
-Network ecologists apply network models and analyses to investigate
-the structure, function, and evolution of ecological systems.
-Ecological Network Analysis (ENA) is an approach rooted in ecosystem
-ecology with over 30 years of development.  While some software tools
-exist to assist ecologists with the application of ENA, they vary in
-their comprehensiveness, availability, usability, transparency, and
-extensibility.  Here, we introduced \enaR\, a professional grade set
-of \R\ tools that enables ecologist to perform a broad set of ENA
-algorithms.  In addition to the basic functionality of the package, we
-highlight several values added features including the ability to
-visualize the networks, the inclusion of a library of 100
-empirically-based ecosystem models, the ability to batch apply the
-analyses, and easily connect to other network analysis and ecological
-analysis tools in \R .  We expect this tool to enable more ecologists
-to apply ENA methods and contribute to their development.
+\begin{itemize}
+\item Network ecologists apply network models and analyses to
+  investigate the structure, function, and evolution of ecological
+  systems.  Ecological Network Analysis (ENA) is an approach rooted in
+  ecosystem ecology with over 30 years of development.  While some
+  software tools exist to assist ecologists with the application of
+  ENA, they vary in their comprehensiveness, availability, usability,
+  transparency, and extensibility.
+\item Here, we introduced \enaR\, a professional grade set of
+  \R\ tools that enables ecologist to perform a broad set of ENA
+  algorithms to analyze ecosystem models.  
+\item In addition to the basic functionality of the package, we
+  highlight several values added features including the ability to
+  visualize the networks, the inclusion of a library of 100
+  empirically-based ecosystem models, the ability to batch apply the
+  analyses, and easily connect to other network analysis and
+  ecological analysis tools in \R .  
+\item We expect this tool to enable more ecologists to apply
+  ecological analyses and contribute to ENA software development.
+\end{itemize}
 
 KEYWORDS: network analysis, ecosystem, social network analysis,
 software, network environ analysis, ascendency, input--output
-analysis, food web, Ecopath
+analysis, food web, Ecopath, WAND
 \tableline
 
 \section{Introduction}
@@ -113,26 +127,25 @@ components \citep{patten76, ulanowicz86, fath99_review, hannon73}.
 While many influences combined to create what we now call ENA
 \citep[e.g.,][]{patten59, margalef63, hannon73, pimm82,
   golley1993history}, since the 1970s two primary schools of thought
-have developed \citep{scharler09comparing}.  The
-first is based on the work of Dr.\ Robert E. Ulanowicz, which was
-centered at the University of Maryland \citep{ulanowicz86,
-  ulanowicz97, ulanowicz09_window}.  The Ulanowicz school of ENA is
-primarily focused on trophic ecology, and its starting point is a
-phenomenological map of the energy--matter exchanges among ecosystem
-components.  A key contribution of this work is the use of information
-theory and the development of the ascendecy concept that
-\citet{ulanowicz86, ulanowicz97} used to characterize ecosystem growth
-and development.  The second school is based on the work of Dr.\
-Bernard C. Patten at the University of Georgia \citep{patten76,
-  matis81, patten82, fath99_review}.  Its initial perspective was
-steeped in dynamic equations, simulations, and systems analysis, with
-a distinct network flavor.  A key contribution of this work is the
-environ concept that formalizes the concept of environment for study
-inside the network models \citep{patten78}.  The Patten School of work
-has often been referred to as ``Network Environ Analysis''.  The
-Ulanowicz and Patten School's of ENA represent two distinct but
-interwoven developments.  Together, they join information theory,
-environmental concepts, and network science to study ecosystems.
+have developed \citep{scharler09comparing}.  The first is based on the
+work of Dr.\ Robert E. Ulanowicz, which was centered at the University
+of Maryland \citep{ulanowicz86, ulanowicz97, ulanowicz09_window}.  The
+Ulanowicz school of ENA is primarily focused on trophic ecology, and
+its starting point is a phenomenological map of the energy--matter
+exchanges among ecosystem components.  A key contribution of this work
+is the use of information theory and the development of the ascendecy
+concept that \citet{ulanowicz86, ulanowicz97} used to characterize
+ecosystem growth and development.  The second school is based on the
+work of Dr.\ Bernard C. Patten at the University of Georgia
+\citep{patten76, matis81, patten82, fath99_review}.  Its initial
+perspective was steeped in dynamic equations, simulations, and systems
+analysis.  A key contribution of this work is the environ concept that
+formalizes the concept of environment for study inside the network
+models \citep{patten78}.  The Patten School of work has often been
+referred to as ``Network Environ Analysis''.  The Ulanowicz and Patten
+School's of ENA represent two distinct but interwoven developments.
+Together, they join information theory, environmental concepts, and
+network science to study ecosystems.
 
 % examples of recent use
 The development of ENA has contributed to a new theoretical
@@ -164,15 +177,15 @@ easily apply ENA. The first widely distributed tool was NETWRK
 the Ulanowicz School that is programmed in Fortran and distributed as
 a DOS executable file. Version 4.2 is available from
 %(\href{http://www.cbl.umces.edu/~ulan/ntwk/network.html}{http://www.cbl.umces.edu/$\sim$ulan/ntwk/network.html}).
-\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}
-WAND is a Microsoft Excel based re-implementation of many but not all
-of the algorithms in NETWRK \citep{allesina04_wand}. An explicit goal
-of WAND was to be more accessible for ecologists, who have tended to
-be more familiar with Excel than DOS.  \citet{fath06} introduced a
-Matlab function, NEA.m, that assembled the primary algorithms from the
-Patten School.  One advantage of NEA.m is that the algorithms are
-transparent to the user and accessible for modification.  While the
-NEA.m function is freely available
+\url{http://www.cbl.umces.edu/~ulan/ntwk/network.html}. WAND is a
+Microsoft Excel based re-implementation of many but not all of the
+algorithms in NETWRK \citep{allesina04_wand}. An explicit goal of WAND
+was to be more accessible for ecologists, who have tended to be more
+familiar with Excel than DOS.  \citet{fath06} introduced a Matlab
+function, NEA.m, that assembled the primary algorithms from the Patten
+School.  One advantage of NEA.m is that the algorithms are transparent
+to the user and accessible for modification.  While the NEA.m function
+is freely available
 (\url{http://www.mathworks.com/matlabcentral/fileexchange/5261-nea-m})
 %{http://www.mathworks.com/matlabcentral/fileexchange/5261-nea-m})
 it requires Matlab, which is a powerful but expensive program.  With
@@ -201,14 +214,14 @@ download the code from the CRAN website, access the original code,
 make modifications, and add new functionality as techniques develop.
 We selected to implement the software in \R\ in part because of its
 increasing popularity as an analytical tool in the biology and ecology
-community \citep[e.g.,][]{dixon2003vegan, metcalf2012,
+communities \citep[e.g.,][]{dixon2003vegan, metcalf2012,
   revell2012phytools}. The third design objective was to let users
-connect to other existing network science tools.  To enable this,
-\enaR\ was built on top of two existing \R\ packages:
-\texttt{network} \citep{butts08_network} and \texttt{sna}
-\citep{butts08_social}.  In summary, the \enaR\ package should make
-the ENA tools more available and easier to use, adapt, and extend by
-ecologists.  In this paper, we introduce version 2.5 of this package.
+connect to other analytical tools.  To enable this, \enaR\ was built
+on top of two existing \R\ packages:  \texttt{network}
+\citep{butts08_network} and \texttt{sna} \citep{butts08_social}.  In
+summary, the aim of the \enaR\ package is to make ENA tools more
+available and easier to use, adapt, and extend.  In this paper, we
+introduce version 2.5 of this package.
 
 \section{Overview of \enaR}
 ENA is applied to network models of energy or matter flow and storage
@@ -323,7 +336,7 @@ of flows while balancing the network \citep{allesina03}.  We then
 applied the \texttt{enaFlow} function to the model to perform the
 desired ENA flow analysis.  This analysis returns 4 matrices
 ($\mathbf{G}$, $\mathbf{GP}$, $\mathbf{N}$, $\mathbf{NP}$) and two
-vectors (throughflow $T$, and a vector of 20 whole-network statistics
+vectors (throughflow, $T$, and a vector of 20 whole-network statistics,
 $ns$).  Guidance for how to interpret these results can be found in
 previously published literature \citep{fath06, schramski11}.
 
@@ -380,7 +393,7 @@ along with references to their original publications \citep{enar}.
 Given a list of models like the model library, it is possible to
 efficiently batch apply one or more analyses to the models.  This
 facilitates the kind of comparative network analysis often of
-interests to ecologists \citep{monaco97,christian05_cnea}. For
+interest to ecologists \citep{monaco97,christian05_cnea}. For
 example, \citet{christensen95} applied ENA to identify and compare the
 maturity of 41 ecosystem models,
 %\citet{hines14} used a comparative approach to
@@ -426,7 +439,7 @@ structure defined in the \texttt{network} package
 \citep{butts08_network}.  This means that network ecologists using \enaR\
 can also use the network manipulation functions and visualization
 features of the \texttt{network} package. Further, the \R\ Social
-Network Analysis (SNA) package \citep{butts08_social} also uses this
+Network Analysis (SNA) package, \texttt{sna}, \citep{butts08_social} also uses this
 network data object.  This means that network ecologists can apply
 many of the SNA algorithms directly to their ecological network
 models.  For example, Fig.~\ref{fig:example}d illustrates applying the betweenness
@@ -483,23 +496,29 @@ a seamless way.  We are also developing functions to connect between
 models using Linear Inverse Modelling and to enable uncertainty
 analysis \citep{kones09}.
 
-A major reason behind our decision to use an open source software
-tool is that we want to foster user development and extension
-of the package's functionality. It is our hope that \enaR\ can serve
-as an organizing point for ENA computational methods and in doing so
-can facilitate the merger and growth of both theory and
-applications. We look forward to working with the community of
+A major reason behind our decision to use an open source software tool
+is that we want to foster user development and extension of the
+package's functionality. It is our hope that \enaR\ can serve as an
+organizing point for ENA computational methods and in doing so can
+facilitate the merger and growth of both theory and
+applications. Toward this same end, we are developing a Git repository
+(Open Source Freedon Conservancy) and a GitHub
+(\url{https://github.com/}) project page. Together, the open-source
+tools for version control and project management provided by Git and
+GitHub will increase the potential for collaborative software
+development. We look forward to working with the community of
 ecological software developers to move this software forward.
 
 \section{Acknowledgements}
 We would like to acknowledge and thank David Hines for contributing to
-the initial code.  We also thank several individuals who used the earlier
-versions of the software and provided helpful feedback for further
-development including Ursula Scharler, Shaoqing Chen, Emily Oxe, and
-John Mejaski.  In addition, we thank the many ecosystem model authors who
-created, shared, and published their work.   This work was funded in
-part by the US National Science Foundation (DEB1020944) and a UNCW
-Cahill award.  
+the initial code.  We also thank several individuals who used the
+earlier versions of the software and provided helpful feedback for
+further development including Ursula Scharler, Shaoqing Chen, Emily
+Oxe, and John Mejaski.  In addition, we thank the many ecosystem model
+authors who created, shared, and published their work.  This work was
+funded in part by the US National Science Foundation (DEB1020944,
+DEB0425908), an NSF Integrative Graduate Education and Research
+Traineeship (MKL; DGE0549505) and a UNCW Cahill award (SRB).
 
 \end{spacing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1036,5 +1055,3 @@ $names
 \end{figure*}
 
 \end{document}
-
-
