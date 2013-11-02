@@ -1,0 +1,13 @@
+Package: enaR
+Type: Package
+Title: Tools for ecological network analysis (ena) in R
+Version: 2.5
+Date: 2013-10-25
+Author: M.K. Lau, S.R. Borrett, D.E. Hines
+Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
+Description: Functions for the analysis of ecological networks
+Depends: R (>= 2.10), sna, network, MASS, stringr, xlsx
+Suggests: codetools, igraph
+License: GPL-2
+Packaged: 2013-10-29 19:09:01 UTC; Aeolus
+Built: R 3.0.1; ; 2013-10-29 19:10:06 UTC; unix

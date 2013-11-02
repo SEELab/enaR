@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main-mee13.aux
+The style file: mee.bst
+Database file #1: /Users/borretts/research/srbbib_abb.bib
+Database file #2: /Users/borretts/research/srb.bib
+You've used 79 entries,
+            2811 wiz_defined-function locations,
+            1140 strings with 17200 characters,
+and the built_in function-call counts, 55122 in all, are:
+= -- 4783
+> -- 1938
+< -- 56
++ -- 777
+- -- 665
+* -- 4471
+:= -- 8426
+add.period$ -- 162
+call.type$ -- 79
+change.case$ -- 602
+chr.to.int$ -- 78
+cite$ -- 79
+duplicate$ -- 4225
+empty$ -- 4467
+format.name$ -- 901
+if$ -- 10962
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 698
+newline$ -- 320
+num.names$ -- 324
+pop$ -- 1375
+preamble$ -- 1
+purify$ -- 534
+quote$ -- 0
+skip$ -- 1044
+stack$ -- 0
+substring$ -- 4368
+swap$ -- 1736
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 675
+warning$ -- 0
+while$ -- 428
+width$ -- 0
+write$ -- 941

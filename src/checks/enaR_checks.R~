@@ -182,11 +182,11 @@ checks[[50]] <- enaAscendency(troModels[[39]]) - c(1.525,16574.23,22579,39126,0.
 names(checks)[50] <- 'ascendency AMI ASC OH CAP ASC.CAP OH.CAP' 
                                         # add MTI check
                                         # values from Ulanowicz et al. 1990
-enaMTI(fig2a)
-G <- 
-FP
-Q
-M
+## enaMTI(fig2a)
+## G <- 
+## FP
+## Q
+## M
                                         # storage environs (see environs above)
 check.out <- unlist(lapply(lapply(checks,round,digits=err.tolerance),function(x) all(x==0)))
 if (all(check.out)){

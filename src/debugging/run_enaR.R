@@ -23,7 +23,6 @@ file.name='../debugging/data/Namibia output for Stuart.dat'
 # load model
 m <- read.scor(file.name)          # read in model
 m <- balance(m)                    # balances model if needed
-if (m%n%'balanced'){}else{m <- force.balance(m,max.itr=10)} # iterates balancing procedure
 
 # perform analyses
 All <- list()

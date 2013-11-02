@@ -1,0 +1,427 @@
+\begin{thebibliography}{79}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Allesina \& Bondavalli(2003)}]{allesina03}
+Allesina, S. \& Bondavalli, C. (2003) Steady state of ecosystem flow networks:
+  A comparison between balancing procedures.
+\newblock \emph{Ecol Model}, \textbf{165}, 221--229.
+
+\bibitem[{Allesina \& Bondavalli(2004)}]{allesina04_wand}
+Allesina, S. \& Bondavalli, C. (2004) Wand: An ecological network analysis
+  user-friendly tool.
+\newblock \emph{Environ Model Softw}, \textbf{19}, 337--340.
+
+\bibitem[{Baird \emph{et~al.}(2008)Baird, Asmus \& Asmus}]{baird08_sylt}
+Baird, D., Asmus, H. \& Asmus, R. (2008) Nutrient dynamics in the
+  {S}ylt-{R}{\o}m{\o} {B}ight ecosystem, {German Wadden Sea}: An ecological
+  network analysis approach.
+\newblock \emph{Estuar Coast Shelf Sci}, \textbf{80}, 339--356.
+
+\bibitem[{Baird \& Ulanowicz(1989)}]{baird89}
+Baird, D. \& Ulanowicz, R.E. (1989) The seasonal dynamics of the {Chesapeake
+  Bay} ecosystem.
+\newblock \emph{Ecol Monogr}, \textbf{59}, 329--364.
+
+\bibitem[{Barab{\'a}si(2012)}]{barabasi12}
+Barab{\'a}si, A.L. (2012) The network takeover.
+\newblock \emph{Nature Physics}, \textbf{8}, 14--16.
+
+\bibitem[{Belgrano \emph{et~al.}(2005)Belgrano, Scharler, Dunne \&
+  Ulanowicz}]{belgrano05}
+Belgrano, A., Scharler, U.M., Dunne, J. \& Ulanowicz, R.E. (2005) \emph{Aquatic
+  Food Webs: An Ecosystem Approach}.
+\newblock Oxford University Press, New York, NY.
+
+\bibitem[{Bodini \& Bondavalli(2002)}]{bodini02}
+Bodini, A. \& Bondavalli, C. (2002) Towards a sustainable use of water
+  resources: a whole-ecosystem approach using network analysis.
+\newblock \emph{Int J Environmental Pollution}, \textbf{18}, 463--485.
+
+\bibitem[{Bodini \emph{et~al.}(2012)Bodini, Bondavalli \&
+  Allesina}]{bodini2012cities}
+Bodini, A., Bondavalli, C. \& Allesina, S. (2012) Cities as ecosystems: Growth,
+  development and implications for sustainability.
+\newblock \emph{Ecol Model}, \textbf{245}, 185--198.
+
+\bibitem[{Bondavalli \& Ulanowicz(1999)}]{bondavalli99}
+Bondavalli, C. \& Ulanowicz, R.E. (1999) Unexpected effects of predators upon
+  their prey: {T}he case of the {A}merican alligator.
+\newblock \emph{Ecosystems}, \textbf{2}, 49--63.
+
+\bibitem[{Borgatti \& Foster(2003)}]{borgatti2003network}
+Borgatti, S.P. \& Foster, P.C. (2003) The network paradigm in organizational
+  research: A review and typology.
+\newblock \emph{J Manage}, \textbf{29}, 991--1013.
+
+\bibitem[{Borrett(2013)}]{borrett13}
+Borrett, S.R. (2013) Throughflow centrality is a global indicator of the
+  functional importance of species in ecosystems.
+\newblock \emph{Ecol Indic}, \textbf{32}, 182--196.
+
+\bibitem[{Borrett \emph{et~al.}(2012)Borrett, Christian \&
+  Ulanowicz}]{borrett12_netecol}
+Borrett, S.R., Christian, R.R. \& Ulanowicz, R.E. (2012) Network ecology.
+\newblock A.H. El-Shaarawi \& W.W. Piegorsch, eds., \emph{Encyclopedia of
+  Environmetrics}, pp. 1767--1772. John Wiley \& Sons, 2nd edition.
+
+\bibitem[{Borrett \emph{et~al.}(submitted)Borrett, Moody \&
+  Edelmann}]{borrett14_rise}
+Borrett, S.R., Moody, J. \& Edelmann, A. (submitted) The rise of network
+  ecology: maps of the topic diversity and scientific collaboration.
+\newblock \emph{Ecol Model}.
+
+\bibitem[{Borrett \& Salas(2010)}]{borrett10_hmg}
+Borrett, S.R. \& Salas, A.K. (2010) Evidence for resource homogenization in 50
+  trophic ecosystem networks.
+\newblock \emph{Ecol Model}, \textbf{221}, 1710--1716.
+
+\bibitem[{Borrett \emph{et~al.}(2010)Borrett, Whipple \&
+  Patten}]{borrett10_idd}
+Borrett, S.R., Whipple, S.J. \& Patten, B.C. (2010) Rapid development of
+  indirect effects in ecological networks.
+\newblock \emph{Oikos}, \textbf{119}, 1136--1148.
+
+\bibitem[{Brandes \emph{et~al.}(2003)Brandes, Kenis \& Wagner}]{brandes03}
+Brandes, U., Kenis, P. \& Wagner, D. (2003) Communicating centrality in policy
+  network drawings.
+\newblock \emph{IEEE Transactions on Visualization and Computer Graphics},
+  \textbf{9}, 241--253.
+
+\bibitem[{Butts(2008{\natexlab{a}})}]{butts08_network}
+Butts, C. (2008{\natexlab{a}}) network: A package for managing relational data
+  in {R}.
+\newblock \emph{J Stat Softw}, \textbf{24}.
+
+\bibitem[{Butts(2008{\natexlab{b}})}]{butts08_social}
+Butts, C. (2008{\natexlab{b}}) Social network analysis with sna.
+\newblock \emph{J Stat Softw}, \textbf{24}, 1--51.
+
+\bibitem[{Chen \& Chen(2012)}]{chen12}
+Chen, S. \& Chen, B. (2012) Network environ perspective for urban metabolism
+  and carbon emissions: A case study of {Vienna, A}ustria.
+\newblock \emph{Environ Sci Tech}, \textbf{46}, 4498--4506.
+
+\bibitem[{Christensen(1995)}]{christensen95}
+Christensen, V. (1995) Ecosystem maturity---towards quantification.
+\newblock \emph{Ecol Model}, \textbf{77}, 3--32.
+
+\bibitem[{Christensen \& Pauly(1992)}]{christensen92}
+Christensen, V. \& Pauly, D. (1992) Ecopath-{II}---a software for balancing
+  steady-state ecosystem models and calculating network characteristics.
+\newblock \emph{Ecol Model}, \textbf{61}, 169--185.
+
+\bibitem[{Christensen \& Walters(2004)}]{christensen04}
+Christensen, V. \& Walters, C.J. (2004) Ecopath with {E}cosim: {M}ethods,
+  capabilities and limitations.
+\newblock \emph{Ecol Model}, \textbf{172}, 109--139.
+
+\bibitem[{Christian \emph{et~al.}(2005)Christian, Baird, Luczkovich, Johnson,
+  Scharler \& Ulanowicz}]{christian05_cnea}
+Christian, R.R., Baird, D., Luczkovich, J., Johnson, J.C., Scharler, U.M. \&
+  Ulanowicz, R.E. (2005) Role of network analysis in comparative ecosystem
+  ecology of estuaries.
+\newblock A.~Belgrano, J.~Scharler U. M.~Dunne \& R.~Ulanowicz, eds.,
+  \emph{Aquatic Food Webs: An Ecosystem Approach}, pp. 25--40. Oxford
+  University Press, New York, NY.
+
+\bibitem[{Christian \emph{et~al.}(1996)Christian, Fores, Comin, Viaroli, Naldi
+  \& Ferrari}]{christian96}
+Christian, R.R., Fores, E., Comin, F., Viaroli, P., Naldi, M. \& Ferrari, I.
+  (1996) Nitrogen cycling networks of coastal ecosystems: influence of trophic
+  status and primary producer form.
+\newblock \emph{Ecol Model}, \textbf{87}, 111--129.
+
+\bibitem[{Christian \& Thomas(2003)}]{christian03}
+Christian, R.R. \& Thomas, C.R. (2003) Network analysis of nitrogen inputs and
+  cycling in the {Neuse River Estuary, North Carolina, USA}.
+\newblock \emph{Estuaries}, \textbf{26}, 815--828.
+
+\bibitem[{Csardi \& Nepusz(2006)}]{csardi06}
+Csardi, G. \& Nepusz, T. (2006) The igraph software package for complex network
+  research.
+\newblock \emph{InterJournal}, \textbf{Complex Systems}, 1695.
+
+\bibitem[{Dame \& Patten(1981)}]{dame81}
+Dame, R.F. \& Patten, B.C. (1981) Analysis of energy flows in an intertidal
+  oyster reef.
+\newblock \emph{Mar Ecol Prog Ser}, \textbf{5}, 115--124.
+
+\bibitem[{Dixon(2003)}]{dixon2003vegan}
+Dixon, P. (2003) {VEGAN}, a package of {R} functions for community ecology.
+\newblock \emph{Journal of Vegetation Science}, \textbf{14}, 927--930.
+
+\bibitem[{Dormann \emph{et~al.}(2008)Dormann, Gruber \&
+  Fr{\"u}nd}]{dormann2008}
+Dormann, C.F., Gruber, B. \& Fr{\"u}nd, J. (2008) Introducing the bipartite
+  package: analysing ecological networks.
+\newblock \emph{\R\ News}, \textbf{8}, 8--11.
+
+\bibitem[{Fath(2004)}]{fath04_cyber}
+Fath, B.D. (2004) Network analysis applied to large-scale cyber-ecosystems.
+\newblock \emph{Ecol Model}, \textbf{171}, 329--337.
+
+\bibitem[{Fath \& Borrett(2006)}]{fath06}
+Fath, B.D. \& Borrett, S.R. (2006) A {Matlab}\copyright\ function for network
+  environ analysis.
+\newblock \emph{Environ Model Softw}, \textbf{21}, 375--405.
+
+\bibitem[{Fath \& Patten(1999)}]{fath99_review}
+Fath, B.D. \& Patten, B.C. (1999) Review of the foundations of network environ
+  analysis.
+\newblock \emph{Ecosystems}, \textbf{2}, 167--179.
+
+\bibitem[{Fath \emph{et~al.}(2007)Fath, Scharler, Ulanowicz \&
+  Hannon}]{fath07_netconstruction}
+Fath, B.D., Scharler, U.M., Ulanowicz, R.E. \& Hannon, B. (2007) Ecological
+  network analysis: network construction.
+\newblock \emph{Ecol Model}, \textbf{208}, 49--55.
+
+\bibitem[{FitzJohn(2012)}]{fitzjohn2012}
+FitzJohn, R.G. (2012) Diversitree: comparative phylogenetic analyses of
+  diversification in {R}.
+\newblock \emph{Methods Ecol Evol}, \textbf{3}, 1084--1092.
+
+\bibitem[{Freeman(2004)}]{freeman2004development}
+Freeman, L.C. (2004) \emph{The development of social network analysis: A study
+  in the sociology of science}.
+\newblock Empirical Press Vancouver.
+
+\bibitem[{Gentleman \emph{et~al.}(2004)Gentleman, Carey, Bates, Bolstad,
+  Dettling, Dudoit, Ellis, Gautier, Ge, Gentry
+  \emph{et~al.}}]{gentleman2004bioconductor}
+Gentleman, R.C., Carey, V.J., Bates, D.M., Bolstad, B., Dettling, M., Dudoit,
+  S., Ellis, B., Gautier, L., Ge, Y., Gentry, J. \emph{et~al.} (2004)
+  Bioconductor: open software development for computational biology and
+  bioinformatics.
+\newblock \emph{Genome biology}, \textbf{5}, R80.
+
+\bibitem[{Golley(1993)}]{golley1993history}
+Golley, F. (1993) \emph{A history of the ecosystem concept in ecology: More
+  than the sum of the parts}.
+\newblock Yale University Press, New Haven, CT.
+
+\bibitem[{Handcock \emph{et~al.}(2008)Handcock, Hunter, Butts, Goodreau \&
+  Morris}]{handcock2008statnet}
+Handcock, M., Hunter, D., Butts, C., Goodreau, S. \& Morris, M. (2008) statnet:
+  Software tools for the representation, visualization, analysis and simulation
+  of network data.
+\newblock \emph{J Stat Softw}, \textbf{24}, 1548.
+
+\bibitem[{Hannon(1973)}]{hannon73}
+Hannon, B. (1973) The structure of ecosystems.
+\newblock \emph{J Theor Biol}, \textbf{41}, 535--546.
+
+\bibitem[{Higashi \& Burns(1991)}]{higashi91}
+Higashi, M. \& Burns, T.P. (1991) \emph{Theoretical studies of ecosystems: The
+  network perspective}.
+\newblock Cambridge University Press, Cambridge.
+
+\bibitem[{Hines \emph{et~al.}(2012)Hines, Lisa, Song, Tobias \&
+  Borrett}]{hines12}
+Hines, D.E., Lisa, J.A., Song, B., Tobias, C.R. \& Borrett, S.R. (2012) A
+  network model shows the importance of coupled processes in the microbial {N}
+  cycle in the {Cape Fear River} estuary.
+\newblock \emph{Estuar Coast Shelf Sci}, \textbf{106}, 45--57.
+
+\bibitem[{Hudson \emph{et~al.}(2013)Hudson, Emerson, Jenkins, Layer, Ledger,
+  Pichler, Thompson, O'Gorman, Woodward \& Reuman}]{hudson2013}
+Hudson, L.N., Emerson, R., Jenkins, G.B., Layer, K., Ledger, M.E., Pichler,
+  D.E., Thompson, M.S.A., O'Gorman, E.J., Woodward, G. \& Reuman, D.C. (2013)
+  Cheddar: analysis and visualisation of ecological communities in {R}.
+\newblock \emph{Methods Ecol Evol}, \textbf{4}, 99--104.
+
+\bibitem[{Ings \emph{et~al.}(2009)Ings, Montoya, Bascompte, Bl{\"u}thgen,
+  Brown, Dormann, Edwards, Figueroa, Jacob, Jones, Lauridsen, Ledger, Lewis,
+  Olesen, van Veen \& Warren}]{ings2009}
+Ings, T.C., Montoya, J.M., Bascompte, J., Bl{\"u}thgen, N., Brown, L., Dormann,
+  C.F., Edwards, F., Figueroa, D., Jacob, U., Jones, J.I., Lauridsen, R.B.,
+  Ledger, M.E., Lewis, H.M., Olesen, J.M., van Veen, F.J.F. \& Warren, P. H.
+  nad~Woodward, G. (2009) Review: Ecological networks--beyond food webs.
+\newblock \emph{J Anim Ecol}, \textbf{78}, 253--269.
+
+\bibitem[{J{\o}rgensen \emph{et~al.}(2007)J{\o}rgensen, Fath, Bastianoni,
+  Marques, M\"{u}ller, Nielsen, Patten, Tiezzi \&
+  Ulanowicz}]{jorgensen07_newecology}
+J{\o}rgensen, S.E., Fath, B.D., Bastianoni, S., Marques, J.C., M\"{u}ller, F.,
+  Nielsen, S., Patten, B.C., Tiezzi, E. \& Ulanowicz, R.E. (2007) \emph{A new
+  ecology: Systems perspective}.
+\newblock Elsevier, Amsterdam.
+
+\bibitem[{Kazanci(2007)}]{kazanci07}
+Kazanci, C. (2007) Eco{N}et: A new software for ecological modeling, simulation
+  and network analysis.
+\newblock \emph{Ecol Model}, \textbf{208}, 3--8.
+
+\bibitem[{Kones \emph{et~al.}(2009)Kones, Soetaert, van Oevelen \&
+  Owino}]{kones09}
+Kones, J.K., Soetaert, K., van Oevelen, D. \& Owino, J.O. (2009) Are network
+  indices robust indicators of food web functioning? a {M}onte {C}arlo
+  approach.
+\newblock \emph{Ecol Model}, \textbf{220}, 370--382.
+
+\bibitem[{Latham~II(2006)}]{latham2006}
+Latham~II, L.G. (2006) Network flow analysis algorithms.
+\newblock \emph{Ecol Model}, \textbf{192}, 586--600.
+
+\bibitem[{Lau \emph{et~al.}(2013)Lau, Borrett \& Hines}]{enar}
+Lau, M., Borrett, S. \& Hines, D. (2013) \emph{enaR: Tools for ecological
+  network analysis in R}.
+\newblock R package version 2.0.
+
+\bibitem[{Leontief(1966)}]{leontief66}
+Leontief, W.W. (1966) \emph{Input--Output Economics}.
+\newblock Oxford University Press, New York.
+
+\bibitem[{Lima(2011)}]{lima2011visual}
+Lima, M. (2011) \emph{Visual complexity: mapping patterns of information}.
+\newblock Princeton Architectural Press.
+
+\bibitem[{Margalef(1963)}]{margalef63}
+Margalef, R. (1963) Certain unifying principles in ecology.
+\newblock \emph{Am Nat}, \textbf{97}, 357--374.
+
+\bibitem[{Matis \& Patten(1981)}]{matis81}
+Matis, J.H. \& Patten, B.C. (1981) Environ analysis of linear compartmental
+  systems: the static, time invariant case.
+\newblock \emph{Bull Int Stat Inst}, \textbf{48}, 527--565.
+
+\bibitem[{Metcalf \emph{et~al.}(2012)Metcalf, McMahon, Salguero-G{\'o}mez \&
+  Jongejans}]{metcalf2012}
+Metcalf, C.J.E., McMahon, S.M., Salguero-G{\'o}mez, R. \& Jongejans, E. (2012)
+  {IPM}pack: an {R} package for integral projection models.
+\newblock \emph{Methods Ecol Evol}, \textbf{4}, 195--200.
+
+\bibitem[{Monaco \& Ulanowicz(1997)}]{monaco97}
+Monaco, M.E. \& Ulanowicz, R.E. (1997) Comparative ecosystem trophic structure
+  of three us mid-{A}tlantic estuaries.
+\newblock \emph{Mar Ecol Prog Ser}, \textbf{161}, 239--254.
+
+\bibitem[{Moody \emph{et~al.}(2005)Moody, McFarland \&
+  Bender-deMoll}]{moody05dynamic}
+Moody, J., McFarland, D. \& Bender-deMoll, S. (2005) Dynamic network
+  visualization.
+\newblock \emph{American Journal of Sociology}, \textbf{110}, 1206--1241.
+
+\bibitem[{Newman(2003)}]{newman03review}
+Newman, M. (2003) The structure and function of complex networks.
+\newblock \emph{SIAM review}, \textbf{45}, 167--256.
+
+\bibitem[{Niquil \emph{et~al.}(2012)Niquil, Chaumillon, Johnson, Bertin, Grami,
+  David, Bacher, Asmus, Baird \& Asmus}]{niquil2012physical}
+Niquil, N., Chaumillon, E., Johnson, G., Bertin, X., Grami, B., David, V.,
+  Bacher, C., Asmus, H., Baird, D. \& Asmus, R. (2012) The effect of physical
+  drivers on ecosystem indices derived from ecological network analysis:
+  Comparison across estuarine ecosystems.
+\newblock \emph{Estuar Coast Shelf Sci}, \textbf{108}, 132--143.
+
+\bibitem[{Patten(1959)}]{patten59}
+Patten, B.C. (1959) An introduction to the cybernetics of the ecosystem: The
+  trophic dynamic aspect.
+\newblock \emph{Ecology}, \textbf{40}, 221---231.
+
+\bibitem[{Patten(1978)}]{patten78}
+Patten, B.C. (1978) Systems approach to the concept of environment.
+\newblock \emph{Ohio J Sci}, \textbf{78}, 206--222.
+
+\bibitem[{Patten(1982)}]{patten82}
+Patten, B.C. (1982) Environs: Relativistic elementary particles for ecology.
+\newblock \emph{Am Nat}, \textbf{119}, 179--219.
+
+\bibitem[{Patten(1991)}]{patten91}
+Patten, B.C. (1991) Network ecology: Indirect determination of the
+  life--environment relationship in ecosystems.
+\newblock M.~Higashi \& T.~Burns, eds., \emph{Theoretical Studies of
+  Ecosystems: The Network Perspective}, pp. 288--351. Cambridge University
+  Press, New York.
+
+\bibitem[{Patten \emph{et~al.}(1976)Patten, Bosserman, Finn \& Cale}]{patten76}
+Patten, B.C., Bosserman, R.W., Finn, J.T. \& Cale, W.G. (1976) Propagation of
+  cause in ecosystems.
+\newblock B.C. Patten, ed., \emph{Systems Analysis and Simulation in Ecology,
+  Vol. IV}, pp. 457--579. Academic Press, New York.
+
+\bibitem[{Pimm(1982)}]{pimm82}
+Pimm, S.L. (1982) \emph{Food webs}.
+\newblock Chapman and Hall, London; New York.
+
+\bibitem[{Revell(2012)}]{revell2012phytools}
+Revell, L.J. (2012) phytools: an {R} package for phylogenetic comparative
+  biology (and other things).
+\newblock \emph{Methods Ecol Evol}, \textbf{3}, 217--223.
+
+\bibitem[{Salas \& Borrett(2011)}]{salas11_did}
+Salas, A.K. \& Borrett, S.R. (2011) Evidence for dominance of indirect effects
+  in 50 trophic ecosystem networks.
+\newblock \emph{Ecol Model}, \textbf{222}, 1192--1204.
+
+\bibitem[{Scharler \& Fath(2009)}]{scharler09comparing}
+Scharler, U. \& Fath, B. (2009) Comparing network analysis methodologies for
+  consumer--resource relations at species and ecosystems scales.
+\newblock \emph{Ecol Model}, \textbf{220}, 3210--3218.
+
+\bibitem[{Schramski \emph{et~al.}(2011)Schramski, Kazanci \&
+  Tollner}]{schramski11}
+Schramski, J.R., Kazanci, C. \& Tollner, E.W. (2011) Network environ theory,
+  simulation and {EcoNet}\copyright\ 2.0.
+\newblock \emph{Environ Model Softw}, \textbf{26}, 419--428.
+
+\bibitem[{Soetaert \emph{et~al.}(2009)Soetaert, Van~den Meersche \& van
+  Oevelen}]{soetaert09}
+Soetaert, K., Van~den Meersche, K. \& van Oevelen, D. (2009) \emph{limSolve:
+  Solving Linear Inverse Models}.
+\newblock R package version 1.5.1.
+
+\bibitem[{Ulanowicz(1983)}]{ulanowicz83}
+Ulanowicz, R.E. (1983) Identifying the structure of cycling in ecosystems.
+\newblock \emph{Math Biosci}, \textbf{65}, 219--237.
+
+\bibitem[{Ulanowicz(1986)}]{ulanowicz86}
+Ulanowicz, R.E. (1986) \emph{Growth and Development: Ecosystems Phenomenology}.
+\newblock Springer--Verlag, New York.
+
+\bibitem[{Ulanowicz(1997)}]{ulanowicz97}
+Ulanowicz, R.E. (1997) \emph{Ecology, the Ascendent Perspective}.
+\newblock Columbia University Press, New York.
+
+\bibitem[{Ulanowicz(2009)}]{ulanowicz09_window}
+Ulanowicz, R.E. (2009) \emph{A third window, {N}atural life beyond {N}ewton and
+  {D}arwin}.
+\newblock Templeton Foundation Press, West Conshohocken, PA.
+
+\bibitem[{Ulanowicz \& Kay(1991)}]{ulanowicz91}
+Ulanowicz, R.E. \& Kay, J. (1991) A package for the analysis of ecosystem flow
+  networks.
+\newblock \emph{Environmental Software}, \textbf{6}, 131--142.
+
+\bibitem[{Ulanowicz \& Kemp(1979)}]{ulanowicz1979trophic}
+Ulanowicz, R.E. \& Kemp, W.M. (1979) Toward canonical trophic aggregations.
+\newblock \emph{Am Nat}, \textbf{114}, 871--883.
+
+\bibitem[{Ulanowicz \& Puccia(1990)}]{ulanowicz90}
+Ulanowicz, R.E. \& Puccia, C.J. (1990) Mixed trophic impacts in ecosystems.
+\newblock \emph{Coenoses}, \textbf{5}, 7--16.
+
+\bibitem[{Ulanowicz \& Scharler(2008)}]{ulanowicz2008least}
+Ulanowicz, R.E. \& Scharler, U.M. (2008) Least-inference methods for
+  constructing networks of trophic flows.
+\newblock \emph{Ecol Model}, \textbf{210}, 278--286.
+
+\bibitem[{van Oevelen \emph{et~al.}(2011)van Oevelen, Soetaert, Garc{\'\i}a,
+  de~Stigter, Cunha, Pusceddu \& Danovaro}]{vanoevelen2011canyon}
+van Oevelen, D., Soetaert, K., Garc{\'\i}a, R., de~Stigter, H.C., Cunha, M.R.,
+  Pusceddu, A. \& Danovaro, R. (2011) Canyon conditions impact carbon flows in
+  food webs of three sections of the nazar{\'e} canyon.
+\newblock \emph{Deep-Sea Res Pt II}, \textbf{58}, 2461--2476.
+
+\bibitem[{Wasserman \& Faust(1994)}]{wasserman94}
+Wasserman, S. \& Faust, K. (1994) \emph{Social network analysis: {M}ethods and
+  applications}.
+\newblock Cambridge University Press, Cambridge; New York.
+
+\bibitem[{Zhang \emph{et~al.}(2010)Zhang, Yang, Fath \& Li}]{zhang10_ecomod}
+Zhang, Y., Yang, Z.F., Fath, B.D. \& Li, S.S. (2010) Ecological network
+  analysis of an urban energy metabolic system: Model development, and a case
+  study of four {C}hinese cities.
+\newblock \emph{Ecol Model}, \textbf{221}, 1865--1879.
+
+\end{thebibliography}
