@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  7 NOV 2013 15:23
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  7 NOV 2013 16:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe4
-14325b1b7/Rd2.tex
+**/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpxhLg8t/Rd2pdf12
+d879381b52/Rd2.tex
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe41
-4325b1b7/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpxhLg8t/Rd2pdf12d
+879381b52/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -882,12 +882,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2083.
  ) 
 Here is how much of TeX's memory you used:
  6618 strings out of 493633
- 97127 string characters out of 3143378
+ 97130 string characters out of 3143378
  167038 words of memory out of 3000000
  9365 multiletter control sequences out of 15000+200000
  40684 words of font info for 49 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,6n,27p,331b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,6n,27p,332b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Rfn.network} has been referenced but does not exi
 st, replaced by a fixed one
 
