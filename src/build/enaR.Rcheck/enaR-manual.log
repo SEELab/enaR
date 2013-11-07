@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  1 NOV 2013 17:11
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  7 NOV 2013 15:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpLER6yE/Rd2pdfbd
-41072bd06/Rd2.tex
+**/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe4
+14325b1b7/Rd2.tex
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpLER6yE/Rd2pdfbd4
-1072bd06/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe41
+4325b1b7/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -807,7 +807,7 @@ File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (34.78088pt too wide) in paragraph at lines 1477--1477
+Overfull \hbox (34.78088pt too wide) in paragraph at lines 1474--1474
  []\T1/fi4/m/n/10 read.scor(file,type=c("network","nea","list","edge.list"),fro
 m.file=TRUE,warn = FALSE)[] 
  []
@@ -818,7 +818,7 @@ File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (23.50752pt too wide) in paragraph at lines 1597--1599
+Overfull \hbox (23.50752pt too wide) in paragraph at lines 1594--1596
 []\T1/ptm/m/n/10 numeric vec-tor giv-ing the cluseter id to which each node be-
 longs (as in igraph:clusters) 
  []
@@ -838,7 +838,7 @@ File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 ) [31]
-Overfull \hbox (49.25783pt too wide) in paragraph at lines 1875--1878
+Overfull \hbox (49.25783pt too wide) in paragraph at lines 1872--1875
 []\T1/ptm/m/n/10 Matthew K. Lau (mkl48@nau.edu) Stu-art R. Bor-rett (bor-retts@
 uncw.edu) David E. Hines (deh9951@uncw.edu) 
  []
@@ -866,11 +866,11 @@ LaTeX Font Warning: Font shape `T1/fi4/m/it' undefined
 [36
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2086.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2086.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2083.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2083.
  (./Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2086.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2086.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2083.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2083.
 
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: 1D933CF3B0E2C6C0286158646759E4C3;1956.
@@ -878,7 +878,7 @@ Package rerunfilecheck Info: File `Rd2.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2086.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2083.
  ) 
 Here is how much of TeX's memory you used:
  6618 strings out of 493633
@@ -900,7 +900,7 @@ ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Rd2.pdf (36 pages, 151651 bytes).
+Output written on Rd2.pdf (36 pages, 151625 bytes).
 PDF statistics:
  933 PDF objects out of 1000 (max. 8388607)
  879 compressed objects within 9 object streams

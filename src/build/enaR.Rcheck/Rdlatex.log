@@ -4,8 +4,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpLER6yE/Rd2pdfbd4
-1072bd06/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe41
+4325b1b7/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -124,12 +124,12 @@ o in the fol-low-ing R help thread: https://stat.ethz.ch/pipermail/r-
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [23]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (34.78088pt too wide) in paragraph at lines 1477--1477
+Overfull \hbox (34.78088pt too wide) in paragraph at lines 1474--1474
  []\T1/fi4/m/n/10 read.scor(file,type=c("network","nea","list","edge.list"),fro
 m.file=TRUE,warn = FALSE)[] 
 [24] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [25]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (23.50752pt too wide) in paragraph at lines 1597--1599
+Overfull \hbox (23.50752pt too wide) in paragraph at lines 1594--1596
 []\T1/ptm/m/n/10 numeric vec-tor giv-ing the cluseter id to which each node be-
 longs (as in igraph:clusters) 
 [26] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
@@ -137,7 +137,7 @@ longs (as in igraph:clusters)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [28]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [29]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [30]
-Overfull \hbox (49.25783pt too wide) in paragraph at lines 1875--1878
+Overfull \hbox (49.25783pt too wide) in paragraph at lines 1872--1875
 []\T1/ptm/m/n/10 Matthew K. Lau (mkl48@nau.edu) Stu-art R. Bor-rett (bor-retts@
 uncw.edu) David E. Hines (deh9951@uncw.edu) 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [31] [32]
@@ -163,7 +163,7 @@ live/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/20
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on Rd2.pdf (34 pages, 132799 bytes).
+Output written on Rd2.pdf (34 pages, 132762 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2011] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (99 entries accepted, 0 rejected).
@@ -175,8 +175,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpLER6yE/Rd2pdfbd4
-1072bd06/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe41
+4325b1b7/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -294,12 +294,12 @@ o in the fol-low-ing R help thread: https://stat.ethz.ch/pipermail/r-
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [24]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (34.78088pt too wide) in paragraph at lines 1477--1477
+Overfull \hbox (34.78088pt too wide) in paragraph at lines 1474--1474
  []\T1/fi4/m/n/10 read.scor(file,type=c("network","nea","list","edge.list"),fro
 m.file=TRUE,warn = FALSE)[] 
 [25] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [26]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (23.50752pt too wide) in paragraph at lines 1597--1599
+Overfull \hbox (23.50752pt too wide) in paragraph at lines 1594--1596
 []\T1/ptm/m/n/10 numeric vec-tor giv-ing the cluseter id to which each node be-
 longs (as in igraph:clusters) 
 [27] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
@@ -307,7 +307,7 @@ longs (as in igraph:clusters)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [29]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [30]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [31]
-Overfull \hbox (49.25783pt too wide) in paragraph at lines 1875--1878
+Overfull \hbox (49.25783pt too wide) in paragraph at lines 1872--1875
 []\T1/ptm/m/n/10 Matthew K. Lau (mkl48@nau.edu) Stu-art R. Bor-rett (bor-retts@
 uncw.edu) David E. Hines (deh9951@uncw.edu) 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [32] [33]
@@ -341,7 +341,7 @@ ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Rd2.pdf (36 pages, 150914 bytes).
+Output written on Rd2.pdf (36 pages, 150871 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2011] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (99 entries accepted, 0 rejected).
@@ -353,8 +353,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpLER6yE/Rd2pdfbd4
-1072bd06/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe41
+4325b1b7/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -472,12 +472,12 @@ o in the fol-low-ing R help thread: https://stat.ethz.ch/pipermail/r-
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [24]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (34.78088pt too wide) in paragraph at lines 1477--1477
+Overfull \hbox (34.78088pt too wide) in paragraph at lines 1474--1474
  []\T1/fi4/m/n/10 read.scor(file,type=c("network","nea","list","edge.list"),fro
 m.file=TRUE,warn = FALSE)[] 
 [25] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [26]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (23.50752pt too wide) in paragraph at lines 1597--1599
+Overfull \hbox (23.50752pt too wide) in paragraph at lines 1594--1596
 []\T1/ptm/m/n/10 numeric vec-tor giv-ing the cluseter id to which each node be-
 longs (as in igraph:clusters) 
 [27] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
@@ -485,7 +485,7 @@ longs (as in igraph:clusters)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [29]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [30]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [31]
-Overfull \hbox (49.25783pt too wide) in paragraph at lines 1875--1878
+Overfull \hbox (49.25783pt too wide) in paragraph at lines 1872--1875
 []\T1/ptm/m/n/10 Matthew K. Lau (mkl48@nau.edu) Stu-art R. Bor-rett (bor-retts@
 uncw.edu) David E. Hines (deh9951@uncw.edu) 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [32] [33]
@@ -514,7 +514,7 @@ ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Rd2.pdf (36 pages, 151653 bytes).
+Output written on Rd2.pdf (36 pages, 151625 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2011] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (99 entries accepted, 0 rejected).
@@ -526,8 +526,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpLER6yE/Rd2pdfbd4
-1072bd06/Rd2.tex
+(/private/var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-/RtmpoduljM/Rd2pdfe41
+4325b1b7/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -645,12 +645,12 @@ o in the fol-low-ing R help thread: https://stat.ethz.ch/pipermail/r-
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [24]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (34.78088pt too wide) in paragraph at lines 1477--1477
+Overfull \hbox (34.78088pt too wide) in paragraph at lines 1474--1474
  []\T1/fi4/m/n/10 read.scor(file,type=c("network","nea","list","edge.list"),fro
 m.file=TRUE,warn = FALSE)[] 
 [25] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [26]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
-Overfull \hbox (23.50752pt too wide) in paragraph at lines 1597--1599
+Overfull \hbox (23.50752pt too wide) in paragraph at lines 1594--1596
 []\T1/ptm/m/n/10 numeric vec-tor giv-ing the cluseter id to which each node be-
 longs (as in igraph:clusters) 
 [27] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
@@ -658,7 +658,7 @@ longs (as in igraph:clusters)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [29]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [30]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [31]
-Overfull \hbox (49.25783pt too wide) in paragraph at lines 1875--1878
+Overfull \hbox (49.25783pt too wide) in paragraph at lines 1872--1875
 []\T1/ptm/m/n/10 Matthew K. Lau (mkl48@nau.edu) Stu-art R. Bor-rett (bor-retts@
 uncw.edu) David E. Hines (deh9951@uncw.edu) 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [32] [33]
@@ -687,8 +687,8 @@ ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Rd2.pdf (36 pages, 151651 bytes).
+Output written on Rd2.pdf (36 pages, 151625 bytes).
 Transcript written on Rd2.log.
 Saving output to 'enaR-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-//RtmpLER6yE/Rd2pdfbd41072bd06'
+You may want to clean up by 'rm -rf /var/folders/T0/T0ki1urHFvmtJfcZlyIoCk+++TI/-Tmp-//RtmpoduljM/Rd2pdfe414325b1b7'

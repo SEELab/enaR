@@ -5,27 +5,21 @@
 # M.Lau | July 2011
 # ------------------------------------
 
-pack <- function(flow,input=NA,output=NA,export=NA,respiration=NA,storage=NA,living=NA){
+pack <- function(flow,input=NA,respiration=NA,export=NA,storage=NA,living=NA){
                                         #check for igraph
   det.igraph <- any(search()=="package:igraph")
   if (det.igraph){
     warning('Function conflicts with igraph. Use detach(package:igraph) to detach the igraph package.')
   }else{}
-                                        #Create output from export and respiration
-  if (all(is.na(output))){
-    if (length(export)==nrow(flow)&length(respiration)==nrow(flow)){
-      output <- export + respiration
-    }else if (length(export)==nrow(flow)&length(respiration)!=nrow(flow)){
-      output <- export
-    }else if (length(export)!=nrow(flow)&length(respiration)==nrow(flow)){
-      output <- respiration
-    }
+                                        #Warn if missing both 
+  if (all(is.na(respiration))&all(is.na(export))){
+    warning('Missing or NA resipiration and export values.')
   }
                                         #Add rownames
   if (length(rownames(flow))==0){rownames(flow) <- colnames(flow) <- as.character(1:nrow(flow))}
                                         #Compiling the objects into a list
   x <- list('flow' = as.matrix(flow),'input' = input,'export' = export,
-            'respiration' = respiration, 'storage' = storage,'output'=output,'living'=living)
+            'respiration' = respiration, 'storage' = storage,'living'=living)
    
                                         #Warning for missing components
   if(any(is.na(unlist(x)))){

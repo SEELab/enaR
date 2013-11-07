@@ -14,8 +14,7 @@ fb.order <- c(1,6,2,3,4,5)
 flo <- t(F)
 rownames(flo) <- colnames(flo) <- rownames(oyster%n%'flow')[fb.order]
 liv <- (oyster%v%'living')[fb.order]
-fb.oyster <- pack(flow=flo,input=z,output=y,
-                  export=rep(0,length(liv)),respiration=y,storage=x,living=liv)
+fb.oyster <- pack(flow=flo,input=z,export=rep(0,length(liv)),respiration=y,storage=x,living=liv)
                                         #For MTI, from Ulanowicz et al. 1990
 fig2a <- pack(
               flow=matrix(
@@ -24,7 +23,6 @@ fig2a <- pack(
                   20,0,0),
                 nrow=3),
               input=c(100,0,0),
-              output=c(40,40,20),
               export=c(0,0,0),
               respiration=c(40,40,20),
               storage=c(0,0,0),

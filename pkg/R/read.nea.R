@@ -15,9 +15,9 @@ read.nea <- function(file="file name",sep=',',warn=TRUE){
   y <- dat[(n+1),1:n]  # outputs
   X <- dat[1:n,(n+2)]  # storage
   if (warn){
-    model <- pack(flow=f,input=z,output=y,storage=X)  # create network data object
+    model <- pack(flow=f,input=z,respiration=y,storage=X)  # create network data object
   }else{
-    suppressWarnings(model <- pack(flow=f,input=z,output=y,storage=X))   # create network data object
+    suppressWarnings(model <- pack(flow=f,input=z,respiration=y,storage=X))   # create network data object
   }
   return(model)
 }

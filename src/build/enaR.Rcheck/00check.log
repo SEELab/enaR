@@ -34,7 +34,9 @@ Maintainer: ‘Matthew K. Lau <enaR.maintainer@gmail.com>’
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... OK
+* checking R code for possible problems ... NOTE
+read.nea: possible error in pack(flow = f, input = z, output = y,
+  storage = X): unused argument (output = y)
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd cross-references ... OK
@@ -54,3 +56,7 @@ Maintainer: ‘Matthew K. Lau <enaR.maintainer@gmail.com>’
 * checking running R code from vignettes ... OK
 * checking re-building of vignette PDFs ... OK
 * checking PDF version of manual ... OK
+NOTE: There was 1 note.
+See
+  ‘/Users/Aeolus/projects/enaR/src/build/enaR.Rcheck/00check.log’
+for details.

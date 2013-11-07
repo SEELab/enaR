@@ -1,0 +1,31 @@
+###Building and checking
+
+#Cleanup
+find ../../pkg -name "*~" -print0 | xargs -0 rm -rf
+find ../../pkg -name '\#*' -print0 | xargs -0 rm -rf
+
+#Install from src
+R CMD install ../../pkg
+
+#enaR checks script (default tolerance is 2 digits)
+#must run from the build directory
+Rscript ../checks/enaR_checks.R 
+
+#After running enaR_checks.R, run the following:
+#Make sure that you are in enaR/src/checks
+R CMD build --resave-data ../../pkg
+R CMD check --as-cran ./enaR_2.5.tar.gz
+
+#Internal windows build
+rm -r tmp
+mkdir tmp
+R CMD install -l tmp ./enaR_2.5.tar.gz
+cd tmp
+zip -r enaR_2.5.zip ./enaR
+cp enaR_2.5.zip ../
+cd ..
+rm -r tmp
+
+#Pushing up onto CRAN
+#http://CRAN.R-project.org/submit.html
+#enaR.maintainer@gmail.com

@@ -5,7 +5,7 @@
 # M.Lau | July 2011
 # ------------------------------------
 
-pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
+pack <- function(flow,input=NA,respiration=NA,export=NA,storage=NA,living=NA){
                                         #check for igraph
   det.igraph <- any(search()=="package:igraph")
   if (det.igraph){
@@ -19,7 +19,7 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
   if (length(rownames(flow))==0){rownames(flow) <- colnames(flow) <- as.character(1:nrow(flow))}
                                         #Compiling the objects into a list
   x <- list('flow' = as.matrix(flow),'input' = input,'export' = export,
-            'respiration' = respiration, 'storage' = storage,'output'=output,'living'=living)
+            'respiration' = respiration, 'storage' = storage,'living'=living)
    
                                         #Warning for missing components
   if(any(is.na(unlist(x)))){
@@ -39,7 +39,6 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
   set.vertex.attribute(y,'export',export)
   set.vertex.attribute(y,'respiration',respiration)
   set.vertex.attribute(y,'storage',storage)
-  set.vertex.attribute(y,'output',output)
   set.vertex.attribute(y,'living',living)
   set.vertex.attribute(y,'vertex.names',rownames(flow))
                                         #naming the rows and columns of the flow matrix and storing 
