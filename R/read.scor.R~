@@ -61,7 +61,7 @@ read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=
     resp <- as.numeric(sapply(resp,function(x) scifix(substr(x,5,nchar(x)))))
     respiration <- data.frame("vertex"=vertex.no,"value"=resp) # final storage data
     
-  }else{
+  } else {
     respiration <- NA
   }
   
