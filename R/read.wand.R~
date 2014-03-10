@@ -10,7 +10,7 @@ read.wand <- function(file='file name with path'){
   x <- as.matrix(read.xls(file,sheet="Main"))
   d1 <- x[1:8,1] #model info
   n <- as.numeric(as.character(d1[3])) #Number of compartments
-  dat.main <- x[8:(n+9),2:6] #isolate the stocks,imports,exports,respirations
+  dat.main <- x[9:(n+9),2:6] #isolate the stocks,imports,exports,respirations
   dat.main[is.na(dat.main)] <- 0 #zero NA
   vn <- dat.main[1:n,1] #vertex names
   dat.main <- apply(dat.main[,2:5],2,as.numeric)
