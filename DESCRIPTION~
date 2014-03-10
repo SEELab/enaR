@@ -6,7 +6,7 @@ Date: 2014-09-03
 Author: M.K. Lau, S.R. Borrett, D.E. Hines
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 Description: Functions for the analysis of ecological networks
-Depends: sna, network, MASS, stringr, gdata
+Depends: sna, network, MASS, stringr
 Suggests: codetools, igraph
 License: GPL-2
 Packaged: 2012-07-31 16:41:37 UTC; Aeolus
