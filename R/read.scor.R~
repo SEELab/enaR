@@ -110,10 +110,9 @@ read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=
       output <- exp
     }else{output <- exp + res} #Outputs = respiration + exports for nea data type
                                         #introduce variables into the network format
-    x <- pack(flow=flow.mat,input=input,export=exp,respiration=res,output=output,storage=stor,living=living)
+    x <- pack(flow=flow.mat,input=input,export=exp,respiration=res,storage=stor,living=living)
   }else if (type[[1]] == 'edge.list'){
-    x <- list('storage' = storage,'input' = inputs,'export' = exports,
-              'respiration' = respiration,'output'= output,'flow' = flows)
+    x <- list('storage' = storage,'input' = inputs,'export' = exports,'respiration' = respiration,'flow' = flows)
   }
   if (type[[1]] == 'nea'){
     x <- cbind(flow.mat,input,stor)
@@ -124,5 +123,6 @@ read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=
     x <- list('flow' = flow.mat,'input' = inputs,'exports' = exp,'respiration' = res,
               'output'= output,'storage' = stor,'living'=living)
   }
+x
   return(x)
 }

@@ -5,7 +5,7 @@
 # M.Lau | July 2011
 # ------------------------------------
 
-pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
+pack <- function(flow,input=NA,respiration=NA,export=NA,storage=NA,living=NA){
                                         #check for igraph
   det.igraph <- any(search()=="package:igraph")
   if (det.igraph){
@@ -38,7 +38,6 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
   set.vertex.attribute(y,'input',input)
   set.vertex.attribute(y,'export',export)
   set.vertex.attribute(y,'respiration',respiration)
-  set.vertex.attribute(y,'output',output)
   set.vertex.attribute(y,'storage',storage)
   set.vertex.attribute(y,'living',living)
   set.vertex.attribute(y,'vertex.names',rownames(flow))
