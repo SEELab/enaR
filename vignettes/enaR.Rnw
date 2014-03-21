@@ -1013,9 +1013,11 @@ get.orient()
 ###enaFlow output in column-row
 flow.cr <- enaFlow(oyster)$G
 ###Check. Outputs should be transposed from each other.
-flow.rc == t(flow.cr)
+all(flow.rc == flow.cr)
+all(flow.rc == t(flow.cr))
 ###Now change back to the default orientation ('rc')
 set.orient('rc')
+
 @ 
 
 
