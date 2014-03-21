@@ -8,7 +8,7 @@
   information into a network class object for analyses.
 }
 \usage{
-pack(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA)
+pack(flow,input=NA,respiration=NA,export=NA,storage=NA,living=NA)
 }
 \arguments{
   \item{flow}{
@@ -17,14 +17,11 @@ pack(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA)
   \item{input}{
     The inputs into the system.
   }
-  \item{respiration}{
-    The quantities respired from the system. 
-  }
   \item{export}{
     The exports from the system. 
   }
-  \item{output}{
-    The output (i.e. exports + respiration) from the system. 
+  \item{respiration}{
+    The quantities respired from the system. 
   }
   \item{storage}{
     The quantities stored in compartments within the system. 
