@@ -1,6 +1,1 @@
-useDynLib(enaR)
-import(sna)
-import(network)
-import(stringr)
-import(gdata)
 exportPattern("^[[:alpha:]]+")
