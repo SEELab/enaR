@@ -114,43 +114,44 @@ Environ & \texttt{enaEnviron} & Patten \\
 \tableline
 \end{table*}
 
-
 \SweaveOpts{width=6,height=4}
-<<z,echo=false>>=
-# set plotting parameters
-opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")   
+%% <<z,echo=false>>=
+%% # set plotting parameters
+%% opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")   
 
-## Taken from https://stat.ethz.ch/pipermail/r-devel/2011-September/062126.html
-if (all(ls()!='f.list')){
-  require(codetools)
-library(enaR)
-called.by <- function(tarFunc, tarPack){
-  flist <-   sapply(lsf.str(tarPack, all=TRUE), c)
-  names(flist) <- NULL
-  gotit <- sapply(flist, function(x) tarFunc %in% findGlobals(get(x, tarPack),FALSE)$functions)
-  flist[gotit]
-}
+%% ## Taken from https://stat.ethz.ch/pipermail/r-devel/2011-September/062126.html
+%% if (all(ls()!='f.list')){
+%%   require(codetools)
+%% library(enaR)
+%% called.by <- function(tarFunc, tarPack){
+%%   flist <-   sapply(lsf.str(tarPack, all=TRUE), c)
+%%   names(flist) <- NULL
+%%   gotit <- sapply(flist, function(x) tarFunc %in% findGlobals(get(x, tarPack),FALSE)$functions)
+%%   flist[gotit]
+%% }
 
-f.list <- as.character(sapply(lsf.str('package:enaR',all=TRUE),c))
-f.array <- array(0,dim=rep(length(f.list),2))
-rownames(f.array) <- colnames(f.array) <- f.list
-for (i in 1:length(f.list)){
-  f.array[match(called.by(f.list[i],'package:enaR'),rownames(f.array)),i] <- 1
-}
-f.net <- network(t(f.array))
-}
+%% f.list <- as.character(sapply(lsf.str('package:enaR',all=TRUE),c))
+%% f.array <- array(0,dim=rep(length(f.list),2))
+%% rownames(f.array) <- colnames(f.array) <- f.list
+%% for (i in 1:length(f.list)){
+%%   f.array[match(called.by(f.list[i],'package:enaR'),rownames(f.array)),i] <- 1
+%% }
+%% f.net <- network(t(f.array))
+%% }
 
-plot(f.net,displaylabels=TRUE,label.cex=0.85,arrowhead.cex=0.65,
-     edge.lwd=0.75,vertex.col='lightblue',vertex.border='white',edge.col='darkgrey')
-@ 
+%% plot(f.net,displaylabels=TRUE,label.cex=0.85,arrowhead.cex=0.65,
+%%      edge.lwd=0.75,vertex.col='lightblue',vertex.border='white',edge.col='darkgrey')
+
+%% @ 
 
 
 \begin{figure}
   \center
-<<fig=true,echo=false>>=
-<<z>>
-@
-\caption{A plot of the \textit{enaR} function relationships. Edges
+%% <<fig=true,echo=false>>=
+%% <<z>>
+%% @
+%% \
+caption{A plot of the \textit{enaR} function relationships. Edges
   point \textit{from} a function that provides information \textit{to}
   the function that receives that information.} \label{fig:fig}
 \end{figure}
@@ -178,19 +179,21 @@ the library as follows:
 %%%%% Getting Set Up %%%%%%%%%%%
 \setkeys{Gin}{width=0.55\linewidth}
 \SweaveOpts{strip.white=true}
-<<echo=false,results=hide>>=
-  rm(list=ls())
-par(mfrow=c(1,1))
-options(width=72)
-figset <- function() par(mar=c(4,4,1,1)+.1)
-options(SweaveHooks = list(fig = figset))
-options("prompt" = "> ", "continue" = "+  ")
-@
-% Show loading the library and listing the functions in the package
-<<>>=
-library(enaR)
-@ 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <<echo=false,results=hide>>=
+%%   rm(list=ls())
+%% par(mfrow=c(1,1))
+%% options(width=72)
+%% figset <- function() par(mar=c(4,4,1,1)+.1)
+%% options(SweaveHooks = list(fig = figset))
+%% options("prompt" = "> ", "continue" = "+  ")
+%% @
+%% %
+Show loading the library and listing the functions in the package
+%% <<>>=
+%% library(enaR)
+%% @ 
+%% %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Model Data} \label{sec:data}
 ENA is applied to a network model of energy--matter exchanges among
@@ -277,58 +280,58 @@ network data object.  Here is an example of doing this with
 hypothetical data.
 
 %% PACK A MODEL
-<<>>=
-# generate the flow matrix
-flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
-                  dim=c(4,4))
-# name the nodes
-rownames(flow.mat) <- colnames(flow.mat) <- paste('node',(1:nrow(flow.mat)),sep='')
-# generate the inputs
-inputs <- runif(nrow(flow.mat),0,4)
-# generate the exports
-exports <- inputs
-# pack
-fake.model <- pack(flow=flow.mat,
-                   input=inputs,
-                   export=exports,
-                   living=TRUE)
-# model
-fake.model
-@ 
+%% <<>>=
+%% # generate the flow matrix
+%% flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
+%%                   dim=c(4,4))
+%% # name the nodes
+%% rownames(flow.mat) <- colnames(flow.mat) <- paste('node',(1:nrow(flow.mat)),sep='')
+%% # generate the inputs
+%% inputs <- runif(nrow(flow.mat),0,4)
+%% # generate the exports
+%% exports <- inputs
+%% # pack
+%% fake.model <- pack(flow=flow.mat,
+%%                    input=inputs,
+%%                    export=exports,
+%%                    living=TRUE)
+%% # model
+%% fake.model
+%% @ 
 
 Unfortunately, the attributes() function does not clearly identify the
 network data objects we are using.
 
-<<>>=
-attributes(fake.model)
-@ 
+%% <<>>=
+%% attributes(fake.model)
+%% @ 
 
 However, individual components can be extracted from the data object
 using the form specified in the \textit{network} package.  For
 example, we can pull out node of vertex attributes as follows:
 
-<<>>=
-fake.model%v%'output'
+%% <<>>=
+%% fake.model%v%'output'
 
-fake.model%v%'input'
+%% fake.model%v%'input'
 
-fake.model%v%'living'
-@
+%% fake.model%v%'living'
+%% @
 
 For convenience, we have defined the flow matrix as a network based
 characteristic and it can be extracted as:
-<<>>=
-fake.model%n%'flow'
-@ 
+%% <<>>=
+%% fake.model%n%'flow'
+%% @ 
 
 There are times that it is useful to extract all of the ecosystem
 model data elements from the network data object.  This can be
 accomplished using the \texttt{unpack} function. The \texttt{unpack}
 output is as follows:
 
-<<>>=
-unpack(fake.model)  
-@ 
+%% <<>>=
+%% unpack(fake.model)  
+%% @ 
 
 Note that we did not specify the storage values. In these instances
 \texttt{pack} produces \texttt{NA} values. Although the package is
@@ -345,16 +348,16 @@ functions for (1) checking to see if the assumption is met and (2)
 automatically balancing the model so that input equal outputs.
 
 To determine if the model is balanced and then balance it if necessary:
-<<>>=
-## --- Check to see if the model is balanced ---#
-ssCheck(fake.model)
+%% <<>>=
+%% ## --- Check to see if the model is balanced ---#
+%% ssCheck(fake.model)
 
-## --- To BALANCE a model if needed --- #
-fake.model <- balance(fake.model,method="AVG2")  
+%% ## --- To BALANCE a model if needed --- #
+%% fake.model <- balance(fake.model,method="AVG2")  
 
-## --- To FORCE BALANCE a model if needed --- #
-fake.model <- force.balance(fake.model)
-@ 
+%% ## --- To FORCE BALANCE a model if needed --- #
+%% fake.model <- force.balance(fake.model)
+%% @ 
 
 The automated balancing routines are based on those presented in
 \citet{allesina03}.  These authors compare alternative balancing
@@ -373,25 +376,25 @@ The \texttt{read.scor} function reads in data stored in the SCOR
 format specified by \citet{ulanowicz91} that is the input to the
 NETWRK4 programs.  This function can be run as follows.
 
-<<>>=
-scor.model <- readLines('http://people.uncw.edu/borretts/data/oyster.dat')
-m <- read.scor(scor.model,from.file=FALSE)
-@ 
+%% <<>>=
+%% scor.model <- readLines('http://people.uncw.edu/borretts/data/oyster.dat')
+%% m <- read.scor(scor.model,from.file=FALSE)
+%% @ 
 
 This constructs the network data object from the SCOR file that stores
 the ecosystem model data for an oyster reef model \citep{dame81}.  The
 individual model elements are
 
-<<>>=
-unpack(m)
-@ 
+%% <<>>=
+%% unpack(m)
+%% @ 
 
 This same data is stored as a network data object that is distributed
 with this package, which can be accessed as:
-<<>>=
-data(oyster)
-m <- oyster
-@ 
+%% <<>>=
+%% data(oyster)
+%% m <- oyster
+%% @ 
 
 \subsection*{WAND}
 In part to make ENA more accessible to biologists,
@@ -403,9 +406,9 @@ flow matrix.  The \texttt{read.wand} function will create an \R\
 network data object from a WAND model file. An example WAND file can
 be found at \url{http://people.uncw.edu/borretts/data/MDmar02_WAND.xls}.
 
-<<eval=false>>=
-  m <- read.wand('./MDmar02_WAND.xls')
-@ 
+%% <<eval=false>>=
+%%   m <- read.wand('./MDmar02_WAND.xls')
+%% @ 
 
 This code creates a network data object for \textit{enaR} from the WAND
 formatted Mdloti ecosystem model data
@@ -430,9 +433,9 @@ Using an example data file,
 \url{http://people.uncw.edu/borretts/data/MDMAR02.xlsx}, this data
 format can be read into the \textit{enaR} package as:
 
-<<eval=false>>=
-  m <- read.enam('./MDMAR02.xlsx')
-@ 
+%% <<eval=false>>=
+%%   m <- read.enam('./MDMAR02.xlsx')
+%% @ 
 
 The current read.enam function assumes the data are stored on the
 first worksheet of an Excel file. In the future, we expect to expand
@@ -463,16 +466,16 @@ living status. This missing information will prevent the use of some
 \textit{enaR} functions.  
 
 Here is an example of using these functions:
-<<eval=false>>=
-data(oyster)
-# write oyster reef model to a csv file
-write.nea(oyster, file.name="oyster.csv")
-# read in oyster reef model data from NEA.m formatted CSV file
-m <- read.nea("oyster.csv")
+%% <<eval=false>>=
+%% data(oyster)
+%% # write oyster reef model to a csv file
+%% write.nea(oyster, file.name="oyster.csv")
+%% # read in oyster reef model data from NEA.m formatted CSV file
+%% m <- read.nea("oyster.csv")
 
-# Again, this model object does NOT contain all 
-# of the information in the "oyster" data object.
-@ 
+%% # Again, this model object does NOT contain all 
+%% # of the information in the "oyster" data object.
+%% @ 
 
 \section{Network Visualization}
 
@@ -485,56 +488,57 @@ Figure~\ref{fig:oyster} (left) is a very simple example of to plot a
 graph of the oyster reef model accomplished with default settings.
 
 \SweaveOpts{width=3,height=3}
-<<a>>=
-data(oyster)  # load data
-m <- oyster  
-set.seed(2)    # set random seed to control plot
-plot(m)       # plot network data object (uses plot.network)
-@ 
+%% <<a>>=
+%% data(oyster)  # load data
+%% m <- oyster  
+%% set.seed(2)    # set random seed to control plot
+%% plot(m)       # plot network data object (uses plot.network)
+%% @ 
 
 We can use the excellent graphics capabilities of \R\ to make fancier
 plot of the same data (Fig.~\ref{fig:oyster}(right)).
 
 \SweaveOpts{width=3,height=3}
-<<b>>=
-# set colors to use
-my.col=c("red","yellow", 
-  rgb(204,204,153,maxColorValue=255), 
-  "grey22")  
-F=m%n%'flow'                   # extract flow information for later use.
-f=which(F!=0, arr.ind=T)       # get indices of positive flows
-opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
-set.seed(2)                    # each time the plot is called, the
-                               # layout orientation changes.  setting
-                               # the seed ensures a consistent
-                               # orientation each time the plot
-                               # function is called.
-plot(m,
-     vertex.cex=log(m%v%'storage'), # scale nodes with storage
-     label= m%v%'vertex.names',     # add node labels
-     boxed.labels=FALSE,
-     label.cex=0.65,
-     vertex.sides=45,   # to make rounded
-     edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
-     edge.col=my.col[3],
-     vertex.col=my.col[1],
-     label.col="white",
-     vertex.border = my.col[3],
-     vertex.lty = 1,
-     xlim=c(-4,1),ylim=c(-2,-2))
-rm(opar)             # remove changes to the plotting parameters
-@ 
+%% <<b>>=
+%% # set colors to use
+%% my.col=c("red","yellow", 
+%%   rgb(204,204,153,maxColorValue=255), 
+%%   "grey22")  
+%% F=m%n%'flow'                   # extract flow information for later use.
+%% f=which(F!=0, arr.ind=T)       # get indices of positive flows
+%% opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
+%% set.seed(2)                    # each time the plot is called, the
+%%                                # layout orientation changes.  setting
+%%                                # the seed ensures a consistent
+%%                                # orientation each time the plot
+%%                                # function is called.
+%% plot(m,
+%%      vertex.cex=log(m%v%'storage'), # scale nodes with storage
+%%      label= m%v%'vertex.names',     # add node labels
+%%      boxed.labels=FALSE,
+%%      label.cex=0.65,
+%%      vertex.sides=45,   # to make rounded
+%%      edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
+%%      edge.col=my.col[3],
+%%      vertex.col=my.col[1],
+%%      label.col="white",
+%%      vertex.border = my.col[3],
+%%      vertex.lty = 1,
+%%      xlim=c(-4,1),ylim=c(-2,-2))
+%% rm(opar)             # remove changes to the plotting parameters
+%% @ 
 
 
 \begin{figure}
   \center
   \begin{tabular}{cc}
-<<fig=true,echo=false>>=
-<<a>>
-@ \\
-<<fig=true,echo=false>>=
-<<b>>
-@ \\
+## <<fig=true,echo=false>>=
+## <<a>>
+## @ \\
+## <
+<fig=true,echo=false>>=
+%% <<b>>
+%% @ \\
   \end{tabular}
   \caption{Simple (left) and fancy (right) plot of the Oyster network
     model (Dame and Patten 1981).} \label{fig:oyster}
@@ -595,11 +599,11 @@ of the enaStructure function is summarized in Table~\ref{tab:structure}
 \end{small}
 \end{table*}
 
-<<>>=
-St <- enaStructure(m)
-attributes(St)
-St$ns
-@ 
+%% <<>>=
+%% St <- enaStructure(m)
+%% attributes(St)
+%% St$ns
+%% @ 
 
 The structural network statistics show that the oyster reef model has
 6 nodes, a pathway proliferation rate of 2.14, and that the model is
@@ -661,32 +665,32 @@ input and output orientations provide different information about the
 system.  We also show the input-oriented integral flow matrix
 $\mathbf{N'}$.
 
-<<>>=
-  F <- enaFlow(m)
-attributes(F)
-F$ns
-G <- F$G # output-oriented direct flow matrix
-rm(G)
-F$NP     # input-oriented integral flow matrix
-@ 
+%% <<>>=
+%%   F <- enaFlow(m)
+%% attributes(F)
+%% F$ns
+%% G <- F$G # output-oriented direct flow matrix
+%% rm(G)
+%% F$NP     # input-oriented integral flow matrix
+%% @ 
 
 Note: you can use the attach function to have access to the objects
 nested within an object. Since some objects may conflict in name, it's
 best to detach an object once it's not in use.
 
-<<>>=
-attach(F)
-G
-detach(F) 
-@ 
+%% <<>>=
+%% attach(F)
+%% G
+%% detach(F) 
+%% @ 
 
 Matrix powers -- raising a matrix to a power is not a native operation
 in R.  Thus, the \textit{enaR} package includes a function
 \texttt{mExp} to facilitate this matrix operation commonly used in ENA.
 
-<<>>=
-mExp(F$G,2)
-@ 
+%% <<>>=
+%% mExp(F$G,2)
+%% @ 
 
 \subsection{Ascendency}
 A key contribution of the Ulanowicz School to ENA is Ascendency
@@ -697,9 +701,9 @@ steady-state.  The \texttt{enaAscendency} function returns several of
 these information based measures (Table~\ref{tab:asc}).  This is run
 as follows:
 
-<<>>=
-  enaAscendency(oyster)
-@ 
+%% <<>>=
+%%   enaAscendency(oyster)
+%% @ 
 
 % ASCENDENCY ----------------------
 \begin{table*}[t]
@@ -728,11 +732,11 @@ throughflow.  See \citet{fath99_review} and \citet{schramski11} for an
 overview of this method.  Output of this function is summarized in
 Table~\ref{tab:storage}, and this is an example of its implementation.
 
-<<>>=
-  S <- enaStorage(m)
-attributes(S)
-S$ns
-@ 
+%% <<>>=
+%%   S <- enaStorage(m)
+%% attributes(S)
+%% S$ns
+%% @ 
 
 % STORAGE
 \begin{table*}[]
@@ -788,11 +792,11 @@ This is again implemented as in NEA.m.  Table~\ref{tab:utility}
 summarizes the function output for the flow and storage
 versions. These analyses are executed as:
 
-<<>>=
-UF <- enaUtility(m,eigen.check=TRUE,type="flow")  
-US <- enaUtility(m,eigen.check=TRUE,type="storage")  
-attributes(UF)
-@ 
+%% <<>>=
+%% UF <- enaUtility(m,eigen.check=TRUE,type="flow")  
+%% US <- enaUtility(m,eigen.check=TRUE,type="storage")  
+%% attributes(UF)
+%% @ 
 
 Please note the function argument ``eigen.check=TRUE''.  For this
 analysis to work, the power series of the direct utility matrices must
@@ -838,40 +842,40 @@ activity in each subnetwork generated by pulling a unit out of a node
 unit environs can be converted into ``realized'' environs by
 multiplying each by the relevant observed input or output \citep{borrett11_ree}.  
 
-<<>>=
-E <- enaEnviron(m)
-attributes(E)
-E$output[1] 
-@ 
+%% <<>>=
+%% E <- enaEnviron(m)
+%% attributes(E)
+%% E$output[1] 
+%% @ 
 
 The \texttt{TET} function returns vectors of the unit and realized
 input and output total environ throughflow.  The realized total
 environ throughflow is an environ based partition of the total system
 throughflow (TST). 
 
-<<>>=
-tet <- TET(m)
-show(tet)
-@ 
+%% <<>>=
+%% tet <- TET(m)
+%% show(tet)
+%% @ 
 
 The \texttt{TES} functions returns the both the realized and unit
 total environ storage for the input and output environs.  Again, the
 realized TES is a partition of the total system storage (TSS).   
 
-<<>>=
-tes <- TES(m)
-show(tes)
-@ 
+%% <<>>=
+%% tes <- TES(m)
+%% show(tes)
+%% @ 
 
 \subsection{Control Analysis}
 Control analysis is implemented as in the original NEA.m function.
 Recent updates to control analysis \citep[e.g.,][]{schramski06,
   schramski07} still need to be included.
 
-<<>>=
-C <- enaControl(m)               
-attributes(C)
-@ 
+%% <<>>=
+%% C <- enaControl(m)               
+%% attributes(C)
+%% @ 
 
 %% The flow control $\mathbf{CN}$ and storage control $\mathbf{CQ}$
 %% matrices are oriented column-to-row.
@@ -883,13 +887,13 @@ comparable results to the calculations in \citet{ulanowicz90}.  These
 are implemented as follows; Table~\ref{tab:mti} summarizes the
 function output.
 
-<<>>=
-                                        #conduct mixed trophic impacts
-mti <- enaMTI(oyster)
-attributes(mti)
-                                        #shows the total impact matrix
-mti$M
-@ 
+%% <<>>=
+%%                                         #conduct mixed trophic impacts
+%% mti <- enaMTI(oyster)
+%% attributes(mti)
+%%                                         #shows the total impact matrix
+%% mti$M
+%% @ 
 
 In this case, the power series of the direct trophic impacts matrix
 does not converge (dominant eigenvalue is greater than one).  Thus,
@@ -897,11 +901,11 @@ the function returns the mti\$M = NA.  Like with Utility analysis,
 however, we can use the eigen.check argument to do the calculation
 despite the mathematical problem.
 
-<<>>=
-  mti <- enaMTI(oyster,eigen.check=FALSE)
-attributes(mti)
-mti$M  # shows the total impact matrix
-@ 
+%% <<>>=
+%%   mti <- enaMTI(oyster,eigen.check=FALSE)
+%% attributes(mti)
+%% mti$M  # shows the total impact matrix
+%% @ 
 
 % enaMTI - Mixed Trophic Impacts
 \begin{table*}[t]
@@ -929,32 +933,32 @@ A quick way to get a list of all of the global network statistics reported in
 Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
 \texttt{get.ns} function. 
 
-<<>>=
-ns <- get.ns(m)
-str(ns)    # examine the structure of ns
-@ 
+%% <<>>=
+%% ns <- get.ns(m)
+%% str(ns)    # examine the structure of ns
+%% @ 
 
 It is also possible to instantly return all of the main ENA output
 with \texttt{enaAll}:
 
-<<>>=
-oyster.ena <- enaAll(oyster)
-names(oyster.ena)
-@ 
+%% <<>>=
+%% oyster.ena <- enaAll(oyster)
+%% names(oyster.ena)
+%% @ 
 
 Centrality analysis is a large topic in network science.
 \citet{fann12_ec} introduced an environ based centrality and contrasted
 it with the more commonly used eigenvector centrality.  Both of these
 centralities can be calculated in \textit{enaR} as follows:
 
-<<>>=
-F <- enaFlow(oyster)
+%% <<>>=
+%% F <- enaFlow(oyster)
 
-ec <- environCentrality(F$N)
-show(ec)
+%% ec <- environCentrality(F$N)
+%% show(ec)
 
-eigenCentrality(F$G)
-@ 
+%% eigenCentrality(F$G)
+%% @ 
 
 These centrality values have been normalized to sum to one.
 
@@ -962,27 +966,28 @@ Figure~\ref{fig:aec} shows one way to visualize the Average Environ
 Centralities.
 
 \SweaveOpts{width=6,height=4}
-<<b>>=
-# set plotting parameters
-opar <- par(las=1,mar=c(7,5,1,1),xpd=TRUE,bg="white")   
-# find centrality order
-o <- order(ec$AEC,decreasing=TRUE)            
-bp <- barplot(ec$AEC[o],     # create barplot
-              names.arg=NA,
-              ylab="Average Environ Centrality",
-              col="black",border=NA)
-text(bp,-0.008,                # add labels
-     labels=names(ec$AEC)[o],
-     srt=35,adj=1,cex=1)
-rm(opar)  # remove the plotting parameters
-@ 
+%% <<b>>=
+%% # set plotting parameters
+%% opar <- par(las=1,mar=c(7,5,1,1),xpd=TRUE,bg="white")   
+%% # find centrality order
+%% o <- order(ec$AEC,decreasing=TRUE)            
+%% bp <- barplot(ec$AEC[o],     # create barplot
+%%               names.arg=NA,
+%%               ylab="Average Environ Centrality",
+%%               col="black",border=NA)
+%% text(bp,-0.008,                # add labels
+%%      labels=names(ec$AEC)[o],
+%%      srt=35,adj=1,cex=1)
+%% rm(opar)  # remove the plotting parameters
+%% @ 
 
 \begin{figure}
   \center
-<<fig=true,echo=false>>=
-<<b>>
-@
-\caption{Bar plot of the Oyster Reef model Average Environ
+%% <<fig=true,echo=false>>=
+%% <<b>>
+%% @
+%% \
+caption{Bar plot of the Oyster Reef model Average Environ
   Centralities.} \label{fig:aec}
 \end{figure}
 
@@ -1001,24 +1006,24 @@ same orientation.
 Here is an example of how to use the model orientation functions to
 re-orient the output from \texttt{enaFlow}:
 
-<<>>=
-###Check the current orientation
-get.orient()
-###enaFlow output in row-column
-flow.rc <- enaFlow(oyster)$G
-###Set the global orientation to school
-set.orient('school')
-###Check that it worked
-get.orient()
-###enaFlow output in column-row
-flow.cr <- enaFlow(oyster)$G
-###Check. Outputs should be transposed from each other.
-all(flow.rc == flow.cr)
-all(flow.rc == t(flow.cr))
-###Now change back to the default orientation ('rc')
-set.orient('rc')
+%% <<>>=
+%% ###Check the current orientation
+%% get.orient()
+%% ###enaFlow output in row-column
+%% flow.rc <- enaFlow(oyster)$G
+%% ###Set the global orientation to school
+%% set.orient('school')
+%% ###Check that it worked
+%% get.orient()
+%% ###enaFlow output in column-row
+%% flow.cr <- enaFlow(oyster)$G
+%% ###Check. Outputs should be transposed from each other.
+%% all(flow.rc == flow.cr)
+%% all(flow.rc == t(flow.cr))
+%% ###Now change back to the default orientation ('rc')
+%% set.orient('rc')
 
-@ 
+%% @ 
 
 
 %% We close the description of the package's core functionality with a
@@ -1055,19 +1060,19 @@ model network objects.  To use these models simply use the R
 \textit{base} \texttt{data} function. This will load the models into
 the working memory as a named list of network objects:
 
-<<>>=
-### Import the model sets
-data(bgcModels)
-data(troModels)
-### Check the first few model names
-head(names(bgcModels))
-head(names(troModels))
-### Isolate a single model
-x <- troModels[[1]]
-x <- troModels$"Marine Coprophagy (oyster)"
-### Check out the model
-summary(x)
-@ 
+%% <<>>=
+%% ### Import the model sets
+%% data(bgcModels)
+%% data(troModels)
+%% ### Check the first few model names
+%% head(names(bgcModels))
+%% head(names(troModels))
+%% ### Isolate a single model
+%% x <- troModels[[1]]
+%% x <- troModels$"Marine Coprophagy (oyster)"
+%% ### Check out the model
+%% summary(x)
+%% @ 
 
 %% ------- MODEL TABLES ------------ %%
 
@@ -1240,9 +1245,9 @@ selection of models.
 Our first step is to read in the model data for a set of trophic
 models:
 
-<<>>=
-data(troModels)
-@ 
+%% <<>>=
+%% data(troModels)
+%% @ 
 
 
 Now that we have the raw data loaded, we can start to manipulate
@@ -1250,87 +1255,88 @@ it.  The first step is to balance the models and then we can run the
 flow analysis.  We are using the \texttt{lapply} function to apply the
 analysis across the list of models stored in model.list.
 
-<<>>=
-# balance models as necessary
-m.list <- lapply(troModels,balance)
+%% <<>>=
+%% # balance models as necessary
+%% m.list <- lapply(troModels,balance)
 
-# if balancing fails, you can use force.balance
-# to repeatedly apply the balancing procedure
-unlist(lapply(m.list,ssCheck))
-m.list <- lapply(m.list,force.balance)
-##Check that all the models are balanced
-all(unlist(lapply(m.list,ssCheck)))
+%% # if balancing fails, you can use force.balance
+%% # to repeatedly apply the balancing procedure
+%% unlist(lapply(m.list,ssCheck))
+%% m.list <- lapply(m.list,force.balance)
+%% ##Check that all the models are balanced
+%% all(unlist(lapply(m.list,ssCheck)))
 
-# Example Flow Analysis
-F.list <- lapply(m.list, enaFlow)
+%% # Example Flow Analysis
+%% F.list <- lapply(m.list, enaFlow)
 
-# the full results of the flow analysis is now stored in the elements
-# of the F.list.  To get the results for just the first model...
-F.list[[1]]
-@
+%% # the full results of the flow analysis is now stored in the elements
+%% # of the F.list.  To get the results for just the first model...
+%% F.list[[1]]
+%% @
 
 We can use the same technique to extract specific information, like
 just the ratio of Indirect-to-Direct flow for each model.
 
-<<>>=
-# Example of extracting just specific information - Indirect Effects Ratio
-IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[8]))
-#Look at the first few ID's
-head(IDs)
-@ 
+%% <<>>=
+%% # Example of extracting just specific information - Indirect Effects Ratio
+%% IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[8]))
+%% #Look at the first few ID's
+%% head(IDs)
+%% @ 
 
 We can also collect the set of output-oriented integral flow matrices.
-<<>>=
-# Here is a list containing only the output-oriented integral flow matrices
-N.list <- lapply(m.list,function(x) enaFlow(x)$N)
-@ 
+%% <<>>=
+%% # Here is a list containing only the output-oriented integral flow matrices
+%% N.list <- lapply(m.list,function(x) enaFlow(x)$N)
+%% @ 
 
 We can also apply the \texttt{get.ns} function to extract all of the
 network statistics for each model.  We then use the \texttt{do.call}
 function to reshape the network statistics into a single data frame.
 
-<<>>=
-# Collecting and combining all network statistics
-ns.list <- lapply(m.list,get.ns) # returns as list
-ns <- do.call(rbind,ns.list)  # ns as a data.frame
-# Let's take a quick look at some of the output
-colnames(ns)    # return network statistic names.  
-dim(ns)         # show dimensions of ns matrix
-ns[1:5,1:5]     # show selected results
-@ 
+%% <<>>=
+%% # Collecting and combining all network statistics
+%% ns.list <- lapply(m.list,get.ns) # returns as list
+%% ns <- do.call(rbind,ns.list)  # ns as a data.frame
+%% # Let's take a quick look at some of the output
+%% colnames(ns)    # return network statistic names.  
+%% dim(ns)         # show dimensions of ns matrix
+%% ns[1:5,1:5]     # show selected results
+%% @ 
 
 Given this data frame of network statistics, we can construct
 interesting plots for further analysis. Here we focus on results of
 the St.\ Marks Seagrass ecosystem \citep{baird98}.
 
 \SweaveOpts{width=7,height=4.75}
-<<b>>=
-opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
-x=dim(ns)[1] # number of models
-m.select <- 40:45
-bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-        col="darkgreen",border=NA,ylim=c(0,2))
-text(bp,-0.05,                # add labels
-     labels=rownames(ns)[m.select],
-       srt=45,adj=1,cex=0.85)
-opar <- par(xpd=FALSE)
-abline(h=1,col="orange",lwd=2)
-#
-plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
-     ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-     xlab="Finn Cycling Index (FCI)",
-     xlim=c(0,0.8),ylim=c(0,8))
-#
-rm(opar)  # remove the plotting parameters
-@ 
+%% <<b>>=
+%% opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
+%% x=dim(ns)[1] # number of models
+%% m.select <- 40:45
+%% bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
+%%         col="darkgreen",border=NA,ylim=c(0,2))
+%% text(bp,-0.05,                # add labels
+%%      labels=rownames(ns)[m.select],
+%%        srt=45,adj=1,cex=0.85)
+%% opar <- par(xpd=FALSE)
+%% abline(h=1,col="orange",lwd=2)
+%% #
+%% plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
+%%      ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
+%%      xlab="Finn Cycling Index (FCI)",
+%%      xlim=c(0,0.8),ylim=c(0,8))
+%% #
+%% rm(opar)  # remove the plotting parameters
+%% @ 
 
 
 \begin{figure}
   \center
-<<fig=true,echo=false>>=
-<<b>>
-@
-\caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
+%% <<fig=true,echo=false>>=
+%% <<b>>
+%% @
+%% \
+caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
   of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
 \end{figure}
@@ -1354,11 +1360,11 @@ Multiple measures of network centrality have been proposed, and the
 ecologists can now use the sna algorithms to determine different types
 of centrality for their models.  
 
-<<>>=
-betweenness(oyster)
+%% <<>>=
+%% betweenness(oyster)
 
-closeness(oyster)
-@ 
+%% closeness(oyster)
+%% @ 
 
 The \textit{sna} package introduced new graphical capabilities as
 well. For example, it will create a target diagram of centralities.
@@ -1366,29 +1372,30 @@ well. For example, it will create a target diagram of centralities.
 
 %%%FIX ME!!!
 
-<<d,eval=true>>=
-m <- troModels[[38]]
-b <- betweenness(m)         # calculate betweenness centrality
-nms <- m%v%'vertex.names'   # get vertex names
-show(nms)
-nms[b<=(0.1*max(b))] <- NA  # exclude less central nodes
+%% <<d,eval=true>>=
+%% m <- troModels[[38]]
+%% b <- betweenness(m)         # calculate betweenness centrality
+%% nms <- m%v%'vertex.names'   # get vertex names
+%% show(nms)
+%% nms[b<=(0.1*max(b))] <- NA  # exclude less central nodes
 
-set.seed(3)
-opar <- par(xpd=TRUE,mfrow=c(1,1))
-# create target plot
-gplot.target(m,b,#circ.lab=FALSE,
-             edge.col="grey",
-             label=nms) # show only labels of most central nodes
-             #xlim=c(-1,4))
-rm(opar)
-@ 
+%% set.seed(3)
+%% opar <- par(xpd=TRUE,mfrow=c(1,1))
+%% # create target plot
+%% gplot.target(m,b,#circ.lab=FALSE,
+%%              edge.col="grey",
+%%              label=nms) # show only labels of most central nodes
+%%              #xlim=c(-1,4))
+%% rm(opar)
+%% @ 
 
 \begin{figure}[!htbp]
   \center
-<<fig=true,echo=false,eval=true>>=
-<<d>>
-@
-\caption{Target plot of node betweenness centrality for the Chesapeake
+%% <<fig=true,echo=false,eval=true>>=
+%% <<d>>
+%% @
+%% \
+caption{Target plot of node betweenness centrality for the Chesapeake
   Bay model (mesohaline, carbon, annual).} \label{fig:target}
 \end{figure}
 
@@ -1396,13 +1403,13 @@ rm(opar)
 In addition to the node-level measures, \textit{sna} includes graph-level
 indices.  
 
-<<>>=
-centralization(oyster, degree)
+%% <<>>=
+%% centralization(oyster, degree)
 
-centralization(oyster,closeness)
+%% centralization(oyster,closeness)
 
-centralization(oyster,betweenness)
-@ 
+%% centralization(oyster,betweenness)
+%% @ 
 
 %%\afterpage{\clearpage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1412,50 +1419,50 @@ data.  Here are a few examples of using the package.  Note that some
 functions in \textit{iGraph} conflict with other functions already defined, so
 care is required when using \textit{iGraph}.
 
-<<e>>=
-library(igraph)
-### The adjacency matrix
-A <- St$A
+%% <<e>>=
+%% library(igraph)
+%% ### The adjacency matrix
+%% A <- St$A
 
-### creating an iGraph graph
-g <- graph.adjacency(A)
-plot(g)  # uses iGraph plot tools
-@ 
+%% ### creating an iGraph graph
+%% g <- graph.adjacency(A)
+%% plot(g)  # uses iGraph plot tools
+%% @ 
 
 \textit{iGraph} has a different set of visualization tools and
 generates a different looking graph (Fig.~\ref{fig:igraph}).
 
 \begin{figure}
 \center
-<<fig=TRUE,echo=false>>=
-<<e>>
-@ 
-\caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
+%% <<fig=TRUE,echo=false>>=
+%% <<e>>
+%% @ 
+%% \
+caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 
-<<>>=
-# betweenness centrality (calculated by iGraph and sna)
-betweenness(g) 
+%% <<>>=
+%% # betweenness centrality (calculated by iGraph and sna)
+%% betweenness(g) 
 
-# shortest path between any two nodes
-shortest.paths(g) 
+%% # shortest path between any two nodes
+%% shortest.paths(g) 
 
-# average path length in the network (graph theory sense)
-average.path.length(g,directed=TRUE)   
+%% # average path length in the network (graph theory sense)
+%% average.path.length(g,directed=TRUE)   
 
-diameter(g)  # diameter of the graph
+%% diameter(g)  # diameter of the graph
 
-vertex.connectivity(g)  # connectivity of a graph (group cohesion)
-subcomponent(g,1,'in')  # subcomponent reachable from 1 along inputs
-subcomponent(g,2,'in')  # subcomponent reachable from 2 along inputs
-subcomponent(g,1,'out') # subcomponent reachable from 1 along outputs
-subcomponent(g,2,'out') # subcomponent reachable from 2 along output
+%% vertex.connectivity(g)  # connectivity of a graph (group cohesion)
+%% subcomponent(g,1,'in')  # subcomponent reachable from 1 along inputs
+%% subcomponent(g,2,'in')  # subcomponent reachable from 2 along inputs
+%% subcomponent(g,1,'out') # subcomponent reachable from 1 along outputs
+%% subcomponent(g,2,'out') # subcomponent reachable from 2 along output
 
-edge.connectivity(g)
+%% edge.connectivity(g)
 
-detach(package:igraph)  # detach igraph package
-@ 
-
+%% detach(package:igraph)  # detach igraph package
+%% @ 
 
 
 There are other \R\ packages that have graph and network analysis tools,
