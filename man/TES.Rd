@@ -45,4 +45,7 @@ David E. Hines (deh9951@uncw.edu)
 \code{\link{enaStorage},\link{enaEnviron}}
 }
 \examples{
+data(troModels)
+tes <- TES(troModels[[6]])
+tes
 }
