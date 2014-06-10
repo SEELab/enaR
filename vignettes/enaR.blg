@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: enaR.aux
+The style file: ecology.bst
+I found no \bibdata command---while reading file enaR.aux
+Warning--I didn't find a database entry for "butts08_network"
+Warning--I didn't find a database entry for "butts08_social"
+Warning--I didn't find a database entry for "handcock2008statnet"
+Warning--I didn't find a database entry for "leontief1936"
+Warning--I didn't find a database entry for "leontief66"
+Warning--I didn't find a database entry for "hannon73"
+Warning--I didn't find a database entry for "ulanowicz86"
+Warning--I didn't find a database entry for "ulanowicz97"
+Warning--I didn't find a database entry for "ulanowicz04"
+Warning--I didn't find a database entry for "patten76"
+Warning--I didn't find a database entry for "patten78"
+Warning--I didn't find a database entry for "fath99_review"
+Warning--I didn't find a database entry for "brandes05"
+Warning--I didn't find a database entry for "scharler09comparing"
+Warning--I didn't find a database entry for "borrett12_netecol"
+Warning--I didn't find a database entry for "allesina04_wand"
+Warning--I didn't find a database entry for "christensen04"
+Warning--I didn't find a database entry for "fath06"
+You've used 0 entries,
+            2788 wiz_defined-function locations,
+            557 strings with 4057 characters,
+and the built_in function-call counts, 29 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 8
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 7
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 6
+(There was 1 error message)
