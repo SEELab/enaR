@@ -4,10 +4,9 @@
 # OUTPUT = ratio of positive to negetive elements
 # 
 # S. Borrett | July 2011
+# Singh, Hines, Borrett | Update June 2014
 # ---------------------------------------------------
 bcratio <- function(x='matrix'){
-  plus <- sum(sum(abs(x[x>0])))  # sum positive elements
-  minus <- abs(sum(sum(abs(x[x<0]))))  # sum negative elements
-  r <- plus/minus  # ratio of positive to negative elements
+	r=sum(x[x>0])/sum(abs(x[x<0]))  # creates the ratio of positive elements to negative elements.
   return(r)
 }
