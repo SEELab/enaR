@@ -9,4 +9,5 @@ Description: Functions for the analysis of ecological networks
 Depends: sna, network, MASS, stringr, gdata
 Suggests: codetools, igraph
 License: GPL-2
+URL: https://github.com/SEELab/enaR, https://github.com/SEELab/enaR_vignette
 Packaged: 2012-07-31 16:41:37 UTC; Aeolus
