@@ -54,18 +54,18 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     CQ <- ginv(QP) %*% Q
                                      #SCHRAMSKY'S ALGORITHM
     #Patch | Singh, P | June 2014 | Algorithm Source: Schramsky et al Eco. Mod. I94(2006) 189-201########
-    T_out <- N %*% Ti                                        # Component Output Throughflow T_out
-    T_in <- Tj %*% NP                                        # Component Input Throughflow T_in given the Output y(=Tj)
-    T_in_mat <- matrix(T_in,nrow=length(T_in), ncol=length(T_in),byrow='TRUE')# T_in_mat repeats T_in vector in each row
-    T_out_mat <- matrix(T_out,nrow=length(T_out),ncol=length(T_out),byrow='FALSE') # T_out_mat repeats T_out in each col
-    eta_1<-N/T_out_mat                                       # eta matrix. Can be done by 2 different ways. Way1
-    eta_2<-NP/T_in_mat                                       # Way2 ::: Theoretically eta_1==eta_2 but Numerical error
-    eta<-eta_1                                               # eta:=eta_1. Can be defined as eta_2 to observe variation
-    eta2<-t(eta)                                             # Taking the transpose of eta
-    CD = eta - eta2                                          # Calculating the Control Difference Matrix
-    CR = CD/pmax(eta,eta2)                                   # Control Ratio Matrix. Dividing terms by Max eta value
-    sc = apply(CD,2,sum)                                     # Calculating the System Control Vector
-    names(sc) <- rownames(flow)                              # Assigning Names
+    T_out <- N %*% Ti                               # Component Output Throughflow T_out
+    T_in <- Tj %*% NP                               # Component Input Throughflow T_in given the Output y(=Tj)
+    T_in_mat <- matrix(T_in,nrow=length(T_in), ncol=length(T_in),byrow='TRUE')# T_in_mat repeats T_in vector in rows
+    T_out_mat <- matrix(T_out,nrow=length(T_out),ncol=length(T_out),byrow='FALSE') # T_out_mat repeats T_out in cols
+    eta_1<-N/T_out_mat                              # eta matrix. Can be done by 2 different ways. Way1
+    eta_2<-NP/T_in_mat                              # Way2 ::: Theoretically eta_1==eta_2 but Numerical error
+    eta<-eta_1                                      # eta:=eta_1. Can be defined as eta_2 to observe variation
+    eta2<-t(eta)                                    # Taking the transpose of eta
+    CD = eta - eta2                                 # Calculating the Control Difference Matrix
+    CR = CD/pmax(eta,eta2)                          # Control Ratio Matrix. Dividing terms by Max eta value
+    sc = apply(CD,2,sum)                            # Calculating the System Control Vector
+    names(sc) <- rownames(flow)                     # Assigning Names
     rownames(CR) <- colnames(CR) <- rownames(flow)
     rownames(CD) <- colnames(CD) <- rownames(flow)
                                         #Name nodes
