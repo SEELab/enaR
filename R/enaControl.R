@@ -1,7 +1,6 @@
 # enaControl --- control analyses
 # INPUT = network object
 # OUTPUT = list of control statistics
-# 
 # M. Lau | July 2011
 
 # ---------------------------------------------------
@@ -53,7 +52,7 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
                                         #Storage version
     CQ <- ginv(QP) %*% Q
                                      #SCHRAMSKY'S ALGORITHM
-    #Patch | Singh, P | June 2014 | Algorithm Source: Schramsky et al Eco. Mod. I94(2006) 189-201########
+    #Algorithm Source: Schramsky et al Eco. Mod. I94(2006) 189-201########
     T_out <- N %*% Ti                               # Component Output Throughflow T_out
     T_in <- Tj %*% NP                               # Component Input Throughflow T_in given the Output y(=Tj)
     T_in_mat <- matrix(T_in,nrow=length(T_in), ncol=length(T_in),byrow='TRUE')# T_in_mat repeats T_in vector in rows
