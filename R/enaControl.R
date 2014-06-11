@@ -3,7 +3,7 @@
 # OUTPUT = list of control statistics
 # 
 # M. Lau | July 2011
-# Revised - Singh, P. | June 2014 | Schramsky
+
 # ---------------------------------------------------
 
 enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
