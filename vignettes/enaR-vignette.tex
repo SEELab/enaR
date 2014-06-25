@@ -6,7 +6,14 @@
   \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib  
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage{hyperref}  
+\usepackage{hyperref}  %\hyperref[label_name]{''link text''}                                                                           %\hyperlink{label}{anchor caption}                                                                              %\hypertarget{label}{link caption}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktocpage
+    linktoc=all,     %set to all if you want both sections and
+                     %subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
 \usepackage{ucs} %needed for R output: signif stars etc, quotes
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -119,11 +126,42 @@ Environ & \texttt{enaEnviron} & Patten \\
 
 
 
+%% <<z,echo=false>>=
+%% # set plotting parameters
+%% opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")   
+
+%% ## Taken from https://stat.ethz.ch/pipermail/r-devel/2011-September/062126.html
+%% if (all(ls()!='f.list')){
+%%   require(codetools)
+%% library(enaR)
+%% called.by <- function(tarFunc, tarPack){
+%%   flist <-   sapply(lsf.str(tarPack, all=TRUE), c)
+%%   names(flist) <- NULL
+%%   gotit <- sapply(flist, function(x) tarFunc %in% findGlobals(get(x, tarPack),FALSE)$functions)
+%%   flist[gotit]
+%% }
+
+%% f.list <- as.character(sapply(lsf.str('package:enaR',all=TRUE),c))
+%% f.array <- array(0,dim=rep(length(f.list),2))
+%% rownames(f.array) <- colnames(f.array) <- f.list
+%% for (i in 1:length(f.list)){
+%%   f.array[match(called.by(f.list[i],'package:enaR'),rownames(f.array)),i] <- 1
+%% }
+%% f.net <- network(t(f.array))
+%% }
+
+%% plot(f.net,displaylabels=TRUE,label.cex=0.85,arrowhead.cex=0.65,
+%%      edge.lwd=0.75,vertex.col='lightblue',vertex.border='white',edge.col='darkgrey')
+%% @
+
 
 
 \begin{figure}
   \center
-\includegraphics{enaR-vignette-003}
+%% <<fig=true,echo=false>>=
+%% <<z>>
+%% @
+\includegraphics[]{enaR-vignette-003}
 \caption{A plot of the \textit{enaR} function relationships. Edges
   point \textit{from} a function that provides information \textit{to}
   the function that receives that information.} \label{fig:fig}
@@ -278,17 +316,17 @@ hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   flow:
-     node1           node2       node3           node4  
- Min.   :0.000   Min.   :0   Min.   :0.000   Min.   :0  
- 1st Qu.:1.742   1st Qu.:0   1st Qu.:0.000   1st Qu.:0  
- Median :2.493   Median :0   Median :0.000   Median :0  
- Mean   :2.952   Mean   :0   Mean   :1.059   Mean   :0  
- 3rd Qu.:3.703   3rd Qu.:0   3rd Qu.:1.059   3rd Qu.:0  
- Max.   :6.822   Max.   :0   Max.   :4.237   Max.   :0  
+     node1           node2           node3           node4       
+ Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.9946  
+ 1st Qu.:3.009   1st Qu.:0.000   1st Qu.:1.464   1st Qu.:1.3365  
+ Median :4.359   Median :2.759   Median :3.452   Median :1.8482  
+ Mean   :3.860   Mean   :2.806   Mean   :3.127   Mean   :2.1938  
+ 3rd Qu.:5.209   3rd Qu.:5.565   3rd Qu.:5.114   3rd Qu.:2.7055  
+ Max.   :6.722   Max.   :5.707   Max.   :5.603   Max.   :4.0840  
   balanced = FALSE 
-  total edges= 3 
+  total edges= 8 
     missing edges= 0 
-    non-missing edges= 3 
+    non-missing edges= 8 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -329,7 +367,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 2.394602 3.759031 3.019195 2.775193
+[1] 3.485097 1.714987 2.667520 3.099879
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -346,11 +384,11 @@ characteristic and it can be extracted as:
 > fake.model%n%'flow'
 \end{Sinput}
 \begin{Soutput}
-         node1 node2    node3 node4
-node1 2.663715     0 0.000000     0
-node2 0.000000     0 4.236736     0
-node3 2.323040     0 0.000000     0
-node4 6.822446     0 0.000000     0
+         node1    node2    node3    node4
+node1 4.704817 5.707038 1.952540 0.994647
+node2 6.722456 5.518229 5.602542 4.084039
+node3 0.000000 0.000000 4.951168 1.450399
+node4 4.012407 0.000000 0.000000 2.245974
 \end{Soutput}
 \end{Schunk}
 
@@ -365,20 +403,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1 node2    node3 node4
-node1 2.663715     0 0.000000     0
-node2 0.000000     0 4.236736     0
-node3 2.323040     0 0.000000     0
-node4 6.822446     0 0.000000     0
+         node1    node2    node3    node4
+node1 4.704817 5.707038 1.952540 0.994647
+node2 6.722456 5.518229 5.602542 4.084039
+node3 0.000000 0.000000 4.951168 1.450399
+node4 4.012407 0.000000 0.000000 2.245974
 
 $z
-[1] 2.394602 3.759031 3.019195 2.775193
+[1] 3.485097 1.714987 2.667520 3.099879
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 2.394602 3.759031 3.019195 2.775193
+[1] 3.485097 1.714987 2.667520 3.099879
 
 $y
 [1] NA NA NA NA
@@ -651,8 +689,13 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 \begin{figure}
   \center
   \begin{tabular}{cc}
-\includegraphics{enaR-vignette-020}
-\includegraphics{enaR-vignette-021}
+%% <<fig=true,echo=false>>=
+%% <<a>>
+%% @ \\
+%% <<fig=true,echo=false>>=
+%% <<b>>
+%% @ \\
+
   \end{tabular}
   \caption{Simple (left) and fancy (right) plot of the Oyster network
     model (Dame and Patten 1981).} \label{fig:oyster}
@@ -1188,7 +1231,7 @@ Recent updates to control analysis \citep[e.g.,][]{schramski06,
 \end{Sinput}
 \begin{Soutput}
 $names
-[1] "CN" "CQ"
+[1] "CN" "CQ" "CR" "CD" "sc"
 \end{Soutput}
 \end{Schunk}
 
@@ -1439,7 +1482,9 @@ Centralities.
 
 \begin{figure}
   \center
-\includegraphics{enaR-vignette-039}
+%% <<fig=true,echo=false>>=
+%% <<b>>
+%% @
 \caption{Bar plot of the Oyster Reef model Average Environ
   Centralities.} \label{fig:aec}
 \end{figure}
@@ -2238,7 +2283,9 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 
 \begin{figure}
   \center
-\includegraphics{enaR-vignette-048}
+%% <<fig=true,echo=false>>=
+%% <<b>>
+%% @
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
   of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
@@ -2290,28 +2337,6 @@ well. For example, it will create a target diagram of centralities.
 > b <- betweenness(m)         # calculate betweenness centrality
 > nms <- m%v%'vertex.names'   # get vertex names
 > show(nms)
-\end{Sinput}
-\begin{Soutput}
- [1] "Phytoplankton"                 "Bacteria in Suspended POC"    
- [3] "Bacteria in Sediment POC"      "Benthic Diatoms"              
- [5] "Free Bacteria"                 "Heterotrophic Microflagelates"
- [7] "Ciliates"                      "Zooplankton"                  
- [9] "Ctenophores"                   "Sea Nettle"                   
-[11] "Other Suspension Feeders"      "Mya arenaria"                 
-[13] "Oysters"                       "Other Polychaetes"            
-[15] "Nereis"                        "Macoma spp."                  
-[17] "Meiofauna"                     "Crustacean Deposit Feeder"    
-[19] "Blue Crab"                     "Fish Larvae"                  
-[21] "Alewife & Blue Herring"        "Bay Anchovy"                  
-[23] "Menhaden"                      "Shad"                         
-[25] "Croaker"                       "Hogchoker"                    
-[27] "Spot"                          "White Perch"                  
-[29] "Catfish"                       "Bluefish"                     
-[31] "Weakfish"                      "Summer Flounder"              
-[33] "Striped Bass"                  "Dissolved Organic Carbon"     
-[35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
-\end{Soutput}
-\begin{Sinput}
 > nms[b<=(0.1*max(b))] <- NA  # exclude less central nodes
 > set.seed(3)
 > opar <- par(xpd=TRUE,mfrow=c(1,1))
@@ -2326,29 +2351,9 @@ well. For example, it will create a target diagram of centralities.
 
 \begin{figure}[!htbp]
   \center
-\begin{Schunk}
-\begin{Soutput}
- [1] "Phytoplankton"                 "Bacteria in Suspended POC"    
- [3] "Bacteria in Sediment POC"      "Benthic Diatoms"              
- [5] "Free Bacteria"                 "Heterotrophic Microflagelates"
- [7] "Ciliates"                      "Zooplankton"                  
- [9] "Ctenophores"                   "Sea Nettle"                   
-[11] "Other Suspension Feeders"      "Mya arenaria"                 
-[13] "Oysters"                       "Other Polychaetes"            
-[15] "Nereis"                        "Macoma spp."                  
-[17] "Meiofauna"                     "Crustacean Deposit Feeder"    
-[19] "Blue Crab"                     "Fish Larvae"                  
-[21] "Alewife & Blue Herring"        "Bay Anchovy"                  
-[23] "Menhaden"                      "Shad"                         
-[25] "Croaker"                       "Hogchoker"                    
-[27] "Spot"                          "White Perch"                  
-[29] "Catfish"                       "Bluefish"                     
-[31] "Weakfish"                      "Summer Flounder"              
-[33] "Striped Bass"                  "Dissolved Organic Carbon"     
-[35] "Suspended Particulate Carbon"  "Sediment Partculate Carbon"   
-\end{Soutput}
-\end{Schunk}
-\includegraphics{enaR-vignette-051}
+%% <<fig=true,echo=false,eval=true>>=
+%% <<d>>
+%% @
 \caption{Target plot of node betweenness centrality for the Chesapeake
   Bay model (mesohaline, carbon, annual).} \label{fig:target}
 \end{figure}
@@ -2402,7 +2407,9 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 
 \begin{figure}
 \center
-\includegraphics{enaR-vignette-054}
+%% <<fig=TRUE,echo=false>>=
+%% <<e>>
+%% @ 
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 
@@ -2410,110 +2417,3 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 \begin{Sinput}
 > # betweenness centrality (calculated by iGraph and sna)
 > betweenness(g) 
-\end{Sinput}
-\begin{Soutput}
-    Filter Feeders         Microbiota          Meiofauna 
-               0.0                0.0                0.5 
-   Deposit Feeders          Predators Deposited Detritus 
-               3.5                0.0                9.0 
-\end{Soutput}
-\begin{Sinput}
-> # shortest path between any two nodes
-> shortest.paths(g) 
-\end{Sinput}
-\begin{Soutput}
-                   Filter Feeders Microbiota Meiofauna Deposit Feeders
-Filter Feeders                  0          2         2               2
-Microbiota                      2          0         1               1
-Meiofauna                       2          1         0               1
-Deposit Feeders                 2          1         1               0
-Predators                       1          2         2               1
-Deposited Detritus              1          1         1               1
-                   Predators Deposited Detritus
-Filter Feeders             1                  1
-Microbiota                 2                  1
-Meiofauna                  2                  1
-Deposit Feeders            1                  1
-Predators                  0                  1
-Deposited Detritus         1                  0
-\end{Soutput}
-\begin{Sinput}
-> # average path length in the network (graph theory sense)
-> average.path.length(g,directed=TRUE)   
-\end{Sinput}
-\begin{Soutput}
-[1] 1.52
-\end{Soutput}
-\begin{Sinput}
-> diameter(g)  # diameter of the graph
-\end{Sinput}
-\begin{Soutput}
-[1] 2
-\end{Soutput}
-\begin{Sinput}
-> vertex.connectivity(g)  # connectivity of a graph (group cohesion)
-\end{Sinput}
-\begin{Soutput}
-[1] 0
-\end{Soutput}
-\begin{Sinput}
-> subcomponent(g,1,'in')  # subcomponent reachable from 1 along inputs
-\end{Sinput}
-\begin{Soutput}
-[1] 1
-\end{Soutput}
-\begin{Sinput}
-> subcomponent(g,2,'in')  # subcomponent reachable from 2 along inputs
-\end{Sinput}
-\begin{Soutput}
-[1] 2 6 1 3 4 5
-\end{Soutput}
-\begin{Sinput}
-> subcomponent(g,1,'out') # subcomponent reachable from 1 along outputs
-\end{Sinput}
-\begin{Soutput}
-[1] 1 5 6 2 3 4
-\end{Soutput}
-\begin{Sinput}
-> subcomponent(g,2,'out') # subcomponent reachable from 2 along output
-\end{Sinput}
-\begin{Soutput}
-[1] 2 3 4 6 5
-\end{Soutput}
-\begin{Sinput}
-> edge.connectivity(g)
-\end{Sinput}
-\begin{Soutput}
-[1] 0
-\end{Soutput}
-\begin{Sinput}
-> detach(package:igraph)  # detach igraph package
-\end{Sinput}
-\end{Schunk}
-
-
-
-There are other \R\ packages that have graph and network analysis tools,
-like Bioconductor, that might also be useful for ecologists
-
-
-\section{Summary and Future}
-This vignette shows how to use several of the key features of the
-\textit{enaR} package that enables scientists to perform Ecological
-Network Analysis in \R.  The vision for this package is that it will
-provide access to ENA algorithms from both the Ulanowicz and Patten
-Schools.  In its current form it replicates, updates, and extends the
-functionality of the NEA.m function \citep{fath06}.  It also includes
-both ascendency calculations and mixed trophic impacts from the
-Ulanowicz school of ENA, but there remains many possibilities for
-future development.  We hope to do this in collaboration with
-users. This vignette also illustrates how users can further analyze
-their data with other \R\ packages for graph and network analysis like
-\textit{sna} and \textit{iGraph}.  In summary, we hope you find this
-package useful for your ENA needs.  
-
-\bibliography{srbbib_abb,srb}
-
-
-\end{document}  
-
