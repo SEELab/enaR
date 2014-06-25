@@ -1266,9 +1266,11 @@ it.  The first step is to balance the models and then we can run the
 flow analysis.  We are using the \texttt{lapply} function to apply the
 analysis across the list of models stored in model.list.
 
-<<eval=false>>=
+%%%Working on pairing down the balancing example run time
+
+<<>>=
 # balance models as necessary
-m.list <- lapply(troModels,balance)
+m.list <- lapply(troModels[51:70],balance)
 
 # if balancing fails, you can use force.balance
 # to repeatedly apply the balancing procedure
@@ -1277,9 +1279,6 @@ m.list <- lapply(m.list,force.balance)
 ##Check that all the models are balanced
 all(unlist(lapply(m.list,ssCheck)))
 
-@ 
-
-<<>>=
 # Example Flow Analysis
 F.list <- lapply(m.list, enaFlow)
 
