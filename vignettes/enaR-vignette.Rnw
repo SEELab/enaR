@@ -1270,11 +1270,15 @@ analysis across the list of models stored in model.list.
 
 <<>>=
 # balance models as necessary
-m.list <- lapply(troModels[51:70],balance)
+m.list <- lapply(troModels[1:10],balance)
+
+# check that models are balanced
+unlist(lapply(m.list,ssCheck))
 
 # if balancing fails, you can use force.balance
 # to repeatedly apply the balancing procedure
-unlist(lapply(m.list,ssCheck))
+# although this is not the case with our model set
+
 m.list <- lapply(m.list,force.balance)
 ##Check that all the models are balanced
 all(unlist(lapply(m.list,ssCheck)))
@@ -1285,10 +1289,17 @@ F.list <- lapply(m.list, enaFlow)
 # the full results of the flow analysis is now stored in the elements
 # of the F.list.  To get the results for just the first model...
 F.list[[1]]
+
 @
 
 We can use the same technique to extract specific information, like
 just the ratio of Indirect-to-Direct flow for each model.
+
+<<echo=false,results=hide>>=
+data(troModelsBalanced)
+m.list <- troModelsBalanced
+
+@ 
 
 <<>>=
 # Example of extracting just specific information - Indirect Effects Ratio

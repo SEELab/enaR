@@ -1888,10 +1888,12 @@ it.  The first step is to balance the models and then we can run the
 flow analysis.  We are using the \texttt{lapply} function to apply the
 analysis across the list of models stored in model.list.
 
+%%%Working on pairing down the balancing example run time
+
 \begin{Schunk}
 \begin{Sinput}
 > # balance models as necessary
-> m.list <- lapply(troModels,balance)
+> m.list <- lapply(troModels[1:10],balance)
 \end{Sinput}
 \begin{Soutput}
 [1] BALANCED
@@ -1904,179 +1906,28 @@ analysis across the list of models stored in model.list.
 [1] BALANCED
 [1] BALANCED
 [1] BALANCED
-[1] AVG2
-[1] AVG2
-[1] BALANCED
-[1] AVG2
-[1] AVG2
-[1] BALANCED
-[1] AVG2
-[1] BALANCED
-[1] AVG2
-[1] AVG2
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] AVG2
-[1] AVG2
-[1] AVG2
-[1] AVG2
-[1] BALANCED
-[1] AVG2
-[1] AVG2
-[1] BALANCED
-[1] AVG2
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] AVG2
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] AVG2
-[1] AVG2
-[1] AVG2
-[1] AVG2
-[1] AVG2
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
-[1] BALANCED
+\end{Soutput}
+\begin{Sinput}
+> # check that models are balanced
+> unlist(lapply(m.list,ssCheck))
+\end{Sinput}
+\begin{Soutput}
+Marine Coprophagy (oyster)              Lake Findley  
+                      TRUE                       TRUE 
+               Mirror Lake                Lake Wingra 
+                      TRUE                       TRUE 
+               Marion Lake               Cone Springs 
+                      TRUE                       TRUE 
+            Silver Springs            English Channel 
+                      TRUE                       TRUE 
+              Oyster Reef               Baie de Somme 
+                      TRUE                       TRUE 
 \end{Soutput}
 \begin{Sinput}
 > # if balancing fails, you can use force.balance
 > # to repeatedly apply the balancing procedure
-> unlist(lapply(m.list,ssCheck))
-\end{Sinput}
-\begin{Soutput}
-           Marine Coprophagy (oyster) 
-                                 TRUE 
-                        Lake Findley  
-                                 TRUE 
-                          Mirror Lake 
-                                 TRUE 
-                          Lake Wingra 
-                                 TRUE 
-                          Marion Lake 
-                                 TRUE 
-                         Cone Springs 
-                                 TRUE 
-                       Silver Springs 
-                                 TRUE 
-                      English Channel 
-                                 TRUE 
-                         Oyster Reef  
-                                 TRUE 
-                        Baie de Somme 
-                                 TRUE 
-                         Bothnian Bay 
-                                 TRUE 
-                         Bothnian Sea 
-                                 TRUE 
-                        Ythan Estuary 
-                                 TRUE 
-          Sundarban Mangrove (virgin) 
-                                 TRUE 
-       Sundarban Mangrove (reclaimed) 
-                                 TRUE 
-                           Baltic Sea 
-                                 TRUE 
-                          Ems Estuary 
-                                 TRUE 
-                Swartkops Estuary  15 
-                                 TRUE 
-          Southern Benguela Upwelling 
-                                 TRUE 
-                   Peruvian Upwelling 
-                                 TRUE 
-              Crystal River (control) 
-                                 TRUE 
-              Crystal River (thermal) 
-                                 TRUE 
-          Charca de Maspalomas Lagoon 
-                                 TRUE 
-          Northern Benguela Upwelling 
-                                 TRUE 
-                    Swartkops Estuary 
-                                 TRUE 
-                       Sunday Estuary 
-                                 TRUE 
-                       Kromme Estuary 
-                                 TRUE 
-                     Okefenokee Swamp 
-                                 TRUE 
-    Neuse Estuary (early summer 1997) 
-                                 TRUE 
-    Neuse Estuary (late summer 1997)  
-                                 TRUE 
-    Neuse Estuary (early summer 1998) 
-                                 TRUE 
-     Neuse Estuary (late summer 1998) 
-                                 TRUE 
-                        Gulf of Maine 
-                                 TRUE 
-                         Georges Bank 
-                                 TRUE 
-                Middle Atlantic Bight 
-                                 TRUE 
-                     Narragansett Bay 
-                                 TRUE 
-           Southern New England Bight 
-                                 TRUE 
-                      Chesapeake Bay  
-                                 TRUE 
-Mondego Estuary (Zostera sp. Meadows) 
-                                 TRUE 
-    St. Marks Seagrass, site 1 (Jan.) 
-                                 TRUE 
-    St. Marks Seagrass, site 1 (Feb.) 
-                                 TRUE 
-    St. Marks Seagrass, site 2 (Jan.) 
-                                 TRUE 
-    St. Marks Seagrass, site 2 (Feb.) 
-                                 TRUE 
-    St. Marks Seagrass, site 3 (Jan.) 
-                                 TRUE 
-    St. Marks Seagrass, site 4 (Feb.) 
-                                 TRUE 
-              Sylt-R{\\o}m{\\o} Bight 
-                                 TRUE 
-                     Graminoids (wet) 
-                                 TRUE 
-                     Graminoids (dry) 
-                                 TRUE 
-                        Cypress (wet) 
-                                 TRUE 
-                        Cypress (dry) 
-                                 TRUE 
-                 Lake Oneida (pre-ZM) 
-                                 TRUE 
-                Lake Oneida (post-ZM) 
-                                 TRUE 
-               Bay of Quinte (pre-ZM) 
-                                 TRUE 
-              Bay of Quinte (post-ZM) 
-                                 TRUE 
-                      Mangroves (wet) 
-                                 TRUE 
-                      Mangroves (dry) 
-                                 TRUE 
-                    Florida Bay (wet) 
-                                 TRUE 
-                    Florida Bay (dry) 
-                                 TRUE 
-\end{Soutput}
-\begin{Sinput}
+> # although this is not the case with our model set
+> 
 > m.list <- lapply(m.list,force.balance)
 > ##Check that all the models are balanced
 > all(unlist(lapply(m.list,ssCheck)))
@@ -2174,10 +2025,14 @@ $ns
      AMP.O mode0.F  mode1.F  mode2.F  mode3.F mode4.F
 [1,]     0   379.6 103.7915 65.90846 103.7915   379.6
 \end{Soutput}
+\begin{Sinput}
+> 
+\end{Sinput}
 \end{Schunk}
 
 We can use the same technique to extract specific information, like
 just the ratio of Indirect-to-Direct flow for each model.
+
 
 \begin{Schunk}
 \begin{Sinput}
@@ -2212,208 +2067,3 @@ function to reshape the network statistics into a single data frame.
 \begin{Sinput}
 > # Collecting and combining all network statistics
 > ns.list <- lapply(m.list,get.ns) # returns as list
-> ns <- do.call(rbind,ns.list)  # ns as a data.frame
-> # Let's take a quick look at some of the output
-> colnames(ns)    # return network statistic names.  
-\end{Sinput}
-\begin{Soutput}
- [1] "n"           "L"           "C"           "LD"         
- [5] "ppr"         "lam1A"       "mlam1A"      "rho"        
- [9] "R"           "d"           "no.scc"      "no.scc.big" 
-[13] "pscc"        "Boundary"    "TST"         "TSTp"       
-[17] "APL"         "FCI"         "BFI"         "DFI"        
-[21] "IFI"         "ID.F"        "ID.F.I"      "ID.F.O"     
-[25] "HMG.I"       "HMG.O"       "AMP.I"       "AMP.O"      
-[29] "mode0.F"     "mode1.F"     "mode2.F"     "mode3.F"    
-[33] "mode4.F"     "AMI"         "ASC"         "OH"         
-[37] "CAP"         "ASC.CAP"     "OH.CAP"      "TSS"        
-[41] "CIS"         "BSI"         "DSI"         "ISI"        
-[45] "ID.S"        "ID.S.I"      "ID.S.O"      "HMG.S.O"    
-[49] "HMG.S.I"     "NAS"         "NASP"        "mode0.S"    
-[53] "mode1.S"     "mode2.S"     "mode3.S"     "mode4.S"    
-[57] "lam1D"       "synergism.F" "mutualism.F" "lam1DS"     
-[61] "synergism.S" "mutualism.S"
-\end{Soutput}
-\begin{Sinput}
-> dim(ns)         # show dimensions of ns matrix
-\end{Sinput}
-\begin{Soutput}
-[1] 58 62
-\end{Soutput}
-\begin{Sinput}
-> ns[1:5,1:5]     # show selected results
-\end{Sinput}
-\begin{Soutput}
-                           n  L     C  LD      ppr
-Marine Coprophagy (oyster) 4  4 0.250 1.0 1.000000
-Lake Findley               4  6 0.375 1.5 1.004975
-Mirror Lake                5  9 0.360 1.8 1.324718
-Lake Wingra                5 10 0.400 2.0 2.000000
-Marion Lake                5  9 0.360 1.8 1.324718
-\end{Soutput}
-\end{Schunk}
-
-Given this data frame of network statistics, we can construct
-interesting plots for further analysis. Here we focus on results of
-the St.\ Marks Seagrass ecosystem \citep{baird98}.
-
-
-\begin{Schunk}
-\begin{Sinput}
-> opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
-> x=dim(ns)[1] # number of models
-> m.select <- 40:45
-> bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-+          col="darkgreen",border=NA,ylim=c(0,2))
-> text(bp,-0.05,                # add labels
-+       labels=rownames(ns)[m.select],
-+         srt=45,adj=1,cex=0.85)
-> opar <- par(xpd=FALSE)
-> abline(h=1,col="orange",lwd=2)
-> #
-> plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
-+       ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-+       xlab="Finn Cycling Index (FCI)",
-+       xlim=c(0,0.8),ylim=c(0,8))
-> #
-> rm(opar)  # remove the plotting parameters
-\end{Sinput}
-\end{Schunk}
-
-
-\begin{figure}
-  \center
-%% <<fig=true,echo=false>>=
-%% <<b>>
-%% @
-\caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
-  (left) and relationship between the Finn Cycling Index and the ratio
-  of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
-\end{figure}
-
-
-\section{Connecting to Other Useful Packages}
-Another advantage of building the \textit{enaR} package in \R\ is that
-it lets ecologists take advantage of other types of network analysis
-and statistical tools that already exist in \R.  We highlight two
-examples here.
-
-\subsection{sna: Social Network Analysis}
-The \textit{sna} package for Social Network Analysis is bundled in the
-\textit{statnet} package and uses the same network data object defined
-in \textit{network} that we selected to use for \textit{enaR}.  Thus,
-the design decision to use the network data object gives users direct
-access to \textit{sna} tools.  
-
-Multiple measures of network centrality have been proposed, and the
-\textit{sna} package provides a way of calculating several.  Thus,
-ecologists can now use the sna algorithms to determine different types
-of centrality for their models.  
-
-\begin{Schunk}
-\begin{Sinput}
-> betweenness(oyster)
-\end{Sinput}
-\begin{Soutput}
-[1] 0.0 0.0 0.5 3.5 0.0 9.0
-\end{Soutput}
-\begin{Sinput}
-> closeness(oyster)
-\end{Sinput}
-\begin{Soutput}
-[1] 0.625 0.000 0.000 0.000 0.000 0.000
-\end{Soutput}
-\end{Schunk}
-
-The \textit{sna} package introduced new graphical capabilities as
-well. For example, it will create a target diagram of centralities.
-%%\afterpage{\clearpage}
-
-%%%FIX ME!!!
-
-\begin{Schunk}
-\begin{Sinput}
-> m <- troModels[[38]]
-> b <- betweenness(m)         # calculate betweenness centrality
-> nms <- m%v%'vertex.names'   # get vertex names
-> show(nms)
-> nms[b<=(0.1*max(b))] <- NA  # exclude less central nodes
-> set.seed(3)
-> opar <- par(xpd=TRUE,mfrow=c(1,1))
-> # create target plot
-> gplot.target(m,b,#circ.lab=FALSE,
-+               edge.col="grey",
-+               label=nms) # show only labels of most central nodes
->              #xlim=c(-1,4))
-> rm(opar)
-\end{Sinput}
-\end{Schunk}
-
-\begin{figure}[!htbp]
-  \center
-%% <<fig=true,echo=false,eval=true>>=
-%% <<d>>
-%% @
-\caption{Target plot of node betweenness centrality for the Chesapeake
-  Bay model (mesohaline, carbon, annual).} \label{fig:target}
-\end{figure}
-
-
-In addition to the node-level measures, \textit{sna} includes graph-level
-indices.  
-
-\begin{Schunk}
-\begin{Sinput}
-> centralization(oyster, degree)
-\end{Sinput}
-\begin{Soutput}
-[1] 0.45
-\end{Soutput}
-\begin{Sinput}
-> centralization(oyster,closeness)
-\end{Sinput}
-\begin{Soutput}
-[1] 0.75
-\end{Soutput}
-\begin{Sinput}
-> centralization(oyster,betweenness)
-\end{Sinput}
-\begin{Soutput}
-[1] 0.41
-\end{Soutput}
-\end{Schunk}
-
-%%\afterpage{\clearpage}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{iGraph}
-The \textit{iGraph} package can also be useful for analyzing network
-data.  Here are a few examples of using the package.  Note that some
-functions in \textit{iGraph} conflict with other functions already defined, so
-care is required when using \textit{iGraph}.
-
-\begin{Schunk}
-\begin{Sinput}
-> library(igraph)
-> ### The adjacency matrix
-> A <- St$A
-> ### creating an iGraph graph
-> g <- graph.adjacency(A)
-> plot(g)  # uses iGraph plot tools
-\end{Sinput}
-\end{Schunk}
-
-\textit{iGraph} has a different set of visualization tools and
-generates a different looking graph (Fig.~\ref{fig:igraph}).
-
-\begin{figure}
-\center
-%% <<fig=TRUE,echo=false>>=
-%% <<e>>
-%% @ 
-\caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
-\end{figure}
-
-\begin{Schunk}
-\begin{Sinput}
-> # betweenness centrality (calculated by iGraph and sna)
-> betweenness(g) 
