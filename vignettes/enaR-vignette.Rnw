@@ -1295,7 +1295,7 @@ F.list[[1]]
 We can use the same technique to extract specific information, like
 just the ratio of Indirect-to-Direct flow for each model.
 
-<<echo=false,results=hide>>=
+<<eval=false,echo=false,results=hide>>=
 data(troModelsBalanced)
 m.list <- troModelsBalanced
 
