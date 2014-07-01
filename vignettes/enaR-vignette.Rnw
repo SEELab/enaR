@@ -9,7 +9,7 @@
 \usepackage{hyperref}  %\hyperref[label_name]{''link text''}                                                                           %\hyperlink{label}{anchor caption}                                                                              %\hypertarget{label}{link caption}
 \hypersetup{
     colorlinks=true, %set true if you want colored links
-    linktoc=page,
+%    linktoc=page,
     linktoc=all,     %set to all if you want both sections and
                      %subsections linked
     linkcolor=blue,  %choose some color if you want links to stand out
