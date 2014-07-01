@@ -1,0 +1,1453 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  1 JUL 2014 17:59
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\nonstopmode\input enaR-vignette.tex
+(./enaR-vignette.tex
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count90
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen111
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen112
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen113
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks18
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks19
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks20
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2011/04/17 v6.82g Hypertext links for LaTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
+Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
+Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
+Package atveryend Info: \enddocument detected (standard).
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+)
+\@linkdim=\dimen120
+\Hy@linkcounter=\count103
+\Hy@pagecounter=\count104
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2011/04/17 v6.82g Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count105
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4026.
+Package hyperref Info: Link nesting OFF on input line 4031.
+Package hyperref Info: Hyper index ON on input line 4034.
+Package hyperref Info: Plain pages OFF on input line 4041.
+Package hyperref Info: Backreferencing OFF on input line 4046.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4264.
+\c@Hy@tempcnt=\count106
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4617.
+\Fld@menulength=\count107
+\Field@Width=\dimen121
+\Fld@charsize=\dimen122
+Package hyperref Info: Hyper figures OFF on input line 5701.
+Package hyperref Info: Link nesting OFF on input line 5706.
+Package hyperref Info: Hyper index ON on input line 5709.
+Package hyperref Info: backreferencing OFF on input line 5716.
+Package hyperref Info: Link coloring OFF on input line 5721.
+Package hyperref Info: Link coloring with OCG OFF on input line 5726.
+Package hyperref Info: PDF/A mode OFF on input line 5731.
+LaTeX Info: Redefining \ref on input line 5771.
+LaTeX Info: Redefining \pageref on input line 5775.
+\Hy@abspage=\count108
+\c@Item=\count109
+\c@Hfootnote=\count110
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2011/04/17 v6.82g Hyperref driver for pdfTeX
+\Fld@listcount=\count111
+\c@bookmark@seq@number=\count112
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip48
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 16.
+
+
+! Package kvsetkeys Error: Undefined key `linktocpage linktoc'.
+
+See the kvsetkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 }
+      
+The keyval family of the key `linktocpage linktoc' is `Hyp'.
+The setting of the key is ignored because of the error.
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2004/10/17 UCS: Unicode input support
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2004/10/17 UCS: Unicode global data
+)
+\uc@secondtry=\count113
+\uc@combtoks=\toks22
+\uc@combtoksb=\toks23
+\uc@temptokena=\toks24
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/sidecap/sidecap.sty
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\SC@BOXWD=\dimen123
+\SC@CAPWD=\dimen124
+\SC@tempdima=\dimen125
+\SC@tempdimb=\dimen126
+\c@SC@C=\count114
+\SC@BOX=\box28
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/Sweave.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count115
+))
+\Gin@req@height=\dimen127
+\Gin@req@width=\dimen128
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count116
+\FV@InFile=\read1
+\FV@TabBox=\box29
+\c@FancyVerbLine=\count117
+\FV@StepNumber=\count118
+\FV@OutFile=\write3
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
+atim and verb
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)))
+(./enaR-vignette.aux
+
+LaTeX Warning: Label `fig:aec' multiply defined.
+
+)
+\openout1 = `enaR-vignette.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 30.
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 30.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box30
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+Package hyperref Info: Link coloring ON on input line 30.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count119
+)
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
+
+(./enaR-vignette.out) (./enaR-vignette.out)
+\@outlinefile=\write4
+\openout4 = `enaR-vignette.out'.
+
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2009/05/30 v1.1 EverySelectfont Package (MS)
+LaTeX Info: Redefining \selectfont on input line 117.
+)
+\CenteringLeftskip=\skip49
+\RaggedLeftLeftskip=\skip50
+\RaggedRightLeftskip=\skip51
+\CenteringRightskip=\skip52
+\RaggedLeftRightskip=\skip53
+\RaggedRightRightskip=\skip54
+\CenteringParfillskip=\skip55
+\RaggedLeftParfillskip=\skip56
+\RaggedRightParfillskip=\skip57
+\JustifyingParfillskip=\skip58
+\CenteringParindent=\skip59
+\RaggedLeftParindent=\skip60
+\RaggedRightParindent=\skip61
+\JustifyingParindent=\skip62
+)
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count120
+\scratchdimen=\dimen129
+\scratchbox=\box31
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen130
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+(./enaR-vignette.toc)
+\tf@toc=\write5
+\openout5 = `enaR-vignette.toc'.
+
+LaTeX Font Info:    Try loading font information for T1+aess on input line 44.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aess.fd
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+)
+
+Package natbib Warning: Citation `butts08_network' on page 1 undefined on input
+ line 44.
+
+
+Package natbib Warning: Citation `butts08_social' on page 1 undefined on input 
+line 48.
+
+
+Package natbib Warning: Citation `handcock2008statnet' on page 1 undefined on i
+nput line 49.
+
+[1
+
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package natbib Warning: Citation `leontief1936' on page 2 undefined on input li
+ne 65.
+
+
+Package natbib Warning: Citation `leontief66' on page 2 undefined on input line
+ 65.
+
+
+Package natbib Warning: Citation `hannon73' on page 2 undefined on input line 6
+6.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 2 undefined on input lin
+e 69.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 2 undefined on input lin
+e 69.
+
+
+Package natbib Warning: Citation `ulanowicz04' on page 2 undefined on input lin
+e 69.
+
+
+Package natbib Warning: Citation `patten76' on page 2 undefined on input line 7
+2.
+
+
+Package natbib Warning: Citation `patten78' on page 2 undefined on input line 7
+2.
+
+
+Package natbib Warning: Citation `fath99_review' on page 2 undefined on input l
+ine 72.
+
+
+Package natbib Warning: Citation `brandes05' on page 2 undefined on input line 
+81.
+
+
+Package natbib Warning: Citation `scharler09comparing' on page 2 undefined on i
+nput line 84.
+
+
+Package natbib Warning: Citation `borrett12_netecol' on page 2 undefined on inp
+ut line 85.
+
+
+Package natbib Warning: Citation `allesina04_wand' on page 2 undefined on input
+ line 93.
+
+
+Package natbib Warning: Citation `christensen04' on page 2 undefined on input l
+ine 95.
+
+
+Package natbib Warning: Citation `fath06' on page 2 undefined on input line 95.
+
+
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 96.
+LaTeX Font Info:    No file TS1aer.fd. on input line 96.
+
+LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textcopyright' on input line 96.
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 112.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+<enaR-vignette-003.pdf, id=147, 433.62pt x 289.08pt>
+File: enaR-vignette-003.pdf Graphic file (type pdf)
+
+<use enaR-vignette-003.pdf>
+Package pdftex.def Info: enaR-vignette-003.pdf used on input line 165.
+(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
+ [2]
+
+Package natbib Warning: Citation `butts08_network' on page 3 undefined on input
+ line 266.
+
+[3]
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 293
+.
+LaTeX Font Info:    No file TS1aett.fd. on input line 293.
+
+
+LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 293.
+
+[4 <./enaR-vignette-003.pdf>] [5] [6]
+
+Package natbib Warning: Citation `allesina03' on page 7 undefined on input line
+ 470.
+
+
+Package natbib Warning: Citation `ulanowicz91' on page 7 undefined on input lin
+e 483.
+
+
+Package natbib Warning: Citation `dame81' on page 7 undefined on input line 494
+.
+
+[7] [8]
+
+Package natbib Warning: Citation `allesina04_wand' on page 9 undefined on input
+ line 549.
+
+
+Package natbib Warning: Citation `scharler2012ecosystem' on page 9 undefined on
+ input line 565.
+
+
+Package natbib Warning: Citation `fath06' on page 9 undefined on input line 578
+.
+
+
+Package natbib Warning: Citation `fath06' on page 9 undefined on input line 599
+.
+
+[9] [10]
+
+Package natbib Warning: Citation `dame81' on page 11 undefined on input line 71
+2.
+
+
+Package natbib Warning: Citation `fath06' on page 11 undefined on input line 72
+3.
+
+
+Package natbib Warning: Citation `borrett03' on page 11 undefined on input line
+ 742.
+
+
+Package natbib Warning: Citation `borrett07_jtb' on page 11 undefined on input 
+line 744.
+
+
+Package natbib Warning: Citation `caswell01' on page 11 undefined on input line
+ 748.
+
+
+Package natbib Warning: Citation `farkas2001spectra' on page 11 undefined on in
+put line 749.
+
+[11]
+
+Package natbib Warning: Citation `fath99_review' on page 12 undefined on input 
+line 788.
+
+
+Package natbib Warning: Citation `fath06' on page 12 undefined on input line 78
+8.
+
+
+Package natbib Warning: Citation `schramski11' on page 12 undefined on input li
+ne 788.
+
+
+Package natbib Warning: Citation `borrett11_ree' on page 12 undefined on input 
+line 791.
+
+
+Package natbib Warning: Citation `borrett11_equ' on page 12 undefined on input 
+line 791.
+
+
+Package natbib Warning: Citation `finn76' on page 12 undefined on input line 81
+1.
+
+
+Package natbib Warning: Citation `finn80' on page 12 undefined on input line 81
+2.
+
+
+Package natbib Warning: Citation `borrett06_neuse' on page 12 undefined on inpu
+t line 815.
+
+
+Package natbib Warning: Citation `borrett11_ree' on page 12 undefined on input 
+line 816.
+
+
+Package natbib Warning: Citation `borrett11_equ' on page 12 undefined on input 
+line 816.
+
+
+Package natbib Warning: Citation `fath06' on page 12 undefined on input line 81
+7.
+
+
+Package natbib Warning: Citation `fath06' on page 12 undefined on input line 81
+8.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] [13]
+
+Package natbib Warning: Citation `ulanowicz86' on page 14 undefined on input li
+ne 949.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 14 undefined on input li
+ne 949.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 14 undefined on input li
+ne 969.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 14 undefined on input li
+ne 969.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 14 undefined on input li
+ne 969.
+
+
+Package natbib Warning: Citation `ulanowicz97' on page 14 undefined on input li
+ne 969.
+
+
+Package natbib Warning: Citation `fath99_review' on page 14 undefined on input 
+line 988.
+
+
+Package natbib Warning: Citation `schramski11' on page 14 undefined on input li
+ne 988.
+
+[14]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 1015.
+
+
+Package natbib Warning: Citation `fath06' on page 15 undefined on input line 10
+40.
+
+
+Package natbib Warning: Citation `fath06' on page 15 undefined on input line 10
+41.
+
+
+Package natbib Warning: Citation `patten91' on page 15 undefined on input line 
+1060.
+
+
+Package natbib Warning: Citation `fath99_review' on page 15 undefined on input 
+line 1060.
+
+
+Package natbib Warning: Citation `ulanowicz90' on page 15 undefined on input li
+ne 1061.
+
+[15]
+
+Package natbib Warning: Citation `patten78' on page 16 undefined on input line 
+1117.
+
+
+Package natbib Warning: Citation `fath99_review' on page 16 undefined on input 
+line 1117.
+
+
+Package natbib Warning: Citation `borrett11_ree' on page 16 undefined on input 
+line 1122.
+
+[16]
+
+LaTeX Font Warning: Font shape `TS1/aett/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textasciigrave' on input line 1137.
+
+[17]
+
+Package natbib Warning: Citation `schramski06' on page 18 undefined on input li
+ne 1226.
+
+
+Package natbib Warning: Citation `schramski07' on page 18 undefined on input li
+ne 1226.
+
+[18]
+
+Package natbib Warning: Citation `ulanowicz90' on page 19 undefined on input li
+ne 1244.
+
+
+Package natbib Warning: Citation `ulanowicz90' on page 19 undefined on input li
+ne 1245.
+
+
+Package natbib Warning: Citation `ulanowicz90' on page 19 undefined on input li
+ne 1307.
+
+[19] [20]
+
+Package natbib Warning: Citation `fann12_ec' on page 21 undefined on input line
+ 1417.
+
+[21] [22]
+
+Package natbib Warning: Citation `christian96' on page 23 undefined on input li
+ne 1562.
+
+
+Package natbib Warning: Citation `baird08_sylt' on page 23 undefined on input l
+ine 1562.
+
+
+Package natbib Warning: Citation `borrett10_idd' on page 23 undefined on input 
+line 1563.
+
+
+Package natbib Warning: Citation `borrett10_hmg' on page 23 undefined on input 
+line 1573.
+
+
+Package natbib Warning: Citation `salas11_did' on page 23 undefined on input li
+ne 1574.
+
+
+Package natbib Warning: Citation `borrett13' on page 23 undefined on input line
+ 1574.
+
+[23] [24] [25]
+
+Package natbib Warning: Citation `haven66' on page 26 undefined on input line 1
+721.
+
+
+Package natbib Warning: Citation `richey78' on page 26 undefined on input line 
+1722.
+
+
+Package natbib Warning: Citation `richey78' on page 26 undefined on input line 
+1723.
+
+
+Package natbib Warning: Citation `richey78' on page 26 undefined on input line 
+1724.
+
+
+Package natbib Warning: Citation `richey78' on page 26 undefined on input line 
+1725.
+
+
+Package natbib Warning: Citation `tilly68' on page 26 undefined on input line 1
+726.
+
+
+Package natbib Warning: Citation `odum57' on page 26 undefined on input line 17
+27.
+
+
+Package natbib Warning: Citation `brylinsky72' on page 26 undefined on input li
+ne 1728.
+
+
+Package natbib Warning: Citation `dame81' on page 26 undefined on input line 17
+29.
+
+
+Package natbib Warning: Citation `rybarczyk03' on page 26 undefined on input li
+ne 1730.
+
+
+Package natbib Warning: Citation `sandberg00' on page 26 undefined on input lin
+e 1731.
+
+
+Package natbib Warning: Citation `sandberg00' on page 26 undefined on input lin
+e 1732.
+
+
+Package natbib Warning: Citation `baird81' on page 26 undefined on input line 1
+733.
+
+
+Package natbib Warning: Citation `ray08' on page 26 undefined on input line 173
+4.
+
+
+Package natbib Warning: Citation `ray08' on page 26 undefined on input line 173
+5.
+
+
+Package natbib Warning: Citation `baird91' on page 26 undefined on input line 1
+736.
+
+
+Package natbib Warning: Citation `baird91' on page 26 undefined on input line 1
+737.
+
+
+Package natbib Warning: Citation `baird91' on page 26 undefined on input line 1
+738.
+
+
+Package natbib Warning: Citation `baird91' on page 26 undefined on input line 1
+739.
+
+
+Package natbib Warning: Citation `baird91' on page 26 undefined on input line 1
+740.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 26 undefined on input li
+ne 1741.
+
+
+Package natbib Warning: Citation `ulanowicz86' on page 26 undefined on input li
+ne 1742.
+
+
+Package natbib Warning: Citation `almunia99' on page 26 undefined on input line
+ 1743.
+
+
+Package natbib Warning: Citation `heymans00' on page 26 undefined on input line
+ 1744.
+
+
+Package natbib Warning: Citation `scharler05' on page 26 undefined on input lin
+e 1745.
+
+
+Package natbib Warning: Citation `scharler05' on page 26 undefined on input lin
+e 1746.
+
+
+Package natbib Warning: Citation `scharler05' on page 26 undefined on input lin
+e 1747.
+
+
+Package natbib Warning: Citation `whipple93' on page 26 undefined on input line
+ 1748.
+
+
+Package natbib Warning: Citation `baird04' on page 26 undefined on input line 1
+749.
+
+
+Package natbib Warning: Citation `baird04' on page 26 undefined on input line 1
+750.
+
+
+Package natbib Warning: Citation `baird04' on page 26 undefined on input line 1
+751.
+
+
+Package natbib Warning: Citation `baird04' on page 26 undefined on input line 1
+752.
+
+
+Package natbib Warning: Citation `link08' on page 26 undefined on input line 17
+53.
+
+
+Package natbib Warning: Citation `link08' on page 26 undefined on input line 17
+54.
+
+
+Package natbib Warning: Citation `link08' on page 26 undefined on input line 17
+55.
+
+
+Package natbib Warning: Citation `monaco97' on page 26 undefined on input line 
+1756.
+
+
+Package natbib Warning: Citation `link08' on page 26 undefined on input line 17
+57.
+
+
+Package natbib Warning: Citation `baird89' on page 26 undefined on input line 1
+758.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-34.def
+File: uni-34.def 2004/10/17 UCS: Unicode data U+2200..U+22FF
+)
+
+Package natbib Warning: Citation `patricio2006mass' on page 26 undefined on inp
+ut line 1759.
+
+
+Package natbib Warning: Citation `baird98' on page 26 undefined on input line 1
+760.
+
+
+Package natbib Warning: Citation `baird98' on page 26 undefined on input line 1
+761.
+
+
+Package natbib Warning: Citation `baird98' on page 26 undefined on input line 1
+762.
+
+
+Package natbib Warning: Citation `baird98' on page 26 undefined on input line 1
+763.
+
+
+Package natbib Warning: Citation `baird98' on page 26 undefined on input line 1
+764.
+
+
+Package natbib Warning: Citation `baird98' on page 26 undefined on input line 1
+765.
+
+
+Package natbib Warning: Citation `baird04_sylt' on page 26 undefined on input l
+ine 1766.
+
+
+Package natbib Warning: Citation `ulanowicz00_graminoids' on page 26 undefined 
+on input line 1767.
+
+
+Package natbib Warning: Citation `ulanowicz00_graminoids' on page 26 undefined 
+on input line 1768.
+
+
+Package natbib Warning: Citation `ulanowicz97_cypress' on page 26 undefined on 
+input line 1769.
+
+
+Package natbib Warning: Citation `ulanowicz97_cypress' on page 26 undefined on 
+input line 1770.
+
+
+Package natbib Warning: Citation `miehls09_oneida' on page 26 undefined on inpu
+t line 1771.
+
+
+Package natbib Warning: Citation `miehls09_oneida' on page 26 undefined on inpu
+t line 1772.
+
+
+Package natbib Warning: Citation `miehls09_quinte' on page 26 undefined on inpu
+t line 1773.
+
+
+Package natbib Warning: Citation `miehls09_quinte' on page 26 undefined on inpu
+t line 1774.
+
+
+Package natbib Warning: Citation `ulanowicz99_mangrove' on page 26 undefined on
+ input line 1775.
+
+
+Package natbib Warning: Citation `ulanowicz99_mangrove' on page 26 undefined on
+ input line 1776.
+
+
+Package natbib Warning: Citation `ulanowicz98_fb' on page 26 undefined on input
+ line 1777.
+
+
+Package natbib Warning: Citation `ulanowicz98_fb' on page 26 undefined on input
+ line 1778.
+
+
+Package natbib Warning: Citation `finn80' on page 26 undefined on input line 17
+89.
+
+
+Package natbib Warning: Citation `waide74' on page 26 undefined on input line 1
+805.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1806.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1807.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1808.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1809.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1810.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1811.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1812.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1813.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1814.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1815.
+
+
+Package natbib Warning: Citation `jordan72' on page 26 undefined on input line 
+1816.
+
+
+Package natbib Warning: Citation `edmisten70' on page 26 undefined on input lin
+e 1817.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1818.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1819.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1820.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1821.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1822.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1823.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1824.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1825.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1826.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1827.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1828.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1829.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1830.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1831.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1832.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1833.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1834.
+
+
+Package natbib Warning: Citation `hines12' on page 26 undefined on input line 1
+835.
+
+
+Package natbib Warning: Citation `borrett07_lanier' on page 26 undefined on inp
+ut line 1837.
+
+
+Package natbib Warning: Citation `hinrichsen98_baltic' on page 26 undefined on 
+input line 1838.
+
+
+Package natbib Warning: Citation `baird95' on page 26 undefined on input line 1
+839.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 26 undefined on input li
+ne 1840.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 26 undefined on input li
+ne 1841.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 26 undefined on input li
+ne 1842.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 26 undefined on input li
+ne 1843.
+
+
+Package natbib Warning: Citation `ulanowicz99' on page 26 undefined on input li
+ne 1844.
+
+
+Package natbib Warning: Citation `baird08_sylt' on page 26 undefined on input l
+ine 1845.
+
+
+Package natbib Warning: Citation `baird08_sylt' on page 26 undefined on input l
+ine 1846.
+
+
+Package natbib Warning: Citation `finn80' on page 26 undefined on input line 18
+57.
+
+
+Package natbib Warning: Citation `baird91' on page 26 undefined on input line 1
+869.
+
+
+Package natbib Warning: Citation `baird95' on page 26 undefined on input line 1
+869.
+
+
+Package natbib Warning: Citation `christian03' on page 26 undefined on input li
+ne 1869.
+
+
+Package natbib Warning: Citation `whipple07' on page 26 undefined on input line
+ 1869.
+
+
+Package natbib Warning: Citation `christensen95' on page 26 undefined on input 
+line 1871.
+
+
+Package natbib Warning: Citation `borrett10_hmg' on page 26 undefined on input 
+line 1871.
+
+
+Package natbib Warning: Citation `salas11_did' on page 26 undefined on input li
+ne 1871.
+
+[26] [27] [28] [29]
+
+Package natbib Warning: Citation `baird98' on page 30 undefined on input line 2
+114.
+
+[30] [31]
+! You can't use `macro parameter character #' in vertical mode.
+l.2250 #
+        <<e,eval=true>>=
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+[32]
+
+Package natbib Warning: Citation `fath06' on page 33 undefined on input line 23
+70.
+
+[33] (./enaR-vignette.bbl [34] [35]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
+) [36]
+[37] [38])
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2382.
+[39] [40] [41]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2382.
+ (./enaR-vignette.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2382.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2382.
+
+Package rerunfilecheck Info: File `enaR-vignette.out' has not changed.
+(rerunfilecheck)             Checksum: 3F6B1FF7BDD244819DBC6513A2045D42;1667.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2382.
+ ) 
+Here is how much of TeX's memory you used:
+ 9526 strings out of 493633
+ 136345 string characters out of 3143378
+ 273808 words of memory out of 3000000
+ 12425 multiletter control sequences out of 15000+200000
+ 64275 words of font info for 132 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 35i,15n,32p,509b,758s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></
+usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
+ocal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
+exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texliv
+e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
+011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2011
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2011/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2011/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2011/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2011/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2011/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2011/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2011/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/font
+s/type1/public/cm-super/sfrm1095.pfb>
+Output written on enaR-vignette.pdf (41 pages, 444963 bytes).
+PDF statistics:
+ 601 PDF objects out of 1000 (max. 8388607)
+ 521 compressed objects within 6 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+
