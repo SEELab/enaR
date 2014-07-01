@@ -126,6 +126,7 @@ Environ & \texttt{enaEnviron} & Patten \\
 
 
 
+
 %% <<z,echo=false>>=
 %% # set plotting parameters
 %% opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")   
@@ -316,17 +317,17 @@ hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   flow:
-     node1           node2           node3           node4       
- Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.9946  
- 1st Qu.:3.009   1st Qu.:0.000   1st Qu.:1.464   1st Qu.:1.3365  
- Median :4.359   Median :2.759   Median :3.452   Median :1.8482  
- Mean   :3.860   Mean   :2.806   Mean   :3.127   Mean   :2.1938  
- 3rd Qu.:5.209   3rd Qu.:5.565   3rd Qu.:5.114   3rd Qu.:2.7055  
- Max.   :6.722   Max.   :5.707   Max.   :5.603   Max.   :4.0840  
+     node1       node2             node3            node4      
+ Min.   :0   Min.   :0.00000   Min.   :0.0000   Min.   :0.000  
+ 1st Qu.:0   1st Qu.:0.00000   1st Qu.:0.0000   1st Qu.:1.551  
+ Median :0   Median :0.05855   Median :0.4303   Median :3.011  
+ Mean   :0   Mean   :1.09458   Mean   :1.1248   Mean   :3.426  
+ 3rd Qu.:0   3rd Qu.:1.15313   3rd Qu.:1.5551   3rd Qu.:4.886  
+ Max.   :0   Max.   :4.26122   Max.   :3.6387   Max.   :7.682  
   balanced = FALSE 
-  total edges= 8 
+  total edges= 4 
     missing edges= 0 
-    non-missing edges= 8 
+    non-missing edges= 4 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -367,7 +368,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 3.485097 1.714987 2.667520 3.099879
+[1] 1.924409 3.868998 1.603209 1.625968
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -384,11 +385,11 @@ characteristic and it can be extracted as:
 > fake.model%n%'flow'
 \end{Sinput}
 \begin{Soutput}
-         node1    node2    node3    node4
-node1 4.704817 5.707038 1.952540 0.994647
-node2 6.722456 5.518229 5.602542 4.084039
-node3 0.000000 0.000000 4.951168 1.450399
-node4 4.012407 0.000000 0.000000 2.245974
+      node1     node2     node3    node4
+node1     0 0.0000000 0.0000000 0.000000
+node2     0 0.1171037 0.8605118 2.068451
+node3     0 0.0000000 3.6386667 3.953961
+node4     0 4.2612176 0.0000000 7.681786
 \end{Soutput}
 \end{Schunk}
 
@@ -403,20 +404,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1    node2    node3    node4
-node1 4.704817 5.707038 1.952540 0.994647
-node2 6.722456 5.518229 5.602542 4.084039
-node3 0.000000 0.000000 4.951168 1.450399
-node4 4.012407 0.000000 0.000000 2.245974
+      node1     node2     node3    node4
+node1     0 0.0000000 0.0000000 0.000000
+node2     0 0.1171037 0.8605118 2.068451
+node3     0 0.0000000 3.6386667 3.953961
+node4     0 4.2612176 0.0000000 7.681786
 
 $z
-[1] 3.485097 1.714987 2.667520 3.099879
+[1] 1.924409 3.868998 1.603209 1.625968
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 3.485097 1.714987 2.667520 3.099879
+[1] 1.924409 3.868998 1.603209 1.625968
 
 $y
 [1] NA NA NA NA
@@ -2067,3 +2068,316 @@ function to reshape the network statistics into a single data frame.
 \begin{Sinput}
 > # Collecting and combining all network statistics
 > ns.list <- lapply(m.list,get.ns) # returns as list
+> ns <- do.call(rbind,ns.list)  # ns as a data.frame
+> # Let's take a quick look at some of the output
+> colnames(ns)    # return network statistic names.  
+\end{Sinput}
+\begin{Soutput}
+ [1] "n"           "L"           "C"           "LD"         
+ [5] "ppr"         "lam1A"       "mlam1A"      "rho"        
+ [9] "R"           "d"           "no.scc"      "no.scc.big" 
+[13] "pscc"        "Boundary"    "TST"         "TSTp"       
+[17] "APL"         "FCI"         "BFI"         "DFI"        
+[21] "IFI"         "ID.F"        "ID.F.I"      "ID.F.O"     
+[25] "HMG.I"       "HMG.O"       "AMP.I"       "AMP.O"      
+[29] "mode0.F"     "mode1.F"     "mode2.F"     "mode3.F"    
+[33] "mode4.F"     "AMI"         "ASC"         "OH"         
+[37] "CAP"         "ASC.CAP"     "OH.CAP"      "TSS"        
+[41] "CIS"         "BSI"         "DSI"         "ISI"        
+[45] "ID.S"        "ID.S.I"      "ID.S.O"      "HMG.S.O"    
+[49] "HMG.S.I"     "NAS"         "NASP"        "mode0.S"    
+[53] "mode1.S"     "mode2.S"     "mode3.S"     "mode4.S"    
+[57] "lam1D"       "synergism.F" "mutualism.F" "lam1DS"     
+[61] "synergism.S" "mutualism.S"
+\end{Soutput}
+\begin{Sinput}
+> dim(ns)         # show dimensions of ns matrix
+\end{Sinput}
+\begin{Soutput}
+[1] 10 62
+\end{Soutput}
+\begin{Sinput}
+> ns[1:5,1:5]     # show selected results
+\end{Sinput}
+\begin{Soutput}
+                           n  L     C  LD      ppr
+Marine Coprophagy (oyster) 4  4 0.250 1.0 1.000000
+Lake Findley               4  6 0.375 1.5 1.004975
+Mirror Lake                5  9 0.360 1.8 1.324718
+Lake Wingra                5 10 0.400 2.0 2.000000
+Marion Lake                5  9 0.360 1.8 1.324718
+\end{Soutput}
+\end{Schunk}
+
+Given this data frame of network statistics, we can construct
+interesting plots for further analysis. Here we focus on results of
+the St.\ Marks Seagrass ecosystem \citep{baird98}.
+
+
+\begin{Schunk}
+\begin{Sinput}
+> opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
+> x=dim(ns)[1] # number of models
+> m.select <- 40:45
+> bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
++          col="darkgreen",border=NA,ylim=c(0,2))
+> text(bp,-0.05,                # add labels
++       labels=rownames(ns)[m.select],
++         srt=45,adj=1,cex=0.85)
+> opar <- par(xpd=FALSE)
+> abline(h=1,col="orange",lwd=2)
+> #
+> plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
++       ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
++       xlab="Finn Cycling Index (FCI)",
++       xlim=c(0,0.8),ylim=c(0,8))
+> #
+> rm(opar)  # remove the plotting parameters
+\end{Sinput}
+\end{Schunk}
+
+
+\begin{figure}
+  \center
+%% <<fig=true,echo=false>>=
+%% <<b>>
+%% @
+\caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
+  (left) and relationship between the Finn Cycling Index and the ratio
+  of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
+\end{figure}
+
+
+\section{Connecting to Other Useful Packages}
+Another advantage of building the \textit{enaR} package in \R\ is that
+it lets ecologists take advantage of other types of network analysis
+and statistical tools that already exist in \R.  We highlight two
+examples here.
+
+\subsection{sna: Social Network Analysis}
+The \textit{sna} package for Social Network Analysis is bundled in the
+\textit{statnet} package and uses the same network data object defined
+in \textit{network} that we selected to use for \textit{enaR}.  Thus,
+the design decision to use the network data object gives users direct
+access to \textit{sna} tools.  
+
+Multiple measures of network centrality have been proposed, and the
+\textit{sna} package provides a way of calculating several.  Thus,
+ecologists can now use the sna algorithms to determine different types
+of centrality for their models.  
+
+\begin{Schunk}
+\begin{Sinput}
+> betweenness(oyster)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.0 0.0 0.5 3.5 0.0 9.0
+\end{Soutput}
+\begin{Sinput}
+> closeness(oyster)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.625 0.000 0.000 0.000 0.000 0.000
+\end{Soutput}
+\end{Schunk}
+
+The \textit{sna} package introduced new graphical capabilities as
+well. For example, it will create a target diagram of centralities.
+%%\afterpage{\clearpage}
+
+%%%FIX ME!!!
+
+\begin{Schunk}
+\begin{Sinput}
+> m <- troModels[[38]]
+> b <- betweenness(m)         # calculate betweenness centrality
+> nms <- m%v%'vertex.names'   # get vertex names
+> show(nms)
+> nms[b<=(0.1*max(b))] <- NA  # exclude less central nodes
+> set.seed(3)
+> opar <- par(xpd=TRUE,mfrow=c(1,1))
+> # create target plot
+> gplot.target(m,b,#circ.lab=FALSE,
++               edge.col="grey",
++               label=nms) # show only labels of most central nodes
+>              #xlim=c(-1,4))
+> rm(opar)
+\end{Sinput}
+\end{Schunk}
+
+\begin{figure}[!htbp]
+  \center
+%% <<fig=true,echo=false,eval=true>>=
+%% <<d>>
+%% @
+\caption{Target plot of node betweenness centrality for the Chesapeake
+  Bay model (mesohaline, carbon, annual).} \label{fig:target}
+\end{figure}
+
+
+In addition to the node-level measures, \textit{sna} includes graph-level
+indices.  
+
+\begin{Schunk}
+\begin{Sinput}
+> centralization(oyster, degree)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.45
+\end{Soutput}
+\begin{Sinput}
+> centralization(oyster,closeness)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.75
+\end{Soutput}
+\begin{Sinput}
+> centralization(oyster,betweenness)
+\end{Sinput}
+\begin{Soutput}
+[1] 0.41
+\end{Soutput}
+\end{Schunk}
+
+%%\afterpage{\clearpage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{iGraph}
+The \textit{iGraph} package can also be useful for analyzing network
+data.  Here are a few examples of using the package.  Note that some
+functions in \textit{iGraph} conflict with other functions already defined, so
+care is required when using \textit{iGraph}.
+
+#<<e,eval=true>>=
+\begin{Schunk}
+\begin{Sinput}
+> library(igraph)
+> ### The adjacency matrix
+> A <- St$A
+> ### creating an iGraph graph
+> g <- graph.adjacency(A)
+> plot(g)  # uses iGraph plot tools
+\end{Sinput}
+\end{Schunk}
+
+\textit{iGraph} has a different set of visualization tools and
+generates a different looking graph (Fig.~\ref{fig:igraph}).
+
+\begin{figure}
+\center
+%% <<fig=TRUE,echo=false>>=
+%% <<e>>
+%% @ 
+\caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
+\end{figure}
+
+\begin{Schunk}
+\begin{Sinput}
+> # betweenness centrality (calculated by iGraph and sna)
+> betweenness(g) 
+\end{Sinput}
+\begin{Soutput}
+    Filter Feeders         Microbiota          Meiofauna 
+               0.0                0.0                0.5 
+   Deposit Feeders          Predators Deposited Detritus 
+               3.5                0.0                9.0 
+\end{Soutput}
+\begin{Sinput}
+> # shortest path between any two nodes
+> shortest.paths(g) 
+\end{Sinput}
+\begin{Soutput}
+                   Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders                  0          2         2               2
+Microbiota                      2          0         1               1
+Meiofauna                       2          1         0               1
+Deposit Feeders                 2          1         1               0
+Predators                       1          2         2               1
+Deposited Detritus              1          1         1               1
+                   Predators Deposited Detritus
+Filter Feeders             1                  1
+Microbiota                 2                  1
+Meiofauna                  2                  1
+Deposit Feeders            1                  1
+Predators                  0                  1
+Deposited Detritus         1                  0
+\end{Soutput}
+\begin{Sinput}
+> # average path length in the network (graph theory sense)
+> average.path.length(g,directed=TRUE)   
+\end{Sinput}
+\begin{Soutput}
+[1] 1.52
+\end{Soutput}
+\begin{Sinput}
+> diameter(g)  # diameter of the graph
+\end{Sinput}
+\begin{Soutput}
+[1] 2
+\end{Soutput}
+\begin{Sinput}
+> vertex.connectivity(g)  # connectivity of a graph (group cohesion)
+\end{Sinput}
+\begin{Soutput}
+[1] 0
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,1,'in')  # subcomponent reachable from 1 along inputs
+\end{Sinput}
+\begin{Soutput}
+[1] 1
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,2,'in')  # subcomponent reachable from 2 along inputs
+\end{Sinput}
+\begin{Soutput}
+[1] 2 6 1 3 4 5
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,1,'out') # subcomponent reachable from 1 along outputs
+\end{Sinput}
+\begin{Soutput}
+[1] 1 5 6 2 3 4
+\end{Soutput}
+\begin{Sinput}
+> subcomponent(g,2,'out') # subcomponent reachable from 2 along output
+\end{Sinput}
+\begin{Soutput}
+[1] 2 3 4 6 5
+\end{Soutput}
+\begin{Sinput}
+> edge.connectivity(g)
+\end{Sinput}
+\begin{Soutput}
+[1] 0
+\end{Soutput}
+\begin{Sinput}
+> detach(package:igraph)  # detach igraph package
+\end{Sinput}
+\end{Schunk}
+
+
+
+There are other \R\ packages that have graph and network analysis tools,
+like Bioconductor, that might also be useful for ecologists
+
+
+\section{Summary and Future}
+This vignette shows how to use several of the key features of the
+\textit{enaR} package that enables scientists to perform Ecological
+Network Analysis in \R.  The vision for this package is that it will
+provide access to ENA algorithms from both the Ulanowicz and Patten
+Schools.  In its current form it replicates, updates, and extends the
+functionality of the NEA.m function \citep{fath06}.  It also includes
+both ascendency calculations and mixed trophic impacts from the
+Ulanowicz school of ENA, but there remains many possibilities for
+future development.  We hope to do this in collaboration with
+users. This vignette also illustrates how users can further analyze
+their data with other \R\ packages for graph and network analysis like
+\textit{sna} and \textit{iGraph}.  In summary, we hope you find this
+package useful for your ENA needs.  
+
+\bibliography{srbbib_abb,srb}
+
+
+\end{document}  
+

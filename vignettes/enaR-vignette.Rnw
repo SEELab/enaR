@@ -124,6 +124,12 @@ Environ & \texttt{enaEnviron} & Patten \\
 
 \SweaveOpts{width=6,height=4}
 
+<<echo=false,results=hide>>=
+library(igraph)
+detach(package:igraph)
+
+@ 
+
 <<echo=false,eval=false>>=
 citation('enaR')
 
@@ -1441,7 +1447,8 @@ data.  Here are a few examples of using the package.  Note that some
 functions in \textit{iGraph} conflict with other functions already defined, so
 care is required when using \textit{iGraph}.
 
-<<e,eval=false>>=
+#<<e,eval=true>>=
+<<eval=true>>=
 library(igraph)
 ### The adjacency matrix
 A <- St$A
