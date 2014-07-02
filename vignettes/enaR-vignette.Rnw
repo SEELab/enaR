@@ -556,7 +556,8 @@ rm(opar)             # remove changes to the plotting parameters
 %% <<fig=true,echo=false>>=
 %% <<b>>
 %% @ \\
-
+\includegraphics[]{enaR-vignette-020}
+\includegraphics[]{enaR-vignette-021}
   \end{tabular}
   \caption{Simple (left) and fancy (right) plot of the Oyster network
     model (Dame and Patten 1981).} \label{fig:oyster}
@@ -1004,6 +1005,7 @@ rm(opar)  # remove the plotting parameters
 %% <<fig=true,echo=false>>=
 %% <<b>>
 %% @
+\includegraphics[]{enaR-vignette-039}
 \caption{Bar plot of the Oyster Reef model Average Environ
   Centralities.} \label{fig:aec}
 \end{figure}
@@ -1365,6 +1367,7 @@ rm(opar)  # remove the plotting parameters
 %% <<fig=true,echo=false>>=
 %% <<b>>
 %% @
+\includegraphics[]{enaR-vignette-048}
 \caption{Ratio of Indirect-to-Direct Flow for six ecosystem models
   (left) and relationship between the Finn Cycling Index and the ratio
   of Indirect-to-Direct flow in the 56 trophic models.} \label{fig:aec}
@@ -1423,6 +1426,7 @@ rm(opar)
 %% <<fig=true,echo=false,eval=true>>=
 %% <<d>>
 %% @
+\includegraphics[]{enaR-vignette-051}
 \caption{Target plot of node betweenness centrality for the Chesapeake
   Bay model (mesohaline, carbon, annual).} \label{fig:target}
 \end{figure}
@@ -1447,7 +1451,7 @@ data.  Here are a few examples of using the package.  Note that some
 functions in \textit{iGraph} conflict with other functions already defined, so
 care is required when using \textit{iGraph}.
 
-#<<e,eval=true>>=
+%<<e,eval=true>>=
 <<eval=true>>=
 library(igraph)
 ### The adjacency matrix
@@ -1466,6 +1470,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 %% <<fig=TRUE,echo=false>>=
 %% <<e>>
 %% @ 
+\includegraphics[]{enaR-vignette-054}
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 
