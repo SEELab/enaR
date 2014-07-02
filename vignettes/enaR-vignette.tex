@@ -7,13 +7,13 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{hyperref}  %\hyperref[label_name]{''link text''}                                                                           %\hyperlink{label}{anchor caption}                                                                              %\hypertarget{label}{link caption}
-%% \hypersetup{
-%%     colorlinks=true, %set true if you want colored links
-%% %    linktoc=page,
-%%     linktoc=all,     %set to all if you want both sections and
-%%                      %subsections linked
-%%     linkcolor=blue,  %choose some color if you want links to stand out
-%% }
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=page,
+    linktoc=all,     %set to all if you want both sections and
+                     %subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
 \usepackage{ucs} %needed for R output: signif stars etc, quotes
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -320,14 +320,14 @@ hypothetical data.
      node1           node2            node3           node4      
  Min.   :0.000   Min.   :0.0000   Min.   :0.000   Min.   :0.000  
  1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.000  
- Median :1.638   Median :0.0000   Median :0.000   Median :0.000  
- Mean   :2.346   Mean   :0.6067   Mean   :1.645   Mean   :0.745  
- 3rd Qu.:3.984   3rd Qu.:0.6067   3rd Qu.:1.645   3rd Qu.:0.745  
- Max.   :6.107   Max.   :2.4270   Max.   :6.581   Max.   :2.980  
+ Median :1.967   Median :0.0000   Median :0.000   Median :1.282  
+ Mean   :2.219   Mean   :0.4644   Mean   :1.118   Mean   :1.615  
+ 3rd Qu.:4.186   3rd Qu.:0.4644   3rd Qu.:1.118   3rd Qu.:2.897  
+ Max.   :4.939   Max.   :1.8575   Max.   :4.474   Max.   :3.895  
   balanced = FALSE 
-  total edges= 4 
+  total edges= 3 
     missing edges= 0 
-    non-missing edges= 4 
+    non-missing edges= 3 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -368,7 +368,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 3.38061080 1.44664313 0.03584714 2.13542654
+[1] 1.44664313 0.03584714 2.13542654 0.01644835
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -385,11 +385,11 @@ characteristic and it can be extracted as:
 > fake.model%n%'flow'
 \end{Sinput}
 \begin{Soutput}
-         node1    node2    node3    node4
-node1 0.000000 0.000000 0.000000 0.000000
-node2 3.276289 0.000000 6.581156 0.000000
-node3 0.000000 2.426999 0.000000 0.000000
-node4 6.107306 0.000000 0.000000 2.980089
+         node1   node2    node3    node4
+node1 4.939150 0.00000 4.473502 0.000000
+node2 0.000000 1.85745 0.000000 0.000000
+node3 3.934966 0.00000 0.000000 3.894596
+node4 0.000000 0.00000 0.000000 2.564117
 \end{Soutput}
 \end{Schunk}
 
@@ -404,20 +404,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1    node2    node3    node4
-node1 0.000000 0.000000 0.000000 0.000000
-node2 3.276289 0.000000 6.581156 0.000000
-node3 0.000000 2.426999 0.000000 0.000000
-node4 6.107306 0.000000 0.000000 2.980089
+         node1   node2    node3    node4
+node1 4.939150 0.00000 4.473502 0.000000
+node2 0.000000 1.85745 0.000000 0.000000
+node3 3.934966 0.00000 0.000000 3.894596
+node4 0.000000 0.00000 0.000000 2.564117
 
 $z
-[1] 3.38061080 1.44664313 0.03584714 2.13542654
+[1] 1.44664313 0.03584714 2.13542654 0.01644835
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 3.38061080 1.44664313 0.03584714 2.13542654
+[1] 1.44664313 0.03584714 2.13542654 0.01644835
 
 $y
 [1] NA NA NA NA

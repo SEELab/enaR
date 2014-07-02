@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  2 JUL 2014 17:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  2 JUL 2014 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -231,6 +231,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip48
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 16.
+
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2004/10/17 UCS: Unicode input support
 
@@ -460,7 +462,16 @@ LaTeX Font Info:    ... okay on input line 30.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 30.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+Package hyperref Info: Link coloring ON on input line 30.
+
 (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -565,7 +576,7 @@ LaTeX Font Info:    Try loading font information for T1+aett on input line 112.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-<enaR-vignette-003.pdf, id=180, 433.62pt x 289.08pt>
+<enaR-vignette-003.pdf, id=207, 433.62pt x 289.08pt>
 File: enaR-vignette-003.pdf Graphic file (type pdf)
 
 <use enaR-vignette-003.pdf>
@@ -581,14 +592,14 @@ LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textquotesingle' on input line 293.
 
-[5] [6] [7] [8] [9] [10] <enaR-vignette-020.pdf, id=287, 216.81pt x 216.81pt>
+[5] [6] [7] [8] [9] [10] <enaR-vignette-020.pdf, id=314, 216.81pt x 216.81pt>
 File: enaR-vignette-020.pdf Graphic file (type pdf)
 
 <use enaR-vignette-020.pdf>
 Package pdftex.def Info: enaR-vignette-020.pdf used on input line 699.
 (pdftex.def)             Requested size: 258.36668pt x 258.39746pt.
 
-<enaR-vignette-021.pdf, id=288, 216.81pt x 216.81pt>
+<enaR-vignette-021.pdf, id=315, 216.81pt x 216.81pt>
 File: enaR-vignette-021.pdf Graphic file (type pdf)
 
 <use enaR-vignette-021.pdf>
@@ -623,7 +634,7 @@ LaTeX Font Warning: Font shape `TS1/aett/m/n' undefined
 (Font)              for symbol `textasciigrave' on input line 1138.
 
 [17] [18] [19] [20] [21] [22]
-<enaR-vignette-039.pdf, id=466, 433.62pt x 289.08pt>
+<enaR-vignette-039.pdf, id=492, 433.62pt x 289.08pt>
 File: enaR-vignette-039.pdf Graphic file (type pdf)
 
 <use enaR-vignette-039.pdf>
@@ -643,21 +654,21 @@ Overfull \hbox (7.85161pt too wide) in paragraph at lines 1803--1852
  []
 
 [27] [28] [29] [30] [31]
-<enaR-vignette-048.pdf, id=759, 505.89pt x 343.2825pt>
+<enaR-vignette-048.pdf, id=786, 505.89pt x 343.2825pt>
 File: enaR-vignette-048.pdf Graphic file (type pdf)
 
 <use enaR-vignette-048.pdf>
 Package pdftex.def Info: enaR-vignette-048.pdf used on input line 2147.
 (pdftex.def)             Requested size: 258.36668pt x 175.32317pt.
  [32 <./enaR-vignette-048.pdf>]
-<enaR-vignette-051.pdf, id=771, 505.89pt x 343.2825pt>
+<enaR-vignette-051.pdf, id=797, 505.89pt x 343.2825pt>
 File: enaR-vignette-051.pdf Graphic file (type pdf)
 
 <use enaR-vignette-051.pdf>
 Package pdftex.def Info: enaR-vignette-051.pdf used on input line 2216.
 (pdftex.def)             Requested size: 258.36668pt x 175.32317pt.
  [33 <./enaR-vignette-051.pdf>]
-<enaR-vignette-054.pdf, id=783, 505.89pt x 343.2825pt>
+<enaR-vignette-054.pdf, id=809, 505.89pt x 343.2825pt>
 File: enaR-vignette-054.pdf Graphic file (type pdf)
 
 <use enaR-vignette-054.pdf>
@@ -687,13 +698,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2387.
  ) 
 Here is how much of TeX's memory you used:
- 9505 strings out of 493633
- 136312 string characters out of 3143378
- 295172 words of memory out of 3000000
- 12409 multiletter control sequences out of 15000+200000
+ 9547 strings out of 493633
+ 137016 string characters out of 3143378
+ 300789 words of memory out of 3000000
+ 12447 multiletter control sequences out of 15000+200000
  58953 words of font info for 123 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 35i,15n,32p,509b,750s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,15n,32p,509b,758s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -722,10 +733,10 @@ ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2011/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/
 fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on enaR-vignette.pdf (43 pages, 495851 bytes).
+Output written on enaR-vignette.pdf (43 pages, 498530 bytes).
 PDF statistics:
- 1005 PDF objects out of 1200 (max. 8388607)
- 904 compressed objects within 10 object streams
+ 1031 PDF objects out of 1200 (max. 8388607)
+ 930 compressed objects within 10 object streams
  173 named destinations out of 1000 (max. 500000)
  244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
