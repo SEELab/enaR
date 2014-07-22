@@ -8,7 +8,7 @@ balance <-
   function(x,method=c('AVG2','AVG','IO','OI','I','O'),tol=5){
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
-  xT <- as.extended(x) #convert to extended format
+  eT <- as.extended(x) #convert to extended format
   n <- nrow(x%n%'flow')
                                         #checks
   check <- ssCheck(x,tol)
