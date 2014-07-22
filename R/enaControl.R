@@ -13,7 +13,7 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
                                         #Check for network class
     if (class(x) != 'network'){warning('x is not a network class object')}
                                         #Check for balancing
-    if (balance.override == TRUE){}else{
+    if (balance.override){}else{
       if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
       if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
     }
@@ -27,22 +27,22 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     QP <- enaStorage(x)$QP
 
                                         #Input perspective
-    T <- Ti + apply(flow,1,sum) 
-    GP <- flow / T
+    T. <- Ti + apply(flow,1,sum) 
+    GP <- flow / T.
     if (zero.na){GP[is.na(GP)] <- 0}else{}
     I <- GP * 0; diag(I) <- 1
     NP <- ginv((I - GP))
     
                                         #Output perspective
-    T <- apply(flow,2,sum) + Tj
-    G <- t(t(flow) / T)
+    T. <- apply(flow,2,sum) + Tj
+    G <- t(t(flow) / T.)
     if (zero.na){G[is.na(G)] <- 0}else{}
     I <- G * 0; diag(I) <- 1
     N <- ginv((I - G))
 
                                         #Calculate the control matrix
     CN <- N / NP
-    if (zero.na == TRUE){CN[is.na(CN)] <- 0}
+    if (zero.na){CN[is.na(CN)] <- 0}
     for (i in (1:nrow(CN))){
       for (j in (1:ncol(CN))){
         if (CN[i,j] < 1){CN[i,j] <- 1 - CN[i,j]}else{CN[i,j] <- 0}
