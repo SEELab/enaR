@@ -91,7 +91,7 @@ enaStorage <- function(x,balance.override=FALSE){
     CVQ <- sd(as.numeric(Q)) / mean(Q)  #Coefficient of variation for N
     HMG.S.O <- CVP / CVQ #homogenization parameter (output storage)
     
-    CVPP <- sd(as.numeric(P)) / mean(PP) #Coefficient of variation for GP
+    CVPP <- sd(as.numeric(PP)) / mean(PP) #Coefficient of variation for GP
     CVQP <- sd(as.numeric(QP)) / mean(QP) #Coefficient of variation for NP
     HMG.S.I <- CVPP / CVQP #homogenization paraemeter (input storage)
     
