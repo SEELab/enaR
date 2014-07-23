@@ -26,8 +26,8 @@ enaTroAgg <- function (x, balance.override = FALSE){
   Ti <- x %v% "input"       ##AINPUT
   T <- Ti + apply(XCHNGE, 2, sum)
 
-  exp<-x %v% "export"
-  res<-x %v% "respiration"
+  exp<-x %v% "export"; exp[is.na(exp)] <- 0
+  res<-x %v% "respiration"; res[is.na(res)] <- 0
   # ---------------------------------------------------------
 
                                         # Determining In-Migration and Obligate Producers
@@ -129,13 +129,15 @@ enaTroAgg <- function (x, balance.override = FALSE){
 
                                         # 8. Input to Detrital Pool
   U <- A %*% Ti
-  dinp <- sum(U[(nl+1):N])
+  dinp<-0
+  if(nl<N) {  dinp <- sum(U[(nl+1):N]) }
 
                                         # 9. Circulation within Detrital Pool
   dcir <- AT[N,N]
 
                                         # 10. Lindeman Spine
   ls = gc
+  
   ls[1] = sum(rtd[2:nl]) + gc[1] + dinp
   ls[2] = gc[2]+dtry
                                         # 11. Trophic Efficiencies
