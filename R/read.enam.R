@@ -15,20 +15,20 @@ read.enam<- function(file="file path and name"){
   m <- apply(m,2,as.numeric)
   rownames(m) <- colnames(m) <- as.character(x[6:a,2]) # node names
   m[is.na(m)] <- 0 # replace NAs with zeros  
-  F <- m[1:n,1:n] # flow matrix
+  Flow <- m[1:n,1:n] # flow matrix
   imports <- m[(n+1),1:n]
   biomass <- as.numeric(unlist(m[(n+2),1:n]))
   exports <- as.numeric(unlist(m[1:n,(n+1)]))
   respiration <- as.numeric(unlist(m[1:n,(n+2)]))
-  y <- network(F,directed=TRUE)
+  y <- network(Flow,directed=TRUE)
                                         # packing up the attributes into the network object (y)
   set.vertex.attribute(y,'input',imports)
   set.vertex.attribute(y,'export',exports)
   set.vertex.attribute(y,'respiration',respiration)
   set.vertex.attribute(y,'storage',biomass)
   set.vertex.attribute(y,'output',exports+respiration)
-  y%v%'vertex.names' <- rownames(F)
+  y%v%'vertex.names' <- rownames(Flow)
   y%v%'living'=c(rep(TRUE,liv),rep(FALSE,n-liv))
-  y%n%'flow' <- F
+  y%n%'flow' <- Flow
   return(y)
 }

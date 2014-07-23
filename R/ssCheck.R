@@ -11,11 +11,11 @@
 ssCheck <- function(x,tol=5,more=FALSE,zero.na=TRUE){
                                         #Check for network class object
   if (class(x) != 'network'){warning('x is not a network class object')}
-  T <- as.extended(x) #convert to extended format
-  if (zero.na){T[is.na(T)] <- 0}
+  T. <- as.extended(x) #convert to extended format
+  if (zero.na){T.[is.na(T.)] <- 0}
   n <- get.network.attribute(x,'n') #get the number of nodes
-  Tin <- apply(T[,1:n],2,sum) #in throughflow
-  Tout <- apply(T[1:n,],1,sum) #out throughflow
+  Tin <- apply(T.[,1:n],2,sum) #in throughflow
+  Tout <- apply(T.[1:n,],1,sum) #out throughflow
   d <- abs(Tin - Tout) # SSerror difference
   pe <- (d / Tout)*100 # SSerror as percent of total throughflow
                                         #
