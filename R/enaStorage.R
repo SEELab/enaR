@@ -14,18 +14,18 @@ enaStorage <- function(x,balance.override=FALSE){
     if (class(x) != 'network'){warning('x is not a network class object')}
 
                                         #Check for balancing
-    if (balance.override == TRUE){}else{
+    if (balance.override){}else{
       if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
       if (x%n%'balanced'){}else{stop('Model is not balanced')}
     }
                                         #unpack data from x
-    F <- t(x%n%'flow') #flows
+    Flow <- t(x%n%'flow') #flows
                                         #continue unpacking
     input <- x%v%'input' #inputs
     stor <- x%v%'storage' #storage values
-    T <- apply(F,1,sum) + input
-    FD <- F - diag(T) #flow matrix with negative throughflows on the diagonal
-    I <- diag(1,nrow(F),ncol(F)) #create the identity matrix
+    T. <- apply(Flow,1,sum) + input
+    FD <- Flow - diag(T.) #flow matrix with negative throughflows on the diagonal
+    I <- diag(1,nrow(Flow),ncol(Flow)) #create the identity matrix
 
                                         #Compute the Jacobian matrix
     C <- FD %*% ginv(diag(stor)) #output matrix
@@ -47,15 +47,15 @@ enaStorage <- function(x,balance.override=FALSE){
     dQ <- diag(Q) #diagonal of integral output storage matrix which is the same for input (i.e. diag(QP))
 
                                         #naming row and columns
-    rownames(C) <- colnames(C) <- rownames(F)
-    rownames(CP) <- colnames(CP) <- rownames(F)
-    rownames(P) <- colnames(P) <- rownames(F)
-    rownames(S) <- colnames(S) <- rownames(F)
-    rownames(Q) <- colnames(Q) <- rownames(F)
-    rownames(CP) <- colnames(CP) <- rownames(F)
-    rownames(PP) <- colnames(PP) <- rownames(F)
-    rownames(SP) <- colnames(SP) <- rownames(F)
-    rownames(QP) <- colnames(QP) <- rownames(F)
+    rownames(C) <- colnames(C) <- rownames(Flow)
+    rownames(CP) <- colnames(CP) <- rownames(Flow)
+    rownames(P) <- colnames(P) <- rownames(Flow)
+    rownames(S) <- colnames(S) <- rownames(Flow)
+    rownames(Q) <- colnames(Q) <- rownames(Flow)
+    rownames(CP) <- colnames(CP) <- rownames(Flow)
+    rownames(PP) <- colnames(PP) <- rownames(Flow)
+    rownames(SP) <- colnames(SP) <- rownames(Flow)
+    rownames(QP) <- colnames(QP) <- rownames(Flow)
     
     ##Storage Environ Properties
                                         #eigen analysis
@@ -91,7 +91,7 @@ enaStorage <- function(x,balance.override=FALSE){
     CVQ <- sd(as.numeric(Q)) / mean(Q)  #Coefficient of variation for N
     HMG.S.O <- CVP / CVQ #homogenization parameter (output storage)
     
-    CVPP <- sd(as.numeric(P)) / mean(PP) #Coefficient of variation for GP
+    CVPP <- sd(as.numeric(PP)) / mean(PP) #Coefficient of variation for GP
     CVQP <- sd(as.numeric(QP)) / mean(QP) #Coefficient of variation for NP
     HMG.S.I <- CVPP / CVQP #homogenization paraemeter (input storage)
     

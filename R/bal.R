@@ -6,11 +6,11 @@
 # Re-written: M. Lau | 17Oct2013 
 # ---------------------------------------------------
 
-bal <- function(T.star='extended, unbalanced matrix',method=c('input','output')){
+bal <- function(T.star='matrix',method=c('input','output')){
   
   if (length(method > 1)){method <- method[1]}
-  if (method == 'output'){T.star <- t(T.star)}else{}  # transpose matrix to use output method
-
+  if (method == 'output'){T.star <- t(T.star)}  
+                                        # transpose matrix to use output method
                                         #From Allesina and Bondavalli 2003
                                         #Step 1. Check balancing
                                         #Done in balance()
@@ -48,8 +48,8 @@ bal <- function(T.star='extended, unbalanced matrix',method=c('input','output'))
     }
   }
                                         #Final transposition if method == output
-  if (method == 'output'){T.star.bal <- t(T.star.bal)}else{}
-                                        #  
+  if (method == 'output'){T.star.bal <- t(T.star.bal)}
+
   return(T.star.bal)
 
 }

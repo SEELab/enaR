@@ -6,7 +6,7 @@
 # ------------------------------------
 
 read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=TRUE,warn=FALSE){
-  if (from.file == TRUE){text <- readLines(file,warn=warn)}else{text <- file} # read in file
+  if (from.file){text <- readLines(file,warn=warn)}else{text <- file} # read in file
   if (length(type) > 1){type <- 'network'} #default output type is set to 'network'
                                         #Partition the meta-data
   meta <- text[1]
@@ -94,10 +94,10 @@ read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=
     if (any(is.na(exports)) == FALSE&any(is.na(respiration)) == FALSE){
       res[respiration$vertex] <- respiration$value
       exp[exports$vertex] <- exports$value
-    }else if (any(is.na(exports)) == TRUE&any(is.na(respiration)) == FALSE){
+    }else if (any(is.na(exports))&any(is.na(respiration)) == FALSE){
       res[respiration$vertex] <- respiration$value
       exp <- rep(0,n)
-    }else if (any(is.na(exports)) == FALSE&any(is.na(respiration)) == TRUE){
+    }else if (any(is.na(exports)) == FALSE&any(is.na(respiration))){
       exp[exports$vertex] <- exports$value
       res <- rep(0,n)
     }

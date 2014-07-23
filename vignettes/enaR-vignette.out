@@ -1,0 +1,26 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
+\BOOKMARK [1][-]{section.3}{Data Input: General}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Model Data}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Network Data Class}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Building a Network Object}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Balancing for Steady-State}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Data Input: Reading Common Data File Formats}{}% 8
+\BOOKMARK [1][-]{section.5}{Network Visualization}{}% 9
+\BOOKMARK [1][-]{section.6}{Single Model Analysis}{}% 10
+\BOOKMARK [2][-]{subsection.6.1}{Structural Network Analysis}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.2}{Flow Analysis}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.3}{Ascendency}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.4}{Storage Analysis}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.5}{Utility Analysis}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.6}{Environ Analysis}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.7}{Control Analysis}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.8}{Mixed Trophic Impacts}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.9}{Other Analyses}{section.6}% 19
+\BOOKMARK [2][-]{subsection.6.10}{Output Orientation}{section.6}% 20
+\BOOKMARK [1][-]{section.7}{Model Library}{}% 21
+\BOOKMARK [1][-]{section.8}{Multi-Model Analyses \(Batch Processing\)}{}% 22
+\BOOKMARK [1][-]{section.9}{Connecting to Other Useful Packages}{}% 23
+\BOOKMARK [2][-]{subsection.9.1}{sna: Social Network Analysis}{section.9}% 24
+\BOOKMARK [2][-]{subsection.9.2}{iGraph}{section.9}% 25
+\BOOKMARK [1][-]{section.10}{Summary and Future}{}% 26

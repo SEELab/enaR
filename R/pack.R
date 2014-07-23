@@ -6,11 +6,6 @@
 # ------------------------------------
 
 pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
-                                        #check for igraph
-  det.igraph <- any(search()=="package:igraph")
-  if (det.igraph){
-    warning('Function conflicts with igraph. Use detach(package:igraph) to detach the igraph package.')
-  }else{}
                                         #Warn if missing both 
   if (all(is.na(respiration))&all(is.na(export))){
     warning('Missing or NA resipiration and export values.')

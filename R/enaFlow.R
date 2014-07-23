@@ -6,35 +6,34 @@
 # ---------------------------------------------------
 
 enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
-  
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
 
                                         #Check for balancing
-  if (balance.override == TRUE){}else{
+  if (balance.override){}else{
     if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
     if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
   }
 
                                         # unpack model
-  F <- t(x%n%'flow') #flows
+  Flow <- t(x%n%'flow') #flows
   input <- x%v%'input' #inputs
   stor <- x%v%'storage' #storage values
 
-  n <- nrow(F)      # number of nodes  
-  I <- diag(1,nrow(F),ncol(F))          # create identity matrix 
-  T <- apply(F,1,sum) + input;   # input throughflow (assuming steady state)
+  n <- nrow(Flow)      # number of nodes  
+  I <- diag(1,nrow(Flow),ncol(Flow))          # create identity matrix 
+  T. <- apply(Flow,1,sum) + input;   # input throughflow (assuming steady state)
 
                                         #compute the intercompartmental flows
-  GP <- F / T  #Input perspective
-  G <- t(t(F) / T)  #Output perspective
+  GP <- Flow / T.  #Input perspective
+  G <- t(t(Flow) / T.)  #Output perspective
 
-                                        #check and replace NA values with 0 if zero.na == TRUE
-  if (zero.na == TRUE){
+                                        #check and replace NA values with 0 if zero.na
+  if (zero.na){
     GP[is.na(GP)] <- 0
     G[is.na(G)] <- 0
-    GP[GP == Inf | GP == -Inf] <- 0
-    G[G == Inf | G == -Inf] <- 0    
+    GP[is.infinite(GP)] <- 0
+    G[is.infinite(G)] <- 0    
   }
 
                                         #compute the integral flows
@@ -50,8 +49,8 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
   
 
   ## Network Statistics
-  TST <- sum(T)  # total system throughflow
-  TSTp <- sum(F) + sum(x%v%'input') + sum(x%v%'output') # total system throughput
+  TST <- sum(T.)  # total system throughflow
+  TSTp <- sum(Flow) + sum(x%v%'input') + sum(x%v%'output') # total system throughput
   
   Boundary <- sum(input)
   APL <- TST/Boundary  # Average Path Lenght (Finn 1976; aka network
@@ -60,7 +59,7 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
                                         # Finn Cycling Index
   p <- as.matrix(rep(1,n),nrow=n)
   dN <- diag(N)
-  TSTc <- sum((dN-p)/dN *T)
+  TSTc <- sum((dN-p)/dN *T.)
   FCI <- TSTc/TST
   
                                         # non-locality (realized)
@@ -103,6 +102,6 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
               mode0.F,mode1.F,mode2.F,mode3.F,mode4.F)
 
                                         #output
-  return(list('T'=T,'G'=G,'GP'=GP,'N'=N,'NP'=NP,'ns'=ns))
+  return(list('T'=T.,'G'=G,'GP'=GP,'N'=N,'NP'=NP,'ns'=ns))
 }
 

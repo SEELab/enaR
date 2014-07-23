@@ -9,8 +9,8 @@
 enaStructure <- function(x = 'network object'){
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
-  F <- t(x%n%'flow') #get flows
-  A <- sign(F)   # get adjacency matrix
+  Flow <- t(x%n%'flow') #get flows
+  A <- sign(Flow)   # get adjacency matrix
   sp <- structure.statistics(A)    # calls structure.statistics helper function
                                           #Output orientation
   orient <- get.orient()
