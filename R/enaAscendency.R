@@ -84,8 +84,11 @@ enaAscendency <- function(x='network object'){
   
                                         #confirm ratios sum to 1
   ASC.OH.RSUM <- ASC.CAP + OH.CAP
+
+  robustness = -1 * ASC.CAP * log(ASC.CAP)  # robustness from Ulanowicz 2009; Fath 2014
+
   
-  ns <- cbind(AMI,ASC,OH,CAP,ASC.CAP,OH.CAP)
+  ns <- cbind(AMI,ASC,OH,CAP,ASC.CAP,OH.CAP, robustness)
                                         #
   return(ns)
   
