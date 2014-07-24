@@ -55,7 +55,7 @@ enaTroAgg(x)
  
 }
 \seealso{
-  \code{\link{enaCycle}} \code{\link{netOrder}}
+  \code{\link{enaCycle}, \link{netOrder}}
 }
 \examples{
 data(troModels)

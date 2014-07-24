@@ -50,7 +50,7 @@ cycliv(x)
 	}
 	
 \seealso{
-  \code{\link{enaTroAgg} \link{enaCycle} \link{netOrder}}
+  \code{\link{enaTroAgg}, \link{enaCycle}, \link{netOrder}}
 }
 
 \examples{
