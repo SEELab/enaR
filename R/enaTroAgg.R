@@ -149,12 +149,13 @@ enaTroAgg <- function (x, balance.override = FALSE){
   te[is.na(te)] <- 0
 
                                         # Output Listing
-  ns <- list(Detritivory = dtry, DetritalInput = dinp, DetritalCirc = dcir)
+  Detrivory<-dtry; DetritalInput<-dinp; DetritalCirc<-dcir
+  ns <- cbind(Detrivory, DetritalInput, DetritalCirc, Feeding_Cycles$ns)
   if(NMIG>0) {
-  	out <- list(Feeding_Cycles=Feeding_Cycles, A = A[1:nl,1:nl], ETL = etl, M.Flow = mig.input, CI = ci, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
+  	out <- list(Feeding_Cycles=Feeding_Cycles[1:(length(Feeding_Cycles)-1)], A = A[1:nl,1:nl], ETL = etl, M.Flow = mig.input, CI = ci, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
   }
   else{
-  	out <- list(Feeding_Cycles=Feeding_Cycles, A = A[1:nl,1:nl], ETL = etl, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
+  	out <- list(Feeding_Cycles=Feeding_Cycles[1:(length(Feeding_Cycles)-1)], A = A[1:nl,1:nl], ETL = etl, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
 
   }
 
