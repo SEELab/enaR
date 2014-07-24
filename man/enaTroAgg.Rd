@@ -10,7 +10,7 @@
 enaTroAgg(x)
 }
 \arguments{
-  \item{x}{a network object.  This includes all weighted flows into and out of each node. It should include separate respiration and export values for the Canonical Exports and Canonical Respirations results respectively. It must also include the "Living" vector that identifies the living (TRUE/FALSE) status of each node.  
+  \item{x}{a network object.  This includes all weighted flows into and out of each node. It should include separate respiration and export values for the Canonical Exports and Canonical Respirations results respectively. It must also include the "Living" vector that identifies the living (TRUE/FALSE) status of each node. It must contain the non-living nodes at the end of the node vector, the function \code{\link{netOrder}} can be used for the same.
   }
 
 }
@@ -28,15 +28,18 @@ enaTroAgg(x)
   \item{RDP}{vector of the Returns to Detrital Pool from each trophic level. }
   \item{LS}{vector of the Lindeman trophic spine. It combines the Detrital pool with the autotrophs and forms a monotonically decreasing sequence of flows from one trophic level to the next, starting with the said combination.}
   \item{TE}{vector of the trophic efficiencies i.e. the ratio of input to a trophic level to the amount of flow that is passed on the next level from it. }
-  \item{ns}{list of trophic aggregations based network statistics. These include "Detritivory" the flow from the detrital pool to the second trophic level, "DetritalInput" the exogenous inputs to the detrital pool and "DetritalCirc" the circulation within the detrital pool.  
+  \item{ns}{vector of trophic aggregations based network statistics. These include "Detritivory" the flow from the detrital pool to the second trophic level, "DetritalInput" the exogenous inputs to the detrital pool, "DetritalCirc" the circulation within the detrital pool, "NCYCS" the number of feeding cycles removed, "NNEX" the number of feeding cycle Nexuses removed and "CI" the Cycling Index for the Feeding Cycles.
   	}
 
 }
 \references{
   %% ~put references to the literature/web site here ~
   Lindeman, R.L. 1942. The trophic-dynamic aspect of ecology. Ecology 23:399--418.
+
   Ulanowicz, R.E. and Kemp, W.M.  1979. Towards canonical trophic aggregations. The American Naturalist. 114:871--883.
+
   Ulanowicz, R.E. 1995. Ecosystem trophic foundations: Lindeman exonerata. pp. 549--560. B.C. Patten and S.E. Jorgensen (eds.) Complex Ecology: The part-whole relation in ecosystems. Prentice Hall, New Jersey.
+
   Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem flow networks. Environmental Software 6:131 -- 142.
 }
 \author{
@@ -52,7 +55,7 @@ enaTroAgg(x)
  
 }
 \seealso{
-  \code{\link{enaCycle}}
+  \code{\link{enaCycle}} \code{\link{netOrder}}
 }
 \examples{
 data(troModels)

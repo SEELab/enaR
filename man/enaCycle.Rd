@@ -24,12 +24,14 @@ enaCycle(x)
   \item{NormDist}{vector of the Normalized Distribution i.e. the Cycle Distribution normalized by the Total System Throughput of the system}
   \item{ResidualFlows}{matrix of the straight-through (acyclic) flows in the network}
   \item{AggregatedCycles}{matrix of the Aggregated Biogeochemical Cycles in the network}
-  \item{ns}{list of the full cycle analysis based network statistics. These include "NCYCS" the number of simple cycles identified in the network, "NNEX" the number of the disjoint cycles or number of Nexuses detected in the network and "CI" the cycling index of the network.} 
+  \item{ns}{vector of the full cycle analysis based network statistics. These include "NCYCS" the number of simple cycles identified in the network, "NNEX" the number of the disjoint cycles or number of Nexuses detected in the network and "CI" the cycling index of the network.} 
   }
 \references{
   %% ~put references to the literature/web site here ~
   Johnson, D.B. 1975. Finding all the elementary circuits of a directed graph. SIAM J. Comput. 4:77--84 
+
   Ulanowicz, R.E. 1983. Identifying the structure of cycling in ecosystems. Methematical Biosciences 65:219--237
+
   Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem flow networks. Environmental Software 6:131 -- 142.
   
 }
