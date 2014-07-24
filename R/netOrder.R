@@ -8,13 +8,13 @@ netOrder <- function(x,ordr=0) {
     }
                                         # Load Initials
     flow <- x %n% "flow"
-    input <- x %v% "input"
-    resp <- x %v% "respiration"
-    export <- x %v% "export"
-    output <- x %v% "output"
-    storage <- x %v% "storage"
+   # input <- x %v% "input"
+   # resp <- x %v% "respiration"
+   # export <- x %v% "export"
+   # output <- x %v% "output"
+   # storage <- x %v% "storage"
     living <- x %v% "living"
-    names <- x %v% "vertex.names"
+   # names <- x %v% "vertex.names"
     N <- length(living)
                                         # Determine Order (ordr)
 
@@ -29,25 +29,26 @@ netOrder <- function(x,ordr=0) {
 
 
                                         # Rearrange Network Characteristics
-    living <- living[ordr]
+   # living <- living[ordr]
     flow  <- flow[ordr,ordr]
-    export <- export[ordr]
-    resp <- resp[ordr]
-    storage <- storage[ordr]
-    output <- output[ordr]
-    input <- input[ordr]
-    names <- names[ordr]
+   # export <- export[ordr]
+   # resp <- resp[ordr]
+   # storage <- storage[ordr]
+   # output <- output[ordr]
+   # input <- input[ordr]
+   # names <- names[ordr]
 
 
                                         # Modify Network
+    x<-permute.vertexIDs(x,ordr)
     x %n% "flow" <- flow
-    x %v% "input" <- input
-    x %v% "respiration" <- resp
-    x %v% "export" <- export
-    x %v% "output" <- output
-    x %v% "storage" <- storage
-    x %v% "living" <- living
-    x %v% "vertex.names" <- names
+    #x %v% "input" <- input
+    #x %v% "respiration" <- resp
+    #x %v% "export" <- export
+    #x %v% "output" <- output
+    #x %v% "storage" <- storage
+    #x %v% "living" <- living
+    #x %v% "vertex.names" <- names
 
 
                                         # Return the ordered network
