@@ -14,6 +14,7 @@ netOrder <- function(x,ordr=0) {
     output <- x %v% "output"
     storage <- x %v% "storage"
     living <- x %v% "living"
+    names <- x %v% "vertex.names"
     N <- length(living)
                                         # Determine Order (ordr)
 
@@ -22,6 +23,7 @@ netOrder <- function(x,ordr=0) {
         liv1<-which(living==TRUE)
         liv2<-which(living==FALSE)
         ordr<-c(liv1,liv2)
+        if(identical(ordr,1:N)==TRUE) {warning('Network meets default conditions, no changes made')}
     }
 
 
@@ -34,6 +36,7 @@ netOrder <- function(x,ordr=0) {
     storage <- storage[ordr]
     output <- output[ordr]
     input <- input[ordr]
+    names <- names[ordr]
 
 
                                         # Modify Network
@@ -44,6 +47,7 @@ netOrder <- function(x,ordr=0) {
     x %v% "output" <- output
     x %v% "storage" <- storage
     x %v% "living" <- living
+    x %v% "vertex.names" <- names
 
 
                                         # Return the ordered network
