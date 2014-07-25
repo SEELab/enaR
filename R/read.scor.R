@@ -124,5 +124,7 @@ read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=
     x <- list('flow' = flow.mat,'input' = inputs,'exports' = exp,'respiration' = res,
               'output'= output,'storage' = stor,'living'=living)
   }
+  f<-x%n%'flow'
+  set.edge.attribute(x,'flow',f[f>0])
   return(x)
 }
