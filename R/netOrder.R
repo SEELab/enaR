@@ -2,7 +2,7 @@
 ### Singh P. | July 2014
 ### -----------------------------------------
 
-netOrder <- function(x,ordr=0) {
+netOrder <- function(x,order=0) {
     if (class(x) != "network") {
         stop("x is not a network class object")
     }
@@ -18,19 +18,19 @@ netOrder <- function(x,ordr=0) {
     N <- length(living)
                                         # Determine Order (ordr)
 
-    if(identical(ordr,0)==TRUE) {
-        ordr<-rep(0,N)
+    if(identical(order,0)==TRUE) {
+        order<-rep(0,N)
         liv1<-which(living==TRUE)
         liv2<-which(living==FALSE)
-        ordr<-c(liv1,liv2)
-        if(identical(ordr,1:N)==TRUE) {warning('Network meets default conditions, no changes made')}
+        order<-c(liv1,liv2)
+        if(identical(order,1:N)==TRUE) {warning('Network meets default conditions, no changes made')}
     }
 
 
 
                                         # Rearrange Network Characteristics
    # living <- living[ordr]
-    flow  <- flow[ordr,ordr]
+    flow  <- flow[order,order]
    # export <- export[ordr]
    # resp <- resp[ordr]
    # storage <- storage[ordr]
@@ -40,7 +40,7 @@ netOrder <- function(x,ordr=0) {
 
 
                                         # Modify Network
-    x<-permute.vertexIDs(x,ordr)
+    x<-permute.vertexIDs(x,order)
     x %n% "flow" <- flow
     #x %v% "input" <- input
     #x %v% "respiration" <- resp
