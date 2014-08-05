@@ -1,38 +1,89 @@
-%\VignetteIndexEntry{ecological network analysis}
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\bibliographystyle{ecology}
+\documentclass[article]{jss}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% declarations for jss.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% almost as usual
+\author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And 
+        Stuart R. Borrett\\Department of Biology and Marine Biology\\
+        University of North Carolina Wilmington}
+\title{enaR: Ecosystem Network Analysis with R}
+
+%% for pretty printing and a nice hypersummary also set:
+\Plainauthor{Matthew K. Lau, Stuart R. Borrett} %% comma-separated
+\Plaintitle{enaR: Ecosystem Network Analyses with R} %% without formatting
+\Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
+
+%% an abstract and keywords
+\Abstract{
+  Ecosystem Network Analysis (ENA) provides a framework for
+  investigating the structure, function and dynamics of ecological
+  systems, primarily ecosystem models with physcially conserved
+  units. Here, we present the \textit{enaR} package, which provides a
+  broad representation of many of the core tools developed by the ENA
+  community, detailing how to use the primary functions of the package
+  for the analysis of single models or simultaneous, synthetic
+  analysis of multiple ecosystem models.
+}
+\Keywords{ecology, ENA, ecosystems, species interactions, networks, \proglang{R}}
+\Plainkeywords{ecology, ENA, ecosystems, species interactions, networks, R} %% without formatting
+%% at least one keyword must be supplied
+
+%% publication information
+%% NOTE: Typically, this can be left commented and will be filled out by the technical editor
+%% \Volume{50}
+%% \Issue{9}
+%% \Month{June}
+%% \Year{2012}
+%% \Submitdate{2012-06-04}
+%% \Acceptdate{2012-06-04}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+
+\Address{
+  Matthew K. Lau\\
+  Harvard Forest\\
+  Harvard University\\
+  324 N Main St, Petersham, MA 01366, USA\\
+  E-mail: \email{matthewklau@fas.harvard.edu}\\
+  URL: \url{https://github.com/MKLau}\\
+  \\
+  Stuart R. Borrett\\
+  Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\
+  601 South College Road, Wilmington, NC 28403, USA\\
+  E-mail: \email{borretts@uncw.edu}\\
+  URL: \url{http://people.uncw.edu/borretts/}
+}
+
+%% It is also possible to add a telephone and fax number
+%% before the e-mail in the following format:
+%% Telephone: +43/512/507-7103
+%% Fax: +43/512/507-2851
+
+%% for those who use Sweave please include the following line (with % symbols):
+%% need no \usepackage{Sweave.sty}
+
 \usepackage[super, sort]{natbib}
   \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib  
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{hyperref}  %\hyperref[label_name]{''link text''}                                                                           %\hyperlink{label}{anchor caption}                                                                              %\hypertarget{label}{link caption}
-\hypersetup{
-    colorlinks=true, %set true if you want colored links
-    linktoc=page,
-    linktoc=all,     %set to all if you want both sections and
-                     %subsections linked
-    linkcolor=blue,  %choose some color if you want links to stand out
-}
 \usepackage{ucs} %needed for R output: signif stars etc, quotes
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{sidecap}
-\renewcommand{\floatpagefraction}{0.8}
-\title{Vignette: enaR}
-\author{S.R. Borrett and M.K. Lau}
-%\date{}                                           % Activate to display a given date or no date
 
-\def\R{\textsf{R}}
-\def\tableline{\vskip .1in \hrule height 0.6pt \vskip 0.1in}
+%% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
-\maketitle
 
-\setcounter{tocdepth}{3}  %%activate to number sections
-\tableofcontents
+%% include your article here, just as usual
+%% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
 
-\section{Introduction}
+\section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
+%% Note: If there is markup in \(sub)section, then it has to be escape as above.
+
 This package is a collection of functions to implement Ecological
 Network Analysis (ENA), which is a family of algorithms for
 investigating the structure and function of ecosystems modeled as
@@ -52,14 +103,6 @@ perform ENA.  It is not meant to be a detailed guide to ENA, but we
 provide some references to the primary literature for those wishing to
 learn more about the techniques.
 
-\section{Background}
-% Intro
-Before describing how to use this package, we provide a brief
-background of ENA.  Users may find this helpful as several software
-design decisions were predicated on the history and current state of
-the field.
-
-% What is ENA
 The ENA methodology is an application and extension of economic
 Input--Output Analysis \citep{leontief1936,leontief66} that was first
 introduced into ecology by \citet{hannon73}.  Two major schools have
@@ -1518,8 +1561,7 @@ their data with other \R\ packages for graph and network analysis like
 \textit{sna} and \textit{iGraph}.  In summary, we hope you find this
 package useful for your ENA needs.  
 
+
 \bibliography{srbbib_abb,srb}
 
-
-\end{document}  
-
+\end{document}

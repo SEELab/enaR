@@ -1,39 +1,89 @@
-%\VignetteIndexEntry{ecological network analysis}
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\bibliographystyle{ecology}
+\documentclass[article]{jss}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% declarations for jss.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% almost as usual
+\author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And 
+        Stuart R. Borrett\\Department of Biology and Marine Biology\\
+        University of North Carolina Wilmington}
+\title{enaR: Ecosystem Network Analysis with R}
+
+%% for pretty printing and a nice hypersummary also set:
+\Plainauthor{Matthew K. Lau, Stuart R. Borrett} %% comma-separated
+\Plaintitle{enaR: Ecosystem Network Analyses with R} %% without formatting
+\Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
+
+%% an abstract and keywords
+\Abstract{
+  Ecosystem Network Analysis (ENA) provides a framework for
+  investigating the structure, function and dynamics of ecological
+  systems, primarily ecosystem models with physcially conserved
+  units. Here, we present the \textit{enaR} package, which provides a
+  broad representation of many of the core tools developed by the ENA
+  community, detailing how to use the primary functions of the package
+  for the analysis of single models or simultaneous, synthetic
+  analysis of multiple ecosystem models.
+}
+\Keywords{ecology, ENA, ecosystems, species interactions, networks, \proglang{R}}
+\Plainkeywords{ecology, ENA, ecosystems, species interactions, networks, R} %% without formatting
+%% at least one keyword must be supplied
+
+%% publication information
+%% NOTE: Typically, this can be left commented and will be filled out by the technical editor
+%% \Volume{50}
+%% \Issue{9}
+%% \Month{June}
+%% \Year{2012}
+%% \Submitdate{2012-06-04}
+%% \Acceptdate{2012-06-04}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+
+\Address{
+  Matthew K. Lau\\
+  Harvard Forest\\
+  Harvard University\\
+  324 N Main St, Petersham, MA 01366, USA\\
+  E-mail: \email{matthewklau@fas.harvard.edu}\\
+  URL: \url{https://github.com/MKLau}\\
+  \\
+  Stuart R. Borrett\\
+  Department of Biology and Marine Biology\\
+  University of North Carolina Wilmington\\
+  601 South College Road, Wilmington, NC 28403, USA\\
+  E-mail: \email{borretts@uncw.edu}\\
+  URL: \url{http://people.uncw.edu/borretts/}
+}
+
+%% It is also possible to add a telephone and fax number
+%% before the e-mail in the following format:
+%% Telephone: +43/512/507-7103
+%% Fax: +43/512/507-2851
+
+%% for those who use Sweave please include the following line (with % symbols):
+%% need no \usepackage{Sweave.sty}
+
 \usepackage[super, sort]{natbib}
   \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib  
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{hyperref}  %\hyperref[label_name]{''link text''}                                                                           %\hyperlink{label}{anchor caption}                                                                              %\hypertarget{label}{link caption}
-\hypersetup{
-    colorlinks=true, %set true if you want colored links
-    linktoc=page,
-    linktoc=all,     %set to all if you want both sections and
-                     %subsections linked
-    linkcolor=blue,  %choose some color if you want links to stand out
-}
 \usepackage{ucs} %needed for R output: signif stars etc, quotes
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{sidecap}
-\renewcommand{\floatpagefraction}{0.8}
-\title{Vignette: enaR}
-\author{S.R. Borrett and M.K. Lau}
-%\date{}                                           % Activate to display a given date or no date
 
-\def\R{\textsf{R}}
-\def\tableline{\vskip .1in \hrule height 0.6pt \vskip 0.1in}
+%% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{Sweave}
+
 \begin{document}
-\maketitle
 
-\setcounter{tocdepth}{3}  %%activate to number sections
-\tableofcontents
+%% include your article here, just as usual
+%% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
 
-\section{Introduction}
+\section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
+%% Note: If there is markup in \(sub)section, then it has to be escape as above.
+
 This package is a collection of functions to implement Ecological
 Network Analysis (ENA), which is a family of algorithms for
 investigating the structure and function of ecosystems modeled as
@@ -53,14 +103,6 @@ perform ENA.  It is not meant to be a detailed guide to ENA, but we
 provide some references to the primary literature for those wishing to
 learn more about the techniques.
 
-\section{Background}
-% Intro
-Before describing how to use this package, we provide a brief
-background of ENA.  Users may find this helpful as several software
-design decisions were predicated on the history and current state of
-the field.
-
-% What is ENA
 The ENA methodology is an application and extension of economic
 Input--Output Analysis \citep{leontief1936,leontief66} that was first
 introduced into ecology by \citet{hannon73}.  Two major schools have
@@ -313,21 +355,21 @@ hypothetical data.
   vertices = 4 
   directed = TRUE 
   hyper = FALSE 
-  loops = FALSE 
+  loops = TRUE 
   multiple = FALSE 
   bipartite = FALSE 
   flow:
-     node1           node2            node3           node4      
- Min.   :0.000   Min.   :0.0000   Min.   :0.000   Min.   :0.000  
- 1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.000  
- Median :1.967   Median :0.0000   Median :0.000   Median :1.282  
- Mean   :2.219   Mean   :0.4644   Mean   :1.118   Mean   :1.615  
- 3rd Qu.:4.186   3rd Qu.:0.4644   3rd Qu.:1.118   3rd Qu.:2.897  
- Max.   :4.939   Max.   :1.8575   Max.   :4.474   Max.   :3.895  
+     node1            node2           node3           node4      
+ Min.   :0.0000   Min.   :0.000   Min.   :0.000   Min.   :0.000  
+ 1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000  
+ Median :0.0000   Median :0.000   Median :0.000   Median :0.000  
+ Mean   :0.9452   Mean   :1.261   Mean   :1.174   Mean   :1.404  
+ 3rd Qu.:0.9452   3rd Qu.:1.261   3rd Qu.:1.174   3rd Qu.:1.404  
+ Max.   :3.7809   Max.   :5.045   Max.   :4.698   Max.   :5.614  
   balanced = FALSE 
-  total edges= 3 
+  total edges= 4 
     missing edges= 0 
-    non-missing edges= 3 
+    non-missing edges= 4 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -368,7 +410,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 1.44664313 0.03584714 2.13542654 0.01644835
+[1] 2.1754167 0.5102669 1.4552315 1.1031887
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -385,11 +427,11 @@ characteristic and it can be extracted as:
 > fake.model%n%'flow'
 \end{Sinput}
 \begin{Soutput}
-         node1   node2    node3    node4
-node1 4.939150 0.00000 4.473502 0.000000
-node2 0.000000 1.85745 0.000000 0.000000
-node3 3.934966 0.00000 0.000000 3.894596
-node4 0.000000 0.00000 0.000000 2.564117
+         node1    node2    node3    node4
+node1 0.000000 0.000000 0.000000 0.000000
+node2 3.780938 0.000000 4.697668 5.614359
+node3 0.000000 5.044795 0.000000 0.000000
+node4 0.000000 0.000000 0.000000 0.000000
 \end{Soutput}
 \end{Schunk}
 
@@ -404,20 +446,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1   node2    node3    node4
-node1 4.939150 0.00000 4.473502 0.000000
-node2 0.000000 1.85745 0.000000 0.000000
-node3 3.934966 0.00000 0.000000 3.894596
-node4 0.000000 0.00000 0.000000 2.564117
+         node1    node2    node3    node4
+node1 0.000000 0.000000 0.000000 0.000000
+node2 3.780938 0.000000 4.697668 5.614359
+node3 0.000000 5.044795 0.000000 0.000000
+node4 0.000000 0.000000 0.000000 0.000000
 
 $z
-[1] 1.44664313 0.03584714 2.13542654 0.01644835
+[1] 2.1754167 0.5102669 1.4552315 1.1031887
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 1.44664313 0.03584714 2.13542654 0.01644835
+[1] 2.1754167 0.5102669 1.4552315 1.1031887
 
 $y
 [1] NA NA NA NA
@@ -958,8 +1000,8 @@ as follows:
 >   enaAscendency(oyster)
 \end{Sinput}
 \begin{Soutput}
-          AMI      ASC       OH      CAP   ASC.CAP    OH.CAP
-[1,] 1.330211 166.3473 211.0979 377.4452 0.4407191 0.5592809
+          AMI      ASC       OH      CAP   ASC.CAP    OH.CAP robustness
+[1,] 1.330211 166.3473 211.0979 377.4452 0.4407191 0.5592809  0.3611021
 \end{Soutput}
 \end{Schunk}
 
@@ -1005,8 +1047,8 @@ $names
 \begin{Soutput}
           TSS       CIS         BSI         DSI       ISI     ID.S
 [1,] 3112.044 0.9940252 0.003331412 0.003320932 0.9933477 299.1171
-      ID.S.I   ID.S.O  HMG.S.O HMG.S.I NAS NASP mode0.S  mode1.S
-[1,] 454.227 294.1527 1.115985 1.38251  20   21 10.3675 8.226261
+      ID.S.I   ID.S.O  HMG.S.O  HMG.S.I NAS NASP mode0.S  mode1.S
+[1,] 454.227 294.1527 1.115985 1.464503  20   21 10.3675 8.226261
      mode2.S  mode3.S mode4.S
 [1,] 3093.45 8.226261 10.3675
 \end{Soutput}
@@ -1334,7 +1376,7 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
 > str(ns)    # examine the structure of ns
 \end{Sinput}
 \begin{Soutput}
-'data.frame':	1 obs. of  62 variables:
+'data.frame':	1 obs. of  63 variables:
  $ n          : num 6
  $ L          : num 12
  $ C          : num 0.333
@@ -1374,6 +1416,7 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
  $ CAP        : num 377
  $ ASC.CAP    : num 0.441
  $ OH.CAP     : num 0.559
+ $ robustness : num 0.361
  $ TSS        : num 3112
  $ CIS        : num 0.994
  $ BSI        : num 0.00333
@@ -1383,7 +1426,7 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
  $ ID.S.I     : num 454
  $ ID.S.O     : num 294
  $ HMG.S.O    : num 1.12
- $ HMG.S.I    : num 1.38
+ $ HMG.S.I    : num 1.46
  $ NAS        : num 20
  $ NASP       : num 21
  $ mode0.S    : num 10.4
@@ -2084,19 +2127,19 @@ function to reshape the network statistics into a single data frame.
 [25] "HMG.I"       "HMG.O"       "AMP.I"       "AMP.O"      
 [29] "mode0.F"     "mode1.F"     "mode2.F"     "mode3.F"    
 [33] "mode4.F"     "AMI"         "ASC"         "OH"         
-[37] "CAP"         "ASC.CAP"     "OH.CAP"      "TSS"        
-[41] "CIS"         "BSI"         "DSI"         "ISI"        
-[45] "ID.S"        "ID.S.I"      "ID.S.O"      "HMG.S.O"    
-[49] "HMG.S.I"     "NAS"         "NASP"        "mode0.S"    
-[53] "mode1.S"     "mode2.S"     "mode3.S"     "mode4.S"    
-[57] "lam1D"       "synergism.F" "mutualism.F" "lam1DS"     
-[61] "synergism.S" "mutualism.S"
+[37] "CAP"         "ASC.CAP"     "OH.CAP"      "robustness" 
+[41] "TSS"         "CIS"         "BSI"         "DSI"        
+[45] "ISI"         "ID.S"        "ID.S.I"      "ID.S.O"     
+[49] "HMG.S.O"     "HMG.S.I"     "NAS"         "NASP"       
+[53] "mode0.S"     "mode1.S"     "mode2.S"     "mode3.S"    
+[57] "mode4.S"     "lam1D"       "synergism.F" "mutualism.F"
+[61] "lam1DS"      "synergism.S" "mutualism.S"
 \end{Soutput}
 \begin{Sinput}
 > dim(ns)         # show dimensions of ns matrix
 \end{Sinput}
 \begin{Soutput}
-[1] 10 62
+[1] 10 63
 \end{Soutput}
 \begin{Sinput}
 > ns[1:5,1:5]     # show selected results
@@ -2381,8 +2424,7 @@ their data with other \R\ packages for graph and network analysis like
 \textit{sna} and \textit{iGraph}.  In summary, we hope you find this
 package useful for your ENA needs.  
 
+
 \bibliography{srbbib_abb,srb}
 
-
-\end{document}  
-
+\end{document}
