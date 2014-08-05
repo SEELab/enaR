@@ -930,6 +930,9 @@ show(tes)
 @ 
 
 \subsection{Control Analysis}
+
+%%%Pawan updates
+
 Control analysis is implemented as in the original NEA.m function.
 Recent updates to control analysis \citep[e.g.,][]{schramski06,
   schramski07} still need to be included.
@@ -986,6 +989,9 @@ mti$M  # shows the total impact matrix
 \end{small}
 \end{table*}
 
+\subsection{Cycle Analyses}
+
+%%%For Pawan to insert enaCycle and enaTroAgg
 
 \subsection{Other Analyses}
 There are a number of additional tools in the package.  Here we

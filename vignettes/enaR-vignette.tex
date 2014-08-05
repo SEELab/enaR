@@ -359,17 +359,17 @@ hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   flow:
-     node1            node2           node3           node4      
- Min.   :0.0000   Min.   :0.000   Min.   :0.000   Min.   :0.000  
- 1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000  
- Median :0.0000   Median :0.000   Median :0.000   Median :0.000  
- Mean   :0.9452   Mean   :1.261   Mean   :1.174   Mean   :1.404  
- 3rd Qu.:0.9452   3rd Qu.:1.261   3rd Qu.:1.174   3rd Qu.:1.404  
- Max.   :3.7809   Max.   :5.045   Max.   :4.698   Max.   :5.614  
+     node1            node2       node3           node4      
+ Min.   :0.0000   Min.   :0   Min.   :0.000   Min.   :0.000  
+ 1st Qu.:0.0000   1st Qu.:0   1st Qu.:0.000   1st Qu.:0.000  
+ Median :0.4836   Median :0   Median :2.231   Median :0.038  
+ Mean   :0.4968   Mean   :0   Mean   :3.455   Mean   :1.710  
+ 3rd Qu.:0.9803   3rd Qu.:0   3rd Qu.:5.686   3rd Qu.:1.748  
+ Max.   :1.0200   Max.   :0   Max.   :9.357   Max.   :6.765  
   balanced = FALSE 
-  total edges= 4 
+  total edges= 6 
     missing edges= 0 
-    non-missing edges= 4 
+    non-missing edges= 6 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -410,7 +410,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 2.1754167 0.5102669 1.4552315 1.1031887
+[1] 2.334037 1.139851 1.172816 1.807411
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -427,11 +427,11 @@ characteristic and it can be extracted as:
 > fake.model%n%'flow'
 \end{Sinput}
 \begin{Soutput}
-         node1    node2    node3    node4
-node1 0.000000 0.000000 0.000000 0.000000
-node2 3.780938 0.000000 4.697668 5.614359
-node3 0.000000 5.044795 0.000000 0.000000
-node4 0.000000 0.000000 0.000000 0.000000
+          node1 node2    node3      node4
+node1 0.9671218     0 0.000000 0.00000000
+node2 0.0000000     0 4.461897 6.76470731
+node3 0.0000000     0 0.000000 0.00000000
+node4 1.0199721     0 9.357320 0.07599941
 \end{Soutput}
 \end{Schunk}
 
@@ -446,20 +446,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1    node2    node3    node4
-node1 0.000000 0.000000 0.000000 0.000000
-node2 3.780938 0.000000 4.697668 5.614359
-node3 0.000000 5.044795 0.000000 0.000000
-node4 0.000000 0.000000 0.000000 0.000000
+          node1 node2    node3      node4
+node1 0.9671218     0 0.000000 0.00000000
+node2 0.0000000     0 4.461897 6.76470731
+node3 0.0000000     0 0.000000 0.00000000
+node4 1.0199721     0 9.357320 0.07599941
 
 $z
-[1] 2.1754167 0.5102669 1.4552315 1.1031887
+[1] 2.334037 1.139851 1.172816 1.807411
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 2.1754167 0.5102669 1.4552315 1.1031887
+[1] 2.334037 1.139851 1.172816 1.807411
 
 $y
 [1] NA NA NA NA

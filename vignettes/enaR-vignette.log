@@ -1,22 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  5 AUG 2014 15:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  5 AUG 2014 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**enaR-vignette.tex
-(./enaR-vignette.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
- icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
-iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
- lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
-ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
-ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
-.
-(./jss.cls
+**\nonstopmode\input enaR-vignette.tex
+(./enaR-vignette.tex (./jss.cls
 Document Class: jss 2013/04/06 2.2 jss class by Achim Zeileis
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
@@ -321,7 +308,15 @@ Type  H <return>  for immediate help.
                                                   
 l.70   \bibpunct
                 {(}{)}{;}{a}{,}{,} % required for natbib
-? 
+The package natbib has already been loaded with options:
+  [authoryear,round,longnamesfirst]
+There has now been an attempt to load it with options
+  [super, sort]
+Adding the global options:
+  authoryear,round,longnamesfirst,super, sort
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2004/10/17 UCS: Unicode input support
 
@@ -488,7 +483,12 @@ LaTeX Info: Redefining \selectfont on input line 117.
 ! Undefined control sequence.
 l.94 for \R
            \ developed by \citet{butts08_network}. In addition to being
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./jsslo
@@ -505,11 +505,21 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 ! Undefined control sequence.
 l.140 \R
         \ package is to begin to bring together these different
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Undefined control sequence.
 l.150 \tableline
                 
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 LaTeX Font Info:    Try loading font information for T1+aett on input line 154.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
@@ -518,7 +528,12 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ! Undefined control sequence.
 l.164 \tableline
                 
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 <enaR-vignette-003.pdf, id=159, 433.62pt x 289.08pt>
 File: enaR-vignette-003.pdf Graphic file (type pdf)
 
@@ -529,7 +544,12 @@ Package pdftex.def Info: enaR-vignette-003.pdf used on input line 207.
 ! Undefined control sequence.
 l.229 in \R
            \ that contains the model data for subsequent analysis.  To
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 Underfull \vbox (badness 6141) has occurred while \output is active []
 
@@ -579,7 +599,12 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 ! Undefined control sequence.
 l.595 ...ttt{read.wand} function will create an \R
                                                   \
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 8 []
@@ -595,7 +620,10 @@ Type  H <return>  for immediate help.
                                                   
 l.643 \begin{align}
                    
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: \mathbf allowed only in math mode.
 
@@ -605,13 +633,17 @@ Type  H <return>  for immediate help.
                                                   
 l.644 \mathbf
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
-? 
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.644 \mathbf{S} = \left
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
-? 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
 
 ! LaTeX Error: \begin{document} ended by \end{align}.
 
@@ -621,13 +653,21 @@ Type  H <return>  for immediate help.
                                                   
 l.647 \end{align}
                  
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.647 \end{align}
                  
-? 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 9
@@ -637,7 +677,12 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 ! Undefined control sequence.
 l.696 ...the excellent graphics capabilities of \R
                                                   \ to make fancier
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 10 []
@@ -803,8 +848,12 @@ Overfull \hbox (86.46198pt too wide) in paragraph at lines 1846--1895
 ! Undefined control sequence.
 l.1918 One advantage of the \textit{enaR} \R
                                             \ package is that it simplifies ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-? 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 28 []
@@ -840,11 +889,21 @@ Package pdftex.def Info: enaR-vignette-048.pdf used on input line 2190.
 ! Undefined control sequence.
 l.2198 ...building the \textit{enaR} package in \R
                                                   \ is that
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Undefined control sequence.
 l.2200 ...atistical tools that already exist in \R
                                                   .  We highlight two
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 33
@@ -882,16 +941,30 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 ! Undefined control sequence.
 l.2408 There are other \R
                          \ packages that have graph and network analysis tools,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-? 
 ! Undefined control sequence.
 l.2415 Network Analysis in \R
                              .  The vision for this package is that it will
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Undefined control sequence.
 l.2423 their data with other \R
                                \ packages for graph and network analysis like
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 (./enaR-vignette.bbl
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 37
@@ -972,7 +1045,7 @@ Here is how much of TeX's memory you used:
  11522 multiletter control sequences out of 15000+200000
  56166 words of font info for 99 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 36i,12n,34p,341b,749s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,12n,34p,360b,749s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
 xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
@@ -1002,7 +1075,7 @@ pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/texmf-dist/fonts/type
 ublic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/pu
 blic/cm-super/sfrm1095.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/
 zapfchan/uzcmi8a.pfb>
-Output written on enaR-vignette.pdf (45 pages, 536780 bytes).
+Output written on enaR-vignette.pdf (45 pages, 536836 bytes).
 PDF statistics:
  1032 PDF objects out of 1200 (max. 8388607)
  928 compressed objects within 10 object streams
