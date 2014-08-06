@@ -872,7 +872,7 @@ mathematics is uncertain.
 % Utility ---------------------------------
 \begin{table*}[t]
   \caption{Matrices and graph-level network statistics returned by the \textit{enaR}
-    \texttt{Utility} function.}\label{tab:utility}
+    \texttt{enaUtility} function.}\label{tab:utility}                  %% Utility -> enaUtility function   ~Pawan
 \center
 \begin{small}
   \begin{tabular}{l l}
@@ -931,16 +931,40 @@ show(tes)
 
 \subsection{Control Analysis}
 
-%%%Pawan updates
+%%%Pawan updates%%%%%%%%%%%%%%%%%%%%%%%Added details for Control Analysis ~Pawan
 
-Control analysis is implemented as in the original NEA.m function.
-Recent updates to control analysis \citep[e.g.,][]{schramski06,
-  schramski07} still need to be included.
+
+Control analysis is implemented as in the original NEA.m function. 
+It determines the pairwise control relationships between the nodes 
+in the network. Recent updates to control analysis 
+\citep[e.g.,][]{schramski06, schramski07} have also been included 
+in this function. Table~\ref{tab:control} summarizes the function output.
 
 <<>>=
+                                            #conduct control analysis
 C <- enaControl(m)               
 attributes(C)
 @ 
+%%% The Outputs listed contain the Schramski Control results. ~Pawan
+% enaControl - Control Analysis ~Pawan
+\begin{table*}[t]
+  \caption{Matrices returned by the \textit{enaR}
+    \texttt{enaControl} function, which are based on 
+    \citep{dame81, patten81, schramski06, schramski07}.} \label{tab:control}
+  \center
+  \begin{small}
+    \begin{tabular}{l l}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      CN$_{n \times n}$ & Control matrix using flow values \\                       % these have descriptions in the literature~Pawan
+      CQ$_{n \times n}$ & Control matrix using storage values \\
+      CR$_{n \times n}$ & Schramski's Control Ratio Matrix  \\            %% magnitude of control of $i$ over $j$ with a two component scale(dimensionless)
+      CD$_{n \times n}$ & Schramski's Control Difference Matrix \\  %% magnitude of control of $i$ over $j$ with a system-wide scale
+      sc$_{n \times 1}$ & Schramski's System Control vector \\ \hline %% control exhibited or received by $i$ with respect to the whole system
+\end{tabular}
+\end{small}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Control Analysis Completed. ~Pawan.
 
 %% The flow control $\mathbf{CN}$ and storage control $\mathbf{CQ}$
 %% matrices are oriented column-to-row.
@@ -974,7 +998,7 @@ mti$M  # shows the total impact matrix
 
 % enaMTI - Mixed Trophic Impacts
 \begin{table*}[t]
-  \caption{Matricies returned by the \textit{enaR}
+  \caption{Matrices returned by the \textit{enaR}    %% Typo : Matricies -> Matrices ~Pawan
     \texttt{enaMTI} function, which are based on \citep{ulanowicz90}.}\label{tab:mti}
   \center
   \begin{small}
@@ -989,9 +1013,126 @@ mti$M  # shows the total impact matrix
 \end{small}
 \end{table*}
 
-\subsection{Cycle Analyses}
 
-%%%For Pawan to insert enaCycle and enaTroAgg
+
+%%%For Pawan to insert enaCycle and enaTroAgg %%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cycle Analysis}
+The Cycle Analysis provides the detailed account of the Cycling 
+present in the network. It follows the algorithm by the DOS-based 
+NETWRK 4.2b software by Ulanowicz \citep{ulanowicz91, ulanowicz83} and 
+provides results similar to NETWRK's 'Full Cycle Analysis'. 
+ Cycles in a network are grouped together into disjoint nexuses and each 
+ nexus is characterized by a weak arc. This function gives details of the 
+ individual cycles along with the disjoint nexuses present in the network. 
+ Table~\ref{tab:cycle} summarizes the function output.
+%It returns the individual cycles present in the model distributed amongst 
+%different nexuses based on a depth-first search to identify cycle arcs. 
+%It also gives the distribution of flow into cycles of different lengths and                  %% Determine whether necessary ~Pawan
+ %separates the flows of the network into cyclic and acyclic components and 
+ %calculates the cycling index based on the flow matrix.
+
+
+ 
+ <<>>=
+ 
+ cyc <- enaCycle(m)
+ attributes(cyc) 
+                                                            # Display information of individual cycles 
+ names(cyc$Table.cycle)
+                                                            # Display information of the disjoint nexuses
+ names(cyc$Table.nexus)
+ @
+ 
+ %enaCycle - Full Cycle Analysis
+ \begin{table*}[t]
+  \caption{Data frames, matrices and graph-level network statistics returned by the \textit{enaR}    %%Data frames may be called tables ~Pawan
+    \texttt{enaCycle} function, which are based on \citep{ulanowicz83}.}\label{tab:cycle}
+  \center
+  \begin{small}
+    \begin{tabular}{l l}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Data frames}} \\[1ex]
+      Table.cycle & data frame of all cycles in the network\\
+      Table.nexus & data frame with details of the disjoint nexuses present in the network\\[1ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      CycleDist$_{n \times 1}$ & vector of flows cycling in loops of different sizes \\  % these have names in the literature
+      NormDist$_{n \times 1}$ & vector of Cycle Distributions normalized by the total system throughput \\
+      ResidualFlows$_{n \times n}$ & matrix of straight-through flows or the underlying acyclic graph\\
+      AggregatedCycles$_{n \times n}$ & matrix of all the cycled flows or the underlying cyclic graph\\[1ex]
+      \multicolumn{2}{l}{\textit{Network Statistics}} \\[1ex]
+      NCYCS & number of cycles detected in the network\\
+      NNEX & number of disjoint nexuses detected in the network\\
+      CI & cycling index of the network based on flow matrix\\ \hline
+\end{tabular}
+\end{small}
+\end{table*}
+
+%%%%%%%%%%enaTroAgg %%%%%%%%%%%%%%%%%%%%%%%%%%%%%~Pawan
+
+\subsection{Trophic Aggregations}
+The Trophic Aggregation algorithm unleashes the Trophic Structure 
+of the given network based on the Lindeman's trophic concepts 
+\citep{lindeman42}. The algorithm is implemented as in NETWRK 4.2b
+by Ulanowicz \citep{ulanowicz1979trophic} and provides similar 
+results as NETWRK's 'Lindeman Trophic Aggregations' \citep{ulanowicz91}. 
+It apportions the nodes into integer trophic levels and estimates the 
+corresponding inputs, exports, respirations and the grazing chain and 
+trophic spine which represent the transfers between integer trophic levels. 
+
+
+It is crucial for this algorithm that the cycles among the living nodes of the 
+network (Feeding Cycles) be removed beforehand to assign trophic levels 
+to nodes. Hence the output for this function contains the Cycle analysis 
+output for the Feeding cycles in the network.
+ 
+Table~\ref{tab:trophic} summarizes the function output except the outputs 
+for the feeding cycles which are similar to the enaCycle outputs.
+
+ <<>>=
+ 
+ trop <- enaTroAgg(m)
+ attributes(trop)                   
+                                                     # Cycle analysis output for Feeding Cycles
+ trop$Feeding_Cycles
+@
+
+ %enaTroAgg - Trohpic Aggregations
+ \begin{table*}[t]
+  \caption{Matrices and graph-level network statistics returned by the \textit{enaR}    
+    \texttt{enaTroAgg} function, which are based on \citet{ulanowicz1979trophic}.}\label{tab:trophic}
+  \center
+  \begin{small}
+    \begin{tabular}{l l}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      A$_{nl \times nl}$ & Lindeman transformation matrix that apportions nodes to integer trophic levels \\  % define nl as no. of living nodes ~Pawan %%BUG%
+      ETL$_{n \times 1}$ & vector of the effective trophic levels of different nodes \\
+      M.Flow$_{nl \times 1} & migratory flows in living nodes (if present) \\
+      CI$_{n \times 1} & vector of canonical inputs to integer trophic levels (if migratory flows present) \\ 
+      CE$_{n \times 1}$ & Canonical Exports. vector of exports from Integer trophic levels \\
+      CR$_{n \times 1}$ & Canonical Respirations. vector of respiration from Integer trophic levels \\
+      GC$_{nl \times 1}$ & Grazing Chain. vector of inputs to Integer trophic levels from preceding level \\
+      RDP$_{nl \times 1}$ & vector of returns from each level to the detrital pool \\
+      LS$_{nl \times 1}$ & vector representing the Lindeman Spine \\
+      TE$_{nl \times 1}$ & vector of the trophic efficiencies for integer trophic levels\\[1ex]
+      \multicolumn{2}{l}{\textit{Network Statistics}} \\[1ex]
+      Detritivory & flow from the detrital pool to the second trophic level \\
+      DetritalInput & exogenous inputs to the detrital pool \\
+      DetritalCirc & internal circulation within the detrital pool \\
+      NCYCS & number of feeding cycles removed from the network \\
+      NNEX & number of disjoint nexuses detected for the feeding cycles \\
+      CI & cycling index of the living component of the network based on flow matrix\\ \hline
+\end{tabular}
+\end{small}
+\end{table*}
+
+
+
+
+
+% Added Control Analysis Updates, enaCycle and enaTroAgg details ~Pawan.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Other Analyses}
 There are a number of additional tools in the package.  Here we

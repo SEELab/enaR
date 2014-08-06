@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2011)
+This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: enaR-vignette.aux
 The style file: jss.bst
 Database file #1: srbbib_abb.bib
 Database file #2: srb.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 81 entries,
+You've used 85 entries,
             3140 wiz_defined-function locations,
-            1188 strings with 19728 characters,
-and the built_in function-call counts, 75271 in all, are:
-= -- 6296
-> -- 2060
-< -- 58
-+ -- 794
-- -- 686
-* -- 6357
-:= -- 10161
-add.period$ -- 335
-call.type$ -- 81
-change.case$ -- 562
-chr.to.int$ -- 78
-cite$ -- 81
-duplicate$ -- 6749
-empty$ -- 6911
-format.name$ -- 944
-if$ -- 15341
+            1209 strings with 20066 characters,
+and the built_in function-call counts, 78307 in all, are:
+= -- 6557
+> -- 2118
+< -- 63
++ -- 818
+- -- 704
+* -- 6580
+:= -- 10566
+add.period$ -- 351
+call.type$ -- 85
+change.case$ -- 584
+chr.to.int$ -- 82
+cite$ -- 85
+duplicate$ -- 7025
+empty$ -- 7195
+format.name$ -- 974
+if$ -- 15967
 int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 1030
-newline$ -- 426
-num.names$ -- 335
-pop$ -- 2195
+missing$ -- 1075
+newline$ -- 446
+num.names$ -- 351
+pop$ -- 2294
 preamble$ -- 1
-purify$ -- 550
+purify$ -- 572
 quote$ -- 0
-skip$ -- 1459
+skip$ -- 1544
 stack$ -- 0
-substring$ -- 7063
-swap$ -- 2276
-text.length$ -- 10
+substring$ -- 7334
+swap$ -- 2378
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 714
+type$ -- 750
 warning$ -- 0
-while$ -- 626
+while$ -- 653
 width$ -- 0
-write$ -- 1087
+write$ -- 1139

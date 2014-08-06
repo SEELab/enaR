@@ -1,4 +1,4 @@
-\begin{thebibliography}{81}
+\begin{thebibliography}{85}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -299,6 +299,11 @@ Leontief WW (1966).
 \newblock \emph{Input--Output Economics}.
 \newblock Oxford University Press, New York.
 
+\bibitem[{Lindeman(1942)}]{lindeman42}
+Lindeman RL (1942).
+\newblock \enquote{The trophic-dynamic aspect of ecology.}
+\newblock \emph{Ecology}, \textbf{23}, 399--418.
+
 \bibitem[{Link \emph{et~al.}(2008)Link, Overholtz, O'Reilly, Green, Dow, Palka,
   Legault, Vitaliano, Guida, Fogarty, Brodziak, Methratta, Stockhausen, Col,
   and Griswold}]{link08}
@@ -359,6 +364,11 @@ Patten BC (1991).
 \newblock In M~Higashi, T~Burns (eds.), \emph{Theoretical Studies of
   Ecosystems: The Network Perspective}, pp. 288--351. Cambridge University
   Press, New York.
+
+\bibitem[{Patten and Auble(1981)}]{patten81}
+Patten BC, Auble GT (1981).
+\newblock \enquote{System theory of the ecological niche.}
+\newblock \emph{Am. Nat.}, \textbf{117}, 893--922.
 
 \bibitem[{Patten \emph{et~al.}(1976)Patten, Bosserman, Finn, and
   Cale}]{patten76}
@@ -453,6 +463,11 @@ Tilly LJ (1968).
 \newblock \enquote{The structure and dynamics of {Cone Spring}.}
 \newblock \emph{Ecol. Monogr.}, \textbf{38}, 169--197.
 
+\bibitem[{Ulanowicz(1983)}]{ulanowicz83}
+Ulanowicz RE (1983).
+\newblock \enquote{Identifying the structure of cycling in ecosystems.}
+\newblock \emph{Math. Biosci.}, \textbf{65}, 219--237.
+
 \bibitem[{Ulanowicz(1986)}]{ulanowicz86}
 Ulanowicz RE (1986).
 \newblock \emph{Growth and Development: Ecosystems Phenomenology}.
@@ -516,6 +531,11 @@ Ulanowicz RE, Bondavalli C, Heymans JJ, Egnotovich MS (2000).
 Ulanowicz RE, Kay J (1991).
 \newblock \enquote{A package for the analysis of ecosystem flow networks.}
 \newblock \emph{Environmental Software}, \textbf{6}, 131--142.
+
+\bibitem[{Ulanowicz and Kemp(1979)}]{ulanowicz1979trophic}
+Ulanowicz RE, Kemp WM (1979).
+\newblock \enquote{Toward canonical trophic aggregations.}
+\newblock \emph{Am. Nat.}, pp. 871--883.
 
 \bibitem[{Ulanowicz and Puccia(1990)}]{ulanowicz90}
 Ulanowicz RE, Puccia CJ (1990).
