@@ -35,6 +35,9 @@ enaAscendency(x = "network object")
   the sum of ascendency and overhead (Ulanowicz 2004).}
 \item{ACS.CAP}{Returns the proportion of capacity used by ascendency.}
 \item{OH.CAP}{Returns the proportion of capacity used by overhead.}
+\item{robustness}{Returns the robustness of the network}
+\item{ELD}{Returns the Effective Link Density of the network(c) (Ulanowicz et al. 2014)}
+\item{TD}{Returns the Trophic Depth of the network(r) (Ulanowicz et al. 2014)}
 }
 
 \references{
@@ -52,6 +55,8 @@ University Press, New York.
 
 Ulanowicz, R.E., 2004. Quantitative methods for ecological network
 analysis. Comput. Biol. Chem. 28, 321-339
+
+Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem trophic complexity: insights from ecological network analysis
 
 }
 \author{
