@@ -1099,7 +1099,7 @@ attributes(trop)
                                         # Cycle analysis output for Feeding Cycles
 trop$Feeding_Cycles
 @ 
-
+ 
  %enaTroAgg - Trohpic Aggregations
  \begin{table*}[t]
   \caption{Matrices and graph-level network statistics returned by the \textit{enaR}
