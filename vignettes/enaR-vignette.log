@@ -1,27 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 AUG 2014 02:37
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  8 AUG 2014 14:01
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**enaR-vignette.Rnw
-(./enaR-vignette.Rnw
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
-(./jss.cls
+**\nonstopmode\input enaR-vignette.tex
+(./enaR-vignette.tex (./jss.cls
 Document Class: jss 2013/04/06 2.2 jss class by Achim Zeileis
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size11.clo
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -36,62 +22,62 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ae/ae.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/ae.sty
 Package: ae 2001/02/12 1.3 Almost European Computer Modern
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ae/t1aer.fd
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
@@ -103,18 +89,18 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@StepNumber=\count90
 \FV@OutFile=\write3
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
+(/usr/local/texlive/2011/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
+atim and verb
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -129,7 +115,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -164,38 +150,24 @@ Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
 Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
 Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
 Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
-Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
-Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
-Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
-Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
-Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
-Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
-Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
-Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
-Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
-Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
-Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
-Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
-Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
-Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
-Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
-Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
-Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
-Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
-Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
-Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
-Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
-Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
-Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
-Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
-Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
-Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
-Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
-Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
-Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
-Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
@@ -204,98 +176,95 @@ LaTeX Info: Redefining \cite on input line 694.
 )
 \footerskip=\skip45
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2012/05/13 v6.82q Hypertext links for LaTeX
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2011/04/17 v6.82g Hypertext links for LaTeX
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
 
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
-)
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
+Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
+Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
 Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
+Package atveryend Info: \enddocument detected (standard).
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
 )
 \@linkdim=\dimen105
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2011/04/17 v6.82g Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count94
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4062.
-Package hyperref Info: Link nesting OFF on input line 4067.
-Package hyperref Info: Hyper index ON on input line 4070.
-Package hyperref Info: Plain pages OFF on input line 4077.
-Package hyperref Info: Backreferencing OFF on input line 4082.
+Package hyperref Info: Hyper figures OFF on input line 4026.
+Package hyperref Info: Link nesting OFF on input line 4031.
+Package hyperref Info: Hyper index ON on input line 4034.
+Package hyperref Info: Plain pages OFF on input line 4041.
+Package hyperref Info: Backreferencing OFF on input line 4046.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4300.
+Package hyperref Info: Bookmarks ON on input line 4264.
 \c@Hy@tempcnt=\count95
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4653.
+LaTeX Info: Redefining \url on input line 4617.
 \Fld@menulength=\count96
 \Field@Width=\dimen106
 \Fld@charsize=\dimen107
-Package hyperref Info: Hyper figures OFF on input line 5773.
-Package hyperref Info: Link nesting OFF on input line 5778.
-Package hyperref Info: Hyper index ON on input line 5781.
-Package hyperref Info: backreferencing OFF on input line 5788.
-Package hyperref Info: Link coloring OFF on input line 5793.
-Package hyperref Info: Link coloring with OCG OFF on input line 5798.
-Package hyperref Info: PDF/A mode OFF on input line 5803.
-LaTeX Info: Redefining \ref on input line 5843.
-LaTeX Info: Redefining \pageref on input line 5847.
+Package hyperref Info: Hyper figures OFF on input line 5701.
+Package hyperref Info: Link nesting OFF on input line 5706.
+Package hyperref Info: Hyper index ON on input line 5709.
+Package hyperref Info: backreferencing OFF on input line 5716.
+Package hyperref Info: Link coloring OFF on input line 5721.
+Package hyperref Info: Link coloring with OCG OFF on input line 5726.
+Package hyperref Info: PDF/A mode OFF on input line 5731.
+LaTeX Info: Redefining \ref on input line 5771.
+LaTeX Info: Redefining \pageref on input line 5775.
 \Hy@abspage=\count97
 \c@Item=\count98
 \c@Hfootnote=\count99
@@ -303,12 +272,12 @@ LaTeX Info: Redefining \pageref on input line 5847.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2011/04/17 v6.82g Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -331,7 +300,7 @@ Package hyperref Info: Option `linktocpage' set `true' on input line 444.
 Package hyperref Info: Option `plainpages' set `false' on input line 444.
 )
 
-./enaR-vignette.Rnw:70: LaTeX Error: Option clash for package natbib.
+! LaTeX Error: Option clash for package natbib.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -339,38 +308,45 @@ Type  H <return>  for immediate help.
                                                   
 l.70   \bibpunct
                 {(}{)}{;}{a}{,}{,} % required for natbib
-? s
-OK, entering \scrollmode...
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucs.sty
+The package natbib has already been loaded with options:
+  [authoryear,round,longnamesfirst]
+There has now been an attempt to load it with options
+  [super, sort]
+Adding the global options:
+  authoryear,round,longnamesfirst,super, sort
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2004/10/17 UCS: Unicode input support
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-global.def
-File: uni-global.def 2012/04/20 UCS: Unicode global data
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2004/10/17 UCS: Unicode global data
 )
 \uc@secondtry=\count102
 \uc@combtoks=\toks15
 \uc@combtoksb=\toks16
 \uc@temptokena=\toks17
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/utf8x.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/sidecap/sidecap.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/sidecap/sidecap.sty
 Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \SC@BOXWD=\dimen108
@@ -401,14 +377,14 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 79.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 
-(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count104
 \scratchdimen=\dimen112
@@ -421,28 +397,28 @@ LaTeX Font Info:    ... okay on input line 79.
 \MPnumerator=\count108
 \makeMPintoPDFobject=\count109
 \everyMPtoPDFconversion=\toks21
-) (/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 79.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count110
@@ -463,7 +439,7 @@ Package pdftex.def Info: jsslogo.jpg used on input line 79.
 (pdftex.def)             Requested size: 89.80768pt x 65.43607pt.
 LaTeX Font Info:    Try loading font information for T1+pzc on input line 79.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/t1pzc.fd
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1pzc.fd
 File: t1pzc.fd 2001/06/04 font definitions for T1/pzc.
 )
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <28> not available
@@ -476,20 +452,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 79.
 LaTeX Font Info:    Try loading font information for T1+aess on input line 79.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ae/t1aess.fd
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucsencs.def
-File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ms/ragged2e.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ms/everysel.sty
-Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
-
-ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 126.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2009/05/30 v1.1 EverySelectfont Package (MS)
+LaTeX Info: Redefining \selectfont on input line 117.
 )
 \CenteringLeftskip=\skip53
 \RaggedLeftLeftskip=\skip54
@@ -506,7 +480,7 @@ LaTeX Info: Redefining \selectfont on input line 126.
 \RaggedRightParindent=\skip65
 \JustifyingParindent=\skip66
 )
-./enaR-vignette.Rnw:94: Undefined control sequence.
+! Undefined control sequence.
 l.94 for \R
            \ developed by \citet{butts08_network}. In addition to being
 The control sequence at the end of the top line
@@ -517,7 +491,7 @@ and I'll forget about whatever was undefined.
 
 [1
 
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./jsslo
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./jsslo
 go.jpg>]
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 138.
 
@@ -528,7 +502,7 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textcopyright' on input line 138.
 
-./enaR-vignette.Rnw:140: Undefined control sequence.
+! Undefined control sequence.
 l.140 \R
         \ package is to begin to bring together these different
 The control sequence at the end of the top line
@@ -537,7 +511,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./enaR-vignette.Rnw:150: Undefined control sequence.
+! Undefined control sequence.
 l.150 \tableline
                 
 The control sequence at the end of the top line
@@ -548,21 +522,12 @@ and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Try loading font information for T1+aett on input line 154.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ae/t1aett.fd
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-./enaR-vignette.Rnw:164: Undefined control sequence.
+! Undefined control sequence.
 l.164 \tableline
                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:168: Undefined control sequence.
-l.168 \SweaveOpts
-                 {width=6,height=4}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -573,11 +538,11 @@ and I'll forget about whatever was undefined.
 File: enaR-vignette-003.pdf Graphic file (type pdf)
 
 <use enaR-vignette-003.pdf>
-Package pdftex.def Info: enaR-vignette-003.pdf used on input line 216.
+Package pdftex.def Info: enaR-vignette-003.pdf used on input line 207.
 (pdftex.def)             Requested size: 354.12434pt x 236.09435pt.
 
-./enaR-vignette.Rnw:238: Undefined control sequence.
-l.238 in \R
+! Undefined control sequence.
+l.229 in \R
            \ that contains the model data for subsequent analysis.  To
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -586,96 +551,29 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6141) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/aer/b/sl' in size <10.95> not available
-(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 241.
+(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 240.
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 2 []
  []
 
 [2]
-./enaR-vignette.Rnw:244: Undefined control sequence.
-l.244 \SweaveOpts
-                 {strip.white=true}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 3
  []
 
 [3 <./enaR-vignette-003.pdf>]
-./enaR-vignette.Rnw:345: You can't use `macro parameter character #' in horizon
-tal mode.
-l.345 #
-        generate the flow matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:348: You can't use `macro parameter character #' in horizon
-tal mode.
-l.348 #
-        name the nodes
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:350: You can't use `macro parameter character #' in horizon
-tal mode.
-l.350 #
-        generate the inputs
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:352: You can't use `macro parameter character #' in horizon
-tal mode.
-l.352 #
-        generate the exports
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:354: You can't use `macro parameter character #' in horizon
-tal mode.
-l.354 #
-        pack
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:359: You can't use `macro parameter character #' in horizon
-tal mode.
-l.359 #
-        model
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 335
+.
+LaTeX Font Info:    No file TS1aett.fd. on input line 335.
 
 
-Overfull \hbox (53.64851pt too wide) in paragraph at lines 344--362
-[]\T1/aer/m/n/10.95 <<>>=  gen-er-ate the flow ma-trix flow.mat <- ar-ray(abs(r
-norm(100,4,2))*sample(c(0,1),100,replace=TRUE),
- []
-
-
-Overfull \hbox (105.4407pt too wide) in paragraph at lines 344--362
-\T1/aer/m/n/10.95 dim=c(4,4))  name the nodes row-names(flow.mat) <- col-names(
-flow.mat) <- paste('node',(1:nrow(flow.mat)),sep='')
- []
+LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 335.
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -683,101 +581,23 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [4]
-./enaR-vignette.Rnw:413: You can't use `macro parameter character #' in horizon
-tal mode.
-l.413 #
-       # --- Check to see if the model is balanced ---#
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:413: You can't use `macro parameter character #' in horizon
-tal mode.
-l.413 ##
-         --- Check to see if the model is balanced ---#
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:413: You can't use `macro parameter character #' in horizon
-tal mode.
-l.413 ...heck to see if the model is balanced ---#
-                                                  
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:416: You can't use `macro parameter character #' in vertica
-l mode.
-l.416 #
-       # --- To BALANCE a model if needed --- #
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:416: You can't use `macro parameter character #' in vertica
-l mode.
-l.416 ##
-         --- To BALANCE a model if needed --- #
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:416: You can't use `macro parameter character #' in horizon
-tal mode.
-l.416 ## --- To BALANCE a model if needed --- #
-                                               
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:419: You can't use `macro parameter character #' in vertica
-l mode.
-l.419 #
-       # --- To FORCE BALANCE a model if needed --- #
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:419: You can't use `macro parameter character #' in vertica
-l mode.
-l.419 ##
-         --- To FORCE BALANCE a model if needed --- #
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:419: You can't use `macro parameter character #' in horizon
-tal mode.
-l.419 ... To FORCE BALANCE a model if needed --- #
-                                                  
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (159.58679pt too wide) in paragraph at lines 440--444
-[]\T1/aer/m/n/10.95 <<>>= scor.model <- read-Lines('http://people.uncw.edu/borr
-etts/data/oyster.dat') m <- read.scor(scor.model,from.file=FALSE)
- []
-
-
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 5
  []
 
 [5]
-./enaR-vignette.Rnw:466: Undefined control sequence.
-l.466 ...ttt{read.wand} function will create an \R
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 6 []
+ []
+
+[6]
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 7
+ []
+
+[7]
+! Undefined control sequence.
+l.595 ...ttt{read.wand} function will create an \R
                                                   \
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -785,385 +605,68 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./enaR-vignette.Rnw:471: Missing $ inserted.
-<inserted text> 
-                $
-l.471   m <- read.wand('./MDmar02_
-                                  WAND.xls')
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-./enaR-vignette.Rnw:473: Missing $ inserted.
-<inserted text> 
-                $
-l.473 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Overfull \hbox (5.47499pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 8 []
+ []
 
+[8]
 
-./enaR-vignette.Rnw:510: LaTeX Error: Environment align undefined.
+! LaTeX Error: Environment align undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.510 \begin{align}
+l.643 \begin{align}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./enaR-vignette.Rnw:511: LaTeX Error: \mathbf allowed only in math mode.
+! LaTeX Error: \mathbf allowed only in math mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.511 \mathbf
+l.644 \mathbf
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./enaR-vignette.Rnw:511: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
-l.511 \mathbf{S} = \left
+l.644 \mathbf{S} = \left
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./enaR-vignette.Rnw:514: LaTeX Error: \begin{document} ended by \end{align}.
+! LaTeX Error: \begin{document} ended by \end{align}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.514 \end{align}
+l.647 \end{align}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./enaR-vignette.Rnw:514: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
-l.514 \end{align}
+l.647 \end{align}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (5.47499pt too wide) has occurred while \output is active
-\T1/aer/m/n/10.95 6 []
- []
-
-[6]
-./enaR-vignette.Rnw:532: You can't use `macro parameter character #' in horizon
-tal mode.
-l.532 #
-        write oyster reef model to a csv file
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:534: You can't use `macro parameter character #' in horizon
-tal mode.
-l.534 #
-        read in oyster reef model data from NEA.m formatted CSV file
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:537: You can't use `macro parameter character #' in vertica
-l mode.
-l.537 #
-        Again, this model object does NOT contain all
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:538: You can't use `macro parameter character #' in horizon
-tal mode.
-l.538 #
-        of the information in the "oyster" data object.
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:551: Undefined control sequence.
-l.551 \SweaveOpts
-                 {width=3,height=3}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:553: You can't use `macro parameter character #' in horizon
-tal mode.
-l.553 data(oyster)  #
-                      load data
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:555: You can't use `macro parameter character #' in horizon
-tal mode.
-l.555 set.seed(2)    #
-                       set random seed to control plot
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:556: You can't use `macro parameter character #' in horizon
-tal mode.
-l.556 plot(m)       #
-                      plot network data object (uses plot.network)
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:559: Undefined control sequence.
-l.559 ...the excellent graphics capabilities of \R
-                                                  \ to make fancier
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:562: Undefined control sequence.
-l.562 \SweaveOpts
-                 {width=3,height=3}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:564: You can't use `macro parameter character #' in horizon
-tal mode.
-l.564 #
-        set colors to use
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:569: You can't use `macro parameter character #' in horizon
-tal mode.
-l.569 f=which(F!=0, arr.ind=T)       #
-                                       get indices of positive flows
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:571: You can't use `macro parameter character #' in horizon
-tal mode.
-l.571 set.seed(2)                    #
-                                       each time the plot is called, the
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:572: You can't use `macro parameter character #' in horizon
-tal mode.
-l.572                                #
-                                       layout orientation changes.  setting
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:573: You can't use `macro parameter character #' in horizon
-tal mode.
-l.573                                #
-                                       the seed ensures a consistent
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:574: You can't use `macro parameter character #' in horizon
-tal mode.
-l.574                                #
-                                       orientation each time the plot
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:575: You can't use `macro parameter character #' in horizon
-tal mode.
-l.575                                #
-                                       function is called.
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:581: You can't use `macro parameter character #' in horizon
-tal mode.
-l.581      vertex.sides=45,   #
-                                to make rounded
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:582: You can't use `macro parameter character #' in horizon
-tal mode.
-l.582      edge.lwd=log10(abs(F[f])),     #
-                                            scale arrows to flow magnitude
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:589: You can't use `macro parameter character #' in horizon
-tal mode.
-l.589 rm(opar)             #
-                             remove changes to the plotting parameters
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (106.19914pt too wide) in paragraph at lines 562--591
-[]\T1/aer/m/n/10.95 width=3,height=3 <<b,eval=false>>=  set col-ors to use my.c
-ol=c("red","yellow", rgb(204,204,153,maxColorValue=255),
- []
-
-
-Overfull \hbox (159.6421pt too wide) in paragraph at lines 562--591
-\T1/aer/m/n/10.95 "grey22") F=mf=which(F!=0, arr.ind=T)  get in-dices of pos-i-
-tive flows opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02,
- []
-
-<enaR-vignette-020.pdf, id=254, 216.81pt x 216.81pt>
-File: enaR-vignette-020.pdf Graphic file (type pdf)
-
-<use enaR-vignette-020.pdf>
-Package pdftex.def Info: enaR-vignette-020.pdf used on input line 602.
-(pdftex.def)             Requested size: 243.4609pt x 243.47395pt.
-
-<enaR-vignette-021.pdf, id=255, 216.81pt x 216.81pt>
-File: enaR-vignette-021.pdf Graphic file (type pdf)
-
-<use enaR-vignette-021.pdf>
-Package pdftex.def Info: enaR-vignette-021.pdf used on input line 603.
-(pdftex.def)             Requested size: 243.4609pt x 243.47395pt.
-
-Overfull \hbox (59.91437pt too wide) in paragraph at lines 595--606
- [] 
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 636.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 636.
-
-Overfull \hbox (76.6248pt too wide) in paragraph at lines 636--662
- [] 
- []
-
-
-Overfull \hbox (5.47499pt too wide) has occurred while \output is active
-[] \T1/aer/m/n/10.95 7
- []
-
-[7]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-./enaR-vignette.Rnw:669: Missing $ inserted.
-<inserted text> 
-                $
-l.669 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (18.51161pt too wide) in paragraph at lines 689--720
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 689--720
-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-./enaR-vignette.Rnw:734: You can't use `macro parameter character #' in horizon
-tal mode.
-l.734 G <- F$G #
-                 output-oriented direct flow matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:736: You can't use `macro parameter character #' in math mo
-de.
-l.736 F$NP     #
-                 input-oriented integral flow matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:738: Missing $ inserted.
-<inserted text> 
-                $
-l.738 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (5.47499pt too wide) has occurred while \output is active
-\T1/aer/m/n/10.95 8 []
- []
-
-[8 <./enaR-vignette-020.pdf> <./enaR-vignette-021.pdf>]
-./enaR-vignette.Rnw:756: Missing $ inserted.
-<inserted text> 
-                $
-l.756 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:802: Missing $ inserted.
-<inserted text> 
-                $
-l.802 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 804.
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -1171,1303 +674,130 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [9]
-Overfull \hbox (102.78908pt too wide) in paragraph at lines 857--862
-[]\T1/aer/m/n/10.95 <<>>= UF <- enaU-til-ity(m,eigen.check=TRUE,type="flow") US
- <- enaU-til-ity(m,eigen.check=TRUE,type="storage")
- []
+! Undefined control sequence.
+l.696 ...the excellent graphics capabilities of \R
+                                                  \ to make fancier
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 10 []
  []
 
-[10]
-./enaR-vignette.Rnw:912: Missing $ inserted.
-<inserted text> 
-                $
-l.912 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+[10] <enaR-vignette-020.pdf, id=274, 216.81pt x 216.81pt>
+File: enaR-vignette-020.pdf Graphic file (type pdf)
 
-./enaR-vignette.Rnw:944: You can't use `macro parameter character #' in horizon
-tal mode.
-l.944 ...                                        #
-                                                  conduct control analysis
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+<use enaR-vignette-020.pdf>
+Package pdftex.def Info: enaR-vignette-020.pdf used on input line 741.
+(pdftex.def)             Requested size: 243.4609pt x 243.47395pt.
 
-./enaR-vignette.Rnw:980: You can't use `macro parameter character #' in horizon
-tal mode.
-l.980                                         #
-                                               conduct mixed trophic impacts
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+<enaR-vignette-021.pdf, id=275, 216.81pt x 216.81pt>
+File: enaR-vignette-021.pdf Graphic file (type pdf)
 
-./enaR-vignette.Rnw:983: You can't use `macro parameter character #' in horizon
-tal mode.
-l.983                                         #
-                                               shows the total impact matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+<use enaR-vignette-021.pdf>
+Package pdftex.def Info: enaR-vignette-021.pdf used on input line 742.
+(pdftex.def)             Requested size: 243.4609pt x 243.47395pt.
 
-./enaR-vignette.Rnw:986: Missing $ inserted.
-<inserted text> 
-                $
-l.986 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:996: You can't use `macro parameter character #' in math mo
-de.
-l.996 mti$M  #
-               shows the total impact matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:998: Missing $ inserted.
-<inserted text> 
-                $
-l.998 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (35.68495pt too wide) in paragraph at lines 993--998
-[]\T1/aer/m/n/10.95 <<>>= mti <- enaMTI(oyster,eigen.check=FALSE) at-tributes(m
-ti) mti$\OML/cmm/m/it/10.95 Mshowsthetotalimpactmatrix\OT1/cmr/m/n/10.95 @$ 
+Overfull \hbox (59.91437pt too wide) in paragraph at lines 734--745
+ [] 
  []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 775.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 775.
+
+Overfull \hbox (76.6248pt too wide) in paragraph at lines 775--801
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 11
  []
 
-[11]
+[11 <./enaR-vignette-020.pdf> <./enaR-vignette-021.pdf>]
+Overfull \hbox (18.51161pt too wide) in paragraph at lines 842--873
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 842--873
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 12 []
  []
 
 [12]
-./enaR-vignette.Rnw:1041: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1041 ...                                       #
-                                                   Display information of in...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1043: You can't use `macro parameter character #' in math m
-ode.
-l.1043 ...                                       #
-                                                   Display information of th...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (343.83727pt too wide) in paragraph at lines 1039--1046
-[]\T1/aer/m/n/10.95 cyc <- ena-Cy-cle(m) at-tributes(cyc)  Dis-play in-for-ma-t
-ion of in-di-vid-ual cy-cles names(cyc$\OML/cmm/m/it/10.95 Table:cycle\OT1/cmr/
-m/n/10.95 )\OML/cmm/m/it/10.95 Displayinformationofthedisjointnexusesnames\OT1/
-cmr/m/n/10.95 (\OML/cmm/m/it/10.95 cyc$\T1/aer/m/n/10.95 Table.nexus)
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 13
  []
 
 [13]
-./enaR-vignette.Rnw:1096: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1096 ...                                       #
-                                                   Cycle analysis output for...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1099: Missing $ inserted.
-<inserted text> 
-                $
-l.1099 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (38.26459pt too wide) in paragraph at lines 1094--1099
-[]\T1/aer/m/n/10.95 trop <- ena-TroAgg(m) at-tributes(trop)  Cy-cle anal-y-sis 
-out-put for Feed-ing Cy-cles trop$\OML/cmm/m/it/10.95 Feeding[]ycles\OT1/cmr/m/
-n/10.95 @$ 
- []
-
-./enaR-vignette.Rnw:1111: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.1111       M.Flow$_{nl \times 1} &
-                                     migratory flows in living nodes (if pre...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./enaR-vignette.Rnw:1111: Missing $ inserted.
-<inserted text> 
-                $
-l.1111       M.Flow$_{nl \times 1} &
-                                     migratory flows in living nodes (if pre...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:1111: Missing } inserted.
-<inserted text> 
-                }
-l.1111       M.Flow$_{nl \times 1} &
-                                     migratory flows in living nodes (if pre...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./enaR-vignette.Rnw:1112: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.1112       CI$_{n \times 1} &
-                                vector of canonical inputs to integer trophi...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./enaR-vignette.Rnw:1112: Missing $ inserted.
-<inserted text> 
-                $
-l.1112       CI$_{n \times 1} &
-                                vector of canonical inputs to integer trophi...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:1112: Missing } inserted.
-<inserted text> 
-                }
-l.1112       CI$_{n \times 1} &
-                                vector of canonical inputs to integer trophi...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Underfull \vbox (badness 4001) has occurred while \output is active []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 14 []
  []
 
 [14]
-./enaR-vignette.Rnw:1147: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1147 str(ns)    #
-                    examine the structure of ns
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1168: Missing $ inserted.
-<inserted text> 
-                $
-l.1168 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:1171: Missing $ inserted.
-<inserted text> 
-                $
-l.1171 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:1177: Undefined control sequence.
-l.1177 \SweaveOpts
-                  {width=6,height=4}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:1179: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1179 #
-         set plotting parameters
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1181: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1181 #
-         find centrality order
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1183: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1183 bp <- barplot(ec$AEC[o],     #
-                                      create barplot
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1187: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1187 text(bp,-0.008,                #
-                                        add labels
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1190: You can't use `macro parameter character #' in math m
-ode.
-l.1190 rm(opar)  #
-                   remove the plotting parameters
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1192: Missing $ inserted.
-<inserted text> 
-                $
-l.1192 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (123.23401pt too wide) in paragraph at lines 1177--1192
-[]\T1/aer/m/n/10.95 width=6,height=4 <<b,eval=false>>=  set plot-ting pa-ram-e-
-ters opar <- par(las=1,mar=c(7,5,1,1),xpd=TRUE,bg="white")
- []
-
-
-Overfull \hbox (133.25685pt too wide) in paragraph at lines 1177--1192
-\T1/aer/m/n/10.95 text(bp,-0.008,  add la-bels labels=names(ec$\OML/cmm/m/it/10
-.95 AEC\OT1/cmr/m/n/10.95 )[\OML/cmm/m/it/10.95 o\OT1/cmr/m/n/10.95 ]\OML/cmm/m
-/it/10.95 ; srt \OT1/cmr/m/n/10.95 = 35\OML/cmm/m/it/10.95 ; adj \OT1/cmr/m/n/1
-0.95 = 1\OML/cmm/m/it/10.95 ; cex \OT1/cmr/m/n/10.95 = 1)\OML/cmm/m/it/10.95 rm
-\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 opar\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/1
-0.95 removetheplottingparameters\OT1/cmr/m/n/10.95 @$ 
- []
-
-<enaR-vignette-039.pdf, id=474, 433.62pt x 289.08pt>
-File: enaR-vignette-039.pdf Graphic file (type pdf)
-
-<use enaR-vignette-039.pdf>
-Package pdftex.def Info: enaR-vignette-039.pdf used on input line 1198.
-(pdftex.def)             Requested size: 243.4609pt x 162.30714pt.
-
-Underfull \vbox (badness 2707) has occurred while \output is active []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 15
  []
 
 [15]
-./enaR-vignette.Rnw:1219: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1219 #
-        ##Check the current orientation
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
 
-./enaR-vignette.Rnw:1219: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1219 ##
-         #Check the current orientation
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1219: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1219 ###
-          Check the current orientation
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1221: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1221 #
-        ##enaFlow output in row-column
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1221: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1221 ##
-         #enaFlow output in row-column
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1221: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1221 ###
-          enaFlow output in row-column
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1223: You can't use `macro parameter character #' in math m
-ode.
-l.1223 #
-        ##Set the global orientation to school
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1223: You can't use `macro parameter character #' in math m
-ode.
-l.1223 ##
-         #Set the global orientation to school
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1223: You can't use `macro parameter character #' in math m
-ode.
-l.1223 ###
-          Set the global orientation to school
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1225: You can't use `macro parameter character #' in math m
-ode.
-l.1225 #
-        ##Check that it worked
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1225: You can't use `macro parameter character #' in math m
-ode.
-l.1225 ##
-         #Check that it worked
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1225: You can't use `macro parameter character #' in math m
-ode.
-l.1225 ###
-          Check that it worked
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1227: You can't use `macro parameter character #' in math m
-ode.
-l.1227 #
-        ##enaFlow output in column-row
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1227: You can't use `macro parameter character #' in math m
-ode.
-l.1227 ##
-         #enaFlow output in column-row
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1227: You can't use `macro parameter character #' in math m
-ode.
-l.1227 ###
-          enaFlow output in column-row
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1229: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1229 #
-        ##Check. Outputs should be transposed from each other.
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1229: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1229 ##
-         #Check. Outputs should be transposed from each other.
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1229: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1229 ###
-          Check. Outputs should be transposed from each other.
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1232: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1232 #
-        ##Now change back to the default orientation ('rc')
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1232: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1232 ##
-         #Now change back to the default orientation ('rc')
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1232: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1232 ###
-          Now change back to the default orientation ('rc')
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (168.67754pt too wide) in paragraph at lines 1218--1234
-\T1/aer/m/n/10.95 enaFlow(oyster)$\OML/cmm/m/it/10.95 GSettheglobalorientationt
-oschoolset:orient\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 school[]\OT1/cmr/m/n
-/10.95 )\OML/cmm/m/it/10.95 Checkthatitworkedget:orient\OT1/cmr/m/n/10.95 ()\OM
-L/cmm/m/it/10.95 enaFlowoutputincolumn \OMS/cmsy/m/n/10.95 ^^@
- []
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 1060.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 16 []
  []
 
-[16 <./enaR-vignette-039.pdf>]
-./enaR-vignette.Rnw:1273: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1273 #
-        ## Import the model sets
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1273: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1273 ##
-         # Import the model sets
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1273: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1273 ###
-           Import the model sets
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1276: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1276 #
-        ## Check the first few model names
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1276: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1276 ##
-         # Check the first few model names
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1276: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1276 ###
-           Check the first few model names
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1279: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1279 #
-        ## Isolate a single model
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1279: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1279 ##
-         # Isolate a single model
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1279: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1279 ###
-           Isolate a single model
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1282: You can't use `macro parameter character #' in math m
-ode.
-l.1282 #
-        ## Check out the model
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1282: You can't use `macro parameter character #' in math m
-ode.
-l.1282 ##
-         # Check out the model
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1282: You can't use `macro parameter character #' in math m
-ode.
-l.1282 ###
-           Check out the model
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1285: Missing $ inserted.
-<inserted text> 
-                $
-l.1285 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-34.def
-File: uni-34.def 2012/04/20 UCS: Unicode data U+2200..U+22FF
-)
-Overfull \hbox (407.45175pt too wide) in paragraph at lines 1294--1359
- [] 
- []
-
-
-Overfull \hbox (86.46198pt too wide) in paragraph at lines 1378--1427
- [] 
- []
-
-./enaR-vignette.Rnw:1450: Undefined control sequence.
-l.1450 One advantage of the \textit{enaR} \R
-                                            \ package is that it simplifies ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:1470: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1470 #
-         balance models as necessary
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1473: You can't use `macro parameter character #' in vertic
-al mode.
-l.1473 #
-         check that models are balanced
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1476: You can't use `macro parameter character #' in vertic
-al mode.
-l.1476 #
-         if balancing fails, you can use force.balance
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1477: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1477 #
-         to repeatedly apply the balancing procedure
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1478: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1478 #
-         although this is not the case with our model set
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1481: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1481 #
-        #Check that all the models are balanced
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1481: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1481 ##
-         Check that all the models are balanced
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (76.68428pt too wide) in paragraph at lines 1480--1483
-[]\T1/aer/m/n/10.95 m.list <- lap-ply(m.list,force.balance) Check that all the 
-mod-els are bal-anced all(unlist(lapply(m.list,ssCheck))) 
- []
-
-./enaR-vignette.Rnw:1484: You can't use `macro parameter character #' in vertic
-al mode.
-l.1484 #
-         Example Flow Analysis
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1487: You can't use `macro parameter character #' in vertic
-al mode.
-l.1487 #
-         the full results of the flow analysis is now stored in the elements
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1488: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1488 #
-         of the F.list.  To get the results for just the first model...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (2.98228pt too wide) in paragraph at lines 1496--1499
-[]\T1/aer/m/n/10.95 <<eval=false,echo=false,results=hide>>= data(troModelsBalan
-ced) m.list <- tro-Mod-els-Bal-anced 
- []
-
-./enaR-vignette.Rnw:1503: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1503 #
-         Example of extracting just specific information - Indirect Effects ...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1505: You can't use `macro parameter character #' in math m
-ode.
-l.1505 #
-        Look at the first few ID's
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1508: Missing $ inserted.
-<inserted text> 
-                $
-l.1508 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:1511: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1511 #
-         Here is a list containing only the output-oriented integral flow ma...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1514: Missing $ inserted.
-<inserted text> 
-                $
-l.1514 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
+[16]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 17
  []
 
 [17]
-./enaR-vignette.Rnw:1520: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1520 #
-         Collecting and combining all network statistics
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
 
-./enaR-vignette.Rnw:1521: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1521 ns.list <- lapply(m.list,get.ns) #
-                                          returns as list
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1522: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1522 ns <- do.call(rbind,ns.list)  #
-                                       ns as a data.frame
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1523: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1523 #
-         Let's take a quick look at some of the output
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1524: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1524 colnames(ns)    #
-                         return network statistic names.
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1525: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1525 dim(ns)         #
-                         show dimensions of ns matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1526: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1526 ns[1:5,1:5]     #
-                         show selected results
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1533: Undefined control sequence.
-l.1533 \SweaveOpts
-                  {width=7,height=4.75}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:1536: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1536 x=dim(ns)[1] #
-                      number of models
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1540: You can't use `macro parameter character #' in math m
-ode.
-l.1540 text(bp,-0.05,                #
-                                       add labels
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1545: You can't use `macro parameter character #' in math m
-ode.
-l.1545 #
-        
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1550: You can't use `macro parameter character #' in math m
-ode.
-l.1550 #
-        
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1551: You can't use `macro parameter character #' in math m
-ode.
-l.1551 rm(opar)  #
-                   remove the plotting parameters
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1553: Missing $ inserted.
-<inserted text> 
-                $
-l.1553 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (59.55025pt too wide) in paragraph at lines 1533--1553
-[]\T1/aer/m/n/10.95 width=7,height=4.75 <<b>>= opar <- par(las=1,mar=c(9,7,2,1)
-,xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
- []
-
-
-Overfull \hbox (32.34969pt too wide) in paragraph at lines 1533--1553
-\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 85)\OML/cmm/m/it/10
-.95 opar < \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 par\OT1/cmr/m/n/10.95 (\O
-ML/cmm/m/it/10.95 xpd \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 FALSE\OT1/cmr/m/
-n/10.95 )\OML/cmm/m/it/10.95 abline\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 h \O
-T1/cmr/m/n/10.95 = 1\OML/cmm/m/it/10.95 ; col \OT1/cmr/m/n/10.95 = "\OML/cmm/m/
-it/10.95 orange\OT1/cmr/m/n/10.95 "\OML/cmm/m/it/10.95 ; lwd \OT1/cmr/m/n/10.95
- = 2)\OML/cmm/m/it/10.95 plot\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ns$\T1/aer
-/m/n/10.95 FCI,ns$\OML/cmm/m/it/10.95 ID:F; pch \OT1/cmr/m/n/10.95 =
- []
-
-
-Overfull \hbox (48.4104pt too wide) in paragraph at lines 1533--1553
-\OT1/cmr/m/n/10.95 "\OML/cmm/m/it/10.95 FinnCyclingIndex\OT1/cmr/m/n/10.95 (\OM
-L/cmm/m/it/10.95 FCI\OT1/cmr/m/n/10.95 )"\OML/cmm/m/it/10.95 ; xlim \OT1/cmr/m/
-n/10.95 = \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; \OT1/
-cmr/m/n/10.95 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 8)\OML/cmm/m/it/10.95 ; 
-ylim \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 (0\OML/cmm/m/
-it/10.95 ; \OT1/cmr/m/n/10.95 8))\OML/cmm/m/it/10.95 rm\OT1/cmr/m/n/10.95 (\OML
-/cmm/m/it/10.95 opar\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 removetheplottingpa
-rameters\OT1/cmr/m/n/10.95 @$ 
- []
-
-<enaR-vignette-048.pdf, id=745, 505.89pt x 343.2825pt>
-File: enaR-vignette-048.pdf Graphic file (type pdf)
-
-<use enaR-vignette-048.pdf>
-Package pdftex.def Info: enaR-vignette-048.pdf used on input line 1560.
-(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
-
-./enaR-vignette.Rnw:1568: Undefined control sequence.
-l.1568 ...building the \textit{enaR} package in \R
-                                                  \ is that
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:1570: Undefined control sequence.
-l.1570 ...atistical tools that already exist in \R
-                                                  .  We highlight two
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+LaTeX Font Warning: Font shape `TS1/aett/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textasciigrave' on input line 1182.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 18 []
  []
 
-[18 <./enaR-vignette-048.pdf>]
-./enaR-vignette.Rnw:1599: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1599 b <- betweenness(m)         #
-                                     calculate betweenness centrality
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1602: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1602 nms[b<=(0.1*max(b))] <- NA  #
-                                     exclude less central nodes
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1606: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1606 #
-         create target plot
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1607: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1607 gplot.target(m,b,#
-                         circ.lab=FALSE,
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1609: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1609              label=nms) #
-                                 show only labels of most central nodes
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1610: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1610              #
-                     xlim=c(-1,4))
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (50.05565pt too wide) in paragraph at lines 1604--1613
-[]\T1/aer/m/n/10.95 set.seed(3) opar <- par(xpd=TRUE,mfrow=c(1,1))  cre-ate tar
--get plot gplot.target(m,b,circ.lab=FALSE,
- []
-
-<enaR-vignette-051.pdf, id=759, 505.89pt x 343.2825pt>
-File: enaR-vignette-051.pdf Graphic file (type pdf)
-
-<use enaR-vignette-051.pdf>
-Package pdftex.def Info: enaR-vignette-051.pdf used on input line 1619.
-(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
-
-./enaR-vignette.Rnw:1647: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1647 #
-        ## The adjacency matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1647: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1647 ##
-         # The adjacency matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1647: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1647 ###
-           The adjacency matrix
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1649: Missing $ inserted.
-<inserted text> 
-                $
-l.1649 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./enaR-vignette.Rnw:1650: You can't use `macro parameter character #' in vertic
-al mode.
-l.1650 #
-        ## creating an iGraph graph
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1650: You can't use `macro parameter character #' in vertic
-al mode.
-l.1650 ##
-         # creating an iGraph graph
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1650: You can't use `macro parameter character #' in vertic
-al mode.
-l.1650 ###
-           creating an iGraph graph
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1652: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1652 plot(g)  #
-                  uses iGraph plot tools
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-<enaR-vignette-054.pdf, id=761, 505.89pt x 343.2825pt>
-File: enaR-vignette-054.pdf Graphic file (type pdf)
-
-<use enaR-vignette-054.pdf>
-Package pdftex.def Info: enaR-vignette-054.pdf used on input line 1663.
-(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
-
-./enaR-vignette.Rnw:1668: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1668 #
-         betweenness centrality (calculated by iGraph and sna)
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1671: You can't use `macro parameter character #' in vertic
-al mode.
-l.1671 #
-         shortest path between any two nodes
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1674: You can't use `macro parameter character #' in vertic
-al mode.
-l.1674 #
-         average path length in the network (graph theory sense)
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
+[18]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 19
  []
 
-[19 <./enaR-vignette-051.pdf>]
-Overfull \hbox (8.30463pt too wide) in paragraph at lines 1674--1676
-[]\T1/aer/m/n/10.95 average path length in the net-work (graph the-ory sense) a
-v-er-age.path.length(g,directed=TRUE) 
- []
-
-./enaR-vignette.Rnw:1677: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1677 diameter(g)  #
-                      diameter of the graph
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1679: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1679 vertex.connectivity(g)  #
-                                 connectivity of a graph (group cohesion)
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1680: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1680 subcomponent(g,1,'in')  #
-                                 subcomponent reachable from 1 along inputs
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1681: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1681 subcomponent(g,2,'in')  #
-                                 subcomponent reachable from 2 along inputs
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1682: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1682 subcomponent(g,1,'out') #
-                                 subcomponent reachable from 1 along outputs
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1683: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1683 subcomponent(g,2,'out') #
-                                 subcomponent reachable from 2 along output
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1687: You can't use `macro parameter character #' in horizo
-ntal mode.
-l.1687 detach(package:igraph)  #
-                                 detach igraph package
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./enaR-vignette.Rnw:1692: Undefined control sequence.
-l.1692 There are other \R
-                         \ packages that have graph and network analysis tools,
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:1699: Undefined control sequence.
-l.1699 Network Analysis in \R
-                             .  The vision for this package is that it will
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./enaR-vignette.Rnw:1707: Undefined control sequence.
-l.1707 their data with other \R
-                               \ packages for graph and network analysis like
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-(./enaR-vignette.bbl
+[19]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 20 []
  []
 
-[20 <./enaR-vignette-054.pdf>]
+[20]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 21
  []
 
-[21] (/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2012/04/20 UCS: Unicode data U+2000..U+20FF
-)
+[21]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 22 []
  []
@@ -2487,35 +817,230 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 25
  []
 
-[25])
-Underfull \hbox (badness 10000) in paragraph at lines 1714--1714
-
- []
-
-LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
-(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 1714.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1714.
-
+[25]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 26 []
  []
 
-[26]
+[26] <enaR-vignette-039.pdf, id=529, 433.62pt x 289.08pt>
+File: enaR-vignette-039.pdf Graphic file (type pdf)
+
+<use enaR-vignette-039.pdf>
+Package pdftex.def Info: enaR-vignette-039.pdf used on input line 1729.
+(pdftex.def)             Requested size: 243.4609pt x 162.30714pt.
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 27
  []
 
-[27]
+[27 <./enaR-vignette-039.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 28 []
  []
 
 [28]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1714.
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 29
+ []
+
+[29]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 30 []
+ []
+
+[30] (/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-34.def
+File: uni-34.def 2004/10/17 UCS: Unicode data U+2200..U+22FF
+)
+Overfull \hbox (407.45175pt too wide) in paragraph at lines 1958--2023
+ [] 
+ []
+
+
+Overfull \hbox (86.46198pt too wide) in paragraph at lines 2042--2091
+ [] 
+ []
+
+! Undefined control sequence.
+l.2114 One advantage of the \textit{enaR} \R
+                                            \ package is that it simplifies ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 31
+ []
+
+[31]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 32 []
+ []
+
+[32]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 33
+ []
+
+[33]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 34 []
+ []
+
+[34]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 35
+ []
+
+[35] <enaR-vignette-048.pdf, id=824, 505.89pt x 343.2825pt>
+File: enaR-vignette-048.pdf Graphic file (type pdf)
+
+<use enaR-vignette-048.pdf>
+Package pdftex.def Info: enaR-vignette-048.pdf used on input line 2387.
+(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
+
+! Undefined control sequence.
+l.2395 ...building the \textit{enaR} package in \R
+                                                  \ is that
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2397 ...atistical tools that already exist in \R
+                                                  .  We highlight two
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 36 []
+ []
+
+[36 <./enaR-vignette-048.pdf>]
+<enaR-vignette-051.pdf, id=837, 505.89pt x 343.2825pt>
+File: enaR-vignette-051.pdf Graphic file (type pdf)
+
+<use enaR-vignette-051.pdf>
+Package pdftex.def Info: enaR-vignette-051.pdf used on input line 2456.
+(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 37
+ []
+
+[37] <enaR-vignette-054.pdf, id=845, 505.89pt x 343.2825pt>
+File: enaR-vignette-054.pdf Graphic file (type pdf)
+
+<use enaR-vignette-054.pdf>
+Package pdftex.def Info: enaR-vignette-054.pdf used on input line 2514.
+(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 38 []
+ []
+
+[38 <./enaR-vignette-051.pdf>]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 39
+ []
+
+[39 <./enaR-vignette-054.pdf>]
+! Undefined control sequence.
+l.2605 There are other \R
+                         \ packages that have graph and network analysis tools,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2612 Network Analysis in \R
+                             .  The vision for this package is that it will
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2620 their data with other \R
+                               \ packages for graph and network analysis like
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(./enaR-vignette.bbl
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 40 []
+ []
+
+[40]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 41
+ []
+
+[41] (/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
+)
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 42 []
+ []
+
+[42]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 43
+ []
+
+[43]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 44 []
+ []
+
+[44]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 45
+ []
+
+[45])
+Underfull \hbox (badness 10000) in paragraph at lines 2627--2627
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2627.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2627.
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 46 []
+ []
+
+[46]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 47
+ []
+
+[47]
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/aer/m/n/10.95 48 []
+ []
+
+[48]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2627.
  (./enaR-vignette.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1714.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1714.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2627.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2627.
 
 Package rerunfilecheck Info: File `enaR-vignette.out' has not changed.
 (rerunfilecheck)             Checksum: ECB15CB7922C51FC8A68F67CBE5B8D0D;2852.
@@ -2526,48 +1051,49 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1714.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2627.
  ) 
 Here is how much of TeX's memory you used:
- 8656 strings out of 493488
- 127068 string characters out of 3141326
- 286746 words of memory out of 3000000
- 11594 multiletter control sequences out of 15000+200000
- 55675 words of font info for 97 fonts, out of 3000000 for 9000
- 957 hyphenation exceptions out of 8191
- 36i,12n,34p,341b,749s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
-xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
-live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
-ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/tex
-live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/te
-xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
-live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texliv
-e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
-2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/20
-12/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2012/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2012/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2012/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2012/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2012/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2012/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2012/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1095.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/z
-apfchan/uzcmi8a.pfb>
-Output written on enaR-vignette.pdf (28 pages, 509113 bytes).
+ 8635 strings out of 493633
+ 126758 string characters out of 3143378
+ 285059 words of memory out of 3000000
+ 11543 multiletter control sequences out of 15000+200000
+ 56166 words of font info for 99 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 36i,12n,34p,360b,749s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
+ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texliv
+e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
+2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/20
+11/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2011/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2011/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2011/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2011/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2011/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2011/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2011/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2011/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2011/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2011/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1095.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/
+zapfchan/uzcmi8a.pfb>
+Output written on enaR-vignette.pdf (48 pages, 546273 bytes).
 PDF statistics:
- 1009 PDF objects out of 1200 (max. 8388607)
- 912 compressed objects within 10 object streams
- 186 named destinations out of 1000 (max. 500000)
+ 1104 PDF objects out of 1200 (max. 8388607)
+ 986 compressed objects within 10 object streams
+ 206 named destinations out of 1000 (max. 500000)
  257 words of extra memory for PDF output out of 10000 (max. 10000000)
 

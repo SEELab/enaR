@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% almost as usual
-\author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And 
+\author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
         University of North Carolina Wilmington}
 \title{enaR: Ecosystem Network Analysis with R}
@@ -67,7 +67,7 @@
 %% need no \usepackage{Sweave.sty}
 
 \usepackage[super, sort]{natbib}
-  \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib  
+  \bibpunct{(}{)}{;}{a}{,}{,} % required for natbib
 \usepackage{ucs} %needed for R output: signif stars etc, quotes
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -171,7 +171,7 @@ Environ & \texttt{enaEnviron} & Patten \\
 
 %% <<z,echo=false>>=
 %% # set plotting parameters
-%% opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")   
+%% opar <- par(las=1,mar=c(0,0,0,0),xpd=TRUE,bg="white")
 
 %% ## Taken from https://stat.ethz.ch/pipermail/r-devel/2011-September/062126.html
 %% if (all(ls()!='f.list')){
@@ -306,7 +306,7 @@ to return output in the Patten School row-to-column orientation
 The \textit{enaR} package stores the model data in the \textbf{network}
 class defined in the \textit{network} package \citep[see][for
 details]{butts08_network}. Again, the primary network object
-components are: 
+components are:
 
 \begin{itemize}
 \item F = flow matrix oriented row-to-column
@@ -359,17 +359,17 @@ hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   flow:
-     node1            node2       node3           node4      
- Min.   :0.0000   Min.   :0   Min.   :0.000   Min.   :0.000  
- 1st Qu.:0.0000   1st Qu.:0   1st Qu.:0.000   1st Qu.:0.000  
- Median :0.4836   Median :0   Median :2.231   Median :0.038  
- Mean   :0.4968   Mean   :0   Mean   :3.455   Mean   :1.710  
- 3rd Qu.:0.9803   3rd Qu.:0   3rd Qu.:5.686   3rd Qu.:1.748  
- Max.   :1.0200   Max.   :0   Max.   :9.357   Max.   :6.765  
+     node1           node2            node3           node4      
+ Min.   :0.000   Min.   :0.0000   Min.   :0.000   Min.   :0.000  
+ 1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.000  
+ Median :1.638   Median :0.0000   Median :0.000   Median :0.000  
+ Mean   :2.346   Mean   :0.6067   Mean   :1.645   Mean   :0.745  
+ 3rd Qu.:3.984   3rd Qu.:0.6067   3rd Qu.:1.645   3rd Qu.:0.745  
+ Max.   :6.107   Max.   :2.4270   Max.   :6.581   Max.   :2.980  
   balanced = FALSE 
-  total edges= 6 
+  total edges= 5 
     missing edges= 0 
-    non-missing edges= 6 
+    non-missing edges= 5 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -410,7 +410,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 2.334037 1.139851 1.172816 1.807411
+[1] 3.38061080 1.44664313 0.03584714 2.13542654
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -427,11 +427,11 @@ characteristic and it can be extracted as:
 > fake.model%n%'flow'
 \end{Sinput}
 \begin{Soutput}
-          node1 node2    node3      node4
-node1 0.9671218     0 0.000000 0.00000000
-node2 0.0000000     0 4.461897 6.76470731
-node3 0.0000000     0 0.000000 0.00000000
-node4 1.0199721     0 9.357320 0.07599941
+         node1    node2    node3    node4
+node1 0.000000 0.000000 0.000000 0.000000
+node2 3.276289 0.000000 6.581156 0.000000
+node3 0.000000 2.426999 0.000000 0.000000
+node4 6.107306 0.000000 0.000000 2.980089
 \end{Soutput}
 \end{Schunk}
 
@@ -442,24 +442,24 @@ output is as follows:
 
 \begin{Schunk}
 \begin{Sinput}
-> unpack(fake.model)  
+> unpack(fake.model)
 \end{Sinput}
 \begin{Soutput}
 $F
-          node1 node2    node3      node4
-node1 0.9671218     0 0.000000 0.00000000
-node2 0.0000000     0 4.461897 6.76470731
-node3 0.0000000     0 0.000000 0.00000000
-node4 1.0199721     0 9.357320 0.07599941
+         node1    node2    node3    node4
+node1 0.000000 0.000000 0.000000 0.000000
+node2 3.276289 0.000000 6.581156 0.000000
+node3 0.000000 2.426999 0.000000 0.000000
+node4 6.107306 0.000000 0.000000 2.980089
 
 $z
-[1] 2.334037 1.139851 1.172816 1.807411
+[1] 3.38061080 1.44664313 0.03584714 2.13542654
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 2.334037 1.139851 1.172816 1.807411
+[1] 3.38061080 1.44664313 0.03584714 2.13542654
 
 $y
 [1] NA NA NA NA
@@ -497,7 +497,7 @@ To determine if the model is balanced and then balance it if necessary:
 \end{Soutput}
 \begin{Sinput}
 > ## --- To BALANCE a model if needed --- #
-> fake.model <- balance(fake.model,method="AVG2")  
+> fake.model <- balance(fake.model,method="AVG2")
 \end{Sinput}
 \begin{Soutput}
 [1] AVG2
@@ -512,13 +512,13 @@ The automated balancing routines are based on those presented in
 \citet{allesina03}.  These authors compare alternative balancing
 algorithms and further discuss the implications of using automated
 procedures.  Caution is warranted when using these techniques, as they
-indiscriminately alter the model flow rates.    
+indiscriminately alter the model flow rates.
 
 %%%%%%%
 \section{Data Input: Reading Common Data File Formats}
 Several software packages exist in the literature for running ENA.  For
 convenience, we have written functions to read in a few of the more
-common data formats used by these software. 
+common data formats used by these software.
 
 \subsection*{SCOR}
 The \texttt{read.scor} function reads in data stored in the SCOR
@@ -633,16 +633,16 @@ format can be read into the \textit{enaR} package as:
 
 The current read.enam function assumes the data are stored on the
 first worksheet of an Excel file. In the future, we expect to expand
-this function's capabilities to read the data from a CSV file.  
+this function's capabilities to read the data from a CSV file.
 
 \subsection*{NEA}
 
 For their Matlab function to perform network environ analysis (Patten School),
 \citet{fath06} packaged the model flows, inputs, outputs, and storage
-values into what they called a system matrix 
+values into what they called a system matrix
 \begin{align}
 \mathbf{S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
-     \vec{y}  &  0 & 0 \end{array} 
+     \vec{y}  &  0 & 0 \end{array}
 \right]_{(n+1) \times (n+2)}.
 \end{align}
 Flows in the system matrix are oriented from column to row.
@@ -650,14 +650,14 @@ Flows in the system matrix are oriented from column to row.
 The \textit{enaR} function \texttt{read.nea} reads in data with this
 format stored as a comma separated value file.  The function
 \texttt{write.nea()} will write any network model to a CSV file with
-this format.  
+this format.
 
 While convenient, this data format does not enable inclusion of the
 full range of model information included in the \textit{enaR} network
 data object.  This format does not partition outputs into exports and
 respiration values, nor does it identify the node labels are their
 living status. This missing information will prevent the use of some
-\textit{enaR} functions.  
+\textit{enaR} functions.
 
 Here is an example of using these functions:
 \begin{Schunk}
@@ -668,7 +668,7 @@ Here is an example of using these functions:
 > # read in oyster reef model data from NEA.m formatted CSV file
 > m <- read.nea("oyster.csv")
 > 
-> # Again, this model object does NOT contain all 
+> # Again, this model object does NOT contain all
 > # of the information in the "oyster" data object.
 \end{Sinput}
 \end{Schunk}
@@ -687,7 +687,7 @@ graph of the oyster reef model accomplished with default settings.
 \begin{Schunk}
 \begin{Sinput}
 > data(oyster)  # load data
-> m <- oyster  
+> m <- oyster
 > set.seed(2)    # set random seed to control plot
 > plot(m)       # plot network data object (uses plot.network)
 \end{Sinput}
@@ -700,9 +700,9 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 \begin{Schunk}
 \begin{Sinput}
 > # set colors to use
-> my.col=c("red","yellow", 
-+    rgb(204,204,153,maxColorValue=255), 
-+    "grey22")  
+> my.col=c("red","yellow",
++    rgb(204,204,153,maxColorValue=255),
++    "grey22")
 > F=m%n%'flow'                   # extract flow information for later use.
 > f=which(F!=0, arr.ind=T)       # get indices of positive flows
 > opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
@@ -753,18 +753,18 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 In practice, ENA is applied to a single model.  Here, we walk through an
 example of applying multiple ENA algorithms to the oyster reef model
 \citep{dame81}.  The main ENA algorithms encoded in \textit{enaR} are
-summarized in Table~\ref{tab:alg}. 
+summarized in Table~\ref{tab:alg}.
 
 Again, in this package results are reported in the row-to-column
 orientation by default -- including the algorithms from the Patten
 school.  Please see Section~\ref{sec:orient} for how to change this
-default if needed.  
+default if needed.
 
 \subsection{Structural Network Analysis}
 Structural network analysis is common to many types of network
 analysis.  The structural analyses applied here are based on those
 presented in NEA.m \citep{fath06} following the Patten School.  Output
-of the enaStructure function is summarized in Table~\ref{tab:structure}  
+of the enaStructure function is summarized in Table~\ref{tab:structure}
 
 % STRUCTURE
 \begin{table*}[h]
@@ -775,7 +775,7 @@ of the enaStructure function is summarized in Table~\ref{tab:structure}
   \begin{tabular}{l l}
     \textbf{Label} & \textbf{Description} \\ \hline \\[-2ex]
     \multicolumn{2}{l}{\textit{Matrices}} \\
-    A & $n \times n$ adjacency matrix\\  [1ex]    
+    A & $n \times n$ adjacency matrix\\  [1ex]
     \multicolumn{2}{l}{\textit{Network statistics}} \\
     n & number of nodes \\
     L & number of directed edges \\
@@ -823,7 +823,7 @@ $names
 The structural network statistics show that the oyster reef model has
 6 nodes, a pathway proliferation rate of 2.14, and that the model is
 comprised of two strongly connected components but that only one has
-more than one node.  
+more than one node.
 
 \subsection{Flow Analysis}
 Flow analysis or throughflow analysis is one of the core ENA analyses
@@ -846,11 +846,11 @@ flows][]{borrett11_ree,borrett11_equ}. Results returned by
     G & output-oriented direct throughflow intensity matrix\\
     GP & input-oriented direct throughflow intensity matrix\\
     N & output-oriented integral throughflow intensity matrix\\
-    NP & input-oriented integral throughflow intensity matrix\\ [1ex] 
+    NP & input-oriented integral throughflow intensity matrix\\ [1ex]
     \multicolumn{2}{l}{\textit{Network statistics}} \\
     Input & Total input boundary flow  \\
-    TST & Total System ThroughFLOW \\ 
-    TSTp & Total System ThroughPUT \\  
+    TST & Total System ThroughFLOW \\
+    TSTp & Total System ThroughPUT \\
     APL & Average Path Length \citep{finn76} \\
     FCI & Finn Cycling Index \citep{finn80} \\
     BFI & Boundary Flow Intensity, $Boundary/TST$ \\
@@ -859,7 +859,7 @@ flows][]{borrett11_ree,borrett11_equ}. Results returned by
     ID.F & Ratio of Indirect to Direct Flow \citet{borrett11_ree, borrett11_equ}\\
     ID.F.I & input oriented ratio of indirect to direct flow intensity \citep[as in][]{fath06} \\
     IF.F.O & output oriented ratio of indirect to direct flow intensity \citep[as in][]{fath06}\\
-    HMG.F.I & input oriented network homogenization to direct flow intensity\\ 
+    HMG.F.I & input oriented network homogenization to direct flow intensity\\
     HMG.F.O & output oriented network homogenization to direct flow intensity \\
     AMP.F.I & input oriented network amplification \\
     AMP.F.O  & output oriented network amplification \\
@@ -956,7 +956,7 @@ Predators          0.00000000          0.4757876
 Deposited Detritus 0.00000000          0.0000000
 \end{Soutput}
 \begin{Sinput}
-> detach(F) 
+> detach(F)
 \end{Sinput}
 \end{Schunk}
 
@@ -1002,6 +1002,8 @@ as follows:
 \begin{Soutput}
           AMI      ASC       OH      CAP   ASC.CAP    OH.CAP robustness
 [1,] 1.330211 166.3473 211.0979 377.4452 0.4407191 0.5592809  0.3611021
+         ELD       TD
+[1,] 1.79506 2.514395
 \end{Soutput}
 \end{Schunk}
 
@@ -1074,7 +1076,7 @@ $names
       QP & $n \times n$ input-oriented integral flow intensity matrix (dimensionless)\\
       dt & discrete time step \\ [1ex]
       \multicolumn{2}{l}{\textit{Network statistics}} \\
-      TSS & Total System Storage \\ 
+      TSS & Total System Storage \\
       CIS & Storage Cycling Index \\
       BSI & Boundary Storage Intensity\\
       DSI & Direct Storage Intensity \\
@@ -1083,7 +1085,7 @@ $names
       ID.S.I & storage-based input-oriented indirect-to-direct ratio \citep[as in][]{fath06}\\
       ID.S.O & storage-based input-oriented indirect-to-direct ratio \citep[as in][]{fath06}\\
       HMG.S.I & input-oriented storage network homogenization \\
-      HMG.S.O & output-oriented storage network homogenization\\ 
+      HMG.S.O & output-oriented storage network homogenization\\
       AMP.S.I &  input-oriented storage network amplification \\
       AMP.S.O & output-oriented storage network amplification \\
       mode0.S & Storage from Boundary Flow \\
@@ -1093,7 +1095,7 @@ $names
       mode4.S & Dissipative Equivalent to mode0.S \\ \hline
     \end{tabular}
 \end{small}
-\end{table*}  
+\end{table*}
 
 % ---
 \subsection{Utility Analysis}
@@ -1110,8 +1112,8 @@ versions. These analyses are executed as:
 
 \begin{Schunk}
 \begin{Sinput}
-> UF <- enaUtility(m,eigen.check=TRUE,type="flow")  
-> US <- enaUtility(m,eigen.check=TRUE,type="storage")  
+> UF <- enaUtility(m,eigen.check=TRUE,type="flow")
+> US <- enaUtility(m,eigen.check=TRUE,type="storage")
 > attributes(UF)
 \end{Sinput}
 \begin{Soutput}
@@ -1127,12 +1129,12 @@ utility matrix is less than 1. The function default prevents the
 analysis from being performed if this condition is not met. Users that
 wish to perform the analysis anyway can set ``eigen.check=FALSE''.  Care
 should be used when doing this, as the meaning of the underlying
-mathematics is uncertain.  
+mathematics is uncertain.
 
 % Utility ---------------------------------
 \begin{table*}[t]
   \caption{Matrices and graph-level network statistics returned by the \textit{enaR}
-    \texttt{Utility} function.}\label{tab:utility}
+    \texttt{enaUtility} function.}\label{tab:utility}                  %% Utility -> enaUtility function   ~Pawan
 \center
 \begin{small}
   \begin{tabular}{l l}
@@ -1162,7 +1164,7 @@ returned by the \textit{environ} function as in NEA.m.  They indicate the flow
 activity in each subnetwork generated by pulling a unit out of a node
 (input environs) or pushing a unit into a node (output environ). These
 unit environs can be converted into ``realized'' environs by
-multiplying each by the relevant observed input or output \citep{borrett11_ree}.  
+multiplying each by the relevant observed input or output \citep{borrett11_ree}.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -1174,7 +1176,7 @@ $names
 [1] "input"  "output"
 \end{Soutput}
 \begin{Sinput}
-> E$output[1] 
+> E$output[1]
 \end{Sinput}
 \begin{Soutput}
 $`Filter Feeders`
@@ -1208,7 +1210,7 @@ z                  0.000000000
 The \texttt{TET} function returns vectors of the unit and realized
 input and output total environ throughflow.  The realized total
 environ throughflow is an environ based partition of the total system
-throughflow (TST). 
+throughflow (TST).
 
 \begin{Schunk}
 \begin{Sinput}
@@ -1232,7 +1234,7 @@ $unit.output
 
 The \texttt{TES} functions returns the both the realized and unit
 total environ storage for the input and output environs.  Again, the
-realized TES is a partition of the total system storage (TSS).   
+realized TES is a partition of the total system storage (TSS).
 
 \begin{Schunk}
 \begin{Sinput}
@@ -1264,13 +1266,20 @@ $unit.output
 \end{Schunk}
 
 \subsection{Control Analysis}
-Control analysis is implemented as in the original NEA.m function.
-Recent updates to control analysis \citep[e.g.,][]{schramski06,
-  schramski07} still need to be included.
+
+%%%Pawan updates%%%%%%%%%%%%%%%%%%%%%%%Added details for Control Analysis ~Pawan
+
+
+Control analysis was implemented as in the original NEA.m function,
+but we also include recent updates to control analysis
+\citep[e.g.,][]{schramski06, schramski07}.  In general, these analyses
+determine the pairwise control relationships between the nodes in the
+network.  Table~\ref{tab:control} summarizes the function output.
 
 \begin{Schunk}
 \begin{Sinput}
-> C <- enaControl(m)               
+>                                             #conduct control analysis
+> C <- enaControl(m)
 > attributes(C)
 \end{Sinput}
 \begin{Soutput}
@@ -1278,6 +1287,26 @@ $names
 [1] "CN" "CQ" "CR" "CD" "sc"
 \end{Soutput}
 \end{Schunk}
+%%% The Outputs listed contain the Schramski Control results. ~Pawan
+% enaControl - Control Analysis ~Pawan
+\begin{table*}[t]
+  \caption{Matrices returned by the \textit{enaR}
+    \texttt{enaControl} function, which are based on
+    \citep{dame81, patten81, schramski06, schramski07}.} \label{tab:control}
+  \center
+  \begin{small}
+    \begin{tabular}{l p{10 cm}}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      CN$_{n \times n}$ & Control matrix using flow values \\                       % these have descriptions in the literature~Pawan
+      CQ$_{n \times n}$ & Control matrix using storage values \\
+      CR$_{n \times n}$ & Schramski's Control Ratio Matrix  \\            %% magnitude of control of $i$ over $j$ with a two component scale(dimensionless)
+      CD$_{n \times n}$ & Schramski's Control Difference Matrix \\  %% magnitude of control of $i$ over $j$ with a system-wide scale
+      sc$_{n \times 1}$ & Schramski's System Control vector \\ \hline %% control exhibited or received by $i$ with respect to the whole system
+\end{tabular}
+\end{small}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Control Analysis Completed. ~Pawan.
 
 %% The flow control $\mathbf{CN}$ and storage control $\mathbf{CQ}$
 %% matrices are oriented column-to-row.
@@ -1346,7 +1375,7 @@ Deposited Detritus      0.44874394  0.110048344       -0.251366300
 
 % enaMTI - Mixed Trophic Impacts
 \begin{table*}[t]
-  \caption{Matricies returned by the \textit{enaR}
+  \caption{Matrices returned by the \textit{enaR}    %% Typo : Matricies -> Matrices ~Pawan
     \texttt{enaMTI} function, which are based on \citep{ulanowicz90}.}\label{tab:mti}
   \center
   \begin{small}
@@ -1362,13 +1391,178 @@ Deposited Detritus      0.44874394  0.110048344       -0.251366300
 \end{table*}
 
 
+
+%%%For Pawan to insert enaCycle and enaTroAgg %%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cycle Analysis}
+The Cycle Analysis provides the detailed account of the cycling
+present in the network. It follows the algorithm by the DOS-based
+NETWRK 4.2b software by Ulanowicz \citep{ulanowicz91, ulanowicz83} and
+provides results similar to NETWRK's 'Full Cycle Analysis'.  Cycles in
+a network are grouped together into disjoint nexuses and each nexus is
+characterized by a weak arc. This function gives details of the
+individual cycles along with the disjoint nexuses present in the
+network.  Table~\ref{tab:cycle} summarizes the function output.
+
+%It returns the individual cycles present in the model distributed amongst
+%different nexuses based on a depth-first search to identify cycle arcs.
+%It also gives the distribution of flow into cycles of different lengths and                  %% Determine whether necessary ~Pawan
+ %separates the flows of the network into cyclic and acyclic components and
+ %calculates the cycling index based on the flow matrix.
+
+
+\begin{Schunk}
+\begin{Sinput}
+>   cyc <- enaCycle(m)
+> attributes(cyc)
+\end{Sinput}
+\begin{Soutput}
+$names
+[1] "Table.cycle"      "Table.nexus"      "CycleDist"       
+[4] "NormDist"         "ResidualFlows"    "AggregatedCycles"
+[7] "ns"              
+\end{Soutput}
+\begin{Sinput}
+>                                         # Display information of individual cycles
+> names(cyc$Table.cycle)
+\end{Sinput}
+\begin{Soutput}
+[1] "CYCLE" "NEXUS" "NODES" " "     " "     " "     " "     " "    
+\end{Soutput}
+\begin{Sinput}
+>                                         # Display information of the disjoint nexuses
+> names(cyc$Table.nexus)
+\end{Sinput}
+\begin{Soutput}
+[1] "NEXUS"      "CYCLES"     "W.arc.From" "W.arc.To"   "W.arc.Flow"
+\end{Soutput}
+\begin{Sinput}
+> 
+\end{Sinput}
+\end{Schunk}
+
+ %enaCycle - Full Cycle Analysis
+ \begin{table*}[t]
+  \caption{Data frames, matrices and graph-level network statistics returned by the \textit{enaR}    %%Data frames may be called tables ~Pawan
+    \texttt{enaCycle} function, which is based on \citep{ulanowicz83}.}\label{tab:cycle}
+  \center
+  \begin{small}
+    \begin{tabular}{l p{10 cm}}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Data frames}} \\[1ex]
+      Table.cycle & Data frame of cycles in the network. Up to 50
+      cycles are returned per nexus.  \\
+      Table.nexus & Data frame with details of the disjoint nexuses present in the network\\[1ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      CycleDist$_{n \times 1}$ & Vector of flows cycling in loops of
+      increasing length (i.e., 1, 2, ...). \\  % these have names in the literature
+      NormDist$_{n \times 1}$ & Vector of Cycle Distributions normalized by the total system throughput \\
+      ResidualFlows$_{n \times n}$ & Matrix of straight-through flows or the underlying acyclic graph\\
+      AggregatedCycles$_{n \times n}$ & Matrix of all the cycled flows or the underlying cyclic graph\\[1ex]
+      \multicolumn{2}{l}{\textit{Network Statistics}} \\[1ex]
+      NCYCS & Number of cycles detected in the network\\
+      NNEX & Number of disjoint nexuses detected in the network\\
+      CI & Cycling index of the network based on flow matrix\\ \hline
+\end{tabular}
+\end{small}
+\end{table*}
+
+%%%%%%%%%%enaTroAgg %%%%%%%%%%%%%%%%%%%%%%%%%%%%%~Pawan
+
+\subsection{Trophic Aggregations}
+The Trophic Aggregation algorithm identifies the trophic structure
+of the given network based on the Lindeman's trophic concepts
+\citep{lindeman42}. The algorithm is implemented as in NETWRK 4.2b
+by Ulanowicz \citep{ulanowicz1979trophic} and provides similar
+results as NETWRK's 'Lindeman Trophic Aggregations' \citep{ulanowicz91}.
+It apportions the nodes into integer trophic levels and estimates the
+corresponding inputs, exports, respirations and the grazing chain and
+trophic spine which represent the transfers between integer trophic levels.
+
+It is crucial for this algorithm that the cycles among the $nl$ living nodes of the
+network (Feeding Cycles) be removed beforehand to assign trophic levels
+to nodes. Hence the output for this function contains the Cycle Analysis
+output for the Feeding cycles in the network.
+
+Following \citet{ulanowicz91}, the non-living nodes are grouped together for
+this analysis and referred to as the detrital pool.
+
+Table~\ref{tab:trophic} summarizes the function output except the outputs
+for the feeding cycles which are similar to the enaCycle outputs.
+
+\begin{Schunk}
+\begin{Sinput}
+>   trop <- enaTroAgg(m)
+> attributes(trop)
+\end{Sinput}
+\begin{Soutput}
+$names
+ [1] "Feeding_Cycles" "A"              "ETL"            "CE"            
+ [5] "CR"             "GC"             "RDP"            "LS"            
+ [9] "TE"             "ns"            
+\end{Soutput}
+\begin{Sinput}
+>                                         # Cycle analysis output for Feeding Cycles
+> trop$Feeding_Cycles
+\end{Sinput}
+\begin{Soutput}
+$ResidualFlows
+                Filter Feeders Microbiota Meiofauna Deposit Feeders
+Filter Feeders               0          0     0.000          0.0000
+Microbiota                   0          0     1.206          1.2060
+Meiofauna                    0          0     0.000          0.6609
+Deposit Feeders              0          0     0.000          0.0000
+Predators                    0          0     0.000          0.0000
+                Predators
+Filter Feeders     0.5135
+Microbiota         0.0000
+Meiofauna          0.0000
+Deposit Feeders    0.1721
+Predators          0.0000
+\end{Soutput}
+\end{Schunk}
+
+ %enaTroAgg - Trohpic Aggregations
+ \begin{table*}[t]
+  \caption{Matrices and graph-level network statistics returned by the \textit{enaR}
+    \texttt{enaTroAgg} function, which are based on \citet{ulanowicz1979trophic}.}\label{tab:trophic}
+  \center
+  \begin{small}
+    \begin{tabular}{l p{10 cm}}
+      \textbf{Label} & \textbf{Description} \\ \hline \\[-1.5ex]
+      \multicolumn{2}{l}{\textit{Matrices}} \\[1ex]
+      A$_{nl \times nl}$ & Lindeman transformation matrix that apportions nodes to integer trophic levels \\  % define nl as no. of living nodes ~Pawan %%BUG%
+      ETL$_{n \times 1}$ & Vector of the effective trophic levels of different nodes \\
+      M.Flow$_{nl \times 1}$ & Migratory flows in living nodes (if present) \\
+      CI$_{n \times 1}$ & Vector of canonical inputs to integer trophic levels (if migratory flows present) \\
+      CE$_{n \times 1}$ & Canonical Exports. Vector of exports from Integer trophic levels \\
+      CR$_{n \times 1}$ & Canonical Respirations. Vector of respiration from Integer trophic levels \\
+      GC$_{nl \times 1}$ & Grazing Chain. Vector of inputs to Integer trophic levels from preceding level \\
+      RDP$_{nl \times 1}$ & Vector of returns from each level to the detrital pool \\
+      LS$_{nl \times 1}$ & Vector representing the Lindeman Spine \\
+      TE$_{nl \times 1}$ & Vector of the trophic efficiencies for integer trophic levels\\[1ex]
+      \multicolumn{2}{l}{\textit{Network Statistics}} \\[1ex]
+      Detritivory & Flow from the detrital pool (non-living nodes) to the second trophic level \\
+      DetritalInput & Exogenous inputs to the detrital pool \\
+      DetritalCirc & internal circulation within the detrital pool \\
+      NCYCS & number of feeding cycles removed from the network \\
+      NNEX & number of disjoint nexuses detected for the feeding cycles \\
+      CI & cycling index of the living component of the network based on flow matrix\\ \hline
+\end{tabular}
+\end{small}
+\end{table*}
+
+
+% Added Control Analysis Updates, enaCycle and enaTroAgg details ~Pawan.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Other Analyses}
 There are a number of additional tools in the package.  Here we
-highlight a couple of them.  
+highlight a couple of them.
 
 A quick way to get a list of all of the global network statistics reported in
 Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
-\texttt{get.ns} function. 
+\texttt{get.ns} function.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -1376,7 +1570,7 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
 > str(ns)    # examine the structure of ns
 \end{Sinput}
 \begin{Soutput}
-'data.frame':	1 obs. of  63 variables:
+'data.frame':	1 obs. of  65 variables:
  $ n          : num 6
  $ L          : num 12
  $ C          : num 0.333
@@ -1417,6 +1611,8 @@ Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
  $ ASC.CAP    : num 0.441
  $ OH.CAP     : num 0.559
  $ robustness : num 0.361
+ $ ELD        : num 1.8
+ $ TD         : num 2.51
  $ TSS        : num 3112
  $ CIS        : num 0.994
  $ BSI        : num 0.00333
@@ -1511,9 +1707,9 @@ Centralities.
 \begin{Schunk}
 \begin{Sinput}
 > # set plotting parameters
-> opar <- par(las=1,mar=c(7,5,1,1),xpd=TRUE,bg="white")   
+> opar <- par(las=1,mar=c(7,5,1,1),xpd=TRUE,bg="white")
 > # find centrality order
-> o <- order(ec$AEC,decreasing=TRUE)            
+> o <- order(ec$AEC,decreasing=TRUE)
 > bp <- barplot(ec$AEC[o],     # create barplot
 +                names.arg=NA,
 +                ylab="Average Environ Centrality",
@@ -1594,7 +1790,7 @@ re-orient the output from \texttt{enaFlow}:
 
 %% We close the description of the package's core functionality with a
 %% plot of how the functions relate to each other and are supported by
-%% helper functions (Fig.~\ref{fig:fig}). 
+%% helper functions (Fig.~\ref{fig:fig}).
 
 
 \section{Model Library}
@@ -1761,66 +1957,66 @@ BENTHIC FECES & BACTERIA                        0
   \begin{tiny}
     \begin{tabular}{llrrrrrr}
       \hline
-      Models & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\ 
+      Models & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
       \hline
-      Marine Coprophagy (oyster) & kcal m$^{-2}$ yr$^{-1}$  &   4 & 0.25 & 379 & 549 & 0.12 & \citet{haven66} \\ 
-      Lake Findley  & gC m$^{-2}$ yr$^{-1}$  &   4 & 0.38 &  21 &  50 & 0.30 &  \citet{richey78} \\ 
-      Mirror Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  72 & 217 & 0.32 &   \citet{richey78} \\ 
-      Lake Wingra & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.40 & 478 & 1517 & 0.40 &  \citet{richey78} \\ 
-      Marion Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  87 & 242 & 0.31 &  \citet{richey78} \\ 
-      Cone Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.32 & 11819 & 30626 & 0.09 &  \citet{tilly68} \\ 
-      Silver Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.28 & 21296 & 29175 & 0.00 &  \citet{odum57} \\ 
-      English Channel & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.25 & 1096 & 2280 & 0.00 &  \citet{brylinsky72} \\ 
-      Oyster Reef  & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.33 &  41 &  83 & 0.11 &  \citet{dame81} \\ 
-      Baie de Somme & mgC m$^{-2}$ d$^{-1}$  &   9 & 0.30 & 876 & 2034 & 0.14 &  \citet{rybarczyk03} \\ 
-      Bothnian Bay & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.22 &  44 & 183 & 0.23 &   \citet{sandberg00} \\ 
-      Bothnian Sea & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.24 & 117 & 562 & 0.31 &   \citet{sandberg00} \\ 
-      Ythan Estuary & gC m$^{-2}$ yr$^{-1}$  &  13 & 0.23 & 1258 & 4181 & 0.24 &  \citet{baird81} \\ 
-      Sundarban Mangrove (virgin) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 111317 & 440931 & 0.19 & \citet{ray08} \\ 
-      Sundarban Mangrove (reclaimed) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 38484 & 103056 & 0.05 & \citet{ray08} \\ 
-      Baltic Sea & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 603 & 1973 & 0.13 &   \citet{baird91} \\ 
-      Ems Estuary & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.19 & 282 & 1067 & 0.32 &  \citet{baird91} \\ 
-      Swartkops Estuary  15 & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 3544 & 13996 & 0.47 &   \citet{baird91} \\ 
-      Southern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.23 & 714 & 2545 & 0.31 & \citet{baird91} \\ 
-      Peruvian Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.22 & 14927 & 33491 & 0.04 &  \citet{baird91} \\ 
-      Crystal River (control) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.19 & 7357 & 15062 & 0.07 &  \citet{ulanowicz86} \\ 
-      Crystal River (thermal) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.14 & 6018 & 12032 & 0.09 &  \citet{ulanowicz86} \\ 
-      Charca de Maspalomas Lagoon & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.12 & 1486230 & 6010331 & 0.18 &  \citet{almunia99} \\ 
-      Northern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  24 & 0.21 & 2282 & 6611 & 0.05 &  \citet{heymans00} \\ 
-      Swartkops Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.17 & 2859 & 8949 & 0.27 & \citet{scharler05} \\ 
-      Sunday Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 4440 & 11937 & 0.22 & \citet{scharler05} \\ 
-      Kromme Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 2571 & 11087 & 0.38 & \citet{scharler05} \\ 
-      Okefenokee Swamp & g dw m$^{-2}$ y$^{-1}$  &  26 & 0.20 & 2533 & 12855 & 0.48 & \citet{whipple93} \\ 
-      Neuse Estuary (early summer 1997) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4385 & 13827 & 0.12 &  \citet{baird04} \\ 
-      Neuse Estuary (late summer 1997)  & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.11 & 4639 & 13035 & 0.13 &  \citet{baird04} \\ 
-      Neuse Estuary (early summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4568 & 14025 & 0.12 &  \citet{baird04} \\ 
-      Neuse Estuary (late summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.10 & 5641 & 15031 & 0.11 &  \citet{baird04} \\ 
-      Gulf of Maine & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 5053 & 18381 & 0.15 &   \citet{link08} \\ 
-      Georges Bank & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 4380 & 16889 & 0.18 &  \citet{link08} \\ 
-      Middle Atlantic Bight & g ww m$^{-2}$ yr$^{-1}$  &  32 & 0.37 & 4869 & 17916 & 0.18 &  \citet{link08} \\ 
-      Narragansett Bay & mgC m$^{-2}$ yr$^{-1}$  &  32 & 0.15 & 693845 & 3917246 & 0.51 &  \citet{monaco97} \\ 
-      Southern New England Bight & g ww m$^{-2}$ yr$^{-1}$  &  33 & 0.35 & 4717 & 17597 & 0.16 &  \citet{link08} \\ 
-      Chesapeake Bay  & mg C m$^{-2}$ yr$^{-1}$  &  36 & 0.09 & 888791 & 3227453 & 0.19 &  \citet{baird89} \\ 
-      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{−2}$ yr$^{−1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\ 
-      St. Marks Seagrass, site 1 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 514 & 1315 & 0.13 &  \citet{baird98} \\ 
-      St. Marks Seagrass, site 1 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 601 & 1590 & 0.11 &  \citet{baird98} \\ 
-      St. Marks Seagrass, site 2 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.07 & 602 & 1383 & 0.09 &  \citet{baird98} \\ 
-      St. Marks Seagrass, site 2 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 800 & 1921 & 0.08 &  \citet{baird98} \\ 
-      St. Marks Seagrass, site 3 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.05 & 7809 & 12651 & 0.01 & \citet{baird98} \\ 
-      St. Marks Seagrass, site 4 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 1432 & 2865 & 0.04 &  \citet{baird98} \\ 
-      Sylt-R{\o}m{\o} Bight & mg C m$^{-2}$ d$^{-1}$  &  59 & 0.08 & 683448 & 1781028 & 0.09 &  \citet{baird04_sylt} \\ 
-      Graminoids (wet) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 6272 & 13676 & 0.02 &  \citet{ulanowicz00_graminoids} \\ 
-      Graminoids (dry) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 3472 & 7519 & 0.04 &   \citet{ulanowicz00_graminoids} \\ 
-      Cypress (wet) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1418 & 2571 & 0.04 &  \citet{ulanowicz97_cypress} \\ 
-      Cypress (dry) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1035 & 1919 & 0.04 &  \citet{ulanowicz97_cypress} \\ 
-      Lake Oneida (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.22 & 1034 & 1697 & 0.00 &  \citet{miehls09_oneida} \\ 
-      Lake Oneida (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  76 & 0.22 & 810 & 1462 & 0.00 &  \citet{miehls09_oneida} \\ 
-      Bay of Quinte (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.21 & 984 & 1509 & 0.00 &   \citet{miehls09_quinte} \\ 
-      Bay of Quinte (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  80 & 0.21 & 1129 & 2039 & 0.01 &   \citet{miehls09_quinte} \\ 
-      Mangroves (wet) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3265 & 0.10 &  \citet{ulanowicz99_mangrove} \\ 
-      Mangroves (dry) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3272 & 0.10 &  \citet{ulanowicz99_mangrove} \\ 
-      Florida Bay (wet) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.12 & 738 & 2720 & 0.14 &  \citet{ulanowicz98_fb} \\ 
-      Florida Bay (dry) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.13 & 547 & 1778 & 0.08 &  \citet{ulanowicz98_fb} \\ 
+      Marine Coprophagy (oyster) & kcal m$^{-2}$ yr$^{-1}$  &   4 & 0.25 & 379 & 549 & 0.12 & \citet{haven66} \\
+      Lake Findley  & gC m$^{-2}$ yr$^{-1}$  &   4 & 0.38 &  21 &  50 & 0.30 &  \citet{richey78} \\
+      Mirror Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  72 & 217 & 0.32 &   \citet{richey78} \\
+      Lake Wingra & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.40 & 478 & 1517 & 0.40 &  \citet{richey78} \\
+      Marion Lake & gC m$^{-2}$ yr$^{-1}$  &   5 & 0.36 &  87 & 242 & 0.31 &  \citet{richey78} \\
+      Cone Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.32 & 11819 & 30626 & 0.09 &  \citet{tilly68} \\
+      Silver Springs & kcal m$^{-2}$ yr$^{-1}$  &   5 & 0.28 & 21296 & 29175 & 0.00 &  \citet{odum57} \\
+      English Channel & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.25 & 1096 & 2280 & 0.00 &  \citet{brylinsky72} \\
+      Oyster Reef  & kcal m$^{-2}$ yr$^{-1}$  &   6 & 0.33 &  41 &  83 & 0.11 &  \citet{dame81} \\
+      Baie de Somme & mgC m$^{-2}$ d$^{-1}$  &   9 & 0.30 & 876 & 2034 & 0.14 &  \citet{rybarczyk03} \\
+      Bothnian Bay & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.22 &  44 & 183 & 0.23 &   \citet{sandberg00} \\
+      Bothnian Sea & gC m$^{-2}$ yr$^{-1}$  &  12 & 0.24 & 117 & 562 & 0.31 &   \citet{sandberg00} \\
+      Ythan Estuary & gC m$^{-2}$ yr$^{-1}$  &  13 & 0.23 & 1258 & 4181 & 0.24 &  \citet{baird81} \\
+      Sundarban Mangrove (virgin) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 111317 & 440931 & 0.19 & \citet{ray08} \\
+      Sundarban Mangrove (reclaimed) & kcal m$^{-2}$ yr$^{-1}$  &  14 & 0.22 & 38484 & 103056 & 0.05 & \citet{ray08} \\
+      Baltic Sea & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 603 & 1973 & 0.13 &   \citet{baird91} \\
+      Ems Estuary & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.19 & 282 & 1067 & 0.32 &  \citet{baird91} \\
+      Swartkops Estuary  15 & mg C m$^{-2}$ d$^{-1}$  &  15 & 0.17 & 3544 & 13996 & 0.47 &   \citet{baird91} \\
+      Southern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.23 & 714 & 2545 & 0.31 & \citet{baird91} \\
+      Peruvian Upwelling & mg C m$^{-2}$ d$^{-1}$  &  16 & 0.22 & 14927 & 33491 & 0.04 &  \citet{baird91} \\
+      Crystal River (control) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.19 & 7357 & 15062 & 0.07 &  \citet{ulanowicz86} \\
+      Crystal River (thermal) & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.14 & 6018 & 12032 & 0.09 &  \citet{ulanowicz86} \\
+      Charca de Maspalomas Lagoon & mg C m$^{-2}$ d$^{-1}$  &  21 & 0.12 & 1486230 & 6010331 & 0.18 &  \citet{almunia99} \\
+      Northern Benguela Upwelling & mg C m$^{-2}$ d$^{-1}$  &  24 & 0.21 & 2282 & 6611 & 0.05 &  \citet{heymans00} \\
+      Swartkops Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.17 & 2859 & 8949 & 0.27 & \citet{scharler05} \\
+      Sunday Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 4440 & 11937 & 0.22 & \citet{scharler05} \\
+      Kromme Estuary & mg C m$^{-2}$ d$^{-1}$  &  25 & 0.16 & 2571 & 11087 & 0.38 & \citet{scharler05} \\
+      Okefenokee Swamp & g dw m$^{-2}$ y$^{-1}$  &  26 & 0.20 & 2533 & 12855 & 0.48 & \citet{whipple93} \\
+      Neuse Estuary (early summer 1997) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4385 & 13827 & 0.12 &  \citet{baird04} \\
+      Neuse Estuary (late summer 1997)  & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.11 & 4639 & 13035 & 0.13 &  \citet{baird04} \\
+      Neuse Estuary (early summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.09 & 4568 & 14025 & 0.12 &  \citet{baird04} \\
+      Neuse Estuary (late summer 1998) & mg C m$^{-2}$ d$^{-1}$  &  30 & 0.10 & 5641 & 15031 & 0.11 &  \citet{baird04} \\
+      Gulf of Maine & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 5053 & 18381 & 0.15 &   \citet{link08} \\
+      Georges Bank & g ww m$^{-2}$ yr$^{-1}$  &  31 & 0.35 & 4380 & 16889 & 0.18 &  \citet{link08} \\
+      Middle Atlantic Bight & g ww m$^{-2}$ yr$^{-1}$  &  32 & 0.37 & 4869 & 17916 & 0.18 &  \citet{link08} \\
+      Narragansett Bay & mgC m$^{-2}$ yr$^{-1}$  &  32 & 0.15 & 693845 & 3917246 & 0.51 &  \citet{monaco97} \\
+      Southern New England Bight & g ww m$^{-2}$ yr$^{-1}$  &  33 & 0.35 & 4717 & 17597 & 0.16 &  \citet{link08} \\
+      Chesapeake Bay  & mg C m$^{-2}$ yr$^{-1}$  &  36 & 0.09 & 888791 & 3227453 & 0.19 &  \citet{baird89} \\
+      Mondego Estuary (\textit{Zostera} sp. Meadows) & g AFDW m$^{−2}$ yr$^{−1}$ &  43 & 0.19 & 4030 & 6822 & 0.03 & \citet{patricio2006mass} \\
+      St. Marks Seagrass, site 1 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 514 & 1315 & 0.13 &  \citet{baird98} \\
+      St. Marks Seagrass, site 1 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 601 & 1590 & 0.11 &  \citet{baird98} \\
+      St. Marks Seagrass, site 2 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.07 & 602 & 1383 & 0.09 &  \citet{baird98} \\
+      St. Marks Seagrass, site 2 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 800 & 1921 & 0.08 &  \citet{baird98} \\
+      St. Marks Seagrass, site 3 (Jan.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.05 & 7809 & 12651 & 0.01 & \citet{baird98} \\
+      St. Marks Seagrass, site 4 (Feb.) & mg C m$^{-2}$ d$^{-1}$  &  51 & 0.08 & 1432 & 2865 & 0.04 &  \citet{baird98} \\
+      Sylt-R{\o}m{\o} Bight & mg C m$^{-2}$ d$^{-1}$  &  59 & 0.08 & 683448 & 1781028 & 0.09 &  \citet{baird04_sylt} \\
+      Graminoids (wet) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 6272 & 13676 & 0.02 &  \citet{ulanowicz00_graminoids} \\
+      Graminoids (dry) & g C m$^{-2}$ yr$^{-1}$  &  66 & 0.18 & 3472 & 7519 & 0.04 &   \citet{ulanowicz00_graminoids} \\
+      Cypress (wet) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1418 & 2571 & 0.04 &  \citet{ulanowicz97_cypress} \\
+      Cypress (dry) & g C m$^{-2}$ yr$^{-1}$  &  68 & 0.12 & 1035 & 1919 & 0.04 &  \citet{ulanowicz97_cypress} \\
+      Lake Oneida (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.22 & 1034 & 1697 & 0.00 &  \citet{miehls09_oneida} \\
+      Lake Oneida (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  76 & 0.22 & 810 & 1462 & 0.00 &  \citet{miehls09_oneida} \\
+      Bay of Quinte (pre-ZM) & g C m$^{-2}$ yr$^{-1}$  &  74 & 0.21 & 984 & 1509 & 0.00 &   \citet{miehls09_quinte} \\
+      Bay of Quinte (post-ZM) & g C m$^{-2}$ yr$^{-1}$  &  80 & 0.21 & 1129 & 2039 & 0.01 &   \citet{miehls09_quinte} \\
+      Mangroves (wet) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3265 & 0.10 &  \citet{ulanowicz99_mangrove} \\
+      Mangroves (dry) & g C m$^{-2}$ yr$^{-1}$  &  94 & 0.15 & 1531 & 3272 & 0.10 &  \citet{ulanowicz99_mangrove} \\
+      Florida Bay (wet) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.12 & 738 & 2720 & 0.14 &  \citet{ulanowicz98_fb} \\
+      Florida Bay (dry) & mg C m$^{-2}$ yr$^{-1}$  & 125 & 0.13 & 547 & 1778 & 0.08 &  \citet{ulanowicz98_fb} \\
       \hline
 \end{tabular}
 \end{tiny}
@@ -1837,7 +2033,7 @@ BENTHIC FECES & BACTERIA                        0
 \end{scriptsize}
 \end{table}
 
-% -- BGC Table --- % 
+% -- BGC Table --- %
 \begin{table}[ht]
 \begin{center}
   \caption{Biogeochemical ecosystem networks (42) included in the
@@ -1845,50 +2041,50 @@ BENTHIC FECES & BACTERIA                        0
   \begin{tiny}
     \begin{tabular}{llrrrrrr}
       \hline
-      Model & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\ 
+      Model & Units & $n^\dagger$ & $C^\dagger$ & $Input^\dagger$ & $TST^\dagger$ & $FCI^\dagger$ & Reference \\
       \hline
-      Hubbard Brook (Waide) & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.25 &  11 & 168 & 0.76 & \citet{waide74} \\ 
-      Hardwood Forest, NH & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  11 & 200 & 0.80 & \citet{jordan72} \\ 
-      Douglas Fir Forest, WA  & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   4 &  54 & 0.74 & \citet{jordan72} \\ 
-      Douglas Fir Forest, WA  & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &  45 & 0.97 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  43 & 274 & 0.57 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  20 & 433 & 0.86 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg Mg Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  10 &  70 & 0.58 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg Cu Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   2 & 0.37 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg Fe Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   7 & 0.95 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg Mn Ha$^{-1}$  yr$^{-1}$ &   4 & 0.38 &   0 &   7 & 0.98 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg Na Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  64 & 140 & 0.24 & \citet{jordan72} \\ 
-      Puerto Rican Rain Forest & kg Sr Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   1 & 0.71 & \citet{jordan72} \\ 
-      Tropical Rain Forest & g N m$^{-2}$ d$^{-1}$  &   5 & 0.24 &  10 &  71 & 0.48 & \citet{edmisten70} \\ 
-      Neuse River Estuary (AVG) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 795 & 41517 & 0.89 & \citet{christian03} \\ 
-      Neuse River Estuary (Spring 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 133 & 9120 & 0.91 & \citet{christian03} \\ 
-      Neuse River Estuary (Summer 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 119 & 20182 & 0.96 & \citet{christian03} \\ 
-      Neuse River Estuary Fall 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 181 & 8780 & 0.88 & \citet{christian03} \\ 
-      Neuse River Estuary Winter 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.43 & 187 & 6880 & 0.85 & \citet{christian03} \\ 
-      Neuse River Estuary (Spring 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 12915 & 0.94 & \citet{christian03} \\ 
-      Neuse River Estuary (Summer 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 165 & 11980 & 0.91 & \citet{christian03} \\ 
-      Neuse River Estuary (Fall 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 100 & 9863 & 0.94 & \citet{christian03} \\ 
-      Neuse River Estuary (Winter 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 691 & 7907 & 0.62 & \citet{christian03} \\ 
-      Neuse River Estuary (Spring 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 334 & 11533 & 0.84 & \citet{christian03} \\ 
-      Neuse River Estuary (Summer 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  90 & 15621 & 0.96 & \citet{christian03} \\ 
-      Neuse River Estuary (Fall 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  85 & 7325 & 0.93 & \citet{christian03} \\ 
-      Neuse River Estuary (Winter 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 171 & 8680 & 0.89 & \citet{christian03} \\ 
-      Neuse River Estuary (Spring 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 176 & 6898 & 0.85 & \citet{christian03} \\ 
-      Neuse River Estuary (Summer 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 132 & 16814 & 0.95 & \citet{christian03} \\ 
-      Neuse River Estuary (Fall 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 5732 & 0.87 & \citet{christian03} \\ 
-      Neuse River Estuary (Winter 1989) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 291 & 5739 & 0.75 & \citet{christian03} \\ 
-      Cape Fear River Estuary (Oligohaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3802 & 7088 & 0.20 & \citet{hines12} \\ 
-      Cape Fear River Estuary (Polyhaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3068 & 5322 & 0.17 & unpublished \\ 
-      Lake Lanier (AVG) & mg P m$^{-2}$ day$^{-1}$ &  11 & 0.21 &  95 & 749 & 0.40 & \citet{borrett07_lanier} \\ 
-      Baltic Sea & mg N m$^{-3}$ day$^{-1}$  &  16 & 0.15 & 2348 & 44510 & 0.67 & \citet{hinrichsen98_baltic} \\ 
-      Chesapeake Bay & mg N m$^{-2}$ yr$^{-1}$  &  36 & 0.12 & 73430 & 484325 & 0.33 & \citet{baird95} \\ 
-      Chesapeake Bay & mg P m$^{-2}$ yr$^{-1}$ &  36 & 0.12 & 9402 & 101091 & 0.51 & \citet{ulanowicz99} \\ 
-      Chesapeake Bay (Winter) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.08 & 1009 & 11926 & 0.53 & \citet{ulanowicz99} \\ 
-      Chesapeake Bay (Spring) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 1932 & 27325 & 0.57 & \citet{ulanowicz99} \\ 
-      Chesapeake Bay (Summer) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.12 & 4184 & 42935 & 0.46 & \citet{ulanowicz99} \\ 
-      Chesapeake Bay (Fall) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 2276 & 18904 & 0.40 & \citet{ulanowicz99} \\ 
-      Sylt-R{\o}m{\o} Bight & mg N m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 99613 & 363693 & 0.23 & \citet{baird08_sylt} \\ 
-      Sylt-R{\o}m{\o} Bight & mg P m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 2508 & 57739 & 0.66 & \citet{baird08_sylt} \\ 
+      Hubbard Brook (Waide) & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.25 &  11 & 168 & 0.76 & \citet{waide74} \\
+      Hardwood Forest, NH & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  11 & 200 & 0.80 & \citet{jordan72} \\
+      Douglas Fir Forest, WA  & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   4 &  54 & 0.74 & \citet{jordan72} \\
+      Douglas Fir Forest, WA  & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &  45 & 0.97 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Ca Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  43 & 274 & 0.57 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg K Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  20 & 433 & 0.86 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Mg Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  10 &  70 & 0.58 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Cu Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   2 & 0.37 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Fe Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   7 & 0.95 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Mn Ha$^{-1}$  yr$^{-1}$ &   4 & 0.38 &   0 &   7 & 0.98 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Na Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &  64 & 140 & 0.24 & \citet{jordan72} \\
+      Puerto Rican Rain Forest & kg Sr Ha$^{-1}$  yr$^{-1}$ &   4 & 0.31 &   0 &   1 & 0.71 & \citet{jordan72} \\
+      Tropical Rain Forest & g N m$^{-2}$ d$^{-1}$  &   5 & 0.24 &  10 &  71 & 0.48 & \citet{edmisten70} \\
+      Neuse River Estuary (AVG) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 795 & 41517 & 0.89 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 133 & 9120 & 0.91 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 119 & 20182 & 0.96 & \citet{christian03} \\
+      Neuse River Estuary Fall 1985) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 181 & 8780 & 0.88 & \citet{christian03} \\
+      Neuse River Estuary Winter 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.43 & 187 & 6880 & 0.85 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 12915 & 0.94 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 165 & 11980 & 0.91 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1986) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 100 & 9863 & 0.94 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 691 & 7907 & 0.62 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 334 & 11533 & 0.84 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  90 & 15621 & 0.96 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1987) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 &  85 & 7325 & 0.93 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 171 & 8680 & 0.89 & \citet{christian03} \\
+      Neuse River Estuary (Spring 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 176 & 6898 & 0.85 & \citet{christian03} \\
+      Neuse River Estuary (Summer 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 132 & 16814 & 0.95 & \citet{christian03} \\
+      Neuse River Estuary (Fall 1988) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 128 & 5732 & 0.87 & \citet{christian03} \\
+      Neuse River Estuary (Winter 1989) & mmol N m$^{-2}$ season$^{-1}$ &   7 & 0.45 & 291 & 5739 & 0.75 & \citet{christian03} \\
+      Cape Fear River Estuary (Oligohaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3802 & 7088 & 0.20 & \citet{hines12} \\
+      Cape Fear River Estuary (Polyhaline) & nmol N cm$^{-3}$ d$^{-1}$ &   8 & 0.36 & 3068 & 5322 & 0.17 & unpublished \\
+      Lake Lanier (AVG) & mg P m$^{-2}$ day$^{-1}$ &  11 & 0.21 &  95 & 749 & 0.40 & \citet{borrett07_lanier} \\
+      Baltic Sea & mg N m$^{-3}$ day$^{-1}$  &  16 & 0.15 & 2348 & 44510 & 0.67 & \citet{hinrichsen98_baltic} \\
+      Chesapeake Bay & mg N m$^{-2}$ yr$^{-1}$  &  36 & 0.12 & 73430 & 484325 & 0.33 & \citet{baird95} \\
+      Chesapeake Bay & mg P m$^{-2}$ yr$^{-1}$ &  36 & 0.12 & 9402 & 101091 & 0.51 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Winter) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.08 & 1009 & 11926 & 0.53 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Spring) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 1932 & 27325 & 0.57 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Summer) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.12 & 4184 & 42935 & 0.46 & \citet{ulanowicz99} \\
+      Chesapeake Bay (Fall) & mg P m$^{-2}$ season$^{-1}$ &  36 & 0.10 & 2276 & 18904 & 0.40 & \citet{ulanowicz99} \\
+      Sylt-R{\o}m{\o} Bight & mg N m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 99613 & 363693 & 0.23 & \citet{baird08_sylt} \\
+      Sylt-R{\o}m{\o} Bight & mg P m$^{-2}$ yr$^{-1}$  &  59 & 0.09 & 2508 & 57739 & 0.66 & \citet{baird08_sylt} \\
       \hline
     \end{tabular}
   \end{tiny}
@@ -2115,7 +2311,7 @@ function to reshape the network statistics into a single data frame.
 > ns.list <- lapply(m.list,get.ns) # returns as list
 > ns <- do.call(rbind,ns.list)  # ns as a data.frame
 > # Let's take a quick look at some of the output
-> colnames(ns)    # return network statistic names.  
+> colnames(ns)    # return network statistic names.
 \end{Sinput}
 \begin{Soutput}
  [1] "n"           "L"           "C"           "LD"         
@@ -2128,18 +2324,19 @@ function to reshape the network statistics into a single data frame.
 [29] "mode0.F"     "mode1.F"     "mode2.F"     "mode3.F"    
 [33] "mode4.F"     "AMI"         "ASC"         "OH"         
 [37] "CAP"         "ASC.CAP"     "OH.CAP"      "robustness" 
-[41] "TSS"         "CIS"         "BSI"         "DSI"        
-[45] "ISI"         "ID.S"        "ID.S.I"      "ID.S.O"     
-[49] "HMG.S.O"     "HMG.S.I"     "NAS"         "NASP"       
-[53] "mode0.S"     "mode1.S"     "mode2.S"     "mode3.S"    
-[57] "mode4.S"     "lam1D"       "synergism.F" "mutualism.F"
-[61] "lam1DS"      "synergism.S" "mutualism.S"
+[41] "ELD"         "TD"          "TSS"         "CIS"        
+[45] "BSI"         "DSI"         "ISI"         "ID.S"       
+[49] "ID.S.I"      "ID.S.O"      "HMG.S.O"     "HMG.S.I"    
+[53] "NAS"         "NASP"        "mode0.S"     "mode1.S"    
+[57] "mode2.S"     "mode3.S"     "mode4.S"     "lam1D"      
+[61] "synergism.F" "mutualism.F" "lam1DS"      "synergism.S"
+[65] "mutualism.S"
 \end{Soutput}
 \begin{Sinput}
 > dim(ns)         # show dimensions of ns matrix
 \end{Sinput}
 \begin{Soutput}
-[1] 10 63
+[1] 10 65
 \end{Soutput}
 \begin{Sinput}
 > ns[1:5,1:5]     # show selected results
@@ -2205,12 +2402,12 @@ The \textit{sna} package for Social Network Analysis is bundled in the
 \textit{statnet} package and uses the same network data object defined
 in \textit{network} that we selected to use for \textit{enaR}.  Thus,
 the design decision to use the network data object gives users direct
-access to \textit{sna} tools.  
+access to \textit{sna} tools.
 
 Multiple measures of network centrality have been proposed, and the
 \textit{sna} package provides a way of calculating several.  Thus,
 ecologists can now use the sna algorithms to determine different types
-of centrality for their models.  
+of centrality for their models.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -2263,7 +2460,7 @@ well. For example, it will create a target diagram of centralities.
 
 
 In addition to the node-level measures, \textit{sna} includes graph-level
-indices.  
+indices.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -2313,7 +2510,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 \center
 %% <<fig=TRUE,echo=false>>=
 %% <<e>>
-%% @ 
+%% @
 \includegraphics[]{enaR-vignette-054}
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
@@ -2321,7 +2518,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 \begin{Schunk}
 \begin{Sinput}
 > # betweenness centrality (calculated by iGraph and sna)
-> betweenness(g) 
+> betweenness(g)
 \end{Sinput}
 \begin{Soutput}
     Filter Feeders         Microbiota          Meiofauna 
@@ -2331,7 +2528,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 \end{Soutput}
 \begin{Sinput}
 > # shortest path between any two nodes
-> shortest.paths(g) 
+> shortest.paths(g)
 \end{Sinput}
 \begin{Soutput}
                    Filter Feeders Microbiota Meiofauna Deposit Feeders
@@ -2351,7 +2548,7 @@ Deposited Detritus         1                  0
 \end{Soutput}
 \begin{Sinput}
 > # average path length in the network (graph theory sense)
-> average.path.length(g,directed=TRUE)   
+> average.path.length(g,directed=TRUE)
 \end{Sinput}
 \begin{Soutput}
 [1] 1.52
@@ -2422,7 +2619,7 @@ future development.  We hope to do this in collaboration with
 users. This vignette also illustrates how users can further analyze
 their data with other \R\ packages for graph and network analysis like
 \textit{sna} and \textit{iGraph}.  In summary, we hope you find this
-package useful for your ENA needs.  
+package useful for your ENA needs.
 
 
 \bibliography{srbbib_abb,srb}

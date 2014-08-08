@@ -1018,14 +1018,15 @@ mti$M  # shows the total impact matrix
 %%%For Pawan to insert enaCycle and enaTroAgg %%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Cycle Analysis}
-The Cycle Analysis provides the detailed account of the Cycling
+The Cycle Analysis provides the detailed account of the cycling
 present in the network. It follows the algorithm by the DOS-based
 NETWRK 4.2b software by Ulanowicz \citep{ulanowicz91, ulanowicz83} and
-provides results similar to NETWRK's 'Full Cycle Analysis'.
- Cycles in a network are grouped together into disjoint nexuses and each
- nexus is characterized by a weak arc. This function gives details of the
- individual cycles along with the disjoint nexuses present in the network.
- Table~\ref{tab:cycle} summarizes the function output.
+provides results similar to NETWRK's 'Full Cycle Analysis'.  Cycles in
+a network are grouped together into disjoint nexuses and each nexus is
+characterized by a weak arc. This function gives details of the
+individual cycles along with the disjoint nexuses present in the
+network.  Table~\ref{tab:cycle} summarizes the function output.
+
 %It returns the individual cycles present in the model distributed amongst
 %different nexuses based on a depth-first search to identify cycle arcs.
 %It also gives the distribution of flow into cycles of different lengths and                  %% Determine whether necessary ~Pawan
@@ -1033,16 +1034,15 @@ provides results similar to NETWRK's 'Full Cycle Analysis'.
  %calculates the cycling index based on the flow matrix.
 
 
+<<>>=
+  cyc <- enaCycle(m)
+attributes(cyc)
+                                        # Display information of individual cycles
+names(cyc$Table.cycle)
+                                        # Display information of the disjoint nexuses
+names(cyc$Table.nexus)
 
- <<>>=
-
- cyc <- enaCycle(m)
- attributes(cyc)
-                                                            # Display information of individual cycles
- names(cyc$Table.cycle)
-                                                            # Display information of the disjoint nexuses
- names(cyc$Table.nexus)
- @
+@ 
 
  %enaCycle - Full Cycle Analysis
  \begin{table*}[t]
@@ -1084,7 +1084,7 @@ trophic spine which represent the transfers between integer trophic levels.
 
 It is crucial for this algorithm that the cycles among the $nl$ living nodes of the
 network (Feeding Cycles) be removed beforehand to assign trophic levels
-to nodes. Hence the output for this function contains the Cycle analysis
+to nodes. Hence the output for this function contains the Cycle Analysis
 output for the Feeding cycles in the network.
 
 Following \citet{ulanowicz91}, the non-living nodes are grouped together for
@@ -1093,13 +1093,12 @@ this analysis and referred to as the detrital pool.
 Table~\ref{tab:trophic} summarizes the function output except the outputs
 for the feeding cycles which are similar to the enaCycle outputs.
 
- <<>>=
-
- trop <- enaTroAgg(m)
- attributes(trop)
-                                                     # Cycle analysis output for Feeding Cycles
- trop$Feeding_Cycles
-@
+<<>>=
+trop <- enaTroAgg(m)
+attributes(trop)
+                                        # Cycle analysis output for Feeding Cycles
+trop$Feeding_Cycles
+@ 
 
  %enaTroAgg - Trohpic Aggregations
  \begin{table*}[t]
