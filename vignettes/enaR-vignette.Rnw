@@ -19,7 +19,7 @@
 \Abstract{
   Ecosystem Network Analysis (ENA) provides a framework for
   investigating the structure, function and dynamics of ecological
-  systems, primarily ecosystem models with physcially conserved
+  systems, primarily ecosystem models with physically conserved
   units. Here, we present the \textit{enaR} package, which provides a
   broad representation of many of the core tools developed by the ENA
   community, detailing how to use the primary functions of the package
