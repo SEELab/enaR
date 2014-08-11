@@ -91,7 +91,7 @@ networks of thermodynamically conserved energy--matter exchanges.  The
 package brings together multiple ENA algorithms from several
 approaches into one common software framework that is readily available and
 extensible.  The package builds on the \textit{network} data structure
-for \R\ developed by \citet{butts08_network}. In addition to being
+developed by \citet{butts08_network}. In addition to being
 able to perform several types of ENA with a single package, users can
 also make use of network analysis tools built into the
 \textit{network} package, the \textit{sna} (social network analysis)
