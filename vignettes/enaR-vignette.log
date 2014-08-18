@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  8 AUG 2014 14:01
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  18 AUG 2014 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,8 +480,13 @@ LaTeX Info: Redefining \selectfont on input line 117.
 \RaggedRightParindent=\skip65
 \JustifyingParindent=\skip66
 )
+(./enaR-vignette.toc)
+\tf@toc=\write5
+\openout5 = `enaR-vignette.toc'.
+
+
 ! Undefined control sequence.
-l.94 for \R
+l.98 for \R
            \ developed by \citet{butts08_network}. In addition to being
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -493,17 +498,17 @@ and I'll forget about whatever was undefined.
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./jsslo
 go.jpg>]
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 138.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 142.
 
-LaTeX Font Info:    No file TS1aer.fd. on input line 138.
+LaTeX Font Info:    No file TS1aer.fd. on input line 142.
 
 
 LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textcopyright' on input line 138.
+(Font)              for symbol `textcopyright' on input line 142.
 
 ! Undefined control sequence.
-l.140 \R
+l.144 \R
         \ package is to begin to bring together these different
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -512,7 +517,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.150 \tableline
+l.154 \tableline
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -520,13 +525,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 154.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 158.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 ! Undefined control sequence.
-l.164 \tableline
+l.168 \tableline
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -534,15 +539,15 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<enaR-vignette-003.pdf, id=167, 433.62pt x 289.08pt>
+<enaR-vignette-003.pdf, id=164, 433.62pt x 289.08pt>
 File: enaR-vignette-003.pdf Graphic file (type pdf)
 
 <use enaR-vignette-003.pdf>
-Package pdftex.def Info: enaR-vignette-003.pdf used on input line 207.
+Package pdftex.def Info: enaR-vignette-003.pdf used on input line 211.
 (pdftex.def)             Requested size: 354.12434pt x 236.09435pt.
 
 ! Undefined control sequence.
-l.229 in \R
+l.233 in \R
            \ that contains the model data for subsequent analysis.  To
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -550,11 +555,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Underfull \vbox (badness 6141) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `T1/aer/b/sl' in size <10.95> not available
-(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 240.
+(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 236.
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 2 []
@@ -566,14 +568,14 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [3 <./enaR-vignette-003.pdf>]
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 335
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 339
 .
-LaTeX Font Info:    No file TS1aett.fd. on input line 335.
+LaTeX Font Info:    No file TS1aett.fd. on input line 339.
 
 
 LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textquotesingle' on input line 335.
+(Font)              for symbol `textquotesingle' on input line 339.
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -597,7 +599,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 [7]
 ! Undefined control sequence.
-l.595 ...ttt{read.wand} function will create an \R
+l.599 ...ttt{read.wand} function will create an \R
                                                   \
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -618,7 +620,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.643 \begin{align}
+l.647 \begin{align}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -631,7 +633,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.644 \mathbf
+l.648 \mathbf
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -639,7 +641,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.644 \mathbf{S} = \left
+l.648 \mathbf{S} = \left
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -651,7 +653,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.647 \end{align}
+l.651 \end{align}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -660,7 +662,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.647 \end{align}
+l.651 \end{align}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -675,7 +677,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 [9]
 ! Undefined control sequence.
-l.696 ...the excellent graphics capabilities of \R
+l.700 ...the excellent graphics capabilities of \R
                                                   \ to make fancier
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -692,31 +694,19 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 File: enaR-vignette-020.pdf Graphic file (type pdf)
 
 <use enaR-vignette-020.pdf>
-Package pdftex.def Info: enaR-vignette-020.pdf used on input line 741.
+Package pdftex.def Info: enaR-vignette-020.pdf used on input line 745.
 (pdftex.def)             Requested size: 243.4609pt x 243.47395pt.
 
 <enaR-vignette-021.pdf, id=275, 216.81pt x 216.81pt>
 File: enaR-vignette-021.pdf Graphic file (type pdf)
 
 <use enaR-vignette-021.pdf>
-Package pdftex.def Info: enaR-vignette-021.pdf used on input line 742.
+Package pdftex.def Info: enaR-vignette-021.pdf used on input line 746.
 (pdftex.def)             Requested size: 243.4609pt x 243.47395pt.
 
-Overfull \hbox (59.91437pt too wide) in paragraph at lines 734--745
+Overfull \hbox (59.91437pt too wide) in paragraph at lines 738--749
  [] 
  []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 775.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 775.
-
-Overfull \hbox (76.6248pt too wide) in paragraph at lines 775--801
- [] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -724,17 +714,24 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [11 <./enaR-vignette-020.pdf> <./enaR-vignette-021.pdf>]
-Overfull \hbox (18.51161pt too wide) in paragraph at lines 842--873
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 779.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 779.
+
+Overfull \hbox (76.6248pt too wide) in paragraph at lines 779--805
+ [] 
+ []
+
+
+Overfull \hbox (18.51161pt too wide) in paragraph at lines 846--877
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--873
+Underfull \hbox (badness 10000) in paragraph at lines 846--877
 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -759,7 +756,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [15]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1060.
+               Default added (so using `tbp') on input line 1064.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -775,7 +772,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 
 LaTeX Font Warning: Font shape `TS1/aett/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textasciigrave' on input line 1182.
+(Font)              for symbol `textasciigrave' on input line 1186.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -822,23 +819,23 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 26 []
  []
 
-[26] <enaR-vignette-039.pdf, id=529, 433.62pt x 289.08pt>
+[26] <enaR-vignette-039.pdf, id=530, 433.62pt x 289.08pt>
 File: enaR-vignette-039.pdf Graphic file (type pdf)
 
 <use enaR-vignette-039.pdf>
-Package pdftex.def Info: enaR-vignette-039.pdf used on input line 1729.
+Package pdftex.def Info: enaR-vignette-039.pdf used on input line 1733.
 (pdftex.def)             Requested size: 243.4609pt x 162.30714pt.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 27
  []
 
-[27 <./enaR-vignette-039.pdf>]
+[27]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 28 []
  []
 
-[28]
+[28 <./enaR-vignette-039.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 29
  []
@@ -851,23 +848,26 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [30] (/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-34.def
 File: uni-34.def 2004/10/17 UCS: Unicode data U+2200..U+22FF
 )
-Overfull \hbox (407.45175pt too wide) in paragraph at lines 1958--2023
+Overfull \hbox (407.45175pt too wide) in paragraph at lines 1962--2027
  [] 
  []
 
 
-Overfull \hbox (86.46198pt too wide) in paragraph at lines 2042--2091
+Overfull \hbox (86.46198pt too wide) in paragraph at lines 2046--2095
  [] 
  []
 
 ! Undefined control sequence.
-l.2114 One advantage of the \textit{enaR} \R
+l.2118 One advantage of the \textit{enaR} \R
                                             \ package is that it simplifies ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -894,15 +894,15 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 35
  []
 
-[35] <enaR-vignette-048.pdf, id=824, 505.89pt x 343.2825pt>
+[35] <enaR-vignette-048.pdf, id=825, 505.89pt x 343.2825pt>
 File: enaR-vignette-048.pdf Graphic file (type pdf)
 
 <use enaR-vignette-048.pdf>
-Package pdftex.def Info: enaR-vignette-048.pdf used on input line 2387.
+Package pdftex.def Info: enaR-vignette-048.pdf used on input line 2391.
 (pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
 
 ! Undefined control sequence.
-l.2395 ...building the \textit{enaR} package in \R
+l.2399 ...building the \textit{enaR} package in \R
                                                   \ is that
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -911,7 +911,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2397 ...atistical tools that already exist in \R
+l.2401 ...atistical tools that already exist in \R
                                                   .  We highlight two
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -924,23 +924,24 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 36 []
  []
 
-[36 <./enaR-vignette-048.pdf>]
-<enaR-vignette-051.pdf, id=837, 505.89pt x 343.2825pt>
-File: enaR-vignette-051.pdf Graphic file (type pdf)
-
-<use enaR-vignette-051.pdf>
-Package pdftex.def Info: enaR-vignette-051.pdf used on input line 2456.
-(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
-
+[36]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 37
  []
 
-[37] <enaR-vignette-054.pdf, id=845, 505.89pt x 343.2825pt>
+[37 <./enaR-vignette-048.pdf>]
+<enaR-vignette-051.pdf, id=844, 505.89pt x 343.2825pt>
+File: enaR-vignette-051.pdf Graphic file (type pdf)
+
+<use enaR-vignette-051.pdf>
+Package pdftex.def Info: enaR-vignette-051.pdf used on input line 2460.
+(pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
+
+<enaR-vignette-054.pdf, id=846, 505.89pt x 343.2825pt>
 File: enaR-vignette-054.pdf Graphic file (type pdf)
 
 <use enaR-vignette-054.pdf>
-Package pdftex.def Info: enaR-vignette-054.pdf used on input line 2514.
+Package pdftex.def Info: enaR-vignette-054.pdf used on input line 2518.
 (pdftex.def)             Requested size: 243.4609pt x 165.20848pt.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -954,7 +955,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 
 [39 <./enaR-vignette-054.pdf>]
 ! Undefined control sequence.
-l.2605 There are other \R
+l.2609 There are other \R
                          \ packages that have graph and network analysis tools,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -963,7 +964,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2612 Network Analysis in \R
+l.2616 Network Analysis in \R
                              .  The vision for this package is that it will
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -972,7 +973,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2620 their data with other \R
+l.2624 their data with other \R
                                \ packages for graph and network analysis like
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1013,14 +1014,17 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [45])
-Underfull \hbox (badness 10000) in paragraph at lines 2627--2627
+Underfull \hbox (badness 10000) in paragraph at lines 2631--2631
 
  []
 
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
-(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2627.
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 2631.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2627.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2631.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 46 []
@@ -1037,10 +1041,15 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [48]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2627.
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/aer/m/n/10.95 49
+ []
+
+[49]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2631.
  (./enaR-vignette.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2627.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2627.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2631.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2631.
 
 Package rerunfilecheck Info: File `enaR-vignette.out' has not changed.
 (rerunfilecheck)             Checksum: ECB15CB7922C51FC8A68F67CBE5B8D0D;2852.
@@ -1051,13 +1060,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2627.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2631.
  ) 
 Here is how much of TeX's memory you used:
- 8635 strings out of 493633
- 126758 string characters out of 3143378
- 285059 words of memory out of 3000000
- 11543 multiletter control sequences out of 15000+200000
+ 8640 strings out of 493633
+ 126811 string characters out of 3143378
+ 284882 words of memory out of 3000000
+ 11544 multiletter control sequences out of 15000+200000
  56166 words of font info for 99 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  36i,12n,34p,360b,749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1090,10 +1099,10 @@ pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/texmf-dist/fonts/type
 ublic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/pu
 blic/cm-super/sfrm1095.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/
 zapfchan/uzcmi8a.pfb>
-Output written on enaR-vignette.pdf (48 pages, 546273 bytes).
+Output written on enaR-vignette.pdf (49 pages, 546782 bytes).
 PDF statistics:
- 1104 PDF objects out of 1200 (max. 8388607)
- 986 compressed objects within 10 object streams
- 206 named destinations out of 1000 (max. 500000)
+ 1110 PDF objects out of 1200 (max. 8388607)
+ 991 compressed objects within 10 object streams
+ 207 named destinations out of 1000 (max. 500000)
  257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
