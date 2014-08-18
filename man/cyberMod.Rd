@@ -7,7 +7,8 @@
   It returns a network object representing an ecosystem based on the algorithm suggested in Fath, 2004. The user can either specify the number of nodes for each class - primary producers, grazers, omnivores, carnivores, detritivores and detritus, or give an adjacency matrix to distribute flows and create a network model. Inputs can either be supplied or by default the algorithm assigns 100 units of exogenous input to the nodes with no input from other nodes.
 }
 \usage{
-enaTroAgg(x)
+cyberMod(M)
+cyberMod(A, inp, non.liv=3)
 }
 \arguments{
   \item{M}{ vector of non-negative integer values. This should give the number of primary producers, grazers, omnivores,carnivores, detrital feeders and detrital nodes in the said order for the desired model. 
