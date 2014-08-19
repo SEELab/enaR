@@ -15,7 +15,7 @@ enaAscendency <- function(x='network object'){
 ######## set initial conditions for calculations #########
   T.ulan <- as.extended(x)
   N <- ncol(T.ulan) # set up N
-  ami <- mat.or.vec(N,N) # initialize ascendency matrix
+  r.td <- c.ld <- t.ulan <- ami <- mat.or.vec(N,N) # initialize ascendency matrix
   oh <- mat.or.vec(N,N) # initialize overhead matrix
   cap <- mat.or.vec(N,N) # initialize capacity matrix
                                         #calculate total system throughPUT
@@ -74,6 +74,7 @@ enaAscendency <- function(x='network object'){
   
   CAP2 <- ASC+OH
   
+  
 #################### calculate ratios ####################
   
                                         # ratio for ascendency/capacity
@@ -86,9 +87,52 @@ enaAscendency <- function(x='network object'){
   ASC.OH.RSUM <- ASC.CAP + OH.CAP
 
   robustness = -1 * ASC.CAP * log(ASC.CAP)  # robustness from Ulanowicz 2009; Fath 2014
-
   
-  ns <- cbind(AMI,ASC,OH,CAP,ASC.CAP,OH.CAP, robustness)
+  ################# Calculating Effective Link Density and Trophic Depth ########
+  ## Calculate t.ulan 't'
+  
+  for (i in 1:N) {
+        for (j in 1:N) {
+            if (T.ulan[i, j] == 0) {
+                t.ulan[i, j] <- 0
+            }
+            else {
+                t.ulan[i, j] <- T.ulan[i,j]/TSTp
+            }
+        }
+    }
+    
+    ## Effective Link Density (c)
+    for (i in 1:N) {
+        for (j in 1:N) {
+            if (t.ulan[i, j] == 0) {
+                c.ld[i, j] <- 1
+            }
+            else {
+                c.ld[i, j] <- (sqrt(sum(t.ulan[i,])*sum(t.ulan[,j]))/t.ulan[i,j])^(t.ulan[i,j])
+            }
+        }
+    }
+    C.LD <- prod(c.ld)
+    
+    ## Trophic Depth (r)
+    for (i in 1:N) {
+        for (j in 1:N) {
+            if (t.ulan[i, j] == 0) {
+                r.td[i, j] <- 1
+            }
+            else {
+                r.td[i, j] <- (t.ulan[i,j]/(sum(t.ulan[i,])*sum(t.ulan[,j])))^(t.ulan[i,j])
+            }
+        }
+    }
+    R.TD <- prod(r.td)
+    
+    ELD <- C.LD
+    TD <- R.TD
+    ##############################################################################
+    
+    ns <- cbind(AMI,ASC,OH,CAP,ASC.CAP,OH.CAP, robustness, ELD, TD)
                                         #
   return(ns)
   

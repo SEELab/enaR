@@ -40,8 +40,9 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
                                         #naming the rows and columns of the flow matrix and storing 
                                         #it in the network attributes
   rownames(flow) <- colnames(flow)
-  y%n%'flow' <- as.matrix(flow)
+  flow <- y%n%'flow' <- as.matrix(flow)  
                                         #check if model is balanced
   y%n%'balanced' <- ssCheck(y) #check if the model is balanced
+  set.edge.attribute(y,'flow',flow[flow>0])
   return(y)
 }

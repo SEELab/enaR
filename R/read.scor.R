@@ -111,5 +111,8 @@ read.scor <- function(file,from.file=TRUE,warn=FALSE){
                                         #introduce variables into the network format
   x <- pack(flow=flow.mat,input=input,export=exp,respiration=res,output=output,storage=stor,living=living)
 
+  f<-x%n%'flow'
+  set.edge.attribute(x,'flow',f[f>0])
+
   return(x)
 }

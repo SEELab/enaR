@@ -1,0 +1,64 @@
+\name{enaTroAgg}
+\alias{enaTroAgg}
+\title{
+  Trophic Aggregations (TroAgg)  aggregates the given network according to the trophic concepts of Lindeman.
+}
+\description{
+  It returns the data quantifying the underlying trophic structure of a given model based on the interaction of the living and non-living nodes. It is based on the Trophic Aggregations suggested by Lindeman (1942) and follows the algorithm by Ulanowicz and Kemp (1979) implemented in NETWRK 4.2b. It removes the Feeding cycles in the network beforehand to provide accurate results.
+}
+\usage{
+enaTroAgg(x)
+}
+\arguments{
+  \item{x}{a network object.  This includes all weighted flows into and out of each node. It should include separate respiration and export values for the Canonical Exports and Canonical Respirations results respectively. It must also include the "Living" vector that identifies the living (TRUE/FALSE) status of each node. It must contain the non-living nodes at the end of the node vector, the function \code{\link{netOrder}} can be used for the same.
+  }
+
+}
+
+
+\value{
+  \item{Feeding_Cycles}{List that gives the details of the Feeding Cycles in the network. The output being according to the enaCycle function applied to the Living components in the network}
+  \item{A}{matrix that distributes the species in integer Trophic Levels (Lindeman Transformation Matrix). The dimension of A is (NL X NL) where NL is the number of Living nodes.}
+  \item{ETL}{vector of the Effective Trophic Level of each species.}
+  \item{M.flow}{vector of the Migratory flows, if present, in the network.}
+  \item{CI}{vector of Canonical Inputs to the integer trophic levels. Displayed if the Migratory flows are present.}
+  \item{CE}{vector of Canonical exports or the exports from the integer trophic levels}
+  \item{CR}{vector of the Canonical Respirations or the respiration values for integer trophic levels. } 
+  \item{GC}{vector of the input flow to a trophic level from the preceeding trophic level. It represents the Grazing Chain for the network.} 
+  \item{RDP}{vector of the Returns to Detrital Pool from each trophic level. }
+  \item{LS}{vector of the Lindeman trophic spine. It combines the Detrital pool with the autotrophs and forms a monotonically decreasing sequence of flows from one trophic level to the next, starting with the said combination.}
+  \item{TE}{vector of the trophic efficiencies i.e. the ratio of input to a trophic level to the amount of flow that is passed on the next level from it. }
+  \item{ns}{vector of trophic aggregations based network statistics. These include "Detritivory" the flow from the detrital pool to the second trophic level, "DetritalInput" the exogenous inputs to the detrital pool, "DetritalCirc" the circulation within the detrital pool, "NCYCS" the number of feeding cycles removed, "NNEX" the number of feeding cycle Nexuses removed and "CI" the Cycling Index for the Feeding Cycles.
+  	}
+
+}
+\references{
+  %% ~put references to the literature/web site here ~
+  Lindeman, R.L. 1942. The trophic-dynamic aspect of ecology. Ecology 23:399--418.
+
+  Ulanowicz, R.E. and Kemp, W.M.  1979. Towards canonical trophic aggregations. The American Naturalist. 114:871--883.
+
+  Ulanowicz, R.E. 1995. Ecosystem trophic foundations: Lindeman exonerata. pp. 549--560. B.C. Patten and S.E. Jorgensen (eds.) Complex Ecology: The part-whole relation in ecosystems. Prentice Hall, New Jersey.
+
+  Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem flow networks. Environmental Software 6:131 -- 142.
+}
+\author{
+  Pawandeep Singh (pawan.s@live.co.uk)
+  }
+\note{
+  This and other Ulanowicz school functions require that export and
+  respiration components of output be separately quantified.
+
+  This analysis involves the ENA Cycle analysis for removal of the Feeding Cycles in the network. These are cycles amongst only the living nodes and cause error in the trophic aggregations.
+  
+  The analysis requires all the non-living nodes to be placed at the end in the network object.
+ 
+}
+\seealso{
+  \code{\link{enaCycle}, \link{netOrder}}
+}
+\examples{
+data(troModels)
+tro6 <- enaTroAgg(troModels[[6]])
+attributes(tro6)
+}

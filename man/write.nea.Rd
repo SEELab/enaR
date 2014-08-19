@@ -8,7 +8,7 @@
   data file (Fath and Borrett 2006). 
 }
 \usage{
-write.nea(x, file.name='neaData.csv',sep=',')
+write.nea(x, file.name, sep=',')
 }
 \arguments{
   \item{x}{
