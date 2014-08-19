@@ -2,7 +2,7 @@
 # network information into a network object
 # INPUT = flow network model components
 # OUTPUT = a network object
-# M.Lau | July 2011
+# M.Lau & S.R. Borrett | July 2014
 # ------------------------------------
 
 pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
