@@ -1,7 +1,7 @@
 # enaFlow --- flow analysis
 # INPUT = network object
 # OUTPUT = list of flow statistics
-# 
+#
 # M. Lau | July 2011
 # ---------------------------------------------------
 
@@ -16,12 +16,12 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
   }
 
                                         # unpack model
-  Flow <- t(x%n%'flow') #flows
+  Flow <- t(as.matrix(x,attrname = 'flow')) #flows
   input <- x%v%'input' #inputs
   stor <- x%v%'storage' #storage values
 
-  n <- nrow(Flow)      # number of nodes  
-  I <- diag(1,nrow(Flow),ncol(Flow))          # create identity matrix 
+  n <- nrow(Flow)      # number of nodes
+  I <- diag(1,nrow(Flow),ncol(Flow))          # create identity matrix
   T. <- apply(Flow,1,sum) + input;   # input throughflow (assuming steady state)
 
                                         #compute the intercompartmental flows
@@ -33,7 +33,7 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
     GP[is.na(GP)] <- 0
     G[is.na(G)] <- 0
     GP[is.infinite(GP)] <- 0
-    G[is.infinite(G)] <- 0    
+    G[is.infinite(G)] <- 0
   }
 
                                         #compute the integral flows
@@ -46,22 +46,22 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
   tol <- 10
   N <- round(N,tol)
   NP <- round(NP,tol)
-  
+
 
   ## Network Statistics
   TST <- sum(T.)  # total system throughflow
   TSTp <- sum(Flow) + sum(x%v%'input') + sum(x%v%'output') # total system throughput
-  
+
   Boundary <- sum(input)
   APL <- TST/Boundary  # Average Path Lenght (Finn 1976; aka network
                       # aggradation, multiplier effect)
-  
+
                                         # Finn Cycling Index
   p <- as.matrix(rep(1,n),nrow=n)
   dN <- diag(N)
   TSTc <- sum((dN-p)/dN *T.)
   FCI <- TSTc/TST
-  
+
                                         # non-locality (realized)
   direct <- sum(G %*% input)
   indirect <- sum((N - I - G) %*% input)

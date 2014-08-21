@@ -1,7 +1,7 @@
 # balance --- balances a flow model using several methods
 # INPUT = network model
 # OUTPUT = balanced model
-# 
+#
 # M. Lau | July 2011
 # ---------------------------------------------------
 balance <-
@@ -36,7 +36,8 @@ balance <-
       T.bal <- bal(eT,'output')
     }else {warning('Unknown balancing method')}
                                         #convert balanced model into network class
-    x%n%'flow' <- T.bal[1:n,1:n]
+    f <- T.bal[1:n,1:n] # create flow matrix
+    set.edge.attribute(x,'flow',f[f>0])  # add flow weights to network edges
     x%v%'input' <- T.bal[(n+3),1:n]
     x%v%'export' <- T.bal[1:n,(n+1)]
     x%v%'respiration' <- T.bal[1:n,(n+2)]

@@ -7,7 +7,7 @@ netOrder <- function(x,order=0) {
         stop("x is not a network class object")
     }
                                         # Load Initials
-    flow <- x %n% "flow"
+    flow <- as.matrix(x, attrname = "flow")
    # input <- x %v% "input"
    # resp <- x %v% "respiration"
    # export <- x %v% "export"
@@ -41,7 +41,7 @@ netOrder <- function(x,order=0) {
 
                                         # Modify Network
     x<-permute.vertexIDs(x,order)
-    x %n% "flow" <- flow
+    set.edge.attribute(x, 'flow', flow[flow>0])
     #x %v% "input" <- input
     #x %v% "respiration" <- resp
     #x %v% "export" <- export

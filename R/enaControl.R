@@ -22,17 +22,17 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     exp <- x%v%'export';exp[is.na(exp)] <- 0
     res <- x%v%'respiration';res[is.na(res)] <- 0
     Tj <- exp + res
-    flow <- t(x%n%'flow')
+    flow <- t(as.matrix(x,attrname="flow"))
     Q <- enaStorage(x)$Q
     QP <- enaStorage(x)$QP
 
                                         #Input perspective
-    T. <- Ti + apply(flow,1,sum) 
+    T. <- Ti + apply(flow,1,sum)
     GP <- flow / T.
     if (zero.na){GP[is.na(GP)] <- 0}else{}
     I <- GP * 0; diag(I) <- 1
     NP <- ginv((I - GP))
-    
+
                                         #Output perspective
     T. <- apply(flow,2,sum) + Tj
     G <- t(t(flow) / T.)
