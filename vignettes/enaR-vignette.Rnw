@@ -340,7 +340,7 @@ fake.model%v%'living'
 For convenience, we have defined the flow matrix as a network based
 characteristic and it can be extracted as:
 <<>>=
-as.matrix(fake.model,attrname = 'flow')
+as.matrix(fake.model, attrname = 'flow')
 @
 
 There are times that it is useful to extract all of the ecosystem

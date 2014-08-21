@@ -15,7 +15,7 @@ as.extended <- function(x,zero.na=TRUE){
                                         #Check for network class object
   if (class(x) != "network"){warning('x is not a network class object')}
                                         #unpack the data from the network object
-  flow <- as.matrix(m,attrname="flow")
+  flow <- as.matrix(x,attrname="flow")
   input <- x%v%'input'
   respiration <- x%v%'respiration'
   export <- x%v%'export'

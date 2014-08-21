@@ -28,8 +28,13 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
   }else{}
                                         #initializing the network object using the flow matrix
   y <- network(x[[1]],directed=TRUE,loops=TRUE)
+  # edge
   set.edge.attribute(y,names(x)[1],as.numeric(x[[1]]))
                                         #packing up the attributes into the network object (y)
+  flow <- as.matrix(flow)
+  rownames(flow) <- colnames(flow)
+  set.edge.attribute(y,'flow',flow[flow>0])
+  # vertex
   set.vertex.attribute(y,'input',input)
   set.vertex.attribute(y,'export',export)
   set.vertex.attribute(y,'respiration',respiration)
@@ -39,9 +44,8 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
   set.vertex.attribute(y,'vertex.names',rownames(flow))
                                         #naming the rows and columns of the flow matrix and storing
                                         #it in the network attributes
-  rownames(flow) <- colnames(flow)
-  flow <- as.matrix(flow)
-  set.edge.attribute(y,'flow',flow[flow>0])
+
+
 
                                         #check if model is balanced
   y %n% 'balanced' <- ssCheck(y) #check if the model is balanced
