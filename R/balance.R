@@ -9,7 +9,7 @@ balance <-
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
   eT <- as.extended(x) #convert to extended format
-  n <- nrow(x%n%'flow')
+  n <- network.size(x)
                                         #checks
   check <- ssCheck(x,tol)
   if (check){
