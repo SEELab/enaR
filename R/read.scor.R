@@ -5,9 +5,8 @@
 # S. Borrett and M. Lau | July 2011
 # ------------------------------------
 
-read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=TRUE,warn=FALSE){
+read.scor <- function(file,from.file=TRUE,warn=FALSE){
   if (from.file){text <- readLines(file,warn=warn)}else{text <- file} # read in file
-  if (length(type) > 1){type <- 'network'} #default output type is set to 'network'
                                         #Partition the meta-data
   meta <- text[1]
                                         #Retrieve the number of node (n)
@@ -75,56 +74,45 @@ read.scor <- function(file,type=c('network','nea','list','edge.list'),from.file=
   flows <- data.frame("tail"=strt,"head"=stp,"value"=value)
                                         #network data output type.
                                         # Note that the other output types depend on this sub-routine.  
-  if (type[[1]] == 'network'|type[[1]] == 'nea'|type[[1]] == 'list'){
+
                                         #convert the flows to a matrix
-    flow.mat <- array(0,dim=c(n,n))
-    rownames(flow.mat) <- colnames(flow.mat) <- vertex.names
-    for (i in seq(along=flows$tail)){
-      flow.mat[flows$head[i],flows$tail[i]] <- flows$value[flows$tail==flows$tail[i]&flows$head==flows$head[i]]
-    }
+  flow.mat <- array(0,dim=c(n,n))
+  rownames(flow.mat) <- colnames(flow.mat) <- vertex.names
+  for (i in seq(along=flows$tail)){
+    flow.mat[flows$head[i],flows$tail[i]] <- flows$value[flows$tail==flows$tail[i]&flows$head==flows$head[i]]
+  }
                                         #transpose flow matrix 
-    flow.mat <- t(flow.mat)
+  flow.mat <- t(flow.mat)
                                         #Vectorize the inputs
-    input <- numeric(n)
-    input[inputs$vertex] <- inputs$value
+  input <- numeric(n)
+  input[inputs$vertex] <- inputs$value
                                         #vectorize respiration and exports
-    res <- numeric(n)
-    exp <- numeric(n)
-    
-    if (any(is.na(exports)) == FALSE&any(is.na(respiration)) == FALSE){
-      res[respiration$vertex] <- respiration$value
-      exp[exports$vertex] <- exports$value
-    }else if (any(is.na(exports))&any(is.na(respiration)) == FALSE){
-      res[respiration$vertex] <- respiration$value
-      exp <- rep(0,n)
-    }else if (any(is.na(exports)) == FALSE&any(is.na(respiration))){
-      exp[exports$vertex] <- exports$value
-      res <- rep(0,n)
-    }
-    stor <- numeric(n)
-    stor[storage$vertex] <- storage$value
+  res <- numeric(n)
+  exp <- numeric(n)
+  
+  if (any(is.na(exports)) == FALSE&any(is.na(respiration)) == FALSE){
+    res[respiration$vertex] <- respiration$value
+    exp[exports$vertex] <- exports$value
+  }else if (any(is.na(exports))&any(is.na(respiration)) == FALSE){
+    res[respiration$vertex] <- respiration$value
+    exp <- rep(0,n)
+  }else if (any(is.na(exports)) == FALSE&any(is.na(respiration))){
+    exp[exports$vertex] <- exports$value
+    res <- rep(0,n)
+  }
+  stor <- numeric(n)
+  stor[storage$vertex] <- storage$value
                                         #produce an output vector given the values of export and respiration
-    if (any(is.na(res)) == FALSE & any(is.na(exp))){
-      output <- res
-    }else if (any(is.na(res)) & any(is.na(exp)) == FALSE){
-      output <- exp
-    }else{output <- exp + res} #Outputs = respiration + exports for nea data type
+  if (any(is.na(res)) == FALSE & any(is.na(exp))){
+    output <- res
+  }else if (any(is.na(res)) & any(is.na(exp)) == FALSE){
+    output <- exp
+  }else{output <- exp + res} #Outputs = respiration + exports for nea data type
                                         #introduce variables into the network format
-    x <- pack(flow=flow.mat,input=input,export=exp,respiration=res,output=output,storage=stor,living=living)
-  }else if (type[[1]] == 'edge.list'){
-    x <- list('storage' = storage,'input' = inputs,'export' = exports,
-              'respiration' = respiration,'output'= output,'flow' = flows)
-  }
-  if (type[[1]] == 'nea'){
-    x <- cbind(flow.mat,input,stor)
-    x <- rbind(x,c(output,0,0))
-    colnames(x) <- c(colnames(flow.mat),'z','x')
-    rownames(x) <- c(rownames(flow.mat),'y')
-  }else if (type[[1]] == 'list') {
-    x <- list('flow' = flow.mat,'input' = inputs,'exports' = exp,'respiration' = res,
-              'output'= output,'storage' = stor,'living'=living)
-  }
+  x <- pack(flow=flow.mat,input=input,export=exp,respiration=res,output=output,storage=stor,living=living)
+
   f<-x%n%'flow'
   set.edge.attribute(x,'flow',f[f>0])
+
   return(x)
 }
