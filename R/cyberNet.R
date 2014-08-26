@@ -2,7 +2,7 @@
 ### Singh P. | July 2014
 ### Algorithm : Fath 2004. Network Analysis applied to large scale cyber-ecosystems. Ecological Modelling 171 (2004) 329-337
 ### --------------------------------------------------------------
-cyberMod<-function(M=NULL, A=NULL, inp=0, non.liv=0){
+cyberNet<-function(M=NULL, A=NULL, inp=0, non.liv=0){
 	if(length(M)!=0){
 		A<-cyberAdj(M)$A
 		non.liv<-M[6]
