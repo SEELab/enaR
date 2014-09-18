@@ -8,7 +8,7 @@ cycliv <- function(x){
 
 		 #Initials
     if(class(x)!='network') {stop("x is not a network class object")}
-    web.all <- x %n% "flow"
+    web.all <- as.matrix(x,attrname="flow")
     y.all   <- x %v% "output"
     liv <- x %v% 'living'
     TPTS.all <- apply(web.all,1,sum)+y.all
@@ -365,7 +365,7 @@ cycliv <- function(x){
         TEMP <- CYC/TST
         #print(c('cycling index is',TEMP))
         ResidualFlows<-web
-        AggregatedCycles<-((x %n% 'flow')[1:N,1:N]) - ResidualFlows
+        AggregatedCycles<-(as.matrix(x, attrname = "flow")[1:N,1:N]) - ResidualFlows
         colnames(df)<-c('NEXUS', 'Cycles','From','To', 'Weak_arc')
         colnames(df.cycle)<-rep(' ',(N+2))
         colnames(df.cycle)[1:3]<-c('CYCLE','NEXUS','NODES')

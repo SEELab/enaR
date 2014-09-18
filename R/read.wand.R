@@ -1,4 +1,4 @@
-# read.wand --- WAND formatted file into R 
+# read.wand --- WAND formatted file into R
 # INPUT = file path
 # OUTPUT = network object
 # S. Borrett | May 2012
@@ -35,6 +35,6 @@ read.wand <- function(file='file name with path'){
   set.vertex.attribute(y,'storage',x[[5]])
   set.vertex.attribute(y,'output',x[[3]]+x[[4]])
   y%v%'vertex.names' <- vn
-  y%n%'flow' <- flow.mat
+  set.edge.attribute(x,'flow', flow.mat[flow.mat>0])
   return(y)
 }

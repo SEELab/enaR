@@ -9,7 +9,7 @@ enaCycle <- function (x) {
                                         #Initials
 
     if(class(x)!='network') {stop("x is not a network class object")}
-    web <- x %n% "flow"
+    web <- as.matrix(x,attrname="flow")
     y <- x %v% "output"
     z <- x %v% "input"
     N <- length(y)
@@ -356,7 +356,7 @@ enaCycle <- function (x) {
         TEMP <- CYC/TST
         #print(c('cycling index is',TEMP))
         ResidualFlows<-web
-        AggregatedCycles<-(x %n% 'flow') - ResidualFlows
+        AggregatedCycles<-(as.matrix(x, attrname = 'flow')) - ResidualFlows
         colnames(df)<-c('NEXUS', 'CYCLES','W.arc.From','W.arc.To', 'W.arc.Flow')
         #colnames(df.cycle)<-rep(' ',(N+2))
         colnames(df.cycle)<-c('CYCLE','NEXUS','NODES')
@@ -372,7 +372,7 @@ enaCycle <- function (x) {
     else {
         NCYCS<-NCYC;NNEX<-NEXNUM; CI<-0
         ns <- cbind(NCYCS, NNEX, CI)
-        out <- list(ResidualFlows=web,ns=ns)
+        out <- list(ResidualFlowks=web,ns=ns)
         return(out)
       }
 
