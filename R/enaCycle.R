@@ -9,7 +9,7 @@ enaCycle <- function (x) {
                                         #Initials
 
     if(class(x)!='network') {stop("x is not a network class object")}
-    web <- x %n% "flow"
+    web <- as.matrix(x,attrname="flow")
     y <- x %v% "output"
     z <- x %v% "input"
     N <- length(y)
@@ -20,7 +20,7 @@ enaCycle <- function (x) {
 
     TST <- sum(web)+sum(y)+sum(z)
     df<-data.frame(NULL)
-    df.cycle<-data.frame(NULL)
+    df.cycle<-data.frame(0,0,'cycle', stringsAsFactors=FALSE)
 ###-----------------------------------------------------------------
 
                                         #Zero Global Variables
@@ -172,8 +172,9 @@ enaCycle <- function (x) {
             WKARC<-F[IMIN,JMIN]*TPTS[IMIN]
             curr.slf.cyc<-noquote(c(NCYC,'.','(',IMIN,JMIN,')'))
             #print(curr.slf.cyc)
-            this.cycle <- rep(NA,N)
-            this.cycle[1:2] <- c(IMIN,JMIN)
+            #this.cycle <- rep(NA,N)
+            this.cycle <- c(IMIN,JMIN)
+            this.cycle <- paste(this.cycle, collapse='-')
             newcycle<-c(NCYC,(NEXNUM+1),this.cycle)
             df.cycle<-rbind(df.cycle,newcycle)
 
@@ -295,13 +296,14 @@ enaCycle <- function (x) {
                     NTMP <- NODE[kk]
                     NTEMP[kk] <- MAP2[NTMP]
                 }
-                curr.cycle <- noquote(c(NCYC,'.',NTEMP[1:L0]))
+                #curr.cycle <- noquote(c(NCYC,'.',NTEMP[1:L0]))
                 #print(curr.cycle)
-                this.cycle <- NTEMP
-                this.cycle[(L0+1):N]<-NA
+                this.cycle <- NTEMP[1:L0]
+                #this.cycle[(L0+1):N]<-NA
+                this.cycle <- paste(this.cycle, collapse='-')
                 newcycle<-c(NCYC,(NEXNUM+1),this.cycle)
-                df.cycle<-rbind(df.cycle,newcycle)            #################------------------------------------df.cycle
-                if(NNEX==50) {df.cycle<-rbind(df.cycle,rep(NA,N+2))}
+                df.cycle<-rbind(df.cycle,newcycle) #################------------------------------------df.cycle
+                if(NNEX==50) {df.cycle<-rbind(df.cycle,rep('.',3))}
                 skip.con.adv<-TRUE
             }#end of rep1
                                         #-----------------NEXUS COMPLETED---NEXUS REPEAT(rep1) ENDS HERE
@@ -354,11 +356,14 @@ enaCycle <- function (x) {
         TEMP <- CYC/TST
         #print(c('cycling index is',TEMP))
         ResidualFlows<-web
-        AggregatedCycles<-(x %n% 'flow') - ResidualFlows
+        AggregatedCycles<-(as.matrix(x, attrname = 'flow')) - ResidualFlows
         colnames(df)<-c('NEXUS', 'CYCLES','W.arc.From','W.arc.To', 'W.arc.Flow')
-        colnames(df.cycle)<-rep(' ',(N+2))
-        colnames(df.cycle)[1:3]<-c('CYCLE','NEXUS','NODES')
-        df.cycle[is.na(df.cycle)==TRUE]<- ' '
+        #colnames(df.cycle)<-rep(' ',(N+2))
+        colnames(df.cycle)<-c('CYCLE','NEXUS','NODES')
+        #df.cycle[is.na(df.cycle)==TRUE]<- ' '
+        df.cycle<-df.cycle[-1,]
+        rw<-row.names(df.cycle); rw<-as.numeric(rw)
+        row.names(df.cycle) <- 2:max(rw)-1
         NCYCS<-NCYC; NNEX<-NEXNUM; CI<-TEMP
         ns <- cbind(NCYCS, NNEX, CI)
         out <- list(Table.cycle=df.cycle,Table.nexus=df,CycleDist = cycs, NormDist=CYCS, ResidualFlows=web, AggregatedCycles=AggregatedCycles, ns=ns)
@@ -367,7 +372,7 @@ enaCycle <- function (x) {
     else {
         NCYCS<-NCYC;NNEX<-NEXNUM; CI<-0
         ns <- cbind(NCYCS, NNEX, CI)
-        out <- list(ResidualFlows=web,ns=ns)
+        out <- list(ResidualFlowks=web,ns=ns)
         return(out)
       }
 

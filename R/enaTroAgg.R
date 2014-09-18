@@ -19,7 +19,7 @@ enaTroAgg <- function (x){
       stop('Non-living nodes must be at the end of the list.')
   }
 
-  flow <- x %n% 'flow'
+  flow <- as.matrix(x, attrname = 'flow')
   XCHNGE<-flow
   Feeding_Cycles   <- cycliv(x)
   XCHNGE[1:nl,1:nl] <- Feeding_Cycles$ResidualFlows
@@ -137,7 +137,7 @@ enaTroAgg <- function (x){
 
                                         # 10. Lindeman Spine
   ls = gc
-  
+
   ls[1] = sum(rtd[2:nl]) + gc[1] + dinp
   ls[2] = gc[2]+dtry
                                         # 11. Trophic Efficiencies

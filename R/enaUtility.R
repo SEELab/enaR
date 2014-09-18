@@ -1,7 +1,7 @@
 # enautility --- utility analysis of a flow network
 # INPUT = network object
 # OUTPUT = list of utility statistics
-# 
+#
 # M. Lau | July 2011
 # ---------------------------------------------------
 
@@ -17,21 +17,21 @@ enaUtility <- function(x, type=c('flow','storage'),
 
                                         #set default for type == 'flow'
     if (length(type) > 1){type <- 'flow'}
-    
+
                                         #Check for balancing
     if (balance.override){}else{
       if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
       if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
     }
                                         #unpack data from x
-    Flow <- t(x%n%'flow') #flows
+    Flow <- t(as.matrix(x, attrname = 'flow')) #flows
     input <- x%v%'input' #inputs
     stor <- x%v%'storage' #storage values
     I <- Flow*0;diag(I) <- 1 #create the identity matrix
     T. <- input + apply(Flow,1,sum)
     FD <- Flow;
     diag(FD) <- -T.
-                                        #    
+                                        #
     if (type == 'flow'){
                                         #flow utilities
       D <- ginv(diag(T.)) %*% (FD - t(FD))
@@ -48,7 +48,7 @@ enaUtility <- function(x, type=c('flow','storage'),
         synergism.F <- bcratio(Y) #flow benefit cost ratio (calls other function) (Synergism)
         mutualism.F <- bcratio(sign(Y)) # flow ratio of positive to negative signs )
 
-        
+
         ns <- cbind('lam1D'=abs(eigen(D)$values[1]),'synergism.F' = synergism.F,'mutualism.F'=mutualism.F)
                                         #re-orient
         if (orient == 'rc'){
@@ -57,7 +57,7 @@ enaUtility <- function(x, type=c('flow','storage'),
           Y <- t(Y)
         }else{}
         out <- list('D'=D,'U'=U,'Y'=Y,'ns'=ns) #pack output
-        
+
       }
 
     }else if (type == 'storage'){
@@ -97,6 +97,6 @@ enaUtility <- function(x, type=c('flow','storage'),
       }
     }
                                         #output
-    return(out)  
+    return(out)
   }
 }

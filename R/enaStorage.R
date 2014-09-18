@@ -1,7 +1,7 @@
 # enaStorage --- storage analysis
 # INPUT = network object
 # OUTPUT = list of storage statistics
-# 
+#
 # M. Lau | July 2011
 # ---------------------------------------------------
 
@@ -19,7 +19,7 @@ enaStorage <- function(x,balance.override=FALSE){
       if (x%n%'balanced'){}else{stop('Model is not balanced')}
     }
                                         #unpack data from x
-    Flow <- t(x%n%'flow') #flows
+    Flow <- t(as.matrix(x, attrname = 'flow'))  #flows
                                         #continue unpacking
     input <- x%v%'input' #inputs
     stor <- x%v%'storage' #storage values
@@ -30,7 +30,7 @@ enaStorage <- function(x,balance.override=FALSE){
                                         #Compute the Jacobian matrix
     C <- FD %*% ginv(diag(stor)) #output matrix
     CP <- ginv(diag(stor)) %*% FD #input matrix
-    
+
                                         #smallest whole number to make diag(C) nonnegative
     dt <- -1 / floor(min(diag(C)))
 
@@ -56,13 +56,13 @@ enaStorage <- function(x,balance.override=FALSE){
     rownames(PP) <- colnames(PP) <- rownames(Flow)
     rownames(SP) <- colnames(SP) <- rownames(Flow)
     rownames(QP) <- colnames(QP) <- rownames(Flow)
-    
+
     ##Storage Environ Properties
                                         #eigen analysis
     e <- eigen(P)$values
     lam1P <- e[1]
     rhoP <- e[1] / e[2]
-    
+
     eP <- eigen(PP)$values
     lam1PP <- eP[1]
     rhoPP <- eP[1] / eP[2]
@@ -85,16 +85,16 @@ enaStorage <- function(x,balance.override=FALSE){
     BSI = sum( I %*% input *dt) / TSS
     DSI = sum( P %*% input *dt) / TSS
     ISI = sum( (Q-I-P) %*% input *dt) / TSS
-    
+
                                         #Homogenization parameter
     CVP <- sd(as.numeric(P)) / mean(P) #Coefficient of variation for G
     CVQ <- sd(as.numeric(Q)) / mean(Q)  #Coefficient of variation for N
     HMG.S.O <- CVP / CVQ #homogenization parameter (output storage)
-    
+
     CVPP <- sd(as.numeric(PP)) / mean(PP) #Coefficient of variation for GP
     CVQP <- sd(as.numeric(QP)) / mean(QP) #Coefficient of variation for NP
     HMG.S.I <- CVPP / CVQP #homogenization paraemeter (input storage)
-    
+
                                         # Network Aggradation
     AGG.S <- TSS / sum(input) #network aggradation -- average amount of storage per system input
 
@@ -114,7 +114,7 @@ enaStorage <- function(x,balance.override=FALSE){
                 'HMG.S.O'=HMG.S.O,'HMG.S.I'=HMG.S.I,
                 'NAS'=NAS,'NASP'=NASP,
                 mode0.S,mode1.S,mode2.S,mode3.S,mode4.S)
-    
+
                                         #'lam1P'=abs(lam1P),'rhoP'=abs(rhoP),
                                         #'lam1PP'=abs(lam1PP),'rhoPP'=abs(rhoPP),'AGG.S'=AGG.S)
                                         #re-orientation

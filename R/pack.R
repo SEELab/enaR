@@ -1,4 +1,4 @@
-# pack --- helper function for inputing flow 
+# pack --- helper function for inputing flow
 # network information into a network object
 # INPUT = flow network model components
 # OUTPUT = a network object
@@ -6,7 +6,7 @@
 # ------------------------------------
 
 pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
-                                        #Warn if missing both 
+                                        #Warn if missing both
   if (all(is.na(respiration))&all(is.na(export))){
     warning('Missing or NA resipiration and export values.')
   }
@@ -15,7 +15,7 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
                                         #Compiling the objects into a list
   x <- list('flow' = as.matrix(flow),'input' = input,'export' = export,
             'respiration' = respiration, 'storage' = storage,'living'=living)
-   
+
                                         #Warning for missing components
   if(any(is.na(unlist(x)))){
     missing <- print(names(unlist(x))[is.na(unlist(x))])
@@ -28,8 +28,13 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
   }else{}
                                         #initializing the network object using the flow matrix
   y <- network(x[[1]],directed=TRUE,loops=TRUE)
+  # edge
   set.edge.attribute(y,names(x)[1],as.numeric(x[[1]]))
                                         #packing up the attributes into the network object (y)
+  flow <- as.matrix(flow)
+  rownames(flow) <- colnames(flow)
+  set.edge.attribute(y,'flow',flow[flow>0])
+  # vertex
   set.vertex.attribute(y,'input',input)
   set.vertex.attribute(y,'export',export)
   set.vertex.attribute(y,'respiration',respiration)
@@ -37,12 +42,13 @@ pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,liv
   set.vertex.attribute(y,'storage',storage)
   set.vertex.attribute(y,'living',living)
   set.vertex.attribute(y,'vertex.names',rownames(flow))
-                                        #naming the rows and columns of the flow matrix and storing 
+                                        #naming the rows and columns of the flow matrix and storing
                                         #it in the network attributes
-  rownames(flow) <- colnames(flow)
-  flow <- y%n%'flow' <- as.matrix(flow)  
+
+
+
                                         #check if model is balanced
-  y%n%'balanced' <- ssCheck(y) #check if the model is balanced
-  set.edge.attribute(y,'flow',flow[flow>0])
+  y %n% 'balanced' <- ssCheck(y) #check if the model is balanced
+
   return(y)
 }

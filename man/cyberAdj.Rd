@@ -4,7 +4,7 @@
 Generate a food-web adjacency matrix
 }
 \description{
-	help function for cyberMod and creates a random trophic network structure (Adjacency matrix) with given number of primary producers, grazers, omnivores, carnivores, detritivores and detrital nodes on the basis of general food-web properties. 
+	help function for cyberNet and creates a random trophic network structure (Adjacency matrix) with given number of primary producers, grazers, omnivores, carnivores, detritivores and detrital nodes on the basis of general food-web properties. 
 }
 \usage{
 cyberAdj(M)
@@ -32,7 +32,7 @@ Pawandeep Singh (pawan.s@live.co.uk)
 
 
 \seealso{
-  \code{\link{cyberMod}}
+  \code{\link{cyberNet}}
 }
 \examples{
 M<-rep(2,6)
