@@ -365,6 +365,7 @@ network data objects we are using.
 
 <<>>=
 attributes(fake.model)
+
 @
 
 However, individual components can be extracted from the data object
@@ -379,8 +380,8 @@ fake.model%v%'input'
 fake.model%v%'living'
 @
 
-For convenience, we have defined the flow matrix as a network based
-characteristic and it can be extracted as:
+For convenience, we have defined the flow matrix as a network based characteristic and it can be extracted as:
+
 <<>>=
 fake.model%n%'flow'
 @
