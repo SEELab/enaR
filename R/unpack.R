@@ -1,4 +1,4 @@
-# unpack --- extracts network object into 
+# unpack --- extracts network object into
 # a list
 # INPUT = network object
 # OUTPUT = list of network model components
@@ -6,7 +6,7 @@
 # ------------------------------------
 
 unpack <- function(x='network object'){
-  flow <- x%n%'flow'  
+  flow <- as.matrix(x, attrname = 'flow')
   input <- x%v%'input'
   respiration <- x%v%'respiration'
   respiration[is.na(respiration)] <- 0

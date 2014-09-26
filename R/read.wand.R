@@ -1,4 +1,4 @@
-# read.wand --- WAND formatted file into R 
+# read.wand --- WAND formatted file into R
 # INPUT = file path
 # OUTPUT = network object
 # S. Borrett | May 2012
@@ -15,8 +15,8 @@ read.wand <- function(file='file name with path'){
   vn <- dat.main[1:n,1] #vertex names
   dat.main <- apply(dat.main[,2:5],2,as.numeric)
                                         # get flows
-  F <- read.xls(file,sheet="Flows")
-  flow.mat <- as.matrix(F[1:(n),2:(n+1)])
+  Flow <- read.xls(file,sheet="Flows")
+  flow.mat <- as.matrix(Flow[1:(n),2:(n+1)])
   flow.mat[is.na(flow.mat)] <- 0
   flow.mat <- apply(flow.mat,2,as.numeric)
   rownames(flow.mat) <- colnames(flow.mat) <- vn
@@ -35,6 +35,6 @@ read.wand <- function(file='file name with path'){
   set.vertex.attribute(y,'storage',x[[5]])
   set.vertex.attribute(y,'output',x[[3]]+x[[4]])
   y%v%'vertex.names' <- vn
-  y%n%'flow' <- flow.mat
+  set.edge.attribute(x,'flow', flow.mat[flow.mat>0])
   return(y)
 }

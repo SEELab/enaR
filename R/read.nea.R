@@ -10,14 +10,14 @@
 read.nea <- function(file="file name",sep=',',warn=TRUE){
   dat <- read.table(file,header=FALSE,sep=sep)  # assumes 
   n <- max(dim(dat)) - 2
-  f <- t(dat[1:n,1:n])   # NEA.m stores flows col to row, so here we transpose
+  Flow <- t(dat[1:n,1:n])   # NEA.m stores flows col to row, so here we transpose
   z <- dat[1:n,(n+1)]  # inputs
   y <- dat[(n+1),1:n]  # outputs
   X <- dat[1:n,(n+2)]  # storage
   if (warn){
-    model <- pack(flow=f,input=z,respiration=y,storage=X)  # create network data object
+    model <- pack(flow=Flow,input=z,respiration=y,storage=X)  # create network data object
   }else{
-    suppressWarnings(model <- pack(flow=f,input=z,respiration=y,storage=X))   # create network data object
+    suppressWarnings(model <- pack(flow=Flow,input=z,respiration=y,storage=X))   # create network data object
   }
   return(model)
 }

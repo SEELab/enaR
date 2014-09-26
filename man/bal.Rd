@@ -7,7 +7,7 @@
   Dependency for the \code{balance} function.
 }
 \usage{
-bal(T.star = "extended, unbalanced matrix", method = c("input", "output"))
+bal(T.star = "matrix", method = c("input", "output"))
 }
 \arguments{
   \item{T.star}{

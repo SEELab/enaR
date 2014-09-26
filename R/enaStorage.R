@@ -1,7 +1,7 @@
 # enaStorage --- storage analysis
 # INPUT = network object
 # OUTPUT = list of storage statistics
-# 
+#
 # M. Lau | July 2011
 # ---------------------------------------------------
 
@@ -14,23 +14,23 @@ enaStorage <- function(x,balance.override=FALSE){
     if (class(x) != 'network'){warning('x is not a network class object')}
 
                                         #Check for balancing
-    if (balance.override == TRUE){}else{
+    if (balance.override){}else{
       if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
       if (x%n%'balanced'){}else{stop('Model is not balanced')}
     }
                                         #unpack data from x
-    F <- t(x%n%'flow') #flows
+    Flow <- t(as.matrix(x, attrname = 'flow'))  #flows
                                         #continue unpacking
     input <- x%v%'input' #inputs
     stor <- x%v%'storage' #storage values
-    T <- apply(F,1,sum) + input
-    FD <- F - diag(T) #flow matrix with negative throughflows on the diagonal
-    I <- diag(1,nrow(F),ncol(F)) #create the identity matrix
+    T. <- apply(Flow,1,sum) + input
+    FD <- Flow - diag(T.) #flow matrix with negative throughflows on the diagonal
+    I <- diag(1,nrow(Flow),ncol(Flow)) #create the identity matrix
 
                                         #Compute the Jacobian matrix
     C <- FD %*% ginv(diag(stor)) #output matrix
     CP <- ginv(diag(stor)) %*% FD #input matrix
-    
+
                                         #smallest whole number to make diag(C) nonnegative
     dt <- -1 / floor(min(diag(C)))
 
@@ -47,22 +47,22 @@ enaStorage <- function(x,balance.override=FALSE){
     dQ <- diag(Q) #diagonal of integral output storage matrix which is the same for input (i.e. diag(QP))
 
                                         #naming row and columns
-    rownames(C) <- colnames(C) <- rownames(F)
-    rownames(CP) <- colnames(CP) <- rownames(F)
-    rownames(P) <- colnames(P) <- rownames(F)
-    rownames(S) <- colnames(S) <- rownames(F)
-    rownames(Q) <- colnames(Q) <- rownames(F)
-    rownames(CP) <- colnames(CP) <- rownames(F)
-    rownames(PP) <- colnames(PP) <- rownames(F)
-    rownames(SP) <- colnames(SP) <- rownames(F)
-    rownames(QP) <- colnames(QP) <- rownames(F)
-    
+    rownames(C) <- colnames(C) <- rownames(Flow)
+    rownames(CP) <- colnames(CP) <- rownames(Flow)
+    rownames(P) <- colnames(P) <- rownames(Flow)
+    rownames(S) <- colnames(S) <- rownames(Flow)
+    rownames(Q) <- colnames(Q) <- rownames(Flow)
+    rownames(CP) <- colnames(CP) <- rownames(Flow)
+    rownames(PP) <- colnames(PP) <- rownames(Flow)
+    rownames(SP) <- colnames(SP) <- rownames(Flow)
+    rownames(QP) <- colnames(QP) <- rownames(Flow)
+
     ##Storage Environ Properties
                                         #eigen analysis
     e <- eigen(P)$values
     lam1P <- e[1]
     rhoP <- e[1] / e[2]
-    
+
     eP <- eigen(PP)$values
     lam1PP <- eP[1]
     rhoPP <- eP[1] / eP[2]
@@ -85,16 +85,16 @@ enaStorage <- function(x,balance.override=FALSE){
     BSI = sum( I %*% input *dt) / TSS
     DSI = sum( P %*% input *dt) / TSS
     ISI = sum( (Q-I-P) %*% input *dt) / TSS
-    
+
                                         #Homogenization parameter
     CVP <- sd(as.numeric(P)) / mean(P) #Coefficient of variation for G
     CVQ <- sd(as.numeric(Q)) / mean(Q)  #Coefficient of variation for N
     HMG.S.O <- CVP / CVQ #homogenization parameter (output storage)
-    
-    CVPP <- sd(as.numeric(P)) / mean(PP) #Coefficient of variation for GP
+
+    CVPP <- sd(as.numeric(PP)) / mean(PP) #Coefficient of variation for GP
     CVQP <- sd(as.numeric(QP)) / mean(QP) #Coefficient of variation for NP
     HMG.S.I <- CVPP / CVQP #homogenization paraemeter (input storage)
-    
+
                                         # Network Aggradation
     AGG.S <- TSS / sum(input) #network aggradation -- average amount of storage per system input
 
@@ -114,7 +114,7 @@ enaStorage <- function(x,balance.override=FALSE){
                 'HMG.S.O'=HMG.S.O,'HMG.S.I'=HMG.S.I,
                 'NAS'=NAS,'NASP'=NASP,
                 mode0.S,mode1.S,mode2.S,mode3.S,mode4.S)
-    
+
                                         #'lam1P'=abs(lam1P),'rhoP'=abs(rhoP),
                                         #'lam1PP'=abs(lam1PP),'rhoPP'=abs(rhoPP),'AGG.S'=AGG.S)
                                         #re-orientation

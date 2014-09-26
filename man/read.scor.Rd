@@ -7,15 +7,12 @@
   Read in network model data files that are in the SCOR format (REFERENCE).
 }
 \usage{
-read.scor(file,type=c("network","nea","list","edge.list"),from.file=TRUE,warn = FALSE)
+read.scor(file,from.file=TRUE,warn = FALSE)
 }
 
 \arguments{
   \item{file}{
     File path or plain text.
-  }
-  \item{type}{
-    Specifies the format of the object created.
   }
   \item{from.file}{
     States whether the file argument input should be treated as a file path (TRUE)
