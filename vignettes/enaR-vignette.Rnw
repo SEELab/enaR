@@ -7,7 +7,8 @@
 %% almost as usual
 \author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
-        University of North Carolina Wilmington}
+        University of North Carolina Wilmington\\and\\Duke Network
+        Analysis Center, Social Science Research Institute \\ Duke University}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
@@ -84,19 +85,23 @@
 \section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
 %% Note: If there is markup in \(sub)section, then it has to be escape as above.
 
-This package is a collection of functions to implement Ecological
+This \R package is a collection of functions to implement Ecosystem
 Network Analysis (ENA), which is a family of algorithms for
-investigating the structure and function of ecosystems modeled as
-networks of thermodynamically conserved energy--matter exchanges.  The
-package brings together multiple ENA algorithms from several
-approaches into one common software framework that is readily available and
-extensible.  The package builds on the \textit{network} data structure
-developed by \citet{butts08_network}. In addition to being
-able to perform several types of ENA with a single package, users can
-also make use of network analysis tools built into the
-\textit{network} package, the \textit{sna} (social network analysis)
-package \citep{butts08_social}, and other components of what is now
-called \textit{statnet} \citep{handcock2008statnet}.
+investigating the structure and function of ecosystems (add cites to
+MEE paper, others).  These systems are modeled as networks of
+thermodynamically conserved energy--matter exchanges in which nodes
+represent the species, groups of species, or non-living componets of
+the ecosystem (i.e., dead organic matter), and the weighted, directed
+edges indicate the transfer of energy or matter.  The package brings
+together multiple ENA algorithms from several approaches into one
+common software framework that is readily available and extensible.
+The package builds on the \textit{network} data structure developed by
+\citet{butts08_network}. In addition to being able to perform several
+types of ENA with a single package, users can also make use of network
+analysis tools built into the \textit{network} package, the
+\textit{sna} (social network analysis) package \citep{butts08_social},
+and other components of what is now called \textit{statnet}
+\citep{handcock2008statnet}.
 
 This vignette illustrates how to use the \textit{enaR} package to
 perform ENA.  It is not meant to be a detailed guide to ENA, but we
@@ -1043,7 +1048,7 @@ names(cyc$Table.cycle)
                                         # Display information of the disjoint nexuses
 names(cyc$Table.nexus)
 
-@ 
+@
 
  %enaCycle - Full Cycle Analysis
  \begin{table*}[t]
@@ -1099,8 +1104,8 @@ trop <- enaTroAgg(m)
 attributes(trop)
                                         # Cycle analysis output for Feeding Cycles
 trop$Feeding_Cycles
-@ 
- 
+@
+
  %enaTroAgg - Trohpic Aggregations
  \begin{table*}[t]
   \caption{Matrices and graph-level network statistics returned by the \textit{enaR}

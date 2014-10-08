@@ -7,7 +7,8 @@
 %% almost as usual
 \author{Matthew K. Lau\\ Harvard Forest\\Harvard University \And
         Stuart R. Borrett\\Department of Biology and Marine Biology\\
-        University of North Carolina Wilmington}
+        University of North Carolina Wilmington\\and\\Duke Network
+        Analysis Center, Social Science Research Institute \\ Duke University}
 \title{enaR: Ecosystem Network Analysis with R}
 
 %% for pretty printing and a nice hypersummary also set:
@@ -19,7 +20,7 @@
 \Abstract{
   Ecosystem Network Analysis (ENA) provides a framework for
   investigating the structure, function and dynamics of ecological
-  systems, primarily ecosystem models with physcially conserved
+  systems, primarily ecosystem models with physically conserved
   units. Here, we present the \textit{enaR} package, which provides a
   broad representation of many of the core tools developed by the ENA
   community, detailing how to use the primary functions of the package
@@ -81,10 +82,6 @@
 %% include your article here, just as usual
 %% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
 
-\setcounter{tocdepth}{3}  %%activate to number sections
-\tableofcontents
-
-
 \section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
 %% Note: If there is markup in \(sub)section, then it has to be escape as above.
 
@@ -95,7 +92,7 @@ networks of thermodynamically conserved energy--matter exchanges.  The
 package brings together multiple ENA algorithms from several
 approaches into one common software framework that is readily available and
 extensible.  The package builds on the \textit{network} data structure
-for \R\ developed by \citet{butts08_network}. In addition to being
+developed by \citet{butts08_network}. In addition to being
 able to perform several types of ENA with a single package, users can
 also make use of network analysis tools built into the
 \textit{network} package, the \textit{sna} (social network analysis)
@@ -363,17 +360,17 @@ hypothetical data.
   multiple = FALSE 
   bipartite = FALSE 
   flow:
-     node1           node2            node3           node4      
- Min.   :0.000   Min.   :0.0000   Min.   :0.000   Min.   :0.000  
- 1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.000  
- Median :1.638   Median :0.0000   Median :0.000   Median :0.000  
- Mean   :2.346   Mean   :0.6067   Mean   :1.645   Mean   :0.745  
- 3rd Qu.:3.984   3rd Qu.:0.6067   3rd Qu.:1.645   3rd Qu.:0.745  
- Max.   :6.107   Max.   :2.4270   Max.   :6.581   Max.   :2.980  
+     node1            node2            node3           node4  
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.000   Min.   :0  
+ 1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0  
+ Median :0.0000   Median :0.0000   Median :2.386   Median :0  
+ Mean   :0.6573   Mean   :0.3307   Mean   :2.774   Mean   :0  
+ 3rd Qu.:0.6573   3rd Qu.:0.3307   3rd Qu.:5.160   3rd Qu.:0  
+ Max.   :2.6293   Max.   :1.3227   Max.   :6.325   Max.   :0  
   balanced = FALSE 
-  total edges= 5 
+  total edges= 4 
     missing edges= 0 
-    non-missing edges= 5 
+    non-missing edges= 4 
 
  Vertex attribute names: 
     export input living output respiration storage vertex.names 
@@ -397,6 +394,9 @@ $names
 $class
 [1] "network"
 \end{Soutput}
+\begin{Sinput}
+> 
+\end{Sinput}
 \end{Schunk}
 
 However, individual components can be extracted from the data object
@@ -414,7 +414,7 @@ example, we can pull out node of vertex attributes as follows:
 > fake.model%v%'input'
 \end{Sinput}
 \begin{Soutput}
-[1] 3.38061080 1.44664313 0.03584714 2.13542654
+[1] 2.7158906 0.5109887 2.5442683 2.2429176
 \end{Soutput}
 \begin{Sinput}
 > fake.model%v%'living'
@@ -424,18 +424,18 @@ example, we can pull out node of vertex attributes as follows:
 \end{Soutput}
 \end{Schunk}
 
-For convenience, we have defined the flow matrix as a network based
-characteristic and it can be extracted as:
+For convenience, we have defined the flow matrix as a network based characteristic and it can be extracted as:
+
 \begin{Schunk}
 \begin{Sinput}
 > fake.model%n%'flow'
 \end{Sinput}
 \begin{Soutput}
-         node1    node2    node3    node4
-node1 0.000000 0.000000 0.000000 0.000000
-node2 3.276289 0.000000 6.581156 0.000000
-node3 0.000000 2.426999 0.000000 0.000000
-node4 6.107306 0.000000 0.000000 2.980089
+         node1  node2    node3 node4
+node1 2.629264 1.3227 6.325187     0
+node2 0.000000 0.0000 0.000000     0
+node3 0.000000 0.0000 0.000000     0
+node4 0.000000 0.0000 4.771617     0
 \end{Soutput}
 \end{Schunk}
 
@@ -450,20 +450,20 @@ output is as follows:
 \end{Sinput}
 \begin{Soutput}
 $F
-         node1    node2    node3    node4
-node1 0.000000 0.000000 0.000000 0.000000
-node2 3.276289 0.000000 6.581156 0.000000
-node3 0.000000 2.426999 0.000000 0.000000
-node4 6.107306 0.000000 0.000000 2.980089
+         node1  node2    node3 node4
+node1 2.629264 1.3227 6.325187     0
+node2 0.000000 0.0000 0.000000     0
+node3 0.000000 0.0000 0.000000     0
+node4 0.000000 0.0000 4.771617     0
 
 $z
-[1] 3.38061080 1.44664313 0.03584714 2.13542654
+[1] 2.7158906 0.5109887 2.5442683 2.2429176
 
 $r
 [1] 0 0 0 0
 
 $e
-[1] 3.38061080 1.44664313 0.03584714 2.13542654
+[1] 2.7158906 0.5109887 2.5442683 2.2429176
 
 $y
 [1] NA NA NA NA
@@ -1496,7 +1496,7 @@ for the feeding cycles which are similar to the enaCycle outputs.
 
 \begin{Schunk}
 \begin{Sinput}
->   trop <- enaTroAgg(m)
+> trop <- enaTroAgg(m)
 > attributes(trop)
 \end{Sinput}
 \begin{Soutput}
