@@ -85,89 +85,46 @@
 \section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
 %% Note: If there is markup in \(sub)section, then it has to be escape as above.
 
-This \R package is a collection of functions to implement Ecosystem
-Network Analysis (ENA), which is a family of algorithms for
-investigating the structure and function of ecosystems (add cites to
-MEE paper, others).  These systems are modeled as networks of
+Ecosystem Network Analysis (ENA) is a family of algorithms for
+investigating the structure and function of ecosystems
+\cite{borrett12_netecol}.  These systems are modeled as networks of
 thermodynamically conserved energy--matter exchanges in which nodes
-represent the species, groups of species, or non-living componets of
-the ecosystem (i.e., dead organic matter), and the weighted, directed
-edges indicate the transfer of energy or matter.  The package brings
-together multiple ENA algorithms from several approaches into one
-common software framework that is readily available and extensible.
-The package builds on the \textit{network} data structure developed by
-\citet{butts08_network}. In addition to being able to perform several
-types of ENA with a single package, users can also make use of network
-analysis tools built into the \textit{network} package, the
-\textit{sna} (social network analysis) package \citep{butts08_social},
-and other components of what is now called \textit{statnet}
-\citep{handcock2008statnet}.
+represent the species, groups of species, or non-living componets
+(e.g., dead organic matter) of the ecosystem, and the weighted,
+directed edges are the quantified transfers of energy or matter.  
 
-This vignette illustrates how to use the \textit{enaR} package to
-perform ENA.  It is not meant to be a detailed guide to ENA, but we
-provide some references to the primary literature for those wishing to
-learn more about the techniques.
-
-The ENA methodology is an application and extension of economic
-Input--Output Analysis \citep{leontief1936,leontief66} that was first
-introduced into ecology by \citet{hannon73}.  Two major schools have
-developed in ENA.  The first is based on Dr.\ Robert E.\ Ulanowicz's
-work with a strong focus on trophic dynamics and a use of information
-theory \citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second
-school has an environment focus and is built on the environ concept
-introduced by Dr.\ Bernard C.\ Patten \citep{patten76, patten78,
-  fath99_review}.  Patten's approach has been collectively referred to
-separately as \emph{Network Environ Analysis}. At the core the two
-approaches are very similar; however, they make some different
-starting assumptions and follow independent yet braided development
-tracks. One example difference that has historically inhibited
-collaboration and applications is that the two schools orient their
-analytical matrices in different ways.  The Ulanowicz school orients
-their matrices as flows from rows-to-columns, which is the most common
-orientation in the broader field of network science
-\citep[e.g.,][]{brandes05}.  In contrast, the Patten School has
-historically oriented their matricies from column-to-row.  Recent
-research has started to bring the work of the two schools back
-together \citep[e.g.,][]{scharler09comparing}; we hope this software
-contributes to this.  \citet{borrett12_netecol} provides an entry
-level overview of the field.
 
 % objectives
 Disparate software packages have been created to support
-ENA. Ulanowicz first developed and distributed the DOS based NETWRK4
-code, which is still available.  Recently some of these algorithms were
-reimplemented in an Microsoft Excel based WAND package
-\citep{allesina04_wand}.  Some of these methods have also been encoded
-in the popular Ecopath with Ecosim software that assists with model
-construction \citep{christensen04}.  \citet{fath06} published NEA.m, a
-MATLAB\copyright function that collected the Patten School's
-algorithms together into one set of code.  One objective for this
-\R\ package is to begin to bring together these different
-algorithms into a single accessible and extensible package.  The
-primary ENA algorithms included in this package are summarized in
-Table~\ref{tab:alg} and a plot of the network of functions for the
-package can be found in Figure~\ref{fig:fig}.
+ENA. Initially algorithms were developed and distributed as the DOS
+based NETWRK4, which is still available from \cite{ulanowiczCITE}.
+Some of these algorithms were reimplemented in an Microsoft Excel
+based toolbox, WAND \citep{allesina04_wand}. The popular Ecopath with
+Ecosim software that assists with model construction
+\citep{christensen04} also provides multiple ENA algorithms.  More
+recently, \citet{fath06} published NEA.m that collects many ENA
+algorithms together in a single MATLAB\copyright function. Although
+these packages collectively provide access to a large set of powerful
+analytical tools, the fragmented distribution of these algorithms has
+inhibited the development of theory and the further implementation of
+important aoglorithms. 
 
-\begin{table*}
-\center
-\caption{Primary Ecological Network Analysis algorithms in
-  \textit{enaR}.} \label{tab:alg}
-\tableline
-%\begin{scriptsize}
-\begin{tabular}{l l l l l }
-\textbf{Analysis} & \textbf{Function Name} & \textbf{School} \\ \hline \\ [-1ex]
-Structure & \texttt{enaStructure} & foundational, Patten \\
-Flow & \texttt{enaFlow} & foundational, Patten \\
-Ascendency & \texttt{enaAscendency} & Ulanowicz \\
-Storage & \texttt{enaStorage} & Patten \\
-Utility & \texttt{enaUtility} & Patten \\
-Mixed Trophic Impacts & \texttt{enaMTI} & Ulanowicz \\
-Control & \texttt{enaControl} & Patten \\
-Environ & \texttt{enaEnviron} & Patten \\
-\end{tabular}
-%\end{scriptsize}
-\tableline
-\end{table*}
+The \textit{enaR} package brings together ENA algorithms into one
+common software framework that is readily available and extensible.
+The package is written in the \R\ language, which is free and
+open-source.  Due largely to this, \R\ is now one of the most widely
+used analytical programming lanuages in the biological
+sciences. \textit{enaR} builds on previously developed tools for
+network analysis. For example, it uses the \textit{network} data
+structure developed by \citet{butts08_network} and the network
+analysis tools built into the \textit{network}, \textit{sna} (social
+network analysis) \citep{butts08_social}, and other packages
+collectively called \textit{statnet} \citep{handcock2008statnet}. In
+this article we introduce the user to ENA concepts and algorithms,
+provide description of how to input ecosystem network models and give
+detailed description of how to conduct these analyses using
+\textit{enaR}.
+
 
 
 \SweaveOpts{width=6,height=4}
@@ -291,6 +248,29 @@ summarized as $\mathcal{M} =
 
 
 % Orientation
+The ENA methodology is an application and extension of economic
+Input--Output Analysis \citep{leontief1936,leontief66} that was first
+introduced into ecology by \citet{hannon73}.  Two major schools have
+developed in ENA.  The first is based on Dr.\ Robert E.\ Ulanowicz's
+work with a strong focus on trophic dynamics and a use of information
+theory \citep{ulanowicz86, ulanowicz97, ulanowicz04}.  The second
+school has an environment focus and is built on the environ concept
+introduced by Dr.\ Bernard C.\ Patten \citep{patten76, patten78,
+  fath99_review}.  Patten's approach has been collectively referred to
+separately as \emph{Network Environ Analysis}. At the core the two
+approaches are very similar; however, they make some different
+starting assumptions and follow independent yet braided development
+tracks. One example difference that has historically inhibited
+collaboration and applications is that the two schools orient their
+analytical matrices in different ways.  The Ulanowicz school orients
+their matrices as flows from rows-to-columns, which is the most common
+orientation in the broader field of network science
+\citep[e.g.,][]{brandes05}.  In contrast, the Patten School has
+historically oriented their matricies from column-to-row.  Recent
+research has started to bring the work of the two schools back
+together \citep[e.g.,][]{scharler09comparing}; we hope this software
+contributes to this.  
+
 Notice the row-to-column orientation of $\mathbf{F}$.  This is
 consistent with the Ulanowicz School of network analysis, as well as
 the orientation commonly used in Social Network Analysis and used in
@@ -616,7 +596,34 @@ rm(opar)             # remove changes to the plotting parameters
 
 %%%%%%%%
 
-\section{Single Model Analysis}
+\section{Analyzing Ecosystem Models}
+
+The primary ENA algorithms included in this package are summarized in
+Table~\ref{tab:alg} and a plot of the network of functions for the
+package can be found in Figure~\ref{fig:fig}.
+
+\begin{table*}
+\center
+\caption{Primary Ecological Network Analysis algorithms in
+  \textit{enaR}.} \label{tab:alg}
+\tableline
+%\begin{scriptsize}
+\begin{tabular}{l l l l l }
+\textbf{Analysis} & \textbf{Function Name} & \textbf{School} \\ \hline \\ [-1ex]
+Structure & \texttt{enaStructure} & foundational, Patten \\
+Flow & \texttt{enaFlow} & foundational, Patten \\
+Ascendency & \texttt{enaAscendency} & Ulanowicz \\
+Storage & \texttt{enaStorage} & Patten \\
+Utility & \texttt{enaUtility} & Patten \\
+Mixed Trophic Impacts & \texttt{enaMTI} & Ulanowicz \\
+Control & \texttt{enaControl} & Patten \\
+Environ & \texttt{enaEnviron} & Patten \\
+\end{tabular}
+%\end{scriptsize}
+\tableline
+\end{table*}
+
+
 In practice, ENA is applied to a single model.  Here, we walk through an
 example of applying multiple ENA algorithms to the oyster reef model
 \citep{dame81}.  The main ENA algorithms encoded in \textit{enaR} are

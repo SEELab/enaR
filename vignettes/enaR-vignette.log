@@ -1,13 +1,16 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.5.30)  8 OCT 2014 08:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 OCT 2014 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**\input enaR-vignette.tex
-(./enaR-vignette.tex (./jss.cls
+**enaR-vignette.tex
+(./enaR-vignette.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(./jss.cls
 Document Class: jss 2013/04/06 2.2 jss class by Achim Zeileis
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size11.clo
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,80 +25,85 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: dvips.def on input line 130.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/ae.sty
+Package color Info: Driver file: pdftex.def on input line 137.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ae/ae.sty
 Package: ae 2001/02/12 1.3 Almost European Computer Modern
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aer.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count87
+\FV@CodeLineNo=\count88
 \FV@InFile=\read1
 \FV@TabBox=\box26
-\c@FancyVerbLine=\count88
-\FV@StepNumber=\count89
+\c@FancyVerbLine=\count89
+\FV@StepNumber=\count90
 \FV@OutFile=\write3
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/upquote/upquote.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -110,7 +118,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -176,34 +184,34 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/natbib/natbib.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count90
+\c@NAT@ctr=\count91
 )
 \footerskip=\skip45
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -216,7 +224,7 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
@@ -233,25 +241,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen105
-\Hy@linkcounter=\count91
-\Hy@pagecounter=\count92
+\Hy@linkcounter=\count92
+\Hy@pagecounter=\count93
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count93
+\Hy@SavedSpaceFactor=\count94
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -261,15 +269,15 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count94
+\c@Hy@tempcnt=\count95
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen106
-\Fld@menulength=\count95
+\Fld@menulength=\count96
 \Field@Width=\dimen107
 \Fld@charsize=\dimen108
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -281,33 +289,25 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count96
-\c@Item=\count97
-\c@Hfootnote=\count98
+\Hy@abspage=\count97
+\c@Item=\count98
+\c@Hfootnote=\count99
 )
 
-Package hyperref Message: Driver (default): hdvips.
+Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2012/11/06 v6.83m Hyperref driver for dvips
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2012/11/06 v6.83m Hyperref definitions for pdfmark specials
-\pdf@docset=\toks15
-\pdf@box=\box27
-\pdf@toks=\toks16
-\pdf@defaulttoks=\toks17
-\HyField@AnnotCount=\count99
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip46
-))
+)
 \preXLskip=\skip47
 \preLskip=\skip48
 \preMskip=\skip49
@@ -332,45 +332,37 @@ Type  H <return>  for immediate help.
                                                   
 l.71   \bibpunct
                 {(}{)}{;}{a}{,}{,} % required for natbib
-The package natbib has already been loaded with options:
-  [authoryear,round,longnamesfirst]
-There has now been an attempt to load it with options
-  [super, sort]
-Adding the global options:
-  authoryear,round,longnamesfirst,super, sort
-to your \documentclass declaration may fix this.
-Try typing  <return>  to proceed.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/ucs.sty
+? 
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/data/uni-global.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count102
-\uc@combtoks=\toks18
-\uc@combtoksb=\toks19
-\uc@temptokena=\toks20
+\uc@combtoks=\toks15
+\uc@combtoksb=\toks16
+\uc@temptokena=\toks17
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks21
-\inpenc@posthook=\toks22
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/utf8x.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/sidecap/sidecap.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/sidecap/sidecap.sty
 Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \SC@BOXWD=\dimen109
@@ -378,7 +370,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \SC@tempdima=\dimen111
 \SC@tempdimb=\dimen112
 \c@SC@C=\count103
-\SC@BOX=\box28
+\SC@BOX=\box27
 )
 (./enaR-vignette.aux
 
@@ -401,22 +393,51 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 80.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
+
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count104
+\scratchdimen=\dimen113
+\scratchbox=\box28
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen114
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks21
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 80.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count104
+\c@section@level=\count110
 )
 LaTeX Info: Redefining \ref on input line 80.
 LaTeX Info: Redefining \pageref on input line 80.
@@ -427,22 +448,14 @@ LaTeX Info: Redefining \nameref on input line 80.
 \openout4 = `enaR-vignette.out'.
 
 
-
-! LaTeX Error: File `jsslogo' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.80 \begin{document}
-                     
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<jsslogo.jpg, id=112, 540.0175pt x 393.47pt>
+File: jsslogo.jpg Graphic file (type jpg)
+ <use jsslogo.jpg>
+Package pdftex.def Info: jsslogo.jpg used on input line 80.
+(pdftex.def)             Requested size: 89.80768pt x 65.43607pt.
 LaTeX Font Info:    Try loading font information for T1+pzc on input line 80.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1pzc.fd
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pzc.fd
 File: t1pzc.fd 2001/06/04 font definitions for T1/pzc.
 )
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <28> not available
@@ -455,16 +468,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 80.
 LaTeX Font Info:    Try loading font information for T1+aess on input line 80.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aess.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/ucsencs.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ms/ragged2e.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ms/everysel.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ms/everysel.sty
 Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 
 ABD: EverySelectfont initializing macros
@@ -489,7 +502,8 @@ Underfull \vbox (badness 1762) has occurred while \output is active []
 
  [1
 
-]
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./jsslo
+go.jpg>]
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 139.
 
 LaTeX Font Info:    No file TS1aer.fd. on input line 139.
@@ -502,47 +516,20 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 ! Undefined control sequence.
 l.141 \R
         \ package is to begin to bring together these different
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (26.4697pt too wide) in paragraph at lines 132--146
-\T1/aer/m/n/10.95 go-rithms were reim-ple-mented in an Mi-crosoft Ex-cel based 
-WAND pack-age ([],
- []
-
-
-Overfull \hbox (13.43951pt too wide) in paragraph at lines 132--146
-\T1/aer/m/n/10.95 soft-ware that as-sists with model con-struc-tion ([], []). [
-]
- []
-
+? 
 ! Undefined control sequence.
 l.151 \tableline
                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 LaTeX Font Info:    Try loading font information for T1+aett on input line 155.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aett.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 ! Undefined control sequence.
 l.165 \tableline
                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 
 ! LaTeX Error: File `enaR-vignette-003' not found.
 
@@ -552,20 +539,11 @@ Type  H <return>  for immediate help.
                                                   
 l.208 \includegraphics[]{enaR-vignette-003}
                                            
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 ! Undefined control sequence.
 l.230 in \R
            \ that contains the model data for subsequent analysis.  To
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -607,12 +585,6 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [6]
-Overfull \hbox (15.093pt too wide) in paragraph at lines 528--531
-[]\T1/aer/m/n/10.95 The \T1/aett/m/n/10.95 read.scor \T1/aer/m/n/10.95 func-tio
-n reads in data stored in the SCOR for-mat spec-i-fied by []
- []
-
-
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 7
  []
@@ -621,12 +593,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 ! Undefined control sequence.
 l.599 ...ttt{read.wand} function will create an \R
                                                   \
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 8 []
@@ -642,10 +609,7 @@ Type  H <return>  for immediate help.
                                                   
 l.647 \begin{align}
                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+? 
 
 ! LaTeX Error: \mathbf allowed only in math mode.
 
@@ -655,17 +619,13 @@ Type  H <return>  for immediate help.
                                                   
 l.648 \mathbf
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.648 \mathbf{S} = \left
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+? 
 
 ! LaTeX Error: \begin{document} ended by \end{align}.
 
@@ -675,27 +635,13 @@ Type  H <return>  for immediate help.
                                                   
 l.651 \end{align}
                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+? 
 ! Missing $ inserted.
 <inserted text> 
                 $
 l.651 \end{align}
                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (11.29553pt too wide) in paragraph at lines 644--653
-[]\T1/aer/m/n/10.95 For their Mat-lab func-tion to per-form net-work en-v-i-ron
- anal-y-sis (Pat-ten School), []
- []
-
+? 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 9
@@ -705,12 +651,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 ! Undefined control sequence.
 l.700 ...the excellent graphics capabilities of \R
                                                   \ to make fancier
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 
 ! LaTeX Error: File `enaR-vignette-020' not found.
 
@@ -720,11 +661,7 @@ Type  H <return>  for immediate help.
                                                   
 l.745 \includegraphics[]{enaR-vignette-020}
                                            
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 
 ! LaTeX Error: File `enaR-vignette-021' not found.
 
@@ -734,11 +671,7 @@ Type  H <return>  for immediate help.
                                                   
 l.746 \includegraphics[]{enaR-vignette-021}
                                            
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 10 []
@@ -760,17 +693,6 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [11]
-Overfull \hbox (39.09584pt too wide) in paragraph at lines 833--840
-\T1/aer/m/n/10.95 and Pat-ten Schools ([], []; [], []; [],
- []
-
-
-Overfull \hbox (76.94823pt too wide) in paragraph at lines 833--840
-\T1/aer/m/n/10.95 dates (e.g. cal-cu-lat-ing the ra-tio of indirect-to-direct f
-lows [], []; [],
- []
-
-
 Overfull \hbox (18.51161pt too wide) in paragraph at lines 846--877
 [][]
  []
@@ -827,23 +749,6 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [18]
-Overfull \hbox (44.73392pt too wide) in paragraph at lines 1277--1282
-\T1/aer/m/n/10.95 cent up-dates to con-trol anal-y-sis (e.g., [],
- []
-
-
-Overfull \hbox (43.00401pt too wide) in paragraph at lines 1319--1324
-[]\T1/aer/m/n/10.95 Mixed Trophic Im-pacts is a pop-u-lar anal-y-sis from the U
-lanow-icz School of ENA ([],
- []
-
-
-Overfull \hbox (33.37892pt too wide) in paragraph at lines 1319--1324
-[]\T1/aer/m/n/10.95 ). The \T1/aett/m/n/10.95 enaMTI \T1/aer/m/n/10.95 func-tio
-n gen-er-ates com-pa-ra-ble re-sults to the cal-cu-la-tions in []
- []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 19
  []
@@ -854,19 +759,6 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [20]
-Underfull \hbox (badness 2626) in paragraph at lines 1383--1383
-[]\T1/aer/m/n/10.95 Table 8: [][][][][]  Ma-tri-ces re-turned by the \T1/aer/m/
-it/10.95 enaR \T1/aett/m/n/10.95 enaMTI \T1/aer/m/n/10.95 func-tion, which are 
-based on
- []
-
-
-Overfull \hbox (17.2945pt too wide) in paragraph at lines 1402--1410
-\T1/aer/m/n/10.95 lows the al-go-rithm by the DOS-based NETWRK 4.2b soft-ware b
-y Ulanow-icz ([],
- []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 21
  []
@@ -904,23 +796,13 @@ Type  H <return>  for immediate help.
                                                   
 l.1733 \includegraphics[]{enaR-vignette-039}
                                             
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 26 []
  []
 
 [26]
-Overfull \hbox (35.67873pt too wide) in paragraph at lines 1802--1813
-\T1/aer/m/n/10.95 bio-geo-chem-i-cal cy-cling in ecosys-tems (Ta-ble [][][][][]
-[]). []
- []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 27
  []
@@ -935,7 +817,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 29
  []
 
-[29] (/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/data/uni-34.def
+[29] (/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/data/uni-34.def
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
 )
 Overfull \hbox (407.45175pt too wide) in paragraph at lines 1962--2027
@@ -950,23 +832,8 @@ Overfull \hbox (86.46198pt too wide) in paragraph at lines 2046--2095
 ! Undefined control sequence.
 l.2118 One advantage of the \textit{enaR} \R
                                             \ package is that it simplifies ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (141.83788pt too wide) in paragraph at lines 2112--2121
-\T1/aer/m/n/10.95 mod-els (e.g., [], [], []; [], []; [],
- []
-
-
-Overfull \hbox (30.2035pt too wide) in paragraph at lines 2112--2121
-\T1/aer/m/n/10.95 poth-e-sized ecosys-tem prop-er-ties (e.g., [], []; [], []; [
-],
- []
-
+? 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 30 []
@@ -1002,29 +869,15 @@ Type  H <return>  for immediate help.
                                                   
 l.2391 \includegraphics[]{enaR-vignette-048}
                                             
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 ! Undefined control sequence.
 l.2399 ...building the \textit{enaR} package in \R
                                                   \ is that
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 ! Undefined control sequence.
 l.2401 ...atistical tools that already exist in \R
                                                   .  We highlight two
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 35
@@ -1040,11 +893,7 @@ Type  H <return>  for immediate help.
                                                   
 l.2460 \includegraphics[]{enaR-vignette-051}
                                             
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 36 []
@@ -1060,11 +909,7 @@ Type  H <return>  for immediate help.
                                                   
 l.2518 \includegraphics[]{enaR-vignette-054}
                                             
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+? 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 37
@@ -1074,54 +919,27 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 ! Undefined control sequence.
 l.2609 There are other \R
                          \ packages that have graph and network analysis tools,
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
+? 
 ! Undefined control sequence.
 l.2616 Network Analysis in \R
                              .  The vision for this package is that it will
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 ! Undefined control sequence.
 l.2624 their data with other \R
                                \ packages for graph and network analysis like
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+? 
 (./enaR-vignette.bbl
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 38 []
  []
 
 [38]
-Underfull \hbox (badness 3428) in paragraph at lines 79--84
-[]\T1/aer/m/n/10.95 Borrett SR (2013).  ``Through-flow cen-tral-ity is a global
- in-di-ca-tor of the func-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--84
-\T1/aer/m/n/10.95 tional im-por-tance of species in ecosys-tems.''  \T1/aer/m/i
-t/10.95 Ecol. In-dic.\T1/aer/m/n/10.95 , \T1/aer/bx/n/10.95 32\T1/aer/m/n/10.95
- , 182--196.
- []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 39
  []
 
-[39] (/usr/local/texlive/2013/texmf-dist/tex/latex/ucs/data/uni-32.def
+[39] (/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1134,43 +952,11 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [41]
-Underfull \hbox (badness 2856) in paragraph at lines 381--386
-[]\T1/aer/m/n/10.95 Ray S (2008).  ``Com-par-a-tive study of vir-gin and re-cla
-imed is-lands of Sun-dar-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--408
-[]\T1/aer/m/n/10.95 Salas AK, Bor-rett SR (2011).  ``Ev-i-dence for dom-i-nance
- of in-di-rect ef-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--408
-\T1/aer/m/n/10.95 fects in 50 trophic ecosys-tem net-works.''  \T1/aer/m/it/10.
-95 Ecol. Model.\T1/aer/m/n/10.95 , \T1/aer/bx/n/10.95 222\T1/aer/m/n/10.95 , 11
-92--1204.
- []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 42 []
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 455--460
-[]\T1/aer/m/n/10.95 Schramski JR, Kazanci C, Toll-ner EW (2011).  ``Net-work en
--v-i-ron the-
- []
-
-
-Underfull \hbox (badness 5878) in paragraph at lines 455--460
-\T1/aer/m/n/10.95 ory, sim-u-la-tion and EcoNet\TS1/aett/m/n/10.95 © \T1/aer/m/
-n/10.95 2.0.''  \T1/aer/m/it/10.95 En-v-i-ron. Model. Softw.\T1/aer/m/n/10.95 ,
- \T1/aer/bx/n/10.95 26\T1/aer/m/n/10.95 , 419--428.
- []
-
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/aer/m/n/10.95 43
  []
@@ -1210,7 +996,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [47]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 2631.
  (./enaR-vignette.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2631.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2631.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2631.
 
 Package rerunfilecheck Info: File `enaR-vignette.out' has not changed.
@@ -1225,12 +1011,46 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2631.
  ) 
 Here is how much of TeX's memory you used:
- 8171 strings out of 493316
- 119885 string characters out of 6137930
- 301012 words of memory out of 5000000
- 11481 multiletter control sequences out of 15000+600000
- 39840 words of font info for 52 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 36i,12n,39p,348b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 8779 strings out of 493117
+ 128493 string characters out of 6135433
+ 274510 words of memory out of 5000000
+ 11837 multiletter control sequences out of 15000+600000
+ 56166 words of font info for 99 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,12n,34p,341b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
+zapfchan/uzcmi8a.pfb>
+Output written on enaR-vignette.pdf (47 pages, 477383 bytes).
+PDF statistics:
+ 1058 PDF objects out of 1200 (max. 8388607)
+ 955 compressed objects within 10 object streams
+ 205 named destinations out of 1000 (max. 500000)
+ 222 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on enaR-vignette.dvi (47 pages, 291720 bytes).
