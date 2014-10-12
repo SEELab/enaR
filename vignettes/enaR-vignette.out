@@ -6,19 +6,19 @@
 \BOOKMARK [2][-]{Subsection.2.3.Balancing for Steady-State.2}{Balancing for Steady-State}{Section.1.Data Input: General.1}% 6
 \BOOKMARK [1][-]{Section.2.Data Input: Reading Common Data File Formats.1}{Data Input: Reading Common Data File Formats}{}% 7
 \BOOKMARK [1][-]{Section.3.Network Visualization.1}{Network Visualization}{}% 8
-\BOOKMARK [1][-]{Section.4.Single Model Analysis.1}{Single Model Analysis}{}% 9
-\BOOKMARK [2][-]{Subsection.5.0.Structural Network Analysis.2}{Structural Network Analysis}{Section.4.Single Model Analysis.1}% 10
-\BOOKMARK [2][-]{Subsection.5.1.Flow Analysis.2}{Flow Analysis}{Section.4.Single Model Analysis.1}% 11
-\BOOKMARK [2][-]{Subsection.5.2.Ascendency.2}{Ascendency}{Section.4.Single Model Analysis.1}% 12
-\BOOKMARK [2][-]{Subsection.5.3.Storage Analysis.2}{Storage Analysis}{Section.4.Single Model Analysis.1}% 13
-\BOOKMARK [2][-]{Subsection.5.4.Utility Analysis.2}{Utility Analysis}{Section.4.Single Model Analysis.1}% 14
-\BOOKMARK [2][-]{Subsection.5.5.Environ Analysis.2}{Environ Analysis}{Section.4.Single Model Analysis.1}% 15
-\BOOKMARK [2][-]{Subsection.5.6.Control Analysis.2}{Control Analysis}{Section.4.Single Model Analysis.1}% 16
-\BOOKMARK [2][-]{Subsection.5.7.Mixed Trophic Impacts.2}{Mixed Trophic Impacts}{Section.4.Single Model Analysis.1}% 17
-\BOOKMARK [2][-]{Subsection.5.8.Cycle Analysis.2}{Cycle Analysis}{Section.4.Single Model Analysis.1}% 18
-\BOOKMARK [2][-]{Subsection.5.9.Trophic Aggregations.2}{Trophic Aggregations}{Section.4.Single Model Analysis.1}% 19
-\BOOKMARK [2][-]{Subsection.5.10.Other Analyses.2}{Other Analyses}{Section.4.Single Model Analysis.1}% 20
-\BOOKMARK [2][-]{Subsection.5.11.Output Orientation.2}{Output Orientation}{Section.4.Single Model Analysis.1}% 21
+\BOOKMARK [1][-]{Section.4.Analyzing Ecosystem Models.1}{Analyzing Ecosystem Models}{}% 9
+\BOOKMARK [2][-]{Subsection.5.0.Structural Network Analysis.2}{Structural Network Analysis}{Section.4.Analyzing Ecosystem Models.1}% 10
+\BOOKMARK [2][-]{Subsection.5.1.Flow Analysis.2}{Flow Analysis}{Section.4.Analyzing Ecosystem Models.1}% 11
+\BOOKMARK [2][-]{Subsection.5.2.Ascendency.2}{Ascendency}{Section.4.Analyzing Ecosystem Models.1}% 12
+\BOOKMARK [2][-]{Subsection.5.3.Storage Analysis.2}{Storage Analysis}{Section.4.Analyzing Ecosystem Models.1}% 13
+\BOOKMARK [2][-]{Subsection.5.4.Utility Analysis.2}{Utility Analysis}{Section.4.Analyzing Ecosystem Models.1}% 14
+\BOOKMARK [2][-]{Subsection.5.5.Environ Analysis.2}{Environ Analysis}{Section.4.Analyzing Ecosystem Models.1}% 15
+\BOOKMARK [2][-]{Subsection.5.6.Control Analysis.2}{Control Analysis}{Section.4.Analyzing Ecosystem Models.1}% 16
+\BOOKMARK [2][-]{Subsection.5.7.Mixed Trophic Impacts.2}{Mixed Trophic Impacts}{Section.4.Analyzing Ecosystem Models.1}% 17
+\BOOKMARK [2][-]{Subsection.5.8.Cycle Analysis.2}{Cycle Analysis}{Section.4.Analyzing Ecosystem Models.1}% 18
+\BOOKMARK [2][-]{Subsection.5.9.Trophic Aggregations.2}{Trophic Aggregations}{Section.4.Analyzing Ecosystem Models.1}% 19
+\BOOKMARK [2][-]{Subsection.5.10.Other Analyses.2}{Other Analyses}{Section.4.Analyzing Ecosystem Models.1}% 20
+\BOOKMARK [2][-]{Subsection.5.11.Output Orientation.2}{Output Orientation}{Section.4.Analyzing Ecosystem Models.1}% 21
 \BOOKMARK [1][-]{Section.5.Model Library.1}{Model Library}{}% 22
 \BOOKMARK [1][-]{Section.6.Multi-Model Analyses (Batch Processing).1}{Multi-Model Analyses \(Batch Processing\)}{}% 23
 \BOOKMARK [1][-]{Section.7.Connecting to Other Useful Packages.1}{Connecting to Other Useful Packages}{}% 24

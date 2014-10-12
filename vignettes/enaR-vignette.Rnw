@@ -1,5 +1,26 @@
 \documentclass[article]{jss}
 
+%%%%Re-organization based on SRB notes
+%%Intro
+%%Ecosystem Networks purpose and structure of models
+%%1.network ecology
+%%2.ENA
+%%3.previous software and enaR
+%%ENA network models
+%%1. describe models
+%%2. model construction
+%%3. mathematical description
+%%ENA analyses
+%%1. provided models
+%%2. visualization
+%%3. model input
+%%4+. analyses
+%%n. batch processing
+%%Conclusion
+%%1.Connecting to other packages
+%%2.Future directions
+%%3.Contributing
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% declarations for jss.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -204,7 +225,7 @@ the library as follows:
 %%%%% Getting Set Up %%%%%%%%%%%
 \setkeys{Gin}{width=0.55\linewidth}
 \SweaveOpts{strip.white=true}
-<<eva=false,echo=false,results=hide>>=
+<<eval=false,echo=false,results=hide>>=
   rm(list=ls())
 par(mfrow=c(1,1))
 options(width=72)
@@ -213,7 +234,7 @@ options(SweaveHooks = list(fig = figset))
 options("prompt" = "> ", "continue" = "+  ")
 @
 % Show loading the library and listing the functions in the package
-<<>>=
+<<eval=false>>=
 library(enaR)
 @
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -326,7 +347,7 @@ network data object.  Here is an example of doing this with
 hypothetical data.
 
 %% PACK A MODEL
-<<>>=
+<<eval=false>>=
 # generate the flow matrix
 flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
                   dim=c(4,4))
@@ -348,7 +369,7 @@ fake.model
 Unfortunately, the attributes() function does not clearly identify the
 network data objects we are using.
 
-<<>>=
+<<eval=false>>=
 attributes(fake.model)
 
 @
@@ -357,7 +378,7 @@ However, individual components can be extracted from the data object
 using the form specified in the \textit{network} package.  For
 example, we can pull out node of vertex attributes as follows:
 
-<<>>=
+<<eval=false>>=
 fake.model%v%'output'
 
 fake.model%v%'input'
@@ -367,7 +388,7 @@ fake.model%v%'living'
 
 For convenience, we have defined the flow matrix as a network based characteristic and it can be extracted as:
 
-<<>>=
+<<eval=false>>=
 fake.model%n%'flow'
 @
 
@@ -376,7 +397,7 @@ model data elements from the network data object.  This can be
 accomplished using the \texttt{unpack} function. The \texttt{unpack}
 output is as follows:
 
-<<>>=
+<<eval=false>>=
 unpack(fake.model)
 @
 
@@ -395,7 +416,7 @@ functions for (1) checking to see if the assumption is met and (2)
 automatically balancing the model so that input equal outputs.
 
 To determine if the model is balanced and then balance it if necessary:
-<<>>=
+<<eval=false>>=
 ## --- Check to see if the model is balanced ---#
 ssCheck(fake.model)
 
@@ -423,7 +444,7 @@ The \texttt{read.scor} function reads in data stored in the SCOR
 format specified by \citet{ulanowicz91} that is the input to the
 NETWRK4 programs.  This function can be run as follows.
 
-<<>>=
+<<eval=false>>=
 scor.model <- readLines('http://people.uncw.edu/borretts/data/oyster.dat')
 m <- read.scor(scor.model,from.file=FALSE)
 @
@@ -432,13 +453,13 @@ This constructs the network data object from the SCOR file that stores
 the ecosystem model data for an oyster reef model \citep{dame81}.  The
 individual model elements are
 
-<<>>=
+<<eval=false>>=
 unpack(m)
 @
 
 This same data is stored as a network data object that is distributed
 with this package, which can be accessed as:
-<<>>=
+<<eval=false>>=
 data(oyster)
 m <- oyster
 @
@@ -535,7 +556,7 @@ Figure~\ref{fig:oyster} (left) is a very simple example of to plot a
 graph of the oyster reef model accomplished with default settings.
 
 \SweaveOpts{width=3,height=3}
-<<a>>=
+<<a,eval=false>>=
 data(oyster)  # load data
 m <- oyster
 set.seed(2)    # set random seed to control plot
@@ -674,7 +695,7 @@ of the enaStructure function is summarized in Table~\ref{tab:structure}
 \end{small}
 \end{table*}
 
-<<>>=
+<<eval=false>>=
 St <- enaStructure(m)
 attributes(St)
 St$ns
@@ -740,7 +761,7 @@ input and output orientations provide different information about the
 system.  We also show the input-oriented integral flow matrix
 $\mathbf{N'}$.
 
-<<>>=
+<<eval=false>>=
   F <- enaFlow(m)
 attributes(F)
 F$ns
@@ -753,7 +774,7 @@ Note: you can use the attach function to have access to the objects
 nested within an object. Since some objects may conflict in name, it's
 best to detach an object once it's not in use.
 
-<<>>=
+<<eval=false>>=
 attach(F)
 G
 detach(F)
@@ -763,7 +784,7 @@ Matrix powers -- raising a matrix to a power is not a native operation
 in R.  Thus, the \textit{enaR} package includes a function
 \texttt{mExp} to facilitate this matrix operation commonly used in ENA.
 
-<<>>=
+<<eval=false>>=
 mExp(F$G,2)
 @
 
@@ -776,7 +797,7 @@ steady-state.  The \texttt{enaAscendency} function returns several of
 these information based measures (Table~\ref{tab:asc}).  This is run
 as follows:
 
-<<>>=
+<<eval=false>>=
   enaAscendency(oyster)
 @
 
@@ -807,7 +828,7 @@ throughflow.  See \citet{fath99_review} and \citet{schramski11} for an
 overview of this method.  Output of this function is summarized in
 Table~\ref{tab:storage}, and this is an example of its implementation.
 
-<<>>=
+<<eval=false>>=
   S <- enaStorage(m)
 attributes(S)
 S$ns
@@ -867,7 +888,7 @@ This is again implemented as in NEA.m.  Table~\ref{tab:utility}
 summarizes the function output for the flow and storage
 versions. These analyses are executed as:
 
-<<>>=
+<<eval=false>>=
 UF <- enaUtility(m,eigen.check=TRUE,type="flow")
 US <- enaUtility(m,eigen.check=TRUE,type="storage")
 attributes(UF)
@@ -917,7 +938,7 @@ activity in each subnetwork generated by pulling a unit out of a node
 unit environs can be converted into ``realized'' environs by
 multiplying each by the relevant observed input or output \citep{borrett11_ree}.
 
-<<>>=
+<<eval=false>>=
 E <- enaEnviron(m)
 attributes(E)
 E$output[1]
@@ -928,7 +949,7 @@ input and output total environ throughflow.  The realized total
 environ throughflow is an environ based partition of the total system
 throughflow (TST).
 
-<<>>=
+<<eval=false>>=
 tet <- TET(m)
 show(tet)
 @
@@ -937,7 +958,7 @@ The \texttt{TES} functions returns the both the realized and unit
 total environ storage for the input and output environs.  Again, the
 realized TES is a partition of the total system storage (TSS).
 
-<<>>=
+<<eval=false>>=
 tes <- TES(m)
 show(tes)
 @
@@ -953,7 +974,7 @@ but we also include recent updates to control analysis
 determine the pairwise control relationships between the nodes in the
 network.  Table~\ref{tab:control} summarizes the function output.
 
-<<>>=
+<<eval=false>>=
                                             #conduct control analysis
 C <- enaControl(m)
 attributes(C)
@@ -989,7 +1010,7 @@ comparable results to the calculations in \citet{ulanowicz90}.  These
 are implemented as follows; Table~\ref{tab:mti} summarizes the
 function output.
 
-<<>>=
+<<eval=false>>=
                                         #conduct mixed trophic impacts
 mti <- enaMTI(oyster)
 attributes(mti)
@@ -1003,7 +1024,7 @@ the function returns the mti\$M = NA.  Like with Utility analysis,
 however, we can use the eigen.check argument to do the calculation
 despite the mathematical problem.
 
-<<>>=
+<<eval=false>>=
   mti <- enaMTI(oyster,eigen.check=FALSE)
 attributes(mti)
 mti$M  # shows the total impact matrix
@@ -1047,7 +1068,7 @@ network.  Table~\ref{tab:cycle} summarizes the function output.
  %calculates the cycling index based on the flow matrix.
 
 
-<<>>=
+<<eval=false>>=
   cyc <- enaCycle(m)
 attributes(cyc)
                                         # Display information of individual cycles
@@ -1106,7 +1127,7 @@ this analysis and referred to as the detrital pool.
 Table~\ref{tab:trophic} summarizes the function output except the outputs
 for the feeding cycles which are similar to the enaCycle outputs.
 
-<<>>=
+<<eval=false>>=
 trop <- enaTroAgg(m)
 attributes(trop)
                                         # Cycle analysis output for Feeding Cycles
@@ -1155,7 +1176,7 @@ A quick way to get a list of all of the global network statistics reported in
 Structure, Flow, Ascendency, Storage, and Utility analysis is to use the
 \texttt{get.ns} function.
 
-<<>>=
+<<eval=false>>=
 ns <- get.ns(m)
 str(ns)    # examine the structure of ns
 @
@@ -1163,7 +1184,7 @@ str(ns)    # examine the structure of ns
 It is also possible to instantly return all of the main ENA output
 with \texttt{enaAll}:
 
-<<>>=
+<<eval=false>>=
 oyster.ena <- enaAll(oyster)
 names(oyster.ena)
 @
@@ -1173,7 +1194,7 @@ Centrality analysis is a large topic in network science.
 it with the more commonly used eigenvector centrality.  Both of these
 centralities can be calculated in \textit{enaR} as follows:
 
-<<>>=
+<<eval=false>>=
 F <- enaFlow(oyster)
 
 ec <- environCentrality(F$N)
@@ -1228,7 +1249,7 @@ same orientation.
 Here is an example of how to use the model orientation functions to
 re-orient the output from \texttt{enaFlow}:
 
-<<>>=
+<<eval=false>>=
 ###Check the current orientation
 get.orient()
 ###enaFlow output in row-column
@@ -1282,7 +1303,7 @@ model network objects.  To use these models simply use the R
 \textit{base} \texttt{data} function. This will load the models into
 the working memory as a named list of network objects:
 
-<<>>=
+<<eval=false>>=
 ### Import the model sets
 data(bgcModels)
 data(troModels)
@@ -1467,7 +1488,7 @@ selection of models.
 Our first step is to read in the model data for a set of trophic
 models:
 
-<<>>=
+<<eval=false>>=
 data(troModels)
 @
 
@@ -1479,7 +1500,7 @@ analysis across the list of models stored in model.list.
 
 %%%Working on pairing down the balancing example run time
 
-<<>>=
+<<eval=false>>=
 # balance models as necessary
 m.list <- lapply(troModels[1:10],balance)
 
@@ -1512,7 +1533,7 @@ m.list <- troModelsBalanced
 
 @
 
-<<>>=
+<<eval=false>>=
 # Example of extracting just specific information - Indirect Effects Ratio
 IDs <- unlist(lapply(m.list, function(x) enaFlow(x)$ns[8]))
 #Look at the first few ID's
@@ -1520,7 +1541,7 @@ head(IDs)
 @
 
 We can also collect the set of output-oriented integral flow matrices.
-<<>>=
+<<eval=false>>=
 # Here is a list containing only the output-oriented integral flow matrices
 N.list <- lapply(m.list,function(x) enaFlow(x)$N)
 @
@@ -1529,7 +1550,7 @@ We can also apply the \texttt{get.ns} function to extract all of the
 network statistics for each model.  We then use the \texttt{do.call}
 function to reshape the network statistics into a single data frame.
 
-<<>>=
+<<eval=false>>=
 # Collecting and combining all network statistics
 ns.list <- lapply(m.list,get.ns) # returns as list
 ns <- do.call(rbind,ns.list)  # ns as a data.frame
@@ -1544,7 +1565,7 @@ interesting plots for further analysis. Here we focus on results of
 the St.\ Marks Seagrass ecosystem \citep{baird98}.
 
 \SweaveOpts{width=7,height=4.75}
-<<b>>=
+<<b,eval=false>>=
 opar <- par(las=1,mar=c(9,7,2,1),xpd=TRUE,mfrow=c(1,2),oma=c(1,1,0,0))
 x=dim(ns)[1] # number of models
 m.select <- 40:45
@@ -1595,7 +1616,7 @@ Multiple measures of network centrality have been proposed, and the
 ecologists can now use the sna algorithms to determine different types
 of centrality for their models.
 
-<<>>=
+<<eval=false>>=
 betweenness(oyster)
 
 closeness(oyster)
@@ -1638,7 +1659,7 @@ rm(opar)
 In addition to the node-level measures, \textit{sna} includes graph-level
 indices.
 
-<<>>=
+<<eval=false>>=
 centralization(oyster, degree)
 
 centralization(oyster,closeness)
@@ -1655,7 +1676,7 @@ functions in \textit{iGraph} conflict with other functions already defined, so
 care is required when using \textit{iGraph}.
 
 %<<e,eval=true>>=
-<<eval=true>>=
+<<eval=false>>=
 library(igraph)
 ### The adjacency matrix
 A <- St$A
@@ -1677,7 +1698,7 @@ generates a different looking graph (Fig.~\ref{fig:igraph}).
 \caption{Plot of Oyster reef model using \textit{iGraph}}\label{fig:igraph}
 \end{figure}
 
-<<>>=
+<<eval=false>>=
 # betweenness centrality (calculated by iGraph and sna)
 betweenness(g)
 
