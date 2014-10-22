@@ -103,17 +103,18 @@
 %% include your article here, just as usual
 %% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
 
+%%%Ecological Networks introductory paragraph
+
 \section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
 %% Note: If there is markup in \(sub)section, then it has to be escape as above.
 
 Ecosystem Network Analysis (ENA) is a family of algorithms for
-investigating the structure and function of ecosystems
-\cite{borrett12_netecol}.  These systems are modeled as networks of
-thermodynamically conserved energy--matter exchanges in which nodes
-represent the species, groups of species, or non-living componets
-(e.g., dead organic matter) of the ecosystem, and the weighted,
-directed edges are the quantified transfers of energy or matter.  
-
+investigating the structure and function of ecological systems
+\cite{borrett12_netecol}.  These systems are modeled as
+thermodynamically conserved energy--matter exchanges between species,
+groups of species, or non-living componets (e.g., dead organic matter)
+of the ecosystem, and the weighted, directed edges are the quantified
+transfers of energy or matter.
 
 % objectives
 Disparate software packages have been created to support
