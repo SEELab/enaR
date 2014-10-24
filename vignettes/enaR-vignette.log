@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  12 OCT 2014 13:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  24 OCT 2014 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -327,7 +327,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71   \bibpunct
+l.91   \bibpunct
                 {(}{)}{;}{a}{,}{,} % required for natbib
 The package natbib has already been loaded with options:
   [authoryear,round,longnamesfirst]
@@ -384,26 +384,27 @@ LaTeX Warning: Label `fig:aec' multiply defined.
 )
 \openout1 = `enaR-vignette.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 100.
+
  (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -434,7 +435,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring ON on input line 80.
+Package hyperref Info: Link coloring ON on input line 100.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -444,34 +445,35 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count110
 )
-LaTeX Info: Redefining \ref on input line 80.
-LaTeX Info: Redefining \pageref on input line 80.
-LaTeX Info: Redefining \nameref on input line 80.
+LaTeX Info: Redefining \ref on input line 100.
+LaTeX Info: Redefining \pageref on input line 100.
+LaTeX Info: Redefining \nameref on input line 100.
 
 (./enaR-vignette.out) (./enaR-vignette.out)
 \@outlinefile=\write4
 \openout4 = `enaR-vignette.out'.
 
 
-<jsslogo.jpg, id=112, 540.0175pt x 393.47pt>
+<jsslogo.jpg, id=108, 540.0175pt x 393.47pt>
 File: jsslogo.jpg Graphic file (type jpg)
  <use jsslogo.jpg>
-Package pdftex.def Info: jsslogo.jpg used on input line 80.
+Package pdftex.def Info: jsslogo.jpg used on input line 100.
 (pdftex.def)             Requested size: 89.80768pt x 65.43607pt.
-LaTeX Font Info:    Try loading font information for T1+pzc on input line 80.
+LaTeX Font Info:    Try loading font information for T1+pzc on input line 100.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pzc.fd
 File: t1pzc.fd 2001/06/04 font definitions for T1/pzc.
 )
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <28> not available
-(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 80.
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 80.
+(Font)              <10.95> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 80.
+(Font)              <8> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 80.
-LaTeX Font Info:    Try loading font information for T1+aess on input line 80.
+(Font)              <6> on input line 100.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 100.
+
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
@@ -504,26 +506,31 @@ LaTeX Info: Redefining \selectfont on input line 126.
 \JustifyingParindent=\skip66
 )
 
+Package natbib Warning: Citation `fathCITE' on page 1 undefined on input line 1
+18.
+
+
+Package natbib Warning: Citation `pattenCITE' on page 1 undefined on input line
+ 120.
+
+
 Package natbib Warning: Citation `ulanowiczCITE' on page 1 undefined on input l
-ine 100.
+ine 125.
 
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 106.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 131.
 
-LaTeX Font Info:    No file TS1aer.fd. on input line 106.
+LaTeX Font Info:    No file TS1aer.fd. on input line 131.
 
 LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textcopyright' on input line 106.
+(Font)              for symbol `textcopyright' on input line 131.
 
-
-Underfull \vbox (badness 1762) has occurred while \output is active []
-
- [1
+[1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./jsslo
 go.jpg>]
 ! Undefined control sequence.
-l.114 The package is written in the \R
+l.138 The package is written in the \R
                                       \ language, which is free and
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -532,7 +539,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.115 open-source.  Due largely to this, \R
+l.139 open-source.  Due largely to this, \R
                                            \ is now one of the most widely
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -547,7 +554,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.169 \includegraphics[]{enaR-vignette-003}
+l.193 \includegraphics[]{enaR-vignette-003}
                                            
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -555,7 +562,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.191 in \R
+l.215 in \R
            \ that contains the model data for subsequent analysis.  To
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -563,13 +570,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 200.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 224.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 LaTeX Font Info:    Font shape `T1/aer/b/sl' in size <10.95> not available
-(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 258.
+(Font)              Font shape `T1/aer/bx/sl' tried instead on input line 282.
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 2 []
@@ -581,14 +588,14 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 320
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 344
 .
-LaTeX Font Info:    No file TS1aett.fd. on input line 320.
+LaTeX Font Info:    No file TS1aett.fd. on input line 344.
 
 
 LaTeX Font Warning: Font shape `TS1/aett/m/sl' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textquotesingle' on input line 320.
+(Font)              for symbol `textquotesingle' on input line 344.
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -597,7 +604,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 [4]
 ! Undefined control sequence.
-l.451 ...ttt{read.wand} function will create an \R
+l.475 ...ttt{read.wand} function will create an \R
                                                   \
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -618,7 +625,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.499 \begin{align}
+l.523 \begin{align}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -631,7 +638,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.500 \mathbf
+l.524 \mathbf
              {S} = \left[ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -639,7 +646,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.500 \mathbf{S} = \left
+l.524 \mathbf{S} = \left
                         [ \begin{array}{ccc} \mathbf{F} & \vec{z} & \vec{X} \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -651,7 +658,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.503 \end{align}
+l.527 \end{align}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -660,7 +667,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.503 \end{align}
+l.527 \end{align}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -675,7 +682,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 [6]
 ! Undefined control sequence.
-l.552 ...the excellent graphics capabilities of \R
+l.576 ...the excellent graphics capabilities of \R
                                                   \ to make fancier
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -696,7 +703,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.597 \includegraphics[]{enaR-vignette-020}
+l.621 \includegraphics[]{enaR-vignette-020}
                                            
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -710,7 +717,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.598 \includegraphics[]{enaR-vignette-021}
+l.622 \includegraphics[]{enaR-vignette-021}
                                            
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -718,7 +725,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.618 \tableline
+l.642 \tableline
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -727,7 +734,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.632 \tableline
+l.656 \tableline
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -736,11 +743,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 658.
+(Font)              <7> on input line 682.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 658.
+(Font)              <5> on input line 682.
 
-Overfull \hbox (76.6248pt too wide) in paragraph at lines 658--684
+Overfull \hbox (76.6248pt too wide) in paragraph at lines 682--708
  [] 
  []
 
@@ -753,12 +760,12 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [8]
-Overfull \hbox (18.51161pt too wide) in paragraph at lines 713--744
+Overfull \hbox (18.51161pt too wide) in paragraph at lines 737--768
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 713--744
+Underfull \hbox (badness 10000) in paragraph at lines 737--768
 
  []
 
@@ -778,7 +785,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [10]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 838.
+               Default added (so using `tbp') on input line 862.
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -821,7 +828,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1256 \includegraphics[]{enaR-vignette-039}
+l.1280 \includegraphics[]{enaR-vignette-039}
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -841,17 +848,17 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [18] (/usr/local/texlive/2014/texmf-dist/tex/latex/ucs/data/uni-34.def
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
 )
-Overfull \hbox (407.45175pt too wide) in paragraph at lines 1356--1421
+Overfull \hbox (407.45175pt too wide) in paragraph at lines 1380--1445
  [] 
  []
 
 
-Overfull \hbox (86.46198pt too wide) in paragraph at lines 1440--1489
+Overfull \hbox (86.46198pt too wide) in paragraph at lines 1464--1513
  [] 
  []
 
 ! Undefined control sequence.
-l.1512 One advantage of the \textit{enaR} \R
+l.1536 One advantage of the \textit{enaR} \R
                                             \ package is that it simplifies ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -877,7 +884,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1625 \includegraphics[]{enaR-vignette-048}
+l.1649 \includegraphics[]{enaR-vignette-048}
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -885,7 +892,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.1633 ...building the \textit{enaR} package in \R
+l.1657 ...building the \textit{enaR} package in \R
                                                   \ is that
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -894,7 +901,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.1635 ...atistical tools that already exist in \R
+l.1659 ...atistical tools that already exist in \R
                                                   .  We highlight two
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -909,7 +916,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1686 \includegraphics[]{enaR-vignette-051}
+l.1710 \includegraphics[]{enaR-vignette-051}
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -929,7 +936,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1731 \includegraphics[]{enaR-vignette-054}
+l.1755 \includegraphics[]{enaR-vignette-054}
                                             
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -937,7 +944,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.1756 There are other \R
+l.1780 There are other \R
                          \ packages that have graph and network analysis tools,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -946,7 +953,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.1763 Network Analysis in \R
+l.1787 Network Analysis in \R
                              .  The vision for this package is that it will
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -955,7 +962,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.1771 their data with other \R
+l.1795 their data with other \R
                                \ packages for graph and network analysis like
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1000,14 +1007,14 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 Package natbib Warning: There were undefined citations.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1778--1778
+Underfull \hbox (badness 10000) in paragraph at lines 1802--1802
 
  []
 
 LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <13> not available
-(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 1778.
+(Font)              Font shape `T1/pzc/mb/it' tried instead on input line 1802.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1778.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1802.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/aer/m/n/10.95 28 []
@@ -1029,13 +1036,13 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1778.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1802.
  (./enaR-vignette.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1778.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1778.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1802.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1802.
 
 Package rerunfilecheck Info: File `enaR-vignette.out' has not changed.
-(rerunfilecheck)             Checksum: 49DA9963B122E7BFEB6081BAEE72D9AE;2922.
+(rerunfilecheck)             Checksum: C026687596C20E775859CC4700EA918A;2831.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1043,13 +1050,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1778.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1802.
  ) 
 Here is how much of TeX's memory you used:
- 8761 strings out of 493117
- 128361 string characters out of 6135433
- 275783 words of memory out of 5000000
- 11835 multiletter control sequences out of 15000+600000
+ 8760 strings out of 493117
+ 128290 string characters out of 6135433
+ 275785 words of memory out of 5000000
+ 11836 multiletter control sequences out of 15000+600000
  56166 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,12n,34p,360b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1082,10 +1089,10 @@ pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 ublic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
 blic/cm-super/sfrm1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 zapfchan/uzcmi8a.pfb>
-Output written on enaR-vignette.pdf (31 pages, 455911 bytes).
+Output written on enaR-vignette.pdf (31 pages, 455813 bytes).
 PDF statistics:
- 988 PDF objects out of 1000 (max. 8388607)
- 901 compressed objects within 10 object streams
- 189 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 983 PDF objects out of 1000 (max. 8388607)
+ 897 compressed objects within 9 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

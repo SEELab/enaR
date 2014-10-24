@@ -38,18 +38,17 @@
 \Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
 
 %% an abstract and keywords
-\Abstract{
-  Ecosystem Network Analysis (ENA) provides a framework for
+\Abstract{ Ecosystem Network Analysis (ENA) provides a framework for
   investigating the structure, function and dynamics of ecological
-  systems, primarily ecosystem models with physically conserved
-  units. Here, we present the \textit{enaR} package, which provides a
-  broad representation of many of the core tools developed by the ENA
-  community, detailing how to use the primary functions of the package
-  for the analysis of single models or simultaneous, synthetic
-  analysis of multiple ecosystem models.
-}
-\Keywords{ecology, ENA, ecosystems, species interactions, networks, \proglang{R}}
-\Plainkeywords{ecology, ENA, ecosystems, species interactions, networks, R} %% without formatting
+  systems. Here, we present the \textit{enaR} package, which provides
+  a broad representation of many of the core tools developed by the
+  ENA community. We a detailed description of how to use the primary
+  functions of the package for the analysis of single models or
+  simultaneous, synthetic analysis of multiple ecosystem models.}
+
+\Keywords{ecology, ENA, ecosystems, species interactions, networks,
+  \proglang{R}} \Plainkeywords{ecology, ENA, ecosystems, species
+  interactions, networks, R} %% without formatting
 %% at least one keyword must be supplied
 
 %% publication information
@@ -105,8 +104,8 @@
 
 %%%Ecological Networks introductory paragraph
 
-\section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
 %% Note: If there is markup in \(sub)section, then it has to be escape as above.
+
 
 Ecosystem Network Analysis (ENA) is a family of algorithms for
 investigating the structure and function of ecological systems
@@ -114,10 +113,13 @@ investigating the structure and function of ecological systems
 thermodynamically conserved energy--matter exchanges between species,
 groups of species, or non-living componets (e.g., dead organic matter)
 of the ecosystem, and the weighted, directed edges are the quantified
-transfers of energy or matter.
+transfers of energy or matter. Constructing these models is no small
+task \cite{fathCITE}; however, the system level analysis that ENA
+provides can reveal often surprising unsights into the behavior of
+complex systems \cite{pattenCITE, bondavalliCITE}. 
 
 % objectives
-Disparate software packages have been created to support
+Multiple, independent software packages have been created to support
 ENA. Initially algorithms were developed and distributed as the DOS
 based NETWRK4, which is still available from \cite{ulanowiczCITE}.
 Some of these algorithms were reimplemented in an Microsoft Excel
@@ -128,8 +130,7 @@ recently, \citet{fath06} published NEA.m that collects many ENA
 algorithms together in a single MATLAB\copyright function. Although
 these packages collectively provide access to a large set of powerful
 analytical tools, the fragmented distribution of these algorithms has
-inhibited the development of theory and the further implementation of
-important aoglorithms. 
+inhibited the development and further implementation of theory.
 
 The \textit{enaR} package brings together ENA algorithms into one
 common software framework that is readily available and extensible.

@@ -1,5 +1,26 @@
 \documentclass[article]{jss}
 
+%%%%Re-organization based on SRB notes
+%%Intro
+%%Ecosystem Networks purpose and structure of models
+%%1.network ecology
+%%2.ENA
+%%3.previous software and enaR
+%%ENA network models
+%%1. describe models
+%%2. model construction
+%%3. mathematical description
+%%ENA analyses
+%%1. provided models
+%%2. visualization
+%%3. model input
+%%4+. analyses
+%%n. batch processing
+%%Conclusion
+%%1.Connecting to other packages
+%%2.Future directions
+%%3.Contributing
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% declarations for jss.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,18 +38,17 @@
 \Shorttitle{\pkg{enaR}: Ecosystem Network Analyses with R} %% a short title (if necessary)
 
 %% an abstract and keywords
-\Abstract{
-  Ecosystem Network Analysis (ENA) provides a framework for
+\Abstract{ Ecosystem Network Analysis (ENA) provides a framework for
   investigating the structure, function and dynamics of ecological
-  systems, primarily ecosystem models with physically conserved
-  units. Here, we present the \textit{enaR} package, which provides a
-  broad representation of many of the core tools developed by the ENA
-  community, detailing how to use the primary functions of the package
-  for the analysis of single models or simultaneous, synthetic
-  analysis of multiple ecosystem models.
-}
-\Keywords{ecology, ENA, ecosystems, species interactions, networks, \proglang{R}}
-\Plainkeywords{ecology, ENA, ecosystems, species interactions, networks, R} %% without formatting
+  systems. Here, we present the \textit{enaR} package, which provides
+  a broad representation of many of the core tools developed by the
+  ENA community. We a detailed description of how to use the primary
+  functions of the package for the analysis of single models or
+  simultaneous, synthetic analysis of multiple ecosystem models.}
+
+\Keywords{ecology, ENA, ecosystems, species interactions, networks,
+  \proglang{R}} \Plainkeywords{ecology, ENA, ecosystems, species
+  interactions, networks, R} %% without formatting
 %% at least one keyword must be supplied
 
 %% publication information
@@ -82,20 +102,25 @@
 %% include your article here, just as usual
 %% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
 
-\section[Ecosystem Network Analysis]{Ecosystem Network Analysis}
+%%%Ecological Networks introductory paragraph
+
 %% Note: If there is markup in \(sub)section, then it has to be escape as above.
 
-Ecosystem Network Analysis (ENA) is a family of algorithms for
-investigating the structure and function of ecosystems
-\cite{borrett12_netecol}.  These systems are modeled as networks of
-thermodynamically conserved energy--matter exchanges in which nodes
-represent the species, groups of species, or non-living componets
-(e.g., dead organic matter) of the ecosystem, and the weighted,
-directed edges are the quantified transfers of energy or matter.  
 
+
+Ecosystem Network Analysis (ENA) is a family of algorithms for
+investigating the structure and function of ecological systems
+\cite{borrett12_netecol}.  These systems are modeled as
+thermodynamically conserved energy--matter exchanges between species,
+groups of species, or non-living componets (e.g., dead organic matter)
+of the ecosystem, and the weighted, directed edges are the quantified
+transfers of energy or matter. Constructing these models is
+no small task \cite{fathCITE}; however, the system level, macroscopic
+analysis that ENA provides can reveal important and often surprising
+unsights into the behavior of complex systems \cite{pattenCITE}.
 
 % objectives
-Disparate software packages have been created to support
+Multiple, independent software packages have been created to support
 ENA. Initially algorithms were developed and distributed as the DOS
 based NETWRK4, which is still available from \cite{ulanowiczCITE}.
 Some of these algorithms were reimplemented in an Microsoft Excel
@@ -106,8 +131,7 @@ recently, \citet{fath06} published NEA.m that collects many ENA
 algorithms together in a single MATLAB\copyright function. Although
 these packages collectively provide access to a large set of powerful
 analytical tools, the fragmented distribution of these algorithms has
-inhibited the development of theory and the further implementation of
-important aoglorithms. 
+inhibited the development and further implementation of theory.
 
 The \textit{enaR} package brings together ENA algorithms into one
 common software framework that is readily available and extensible.
@@ -315,7 +339,7 @@ hypothetical data.
 \begin{Sinput}
 > # generate the flow matrix
 > flow.mat <- array(abs(rnorm(100,4,2))*sample(c(0,1),100,replace=TRUE),
-+                    dim=c(4,4))
++                   dim=c(4,4))
 > # name the nodes
 > rownames(flow.mat) <- colnames(flow.mat) <- paste('node',(1:nrow(flow.mat)),sep='')
 > # generate the inputs
@@ -324,9 +348,9 @@ hypothetical data.
 > exports <- inputs
 > # pack
 > fake.model <- pack(flow=flow.mat,
-+                     input=inputs,
-+                     export=exports,
-+                     living=TRUE)
++                    input=inputs,
++                    export=exports,
++                    living=TRUE)
 > # model
 > fake.model
 \end{Sinput}
@@ -557,8 +581,8 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 \begin{Sinput}
 > # set colors to use
 > my.col=c("red","yellow",
-+    rgb(204,204,153,maxColorValue=255),
-+    "grey22")
++   rgb(204,204,153,maxColorValue=255),
++   "grey22")
 > F=m%n%'flow'                   # extract flow information for later use.
 > f=which(F!=0, arr.ind=T)       # get indices of positive flows
 > opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
@@ -568,18 +592,18 @@ plot of the same data (Fig.~\ref{fig:oyster}(right)).
 >                                # orientation each time the plot
 >                                # function is called.
 > plot(m,
-+       vertex.cex=log(m%v%'storage'), # scale nodes with storage
-+       label= m%v%'vertex.names',     # add node labels
-+       boxed.labels=FALSE,
-+       label.cex=0.65,
-+       vertex.sides=45,   # to make rounded
-+       edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
-+       edge.col=my.col[3],
-+       vertex.col=my.col[1],
-+       label.col="white",
-+       vertex.border = my.col[3],
-+       vertex.lty = 1,
-+       xlim=c(-4,1),ylim=c(-2,-2))
++      vertex.cex=log(m%v%'storage'), # scale nodes with storage
++      label= m%v%'vertex.names',     # add node labels
++      boxed.labels=FALSE,
++      label.cex=0.65,
++      vertex.sides=45,   # to make rounded
++      edge.lwd=log10(abs(F[f])),     # scale arrows to flow magnitude
++      edge.col=my.col[3],
++      vertex.col=my.col[1],
++      label.col="white",
++      vertex.border = my.col[3],
++      vertex.lty = 1,
++      xlim=c(-4,1),ylim=c(-2,-2))
 > rm(opar)             # remove changes to the plotting parameters
 \end{Sinput}
 \end{Schunk}
@@ -1238,12 +1262,12 @@ Centralities.
 > # find centrality order
 > o <- order(ec$AEC,decreasing=TRUE)
 > bp <- barplot(ec$AEC[o],     # create barplot
-+                names.arg=NA,
-+                ylab="Average Environ Centrality",
-+                col="black",border=NA)
++               names.arg=NA,
++               ylab="Average Environ Centrality",
++               col="black",border=NA)
 > text(bp,-0.008,                # add labels
-+       labels=names(ec$AEC)[o],
-+       srt=35,adj=1,cex=1)
++      labels=names(ec$AEC)[o],
++      srt=35,adj=1,cex=1)
 > rm(opar)  # remove the plotting parameters
 \end{Sinput}
 \end{Schunk}
@@ -1600,17 +1624,17 @@ the St.\ Marks Seagrass ecosystem \citep{baird98}.
 > x=dim(ns)[1] # number of models
 > m.select <- 40:45
 > bp=barplot(ns$ID.F[m.select],ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-+          col="darkgreen",border=NA,ylim=c(0,2))
++         col="darkgreen",border=NA,ylim=c(0,2))
 > text(bp,-0.05,                # add labels
-+       labels=rownames(ns)[m.select],
-+         srt=45,adj=1,cex=0.85)
++      labels=rownames(ns)[m.select],
++        srt=45,adj=1,cex=0.85)
 > opar <- par(xpd=FALSE)
 > abline(h=1,col="orange",lwd=2)
 > #
 > plot(ns$FCI,ns$ID.F,pch=20,col="blue",cex=2,
-+       ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
-+       xlab="Finn Cycling Index (FCI)",
-+       xlim=c(0,0.8),ylim=c(0,8))
++      ylab="Indirect-to-Direct Flow Ratio (I/D, Realized)",
++      xlab="Finn Cycling Index (FCI)",
++      xlim=c(0,0.8),ylim=c(0,8))
 > #
 > rm(opar)  # remove the plotting parameters
 \end{Sinput}
@@ -1671,8 +1695,8 @@ well. For example, it will create a target diagram of centralities.
 > opar <- par(xpd=TRUE,mfrow=c(1,1))
 > # create target plot
 > gplot.target(m,b,#circ.lab=FALSE,
-+               edge.col="grey",
-+               label=nms) # show only labels of most central nodes
++              edge.col="grey",
++              label=nms) # show only labels of most central nodes
 >              #xlim=c(-1,4))
 > rm(opar)
 \end{Sinput}

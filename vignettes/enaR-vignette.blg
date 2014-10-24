@@ -4,11 +4,13 @@ The top-level auxiliary file: enaR-vignette.aux
 The style file: jss.bst
 Database file #1: srbbib_abb.bib
 Database file #2: srb.bib
+Warning--I didn't find a database entry for "fathCITE"
+Warning--I didn't find a database entry for "pattenCITE"
 Warning--I didn't find a database entry for "ulanowiczCITE"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 85 entries,
             3140 wiz_defined-function locations,
-            1211 strings with 20092 characters,
+            1215 strings with 20128 characters,
 and the built_in function-call counts, 78307 in all, are:
 = -- 6557
 > -- 2118
@@ -47,4 +49,4 @@ warning$ -- 0
 while$ -- 653
 width$ -- 0
 write$ -- 1139
-(There was 1 warning)
+(There were 3 warnings)
