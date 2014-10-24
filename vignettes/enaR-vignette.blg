@@ -5,48 +5,47 @@ The style file: jss.bst
 Database file #1: srbbib_abb.bib
 Database file #2: srb.bib
 Warning--I didn't find a database entry for "fathCITE"
-Warning--I didn't find a database entry for "pattenCITE"
 Warning--I didn't find a database entry for "ulanowiczCITE"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 85 entries,
+You've used 92 entries,
             3140 wiz_defined-function locations,
-            1215 strings with 20128 characters,
-and the built_in function-call counts, 78307 in all, are:
-= -- 6557
-> -- 2118
-< -- 63
-+ -- 818
-- -- 704
-* -- 6580
-:= -- 10566
-add.period$ -- 351
-call.type$ -- 85
-change.case$ -- 584
-chr.to.int$ -- 82
-cite$ -- 85
-duplicate$ -- 7025
-empty$ -- 7195
-format.name$ -- 974
-if$ -- 15967
+            1247 strings with 21186 characters,
+and the built_in function-call counts, 85386 in all, are:
+= -- 7138
+> -- 2332
+< -- 68
++ -- 899
+- -- 776
+* -- 7185
+:= -- 11520
+add.period$ -- 377
+call.type$ -- 92
+change.case$ -- 637
+chr.to.int$ -- 89
+cite$ -- 92
+duplicate$ -- 7661
+empty$ -- 7854
+format.name$ -- 1072
+if$ -- 17426
 int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 1075
-newline$ -- 446
-num.names$ -- 351
-pop$ -- 2294
+missing$ -- 1168
+newline$ -- 481
+num.names$ -- 381
+pop$ -- 2505
 preamble$ -- 1
-purify$ -- 572
+purify$ -- 623
 quote$ -- 0
-skip$ -- 1544
+skip$ -- 1676
 stack$ -- 0
-substring$ -- 7334
-swap$ -- 2378
-text.length$ -- 11
+substring$ -- 8000
+swap$ -- 2574
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 750
+type$ -- 804
 warning$ -- 0
-while$ -- 653
+while$ -- 710
 width$ -- 0
-write$ -- 1139
-(There were 3 warnings)
+write$ -- 1228
+(There were 2 warnings)

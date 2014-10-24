@@ -1,4 +1,4 @@
-\begin{thebibliography}{85}
+\begin{thebibliography}{92}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -74,6 +74,12 @@ Baird D, Ulanowicz RE, Boynton WR (1995).
 \newblock \enquote{Seasonal nitrogen dynamics in {Chesapeake Bay}---a network
   approach.}
 \newblock \emph{Estuar. Coast. Shelf Sci.}, \textbf{41}(2), 137--162.
+
+\bibitem[{Belgrano \emph{et~al.}(2005)Belgrano, Scharler, Dunne, and
+  Ulanowicz}]{belgrano05}
+Belgrano A, Scharler UM, Dunne J, Ulanowicz RE (2005).
+\newblock \emph{Aquatic Food Webs: An Ecosystem Approach}.
+\newblock Oxford University Press, New York, NY.
 
 \bibitem[{Borrett(2013)}]{borrett13}
 Borrett SR (2013).
@@ -172,6 +178,12 @@ Caswell H (2001).
   Interpretation}.
 \newblock 2nd edition. Sinauer Associates, Sunderland, Mass.
 
+\bibitem[{Chen and Chen(2012)}]{chen12}
+Chen S, Chen B (2012).
+\newblock \enquote{Network Environ Perspective for Urban Metabolism and Carbon
+  Emissions: A Case Study of Vienna, Austria.}
+\newblock \emph{Environ. Sci. Tech.}, \textbf{46}(8), 4498--4506.
+
 \bibitem[{Christensen(1995)}]{christensen95}
 Christensen V (1995).
 \newblock \enquote{Ecosystem maturity---Towards quantification.}
@@ -267,6 +279,16 @@ Heymans JJ, Baird D (2000).
   {B}enguela upwelling system, {N}amibia.}
 \newblock \emph{Ecol. Model.}, \textbf{126}, 9--32.
 
+\bibitem[{Higashi and Burns(1991)}]{higashi91}
+Higashi M, Burns TP (1991).
+\newblock \emph{Theoretical studies of ecosystems: The network perspective}.
+\newblock Cambridge University Press, Cambridge.
+
+\bibitem[{Higashi and Patten(1989)}]{higashi89}
+Higashi M, Patten BC (1989).
+\newblock \enquote{Dominance of indirect causality in ecosystems.}
+\newblock \emph{Am. Nat.}, \textbf{133}, 288--302.
+
 \bibitem[{Hines \emph{et~al.}(2012)Hines, Lisa, Song, Tobias, and
   Borrett}]{hines12}
 Hines DE, Lisa JA, Song B, Tobias CR, Borrett SR (2012).
@@ -286,6 +308,14 @@ Hinrichsen U, Wulff F (1998).
 Jordan CF, Kline JR, Sasscer DS (1972).
 \newblock \enquote{Relative stability of mineral cycles in forest ecosystems.}
 \newblock \emph{Am. Nat.}, \textbf{106}, 237--253.
+
+\bibitem[{J{\o}rgensen \emph{et~al.}(2007)J{\o}rgensen, Fath, Bastianoni,
+  Marques, M\"{u}ller, Nielsen, Patten, Tiezzi, and
+  Ulanowicz}]{jorgensen07_newecology}
+J{\o}rgensen SE, Fath BD, Bastianoni S, Marques JC, M\"{u}ller F, Nielsen S,
+  Patten BC, Tiezzi E, Ulanowicz RE (2007).
+\newblock \emph{A new ecology: Systems perspective}.
+\newblock Elsevier, Amsterdam.
 
 \bibitem[{Leontief(1936)}]{leontief1936}
 Leontief W (1936).
@@ -351,6 +381,14 @@ Patr{\'\i}cio J, Marques JC (2006).
   gradient of eutrophication symptoms in the south arm of the{ Mondego estuary
   (Portugal)}.}
 \newblock \emph{Ecol. Model.}, \textbf{197}(1), 21--34.
+
+\bibitem[{Patten(1983)}]{patten83}
+Patten B (1983).
+\newblock \enquote{On the quantitative dominance of indirect effects in
+  ecosystems.}
+\newblock In WK~Lauenroth, GV~Skogerboe, M~Flug (eds.), \emph{Analysis of
+  Ecological Systems: State-of-the-art in Ecological Modelling}, pp. 27--37.
+  Elsevier, Amsterdam.
 
 \bibitem[{Patten(1978)}]{patten78}
 Patten BC (1978).
@@ -562,5 +600,11 @@ Whipple SJ, Patten BC (1993).
 \newblock \enquote{The problem of nontrophic processes in trophic ecology:
   Toward a network unfolding solution.}
 \newblock \emph{J. Theor. Biol.}, \textbf{163}, 393--411.
+
+\bibitem[{Zhang \emph{et~al.}(2010)Zhang, Yang, and Fath}]{zhang10}
+Zhang Y, Yang Z, Fath B (2010).
+\newblock \enquote{Ecological network analysis of an urban water metabolic
+  system: Model development, and a case study for {B}eijing.}
+\newblock \emph{Sci. Total Env.}, \textbf{408}, 4702--4711.
 
 \end{thebibliography}

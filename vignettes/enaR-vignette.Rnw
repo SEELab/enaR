@@ -1,5 +1,9 @@
 \documentclass[article]{jss}
 
+%%Tasks
+%1. Section 1.3 re-write to incorporate new mode of accessing attributes
+%2. 
+
 %%%%Re-organization based on SRB notes
 %%Intro
 %%Ecosystem Networks purpose and structure of models
@@ -42,9 +46,9 @@
   investigating the structure, function and dynamics of ecological
   systems. Here, we present the \textit{enaR} package, which provides
   a broad representation of many of the core tools developed by the
-  ENA community. We a detailed description of how to use the primary
-  functions of the package for the analysis of single models or
-  simultaneous, synthetic analysis of multiple ecosystem models.}
+  ENA community. We provide a detailed description of how to use the
+  primary functions of the package for the analysis of single models
+  and simultaneous, synthetic analysis of multiple ecosystem models.}
 
 \Keywords{ecology, ENA, ecosystems, species interactions, networks,
   \proglang{R}} \Plainkeywords{ecology, ENA, ecosystems, species
@@ -116,7 +120,15 @@ of the ecosystem, and the weighted, directed edges are the quantified
 transfers of energy or matter. Constructing these models is no small
 task \cite{fathCITE}; however, the system level analysis that ENA
 provides can reveal often surprising unsights into the behavior of
-complex systems \cite{pattenCITE, bondavalliCITE}. 
+complex systems and from these applications a new theoretical
+understanding of ecosystems has emerged \citep{higashi91, belgrano05,
+  jorgensen07_newecology}.  For example, ENA has been used to show the
+importance of indirect effects in ecosystems \citep{patten83,
+  higashi89, salas11_did}.  Recently, scientists have been applying
+these methods to understand trophic dynamics
+\citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in estuaries
+\cite{christian03, hines12}, and urban sustainability \citep{zhang10,
+  chen12}.
 
 % objectives
 Multiple, independent software packages have been created to support
@@ -134,8 +146,8 @@ inhibited the development and further implementation of theory.
 
 The \textit{enaR} package brings together ENA algorithms into one
 common software framework that is readily available and extensible.
-The package is written in the \R\ language, which is free and
-open-source.  Due largely to this, \R\ is now one of the most widely
+The package is written in the \textbf{R} language, which is free and
+open-source.  Due largely to this, \textbf{R} is now one of the most widely
 used analytical programming lanuages in the biological
 sciences. \textit{enaR} builds on previously developed tools for
 network analysis. For example, it uses the \textit{network} data
@@ -147,8 +159,6 @@ this article we introduce the user to ENA concepts and algorithms,
 provide description of how to input ecosystem network models and give
 detailed description of how to conduct these analyses using
 \textit{enaR}.
-
-
 
 \SweaveOpts{width=6,height=4}
 
@@ -164,35 +174,10 @@ citation('enaR')
 @
 
 
-
-\begin{figure}
-  \center
-%% <<fig=true,echo=false>>=
-%% <<z>>
-%% @
-\includegraphics[]{enaR-vignette-003}
-\caption{A plot of the \textit{enaR} function relationships. Edges
-  point \textit{from} a function that provides information \textit{to}
-  the function that receives that information.} \label{fig:fig}
-\end{figure}
-
-% % use
-% The analysis has been used in a variety of ways, including to show the
-% relative importance of indirect effects in ecosystems \citep{patten83,
-%   higashi89, salas11_did} and their capacity to effectively transform
-% the relations among organisms \citep{ulanowicz90, patten91, fath98,
-%   bondavalli99}.  From these applications a new theoretical
-% understanding of ecosystems has emerged \citep{higashi91, belgrano05,
-%   jorgensen07_newecology}.  Recently, scientists have been applying
-% these methods to understand trophic dynamics in the Sylt-R{\o}m{\o}
-% Bight \citep{baird04_sylt,baird08_sylt}, biogeochemical cycling in
-% estuaries \cite{christian03, hines12}, and urban sustainability
-% \citep{zhang10, chen12}.
-
 \section{Data Input: General}
 In this section we describe the data necessary for the Ecological
 Network Analysis and show how to build the central network data object
-in \R\ that contains the model data for subsequent analysis.  To
+in \textbf{R} that contains the model data for subsequent analysis.  To
 start, we assume you have installed the enaR package, and then loaded
 the library as follows:
 
@@ -444,7 +429,7 @@ In part to make ENA more accessible to biologists,
 into a Microsoft Excel based tool called WAND.  For this tool, the
 model data is stored as a separate Excel file with two worksheets.
 The first contains many of the node attributes and the second contains the
-flow matrix.  The \texttt{read.wand} function will create an \R\
+flow matrix.  The \texttt{read.wand} function will create an \textbf{R}
 network data object from a WAND model file. An example WAND file can
 be found at \url{http://people.uncw.edu/borretts/data/MDmar02_WAND.xls}.
 
@@ -537,7 +522,7 @@ set.seed(2)    # set random seed to control plot
 plot(m)       # plot network data object (uses plot.network)
 @
 
-We can use the excellent graphics capabilities of \R\ to make fancier
+We can use the excellent graphics capabilities of \textbf{R} to make fancier
 plot of the same data (Fig.~\ref{fig:oyster}(right)).
 
 \SweaveOpts{width=3,height=3}
@@ -1455,7 +1440,7 @@ compare ecosystem models \citep[e.g.,][]{baird91, baird95, christian03,
 determine the generality of hypothesized ecosystem properties
 \citep[e.g.,][]{christensen95, borrett10_hmg, salas11_did}.  For both
 of these applications, investigators need to analyze multiple models.
-One advantage of the \textit{enaR} \R\ package is that it simplifies this
+One advantage of the \textit{enaR} \textbf{R} package is that it simplifies this
 batch processing.  Here we illustrate how to batch analyze a
 selection of models.
 
@@ -1573,7 +1558,7 @@ rm(opar)  # remove the plotting parameters
 
 
 \section{Connecting to Other Useful Packages}
-Another advantage of building the \textit{enaR} package in \R\ is that
+Another advantage of building the \textit{enaR} package in \textbf{R} is that
 it lets ecologists take advantage of other types of network analysis
 and statistical tools that already exist in \R.  We highlight two
 examples here.
@@ -1697,7 +1682,7 @@ detach(package:igraph)  # detach igraph package
 
 
 
-There are other \R\ packages that have graph and network analysis tools,
+There are other \textbf{R} packages that have graph and network analysis tools,
 like Bioconductor, that might also be useful for ecologists
 
 
@@ -1712,7 +1697,7 @@ both ascendency calculations and mixed trophic impacts from the
 Ulanowicz school of ENA, but there remains many possibilities for
 future development.  We hope to do this in collaboration with
 users. This vignette also illustrates how users can further analyze
-their data with other \R\ packages for graph and network analysis like
+their data with other \textbf{R} packages for graph and network analysis like
 \textit{sna} and \textit{iGraph}.  In summary, we hope you find this
 package useful for your ENA needs.
 
