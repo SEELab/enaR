@@ -25,9 +25,9 @@ enaControl(x, zero.na = TRUE, balance.override = FALSE)
 \value{
 \item{CN}{Control matrix using flow values.}
 \item{CQ}{Control matrix using storage values.}
-\item{CR}{Schramski's Control Ratio Matrix}
-\item{CD}{Schramski's Control Difference Matrix}
-\item{sc}{Schramski's System Control vector}
+\item{CR}{Schramski Control Ratio Matrix}
+\item{CD}{Schramski Control Difference Matrix}
+\item{sc}{Schramski System Control vector}
 }
 \references{
   Fath, B. D., Borrett, S. R. 2006. A MATLAB function for Network Environ
@@ -36,19 +36,20 @@ enaControl(x, zero.na = TRUE, balance.override = FALSE)
   Schramski, J.R., Gattie, D.K., Patten, B.C., Borrett S.R., Fath, B.D., 
   Thomas, C.R., and Whipple, S.J. 2007. Indirect effects and distributed 
   control in ecosystems: Distributed control in the environ networks of 
-  a seven-compartment model of nitrogen flow in the {Neuse River Estuary,
-  USA}-Steady-state analysis. Ecological Modelling 206 (1):18-30
+  a seven compartment model of nitrogen flow in the Neuse River Estuary,
+  USA Steady-state analysis. Ecological Modelling 206 (1):18-30
   
   Whipple, S.J., Borrett S.R., Patten, B.C., Gattie, D.K., Schramski, J.R.,
   and Bata, S.A. 2007. Indirect effects and distributed control in ecosystems:
   Comparative network environ analysis of a seven-compartment model of 
-  nitrogen flow in the Neuse River Estuary, USA—Time series analysis. 
+  nitrogen flow in the Neuse River Estuary, USA-Time series analysis. 
   Ecological Modelling 206(1):1-17
   	 
 }
 \author{
   Matthew K. Lau (mkl48@nau.edu)
   Stuart R. Borrett (borretts@uncw.edu)
+  Pawandeep Singh (singhp@uncw.edu)
 }
 
 \seealso{
