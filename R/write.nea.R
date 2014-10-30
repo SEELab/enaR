@@ -1,4 +1,4 @@
-# write.nea.R
+#' write.nea.R
 # INPUT = enaR network data object
 # Ouput = CSV formatted file with data arranged as expected input for NEA.m
 #
