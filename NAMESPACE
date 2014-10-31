@@ -1,6 +1,2 @@
 exportPattern("^[[:alpha:]]+")
-importFrom(sna)
-importFrom(network)
-importFrom(MASS)
-importFrom(stringr)
-importFrom(gdata)
+
