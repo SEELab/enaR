@@ -1,3 +1,3 @@
 exportPattern("^[[:alpha:]]+")
 importFrom(gdata, read.xls)
-import(MASS,statnet,stringr)
+import(MASS,network,stringr)
