@@ -1,9 +1,9 @@
-# get.ns.R
-# Input = network model
-# Output = a vector of global network statistics from ena
-#
-# Borrett | July 4, 2012
-# -----------------------------------
+#' get.ns.R
+#' Input = network model
+#' Output = a vector of global network statistics from ena
+#'
+#' Borrett | July 4, 2012
+#' -----------------------------------
 
 get.ns <- function(x,balance.override=FALSE){
                                         #Check for network class

@@ -1,10 +1,10 @@
-# environCentrality --- calculates the centrality of 
-# flow network environs
-# INPUT = environ matrix
-# OUTPUT = in-going, out-going and average centralities
-# 
-# M. Lau | July 2011
-# ---------------------------------------------------
+#' environCentrality --- calculates the centrality of 
+#' flow network environs
+#' INPUT = environ matrix
+#' OUTPUT = in-going, out-going and average centralities
+#' 
+#' M. Lau | July 2011
+#' ---------------------------------------------------
 
 environCentrality <- function(x='matrix'){
   if (class(x) != 'matrix'){warning('x is not a matrix class object')}

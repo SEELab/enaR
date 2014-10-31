@@ -1,8 +1,8 @@
-# structure.statistics --- calculates structural statistics
-# INPUT = an adjacency matrix
-# OUTPUT = list of structural statistics
-# S. Borrett | July 2011
-# ------------------------------------
+#' structure.statistics --- calculates structural statistics
+#' INPUT = an adjacency matrix
+#' OUTPUT = list of structural statistics
+#' S. Borrett | July 2011
+#' ------------------------------------
 
 structure.statistics <- function(A='adjacency matrix'){
   if (class(A) != 'matrix'){warning('A is not a matrix class object')}

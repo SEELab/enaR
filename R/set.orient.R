@@ -1,9 +1,9 @@
-# set.orient --- globally reorients matrices
-# INPUT = matrix orientation (rc or cr)
-# OUTPUT = sets the expected orientation of matrices
-# 
-# M. Lau | Feb 2013
-# ---------------------------------------------------
+#' set.orient --- globally reorients matrices
+#' INPUT = matrix orientation (rc or cr)
+#' OUTPUT = sets the expected orientation of matrices
+#' 
+#' M. Lau | Feb 2013
+#' ---------------------------------------------------
 
 set.orient <- local({
   orientation <- 'rc'

@@ -1,6 +1,6 @@
-# R function to read in a matrix formatted as Mdloti (Ursula Sharler)
-# Borrett | Sept. 12, 2012, MKL July 2013
-# ------------------------
+#' R function to read in a matrix formatted as Mdloti (Ursula Sharler)
+#' Borrett | Sept. 12, 2012, MKL July 2013
+#' ------------------------
 
 read.enam<- function(file="file path and name"){
                                         #I have assumed the file is formatted as an excel speadsheet.

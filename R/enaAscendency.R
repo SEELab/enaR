@@ -1,10 +1,10 @@
-# enaAscendency --- calculates the ascendency statistics
-# of Ulanowicz
-# INPUT = network object
-# OUTPUT = matrix of ascendency statistics
-# 
-# D. Hines | December 2011
-# ---------------------------------------------------
+#' enaAscendency --- calculates the ascendency statistics
+#' of Ulanowicz
+#' INPUT = network object
+#' OUTPUT = matrix of ascendency statistics
+#' 
+#' D. Hines | December 2011
+#' ---------------------------------------------------
 
 enaAscendency <- function(x='network object'){
 
@@ -12,7 +12,7 @@ enaAscendency <- function(x='network object'){
     warning('Model is missing either export or respiration. Calculations may not be correct.')
   }
 
-######## set initial conditions for calculations #########
+#'####### set initial conditions for calculations #########
   T.ulan <- as.extended(x)
   N <- ncol(T.ulan) # set up N
   r.td <- c.ld <- t.ulan <- ami <- mat.or.vec(N,N) # initialize ascendency matrix
@@ -21,7 +21,7 @@ enaAscendency <- function(x='network object'){
                                         #calculate total system throughPUT
   TSTp <- sum(T.ulan)
   
-#################### calculate AMI #######################
+#'################### calculate AMI #######################
   
                                         # loop through T.ulan to calculate AMI
   for (i in 1:N){
@@ -36,11 +36,11 @@ enaAscendency <- function(x='network object'){
   
   AMI <- sum(ami)
   
-################# calculate ascendency ###################
+#'################ calculate ascendency ###################
   
   ASC <- TSTp*AMI
   
-################# calculate overhead  ####################
+#'################ calculate overhead  ####################
   
                                         # loop through T.ulan to calculate overhead
   for (i in 1:N){
@@ -55,7 +55,7 @@ enaAscendency <- function(x='network object'){
   
   OH <- -sum(oh)
   
-############### calculate capacity (long) ###############
+#'############## calculate capacity (long) ###############
   
                                         # loop through T.ulan to calculate capacity
   for (i in 1:N){
@@ -70,12 +70,12 @@ enaAscendency <- function(x='network object'){
   
   CAP <- -sum(cap)
   
-############## calculate capacity (short) ################
+#'############# calculate capacity (short) ################
   
   CAP2 <- ASC+OH
   
   
-#################### calculate ratios ####################
+#'################### calculate ratios ####################
   
                                         # ratio for ascendency/capacity
   ASC.CAP <- ASC/CAP

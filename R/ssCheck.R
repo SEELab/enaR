@@ -1,12 +1,12 @@
-# ssCheck --- checks if the given network
-# is out of balance by a given tolerance
-# threshold
-# INPUT = network object
-# OUTPUT = logical indicating violation of
-# tolerance
-# NOTE: used in the balancing process
-# M. Lau | July 2011
-# ------------------------------------
+#' ssCheck --- checks if the given network
+#' is out of balance by a given tolerance
+#' threshold
+#' INPUT = network object
+#' OUTPUT = logical indicating violation of
+#' tolerance
+#' NOTE: used in the balancing process
+#' M. Lau | July 2011
+#' ------------------------------------
 
 ssCheck <- function(x,tol=5,more=FALSE,zero.na=TRUE){
                                         #Check for network class object

@@ -1,9 +1,9 @@
-# TES.R  --- TOTAL ENVIRON STORAGE
-# INPUT = network model
-# OUTPUT = total environ throughput - unit and scaled
-#
-# Borrett | July 7, 2012
-# ---------------------------------------------------
+#' TES.R  --- TOTAL ENVIRON STORAGE
+#' INPUT = network model
+#' OUTPUT = total environ throughput - unit and scaled
+#'
+#' Borrett | July 7, 2012
+#' ---------------------------------------------------
 
 TES <- function(x,balance.override=FALSE){
 

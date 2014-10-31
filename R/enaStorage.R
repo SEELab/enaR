@@ -1,9 +1,9 @@
-# enaStorage --- storage analysis
-# INPUT = network object
-# OUTPUT = list of storage statistics
-#
-# M. Lau | July 2011
-# ---------------------------------------------------
+#' enaStorage --- storage analysis
+#' INPUT = network object
+#' OUTPUT = list of storage statistics
+#'
+#' M. Lau | July 2011
+#' ---------------------------------------------------
 
 enaStorage <- function(x,balance.override=FALSE){
                                         #Missing Data Check

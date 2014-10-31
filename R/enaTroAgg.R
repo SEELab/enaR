@@ -1,7 +1,7 @@
-### Lindeman Trophic Aggregations
-### Singh P. July 2014.
-### Source Ulanowicz and Kay 1991. Environmental Software 6:131-142.
-### ----------------------------------------------------------------------
+#'## Lindeman Trophic Aggregations
+#'## Singh P. July 2014.
+#'## Source Ulanowicz and Kay 1991. Environmental Software 6:131-142.
+#'## ----------------------------------------------------------------------
 enaTroAgg <- function (x){
   if (class(x) != "network") {
     stop("x is not a network class object")

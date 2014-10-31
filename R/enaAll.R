@@ -1,9 +1,9 @@
-# enaAll --- Conduct all ecological network analyses
-# INPUT = network object
-# OUTPUT = list of analytical output
-# 
-# M. Lau | May 2013
-# ---------------------------------------------------
+#' enaAll --- Conduct all ecological network analyses
+#' INPUT = network object
+#' OUTPUT = list of analytical output
+#' 
+#' M. Lau | May 2013
+#' ---------------------------------------------------
 
 enaAll <- function(x = 'network object'){
   out <- list(ascendency = enaAscendency(x),

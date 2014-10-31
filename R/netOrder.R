@@ -1,6 +1,6 @@
-### Function to order the nodes in a Network in enaR
-### Singh P. | July 2014
-### -----------------------------------------
+#'## Function to order the nodes in a Network in enaR
+#'## Singh P. | July 2014
+#'## -----------------------------------------
 
 netOrder <- function(x,order=0) {
     if (class(x) != "network") {

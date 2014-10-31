@@ -1,10 +1,10 @@
-# eigenCentrality --- calculates the centrality of a network
-# using an eigen vector approach
-# INPUT = network matrix
-# OUTPUT = list of centrality values (in-going, out-going
-# and average)
-# S. Borrett | July 2011
-# ---------------------------------------------------
+#' eigenCentrality --- calculates the centrality of a network
+#' using an eigen vector approach
+#' INPUT = network matrix
+#' OUTPUT = list of centrality values (in-going, out-going
+#' and average)
+#' S. Borrett | July 2011
+#' ---------------------------------------------------
 eigenCentrality <- function(x='matrix'){
   if (class(x) != 'matrix'){warning('x is not a matrix class object')}
                                         # find dominant eigenvector of x

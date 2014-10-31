@@ -1,9 +1,9 @@
-# enautility --- utility analysis of a flow network
-# INPUT = network object
-# OUTPUT = list of utility statistics
-#
-# M. Lau | July 2011
-# ---------------------------------------------------
+#' enautility --- utility analysis of a flow network
+#' INPUT = network object
+#' OUTPUT = list of utility statistics
+#'
+#' M. Lau | July 2011
+#' ---------------------------------------------------
 
 enaUtility <- function(x, type=c('flow','storage'),
                        eigen.check=TRUE,balance.override=FALSE,tol=10){

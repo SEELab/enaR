@@ -1,9 +1,9 @@
-# TET.R  --- TOTAL ENVIRON THROUGHFLOW
-# INPUT = network model
-# OUTPUT = total environ throughput - unit and scaled
-#
-# Borrett | July 7, 2012
-# ---------------------------------------------------
+#' TET.R  --- TOTAL ENVIRON THROUGHFLOW
+#' INPUT = network model
+#' OUTPUT = total environ throughput - unit and scaled
+#'
+#' Borrett | July 7, 2012
+#' ---------------------------------------------------
 
 TET <- function(x,balance.override=FALSE){
 

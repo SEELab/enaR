@@ -1,9 +1,9 @@
-# enaMTI --- Mixed Trophic Impacts Analysis
-# follows Ulanowicz and Puccia, 1990.
-# INPUT = network object
-# OUTPUT = list of trophic impact statistics
-# Borrett | June 2012, MKL | July 2013
-# ------------------------------------
+#' enaMTI --- Mixed Trophic Impacts Analysis
+#' follows Ulanowicz and Puccia, 1990.
+#' INPUT = network object
+#' OUTPUT = list of trophic impact statistics
+#' Borrett | June 2012, MKL | July 2013
+#' ------------------------------------
 
 enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
                                         #Check for network class

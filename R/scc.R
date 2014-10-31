@@ -1,8 +1,8 @@
-# scc --- find the strongly connected component
-# INPUT = an adjacency matrix
-# OUTPUT = list of membership and values
-# S. Borrett | July 2011
-# ------------------------------------
+#' scc --- find the strongly connected component
+#' INPUT = an adjacency matrix
+#' OUTPUT = list of membership and values
+#' S. Borrett | July 2011
+#' ------------------------------------
 
 scc <- function(A="adjacency"){
                                         #Check for network class

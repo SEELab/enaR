@@ -1,9 +1,9 @@
-# enaFlow --- flow analysis
-# INPUT = network object
-# OUTPUT = list of flow statistics
-#
-# M. Lau | July 2011
-# ---------------------------------------------------
+#' enaFlow --- flow analysis
+#' INPUT = network object
+#' OUTPUT = list of flow statistics
+#'
+#' M. Lau | July 2011
+#' ---------------------------------------------------
 
 enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
                                         #Check for network class

@@ -1,9 +1,9 @@
-# read.scor --- SCOR formatted file into R
-# in multiple formats
-# INPUT = file path
-# OUTPUT = network model in chosen format
-# S. Borrett and M. Lau | July 2011
-# ------------------------------------
+#' read.scor --- SCOR formatted file into R
+#' in multiple formats
+#' INPUT = file path
+#' OUTPUT = network model in chosen format
+#' S. Borrett and M. Lau | July 2011
+#' ------------------------------------
 
 read.scor <- function(file,from.file=TRUE,warn=FALSE){
   if (from.file){text <- readLines(file,warn=warn)}else{text <- file} # read in file

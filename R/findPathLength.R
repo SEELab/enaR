@@ -1,10 +1,10 @@
-# findPathLength --- calculates the flows over a 
-# sequence up to a maximum path length
-# INPUT = network object
-# OUTPUT = a list of flow statistics over paths
-# 
-# S. Borrett and M. Lau | July 2011
-# ---------------------------------------------------
+#' findPathLength --- calculates the flows over a 
+#' sequence up to a maximum path length
+#' INPUT = network object
+#' OUTPUT = a list of flow statistics over paths
+#' 
+#' S. Borrett and M. Lau | July 2011
+#' ---------------------------------------------------
 
 findPathLength <- function(x,maxPath=100,plot.sw=FALSE){
   ##

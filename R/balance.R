@@ -1,9 +1,9 @@
-# balance --- balances a flow model using several methods
-# INPUT = network model
-# OUTPUT = balanced model
-#
-# M. Lau | July 2011
-# ---------------------------------------------------
+#' balance --- balances a flow model using several methods
+#' INPUT = network model
+#' OUTPUT = balanced model
+#'
+#' M. Lau | July 2011
+#' ---------------------------------------------------
 balance <-
   function(x,method=c('AVG2','AVG','IO','OI','I','O'),tol=5){
                                         #Check for network class

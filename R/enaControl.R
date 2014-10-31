@@ -1,9 +1,9 @@
-# enaControl --- control analyses
-# INPUT = network object
-# OUTPUT = list of control statistics
-# M. Lau | July 2011
+#' enaControl --- control analyses
+#' INPUT = network object
+#' OUTPUT = list of control statistics
+#' M. Lau | July 2011
 
-# ---------------------------------------------------
+#' ---------------------------------------------------
 
 enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
                                         #Missing Data Check

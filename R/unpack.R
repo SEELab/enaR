@@ -1,9 +1,9 @@
-# unpack --- extracts network object into
-# a list
-# INPUT = network object
-# OUTPUT = list of network model components
-# S. Borrett and M. Lau | July 2011
-# ------------------------------------
+#' unpack --- extracts network object into
+#' a list
+#' INPUT = network object
+#' OUTPUT = list of network model components
+#' S. Borrett and M. Lau | July 2011
+#' ------------------------------------
 
 unpack <- function(x='network object'){
   flow <- as.matrix(x, attrname = 'flow')

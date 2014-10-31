@@ -1,11 +1,11 @@
-# read.nea.RData
-# INPUT = Model Data (flows, inputs, outputs, storage) formatted as for NEA.m, saved as CSV file
-#        S=  |[F][z][X]|
-#            |[y][0][0]|
-# OUPUT = R Network data object for use with enaR
-#
-# Borrett | July 15, 2013
-# --------------------------------------------------
+#' read.nea.RData
+#' INPUT = Model Data (flows, inputs, outputs, storage) formatted as for NEA.m, saved as CSV file
+#'        S=  |[F][z][X]|
+#'            |[y][0][0]|
+#' OUPUT = R Network data object for use with enaR
+#'
+#' Borrett | July 15, 2013
+#' --------------------------------------------------
 
 read.nea <- function(file="file name",sep=',',warn=TRUE){
   dat <- read.table(file,header=FALSE,sep=sep)  # assumes 

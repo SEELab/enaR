@@ -1,8 +1,8 @@
-# read.wand --- WAND formatted file into R
-# INPUT = file path
-# OUTPUT = network object
-# S. Borrett | May 2012
-# ------------------------------------
+#' read.wand --- WAND formatted file into R
+#' INPUT = file path
+#' OUTPUT = network object
+#' S. Borrett | May 2012
+#' ------------------------------------
 
 read.wand <- function(file='file name with path'){
                                         # file is the full excel file name
