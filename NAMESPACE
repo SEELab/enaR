@@ -1,3 +1,6 @@
 exportPattern("^[[:alpha:]]+")
 importFrom(gdata, read.xls)
-import(MASS,network,sna,stringr)
+importFrom(sna, as.sociomatrix.sna)
+importFrom(sna, geodist)
+importFrom(sna, component.dist)
+import(MASS,network,stringr)
