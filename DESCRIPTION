@@ -2,7 +2,12 @@ Package: enaR
 Type: Package
 Title: Tools for Ecological Network Analysis (ena) in R
 Version: 2.8
+<<<<<<< HEAD
 Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Sing
+=======
+Date: 2014-10-30
+Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Singh
+>>>>>>> master
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 Description: Functions for the analysis of ecological networks
 Depends:
