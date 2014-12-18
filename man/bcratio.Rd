@@ -1,7 +1,7 @@
 \name{bcratio}
 \alias{bcratio}
 \title{
-  Calculates the Ratio of Positive to Negative Elements in a Network.
+  Calculates the Ratio of Positive to Negative Elements in a Network
 }
 \description{
   Dependent function for the enaUtility function.

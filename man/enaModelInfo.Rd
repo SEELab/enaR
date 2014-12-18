@@ -2,7 +2,7 @@
 \alias{enaModelInfo}
 \docType{data}
 \title{
-Ecosystem Model Information
+  Ecosystem Model Information
 }
 \description{
 Model information for the set of ecosystem models compiled by the SEE Lab at UNCW.

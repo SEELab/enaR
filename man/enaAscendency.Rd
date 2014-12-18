@@ -1,7 +1,7 @@
 \name{enaAscendency}
 \alias{enaAscendency}
 \title{
-Calculates the Ascendency of an Ecological Network.
+  Calculates the Ascendency of an Ecological Network
 }
 \description{
   Calculates the average mutual information (AMI),

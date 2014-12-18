@@ -1,7 +1,7 @@
 \name{balance}
 \alias{balance}
 \title{
-Balance Flow Network Models.
+  Balance Flow Network Models
 }
 \description{
   Applies the methods of Allesina and Bondavalli (2003) for balancing flow

@@ -1,7 +1,7 @@
 \name{bal}
 \alias{bal}
 \title{
-  Subfunction for Balancing by Either Inputs or Outputs.
+  Subfunction for Balancing by Either Inputs or Outputs
 }
 \description{
   Dependency for the \code{balance} function.
