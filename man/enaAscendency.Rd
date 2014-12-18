@@ -1,24 +1,19 @@
-\name{enaAscendency}
-\alias{enaAscendency}
-\title{
-  Calculates the Ascendency of an Ecological Network
+\name{enaAscendency} 
+\alias{enaAscendency} 
+\title{ Calculates the
+Ascendency of an Ecological Network } 
+\description{ 
+Calculates the average mutual information (AMI), ascendency, overhead, and capacity of
+input-output networks.  It also returns the ratios of ascendency and
+overhead to capacity. These metrics describe the organization of flow in
+an ecological network (Ulanowicz 1997).
 }
-\description{
-  Calculates the average mutual information (AMI),
-  ascendency, overhead, and capacity of input-output networks.  It also
-  returns the ratios of ascendency and overhead to capacity. These metrics
-  describe the organization of flow in an ecological network (Ulanowicz
-  1997).
-}
-
 \usage{
 enaAscendency(x = "network object")
 }
 
 \arguments{
-
-\item{x}{A network object.}
-
+  \item{x}{A network object.}
 }
 
 
