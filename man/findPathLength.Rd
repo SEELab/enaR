@@ -1,7 +1,7 @@
 \name{findPathLength}
 \alias{findPathLength}
 \title{
-  Cumulative flow over a range of path lengths.
+  Cumulative Flow over a Range of Path Lengths
 }
 \description{
   Calculates the flow throughout the entire network over a given path length.

@@ -2,7 +2,7 @@
 \alias{troModels}
 \docType{data}
 \title{
-Trophic Models
+  Trophic Models
 }
 \description{
 A set of 58 trophic models compiled by the SEE Lab at UNCW.

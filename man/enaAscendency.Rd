@@ -1,7 +1,7 @@
 \name{enaAscendency}
 \alias{enaAscendency}
 \title{
-Calculates the ascendency of an ecological network.
+Calculates the Ascendency of an Ecological Network.
 }
 \description{
   Calculates the average mutual information (AMI),
@@ -34,9 +34,9 @@ enaAscendency(x = "network object")
 \item{CAP}{Returns the capacity of a network.  Capacity is defined as
   the sum of ascendency and overhead (Ulanowicz 2004).}
 \item{ACS.CAP}{Returns the proportion of capacity used by ascendency.}
-\item{OH.CAP}{Returns the proportion of capacity used by overhead.}
-\item{robustness}{Returns the robustness of the network}
-\item{ELD}{Returns the Effective Link Density of the network(c) (Ulanowicz et al. 2014)}
+\item{OH.CAP}{Returns the proportion of capacity used by overhead.
+\item{robustness}{Returns the robustness of the network
+\item{ELD}{Returns the Effective Link Density of the network(c) (Ulanowicz et al. 2014)
 \item{TD}{Returns the Trophic Depth of the network(r) (Ulanowicz et al. 2014)}
 }
 
@@ -54,8 +54,7 @@ Ulanowicz, R.E., 1997. Ecology, The Ascendent Perspective. Columbia
 University Press, New York.
 
 Ulanowicz, R.E., 2004. Quantitative methods for ecological network
-analysis. Comput. Biol. Chem. 28, 321-339
-
+analysis. Comput. Biol. Chem. 28, 321-33
 Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem trophic complexity: insights from ecological network analysis
 
 }

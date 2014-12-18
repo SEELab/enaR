@@ -2,7 +2,7 @@
 \alias{m.list}
 \docType{data}
 \title{
-Sub-set of the larger ecosystem models.
+  Sub-set of the Larger Ecosystem Models
 }
 \description{
 A set of ecosystem models compiled by the SEE Lab at UNCW.

@@ -1,7 +1,7 @@
 \name{enaStorage}
 \alias{enaStorage}
 \title{
-  Storage analyses of ecological networks.
+  Storage Analyses of Ecological Networks
 }
 \description{
   Calculates storage-based Ecological Network Analyses.

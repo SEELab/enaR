@@ -1,7 +1,7 @@
 \name{enaMTI}
 \alias{enaMTI}
 \title{
-  Mixed Trophic Impacts (MTI) measures the impact of one species on another.
+  Mixed Trophic Impacts (MTI) Analysis
 }
 \description{
   Calculates the Mixed Trophic Impacts of one species on

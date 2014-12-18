@@ -1,7 +1,7 @@
 \name{eigenCentrality}
 \alias{eigenCentrality}
 \title{
-  Calculates the eigen centrality of a network.
+  Calculates the Eigen Centrality of a Network.
 }
 \description{
   Calculates the eigen centrality of a network.

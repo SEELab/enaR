@@ -1,7 +1,7 @@
 \name{scc}
 \alias{scc}
 \title{
-  Finds the strongly connected component (SCC) in a graph.
+  Find the Strongly Connected Component (SCC) in a Graph
 }
 \description{
   This function finds the strongly connected components (SCCs) of an

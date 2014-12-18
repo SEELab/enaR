@@ -1,7 +1,7 @@
 \name{enaCycle}
 \alias{enaCycle}
 \title{
-  Full Cycle Analysis of ecological networks
+  Full Cycle Analysis of Ecological Networks
 }
 \description{
   It performs the full cycle analysis on the network based on the algorithm described in Ulanowicz (1983) and implemented in NETWRK 4.2b. It returns data.frames with details of the simple cycles and nexus, vectors of Cycle distributions and Normalized distribution and matrices of Residual Flows and Aggregated Cycles.

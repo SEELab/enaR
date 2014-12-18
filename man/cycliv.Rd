@@ -1,7 +1,7 @@
 \name{cycliv}
 \alias{cycliv}
 \title{
-  Analysis of Feeding Cycles in a network
+  Analysis of Feeding Cycles in a Network
 }
 \description{
 	

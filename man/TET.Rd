@@ -1,7 +1,7 @@
 \name{TET}
 \alias{TET}
 \title{
-Calculates the total environ throughflow for a ecosystem network model.
+Calculates the Total Environ Throughflow for a Ecosystem Network Model.
 }
 \description{
 Determines the total environ throughflow (TET) for each of the 2 x n environs

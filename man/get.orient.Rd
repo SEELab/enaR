@@ -2,7 +2,7 @@
 \alias{get.orient}
 
 \title{
-  Get the current global matrix orientation setting.
+  Get the Current Global Matrix Orientation Setting
 }
 \description{
   Returns the current setting for the expected orientation of all

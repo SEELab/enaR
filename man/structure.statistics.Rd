@@ -1,7 +1,7 @@
 \name{structure.statistics}
 \alias{structure.statistics}
 \title{
-  Calculates the structural statistics (network statistics) of an ecological network.
+  Structural Statistics of an Ecological Network
 }
 \description{
   This function returns several network statistics that describe a

@@ -1,7 +1,7 @@
 \name{read.enam}
 \alias{read.enam}
 \title{
-  Reads in ENA data from an excel file, formatted as Mdloti.xls
+  Read ENA Model from an Mdloti Formatted Excel File
 }
 \description{
   This function reads network data from an excel file commonly used by

@@ -1,7 +1,7 @@
 \name{netOrder}
 \alias{netOrder}
 \title{
-Reorder nodes in a network in enaR.
+  Reorder Nodes in a Network in enaR
 }
 \description{
 	Reorders nodes in a network either through a user defined node order vector or by default places the non-living nodes to the end of the node vector, minimizing the order change for other nodes.

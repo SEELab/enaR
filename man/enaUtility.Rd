@@ -1,7 +1,7 @@
 \name{enaUtility}
 \alias{enaUtility}
 \title{
-  Utility analysis of ecological networks.
+  Utility Analysis of Ecological Networks
 }
 \description{
   Performs the flow and storage based utility analysis

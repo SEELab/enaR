@@ -1,7 +1,7 @@
 \name{enaStructure}
 \alias{enaStructure}
 \title{
-  Structure analyses of ecological network.
+  Structure Analyses of Ecological Network
 }
 \description{
   Analysis of the structure of an ecological flow network.

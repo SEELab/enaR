@@ -1,7 +1,7 @@
 \name{TES}
 \alias{TES}
 \title{
-Calculate the total environ storage. 
+Calculate the Total Environ Storage. 
 }
 \description{
 Calculates the total storage in each n input and output environs.  This

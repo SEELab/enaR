@@ -1,7 +1,7 @@
 \name{mExp}
 \alias{mExp}
 \title{
-  Calculates the exponent of a matrix.
+  Calculates the Exponent of a Matrix
 }
 \description{
   Function for calculating the pathway proliferation of flows in a network

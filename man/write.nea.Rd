@@ -1,7 +1,7 @@
 \name{write.nea}
 \alias{write.nea}
 \title{
-  Write a network object to file using the NEA data format.
+  Write a Network Object to File Using the NEA Data Format
 }
 \description{
   This function writes a network object to a NEA formatted

@@ -1,7 +1,7 @@
 \name{ssCheck}
 \alias{ssCheck}
 \title{
-  Checks the balance of inputs and outputs from a network.
+  Checks the Balance of Inputs and Outputs from a Network
 }
 \description{
   This function supports the balancing process by checking if the inputs

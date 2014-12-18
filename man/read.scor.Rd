@@ -1,7 +1,7 @@
 \name{read.scor}
 \alias{read.scor}
 \title{
-  Read SCOR formatted data files.
+  Read SCOR Formatted Model
 }
 \description{
   Read in network model data files that are in the SCOR format (REFERENCE).

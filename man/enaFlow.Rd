@@ -1,7 +1,7 @@
 \name{enaFlow}
 \alias{enaFlow}
 \title{
-  Flow analyses of ecological networks.
+  Flow Analyses of Ecological Networks
 }
 \description{
   Performs the primary throughflow analysis developed for

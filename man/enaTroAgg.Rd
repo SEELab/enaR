@@ -1,7 +1,7 @@
 \name{enaTroAgg}
 \alias{enaTroAgg}
 \title{
-  Trophic Aggregations (TroAgg)  aggregates the given network according to the trophic concepts of Lindeman.
+  Trophic Aggregations (TroAgg) Analysis
 }
 \description{
   It returns the data quantifying the underlying trophic structure of a given model based on the interaction of the living and non-living nodes. It is based on the Trophic Aggregations suggested by Lindeman (1942) and follows the algorithm by Ulanowicz and Kemp (1979) implemented in NETWRK 4.2b. It removes the Feeding cycles in the network beforehand to provide accurate results.
