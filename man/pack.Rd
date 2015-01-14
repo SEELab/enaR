@@ -1,7 +1,7 @@
 \name{pack}
 \alias{pack}
 \title{
-  Compile network information into a network class.
+  Compile Network Information into a Network Class
 }
 \description{
   This function provides a flexible framework for importing flow network

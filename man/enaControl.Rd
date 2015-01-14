@@ -1,7 +1,7 @@
 \name{enaControl}
 \alias{enaControl}
 \title{
-  Control analyses of ecological networks.
+  Control Analyses of Ecological Networks
 }
 \description{
   Analyses for analyzing the control amongst the nodes in ecological networks.

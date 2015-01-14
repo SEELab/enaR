@@ -1,7 +1,7 @@
 \name{scifix}
 \alias{scifix}
 \title{
-  Standardizes scientific notation.
+  Standardizes Scientific Notation from SCOR Formatted Files
 }
 \description{
   This is a support function that corrects the scientific notation in SCOR formatted

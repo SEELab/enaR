@@ -1,7 +1,7 @@
 \name{set.orient}
 \alias{set.orient}
 \title{
-  Globally set the output matrix orientation.
+  Globally Set the Output Matrix Orientation
 }
 \description{
   Changes the orientation of output matrices.

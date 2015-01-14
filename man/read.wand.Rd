@@ -1,7 +1,7 @@
 \name{read.wand}
 \alias{read.wand}
 \title{
-  Read WAND format files.
+  Read WAND Formatted Model
 }
 \description{
   Reads WAND formatted network models.

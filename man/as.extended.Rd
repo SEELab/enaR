@@ -1,7 +1,7 @@
 \name{as.extended}
 \alias{as.extended}
 \title{
-  Create an extended format matrix.
+  Create an Extended Format Matrix
 }
 \description{
   Converts a network object to the extended format of Allesina and

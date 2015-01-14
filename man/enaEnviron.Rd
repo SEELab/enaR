@@ -1,7 +1,7 @@
 \name{enaEnviron}
 \alias{enaEnviron}
 \title{
-  Ecological network environs.
+  Ecological Network Environs
 }
 \description{
   Calculates the environs for an ecological network.

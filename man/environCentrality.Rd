@@ -1,7 +1,7 @@
 \name{environCentrality}
 \alias{environCentrality}
 \title{
-  Calculates the environ centrality of the nodes in an ecological network.
+  Environ Centrality an Ecological Network
 }
 \description{
   This function calculates the input, output, and average environ

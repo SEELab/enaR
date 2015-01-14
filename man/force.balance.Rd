@@ -1,7 +1,7 @@
 \name{force.balance}
 \alias{force.balance}
 \title{
-  Repeated, sequential application the balance function.
+  Repeated Application the Balance Function
 }
 \description{
   This function repeatedly balances a model, sequentially with the output

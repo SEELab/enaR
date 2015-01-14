@@ -1,7 +1,7 @@
 \name{enaAll}
 \alias{enaAll}
 \title{
-  Conduct all major ENA.
+  Conduct All Major ENA
 }
 \description{
   Conducts all major ENA with default settings and returns the output as a

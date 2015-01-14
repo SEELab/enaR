@@ -2,7 +2,7 @@
 \alias{oyster}
 \docType{data}
 \title{
-Intertidal oyster reef ecosystem model.
+  Intertidal Oyster Reef Ecosystem Model
 }
 \description{
   Intertidal oyster reef ecosystem model created by Dame and Patten

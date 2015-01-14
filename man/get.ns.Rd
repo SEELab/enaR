@@ -1,7 +1,7 @@
 \name{get.ns}
 \alias{get.ns}
 \title{
-  Quick calculation of a range of network statistics.
+  Quick Calculation of a Range of Network Statistics.
 }
 \description{
   This is a high level function for calculated the main network analyses

@@ -1,7 +1,7 @@
 \name{read.nea}
 \alias{read.nea}
 \title{
-  Read NEA formatted network data files.
+  Read NEA Formatted Network Model
 }
 \description{
   This function reads in and creates a network object from a NEA formatted

@@ -1,11 +1,11 @@
 \name{unpack}
 \alias{unpack}
 \title{
-  "Unpacks" the components of a network object into separate objects.
+  "Unpacks" the Network Object into Separate Objects
 }
 \description{
-  "Unpacks" the components of a network object into separate objects.
-  This includes inputs, exports, respirations, outputs (exports +
+  Separates the components of a network object into separate components
+  within a list. This includes inputs, exports, respirations, outputs (exports +
   respirations), storage, and internal flows.
 }
 \usage{
