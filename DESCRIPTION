@@ -5,8 +5,7 @@ Version: 2.8.1
 Date: 2015-01-14
 Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Singh
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
-Description: Ecosystem Network Analysis (ENA) algorithms for the
-analysis of ecological networks. 
+Description: Provides algorithms for the analysis of ecological networks. 
 Depends:
     MASS,
     stringr,
