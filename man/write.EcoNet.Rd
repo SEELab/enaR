@@ -1,13 +1,13 @@
 \name{write.EcoNet}
-\alias{write.EcoPath}
+\alias{write.EcoNet}
 \title{
-  Creates an EcoPath model from an enaR network object.
+  Creates an EcoNet model from an enaR network object.
 }
 \description{
   
 }
 \usage{
-write.EcoPath(x='model',file='file path',mn='ena_model')
+write.EcoNet(x='model',file='file path',mn='ena_model')
 }
 \arguments{
   \item{x}{
@@ -18,15 +18,17 @@ write.EcoPath(x='model',file='file path',mn='ena_model')
     uses the current working directory by default.
   }
   \item{mn}{
-    The model name that EcoPath will use. The DEFAULT is 'ena_model'.
+    The model name that EcoNet will use. The DEFAULT is 'ena_model'.
   }
 }
 \value{
-  An EcoPath formatted text file is created from the model, which can be
+  An EcoNet formatted text file is created from the model, which can be
   input at http://eco.engr.uga.edu.
 }
 \references{
+  About EcoNet (http://eco.engr.uga.edu/DOC/econet1.html)
   
+  Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT Press.
 }
 \author{
   Matthew K. Lau (enaR.maintainer@gmail.com)
