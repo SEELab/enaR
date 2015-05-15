@@ -23,7 +23,7 @@ write.nea(x, file.name, sep=',')
   }
 }
 \value{
-  Writes a network boject to a NEA formatted file and returns the output
+  Writes a network object to a NEA formatted file and returns the output
   composite matrix.
 }
 \references{
