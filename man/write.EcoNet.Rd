@@ -1,10 +1,11 @@
 \name{write.EcoNet}
 \alias{write.EcoNet}
 \title{
-  Creates an EcoNet model from an enaR network object.
+  Write enaR models to an EcoNet formatted file.
 }
 \description{
-  
+  Creates an EcoNet model from an enaR network object that can be used
+  with the online interface for EcoNet.  
 }
 \usage{
 write.EcoNet(x='model',file='file path',mn='ena_model')
