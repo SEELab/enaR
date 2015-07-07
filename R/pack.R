@@ -1,15 +1,28 @@
-#' pack --- helper function for inputing flow
-#' network information into a network object
-#' INPUT = flow network model components
-#' OUTPUT = a network object
-#' M.Lau & S.R. Borrett | July 2014
-#' ------------------------------------
+# pack --- helper function for inputing flow
+# network information into a network object
+# INPUT = flow network model components
+# OUTPUT = a network object
+# M.Lau & S.R. Borrett | July 2014
+# ------------------------------------
 
 pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
                                         #Warn if missing both
-  if (all(is.na(respiration))&all(is.na(export))){
-    warning('Missing or NA resipiration and export values.')
-  }
+  if (all(is.na(respiration)) & all(is.na(export))){
+    warning('Missing or NA resipiration/export values.')
+  }else if (any(is.na(output) == FALSE) & 
+            any(is.na(export) == FALSE)){
+                respiration <- output - export
+            }else if (any(is.na(output) == FALSE) & 
+                      any(is.na(respiration) == FALSE)){
+                export <- output - respiration
+            }else if (all(is.na(output)) & any(c(is.na(respiration), is.na(export)) == FALSE)){
+                export. <- export
+                respiration. <- respiration
+                export.[is.na(export)] <- 0
+                respiration.[is.na(respiration)] <- 0
+                output <- export. + respiration.
+                output[(is.na(export) + is.na(respiration)) == 2] <- NA
+            }
                                         #Add rownames
   if (length(rownames(flow))==0){rownames(flow) <- colnames(flow) <- as.character(1:nrow(flow))}
                                         #Compiling the objects into a list
