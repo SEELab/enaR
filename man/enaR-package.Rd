@@ -3,11 +3,7 @@
 \alias{enaR}
 \docType{package}
 \title{
-<<<<<<< HEAD
-  Tools for Ecological Network Analysis (ena) in R.
-=======
   Tools for Ecological Network Analysis (ena)
->>>>>>> master
 }
 \description{
   This package compiles functions for the analysis of ecological networks,
@@ -18,8 +14,8 @@
 \tabular{ll}{
 Package: \tab enaR \cr
 Type: \tab Package\cr
-Version: \tab 2.6\cr
-Date: \tab 2014-04-30\cr
+Version: \tab 2.9.1\cr
+Date: \tab 2015-08-06\cr
 License: \tab GPL-2\cr
 }
 }
