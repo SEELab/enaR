@@ -1,0 +1,147 @@
+#remember to either add your own matrix through a list with lists inside it to represent each line of the matrix or give the 
+#location of your csv file in the first line of main (which will be at the bottom of the code)
+
+def CyclePath(DictionaryRepresentation, Matrix, CycleList):# maintain a queue of paths
+    #Notable variables
+        #queue = the list of all paths which still have the opportunity to continue or have not been deemed finished yet.
+
+    queue = []  #queue starts empty; however, as one traverses through this function (which will loop many times), essentially
+               #every path that has been created (and not already come to a close) will be added to queue.
+    for x in range(1,(len(Matrix)+1),1): #this traverses through the dictionary so that after all possibilities for one
+                                         #environ are used, it moves on to the next one
+        string = ''
+        string = string + str(x)
+        queue.append(string) #must be a string not an integer. Will not work with integer
+        while queue:
+            path = queue.pop(0)# get the first path from the queue (will be used to expand path or section path off)
+            # below statements get the last node from the path
+            if len(path)>1 and type(path) == str: #only used if only one entry in path that is 10+=
+                node = path#you use str     ^ because if there is only one entry in path, it isnt a list it's a string
+            else:
+                node = path[-1]#most cases. gets the last node
+                        # enumerate all adjacent nodes, construct a new path and push it into the queue
+            for adjacent in DictionaryRepresentation.get(node, []): # will loop through for all possible nodes (if any) that
+                                                                    # the last node of the path links to
+                Continue = True
+                new_path = list(path)
+                new_path.append(adjacent) #new_path is the path that is formed when add one of the node that is the next
+                                          #step for the original path. For example, if you have
+                                          #an original path of ['1','2'] and node 2 connects to 3, 6,and 7, this loop
+                                          # will cycle three times to create ['1','2','3'], ['1','2','6']
+                                          # and ['1','2','7']
+                i = 0
+                NPLength = len(new_path)
+                while i < (NPLength) and Continue == True: #this checks to see if the new_path is a cycle. If it is, it will
+                                                           # be added to the CycleList and if it is not, it will be added to the
+                                                           #queue
+                    g = new_path.pop(i)
+                    new_path.insert(i,g)
+                    for y in new_path[(i+1):]:
+                        if g == y:
+                            Continue = False
+                            if new_path[0] == new_path[-1]:
+                                CycleList.append(new_path)
+                    i += 1
+                if Continue == True:
+                    queue.append(new_path)
+    print('\n')
+    print(CycleList)
+    print("this is the original/untrimmed CycleList ^^")
+    blankspace = copy.deepcopy(CycleList) #must use deepcopy to not have CycleList affected by changes to blankspace
+
+    # The way blankspace and CycleList are used is fairly important. The rest of the code for CyclePath is based
+    # around this. They both started off as the same thing(which was CycleList). blankspace, however, changes.
+    # I sort blankspace and delete all repeating nodes. This allows me to check for redudent cycles. For example:
+    # the paths [1,2,5,1] and [2,5,1,2] will both be [1,2,5] after the code ending before (while i < len(blankspace):)
+    # is executed. It is important to note that at this point, I have not deleted any entries from either list.
+    # What I do following that is I traverse through blankspace and where there is a redundent cycle, I delete it. However,
+    # I also delete the entry with the same index in CycleList. This allows the cycles in CycleList to remain untouched
+    # and when we locate the redundent cycles through Blankspace, we can delete them in CycleList.
+
+
+    #this for loop trims the entries in blankspace down to just specific elements. EX: [1,2,5,2,5,1] would just be [1,2,5]
+    for x in blankspace:#this while loops strips the paths to just the nodes that they visit and skips multiple occastions
+        x.sort()
+        i = 0
+        while i < len(x):
+            currentspot = x[i]
+            for next in x[i+1:]:
+                if next == currentspot:
+                    x.remove(next)
+            i +=1
+    i = 0
+
+    #this while loop below uses the trimmed entries to look for repeated occurances of the same nodes and deletes the location
+    #from both the CycleList and BlankSpace
+    while i < len(blankspace):
+        currentspotblank = blankspace[i] #These next five lines take a path (you will never get the same path twice) and
+                                         #remove it from both lists.
+        blankspace.remove(currentspotblank) #
+        currentspotcycle = CycleList[i]
+        CycleList.remove(currentspotcycle)
+        z = 0
+        while len(blankspace) > z:  # this looks through blankspace to see if there if a copy of the removed path is in it
+                                    # and it will delete any copy of the path from blankspace and CycleList
+            if currentspotblank == blankspace[z]:
+                CycleList.pop(z)
+                blankspace.pop(z)
+                z-=1
+            z+=1
+        blankspace.insert(i, currentspotblank) #once you have looked through the lists for repeated paths, you insert the
+                                               #node you removed back into its original index
+        CycleList.insert(i, currentspotcycle)
+        i+=1
+
+#you need getNodes for Cycles to work
+def getNodes(Matrix,DictionaryRepresentation): #this function essentially takes your input matrix and creates a dictionary where
+                                               #each entry in the dictionary referes to a node and
+                                               #the values corresponding to each entry in the dictionary will be the nodes that that
+                                               #node connects to
+    CoordinateSystem = [] #Coordinate Systen is a list with lists inside of it that hold all of the nodes that each node connects to
+
+                          #this code (until the while loop) goes through and finds where each 1 is for each line of the Matrix
+                          #and gets the corresponding index of that and adds it to CoordinateSystem.
+                          #Example: if the first line of your matrix (Which will refer to node 1) is [0,0,0,1,1,0]
+                          #the first entry into CoordinateSystem will be [4,5]
+    for x in Matrix:
+        OneNode = []
+        for position, item in enumerate(x):
+            if item == 1:
+                string = ''
+                string = string + str((position)+1)
+                OneNode.append(string)
+        CoordinateSystem.append(OneNode)
+    i = 0
+          #this essentially just puts the entries in CoordinateSystem into the slot of the Dictionary where they belong
+    while i < len(CoordinateSystem):
+        x = CoordinateSystem[i]
+        if len(x) > 0:
+            q = str(i+1)
+            DictionaryRepresentation[q] = x
+        i+=1
+
+
+def main():
+    #these lines until DictionaryRepresentation all have to do with inputting your Matrix
+    with open ('/Users/James/Desktop/marionlake_A.csv', 'Ur') as f: #you need to find the path to the file you want
+                                                                    #it will always be different
+        reader = csv.reader(f)
+        Matrix =  list(reader)
+        print(Matrix)
+        i = 0
+        while i < (len(Matrix)):
+            g = Matrix[i]
+            f = [ int(x) for x in g ]
+            Matrix[i] = f
+            i+=1
+        print(Matrix)
+    #Matrix = [[0,1,0,0,0,1],[0,0,1,1,1,0],[0,0,0,1,1,0],[0,1,0,0,1,0],[0,1,0,0,0,1],[0,1,0,0,0,0]] #rows/columns switched
+    #this Matrix is the Matrix Dr. Patten used to get his B-Matrix Environs
+    DictionaryRepresentation = {}
+    getNodes(Matrix,DictionaryRepresentation)
+    print(DictionaryRepresentation)
+    CycleList = []
+    CyclePath(DictionaryRepresentation,Matrix,CycleList)
+    print("This is the updated CycleList below")
+    print(CycleList)
+main()
