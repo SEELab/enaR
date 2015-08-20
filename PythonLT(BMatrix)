@@ -1,0 +1,303 @@
+# This is essentially the same file as PythonLT(Complete) since the B matrix relies on both the simple paths and cycles. 
+
+
+def getNodes(Matrix,DictionaryRepresentation): #this function essentially takes your input matrix and creates a dictionary where
+                                               #each entry in the dictionary referes to a node and
+                                               #the values corresponding to each entry in the dictionary will be the nodes that that
+                                               #node connects to
+    CoordinateSystem = [] #Coordinate Systen is a list with lists inside of it that hold all of the nodes that each node connects to
+
+                          #this code (until the while loop) goes through and finds where each 1 is for each line of the Matrix
+                          #and gets the corresponding index of that and adds it to CoordinateSystem.
+                          #Example: if the first line of your matrix (Which will refer to node 1) is [0,0,0,1,1,0]
+                          #the first entry into CoordinateSystem will be [4,5]
+    for x in Matrix:
+        OneNode = []
+        for position, item in enumerate(x):
+            if item == 1:
+                string = ''
+                string = string + str((position)+1)
+                OneNode.append(string)
+        CoordinateSystem.append(OneNode)
+    i = 0
+          #this essentially just puts the entries in CoordinateSystem into the slot of the Dictionary where they belong
+    while i < len(CoordinateSystem):
+        x = CoordinateSystem[i]
+        if len(x) > 0:
+            q = str(i+1)
+            DictionaryRepresentation[q] = x
+        i+=1
+
+
+def SimplePath(DictionaryRepresentation, Matrix, SimpleList): # this finds the simple paths for the environs
+
+    #Notable variables:
+        #queue = the list of all paths which still have the opportunity to continue or have not been deemed finished yet.
+                 # Example can be found on attachment
+        #SimpleList = the list which will hold all simple paths
+
+    queue = [] #queue starts empty; however, as one traverses through this function (which will loop many times), essentially
+               #every path that has been created (and not already come to a close) will be added to queue.
+    for x in range(1,(len(Matrix)+1),1): #this essentially is a loop which will have you walk through the dictionary node
+                                         # by node so you can find all the different paths for each environ
+        string = ''
+        string = string + str(x)
+        queue.append(string) #must be a string not an integer. Will not work with integer
+        while queue: #once you have reached the last node in the dictionary and there are no more entries in queue, this function essentailly stops
+            path = queue.pop(0) #gets a path(the first one) from the queue (will be used to find expanded paths or section path off)
+            #the statements directly below get the last node from the path. There are many lines of code; however, it all has to do with
+            #getting around Python syntax. Every line until (Continue = False) is to get the last node from each path
+            #the last node is important, because this function is based around using the last node of a path and inserting that
+            #value into the dictionary to see what possible paths (if any) can be created and adding them back into the queue.
+
+            Append = True
+            for x in SimpleList:
+                if len(SimpleList) > 0 and path == x: #essentially checks to see if it is a repeated path and if it is - it will not be added to Simplelist
+                    Append = False
+            if Append == True: # if this path has not been seen before - it will be added to the SimpleList
+                SimpleList.append(path)
+            if len(path)>1 and type(path) == str: #only used if only one entry in the path and it is 10+=
+                node = path #you use str     ^ because if there is only one entry in path, it isn't a list it's a string
+            else:
+                node = path[-1]# this line is used in most cases. gets the last node of the path
+                        # enumerate all adjacent nodes, construct a new path and push it into the queue
+            Continue = False
+            for adjacent in DictionaryRepresentation.get(node, []):# will loop through for all possible nodes (if any) that
+                                                                   # the last node of the path links to. Note: if the
+                                                                   # original path has no possible next steps, this code
+                                                                   # will not be enacted
+
+                NotLoop = True
+                Continue = True
+                new_path = list(path)
+                new_path.append(adjacent) #new_path is the path that is formed when you add one of the nodes that is the next
+                                          #step for the original path. For example, if you have
+                                          #an original path of ['1','2'] and node 2 connects to 3, 6,and 7, this loop
+                                          # will cycle three times to create ['1','2','3'], ['1','2','6']
+                                          # and ['1','2','7']
+                i = 0
+                NPLength = len(new_path)
+                while i < (NPLength) and NotLoop == True: # this checks to see if a path is a cycle through checking if
+                                                          # a node is repeated. If one is, it will not be considered a path
+                                                          #and therefore not added to either queue or SimpleList
+                    g = new_path.pop(i)
+                    new_path.insert(i,g)
+                    for y in new_path[(i+1):]:
+                        if g == y:
+                            NotLoop = False
+                    i += 1
+                if NotLoop == True: #if the updated path is not a cycle, it is added back to queue
+                    queue.append(new_path)
+            #if Continue == False and Append == False:
+            #    SimpleList.append(path)
+
+
+
+def CyclePath(DictionaryRepresentation, Matrix, CycleList):# maintain a queue of paths
+
+    #Notable variables
+        #queue = the list of all paths which still have the opportunity to continue or have not been deemed finished yet.
+
+    queue = []  #queue starts empty; however, as one traverses through this function (which will loop many times), essentially
+               #every path that has been created (and not already come to a close) will be added to queue.
+    for x in range(1,(len(Matrix)+1),1): #this traverses through the dictionary so that after all possibilities for one
+                                         #environ are used, it moves on to the next one
+        string = ''
+        string = string + str(x)
+        queue.append(string) #must be a string not an integer. Will not work with integer
+        while queue:
+            path = queue.pop(0)# get the first path from the queue (will be used to expand path or section path off)
+            # below statements get the last node from the path
+            if len(path)>1 and type(path) == str: #only used if only one entry in path that is 10+=
+                node = path#you use str     ^ because if there is only one entry in path, it isnt a list it's a string
+            else:
+                node = path[-1]#most cases. gets the last node
+                        # enumerate all adjacent nodes, construct a new path and push it into the queue
+            for adjacent in DictionaryRepresentation.get(node, []): # will loop through for all possible nodes (if any) that
+                                                                    # the last node of the path links to
+                Continue = True
+                new_path = list(path)
+                new_path.append(adjacent) #new_path is the path that is formed when add one of the node that is the next
+                                          #step for the original path. For example, if you have
+                                          #an original path of ['1','2'] and node 2 connects to 3, 6,and 7, this loop
+                                          # will cycle three times to create ['1','2','3'], ['1','2','6']
+                                          # and ['1','2','7']
+                i = 0
+                NPLength = len(new_path)
+                while i < (NPLength) and Continue == True: #this checks to see if the new_path is a cycle. If it is, it will
+                                                           # be added to the CycleList and if it is not, it will be added to the
+                                                           #queue
+                    g = new_path.pop(i)
+                    new_path.insert(i,g)
+                    for y in new_path[(i+1):]:
+                        if g == y:
+                            Continue = False
+                            if new_path[0] == new_path[-1]:
+                                CycleList.append(new_path)
+                    i += 1
+                if Continue == True:
+                    queue.append(new_path)
+    blankspace = copy.deepcopy(CycleList) #must use deepcopy to not have CycleList affected by changes to blankspace
+
+    # The way blankspace and CycleList are used is fairly important. The rest of the code for CyclePath is based
+    # around this. They both started off as the same thing(which was CycleList). blankspace, however, changes.
+    # I sort blankspace and delete all repeating nodes. This allows me to check for redudent cycles. For example:
+    # the paths [1,2,5,1] and [2,5,1,2] will both be [1,2,5] after the code ending before (while i < len(blankspace):)
+    # is executed. It is important to note that at this point, I have not deleted any entries from either list.
+    # What I do following that is I traverse through blankspace and where there is a redundent cycle, I delete it. However,
+    # I also delete the entry with the same index in CycleList. This allows the cycles in CycleList to remain untouched
+    # and when we locate the redundent cycles through Blankspace, we can delete them in CycleList.
+
+
+    #this for loop trims the entries in blankspace down to just specific elements. EX: [1,2,5,2,5,1] would just be [1,2,5]
+    for x in blankspace:#this while loops strips the paths to just the nodes that they visit and skips multiple occastions
+        x.sort()
+        i = 0
+        while i < len(x):
+            currentspot = x[i]
+            for next in x[i+1:]:
+                if next == currentspot:
+                    x.remove(next)
+            i +=1
+    i = 0
+
+    #this while loop below uses the trimmed entries to look for repeated occurances of the same nodes and deletes the location
+    #from both the CycleList and BlankSpace
+    while i < len(blankspace):
+        currentspotblank = blankspace[i] #These next five lines take a path (you will never get the same path twice) and
+                                         #remove it from both lists.
+        blankspace.remove(currentspotblank) #
+        currentspotcycle = CycleList[i]
+        CycleList.remove(currentspotcycle)
+        z = 0
+        while len(blankspace) > z:  # this looks through blankspace to see if there if a copy of the removed path is in it
+                                    # and it will delete any copy of the path from blankspace and CycleList
+            if currentspotblank == blankspace[z]:
+                CycleList.pop(z)
+                blankspace.pop(z)
+                z-=1
+            z+=1
+        blankspace.insert(i, currentspotblank) #once you have looked through the lists for repeated paths, you insert the
+                                               #node you removed back into its original index
+        CycleList.insert(i, currentspotcycle)
+        i+=1
+
+
+
+
+def BMatrix(Matrix,CompleteList, BMatrixFinal):
+    BMatrixDict = {} #this dictionary holds the paths and cycles for each environ
+    LoopStop = len(Matrix)+1
+    Spot = 1
+    while Spot < LoopStop:
+        listfordictionary = [] #gets the paths/cycles for each specific environ and at the end of each loop
+                               #this list is added to BMatrixDict to get all of the different environs in BMatrixDict
+        for elements in CompleteList:
+            if int(elements[0]) == Spot:
+                listfordictionary.append(elements)
+        BMatrixDict[str(Spot)] = listfordictionary
+        Spot+=1
+    BMatrixInstance = [[0 for _ in range(len(Matrix))] for _ in range(len(Matrix))] #basis for all environ B Matrices
+    Spot = 1 # this is the counter that lets you go through each environ in the Dictionary
+    while Spot < len(Matrix)+1:
+        inputSpot = str(Spot)
+        Environ = BMatrixDict[inputSpot]
+        print(Environ)
+        rownumber = 0
+        spotnumber = 0
+        while rownumber < len(Matrix) and spotnumber < len(Matrix):
+            jsyntax = rownumber + 1#j is where you start from
+            isyntax = spotnumber + 1# i is where you are going
+            jsyntax = str(jsyntax)
+            isyntax = str(isyntax)
+            # This is where you start to traverse through the matrix
+            numOfOccurance = 0
+            numOfJ = 0
+            NotLoop = True
+            if rownumber == spotnumber:# this does not concern itself with whats inside the paths/cycles - it is only
+                                       # based on position of point in matrix. This puts the -1 in spots where the
+                                       # rownumber and spotnumber are the same
+                NotLoop = False
+            if NotLoop == True:
+                for all in Environ:
+                    first = 0 #j #21 - one to two
+                    second = 1 #i
+                    booleanforcount = False #if j make true
+                    lastnode = False
+
+                    if len(all) == 1:
+                        if jsyntax == all[0]:
+                            booleanforcount = True
+                    if len(all) > 1:
+                        #print(all)
+                        while second < len(all):
+                            if lastnode == False and all[-1] == jsyntax: #this checks the last node to see if it is j
+                                                                         #only reason we do this is in the case of
+                                                                         #cycles you could have two js in one path
+                                lastnode = True
+                            if booleanforcount == False: #checks to see if j occurs in a path, which is necessary to
+                                                         #compute B-matrix
+                                if all[first] == jsyntax:
+                                    booleanforcount = True
+                            if all[first] == jsyntax and all[second] == isyntax: #checks to see if ij occurs
+                                                                                 # this is also necessary for B
+                                numOfOccurance +=1 # i need to fix this
+                            second +=1
+                            first+=1
+
+                    if booleanforcount == True: #these four lines add up the occurances of ij and j in the path
+                        numOfJ +=1
+                    if lastnode == True:
+                        numOfJ +=1
+
+
+            if NotLoop == True: #these lines insert the values into the B matrix and the environ B matrices
+                if numOfJ == 0: #cannot divide by 0
+                    BMatrixInstance[rownumber][spotnumber] = 0
+                else:
+                    BMatrixInstance[rownumber][spotnumber] = numOfOccurance/numOfJ
+                    BMatrixFinal[rownumber][spotnumber] += numOfOccurance/numOfJ
+            if NotLoop == False:
+                BMatrixInstance[rownumber][spotnumber] = -1
+                BMatrixFinal[rownumber][spotnumber] += -1
+            spotnumber += 1
+            if spotnumber >= len(Matrix):
+                spotnumber = 0
+                rownumber += 1
+        print(BMatrixInstance)
+        print("^environ B Matrix")
+        print('\n')
+        Spot += 1
+
+
+
+
+def main():
+    #these lines until DictionaryRepresentation all have to do with inputting your Matrix
+    with open ('/Users/James/Desktop/marionlake_A.csv', 'Ur') as f: #you need to find the path to the file you want
+                                                                    #it will always be different
+        reader = csv.reader(f)
+        Matrix =  list(reader)
+        i = 0
+        while i < (len(Matrix)):
+            g = Matrix[i]
+            f = [ int(x) for x in g ]
+            Matrix[i] = f
+            i+=1
+    #Matrix = [[0,1,0,0,0,1],[0,0,1,1,1,0],[0,0,0,1,1,0],[0,1,0,0,1,0],[0,1,0,0,0,1],[0,1,0,0,0,0]] #rows/columns switched
+    #this Matrix is the Matrix Dr. Patten used to get his B-Matrix Environs
+    DictionaryRepresentation = {}
+    getNodes(Matrix,DictionaryRepresentation)
+    SimpleList = []
+    SimplePath(DictionaryRepresentation,Matrix,SimpleList)
+    CycleList = []
+    CyclePath(DictionaryRepresentation,Matrix,CycleList)
+    CompleteList = CycleList + SimpleList
+    print(CompleteList)
+    print("\n")
+    BMatrixFinal = [[0 for _ in range(len(Matrix))] for _ in range(len(Matrix))]
+    BMatrix(Matrix,CompleteList, BMatrixFinal)
+    print(BMatrixFinal)
+    print("^BMatrix")
+
+main()
