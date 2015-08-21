@@ -1,0 +1,24 @@
+# in R you do not start at 0 atleast with numeric vectors
+
+rm(list = ls(all = TRUE)) #this clears your values
+d = c(0,1,1,0,0,1,1,0,0) #this is an arbitrary matrix that i made up
+Matrix <- matrix(d, nrow = 3, ncol = 3, byrow = T) #this is how you set up your matrix
+
+Dictionary <- function(inputMatrix){
+  lengthMatrix = sqrt(length(Matrix))
+  (lengthMatrix)
+  counter = 1
+  landmark = list() #this is the dictionary that we are making
+  #landmark
+  while (counter <= lengthMatrix){
+    rowofmatrix = Matrix[counter,]
+    g = which(rowofmatrix %in% c(1)) #this searches through a vector and finds all occurances of something
+                                     #indexing is different than in python (starts at 1, not 0, important to note)
+    #print(rowofmatrix)
+    landmark[[counter]] = c(g)
+    counter = counter + 1
+  }
+  return (landmark)
+}
+g = Dictionary(inputMatrix)
+g
