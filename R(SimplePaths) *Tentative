@@ -1,0 +1,65 @@
+rm(list = ls(all = TRUE)) 
+d = c(0,1,1,0,0,1,1,0,0)
+Matrix <- matrix(d, nrow = 3, ncol = 3, byrow = T)
+
+findNodes <- function(inputMatrix) {
+  lengthMatrix = sqrt(length(inputMatrix))
+  (lengthMatrix)
+  counter = 1
+  landmark = list()
+  while (counter <= lengthMatrix){
+    rowofmatrix = inputMatrix[counter,]
+    g = which(rowofmatrix %in% c(1))
+    landmark[[counter]] = c(g)
+    counter = counter + 1
+  }
+  return (landmark)
+}
+Dictionary = findNodes(Matrix)
+#Dictionary
+
+#simple paths will not have parameters Matrix or SimpleList because I believe
+#them to be redundent SimpleList will just be passed out
+SimplePaths <- function(DictionaryRepresentation) {
+  
+  SimplePathSet = list()
+  Queue = list() 
+  loopcounter <- 1
+  while(loopcounter <= length(Dictionary)){ #this adds all of the nodes to the queue
+    Queue[[length(Queue)+1]] = loopcounter
+    loopcounter = loopcounter + 1
+  }
+  while (length(Queue) > 0) { #main loop of code
+    StartPath <- Queue[[1]]
+    Queue = Queue[-1]
+    NotRepeat <- TRUE
+    NotLoop <- TRUE
+    #Queue
+                                    # may need to reinstate
+                                    #if (StartPath %in% SimplePathSet) {
+                                    #  NotRepeat <- FALSE
+                                    #} #end of checking for repeated paths 
+    CycleCheckNode = StartPath# this is so you do not not alter StartPath
+    for (x in CycleCheckNode) { #need to transfer to while loop for productivity
+      CycleCheckNodeReference = CycleCheckNode[1]
+      CycleCheckNode = CycleCheckNode[-1]
+      if (CycleCheckNodeReference %in% CycleCheckNode) {
+        NotLoop <- FALSE
+        break
+      }
+    } #end of Checking for Cycles 
+    
+    if (NotRepeat == TRUE && NotLoop == TRUE) { #this is where we do the traversing
+      SimplePathSet[[length(SimplePathSet)+1]] = StartPath
+      branchnode = StartPath[length(StartPath)]
+      for (x in Dictionary[[branchnode]]) {
+        newpath = append(StartPath, x)
+        Queue[[length(Queue)+1]] = newpath
+      }
+    }
+  } # end of while Queue loop
+  return (SimplePathSet)
+} #end of SimplePaths Class
+
+Pathlist <- SimplePaths(Dictionary)
+print(Pathlist)
