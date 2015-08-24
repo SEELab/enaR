@@ -1,0 +1,122 @@
+rm(list = ls(all = TRUE)) 
+d = c(0,1,1,0,0,1,1,0,0)
+Matrix <- matrix(d, nrow = 3, ncol = 3, byrow = T)
+
+findNodes <- function(inputMatrix) {
+  lengthMatrix = sqrt(length(inputMatrix))
+  (lengthMatrix)
+  counter = 1
+  landmark = list()
+  while (counter <= lengthMatrix){
+    rowofmatrix = inputMatrix[counter,]
+    g = which(rowofmatrix %in% c(1))
+    landmark[[counter]] = c(g)
+    counter = counter + 1
+  }
+  return (landmark)
+}
+Dictionary = findNodes(Matrix)
+#Dictionary
+
+#
+SimpleCycles <- function(DictionaryRepresentation) {
+  
+  #SimplePathSet = list()
+  CycleSet = list()
+  Queue = list() 
+  loopcounter <- 1
+  while(loopcounter <= length(Dictionary)){ #this adds all of the nodes to the queue
+    Queue[[length(Queue)+1]] = loopcounter
+    loopcounter = loopcounter + 1
+  }
+  while (length(Queue) > 0) { #main loop of code
+    StartPath <- Queue[[1]]
+    Queue = Queue[-1]
+    NotRepeat <- TRUE
+    NotLoop <- TRUE
+    #Queue
+    # may need to reinstate
+    #if (StartPath %in% SimplePathSet) {
+    #  NotRepeat <- FALSE
+    #} #end of checking for repeated paths 
+    
+    CycleCheckNode = StartPath# this is so you do not not alter StartPath
+    for (x in CycleCheckNode) { #need to transfer to while loop for productivity
+      CycleCheckNodeReference = CycleCheckNode[1]
+      CycleCheckNode = CycleCheckNode[-1]
+      if (CycleCheckNodeReference %in% CycleCheckNode) {
+        NotLoop <- FALSE
+        CycleSet[[length(CycleSet)+1]] = StartPath
+        #add it in here
+        break
+      }
+    } #end of Checking for Cycles 
+    
+    if (NotRepeat == TRUE && NotLoop == TRUE) { #this is where we do the traversing
+      branchnode = StartPath[length(StartPath)]
+      for (x in Dictionary[[branchnode]]) {
+        newpath = append(StartPath, x)
+        Queue[[length(Queue)+1]] = newpath
+      }
+    }
+  } # end of while Queue loop
+  
+  blankspace = CycleSet #very similar to Python code - same basic idea
+                        #alter blanklist and save points so you can take out
+                        #the desired points in CycleSet without actually
+                        #altering the points
+                
+  i = 1
+  while (i <= length(blankspace)) { #this sorts the CycleSet
+    sortedspot = sort(blankspace[[i]])
+    blankspace[[i]] = sortedspot
+    i = i + 1
+  }
+  
+  linecounter = 1
+  for (line in blankspace) {
+    i = 1
+    while (length(line) > i) { #if I just did >= i, the next for loop would be broken
+      spot = line[i]
+      line = line[-i]
+      line %in% spot #a = line
+      line = line [! line %in% spot] #remove = spot
+      line = append(line, spot, i-1)
+      i = i + 1
+    }
+    blankspace[[linecounter]] = line
+    linecounter = linecounter + 1
+  }
+
+  i = 1
+  while(length(blankspace)>=i){
+    repeatchecker = blankspace[[1]]
+    CycleSetrepeat = CycleSet[[1]] #repeatchecker
+    blankspace = blankspace[-1]
+    CycleSet = CycleSet[-1]
+    startblankspacesize = length(blankspace)
+    spotsofrecurrence = c()
+    counter = 1
+    for (x in blankspace){ 
+      if(((length(intersect(repeatchecker,x)) == length(repeatchecker)) && length(x) == length(repeatchecker)) == TRUE) {
+        spotsofrecurrence = append(spotsofrecurrence, counter)
+      } 
+      counter = counter + 1
+    }
+    for (x in spotsofrecurrence){
+      accountability = startblankspacesize - length(blankspace)
+      x = x - accountability
+      blankspace[[x]] = NULL
+      CycleSet[[x]] = NULL
+    }
+    blankspace[[length(blankspace)+1]] = repeatchecker
+    CycleSet[[length(CycleSet)+1]] = CycleSetrepeat
+    i = i + 1
+  }
+  return (CycleSet)
+} #end of SimpleCycles Class
+  
+CycleList <- SimpleCycles(Dictionary)
+print(CycleList)
+  
+  
