@@ -23,7 +23,7 @@ unpack(x = "network object")
   \item{e}{Node boundary loss due to exportation}
   \item{y}{Node boundary loss; summation of r and e}
   \item{X}{Node storage or biomass}
-  \item{Living}{Logical vector indicating whether each node is living or not}
+  \item{living}{Logical vector indicating whether each node is living or not}
 }
 
 \author{

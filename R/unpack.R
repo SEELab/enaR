@@ -15,5 +15,5 @@ unpack <- function(x='network object'){
   output <- x%v%'output'   #respiration + export
   storage <- x%v%'storage'
   living <- x%v%'living'
-  return(list("F"=flow,"z"=input,"r"=respiration,"e"=export,"y"=output,"X"=storage,'Living'=living))
+  return(list("F"=flow,"z"=input,"r"=respiration,"e"=export,"y"=output,"X"=storage,'living'=living))
 }
