@@ -14,9 +14,9 @@
 \tabular{ll}{
 Package: \tab enaR \cr
 Type: \tab Package\cr
-Version: \tab 2.9.1\cr
-Date: \tab 2015-08-06\cr
-License: \tab GPL-2\cr
+Version: \tab 2.9.2\cr
+Date: \tab 2015-10-30\cr
+License: \tab GPL-3\cr
 }
 }
 \author{
