@@ -1,0 +1,254 @@
+rm(list = ls(all = TRUE)) 
+d = c(0,1,1,0,0,1,1,0,0)
+Matrix <- matrix(d, nrow = 3, ncol = 3, byrow = T)
+
+findNodes <- function(inputMatrix) {
+  lengthMatrix = sqrt(length(inputMatrix))
+  (lengthMatrix)
+  counter = 1
+  landmark = list()
+  while (counter <= lengthMatrix){
+    rowofmatrix = inputMatrix[counter,]
+    g = which(rowofmatrix %in% c(1))
+    landmark[[counter]] = c(g)
+    counter = counter + 1
+  }
+  return (landmark)
+}
+Dictionary = findNodes(Matrix)
+
+
+
+
+
+
+SimpleCycles <- function(DictionaryRepresentation) {
+  
+  #SimplePathSet = list()
+  CycleSet = list()
+  Queue = list() 
+  loopcounter <- 1
+  while(loopcounter <= length(Dictionary)){ #this adds all of the nodes to the queue
+    Queue[[length(Queue)+1]] = loopcounter
+    loopcounter = loopcounter + 1
+  }
+  while (length(Queue) > 0) { #main loop of code
+    StartPath <- Queue[[1]]
+    Queue = Queue[-1]
+    NotRepeat <- TRUE
+    NotLoop <- TRUE
+    #Queue
+    # may need to reinstate
+    #if (StartPath %in% SimplePathSet) {
+    #  NotRepeat <- FALSE
+    #} #end of checking for repeated paths 
+    
+    CycleCheckNode = StartPath# this is so you do not not alter StartPath
+    for (x in CycleCheckNode) { #need to transfer to while loop for productivity
+      CycleCheckNodeReference = CycleCheckNode[1]
+      CycleCheckNode = CycleCheckNode[-1]
+      if (CycleCheckNodeReference %in% CycleCheckNode) {
+        NotLoop <- FALSE
+        CycleSet[[length(CycleSet)+1]] = StartPath
+        #add it in here
+        break
+      }
+    } #end of Checking for Cycles 
+    
+    if (NotRepeat == TRUE && NotLoop == TRUE) { #this is where we do the traversing
+      branchnode = StartPath[length(StartPath)]
+      for (x in Dictionary[[branchnode]]) {
+        newpath = append(StartPath, x)
+        Queue[[length(Queue)+1]] = newpath
+      }
+    }
+  } # end of while Queue loop
+  
+  blankspace = CycleSet #very similar to Python code - same basic idea
+  #alter blanklist and save points so you can take out
+  #the desired points in CycleSet without actually
+  #altering the points
+  
+  i = 1
+  while (i <= length(blankspace)) { #this sorts the CycleSet
+    sortedspot = sort(blankspace[[i]])
+    blankspace[[i]] = sortedspot
+    i = i + 1
+  }
+  
+  linecounter = 1
+  for (line in blankspace) {
+    i = 1
+    while (length(line) > i) { #if I just did >= i, the next for loop would be broken
+      spot = line[i]
+      line = line[-i]
+      line %in% spot #a = line
+      line = line [! line %in% spot] #remove = spot
+      line = append(line, spot, i-1)
+      i = i + 1
+    }
+    blankspace[[linecounter]] = line
+    linecounter = linecounter + 1
+  }
+  
+  i = 1
+  while(length(blankspace)>=i){
+    repeatchecker = blankspace[[1]]
+    CycleSetrepeat = CycleSet[[1]] #repeatchecker
+    blankspace = blankspace[-1]
+    CycleSet = CycleSet[-1]
+    startblankspacesize = length(blankspace)
+    spotsofrecurrence = c()
+    counter = 1
+    for (x in blankspace){ 
+      if(((length(intersect(repeatchecker,x)) == length(repeatchecker)) && length(x) == length(repeatchecker)) == TRUE) {
+        spotsofrecurrence = append(spotsofrecurrence, counter)
+      } 
+      counter = counter + 1
+    }
+    for (x in spotsofrecurrence){
+      accountability = startblankspacesize - length(blankspace)
+      x = x - accountability
+      blankspace[[x]] = NULL
+      CycleSet[[x]] = NULL
+    }
+    blankspace[[length(blankspace)+1]] = repeatchecker
+    CycleSet[[length(CycleSet)+1]] = CycleSetrepeat
+    i = i + 1
+  }
+  return (CycleSet)
+} #end of SimpleCycles Class
+
+CycleList <- SimpleCycles(Dictionary)
+
+
+
+
+
+SimplePaths <- function(DictionaryRepresentation) {
+  
+  SimplePathSet = list()
+  Queue = list() 
+  loopcounter <- 1
+  while(loopcounter <= length(Dictionary)){ #this adds all of the nodes to the queue
+    Queue[[length(Queue)+1]] = loopcounter
+    loopcounter = loopcounter + 1
+  }
+  while (length(Queue) > 0) { #main loop of code
+    StartPath <- Queue[[1]]
+    Queue = Queue[-1]
+    NotRepeat <- TRUE
+    NotLoop <- TRUE
+    #Queue
+    # may need to reinstate
+    #if (StartPath %in% SimplePathSet) {
+    #  NotRepeat <- FALSE
+    #} #end of checking for repeated paths 
+    CycleCheckNode = StartPath# this is so you do not not alter StartPath
+    for (x in CycleCheckNode) { #need to transfer to while loop for productivity
+      CycleCheckNodeReference = CycleCheckNode[1]
+      CycleCheckNode = CycleCheckNode[-1]
+      if (CycleCheckNodeReference %in% CycleCheckNode) {
+        NotLoop <- FALSE
+        break
+      }
+    } #end of Checking for Cycles 
+    
+    if (NotRepeat == TRUE && NotLoop == TRUE) { #this is where we do the traversing
+      SimplePathSet[[length(SimplePathSet)+1]] = StartPath
+      branchnode = StartPath[length(StartPath)]
+      for (x in Dictionary[[branchnode]]) {
+        newpath = append(StartPath, x)
+        Queue[[length(Queue)+1]] = newpath
+      }
+    }
+  } # end of while Queue loop
+  return (SimplePathSet)
+} #end of SimplePaths Class
+
+Pathlist <- SimplePaths(Dictionary)
+
+CombinedList = append(Pathlist, CycleList) 
+CombinedListClone = CombinedList
+print(Pathlist)
+print(CycleList)
+print(CombinedList)
+
+
+BMatrixFinder <- function(CyclesAndPaths){
+  NumberOfEnvirons = sqrt(length(Matrix))
+  CurrentEnviron = 1
+  BMatrixFinal = matrix(0, nrow = NumberOfEnvirons, ncol = NumberOfEnvirons)
+  BMatrixEnviron = matrix(0, nrow = NumberOfEnvirons, ncol = NumberOfEnvirons)
+  
+  while (CurrentEnviron <= NumberOfEnvirons){
+    EnvironList = list()
+    i = 1 
+    while (i <= length(CyclesAndPaths)) {
+      currentNode = CyclesAndPaths[[i]]
+      if (currentNode[1] == CurrentEnviron){
+        EnvironList[[length(EnvironList)+1]] = currentNode
+        CyclesAndPaths = CyclesAndPaths[-i]
+        i = i - 1
+      }
+      i = i + 1
+    }
+    
+    rownumber = 1
+    columnnumber = 1
+    while ( rownumber <= NumberOfEnvirons) {
+      # j = start, i = going to |||| #j = col i = row
+      # you need a loop for all this stuff for x in Environlist
+      Continue = TRUE
+      if (rownumber == columnnumber) {
+        Continue = FALSE
+      }
+      if (Continue == FALSE){
+        BMatrixEnviron[rownumber,columnnumber] = -1
+      }
+      
+      if (Continue == TRUE){ # this is the only spot i have left to do
+        #BMatrixEnviron[rownumber,columnnumber] = -10
+        numberofij = 0 #
+        numberofj = 0
+        for (x in EnvironList) {
+          LengthOfEnvironX = length(x)
+          if (LengthOfEnvironX == 1){
+            if (x[LengthOfEnvironX] == columnnumber){
+              numberofj = numberofj + 1
+            }
+          }
+          start = 1
+          last = 2
+          while (last <= LengthOfEnvironX){
+            if (x[start] == columnnumber){
+              numberofj = numberofj + 1
+            }
+            if (last == LengthOfEnvironX && x[last] == columnnumber){
+              numberofj = numberofj + 1
+            }
+            if (x[start] == columnnumber && x[last] == rownumber){
+              numberofij = numberofij + 1
+            }
+            start = start + 1
+            last = last + 1
+          }
+          
+        }# end of for (x in EnvironList) {
+        BMatrixEnviron[rownumber,columnnumber] = numberofij/numberofj
+      }
+      columnnumber = columnnumber + 1
+      if (columnnumber > NumberOfEnvirons){
+        columnnumber = 1
+        rownumber = rownumber + 1
+      }
+    } #end of loop for traversing each environ
+    print(EnvironList)
+    print(BMatrixEnviron)
+    CurrentEnviron = CurrentEnviron + 1
+    BMatrixFinal = BMatrixFinal + BMatrixEnviron
+  } # end of major while loop
+  return (BMatrixFinal)
+}
+BMatrix = BMatrixFinder(CombinedListClone)
+BMatrix
