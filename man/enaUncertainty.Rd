@@ -2,269 +2,124 @@
 \alias{enaUncertainty}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+ Uncertainty Analysis for Ecological Networks
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Applies linear inverse modeling uncertainty analysis from the limSolve package 
+  (Van den Meershe, 2009; Soetaert, 2009) to flow networks.  Function generates 
+  a specified number of network models with edge weights that meet specified constraints. 
+  It returns a list of network objects that can be used as the input to other functions in 
+  the enaR package.
 }
 \usage{
 enaUncertainty(x = "network object", p.err = NA, Fu.sd = NA, zu.sd = NA, yu.sd = NA, Fu.bot = NA, zu.bot = NA, yu.bot = NA, Fu.top = NA, zu.top = NA, yu.top = NA, iter = 100)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{x}{a network object.  This includes all weighted flows into and out of
+    each node.
 }
-  \item{p.err}{
-%%     ~~Describe \code{p.err} here~~
+  \item{p.err}{If present, provides a single value representing the percentage of 
+  allowable variation to be assigned to all network edges
 }
-  \item{Fu.sd}{
-%%     ~~Describe \code{Fu.sd} here~~
+  \item{Fu.sd}{Matrix of size n by n with values corresponding to each network edge.
+  Values specify the variation (plus and minus) to be applied to each edge.  
+  Requires zu.sd and yu.sd.
 }
-  \item{zu.sd}{
-%%     ~~Describe \code{zu.sd} here~~
+  \item{zu.sd}{Vector of length n that specifies variation (plus and minus) to be 
+  applied to each network input.
 }
-  \item{yu.sd}{
-%%     ~~Describe \code{yu.sd} here~~
+  \item{yu.sd}{Vector of length n that specifies variation (plus and minus) to be 
+  applied to each network output.
 }
-  \item{Fu.bot}{
-%%     ~~Describe \code{Fu.bot} here~~
+  \item{Fu.bot}{Matrix of size n by n with values corresponding to each network edge.
+  Values specify lower limit for the acceptable range to be applied to each edge.  
+  Requires zu.bot and yu.bot, as well as Fu.top, zu.top, and yu.top to specify 
+  the upper limit for the acceptable rage.
 }
-  \item{zu.bot}{
-%%     ~~Describe \code{zu.bot} here~~
+  \item{zu.bot}{Vector of length n that specifies the lower limit to be 
+  applied to each network input.
 }
-  \item{yu.bot}{
-%%     ~~Describe \code{yu.bot} here~~
+  \item{yu.bot}{Vector of length n that specifies the lower limit to be 
+  applied to each network output.
 }
-  \item{Fu.top}{
-%%     ~~Describe \code{Fu.top} here~~
+  \item{Fu.top}{Matrix of size n by n with values corresponding to each network edge.
+  Values specify upper limit for the acceptable range to be applied to each edge.  
+  Requires zu.top and yu.top, as well as Fu.bot, zu.bot, and yu.bot to specify 
+  the lower limit for the acceptable rage.
 }
-  \item{zu.top}{
-%%     ~~Describe \code{zu.top} here~~
+  \item{zu.top}{Vector of length n that specifies the upper limit to be 
+  applied to each network input.
 }
-  \item{yu.top}{
-%%     ~~Describe \code{yu.top} here~~
+  \item{yu.top}{Vector of length n that specifies the upper limit to be 
+  applied to each network output.
 }
-  \item{iter}{
-%%     ~~Describe \code{iter} here~~
+  \item{iter}{Number of times to sample the constrained solution space.  
+  Corresponds to the number of networks generated in the function output. Value should be sufficiently large to ensure that 
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\value{\item{plausible.models}{List of network objects of length iter with 
+edge values that fall within the range of values specified by function inputs.}
 }
 \references{
-%% ~put references to the literature/web site here ~
+  Van den Meersche, K., Soetaert, K. & Van Oevelen, D. (2009) xsample(): An R function for  
+  sampling linear inverse problems. Journal of Statistical Software, 30, HASH–0x57696b8.
+
+  Soetaert, K., Van den Meersche, K. & van Oevelen, D. (2009) limSolve: Solving linear inverse
+  models. R package version 1.5.1.
 }
 \author{
-%%  ~~who you are~~
+David E. Hines (deh9951@uncw.edu)
+%% Will need to update email address
 }
 \note{
-%%  ~~further notes~~
+This function utilizes the xSample() function (Van den Meersche, 2009) from the limSolve package (Soetaert, 2009)
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function (x = "network object", p.err = NA, Fu.sd = NA, zu.sd = NA, 
-    yu.sd = NA, Fu.bot = NA, zu.bot = NA, yu.bot = NA, Fu.top = NA, 
-    zu.top = NA, yu.top = NA, iter = 100) 
-{
-    if (class(x) != "network") {
-        warning("x is not a network class object")
-    }
-    if (is.na(Fu.sd)[1] == FALSE && is.na(zu.sd)[1] == TRUE) {
-        warning("Insufficient uncertainty data")
-    }
-    if (is.na(Fu.sd)[1] == FALSE && is.na(yu.sd)[1] == TRUE) {
-        warning("Insufficient uncertainty data")
-    }
-    if (is.na(Fu.bot)[1] == FALSE && is.na(zu.bot)[1] == TRUE) {
-        warning("Insufficient uncertainty data")
-    }
-    if (is.na(Fu.bot)[1] == FALSE && is.na(yu.bot)[1] == TRUE) {
-        warning("Insufficient uncertainty data")
-    }
-    if (is.na(Fu.top)[1] == FALSE && is.na(zu.top)[1] == TRUE) {
-        warning("Insufficient uncertainty data")
-    }
-    if (is.na(Fu.top)[1] == FALSE && is.na(yu.top)[1] == TRUE) {
-        warning("Insufficient uncertainty data")
-    }
-    if (is.na(Fu.top)[1] == FALSE && is.na(Fu.bot)[1] == TRUE) {
-        warning("Lower limit uncertainty data not detected")
-    }
-    if (is.na(Fu.bot)[1] == FALSE && is.na(Fu.top)[1] == TRUE) {
-        warning("Upper limit uncertainty data not detected")
-    }
-    U <- unpack(x)
-    fluxes <- which(U$F != 0, arr.ind = TRUE)
-    inputs <- seq(from = 1, to = length(U$z), by = 1)
-    outputs <- seq(from = 1, to = length(U$y), by = 1)
-    vertex.names <- rep(0, x$gal$n)
-    respiration <- rep(0, x$gal$n)
-    living <- U$Living
-    storage <- U$X
-    for (i in 1:x$gal$n) {
-        vertex.names[i] <- x$val[[i]]$vertex.names
-    }
-    E <- matrix(0, nrow = x$gal$n, ncol = (nrow(fluxes) + length(inputs) + 
-        length(outputs)))
-    for (i in 1:length(U$z)) {
-        E[i, i] <- U$z[i]
-    }
-    for (i in 1:nrow(E)) {
-        E[i, length(U$z) + outputs[i]] <- -U$y[i]
-    }
-    for (f in 1:nrow(fluxes)) {
-        E[fluxes[f, 2], (length(U$z) + length(U$y) + f)] <- U$F[fluxes[f, 
-            1], fluxes[f, 2]]
-    }
-    for (f in 1:nrow(fluxes)) {
-        E[fluxes[f, 1], (length(U$z) + length(U$y) + f)] <- -U$F[fluxes[f, 
-            1], fluxes[f, 2]]
-    }
-    F <- rep(0, x$gal$n)
-    G <- rbind(diag(rep(1, ncol(E))), diag(rep(-1, ncol(E))))
-    lower.percent <- 0
-    upper.percent <- 0
-    if (is.na(p.err)[1] == FALSE) {
-        if (p.err < 100 && p.err > 0) {
-            lower.percent <- 1 - (p.err/100)
-            upper.percent <- 1 + (p.err/100)
-        }
-        else if (p.err >= 100) {
-            lower.percent <- 1e-04
-            upper.percent <- 1 + (p.err/100)
-        }
-        else if (p.err == 0) {
-            warning()
-            lower.percent <- 0.9999
-            upper.percent <- 1.0001
-        }
-        H <- c(rep(lower.percent, ncol(E)), rep(-upper.percent, 
-            ncol(E)))
-    }
-    else if (is.na(Fu.sd)[1] == FALSE) {
-        for (h in 1:(length(U$z))) {
-            lower.percent[h] <- ((U$z[h] - zu.sd[h])/U$z[h])
-        }
-        for (h in (length(U$z) + 1):(length(U$z) + length(U$y))) {
-            lower.percent[h] <- ((U$y[h - length(U$z)] - yu.sd[h - 
-                length(U$z)])/U$y[h - length(U$z)])
-        }
-        for (h in (length(U$z) + length(U$y) + 1):(length(U$z) + 
-            length(U$y) + nrow(fluxes))) {
-            lower.percent[h] <- ((U$F[fluxes[(h - length(U$z) - 
-                length(U$y)), 1], fluxes[(h - length(U$z) - length(U$y)), 
-                2]] - Fu.sd[fluxes[(h - length(U$z) - length(U$y)), 
-                1], fluxes[(h - length(U$z) - length(U$y)), 2]])/U$F[fluxes[(h - 
-                length(U$z) - length(U$y)), 1], fluxes[(h - length(U$z) - 
-                length(U$y)), 2]])
-        }
-        lower.percent[is.na(lower.percent)] <- 0
-        lower.percent[which(lower.percent < 0)] <- 1e-04
-        for (h in 1:(length(U$z))) {
-            upper.percent[h] <- ((U$z[h] + zu.sd[h])/U$z[h])
-        }
-        for (h in (length(U$z) + 1):(length(U$z) + length(U$y))) {
-            upper.percent[h] <- ((U$y[h - length(U$z)] + yu.sd[h - 
-                length(U$z)])/U$y[h - length(U$z)])
-        }
-        for (h in (length(U$z) + length(U$y) + 1):(length(U$z) + 
-            length(U$y) + nrow(fluxes))) {
-            upper.percent[h] <- ((U$F[fluxes[(h - length(U$z) - 
-                length(U$y)), 1], fluxes[(h - length(U$z) - length(U$y)), 
-                2]] + Fu.sd[fluxes[(h - length(U$z) - length(U$y)), 
-                1], fluxes[(h - length(U$z) - length(U$y)), 2]])/U$F[fluxes[(h - 
-                length(U$z) - length(U$y)), 1], fluxes[(h - length(U$z) - 
-                length(U$y)), 2]])
-        }
-        upper.percent[is.na(upper.percent)] <- 0
-        H <- c(lower.percent, -upper.percent)
-    }
-    else if (is.na(Fu.bot)[1] == FALSE && is.na(Fu.top)[1] == 
-        FALSE) {
-        for (h in 1:(length(U$z))) {
-            lower.percent[h] <- zu.bot[h]/U$z[h]
-        }
-        for (h in (length(U$z) + 1):(length(U$z) + length(U$y))) {
-            lower.percent[h] <- yu.bot[h - length(U$z)]/U$y[h - 
-                length(U$z)]
-        }
-        for (h in (length(U$z) + length(U$y) + 1):(length(U$z) + 
-            length(U$y) + nrow(fluxes))) {
-            lower.percent[h] <- Fu.bot[fluxes[(h - length(U$z) - 
-                length(U$y)), 1], fluxes[(h - length(U$z) - length(U$y)), 
-                2]]/U$F[fluxes[(h - length(U$z) - length(U$y)), 
-                1], fluxes[(h - length(U$z) - length(U$y)), 2]]
-        }
-        lower.percent[is.na(lower.percent)] <- 0
-        lower.percent[which(lower.percent < 0)] <- 1e-04
-        for (h in 1:(length(U$z))) {
-            upper.percent[h] <- zu.top[h]/U$z[h]
-        }
-        for (h in (length(U$z) + 1):(length(U$z) + length(U$y))) {
-            upper.percent[h] <- yu.top[h - length(U$z)]/U$y[h - 
-                length(U$z)]
-        }
-        for (h in (length(U$z) + length(U$y) + 1):(length(U$z) + 
-            length(U$y) + nrow(fluxes))) {
-            upper.percent[h] <- Fu.top[fluxes[(h - length(U$z) - 
-                length(U$y)), 1], fluxes[(h - length(U$z) - length(U$y)), 
-                2]]/U$F[fluxes[(h - length(U$z) - length(U$y)), 
-                1], fluxes[(h - length(U$z) - length(U$y)), 2]]
-        }
-        upper.percent[is.na(upper.percent)] <- 0
-        H <- c(lower.percent, -upper.percent)
-    }
-    else {
-        warning("Insufficient data for uncertainty analysis")
-    }
-    print("ready for xSample")
-    xs <- xsample(E = E, F = F, G = G, H = H, iter = iter)
-    z.ena <- rep(0, x$gal$n)
-    y.ena <- rep(0, x$gal$n)
-    F.ena <- matrix(0, nrow = nrow(U$F), ncol = ncol(U$F))
-    plausible.models <- list()
-    for (k in 1:nrow(xs$X)) {
-        for (z in 1:length(U$z)) {
-            z.ena[z] <- xs$X[k, z] * U$z[z]
-        }
-        for (y in (length(U$z) + 1):(length(U$z) + length(U$y))) {
-            y.ena[y - length(U$z)] <- xs$X[k, (y)] * U$y[y - 
-                length(U$z)]
-        }
-        for (f in (length(U$z) + length(U$y) + 1):ncol(xs$X)) {
-            F.ena[fluxes[(f - length(U$z) - length(U$y)), 1], 
-                fluxes[(f - length(U$z) - length(U$y)), 2]] <- xs$X[k, 
-                f] * U$F[fluxes[(f - length(U$z) - length(U$y)), 
-                1], fluxes[(f - length(U$z) - length(U$y)), 2]]
-        }
-        rownames(F.ena) <- vertex.names
-        colnames(F.ena) <- vertex.names
-        plausible.models[[k]] <- pack(flow = F.ena, input = z.ena, 
-            export = y.ena, respiration = respiration, living = living, 
-            output = y.ena, storage = storage)
-    }
-    return(plausible.models)
-  }
+\examples{
+# Three different ways to purtub all fluxes in a model by +/- 50%
+# Uniform edge uncertainty (50%)
+data(troModels)
+UA = enaUncertainty(x=troModels[[6]], p.err=50, iter=10000)
+
+# Data driven uncertainty (standard deviation)
+data(troModels)
+Fu.sd = matrix(c(0, 0, 0, 0, 50,
+                 0, 0, 50, 0, 50,
+                 0, 0, 0, 50, 50,
+                 0, 0, 0, 0, 50,
+                 0, 50, 50, 0, 0), byrow=TRUE, nrow=5, ncol=5)
+zu.sd = c(50, 0, 0, 0, 50)
+yu.sd = c(50, 50, 50, 50, 50)
+
+UA = enaUncertainty(troModels[[6]], Fu.sd=Fu.sd, zu.sd=zu.sd, yu.sd=yu.sd, iter=10000)
+
+# Data driven uncertainty (upper and lower limit)
+data(troModels)
+Fu.bot = matrix(c(0, 0, 0, 0, 4440.5,
+                 0, 0, 37.5, 0, 800,
+                 0, 0, 0, 185, 100,
+                 0, 0, 0, 0, 83.5,
+                 0, 2620.5, 1154.5, 0, 0), byrow=TRUE, nrow=5, ncol=5)
+zu.bot = c(5592, 0, 0, 0, 317.5)
+yu.bot = c(1151.5, 1765.0, 907, 101.5, 1984.5)
+
+Fu.top = matrix(c(0, 0, 0, 0, 13321.5,
+                 0, 0, 112.5, 0, 2500,
+                 0, 0, 0, 555, 300,
+                 0, 0, 0, 0, 250.5,
+                 0, 7807.5, 3463.5, 0, 0), byrow=TRUE, nrow=5, ncol=5)
+zu.top = c(16776, 0, 0, 0, 952.5)
+yu.top = c(3454.5, 5295, 2721, 304.5, 5953.5)
+
+UA = enaUncertainty(troModels[[6]], Fu.bot=Fu.bot, zu.bot=zu.bot, yu.bot=yu.bot,
+        Fu.top=Fu.top, zu.top=zu.top, yu.top=yu.top, iter=10000)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{Uncertainty analysis}
+\keyword{Linear inverse modeling}
+\keyword{Flow network}
