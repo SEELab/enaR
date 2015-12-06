@@ -5,11 +5,14 @@
  Uncertainty Analysis for Ecological Networks
 }
 \description{
-  Applies linear inverse modeling uncertainty analysis from the limSolve package 
-  (Van den Meershe, 2009; Soetaert, 2009) to flow networks.  Function generates 
-  a specified number of network models with edge weights that meet specified constraints. 
-  It returns a list of network objects that can be used as the input to other functions in 
-  the enaR package.
+
+  Applies linear inverse modeling uncertainty analysis from the limSolve
+  package (Van den Meershe, 2009; Soetaert, 2009) to flow networks.
+  Function generates a specified number of network models with edge
+  weights that meet specified constraints.  It returns a list of network
+  objects that can be used as the input to other functions in the enaR
+  package.
+  
 }
 \usage{
 enaUncertainty(x = "network object", p.err = NA, Fu.sd = NA, zu.sd = NA, yu.sd = NA, Fu.bot = NA, zu.bot = NA, yu.bot = NA, Fu.top = NA, zu.top = NA, yu.top = NA, iter = 100)
@@ -61,11 +64,14 @@ enaUncertainty(x = "network object", p.err = NA, Fu.sd = NA, zu.sd = NA, yu.sd =
 edge values that fall within the range of values specified by function inputs.}
 }
 \references{
-  Van den Meersche, K., Soetaert, K. & Van Oevelen, D. (2009) xsample(): An R function for  
-  sampling linear inverse problems. Journal of Statistical Software, 30, HASH–0x57696b8.
 
-  Soetaert, K., Van den Meersche, K. & van Oevelen, D. (2009) limSolve: Solving linear inverse
-  models. R package version 1.5.1.
+  Van den Meersche, K., Soetaert, K. & Van Oevelen, D. (2009) xsample():
+  An R function for sampling linear inverse problems. Journal of
+  Statistical Software, 30, HASH–0x57696b8.
+
+  Soetaert, K., Van den Meersche, K. & van Oevelen, D. (2009) limSolve:
+  Solving linear inverse models. R package version 1.5.1.
+  
 }
 \author{
 David E. Hines (deh9951@uncw.edu)
