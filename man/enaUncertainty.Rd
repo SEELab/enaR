@@ -60,9 +60,12 @@ enaUncertainty(x = "network object", p.err = NA, Fu.sd = NA, zu.sd = NA, yu.sd =
   \item{iter}{Number of times to sample the constrained solution space.  
   Corresponds to the number of networks generated in the function output. Value should be sufficiently large to ensure that 
 }
-\value{\item{plausible.models}{List of network objects of length iter with 
+
+\item{plausible.models}{List of network objects of length iter with 
 edge values that fall within the range of values specified by function inputs.}
+
 }
+
 \references{
 
   Van den Meersche, K., Soetaert, K. & Van Oevelen, D. (2009) xsample():
@@ -73,6 +76,7 @@ edge values that fall within the range of values specified by function inputs.}
   Solving linear inverse models. R package version 1.5.1.
   
 }
+
 \author{
 David E. Hines (deh9951@uncw.edu)
 %% Will need to update email address
