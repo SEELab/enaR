@@ -14,18 +14,18 @@
 \tabular{ll}{
 Package: \tab enaR \cr
 Type: \tab Package\cr
-Version: \tab 2.9.2\cr
-Date: \tab 2015-10-30\cr
+Version: \tab 2.9.3\cr
+Date: \tab 2015-12-09\cr
 License: \tab GPL-3\cr
 }
 }
 \author{
-Authors: Stuart R. Borrett (UNCW) and Matthew K. Lau (NAU)
+Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David E. Hines
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 }
 \references{
-Fath BD, Borrett SR. 2006. A Matlab Function for Network Environ
-Analysis. Environmental Modelling and Software 21, 375-405.
+Borrett SR and Lau MK 2014. enaR: An r package for Ecosystem Network
+Analysis. Methods in Ecology and Evolution 5:1206-1213.
 }
 \keyword{ package }
 \seealso{
