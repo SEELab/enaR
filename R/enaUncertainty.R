@@ -1,5 +1,5 @@
-enaUncertainty <-
-function(x = 'network object', p.err=NA, Fu.sd=NA, zu.sd=NA, yu.sd=NA, Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
+enaUncertainty <- function(x = 'network object', p.err=NA, Fu.sd=NA, zu.sd=NA, yu.sd=NA,
+Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
 
     if (class(x) != 'network'){warning('x is not a network class object')}   # check object class
 
