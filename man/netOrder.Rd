@@ -25,7 +25,7 @@ netOrder(x,order)
 
 
 \author{
-Pawandeep Singh (pawan.s@live.co.uk)
+Pawandeep Singh 
 }
 \note{
 	The node order vector "order" must be of length equal to the number of nodes in x (i.e. N) and must contain all integers from 1 to N.

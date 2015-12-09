@@ -23,7 +23,7 @@ bcratio(x = "matrix")
   environ analysis. Environmental Modelling & Software 21:375-405.
 }
 \author{
-  Stuart R. Borrett (borretts@uncw.edu)
+  Stuart R. Borrett 
 }
 
 \seealso{

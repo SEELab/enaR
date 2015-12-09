@@ -23,8 +23,8 @@ read.wand(file = "file name with path")
   user-friendly tool. Environmental Modelling and Software 19(4):337-340.
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
 }
 \note{
   IMPORTANT: this function depends on the read.xlsx function from the xlsx

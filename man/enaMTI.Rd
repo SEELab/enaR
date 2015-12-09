@@ -58,8 +58,8 @@ enaMTI(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE)
   ecosystems.  Coenoses 5, 7--16.
 }
 \author{
-  Stuart R. Borrett (borretts@uncw.edu)
-  Matthew K. Lau (mkl48@nau.edu)
+  Stuart R. Borrett 
+  Matthew K. Lau 
 }
 \note{
   This and other Ulanowicz school functions require that export and

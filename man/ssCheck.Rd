@@ -36,8 +36,8 @@ ssCheck(x, tol = 5,more=FALSE,zero.na=TRUE)
   environ analysis. Environmental Modelling & Software 21:375-405.
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
 }
 
 \seealso{

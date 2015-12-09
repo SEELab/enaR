@@ -35,8 +35,8 @@ force.balance(x,tol=5,max.itr=10,method='AVG2')
   networks: a comparison between balancing procedures.Ecological Modelling 165(2-3):231-239.
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
 }
 
 \seealso{

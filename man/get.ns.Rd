@@ -30,9 +30,9 @@ get.ns(x, balance.override=FALSE)
   Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 }
 \author{
-Matthew K. Lau (mkl48@nau.edu)
-Stuart R. Borrett (borretts@uncw.edu)
-David E. Hines (deh9951@uncw.edu)
+Matthew K. Lau 
+Stuart R. Borrett 
+David E. Hines 
 }
 
 \seealso{

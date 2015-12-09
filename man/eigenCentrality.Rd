@@ -25,7 +25,7 @@ eigenCentrality(x='matrix')
 }
 
 \author{
-Stuart R. Borrett (borretts@uncw.edu)
-Matthew K. Lau (mkl48@nau.edu)
+Stuart R. Borrett 
+Matthew K. Lau 
 }
 

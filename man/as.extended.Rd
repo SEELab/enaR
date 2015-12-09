@@ -30,8 +30,8 @@ Allesina, S., Bondavalli, C., 2003. Steady state of ecosystem flow
 networks: a comparison between balancing procedures.Ecological Modelling 165(2-3):231-239.
 }
 \author{
-Matthew K. Lau (mkl48@nau.edu)
-Stuart R. Borrett (borretts@uncw.edu)
+Matthew K. Lau 
+Stuart R. Borrett 
 }
 \seealso{
   \code{\link{balance}}

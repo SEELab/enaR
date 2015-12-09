@@ -43,8 +43,8 @@ Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
 environ analysis. Environmental Modelling & Software 21:375-405.
 }
 \author{
-Stuart R. Borrett (borretts@uncw.edu)
-Matthew K. Lau (mkl48@nau.edu)
+Stuart R. Borrett 
+Matthew K. Lau 
 }
 
 \examples{

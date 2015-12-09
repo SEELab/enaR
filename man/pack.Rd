@@ -40,8 +40,8 @@ pack(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA)
 }
 
 \author{
-Matthew K. Lau (mkl48@nau.edu)
-Stuart R. Borrett (borretts@uncw.edu)
+Matthew K. Lau 
+Stuart R. Borrett 
 }
 
 \seealso{

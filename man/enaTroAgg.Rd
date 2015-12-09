@@ -43,7 +43,7 @@ enaTroAgg(x)
   Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem flow networks. Environmental Software 6:131 -- 142.
 }
 \author{
-  Pawandeep Singh (pawan.s@live.co.uk)
+  Pawandeep Singh 
   }
 \note{
   This and other Ulanowicz school functions require that export and

@@ -54,8 +54,8 @@ Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem trophic com
 
 }
 \author{
-  David E. Hines (deh9951@uncw.edu)
-  Matthew K. Lau (mkl48@nau.edu)
+  David E. Hines 
+  Matthew K. Lau 
 }
 
 \note{This and other Ulanowicz school functions require that export and

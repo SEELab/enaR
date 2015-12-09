@@ -34,7 +34,7 @@ as.bipartite(x, y)
 }
 
 \author{
-Matthew K. Lau (mkl48@nau.edu)
+Matthew K. Lau 
 }
 
 \examples{

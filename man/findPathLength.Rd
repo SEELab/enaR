@@ -34,8 +34,8 @@ findPathLength(x, maxPath = 100, plot.sw = FALSE)
   indirect effects in ecological networks.  Oikos 119:1136--1148.  
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
 }
 
 

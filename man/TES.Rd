@@ -33,9 +33,9 @@ compartmenal systems: the static, time invariant case.  Bulletin of the
 International Statistical Institute. 48, 527--565.
 }
 \author{
-Matthew K. Lau (mkl48@nau.edu)
-Stuart R. Borrett (borretts@uncw.edu)
-David E. Hines (deh9951@uncw.edu)
+Matthew K. Lau 
+Stuart R. Borrett 
+David E. Hines 
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

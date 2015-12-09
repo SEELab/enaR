@@ -30,7 +30,7 @@ read.enam(file='file path and name')
   Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 }
 \author{
-  Stuart R. Borrett (borretts@uncw.edu)
+  Stuart R. Borrett 
 }
 
 

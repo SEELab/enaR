@@ -75,8 +75,8 @@ enaFlow(x, zero.na = TRUE, balance.override = FALSE)
   419-428.
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau
+  Stuart R. Borrett
 }
 
 \seealso{

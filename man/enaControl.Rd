@@ -47,9 +47,9 @@ enaControl(x, zero.na = TRUE, balance.override = FALSE)
   	 
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
-  Pawandeep Singh (singhp@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
+  Pawandeep Singh 
 }
 
 \seealso{

@@ -39,7 +39,7 @@ cycliv(x)
   
 }
 \author{
-  Pawandeep Singh (pawan.s@live.co.uk)
+  Pawandeep Singh 
   }
 \note{
 	This function uses the same mechanism for analysis as used in the enaCycle function but is restricted to the living nodes only.

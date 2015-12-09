@@ -30,8 +30,8 @@ environCentrality(x='matrix')
   of species in ecosystems.  Journal of Theoretical Biology 294: 74-86.
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
 }
 
 \seealso{

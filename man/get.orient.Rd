@@ -44,8 +44,8 @@ get.orient()
 
 \author{
 %%  ~~who you are~~
-Matthew K. Lau (mkl48@nau.edu)
-Stuart R. Borrett (borretts@uncw.edu)
+Matthew K. Lau 
+Stuart R. Borrett 
 }
 
 

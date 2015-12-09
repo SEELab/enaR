@@ -31,7 +31,7 @@ write.nea(x, file.name, sep=',')
   Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 }
 \author{
-  Stuart R. Borrett (borretts@uncw.edu)
+  Stuart R. Borrett 
 }
 
 

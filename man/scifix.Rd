@@ -21,7 +21,7 @@ scifix(x)
 }
 
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
+  Matthew K. Lau 
 }
 
 \seealso{

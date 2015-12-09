@@ -36,7 +36,7 @@ enaCycle(x)
   
 }
 \author{
-  Pawandeep Singh (pawan.s@live.co.uk)
+  Pawandeep Singh 
   }
 \note{The "NODES" in "Table.cycle" are arranged such that the weak arc for the nexus is the arc between the first two nodes of the cycle.
 	

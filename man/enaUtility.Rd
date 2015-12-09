@@ -79,8 +79,8 @@ enaUtility(x,type=c("flow","storage"),eigen.check=TRUE,balance.override=FALSE,to
   Perspective.  Cambridge University Press.  New York.  
 }
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
 }
 \seealso{
   \code{\link{enaFlow},\link{enaStorage},\link{enaMTI}}

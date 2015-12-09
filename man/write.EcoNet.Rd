@@ -32,6 +32,6 @@ write.EcoNet(x='model',file='file path',mn='ena_model')
   Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT Press.
 }
 \author{
-  Matthew K. Lau (enaR.maintainer@gmail.com)
+  Matthew K. Lau 
 }
 

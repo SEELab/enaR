@@ -45,8 +45,8 @@ TET(x, balance.override = FALSE)
   analysis. Ecol. Model. 206: 1--17.
 }
 \author{
-Matthew K. Lau (mkl48@nau.edu)
-Stuart R. Borrett (borretts@uncw.edu)
+Matthew K. Lau 
+Stuart R. Borrett 
 }
 
 \seealso{

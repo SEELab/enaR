@@ -27,8 +27,9 @@ unpack(x = "network object")
 }
 
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)}
+  Matthew K. Lau 
+  Stuart R. Borrett 
+}
 \note{
   Flows are oriented from row to column.
 }

@@ -52,6 +52,6 @@ read.scor(file,from.file=TRUE,warn = FALSE)
 }
 
 \author{
-  Matthew K. Lau (mkl48@nau.edu)
-  Stuart R. Borrett (borretts@uncw.edu)
+  Matthew K. Lau 
+  Stuart R. Borrett 
 }

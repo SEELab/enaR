@@ -7,7 +7,7 @@
 }
 \description{
   This package compiles functions for the analysis of ecological networks,
-  building on tools previously developed in the MatLab language (Fath and
+  building on tools previously developed in the MatLab language 
   Borrett 2006) with multiple additions of functionality. 
 }
 \details{
