@@ -18,3 +18,4 @@ enaPlot <- function(x){
            label=TRUE,label.size=6,label.alpha=0.75) +
         guides(color=FALSE)
 }
+
