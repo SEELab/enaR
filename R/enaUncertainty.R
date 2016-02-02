@@ -3,7 +3,7 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
 
     if (class(x) != 'network'){warning('x is not a network class object')}   # check object class
 
-    ## if (p.err == 0){warning('Zero error given, using 0.0001% error')}   
+    ## if (p.err == 0){warning('Zero error given, using 0.0001% error')}
     ## zero error warning
 
     if (is.na(Fu.sd)[1] == FALSE && is.na(zu.sd)[1] == TRUE){
@@ -29,7 +29,7 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
     outputs <- seq(from=1, to=length(U$y), by=1) # identify outputs
     vertex.names <- rep(0, x$gal$n) # get names
     respiration <- rep(0, x$gal$n)
-    living <- U$Living
+    living <- U$living
     storage <- U$X
 
     for(i in 1:x$gal$n){
@@ -37,11 +37,11 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
     }
 
                                         # initialize E
-    E <- matrix(0, nrow=x$gal$n, 
-                ncol=(nrow(fluxes)+length(inputs)+length(outputs)))     
+    E <- matrix(0, nrow=x$gal$n,
+                ncol=(nrow(fluxes)+length(inputs)+length(outputs)))
 
                                         # add inputs to E
-    for(i in 1:length(U$z)){                                                         
+    for(i in 1:length(U$z)){
         E[i,i] <- U$z[i]
     }
 
@@ -68,16 +68,16 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
     upper.percent <- 0 # initialize
 
                                         # create H
-    if(is.na(p.err)[1] == FALSE ){                          
+    if(is.na(p.err)[1] == FALSE ){
         if(p.err < 100 && p.err > 0){
             lower.percent <- 1-(p.err/100)
             upper.percent <- 1+(p.err/100)
-        }else if(p.err >= 100){           
-                                        # if p.err is given greater than 100, 
+        }else if(p.err >= 100){
+                                        # if p.err is given greater than 100,
                                         # restrict flows to be positive
             lower.percent <- 0.0001
             upper.percent <- 1+(p.err/100)
-        }else if(p.err == 0){             
+        }else if(p.err == 0){
             warning('Percent error is 0, setting lower to 0.9999 and upper to 1.0001')
             lower.percent <- 0.9999
             upper.percent <- 1.0001
@@ -104,7 +104,7 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
 
         lower.percent[is.na(lower.percent)] <- 0
                                         # restrict values to be positive
-        lower.percent[which(lower.percent < 0)] <- 0.0001 
+        lower.percent[which(lower.percent < 0)] <- 0.0001
 
         for(h in 1:(length(U$z))){
             upper.percent[h] <- ((U$z[h]+zu.sd[h])/U$z[h])
@@ -115,7 +115,7 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
         }
 
         for(h in (length(U$z)+length(U$y)+1):(length(U$z)+length(U$y)+nrow(fluxes))){
-            upper.percent[h] <- 
+            upper.percent[h] <-
                 (
                     (U$F[fluxes[(h-length(U$z)-length(U$y)),1],
                          fluxes[(h-length(U$z)-length(U$y)),2]]+
@@ -183,8 +183,8 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
             y.ena[y-length(U$z)] <- xs$X[k,(y)]*U$y[y-length(U$z)]
         }
         for(f in (length(U$z)+length(U$y)+1):ncol(xs$X)){# internal fluxse (F)
-            F.ena[fluxes[(f-length(U$z)-length(U$y)),1], 
-                  fluxes[(f-length(U$z)-length(U$y)),2]] <- 
+            F.ena[fluxes[(f-length(U$z)-length(U$y)),1],
+                  fluxes[(f-length(U$z)-length(U$y)),2]] <-
                       xs$X[k,f] * U$F[fluxes[(f-length(U$z)-length(U$y)),1],
                                       fluxes[(f-length(U$z)-length(U$y)),2]]
         }
@@ -192,12 +192,12 @@ Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){
         rownames(F.ena) <- vertex.names
         colnames(F.ena) <- vertex.names
 
-        plausible.models[[k]] <- pack(flow=F.ena, 
-                                      input=z.ena, 
-                                      export=y.ena, 
-                                      respiration=respiration, 
-                                      living=living, 
-                                      output=y.ena, 
+        plausible.models[[k]] <- pack(flow=F.ena,
+                                      input=z.ena,
+                                      export=y.ena,
+                                      respiration=respiration,
+                                      living=living,
+                                      output=y.ena,
                                       storage=storage)
     }
 
