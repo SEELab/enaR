@@ -48,7 +48,13 @@ signs <- function(x="matrix"){
     }
     colnames(r) <- vnames; rownames(r) <- vnames
     r.sparse <- do.call(rbind,r.sparse)  # combine results for r.sparse
-    colnames(r.sparse) <- c("Source","Sink","Relationship","R.name")  # rename coluns
+    colnames(r.sparse) <- c("Source","Sink","Relationship","R.name")  # rename columns
 
-    return(list("sign"=s, "relations"=r, "rs.tab"=as.data.frame(r.sparse,stringsAsFactors=FALSE)))
+    relationship.counts <- table(r.sparse[,3])
+
+    return(list("sign"=s,
+                "relations"=r,
+                "rs.tab"=as.data.frame(r.sparse,stringsAsFactors=FALSE),
+                'relationship.counts' = relationship.counts)
+           )
 }
