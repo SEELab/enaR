@@ -33,7 +33,7 @@ signs <- function(x="matrix"){
     # build the sign matrix
     s[positive] <- "+"
     s[negative] <- "-"
-    rownames(s) <- vnames; colnames(s) <- vnames
+    rownames(s) <- colnames(s) <- vnames
 
     # combine signs to determine pairwise relationships
     for(i in 1:d[1]){
