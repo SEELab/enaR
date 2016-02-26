@@ -11,13 +11,13 @@ relationalChange <- function(x="Direct.U",y="Integral.U"){
     S2 <- signs(y)    # find the signs of the relationships in the integral utility matrix
     S1$rs.tab$order <- 1:dim(S1$rs.tab)[1]  # add a column by which we can resort SF
     SF <- merge( S1$rs.tab, S2$rs.tab, by = c("Source", "Sink"),stringsAsFactors=FALSE)  # merges the two relationship results
-    names(SF) <- c("Source","Sink","Direct.Relation","DR.name","order", "Integral.Relation", "IR.name")
+    names(SF) <- c("Source","Sink","R1","R1.name","order", "R2", "R2.name")
     o <- order(SF$order)
     SF <- SF[o,!(names(SF) %in% c("order"))]  # reorder the merged data frame and drop order column
 
     # which pairs changed?
     d <- rep("-",dim(SF)[1])
-    d[which(!(SF$Direct.Relation == SF$Integral.Relation))] <- "*"  # find the differneces
+    d[which(!(SF$R1 == SF$R2))] <- "*"  # find the differneces
     SF$changed <- d
     CR <- SF[which(SF$changed=="*"),]
     possible.change = length(d)

@@ -30,20 +30,22 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
     diag(I) <- 1 #create the identity matrix
     T. <- input + apply(Flow,2,sum)
                                         #
-    G <- t(t(Flow)/T.)        # this is now oriented as in ulanowicz and puccia row to column
-    FP <- Flow / (T.-resp)    # Authors exclude respiration to divide only by the NET production of the compartment.
+    G <- t(t(Flow)/T.)        # input oriented direct flow intensity matrix
+    FP <- Flow / (T.-resp)    # modified output oriented direct flow intensity matrix.  Authors exclude respiration to divide only by the NET production of the compartment.
 
                                         # check and replace NA values with 0 if zero.na
     if (zero.na){
       G[is.na(G)] <- 0
       FP[is.na(FP)] <- 0
     }
-                                        #Make infinity values equal to zero
-  G[is.infinite(G)] <- 0
-  FP[is.infinite(FP)] <- 0
-                                        # Set FP to zero when receiver compartment (j) is non-living
+
+    # Make infinity values equal to zero
+    G[is.infinite(G)] <- 0
+    FP[is.infinite(FP)] <- 0
+
+    # Set FP to zero when receiver compartment (j) is non-living
     FP[,which(x%v%'living'==FALSE)] <- 0
-    Q <- G- t(FP)
+    Q <- G - t(FP)
     dom1Q <- abs(eigen(Q)$values[1])
     if(dom1Q <= 1 ){
       M <- ginv(I-Q)-I              # Total Impacts of i on j.
