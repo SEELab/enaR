@@ -9,7 +9,7 @@ enaUtility <- function(x, type=c('flow','storage'),
                        eigen.check=TRUE,
                        balance.override=FALSE,tol=10){
                                         #Missing Data Check
-    if (any(is.na(x%v%'storage'))){
+    if (type == 'storage' && any(is.na(x%v%'storage'))){
         warning('This function requires quantified storage values.')
     }else{
         orient <- get.orient()
