@@ -10,8 +10,9 @@ relationalChange <- function(x="Direct.U",y="Integral.U"){
     S1 <- signs(x)    # find the signs of the relationships in the direct utility matrix
     S2 <- signs(y)    # find the signs of the relationships in the integral utility matrix
     S1$rs.tab$order <- 1:dim(S1$rs.tab)[1]  # add a column by which we can resort SF
-    SF <- merge( S1$rs.tab, S2$rs.tab, by = c("Source", "Sink"),stringsAsFactors=FALSE)  # merges the two relationship results
-    names(SF) <- c("Source","Sink","R1","R1.name","order", "R2", "R2.name")
+    SF <- merge( S1$rs.tab, S2$rs.tab, by = c("From", "To"),stringsAsFactors=FALSE)  # merges the two relationship results
+    names(SF) <- c("From","To","R1","R1.name","order", "R2", "R2.name")
+    SF <- SF[,c(-4,-7)]  # remove relationship names (simplify)
     o <- order(SF$order)
     SF <- SF[o,!(names(SF) %in% c("order"))]  # reorder the merged data frame and drop order column
 
