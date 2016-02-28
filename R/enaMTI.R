@@ -55,13 +55,19 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
       } else { M <- NA}
   }
 
-    R <- relationalChange(Q,M)
-    r.table <- r$Relations.Table
-    names(r.table) <- c("From","To","Net (direct)","Mixed (integral)","changed")
-    rownames(r.table) <- c(1:dim(r.table)[1])
+    if(!is.na(M)){
+        r <- relationalChange(Q,M)
+        IR <- r$Integral.Relations
+        r.table <- r$Relations.Table
+        names(r.table) <- c("From","To","Net (direct)","Mixed (integral)","changed")
+        rownames(r.table) <- c(1:dim(r.table)[1])
+    } else {
+        IR <- NA
+        r.table <- NA
+    }
 
     out <- list('G'=G,'FP'=FP,'Q'=Q,'M'=M,
-                "Integral.Relations" = R$Integral.Relations,
+                "Integral.Relations" = IR,
                 "Relational.Table"=r.table)
   }
     return(out)
