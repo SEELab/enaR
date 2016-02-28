@@ -58,7 +58,7 @@ enaUtility <- function(x, type=c('flow','storage'),
                 SY <- R$Integral.Signs
                 R.table <- R$Relations.Table
                 names(R.table) <- c("From","To","Direct","Integral","changed")
-
+                rownames(R.table) <- c(1:dim(R.table)[1])
                                         #re-orient
                 if (orient == 'rc'){
                     D <- t(D)
