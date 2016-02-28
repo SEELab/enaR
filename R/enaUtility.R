@@ -51,11 +51,13 @@ enaUtility <- function(x, type=c('flow','storage'),
                                         #indices
                 synergism.F <- bcratio(Y) #flow benefit cost ratio (calls other function) (Synergism)
                 mutualism.F <- bcratio(sign(Y)) # flow ratio of positive to negative signs )
+
                 # get relational data
                 R <- relationalChange(D,Y)
                 SD <- R$Direct.Signs
                 SY <- R$Integral.Signs
                 R.table <- R$Relations.Table
+                names(R.table) <- c("From","To","Direct","Integral","changed")
 
                                         #re-orient
                 if (orient == 'rc'){
@@ -107,7 +109,7 @@ enaUtility <- function(x, type=c('flow','storage'),
                 SD <- R$Direct.Signs
                 SY <- R$Integral.Signs
                 R.table <- R$Relations.Table
-
+                names(R.table) <- c("From","To","Direct","Integral","changed")
 
                                         #re-orient
           if (orient == 'rc'){
