@@ -53,8 +53,16 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
       if(eigen.check==FALSE){
         M <- ginv(I-Q)-I              # Total Impacts of i on j.
       } else { M <- NA}
-    }
-    out <- list('G'=G,'FP'=FP,'Q'=Q,'M'=M)
+  }
+
+    R <- relationalChange(Q,M)
+    r.table <- r$Relations.Table
+    names(r.table) <- c("From","To","Net (direct)","Mixed (integral)","changed")
+    rownames(r.table) <- c(1:dim(r.table)[1])
+
+    out <- list('G'=G,'FP'=FP,'Q'=Q,'M'=M,
+                "Integral.Relations" = R$Integral.Relations,
+                "Relational.Table"=r.table)
   }
     return(out)
 }
