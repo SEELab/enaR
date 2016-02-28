@@ -76,7 +76,7 @@ enaUtility <- function(x, type=c('flow','storage'),
                 out <- list('D'=D, 'SD' = SD,
                             'U'=U,
                             'Y'=Y, 'SY' = SY,
-                            'Relations.Table' = R$Relations.Table,
+                            'Relations.Table' = R.table,
                             'ns'=ns) #pack output
 
             }
@@ -105,11 +105,12 @@ enaUtility <- function(x, type=c('flow','storage'),
           mutualism.S <- bcratio(sign(YS)) #storage ratio of positive to negative signs (Y/abs(Y) == sign of Y)
 
                           # get relational data
-                R <- relationalChange(DS,YS)
-                SD <- R$Direct.Signs
-                SY <- R$Integral.Signs
-                R.table <- R$Relations.Table
-                names(R.table) <- c("From","To","Direct","Integral","changed")
+          R <- relationalChange(DS,YS)
+          SD <- R$Direct.Signs
+          SY <- R$Integral.Signs
+          R.table <- R$Relations.Table
+          names(R.table) <- c("From","To","Direct","Integral","changed")
+          rownames(R.table) <- c(1:dim(R.table)[1])
 
                                         #re-orient
           if (orient == 'rc'){
@@ -129,7 +130,7 @@ enaUtility <- function(x, type=c('flow','storage'),
           out <- list('DS'=DS,'SD'=SD,
                       'US'=US,
                       'YS'=YS,'SY'=SY,
-                      'Relations.Table' = R$Relations.Table,
+                      'Relations.Table' = R.table,
                       'ns'=ns) #package output
       }
         }
