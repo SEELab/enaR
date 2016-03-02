@@ -1,0 +1,251 @@
+
+<html>
+<head>
+  <title>EcoNet - Model Examples</title>
+<style type="text/css">@import "http://math.uga.edu/%7Ecaner/menu/main.css";</style>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript" src="http://eco.engr.uga.edu/menuV2/menu.htm"></script> 
+<div id="globalWrapper">
+<div id="content">
+
+<h1><font color="red">EcoNet</font> model examples</h1>
+
+This page contains sample <font color="red">EcoNet</font> model
+examples created by other users. Please <a
+href="http://www.math.uga.edu/~caner">contact me</a> if you'd like to
+load your model to this page. You can easily run these models by just
+copying and pasting them to EcoNet model window<a name="oyster"></a>.
+
+<hr class="duz">
+<h2> Intertidal Oyster Reef Ecosystem Model</h2>
+
+<p>This model is already at steady-state. You can perturb the initial
+conditions, or use the stochastic method to see the inherent
+variations in each compartment value.</p> 
+
+<center><table><tr><td><div class="img-shadow"><pre>
+# Intertidal Oyster Reef Ecosystem Model, by Dame and Patten.
+
+# Model flows are in kcal m^-2 day^-1; storage data is 
+# kcal m^-2. 
+
+# This model is based on the Matlab model written by Fath 
+# and Borrett (2004).
+
+# Dame, R. F., and B. C. Patten. 1981. Analysis of energy 
+# flows in an intertidal oyster reef. Marine Ecology Progress 
+# Series 5:115-124.
+
+# Patten, B. C. 1985. Energy cycling, length of food chains,
+# and direct versus indirect effects in ecosystems. Can. 
+# Bull. Fish. Aqu. Sci. 213:119-138.
+
+* -> Filter_Feeders              c=41.4697
+
+Filter_Feeders -> Dep_Detritus   c=0.0079
+Filter_Feeders -> Predators      c=0.0003
+Dep_Detritus -> Microbiota       c=0.0082
+Dep_Detritus -> Meiofauna        c=0.0073
+Dep_Detritus -> Dep_Feeders      c=0.0006
+Microbiota -> Meiofauna          c=0.5
+Microbiota -> Dep_Feeders        c=0.5
+Meiofauna -> Dep_Detritus        c=0.1758
+Meiofauna -> Dep_Feeders         c=0.0274
+Dep_Feeders -> Dep_Detritus      c=0.1172
+Dep_Feeders -> Predators         c=0.0106
+Predators -> Dep_Detritus        c=0.0047
+
+Filter_Feeders -> *   c=0.0126
+Dep_Detritus -> *     c=0.0062
+Microbiota -> *       c=2.3880
+Meiofauna -> *        c=0.1484
+Dep_Feeders -> *      c=0.0264
+Predators -> *        c=0.0052
+
+Filter_Feeders = 2000; Dep_Detritus = 1000;
+Microbiota = 2.4121; Meiofauna = 24.121;
+Dep_Feeders = 16.274;   Predators = 69.237
+
+# Model flows are in kcal m^-2 day^-1; storage data is
+# kcal m^-2.
+</pre></div></td></tr></table>
+<table><tr><td><div class="img-shadow">
+<img src="oyster.gif">
+</div></td></tr></table></center>
+
+<hr class="duz">
+<h2>Georgia Salt Marsh Model</h2>
+<center><table><tr><td><div class="img-shadow"><pre>
+#Georgia salt marsh model, by C. Small. 
+
+# Based on model by Teal, John M. (1962) 
+# Energy flow in the salt marsh ecosystem of 
+# Georgia.  Ecology 43:614-624.
+
+# Model flows are in kcal m^-2 day^-1; storage data is
+# kcal m^-2.
+
+
+* -> spartina  c=94.74
+* -> algae     c=4.93
+spartina -> insects  c=0.002
+spartina -> detritus c=0.03
+spartina -> bacteria c=0.0001
+algae -> detritus c=0.02
+algae -> nematodes c=0.02
+insects -> detritus c=0.2
+insects -> spiders  c=0.05
+detritus -> bacteria c=0.01
+detritus -> nematodes c=0.01
+bacteria -> nematodes c=0.01
+bacteria -> detritus c=0.5
+spiders -> detritus c=0.1
+nematodes -> detritus c=0.6
+nematodes -> mudcrabs c=0.01
+mudcrabs -> detritus  c=0.1
+spartina -> * c=0.15
+algae -> * c=0.1
+insects -> * c=.1
+detritus -> * c=0.02
+bacteria -> * c=0.4
+spiders -> * c=0.05
+nematodes -> * c=0.2
+mudcrabs -> * c=0.05
+
+#initial values
+spartina=450, algae=20, insects=1
+detritus=250, bacteria= 800, spiders=0.18
+nematodes=0.5, mudcrabs=0.1
+</pre></div></td></tr></table>
+<table><tr><td><div class="img-shadow">
+<img src="teal.gif">
+</div></td></tr></table></center>
+
+
+<hr class="duz">
+<h2>Oxygen cycling in an algae-Daphnia microcosm</h2>
+<center><table><tr><td><div class="img-shadow"><pre>
+# Oxygen cycling in an algae-Daphnia microcosm
+# by J. Shetsov and E. Susko.
+# based on unpublished data from Frieda Taub
+
+* -> CO2  c=154.5
+* -> O2  c=157.316089
+
+Algae -> Daphnia  c=46.78
+Algae -> CO2  c=157.3
+Algae -> O2  c=154.5
+Algae -> H2O  c=78.65
+
+Daphnia -> Detritus  c=0.159
+Daphnia -> CO2  c=0.0151
+Daphnia -> H2O  c=0.00755
+Daphnia -> Nutrients  c=0.327
+
+Detritus -> CO2  c=0.000989
+Detritus -> Nutrients  c=0.000112
+
+CO2 -> *  c=157.316089
+CO2 -> Algae  c=154.5
+
+O2 -> *  c=154.5
+O2 -> Algae  c=157.3
+O2 -> Daphnia  c=0.0151
+O2 -> Detritus  c=0.000989
+
+H2O -> Algae  c=154.5
+H2O -> Detritus  c=0.000037
+
+Nutrients -> Algae  c=154.5
+
+Algae = .9576; Daphnia = 96.6; 
+Detritus = 38826; CO2 = 1.2034; 
+O2 = 1.0745; H2O = 0.55743 ; Nutrients = .232075
+</pre></div></td></tr></table>
+<table><tr><td><div class="img-shadow">
+<img src="o2.gif">
+</div></td></tr></table></center>
+
+<hr class="duz">
+<h2>Aquatic-terrestrial transport of Nitrogen by coastal river otters</h2>
+This is a stiff model with high compartment values, 
+please increase <font color=black>Sensitivity</font> 
+parameter to <font color=black>1</font>.
+<center><table><tr><td><div class="img-shadow"><pre>
+# This is a stiff model with high compartment values. 
+# Please run with parameter Sensitivity = 1 (instead of 0.001
+
+# Aquatic-Terrestrial Transport of Nitrogen by Lontra canadensis.  
+# R. Callan and M. Novak
+
+* -> Dissolved_N c=50000
+* -> Otters c=1.13479
+
+PrimaryProducers -> PrimaryConsumers c=0.521
+PrimaryConsumers -> Dissolved_N      c=0.07
+PrimaryConsumers -> Detritus         c=0.02
+PrimaryConsumers -> SchoolingFish    c=0.15
+PrimaryConsumers -> SecondaryConsumers c=0.10
+Dissolved_N -> PrimaryProducers        c=0.2
+Detritus -> PrimaryConsumers    c=0.2
+SchoolingFish -> Dissolved_N    c=0.07
+SchoolingFish -> Detritus       c=0.04
+SchoolingFish -> UpperLevelPredators  c=0.1
+SchoolingFish -> Otters         c=0.000023177
+SecondaryConsumers  -> Dissolved_N    c=0.07
+SecondaryConsumers  -> Detritus       c=0.04
+SecondaryConsumers  -> UpperLevelPredators c=0.1
+UpperLevelPredators -> Dissolved_N    c=0.3
+UpperLevelPredators -> Detritus       c=0.04
+Otters -> Detritus    c=0.02
+
+Otters -> *      c=0.114
+Dissolved_N -> * c=0.15
+
+# initial stock values
+Dissolved_N = 269212, PrimaryProducers = 99411.1
+Detritus = 78077.6, PrimaryConsumers = 189855 
+SchoolingFish = 126933, Otters = 26.1501
+SecondaryConsumers = 93414.4 
+UpperLevelPredators = 62228.3 
+</pre></div></td></tr></table>
+<table><tr><td><div class="img-shadow">
+<img src="arctic.gif">
+</div></td></tr></table></center>
+
+
+
+<!-- Copy paste for new model   
+
+<hr class="duz">
+<h2>Model Name</h2>
+<center><table><tr><td><div class="img-shadow"><pre>
+# model credits...
+model....
+</pre></div></td></tr></table>
+<table><tr><td><div class="img-shadow">
+<img src="name.gif">
+</div></td></tr></table></center>
+
+-->
+
+
+
+
+<hr class="duz">
+<div id="killik"><!--
+<font face="times, times new roman" color=black size=-7>dobara  -->
+<a alink="blue" href="http://www.milonic.com/" class="killikblue">DHTML Menu By Milonic JavaScript</a> </div>
+</div></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1409591-1";
+urchinTracker();
+</script>
+
+</body>
+</html>
