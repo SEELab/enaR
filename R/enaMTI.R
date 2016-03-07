@@ -55,7 +55,7 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
       } else { M <- NA}
   }
 
-    if(!is.na(M)){
+    if(!any(is.na(M))){
         r <- relationalChange(Q,M)
         IR <- r$Integral.Relations
         r.table <- r$Relations.Table
