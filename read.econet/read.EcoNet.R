@@ -2,48 +2,64 @@
 ### 1 Mar 2016
 ### mklau
 
-read.EcoNet <- function(x){
-    if (any(grepl('initial stock values',x,ignore.case=TRUE))){
-        storage <- x[grep('initial stock values',x,ignore.case=TRUE):length(x)]
-    }else{storage <- NA}
-    x <- x[grep('#',x,invert=TRUE)]
-    main <- x[head(grep('->',x),1):tail(grep('->',x),1)]
-    main <- main[main != '']
-    main <- strsplit(main,split=' ')
-    main <- lapply(main,function(x) x[x != ''])
-    main <- do.call(rbind,main)
-    main <- main[,-2]
-    main[,3] <- sub('c=','',main[,3])
-    inputs <- as.numeric(main[main[,1] == '*',3])
-    names(inputs) <- main[main[,1] == '*',2]
-    outputs <- as.numeric(main[main[,2] == '*',3])
-    names(outputs) <- main[main[,2] == '*',1]
-    flows <- main[main[,1] != '*'&main[,2] != '*', ]
-    M <- matrix(0,nrow=length(unique(c(flows[,1],flows[,2]))),
-                ncol=length(unique(c(flows[,1],flows[,2]))))
-    rownames(M) <- colnames(M) <- unique(c(flows[,1],flows[,2]))
-    for (i in 1:nrow(flows)){
-        M[rownames(M) == flows[i,1],colnames(M) == flows[i,2]] <- as.numeric(flows[i,3])
+read.EcoNet <- function(x,verbose=FALSE){
+    if (!(verbose)){options(warn=-1)}
+    x <- x[!(grepl('<',x)) & grepl('=',x)]
+    x <- x[!(grepl('\\#',x))]
+    if (any(!(grepl('c=',x)) & grepl('=',x))){
+        stor <- x[grepl('=',x) & !(grepl('c=',x))]
+    }else{stor <- NA}
+    x <- x[grepl('=',x) & grepl('c=',x)]
+    x <- paste(x,collapse=';')
+    x <- strsplit(x,' ')[[1]]
+    x <- x[x != '']
+    x <- paste(x,collapse='')
+    x <- strsplit(x,';')[[1]]
+    flo <- x[!(grepl('\\*',x))]
+    inp <- x[(grepl('\\*->',x))]
+    out <- x[(grepl('->\\*',x))]
+    flo <- sub('->',';',flo)
+    flo <- sub('c=',';',flo)
+    flo <- do.call(rbind,strsplit(flo,split=';'))
+    flow <- matrix(0,nrow=length(unique(c(flo[,1],flo[,2]))),
+                   ncol=length(unique(c(flo[,1],flo[,2]))))
+    rownames(flow) <- colnames(flow) <- unique(c(flo[,1],flo[,2]))
+    for (i in 1:nrow(flo)){
+        flow[rownames(flow) == flo[i,1],colnames(flow) == flo[i,2]] <- as.numeric(flo[i,3])
     }
-    if (is.na(storage[1])==FALSE){
-        storage <- storage[2:(length(storage)-1)]
-        storage <- paste(storage,collapse=',',sep='')
-        storage <- strsplit(storage,split='')[[1]]
-        storage <- storage[!(storage %in% c('',' '))]
-        storage <- paste(storage,sep='',collapse='')
-        storage <- strsplit(storage,split=',')[[1]]
-        storage <- sapply(storage,strsplit,split='=')
-        storage <- do.call(rbind,storage)
-        storage.vals <- as.numeric(storage[,2])
-        names(storage.vals) <- storage[,1]
-    }
-    if (length(storage.vals) == nrow(M) & all(names(storage.vals) %in% rownames(M))){
-        storage.vals <- storage.vals[match(rownames(M),names(storage.vals))]
+    inp <- do.call(rbind,strsplit(sub('\\*->','',inp),'c='))
+    input <- as.numeric(inp[,2])
+    names(input) <- inp[,1]
+    out <- do.call(rbind,strsplit(sub('->\\*','',out),'c='))
+    output <- as.numeric(out[,2])
+    names(output) <- out[,1]
+    if (is.na(stor[[1]])){
+        storage <- rep(0,nrow(M))
     }else{
-        warning('Storage values do not match flow matrix')
-        storage.vals <- NA
+        stor <- paste(stor,collapse='')
+        stor <- strsplit(stor,split='')[[1]]
+        stor[!(stor %in% c(LETTERS,letters,0:9,'=','.','_',' '))] <- ','
+        stor <- paste(stor,collapse='')
+        stor <- paste(strsplit(stor,' ')[[1]],collapse='')
+        stor <- strsplit(stor,',')[[1]]
+        stor <- strsplit(stor,'=')
+        stor <- do.call(rbind,stor)
+        storage <- as.numeric(stor[,2])
+        names(storage) <- stor[,1]
     }
-    out <- pack(M,input=inputs,output=outputs,storage=storage.vals)
-    return(out)
+    if (length(input) != nrow(flow)){
+        inp <- rep(0,(nrow(flow) - length(input)))
+        names(inp) <- rownames(flow)[!(rownames(flow) %in% names(input))]
+        input <- c(input,inp)
+    }
+    if (length(output) != nrow(flow)){
+        outp <- rep(0,(nrow(flow) - length(output)))
+        names(outp) <- rownames(flow)[!(rownames(flow) %in% names(output))]
+        output <- c(output,outp)
+    }
+    input <- input[match(names(input),rownames(flow))]
+    output <- output[match(names(output),rownames(flow))]
+    storage <- storage[match(names(storage),rownames(flow))]
+    return(pack(flow=flow,input=input,output=output,storage=storage))
 }
 
