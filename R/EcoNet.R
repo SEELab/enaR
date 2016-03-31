@@ -1,7 +1,7 @@
 ### Reading models from the econet website
 ### MKLau 31 Mar 2016
 
-read.EcoNetWeb <- function(x='http://eco.engr.uga.edu/Examples/examples.html',model.name='prompt'){
+EcoNetWeb <- function(x='http://eco.engr.uga.edu/Examples/examples.html',model.name='prompt'){
     x <- readLines(x)
     x <- x[1:(grep('<!-- Copy paste for new model',x)-1)]
     mod.names <- x[grep('<h2>',x)]
