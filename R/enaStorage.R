@@ -44,6 +44,13 @@ enaStorage <- function(x,balance.override=FALSE){
                                         #calculating the integral storage intensity matrix (Q)
     Q <- ginv(I - P) #output
     QP <- ginv(I - PP) #input
+
+  ## the ginv function creates noticible numeric error.  I am removing some of it here by rounding
+    tol <- 10
+    Q <- round(Q,tol)
+    QP <- round(QP,tol)
+
+
     dQ <- diag(Q) #diagonal of integral output storage matrix which is the same for input (i.e. diag(QP))
 
                                         #naming row and columns
