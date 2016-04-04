@@ -51,6 +51,11 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     CD <- eta - t(eta)      # control difference
     CR <- CD/pmax(eta,t(eta))  # control ratio
     sc <- apply(CD,1,sum)  # system control vector
+    psc <- sc/(sum(abs(sc)/2)) * 100 # percent system control vector
+
+    TSC <- sum(abs(sc)/2)
+    ns <- c(TSC)
+
 
     orient <- get.orient()
     if (orient == 'school'){
@@ -60,6 +65,6 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
         CD <- t(CD)
     }
 
-    return(list("CN"=CN,"CQ"=CQ,"CD"=CD,"CR"=CR,"sc"=sc))
+    return(list("CN"=CN,"CQ"=CQ,"CD"=CD,"CR"=CR,"sc"=sc,"psc"=psc, "ns"=ns))
 }
 
