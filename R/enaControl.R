@@ -54,7 +54,7 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     psc <- sc/(sum(abs(sc)/2)) * 100 # percent system control vector
 
     TSC <- sum(abs(sc)/2)
-    ns <- c(TSC)
+    ns <- c("TSC"=TSC)
 
 
     orient <- get.orient()
