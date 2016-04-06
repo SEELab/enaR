@@ -59,15 +59,13 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     # Control Allocation and Control Dependence
     # Chen et al. 2011; Chen and Chen 2015
 
-    d <- t(F$N) - F$NP  # difference
+    d <- F$N - t(F$NP)  # difference
     d[d<0] = 0  # remove negative values
     cd.r <- apply(d,1,sum)
     cd.c <- apply(d,2,sum)
 
-    ca <- d %*% ginv(diag(cd.c))  # control allocation matrix
-    cd <- d %*% ginv(diag(cd.r))  # control depedency matrix
-    CA <- t(ca)  # this is necessary to transpose the orientation
-    CDep <- t(cd)  # this is necessary to transpose the orientation
+    CA <- ginv(diag(cd.r)) %*% d   # control allocation matrix
+    CDep <- ginv(diag(cd.c)) %*% d   # control depedency matrix
 
 
     orient <- get.orient()
