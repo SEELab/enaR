@@ -27,6 +27,8 @@ enaControl(x, zero.na = TRUE, balance.override = FALSE)
 \item{CQ}{Control matrix using storage values.}
 \item{CR}{Schramski Control Ratio Matrix}
 \item{CD}{Schramski Control Difference Matrix}
+\item{CA}{Control Allocation Matrix}
+\item{CDep}{Control Dependency Matrix}
 \item{sc}{Schramski System Control vector}
 \item{scp}{Schramski system control vector as percent of total control}
 \item{ns}{vector of network-level summary statistics}
@@ -46,6 +48,14 @@ enaControl(x, zero.na = TRUE, balance.override = FALSE)
   ecosystems: Distributed control in the environ networks of a seven
   compartment model of nitrogen flow in the Neuse River Estuary, USA
   Time series analysis. Ecological Modelling 206:18-30
+
+  Chen, S., Fath, B.D., Chen, B. 2011. Information-based network environ
+  analysis: a system perspective for ecologcial risk assessment.
+  Ecol. Ind. 11:1664-1672.
+
+  Chen, S. and Chen, B. 2015. Urban energy consumption: Different
+insights from energy flow analysis, input–output analysis and ecological
+network analysis.  Applied Energy 138:99-107.
 
 }
 \author{
