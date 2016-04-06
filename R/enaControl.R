@@ -56,6 +56,19 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     TSC <- sum(abs(sc)/2)
     ns <- c("TSC"=TSC)
 
+    # Control Allocation and Control Dependence
+    # Chen et al. 2011; Chen and Chen 2015
+
+    d <- t(F$N) - F$NP  # difference
+    d[d<0] = 0  # remove negative values
+    cd.r <- apply(d,1,sum)
+    cd.c <- apply(d,2,sum)
+
+    ca <- d %*% ginv(diag(cd.c))  # control allocation matrix
+    cd <- d %*% ginv(diag(cd.r))  # control depedency matrix
+    CA <- t(ca)  # this is necessary to transpose the orientation
+    CDep <- t(cd)  # this is necessary to transpose the orientation
+
 
     orient <- get.orient()
     if (orient == 'school'){
@@ -63,8 +76,12 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
         CQ <- t(CQ)
         CR <- t(CR)
         CD <- t(CD)
+        CA <- t(CA)
+        CDep <- t(CDep)
+
     }
 
-    return(list("CN"=CN,"CQ"=CQ,"CD"=CD,"CR"=CR,"sc"=sc,"psc"=psc, "ns"=ns))
+    return(list("CN"=CN,"CQ"=CQ,"CD"=CD,"CR"=CR, "CA"=CA, "CDep"=CDep,
+                "sc"=sc,"psc"=psc, "ns"=ns))
 }
 
