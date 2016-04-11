@@ -51,6 +51,22 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
     CD <- eta - t(eta)      # control difference
     CR <- CD/pmax(eta,t(eta))  # control ratio
     sc <- apply(CD,1,sum)  # system control vector
+    psc <- sc/(sum(abs(sc)/2)) * 100 # percent system control vector
+
+    TSC <- sum(abs(sc)/2)
+    ns <- c("TSC"=TSC)
+
+    # Control Allocation and Control Dependence
+    # Chen et al. 2011; Chen and Chen 2015
+
+    d <- F$N - t(F$NP)  # difference
+    d[d<0] = 0  # remove negative values
+    cd.r <- apply(d,1,sum)
+    cd.c <- apply(d,2,sum)
+
+    CA <- ginv(diag(cd.r)) %*% d   # control allocation matrix
+    CDep <- ginv(diag(cd.c)) %*% d   # control depedency matrix
+
 
     orient <- get.orient()
     if (orient == 'school'){
@@ -58,8 +74,12 @@ enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
         CQ <- t(CQ)
         CR <- t(CR)
         CD <- t(CD)
+        CA <- t(CA)
+        CDep <- t(CDep)
+
     }
 
-    return(list("CN"=CN,"CQ"=CQ,"CD"=CD,"CR"=CR,"sc"=sc))
+    return(list("CN"=CN,"CQ"=CQ,"CD"=CD,"CR"=CR, "CA"=CA, "CDep"=CDep,
+                "sc"=sc,"psc"=psc, "ns"=ns))
 }
 
