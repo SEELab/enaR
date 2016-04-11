@@ -8,7 +8,7 @@
   with the online interface for EcoNet.  
 }
 \usage{
-write.EcoNet(x='model',file='file path',mn='ena_model')
+write.EcoNet(x='model',file='file path',mn='ena_model',zero.flows=FALSE)
 }
 \arguments{
   \item{x}{
@@ -20,6 +20,9 @@ write.EcoNet(x='model',file='file path',mn='ena_model')
   }
   \item{mn}{
     The model name that EcoNet will use. The DEFAULT is 'ena_model'.
+  }
+  \item{zero.flows}{
+    LOGICAL: should zero flow values be written?
   }
 }
 \value{
