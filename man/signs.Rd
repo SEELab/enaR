@@ -9,11 +9,11 @@
   ecological name of each pairwise realtionship, and a summary of the counts.
 }
 \usage{
-signs(A)
+signs(x)
 }
 \arguments{
-  \item{A}{
-    A is a square matrix of real numbers.  While this function is more
+  \item{x}{
+    x is a square matrix of real numbers.  While this function is more
     general, the intiail intention was for this to be a utility
     matrix or the mixed trophic impacts matrix.
   }
@@ -21,12 +21,12 @@ signs(A)
 }
 
 \value{
-  \item{sign}{a sign matrix for matrix A}
-  \item{relations}{a matrix of the pairwise signed relationships in A}
-  \item{rs.tab}{table summarizing the pairwise relationships and
-    identifying their ecological label}
-  \item{relationship.counts}{a count of the different kinds of pairwise
-    relationships found in matrix A}
+  \item{sign}{A sign matrix for matrix x.}
+  \item{relations}{A matrix of the pairwise signed relationships in x.}
+  \item{rs.tab}{Table summarizing the pairwise relationships and
+    identifying their ecological label.}
+  \item{relationship.counts}{A count of the different kinds of pairwise
+    relationships found in matrix x.}
 }
 
 
