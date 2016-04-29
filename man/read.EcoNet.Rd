@@ -1,10 +1,9 @@
-\name{EcoNet}
-\alias{EcoNet}
+\name{read.EcoNet}
+\alias{read.EcoNet}
 \title{
-  Re-format an EcoNet model.
+  Read an EcoNet model.
 }
 \description{
-
   This function allows the user to access models that are formatted for
   EcoNet, the web-based interface for conducting ENA
   (http://eco.engr.uga.edu/), by Caner Kazanci at the University of
@@ -12,7 +11,7 @@
 
 }
 \usage{
-EcoNet(x,verbose=FALSE)
+read.EcoNet(x,verbose=FALSE)
 }
 \arguments{
   \item{x}{
