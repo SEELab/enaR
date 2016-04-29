@@ -57,8 +57,9 @@ D <- enaUtility(oyster)$D
 U <- enaUtility(oyster)$U
 rc <- relationalChange(D,U)
 
-# to get a count of the number of differnt pairwise relationships in one
-  of the sign matrices, you can use the table function
+
+## To get a count of the number of differnt pairwise relationships in one
+## of the sign matrices, you can use the table function
 
 count <- table(rc$Direct.Relations)
 
