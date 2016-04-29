@@ -30,7 +30,7 @@ relational.change(x="Direct.U",y="Integral.U")
     for matrix x.}
   \item{Integral.Relations}{A matrix of the pairwise
     signed relationships in matrix y.}
-  \items{Relations.Table}{A table that
+  \item{Relations.Table}{A table that
     summarizes the relations.}
   \item{Changed.Table}{A summary table of only the pariwise relationships
     that changed between x and y.}
