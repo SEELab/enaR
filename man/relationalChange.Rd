@@ -8,7 +8,7 @@
   compares the difference between them.
 }
 \usage{
-relational.change(x="Direct.U",y="Integral.U")
+relationalChange(x="Direct.U",y="Integral.U")
 }
 \arguments{
   \item{x}{
