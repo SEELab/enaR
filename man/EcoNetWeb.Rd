@@ -10,7 +10,9 @@
   Georgia.
 }
 
-\usage{EcoNetWeb(x='http://eco.engr.uga.edu/Examples/examples.html',model.name='prompt')}
+\usage{
+EcoNetWeb(x = 'http://eco.engr.uga.edu/Examples/examples.html',model.name='prompt')
+}
 
 \arguments{
   \item{x}{
@@ -34,5 +36,5 @@
 }
 
 \seealso{
-  \code{\link{EcoNet}}
+  \code{\link{read.EcoNet}}
 }
