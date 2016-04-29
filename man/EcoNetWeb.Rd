@@ -26,7 +26,7 @@
   Returns the model formatted as a network object.
 }
 \references{
-  Kazancı, C., 2007. EcoNet: A new software for ecological modeling,
+  Kazanci, C., 2007. EcoNet: A new software for ecological modeling,
   simulation and network analysis, Ecol. Model., Vol 208/1 pp 3-8.
 }
 \author{

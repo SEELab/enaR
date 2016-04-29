@@ -33,6 +33,7 @@ enaControl(x, zero.na = TRUE, balance.override = FALSE)
 \item{scp}{Schramski system control vector as percent of total control}
 \item{ns}{vector of network-level summary statistics}
 }
+
 \references{
   Fath, B. D., Borrett, S. R. 2006. A MATLAB function for Network Environ
   Analysis.  Environmental Modelling & Software 21:375-405
@@ -54,8 +55,8 @@ enaControl(x, zero.na = TRUE, balance.override = FALSE)
   Ecol. Ind. 11:1664-1672.
 
   Chen, S. and Chen, B. 2015. Urban energy consumption: Different
-insights from energy flow analysis, input–output analysis and ecological
-network analysis.  Applied Energy 138:99-107.
+  insights from energy flow analysis, input-output analysis and ecological
+  network analysis.  Applied Energy 138:99-107.
 
 }
 \author{

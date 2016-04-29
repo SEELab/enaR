@@ -2,7 +2,7 @@
 ### 1 Mar 2016
 ### mklau
 
-EcoNet <- function(x,verbose=FALSE){
+read.EcoNet <- function(x,verbose=FALSE){
     if (!(verbose)){options(warn=-1)}
     x <- x[!(grepl('<',x)) & grepl('=',x)]
     x <- x[!(grepl('\\#',x))]
@@ -34,7 +34,7 @@ EcoNet <- function(x,verbose=FALSE){
     output <- as.numeric(out[,2])
     names(output) <- out[,1]
     if (is.na(stor[[1]])){
-        storage <- rep(0,nrow(M))
+        storage <- rep(0,nrow(flow))
     }else{
         stor <- paste(stor,collapse='')
         stor <- strsplit(stor,split='')[[1]]
