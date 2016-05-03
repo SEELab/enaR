@@ -1,5 +1,6 @@
 #' R function to read in a matrix formatted as Mdloti (Ursula Sharler)
 #' Borrett | Sept. 12, 2012, MKL July 2013
+#' Updated - Borrett, May 2016 - to use pack() to create the network data object.
 #' ------------------------
 
 read.enam<- function(file="file path and name"){
@@ -20,15 +21,8 @@ read.enam<- function(file="file path and name"){
   biomass <- as.numeric(unlist(m[(n+2),1:n]))
   exports <- as.numeric(unlist(m[1:n,(n+1)]))
   respiration <- as.numeric(unlist(m[1:n,(n+2)]))
-  y <- network(Flow,directed=TRUE)
-                                        # packing up the attributes into the network object (y)
-  set.vertex.attribute(y,'input',imports)
-  set.vertex.attribute(y,'export',exports)
-  set.vertex.attribute(y,'respiration',respiration)
-  set.vertex.attribute(y,'storage',biomass)
-  set.vertex.attribute(y,'output',exports+respiration)
-  y%v%'vertex.names' <- rownames(Flow)
-  y%v%'living'=c(rep(TRUE,liv),rep(FALSE,n-liv))
-  set.network.attribute(y, 'flow', Flow[Flow>0])
+  LIV <-  c(rep(TRUE,liv),rep(FALSE,n-liv))
+                                       # packing up the attributes into the network object (y)
+  y <- pack(flow = Flow, input = imports, respiration = respiration, export = exports, storage = biomass, living = LIV)
   return(y)
 }
