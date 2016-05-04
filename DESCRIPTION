@@ -6,7 +6,7 @@ Date: 2016-05-04
 Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Singh
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 Description: Provides algorithms for the analysis of ecological networks. 
-Depends:
+Depends: R (>= 2.10),
     MASS,
     stringr,
     sna,
