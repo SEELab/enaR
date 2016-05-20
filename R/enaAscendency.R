@@ -4,6 +4,7 @@
 #' OUTPUT = matrix of ascendency statistics
 #'
 #' D. Hines | December 2011
+#' S.R. Borrett | May 2016 - updates
 #' ---------------------------------------------------
 
 enaAscendency <- function(x='network object'){
@@ -21,7 +22,18 @@ enaAscendency <- function(x='network object'){
                                         #calculate total system throughPUT
   TSTp <- sum(T.ulan)
 
-#'################### calculate AMI #######################
+#'## calculate H & CAPACITY  #######################################
+  #' H = Total Flow Diversity
+
+  h <- T.ulan/sum(T.ulan)
+  h2 <- log2(h)
+  h2[!is.finite(h2)] <- 0
+  H = - sum(h * h2)   # Total Flow Diversity
+
+  CAP <- H * TSTp     # Capactity
+
+#'################### calculate AMI  #######################
+  #' AMI = Average Mutual Informaiton
 
                                         # loop through T.ulan to calculate AMI
   for (i in 1:N){
@@ -38,7 +50,11 @@ enaAscendency <- function(x='network object'){
 
 #'################ calculate ascendency ###################
 
-  ASC <- TSTp*AMI
+  ASC <- TSTp * AMI
+
+#'################ calculate residual diversity  ####################
+
+  Hr <- H - AMI
 
 #'################ calculate overhead  ####################
 
@@ -55,25 +71,6 @@ enaAscendency <- function(x='network object'){
 
   OH <- -sum(oh)
 
-#'############## calculate capacity (long) ###############
-
-                                        # loop through T.ulan to calculate capacity
-  for (i in 1:N){
-    for (j in 1:N){
-      if (T.ulan[i,j] == 0){
-        cap[i,j] <- 0
-      }else{
-        cap[i,j] <- T.ulan[i,j] * log2((T.ulan[i,j])/(TSTp))
-      }
-    }
-  }
-
-  CAP <- -sum(cap)
-
-#'############# calculate capacity (short) ################
-
-  CAP2 <- ASC+OH
-
 
 #'################### calculate ratios ####################
 
@@ -87,6 +84,8 @@ enaAscendency <- function(x='network object'){
   ASC.OH.RSUM <- ASC.CAP + OH.CAP
 
   robustness = -1 * ASC.CAP * log(ASC.CAP)  # robustness from Ulanowicz 2009; Fath 2014
+
+
 
   ################# Calculating Effective Link Density and Trophic Depth ########
   ## Calculate t.ulan 't'
@@ -132,7 +131,10 @@ enaAscendency <- function(x='network object'){
     TD <- R.TD
     ##############################################################################
 
+
+  #'#####################################################################
   # tetrad partition of A, C, O -> input, internal, export, respiration
+  #'#####################################################################
   n <- N - 3
 
   # -- ASCENDENCY --
@@ -204,7 +206,8 @@ enaAscendency <- function(x='network object'){
   CAP.respiration = A.respiration + OH.respiration
 
 
-  ns <- cbind(AMI, ASC, OH, CAP, ASC.CAP, OH.CAP, robustness, ELD, TD,
+  ns <- cbind(H, AMI, Hr, CAP, ASC, OH, ASC.CAP, OH.CAP,
+              robustness, ELD, TD,
               A.input, A.internal, A.export, A.respiration,
               OH.input, OH.internal, OH.export, OH.respiration,
               CAP.input, CAP.internal, CAP.export, CAP.respiration)

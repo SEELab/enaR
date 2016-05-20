@@ -8,6 +8,8 @@
   input-output systems.  It returns a vector of throughflows, the input and
   output oriented matrices for "direct flow intensities" and "integral
   flow intensities", and a set of flow based network statistics.
+  Included in the network statistics are a set of measures that describe
+  the diversity of flows in the ecosystem (Ulanowicz's Ascendendy measures).
 }
 \usage{
 enaFlow(x, zero.na = TRUE, balance.override = FALSE)
@@ -15,7 +17,7 @@ enaFlow(x, zero.na = TRUE, balance.override = FALSE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{a network object.  This includes all weighted flows into and out of
-    each node.    
+    each node.
   }
   \item{zero.na}{
     LOGICAL: should NA values be converted to zeros.
@@ -51,7 +53,20 @@ enaFlow(x, zero.na = TRUE, balance.override = FALSE)
   "mode0.F" is the boundary flow - flow that reaches a compartment from
   across the system boundary, "mode1.F" is internal first passage flow,
   "mode2.F" is cycled flow, "mode3.F" is the dissipative eqivalent to mode2,
-  and "mode4.F" is the dissipative equivalent ot mode0.}
+  and "mode4.F" is the dissipative equivalent ot mode0. "H" is the total flow diversity (MacArthur 1955).  Uses the Shannon
+  Information measure (aka Boltzmann entropy) applied to the individual
+  flows, "AMI", is the Average Mutual Information (AMI) in a
+      network. "Hr", is the residual uncertainty that remains about the flow
+      distribution once the ecosystem structure is specified (Hr = H -
+      AMI), "ASC", Returns the ascendnecy of a network, "OH", is the
+      overhead of a network (Ulanowicz 2004), "CAP", is the capacity of
+      a network, "ACS.CAP", is the proportion of capacity used by
+      ascendency, "OH.CAP", Returns the proportion of capacity used by
+      overhead, "robustness", is  the robustness of the network, "ELD"
+      Returns the Effective Link Density of the network(c) (Ulanowicz et
+      al. 2014), "TD", Returns the Trophic Depth of the network(r)
+      (Ulanowicz et al. 2014), "A.input", Returns the input ascendnecy
+      of a network, "A.internal", Returns the internal ascendnecy of a network, "A.export", Returns the export ascendnecy of a network, "A.respiration", Returns the respiration ascendnecy of a network, "OH.input", Returns the input overhead of a network, "OH.internal", Returns the internal overhead of a network, "OH.export", Returns the export overhead of a network, "OH.respiration", Returns the respiration overhead of a network, "CAP.input", Returns the input capacity of a network, "CAP.internal", Returns the internal capacity of a network, "CAP.export", Returns the export capacity of a network, "CAP.respiration", Returns the respiration capacity of a network}
 }
 \references{
   Borrett, S. R., Freeze, M. A., 2011. Reconnecting environs to their
@@ -62,7 +77,7 @@ enaFlow(x, zero.na = TRUE, balance.override = FALSE)
 
   Fath, B. D., Patten, B. C., 1999. Review of the foundations of network
   environ analysis. Ecosystems 2, 167-179.
-  
+
   Finn, J. T., 1976. Measures of ecosystem structure and function
   derived from analysis of flows. J. Theor. Biol. 56, 363-380.
 
@@ -73,6 +88,12 @@ enaFlow(x, zero.na = TRUE, balance.override = FALSE)
   Schramski, J. R., Kazanci, C., Tollner, E. W., 2011. Network environ
   theory, simulation and EcoNet 2.0. Environ. Model. Softw. 26,
   419-428.
+
+  Ulanowicz, R.E., 2004. Quantitative methods for ecological network
+analysis. Comput. Biol. Chem. 28, 321-33
+
+Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem
+trophic complexity: insights from ecological network analysis.  Ecology Letters 17:127-136.
 }
 \author{
   Matthew K. Lau

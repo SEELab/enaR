@@ -18,7 +18,7 @@ get.ns <- function(x,balance.override=FALSE){
   # runs selected ena analyses that return global network statistics
   st <- enaStructure(x)$ns
   Flow <- enaFlow(x)$ns
-  asc <- enaAscendency(x)
+#  asc <- enaAscendency(x)  # enaFlow now includes the ascendency measures
   s <- enaStorage(x)$ns
   u.f <- enaUtility(x,type='flow',eigen.check=FALSE)$ns
   u.s <- enaUtility(x,type='storage',eigen.check=FALSE)$ns
@@ -27,4 +27,4 @@ get.ns <- function(x,balance.override=FALSE){
 
   return(ns)
 }
-  
+

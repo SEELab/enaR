@@ -92,14 +92,17 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
     GP <- t(GP)
     N <- t(N)
     NP <- t(NP)
-  }else{}
+}else{}
+
+
+  asc <- enaAscendency(x)
                                         #network statistics
   ns <- cbind(Boundary,TST,TSTp,APL,FCI,
               BFI,DFI,IFI,
               ID.F,ID.F.I,ID.F.O,
               HMG.I,HMG.O,
               AMP.I,AMP.O,
-              mode0.F,mode1.F,mode2.F,mode3.F,mode4.F)
+              mode0.F,mode1.F,mode2.F,mode3.F,mode4.F, asc)
 
                                         #output
   return(list('T'=T.,'G'=G,'GP'=GP,'N'=N,'NP'=NP,'ns'=ns))
