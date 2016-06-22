@@ -1,7 +1,7 @@
-\name{enaAscendency} 
-\alias{enaAscendency} 
-\title{ Calculates the Ascendency of an Ecological Network } 
-\description{ 
+\name{enaAscendency}
+\alias{enaAscendency}
+\title{ Calculates the Ascendency of an Ecological Network }
+\description{
 Calculates the average mutual information (AMI), ascendency, overhead, and capacity of
 input-output networks.  It also returns the ratios of ascendency and
 overhead to capacity. These metrics describe the organization of flow in
@@ -33,29 +33,46 @@ enaAscendency(x = "network object")
 \item{robustness}{Returns the robustness of the network.}
 \item{ELD}{Returns the Effective Link Density of the network(c) (Ulanowicz et al. 2014).}
 \item{TD}{Returns the Trophic Depth of the network(r) (Ulanowicz et al. 2014).}
+\item{A.input}{Returns the input ascendnecy of a network.}
+\item{A.internal}{Returns the internal ascendnecy of a network.}
+\item{A.export}{Returns the export ascendnecy of a network.}
+\item{A.respiration}{Returns the respiration ascendnecy of a network.}
+\item{OH.input}{Returns the input overhead of a network.}
+\item{OH.internal}{Returns the internal overhead of a network.}
+\item{OH.export}{Returns the export overhead of a network.}
+\item{OH.respiration}{Returns the respiration overhead of a network.}
+\item{CAP.input}{Returns the input capacity of a network.}
+\item{CAP.internal}{Returns the internal capacity of a network.}
+\item{CAP.export}{Returns the export capacity of a network.}
+\item{CAP.respiration}{Returns the respiration capacity of a network.}
 }
 
 \references{
 Kay, J.J., Graham, L.A., Ulanowicz, R.E., 1989. A detailed guide to
 network analysis. p. 15-61 In: Wulff, F., Field, J.G., Man, K.H. (eds.)
 Network analysis in marine ecology. Coastal Estuarine Study
-Serries. Springer-Verlag, Berlin. 
+Serries. Springer-Verlag, Berlin.
 
 Patrico, J., Ulanowicz, R.E., Pardal, M.A., Marques
 J.C., 2004. Ascendency as an ecological indicator: a case study of
-estuarine pulse eutrophication. Estuar. Coast Shelf S. 60, 23-35. 
+estuarine pulse eutrophication. Estuar. Coast Shelf S. 60, 23-35.
+
+Ulanowicz, R.E. and Norden, J.S., 1990. Symmetrical overhead in flow
+networks. International Journal of Systems Science, 21(2), pp.429-437.
 
 Ulanowicz, R.E., 1997. Ecology, The Ascendent Perspective. Columbia
 University Press, New York.
 
 Ulanowicz, R.E., 2004. Quantitative methods for ecological network
 analysis. Comput. Biol. Chem. 28, 321-33
+
 Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem trophic complexity: insights from ecological network analysis
 
 }
 \author{
-  David E. Hines 
-  Matthew K. Lau 
+  David E. Hines
+  Matthew K. Lau
+  Stuart R. Borrett
 }
 
 \note{This and other Ulanowicz school functions require that export and

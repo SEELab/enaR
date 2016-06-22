@@ -2,7 +2,7 @@
 #' of Ulanowicz
 #' INPUT = network object
 #' OUTPUT = matrix of ascendency statistics
-#' 
+#'
 #' D. Hines | December 2011
 #' ---------------------------------------------------
 
@@ -20,9 +20,9 @@ enaAscendency <- function(x='network object'){
   cap <- mat.or.vec(N,N) # initialize capacity matrix
                                         #calculate total system throughPUT
   TSTp <- sum(T.ulan)
-  
+
 #'################### calculate AMI #######################
-  
+
                                         # loop through T.ulan to calculate AMI
   for (i in 1:N){
     for (j in 1:N){
@@ -33,15 +33,15 @@ enaAscendency <- function(x='network object'){
       }
     }
   }
-  
+
   AMI <- sum(ami)
-  
+
 #'################ calculate ascendency ###################
-  
+
   ASC <- TSTp*AMI
-  
+
 #'################ calculate overhead  ####################
-  
+
                                         # loop through T.ulan to calculate overhead
   for (i in 1:N){
     for (j in 1:N){
@@ -52,11 +52,11 @@ enaAscendency <- function(x='network object'){
       }
     }
   }
-  
+
   OH <- -sum(oh)
-  
+
 #'############## calculate capacity (long) ###############
-  
+
                                         # loop through T.ulan to calculate capacity
   for (i in 1:N){
     for (j in 1:N){
@@ -67,30 +67,30 @@ enaAscendency <- function(x='network object'){
       }
     }
   }
-  
+
   CAP <- -sum(cap)
-  
+
 #'############# calculate capacity (short) ################
-  
+
   CAP2 <- ASC+OH
-  
-  
+
+
 #'################### calculate ratios ####################
-  
+
                                         # ratio for ascendency/capacity
   ASC.CAP <- ASC/CAP
-  
+
                                         #ratio for overhead/capacity
   OH.CAP <- OH/CAP
-  
+
                                         #confirm ratios sum to 1
   ASC.OH.RSUM <- ASC.CAP + OH.CAP
 
   robustness = -1 * ASC.CAP * log(ASC.CAP)  # robustness from Ulanowicz 2009; Fath 2014
-  
+
   ################# Calculating Effective Link Density and Trophic Depth ########
   ## Calculate t.ulan 't'
-  
+
   for (i in 1:N) {
         for (j in 1:N) {
             if (T.ulan[i, j] == 0) {
@@ -101,7 +101,7 @@ enaAscendency <- function(x='network object'){
             }
         }
     }
-    
+
     ## Effective Link Density (c)
     for (i in 1:N) {
         for (j in 1:N) {
@@ -114,7 +114,7 @@ enaAscendency <- function(x='network object'){
         }
     }
     C.LD <- prod(c.ld)
-    
+
     ## Trophic Depth (r)
     for (i in 1:N) {
         for (j in 1:N) {
@@ -127,13 +127,88 @@ enaAscendency <- function(x='network object'){
         }
     }
     R.TD <- prod(r.td)
-    
+
     ELD <- C.LD
     TD <- R.TD
     ##############################################################################
-    
-    ns <- cbind(AMI,ASC,OH,CAP,ASC.CAP,OH.CAP, robustness, ELD, TD)
+
+  # tetrad partition of A, C, O -> input, internal, export, respiration
+  n <- N - 3
+
+  # -- ASCENDENCY --
+  # input
+  tmp = 0
+  for(j in 1:n){
+      tmp[j] <-  T.ulan[(n+3),j]  * log2(  (T.ulan[(n+3),j] * TSTp)/( sum(T.ulan[(n+3),]) * sum(T.ulan[,j]) ) )
+  }
+  A.input <- sum(tmp[!is.nan(tmp)])   # have to remove NaN values
+
+  # internal
+  tmp=mat.or.vec(n,n)
+  for(i in 1:n){
+      for(j in 1:n){
+          tmp[i,j]= T.ulan[i,j] * log2(  (T.ulan[i,j] * TSTp) /( sum(T.ulan[i,]) * sum( T.ulan[,j]) ))
+      }
+  }
+  A.internal <- sum(tmp[!is.nan(tmp)])
+
+  # Exports
+  tmp <- 0
+  for(i in 1:n){
+      tmp[i] = T.ulan[i,(n+1)] * log2( (T.ulan[i,(n+1)] * TSTp) / ( sum(T.ulan[,(n+1)]) * sum(T.ulan[i,]) ) )
+  }
+  A.export <- sum(tmp[!is.nan(tmp)])
+
+  # Respiration
+  tmp <- 0
+  for(i in 1:n){
+      tmp[i] = T.ulan[i,(n+2)] * log2( (T.ulan[i,(n+2)] * TSTp) / ( sum(T.ulan[,(n+2)]) * sum(T.ulan[i,]) ) )
+  }
+  A.respiration <- sum(tmp[!is.nan(tmp)])
+
+  # -- OVERHEAD --
+  # input
+  tmp = 0
+  for(j in 1:n){
+      tmp[j] <-  -1 * T.ulan[(n+3),j]  * log2(  (T.ulan[(n+3),j]^2 )/( sum(T.ulan[(n+3),]) * sum(T.ulan[,j]) ) )
+  }
+  OH.input <- sum(tmp[!is.nan(tmp)])   # have to remove NaN values
+
+  # internal
+  tmp=mat.or.vec(n,n)
+  for(i in 1:n){
+      for(j in 1:n){
+          tmp[i,j]= -1 * T.ulan[i,j] * log2(  (T.ulan[i,j]^2) /( sum(T.ulan[i,]) * sum( T.ulan[,j]) ))
+      }
+  }
+  OH.internal <- sum(tmp[!is.nan(tmp)])
+
+  # export
+  tmp <- 0
+  for(i in 1:n){
+      tmp[i] = -1 * T.ulan[i,(n+1)] * log2( (T.ulan[i,(n+1)]^2) / ( sum(T.ulan[,(n+1)]) * sum(T.ulan[i,]) ) )
+  }
+  OH.export <- sum(tmp[!is.nan(tmp)])
+
+  # respriation
+  tmp <- 0
+  for(i in 1:n){
+      tmp[i] = -1 *  T.ulan[i,(n+2)] * log2( (T.ulan[i,(n+2)]^2) / ( sum(T.ulan[,(n+2)]) * sum(T.ulan[i,]) ) )
+  }
+  OH.respiration <- sum(tmp[!is.nan(tmp)])
+
+  # -- CAPACITY --
+  CAP.input = A.input + OH.input
+  CAP.internal = A.internal + OH.internal
+  CAP.export = A.export + OH.export
+  CAP.respiration = A.respiration + OH.respiration
+
+
+  ns <- cbind(AMI, ASC, OH, CAP, ASC.CAP, OH.CAP, robustness, ELD, TD,
+              A.input, A.internal, A.export, A.respiration,
+              OH.input, OH.internal, OH.export, OH.respiration,
+              CAP.input, CAP.internal, CAP.export, CAP.respiration)
                                         #
   return(ns)
-  
+
 }
