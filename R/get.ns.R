@@ -23,7 +23,7 @@ get.ns <- function(x,balance.override=FALSE){
   u.f <- enaUtility(x,type='flow',eigen.check=FALSE)$ns
   u.s <- enaUtility(x,type='storage',eigen.check=FALSE)$ns
 
-  ns <- data.frame(st,Flow,asc,s,u.f,u.s)
+  ns <- data.frame(st,Flow,s,u.f,u.s)
 
   return(ns)
 }
