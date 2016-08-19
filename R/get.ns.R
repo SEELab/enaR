@@ -1,4 +1,4 @@
-c#' get.ns.R
+#' get.ns.R
 #' Input = network model
 #' Output = a vector of global network statistics from ena
 #'
@@ -24,6 +24,7 @@ get.ns <- function(x,balance.override=FALSE){
   u.s <- enaUtility(x,type='storage',eigen.check=FALSE)$ns
 
   ns <- data.frame(st,Flow,s,u.f,u.s)
+  rownames(ns) <- ""
 
   return(ns)
 }
