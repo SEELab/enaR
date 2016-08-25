@@ -9,6 +9,7 @@ Description: Provides algorithms for the analysis of ecological networks.
 Depends: R (>= 2.10),
     MASS,
     stringr,
+    statnet,
     sna,
     network,
     gdata,
