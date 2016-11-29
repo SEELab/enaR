@@ -88,11 +88,11 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
                                         #re-orientation
   orient <- get.orient()
   if (orient == 'rc'){
-    G <- t(G)
-    GP <- t(GP)
-    N <- t(N)
-    NP <- t(NP)
-}else{}
+      G <- t(G)
+      GP <- t(GP)
+      N <- t(N)
+      NP <- t(NP)
+  }
 
 
   asc <- enaAscendency(x)
@@ -107,4 +107,5 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
                                         #output
   return(list('T'=T.,'G'=G,'GP'=GP,'N'=N,'NP'=NP,'ns'=ns))
 }
+
 

@@ -8,10 +8,15 @@
 #' ---------------------------------------------------
 
 enaAscendency <- function(x='network object'){
+    if (class(x) != 'network'){warning('x is not a network class object')}
 
-  if (any(is.na(x%v%'export'))|any(is.na(x%v%'respiration'))){
-    warning('Model is missing either export or respiration. Calculations may not be correct.')
-  }
+
+    if (any(is.na(x%v%'export'))){
+        warning('Export data is absent from the model.')
+    }
+    if(any(is.na(x%v%'respiration'))){
+           warning('Respiration data is absent from the model.')
+   }
 
 #'####### set initial conditions for calculations #########
   T.ulan <- as.extended(x)
