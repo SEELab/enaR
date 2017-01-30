@@ -4,7 +4,7 @@
   Relational change compared between two matrices.
 }
 \description{
-  Identifies the signs and pairwise relationsips of two matricesa and
+  Identifies the signs and pairwise relationsips of two matrices and
   compares the difference between them.
 }
 \usage{

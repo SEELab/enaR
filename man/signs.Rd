@@ -14,7 +14,7 @@ signs(x)
 \arguments{
   \item{x}{
     x is a square matrix of real numbers.  While this function is more
-    general, the intiail intention was for this to be a utility
+    general, the initail intention was for this to be a utility
     matrix or the mixed trophic impacts matrix.
   }
 
@@ -34,7 +34,8 @@ signs(x)
 Stuart R. Borrett
 }
 \note{
-   This function is called by relationalChange.
+   This function is called by relationalChange, and was created to
+   generate more informative output from enaUtility and enaMTI.
 }
 
 

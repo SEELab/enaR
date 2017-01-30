@@ -32,6 +32,13 @@ ShannonDiversity(x = "vector")
   Stuart R. Borrett
 }
 \note{
+  The formulation for Shannon Diversity uses a natural
+  logarithm.  As the natural logarithm of zero is undefined, the input
+  vector cannot contain zeros.  Analytically, there are two approaches
+  to dealing with this issue if your vector contains zeros.  First, you
+  can apply the analysis to only the non-zero elements.  Second, you can
+  add a tiny amount to all of the elements such that the zero elements
+  are now very small numbers, relative the original vector values.
 }
 
 \seealso{
