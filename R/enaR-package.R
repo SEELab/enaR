@@ -59,7 +59,7 @@ NULL
 #' 2.9.3\cr Date: \tab 2015-12-09\cr License: \tab GPL-3\cr }
 #' 
 #' @name enaR-package
-#' @aliases enaR-package enaR
+#' @aliases enaR enaR-package
 #' @docType package
 #' @author Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David
 #' E. Hines Maintainer: Matthew K. Lau <enaR.maintainer@@gmail.com>

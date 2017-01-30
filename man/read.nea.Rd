@@ -1,38 +1,45 @@
+% Please edit documentation in R/read.nea.R
 \name{read.nea}
 \alias{read.nea}
-\title{
-  Read NEA Formatted Network Model
-}
-\description{
-  This function reads in and creates a network object from a NEA formatted
-  data file (Fath and Borrett 2006). 
-}
+\title{read.nea.RData
+INPUT = Model Data (flows, inputs, outputs, storage) formatted as for NEA.m, saved as CSV file
+       S=  |[F][z][X]|
+           |[y][0][0]|
+OUPUT = R Network data object for use with enaR}
 \usage{
-read.nea(file="file name",sep=',',warn=TRUE)
+read.nea(file = "file name", sep = ",", warn = TRUE)
 }
 \arguments{
-  \item{file}{
-    The name and path for the data file.
-  }
-  \item{sep}{
-    The separation character used to delimit data values.
-  }
-  \item{warn}{
-    LOGICAL: should pack warnings be reported?
-  }
+\item{file}{The name and path for the data file.}
+
+\item{sep}{The separation character used to delimit data values.}
+
+\item{warn}{LOGICAL: should pack warnings be reported?}
 }
 \value{
-  Returns the network object.
+Returns the network object.
 }
-\references{
-  Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
-  Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+\description{
+Borrett | July 15, 2013
+--------------------------------------------------
+read.nea.RData INPUT = Model Data (flows, inputs, outputs, storage)
+formatted as for NEA.m, saved as CSV file S= |[F][z][X]| |[y][0][0]| OUPUT =
+R Network data object for use with enaR
+}
+\details{
+Borrett | July 15, 2013 --------------------------------------------------
+Read NEA Formatted Network Model
+
+This function reads in and creates a network object from a NEA formatted
+data file (Fath and Borrett 2006).
 }
 \author{
-  Stuart R. Borrett 
+Stuart R. Borrett
 }
-
-
+\references{
+Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
+Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+}
 \seealso{
-  \code{\link{write.nea}}
+\code{\link{write.nea}}
 }

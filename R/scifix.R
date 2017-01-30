@@ -8,7 +8,12 @@
 
 
 
-#' Standardizes Scientific Notation from SCOR Formatted Files
+
+
+#' scifix --- corrects missing e or E in scientific notation INPUT = scalar
+#' either in or not in scientific notation OUTPUT = corrected numeric value M.
+#' Lau | July 2012 ------------------------------------ Standardizes Scientific
+#' Notation from SCOR Formatted Files
 #' 
 #' This is a support function that corrects the scientific notation in SCOR
 #' formatted data files.

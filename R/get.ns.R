@@ -7,11 +7,16 @@
 
 
 
-#' Quick Calculation of a Range of Network Statistics.
+
+
+#' get.ns.R Input = network model Output = a vector of global network
+#' statistics from ena
+#' 
+#' Borrett | July 4, 2012 ----------------------------------- Quick Calculation
+#' of a Range of Network Statistics.
 #' 
 #' This is a high level function for calculated the main network analyses
 #' (Ascendancy, Flow, Structure, Storage and Utility) on an ecological network.
-#' 
 #' 
 #' @param x A network object.
 #' @param balance.override Turns off balancing and balance checking.
@@ -25,8 +30,10 @@
 #' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' get.ns(troModels[[6]])
+#' 
 #' 
 #' @export get.ns
 get.ns <- function(x,balance.override=FALSE){

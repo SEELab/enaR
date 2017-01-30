@@ -7,10 +7,15 @@
 
 
 
+
+
+#' enaStorage --- storage analysis INPUT = network object OUTPUT = list of
+#' storage statistics
+#' 
+#' M. Lau | July 2011 ---------------------------------------------------
 #' Storage Analyses of Ecological Networks
 #' 
 #' Calculates storage-based Ecological Network Analyses.
-#' 
 #' 
 #' @param x A network object.  This This includes all weighted flows into and
 #' out of each vertex as well as the amount of energy--matter stored at each
@@ -44,11 +49,9 @@
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso
 #' \code{\link{read.scor},\link{read.wand},\link{enaFlow},\link{enaUtility}}
-#' @references
-#' 
-#' Matis, J. H., Patten, B. C. 1981. Environ analysis of linear compartmental
-#' systems: the static, time invariant case.  Bulletin of the International
-#' Statistical Institute, 48: 527-565.
+#' @references Matis, J. H., Patten, B. C. 1981. Environ analysis of linear
+#' compartmental systems: the static, time invariant case.  Bulletin of the
+#' International Statistical Institute, 48: 527-565.
 #' 
 #' Fath, B. D., Patten, B. C. 1999.  Review of the foundations of network
 #' enviorn analysis.  Ecosystems 2:167-179.
@@ -61,9 +64,11 @@
 #' @keywords enaFlow read.scor
 #' @examples
 #' 
+#' 
 #' data(oyster)
-#' S<-enaStorage(oyster)
+#' S <- enaStorage(oyster)
 #' attributes(S)
+#' 
 #' 
 #' @export enaStorage
 enaStorage <- function(x,balance.override=FALSE){

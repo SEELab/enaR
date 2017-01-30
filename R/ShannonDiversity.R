@@ -9,11 +9,20 @@
 
 
 
+
+
+#' Shannon Diversity Metrics These are based on entropy and build Shannon and
+#' Weaver 1949
+#' 
+#' Borrett | November 29, 2016
+#' 
+#' INPUT = Vector Output = set of network statistics to charcterize the
+#' diversity in the vector
+#' ================================================================================
 #' Shannon information entropy
 #' 
 #' Calculates a number of metrics based on the Shannon information entropy
 #' measure of diversity in a vector, x.
-#' 
 #' 
 #' @param x a 1 x n vector.
 #' @return \item{H}{Shannon entropy-based metric of diversity.  This captures
@@ -32,8 +41,8 @@
 #' such that the zero elements are now very small numbers, relative the
 #' original vector values.
 #' @author Stuart R. Borrett
-#' @seealso
 #' @examples
+#' 
 #' 
 #' data(oyster)
 #' 
@@ -42,8 +51,9 @@
 #' ShannonDiversity(T)
 #' 
 #' #' storage (biomass) biodiversity
-#' X <- oyster%v%'storage'
+#' X <- oyster %v% "storage"
 #' ShannonDiversity(X)
+#' 
 #' 
 ShannonDiversity <-  function(x){
     p <- x/sum(x)  # relative proportion

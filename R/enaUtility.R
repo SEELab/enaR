@@ -7,13 +7,18 @@
 
 
 
+
+
+#' enautility --- utility analysis of a flow network INPUT = network object
+#' OUTPUT = list of utility statistics
+#' 
+#' M. Lau | July 2011 ---------------------------------------------------
 #' Utility Analysis of Ecological Networks
 #' 
 #' Performs the flow and storage based utility analysis developed for
 #' input-output network models of ecosystems.  It returns a set of matrices for
 #' the direct and integral utilities as well as a set of utility based network
 #' statistics.
-#' 
 #' 
 #' @param x a network object.  This includes all weighted flows into and out of
 #' each node.  For the storage utility analysis this must also include the
@@ -62,14 +67,16 @@
 #' 
 #' Patten, B.C. 1991.  Network ecology: Indirect determination of the
 #' life-environment relationship in ecosystems.  In: Higashi, M. and Burns, T.
-#' (eds). Theoretical Studies of Ecosystems: The Network Perspective.
-#' Cambridge University Press.  New York.
+#' (eds). Theoretical Studies of Ecosystems: The Network Perspective. Cambridge
+#' University Press.  New York.
 #' @examples
 #' 
+#' 
 #' data(troModels)
-#' U <- enaUtility(troModels[[6]],type="flow",eigen.check=FALSE)
+#' U <- enaUtility(troModels[[6]], type = "flow", eigen.check = FALSE)
 #' attributes(U)
-#' US <-enaUtility(troModels[[6]],type="storage",eigen.check=FALSE)
+#' US <- enaUtility(troModels[[6]], type = "storage", eigen.check = FALSE)
+#' 
 #' 
 #' @export enaUtility
 enaUtility <- function(x, type=c('flow','storage'),

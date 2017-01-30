@@ -49,46 +49,34 @@
 #' 
 #' Soetaert, K., Van den Meersche, K. & van Oevelen, D. (2009) limSolve:
 #' Solving linear inverse models. R package version 1.5.1.
-#' @keywords Uncertainty analysis Linear inverse modeling Flow network
+#' @keywords Flow Linear Uncertainty analysis inverse modeling network
 #' @examples
 #' 
-#' ## # Three different ways to purtub all fluxes in a model by +/- 50%
-#' ## # Uniform edge uncertainty (50%)
-#' ## data(troModels)
-#' ## UA = enaUncertainty(x=troModels[[6]], p.err=50, iter=10000)
 #' 
-#' ## # Data driven uncertainty (standard deviation)
-#' ## data(troModels)
-#' ## Fu.sd = matrix(c(0, 0, 0, 0, 50,
-#' ##                  0, 0, 50, 0, 50,
-#' ##                  0, 0, 0, 50, 50,
-#' ##                  0, 0, 0, 0, 50,
-#' ##                  0, 50, 50, 0, 0), byrow=TRUE, nrow=5, ncol=5)
-#' ## zu.sd = c(50, 0, 0, 0, 50)
-#' ## yu.sd = c(50, 50, 50, 50, 50)
+#' ## # Three different ways to purtub all fluxes in a model by +/- 50% # Uniform
+#' ## edge uncertainty (50%) data(troModels) UA = enaUncertainty(x=troModels[[6]],
+#' ## p.err=50, iter=10000)
 #' 
-#' ## UA = enaUncertainty(troModels[[6]], Fu.sd=Fu.sd, zu.sd=zu.sd, yu.sd=yu.sd, iter=10000)
+#' ## # Data driven uncertainty (standard deviation) data(troModels) Fu.sd =
+#' ## matrix(c(0, 0, 0, 0, 50, 0, 0, 50, 0, 50, 0, 0, 0, 50, 50, 0, 0, 0, 0, 50, 0,
+#' ## 50, 50, 0, 0), byrow=TRUE, nrow=5, ncol=5) zu.sd = c(50, 0, 0, 0, 50) yu.sd =
+#' ## c(50, 50, 50, 50, 50)
 #' 
-#' ## # Data driven uncertainty (upper and lower limit)
-#' ## data(troModels)
-#' ## Fu.bot = matrix(c(0, 0, 0, 0, 4440.5,
-#' ##                  0, 0, 37.5, 0, 800,
-#' ##                  0, 0, 0, 185, 100,
-#' ##                  0, 0, 0, 0, 83.5,
-#' ##                  0, 2620.5, 1154.5, 0, 0), byrow=TRUE, nrow=5, ncol=5)
-#' ## zu.bot = c(5592, 0, 0, 0, 317.5)
-#' ## yu.bot = c(1151.5, 1765.0, 907, 101.5, 1984.5)
+#' ## UA = enaUncertainty(troModels[[6]], Fu.sd=Fu.sd, zu.sd=zu.sd, yu.sd=yu.sd,
+#' ## iter=10000)
 #' 
-#' ## Fu.top = matrix(c(0, 0, 0, 0, 13321.5,
-#' ##                  0, 0, 112.5, 0, 2500,
-#' ##                  0, 0, 0, 555, 300,
-#' ##                  0, 0, 0, 0, 250.5,
-#' ##                  0, 7807.5, 3463.5, 0, 0), byrow=TRUE, nrow=5, ncol=5)
-#' ## zu.top = c(16776, 0, 0, 0, 952.5)
-#' ## yu.top = c(3454.5, 5295, 2721, 304.5, 5953.5)
+#' ## # Data driven uncertainty (upper and lower limit) data(troModels) Fu.bot =
+#' ## matrix(c(0, 0, 0, 0, 4440.5, 0, 0, 37.5, 0, 800, 0, 0, 0, 185, 100, 0, 0, 0, 0,
+#' ## 83.5, 0, 2620.5, 1154.5, 0, 0), byrow=TRUE, nrow=5, ncol=5) zu.bot = c(5592, 0,
+#' ## 0, 0, 317.5) yu.bot = c(1151.5, 1765.0, 907, 101.5, 1984.5)
 #' 
-#' ## UA = enaUncertainty(troModels[[6]], Fu.bot=Fu.bot, zu.bot=zu.bot, yu.bot=yu.bot,
-#' ##         Fu.top=Fu.top, zu.top=zu.top, yu.top=yu.top, iter=10000)
+#' ## Fu.top = matrix(c(0, 0, 0, 0, 13321.5, 0, 0, 112.5, 0, 2500, 0, 0, 0, 555, 300,
+#' ## 0, 0, 0, 0, 250.5, 0, 7807.5, 3463.5, 0, 0), byrow=TRUE, nrow=5, ncol=5) zu.top
+#' ## = c(16776, 0, 0, 0, 952.5) yu.top = c(3454.5, 5295, 2721, 304.5, 5953.5)
+#' 
+#' ## UA = enaUncertainty(troModels[[6]], Fu.bot=Fu.bot, zu.bot=zu.bot,
+#' ## yu.bot=yu.bot, Fu.top=Fu.top, zu.top=zu.top, yu.top=yu.top, iter=10000)
+#' 
 #' 
 enaUncertainty <- function(x = 'network object', p.err=NA, Fu.sd=NA, zu.sd=NA, yu.sd=NA,
 Fu.bot=NA, zu.bot=NA, yu.bot=NA, Fu.top=NA, zu.top=NA, yu.top=NA, iter=100){

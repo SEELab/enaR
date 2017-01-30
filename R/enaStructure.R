@@ -8,10 +8,17 @@
 
 
 
-#' Structure Analyses of Ecological Network
+
+
+#' enaStructure --- performes strucutral analysis of the network graph (see
+#' Borrett et al. 2007) INPUT = network object OUTPUT = list of structure
+#' statistics
+#' 
+#' S. Borrett and M. Lau | March 2011
+#' --------------------------------------------------- Structure Analyses of
+#' Ecological Network
 #' 
 #' Analysis of the structure of an ecological flow network.
-#' 
 #' 
 #' @param x A network object.
 #' @return \item{A}{
@@ -30,8 +37,10 @@
 #' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' enaStructure(troModels[[6]])
+#' 
 #' 
 #' @export enaStructure
 enaStructure <- function(x = 'network object'){

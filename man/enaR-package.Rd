@@ -1,38 +1,31 @@
-\name{enaR-package}
-\alias{enaR-package}
-\alias{enaR}
+% Please edit documentation in R/enaR-package.R
 \docType{package}
-\title{
-  Tools for Ecological Network Analysis (ena)
-}
+\name{enaR-package}
+\alias{enaR}
+\alias{enaR-package}
+\title{Tools for Ecological Network Analysis (ena)}
 \description{
-  This package compiles functions for the analysis of ecological networks,
-  building on tools previously developed in the MatLab language 
-  Borrett 2006) with multiple additions of functionality. 
+This package compiles functions for the analysis of ecological networks,
+building on tools previously developed in the MatLab language Borrett 2006)
+with multiple additions of functionality.
 }
 \details{
-\tabular{ll}{
-Package: \tab enaR \cr
-Type: \tab Package\cr
-Version: \tab 2.9.3\cr
-Date: \tab 2015-12-09\cr
-License: \tab GPL-3\cr
-}
+\tabular{ll}{ Package: \tab enaR \cr Type: \tab Package\cr Version: \tab
+2.9.3\cr Date: \tab 2015-12-09\cr License: \tab GPL-3\cr }
 }
 \author{
-Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David E. Hines
-Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
+Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David
+E. Hines Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 }
 \references{
-Borrett SR and Lau MK 2014. enaR: An r package for Ecosystem Network
-Analysis. Methods in Ecology and Evolution 5:1206-1213.
+Borrett SR and Lau MK 2014. enaR: An r package for Ecosystem
+Network Analysis. Methods in Ecology and Evolution 5:1206-1213.
 }
-\keyword{ package }
 \seealso{
-% ~~ Optional links to other man pages, e.g. ~~
-% ~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-% \code{\link[network:statnet-package]{statnet}}
+% ~~ Optional links to other man pages, e.g. ~~ % ~~
+\code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~ %
+\code{\link[network:statnet-package]{statnet}}
 %\code{\link[igraph:igraph-package]{igraph}}
 \code{\link[network:network-package]{network}}
 }
-
+\keyword{package}

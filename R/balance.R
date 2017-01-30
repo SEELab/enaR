@@ -17,8 +17,10 @@
 #' Modelling 165(2-3):231-239.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' balance(troModels[[6]])
+#' 
 #' 
 #' @export balance
 balance <-

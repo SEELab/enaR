@@ -7,6 +7,8 @@
 
 
 
+
+
 #' Relational change compared between two matrices.
 #' 
 #' Identifies the signs and pairwise relationsips of two matrices and compares
@@ -32,16 +34,18 @@
 #' @seealso \code{\link{enaUtility}, \link{enaMTI}, \link{signs}}
 #' @examples
 #' 
+#' 
 #' data(oyster)
 #' D <- enaUtility(oyster)$D
 #' U <- enaUtility(oyster)$U
-#' rc <- relationalChange(D,U)
+#' rc <- relationalChange(D, U)
 #' 
 #' 
-#' ## To get a count of the number of differnt pairwise relationships in one
-#' ## of the sign matrices, you can use the table function
+#' ## To get a count of the number of differnt pairwise relationships in one of the
+#' ## sign matrices, you can use the table function
 #' 
 #' count <- table(rc$Direct.Relations)
+#' 
 #' 
 #' 
 relationalChange <- function(x="Direct.U",y="Integral.U"){

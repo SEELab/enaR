@@ -7,13 +7,18 @@
 
 
 
+
+
+#' TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
+#' environ throughput - unit and scaled
+#' 
+#' Borrett | July 7, 2012 ---------------------------------------------------
 #' Calculates the Total Environ Throughflow for a Ecosystem Network Model
 #' 
 #' Determines the total environ throughflow (TET) for each of the 2 x n
 #' environs of the selected network model. It returns both the TET calculated
 #' from a unit input (output) vector and from the observed or realized input
 #' (output) vector.
-#' 
 #' 
 #' @param x A network object.
 #' @param balance.override Logical: should the function work if the model is
@@ -40,9 +45,11 @@
 #' analysis. Ecol. Model. 206: 1--17.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' tet <- TET(troModels[[6]])
 #' tet
+#' 
 #' 
 #' @export TET
 TET <- function(x,balance.override=FALSE){

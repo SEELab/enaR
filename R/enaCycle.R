@@ -6,7 +6,12 @@
 
 
 
-#' Full Cycle Analysis of Ecological Networks
+
+
+#' ## NETWRK's Full Cycle Analysis ## Singh P. | July 2014 ## Algorithm Source
+#' : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow Networks ##
+#' ----------------------------------------------- Full Cycle Analysis of
+#' Ecological Networks
 #' 
 #' It performs the full cycle analysis on the network based on the algorithm
 #' described in Ulanowicz (1983) and implemented in NETWRK 4.2b. It returns
@@ -64,9 +69,11 @@
 #' flow networks. Environmental Software 6:131 -- 142.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' cyc6 <- enaCycle(troModels[[6]])
 #' attributes(cyc6)
+#' 
 #' 
 #' @export enaCycle
 enaCycle <- function (x) {

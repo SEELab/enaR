@@ -64,9 +64,11 @@
 #' flow networks. Environmental Software 6:131 -- 142.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' tro6 <- enaTroAgg(troModels[[6]])
 #' attributes(tro6)
+#' 
 #' 
 #' @export enaTroAgg
 enaTroAgg <- function (x){

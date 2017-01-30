@@ -1,32 +1,27 @@
+% Please edit documentation in R/bcratio.R
 \name{bcratio}
 \alias{bcratio}
-\title{
-  Calculates the Ratio of Positive to Negative Elements in a Network
-}
-\description{
-  Dependent function for the enaUtility function.
-}
+\title{Calculates the Ratio of Positive to Negative Elements in a Network}
 \usage{
 bcratio(x = "matrix")
 }
 \arguments{
-  \item{x}{
-    A matrix of flow values.
-  }
+\item{x}{A matrix of flow values.}
 }
-
 \value{
-  Returns the ratio of positive to negative elements in the flow matrix.
+Returns the ratio of positive to negative elements in the flow
+matrix.
 }
-\references{
-  Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
-  environ analysis. Environmental Modelling & Software 21:375-405.
+\description{
+Dependent function for the enaUtility function.
 }
 \author{
-  Stuart R. Borrett 
+Stuart R. Borrett
 }
-
+\references{
+Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
+environ analysis. Environmental Modelling & Software 21:375-405.
+}
 \seealso{
-  \code{\link{enaUtility}}
+\code{\link{enaUtility}}
 }
-

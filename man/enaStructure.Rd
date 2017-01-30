@@ -1,51 +1,57 @@
+% Please edit documentation in R/enaStructure.R
 \name{enaStructure}
 \alias{enaStructure}
-\title{
-  Structure Analyses of Ecological Network
-}
-\description{
-  Analysis of the structure of an ecological flow network.
-}
+\title{enaStructure --- performes strucutral analysis of the
+network graph (see Borrett et al. 2007)
+INPUT = network object
+OUTPUT = list of structure statistics}
 \usage{
 enaStructure(x = "network object")
 }
 \arguments{
-  \item{x}{
-    A network object.
-  }
+\item{x}{A network object.}
 }
-
 \value{
-  \item{A}{
+\item{A}{
 
-  }
-  \item{ns}{A vector of structure based network statistics. These
-    include n = number of nodes, L = number of edges, C =
-    connectivity, LD = link density, ppr = pathway proliferation rate,
-    lam1A = dominant eigenvalue, mlam1A = multiplicity of dominant
-    eigenvalue, rho = damping ratio,
-    R = distance of the dominant eigen value from the eigen spectra, d =
-    difference between dominant eigen value and link density, no.scc = number of strongly connected components,
-    no.scc.big = number of strongly connected components with more than
-    one node, pscc = percent of nodes in strongly connected components.
-  }
+} \item{ns}{A vector of structure based network statistics. These include n
+= number of nodes, L = number of edges, C = connectivity, LD = link density,
+ppr = pathway proliferation rate, lam1A = dominant eigenvalue, mlam1A =
+multiplicity of dominant eigenvalue, rho = damping ratio, R = distance of
+the dominant eigen value from the eigen spectra, d = difference between
+dominant eigen value and link density, no.scc = number of strongly connected
+components, no.scc.big = number of strongly connected components with more
+than one node, pscc = percent of nodes in strongly connected components.  }
 }
-
-\references{
-  Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
-  Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+\description{
+S. Borrett and M. Lau | March 2011
+---------------------------------------------------
+enaStructure --- performes strucutral analysis of the network graph (see
+Borrett et al. 2007) INPUT = network object OUTPUT = list of structure
+statistics
 }
+\details{
+S. Borrett and M. Lau | March 2011
+--------------------------------------------------- Structure Analyses of
+Ecological Network
 
-\author{
-  Matthew K. Lau 
-  Stuart R. Borrett 
-}
-
-
-\seealso{
-  \code{\link{structure.statistics}}
+Analysis of the structure of an ecological flow network.
 }
 \examples{
+
+
 data(troModels)
 enaStructure(troModels[[6]])
+
+
+}
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
+\references{
+Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
+Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+}
+\seealso{
+\code{\link{structure.statistics}}
 }

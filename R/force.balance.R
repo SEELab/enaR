@@ -7,7 +7,12 @@
 
 
 
-#' Repeated Application the Balance Function
+
+
+#' force.balance --- repeatedly applies balance until sub-tolerance is reached
+#' INPUT = network model OUTPUT = balanced model M. Lau 1 Oct 2012
+#' --------------------------------------------------- Repeated Application the
+#' Balance Function
 #' 
 #' This function repeatedly balances a model, sequentially with the output
 #' being passed back to the balance function, until it is within tolerance or
@@ -27,9 +32,11 @@
 #' Modelling 165(2-3):231-239.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' ssCheck(troModels[[1]])
-#' fb.model=force.balance(troModels[[2]]) #produces a balanced model
+#' fb.model = force.balance(troModels[[2]])  #produces a balanced model
+#' 
 #' 
 #' @export force.balance
 force.balance <- function(x,tol=5,max.itr=10,method='AVG2'){

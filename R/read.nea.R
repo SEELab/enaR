@@ -9,11 +9,17 @@
 
 
 
+
+
+#' read.nea.RData INPUT = Model Data (flows, inputs, outputs, storage)
+#' formatted as for NEA.m, saved as CSV file S= |[F][z][X]| |[y][0][0]| OUPUT =
+#' R Network data object for use with enaR
+#' 
+#' Borrett | July 15, 2013 --------------------------------------------------
 #' Read NEA Formatted Network Model
 #' 
 #' This function reads in and creates a network object from a NEA formatted
 #' data file (Fath and Borrett 2006).
-#' 
 #' 
 #' @param file The name and path for the data file.
 #' @param sep The separation character used to delimit data values.

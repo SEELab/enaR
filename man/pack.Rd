@@ -1,50 +1,37 @@
+% Please edit documentation in R/pack.R
 \name{pack}
 \alias{pack}
-\title{
-  Compile Network Information into a Network Class
-}
-\description{
-  This function provides a flexible framework for importing flow network
-  information into a network class object for analyses.
-}
+\title{Compile Network Information into a Network Class}
 \usage{
-pack(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA)
+pack(flow, input = NA, respiration = NA, export = NA, output = NA, storage = NA, 
+    living = NA)
 }
 \arguments{
-  \item{flow}{
-    The flow matrix.
-  }
-  \item{input}{
-    The inputs into the system.
-  }
-  \item{respiration}{
-    The quantities respired from the system. 
-  }
-  \item{export}{
-    The exports from the system. 
-  }
-  \item{output}{
-    The output (i.e. exports + respiration) from the system. 
-  }
-  \item{storage}{
-    The quantities stored in compartments within the system. 
-  }
-  \item{living}{
-    A logical vector indicating whether a node is either 'living' (=
-    TRUE) or 'dead' (=FALSE).
-  }
-}
+\item{flow}{The flow matrix.}
 
+\item{input}{The inputs into the system.}
+
+\item{respiration}{The quantities respired from the system.}
+
+\item{export}{The exports from the system.}
+
+\item{output}{The output (i.e. exports + respiration) from the system.}
+
+\item{storage}{The quantities stored in compartments within the system.}
+
+\item{living}{A logical vector indicating whether a node is either 'living'
+(= TRUE) or 'dead' (=FALSE).}
+}
 \value{
-  Returns a network object for the supplied model.
+Returns a network object for the supplied model.
 }
-
+\description{
+This function provides a flexible framework for importing flow network
+information into a network class object for analyses.
+}
 \author{
-Matthew K. Lau 
-Stuart R. Borrett 
+Matthew K. Lau Stuart R. Borrett
 }
-
 \seealso{
 \code{\link{unpack}}
 }
-

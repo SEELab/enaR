@@ -7,6 +7,8 @@
 
 
 
+
+
 #' Compile Network Information into a Network Class
 #' 
 #' This function provides a flexible framework for importing flow network

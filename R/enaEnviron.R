@@ -7,10 +7,16 @@
 
 
 
-#' Ecological Network Environs
+
+
+#' environ --- conducts environ analysis INPUT = network object OUTPUT = input
+#' and/or output environs
+#' 
+#' M. Lau July 2011 | DEH edited Feb 2013
+#' --------------------------------------------------- Ecological Network
+#' Environs
 #' 
 #' Calculates the environs for an ecological network.
-#' 
 #' 
 #' @param x A network object.
 #' @param input Should the input environ be calculated?
@@ -29,8 +35,10 @@
 #' environ analysis. Environmental Modelling & Software 21:375-405.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' enaEnviron(troModels[[6]])
+#' 
 #' 
 #' @export enaEnviron
 enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){

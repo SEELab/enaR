@@ -7,6 +7,8 @@
 
 
 
+
+
 #' Signs and summary of input matrix
 #' 
 #' Identifies the signs and pairwise relationsips of a given matrix.  This
@@ -28,9 +30,11 @@
 #' @seealso \code{\link{relationalChange}}
 #' @examples
 #' 
+#' 
 #' data(oyster)
 #' U <- enaUtility(oyster)$U
 #' s <- signs(U)
+#' 
 #' 
 signs <- function(x="matrix"){
     vnames <- rownames(x)   # get row names

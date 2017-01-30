@@ -9,7 +9,13 @@
 
 
 
-#' Control Analyses of Ecological Networks
+
+
+#' enaControl --- control analyses INPUT = network object OUTPUT = list of
+#' control statistics M. Lau | July 2011 P. Singh | Update Summer 2013 S.R.
+#' Borrett | Update March 2016
+#' --------------------------------------------------- Control Analyses of
+#' Ecological Networks
 #' 
 #' Analyses for analyzing the control amongst the nodes in ecological networks.
 #' 
@@ -49,8 +55,10 @@
 #' analysis.  Applied Energy 138:99-107.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' enaControl(troModels[[6]])
+#' 
 #' 
 #' @export enaControl
 enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){

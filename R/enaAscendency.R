@@ -9,18 +9,22 @@
 
 
 
-#' Calculates the Ascendency of an Ecological Network
+
+
+#' enaAscendency --- calculates the ascendency statistics of Ulanowicz INPUT =
+#' network object OUTPUT = matrix of ascendency statistics
+#' 
+#' D. Hines | December 2011 S.R. Borrett | May 2016 - updates
+#' --------------------------------------------------- Calculates the
+#' Ascendency of an Ecological Network
 #' 
 #' Calculates the average mutual information (AMI), ascendency, overhead, and
 #' capacity of input-output networks.  It also returns the ratios of ascendency
 #' and overhead to capacity. These metrics describe the organization of flow in
 #' an ecological network (Ulanowicz 1997).
 #' 
-#' 
 #' @param x A network object.
-#' @return
-#' 
-#' \item{H}{Total flow diversity (MacArthur 1955).  Uses the Shannon
+#' @return \item{H}{Total flow diversity (MacArthur 1955).  Uses the Shannon
 #' Information measure (aka Boltzmann entropy) applied to the individual flows.
 #' } \item{AMI}{Returns the Average Mutual Information (AMI) in a network. AMI
 #' provides a measure of the constraints placed on a given peice of energy
@@ -78,8 +82,10 @@
 #' 17:127-136
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' enaAscendency(troModels[[6]])
+#' 
 #' 
 #' @export enaAscendency
 enaAscendency <- function(x='network object'){

@@ -7,7 +7,13 @@
 
 
 
-#' Flow Analyses of Ecological Networks
+
+
+#' enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
+#' statistics
+#' 
+#' M. Lau | July 2011 --------------------------------------------------- Flow
+#' Analyses of Ecological Networks
 #' 
 #' Performs the primary throughflow analysis developed for input-output
 #' systems.  It returns a vector of throughflows, the input and output oriented
@@ -15,7 +21,6 @@
 #' a set of flow based network statistics.  Included in the network statistics
 #' are a set of measures that describe the diversity of flows in the ecosystem
 #' (Ulanowicz's Ascendendy measures).
-#' 
 #' 
 #' @param x a network object.  This includes all weighted flows into and out of
 #' each node.
@@ -95,9 +100,11 @@
 #' 17:127-136.
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' F = enaFlow(troModels[[6]])  # completes the full analysis
 #' F$ns  # returns just the network statisics
+#' 
 #' 
 #' @export enaFlow
 enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){

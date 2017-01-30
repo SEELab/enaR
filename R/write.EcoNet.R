@@ -4,6 +4,8 @@
 
 
 
+
+
 #' Write enaR models to an EcoNet formatted file.
 #' 
 #' Creates an EcoNet model from an enaR network object that can be used with

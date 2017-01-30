@@ -7,7 +7,11 @@
 
 
 
-#' Read SCOR Formatted Model
+
+
+#' read.scor --- SCOR formatted file into R in multiple formats INPUT = file
+#' path OUTPUT = network model in chosen format S. Borrett and M. Lau | July
+#' 2011 ------------------------------------ Read SCOR Formatted Model
 #' 
 #' Read in network model data files that are in the SCOR format (REFERENCE).
 #' 

@@ -8,6 +8,12 @@
 
 
 
+
+
+#' environCentrality --- calculates the centrality of flow network environs
+#' INPUT = environ matrix OUTPUT = in-going, out-going and average centralities
+#' 
+#' M. Lau | July 2011 ---------------------------------------------------
 #' Environ Centrality an Ecological Network
 #' 
 #' This function calculates the input, output, and average environ centrality
@@ -15,9 +21,8 @@
 #' weighted degree centrality that indicates the relative importance of the
 #' nodes in the flow activity in the network.
 #' 
-#' 
-#' @param x A square matrix.  Usually the integral flow marix from enaFlow.
-#' The assumption is that the flows are oriented column to row.
+#' @param x A square matrix.  Usually the integral flow marix from enaFlow. The
+#' assumption is that the flows are oriented column to row.
 #' @return \item{ECin}{input oriented environ centrality} \item{ECout}{output
 #' oriented environ centraility} \item{AEC}{average environ centrality (average
 #' of input and output)}
@@ -28,13 +33,14 @@
 #' species in ecosystems.  Journal of Theoretical Biology 294: 74-86.
 #' @examples
 #' 
-#' data(troModels) 
-#' F<-enaFlow(troModels[[6]])
-#' ec<-environCentrality(F$N)
+#' 
+#' data(troModels)
+#' F <- enaFlow(troModels[[6]])
+#' ec <- environCentrality(F$N)
 #' attributes(ec)
-#' barplot(sort(ec$AEC,decreasing=TRUE),col=4,
-#'    ylab="Average Environ Centrality",
-#'    ylim=c(0,0.4))
+#' barplot(sort(ec$AEC, decreasing = TRUE), col = 4, ylab = "Average Environ Centrality", 
+#'     ylim = c(0, 0.4))
+#' 
 #' 
 #' @export environCentrality
 environCentrality <- function(x='matrix'){

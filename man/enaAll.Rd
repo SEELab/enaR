@@ -1,46 +1,46 @@
+% Please edit documentation in R/enaAll.R
 \name{enaAll}
 \alias{enaAll}
-\title{
-  Conduct All Major ENA
-}
-\description{
-  Conducts all major ENA with default settings and returns the output as a
-  named list.
-}
-
+\title{enaAll --- Conduct all ecological network analyses
+INPUT = network object
+OUTPUT = list of analytical output}
 \usage{
 enaAll(x = "network object")
 }
-
 \arguments{
 \item{x}{A network object.}
 }
-
-
 \value{
-\item{ascendency}{enaAscendency}
-\item{control}{enaControl}
-\item{environ}{enaEnviron}
-\item{flow}{enaFlow}
-\item{mti}{enaMTI}
-\item{storage}{enaStorage}
-\item{structure}{enaStructure}
+\item{ascendency}{enaAscendency} \item{control}{enaControl}
+\item{environ}{enaEnviron} \item{flow}{enaFlow} \item{mti}{enaMTI}
+\item{storage}{enaStorage} \item{structure}{enaStructure}
 \item{utility}{enaUtility with eigen.check=FALSE}
 }
-
-
-\author{
-  Matthew K. Lau 
-  Stuart R. Borrett 
+\description{
+M. Lau | May 2013
+---------------------------------------------------
+enaAll --- Conduct all ecological network analyses INPUT = network object
+OUTPUT = list of analytical output
 }
+\details{
+M. Lau | May 2013 ---------------------------------------------------
+Conduct All Major ENA
 
-
-\seealso{
-   \code{\link{enaAscendency},\link{enaControl},\link{enaEnviron},\link{enaFlow},\link{enaMTI},\link{enaStorage},\link{enaUtility}}
+Conducts all major ENA with default settings and returns the output as a
+named list.
 }
-
 \examples{
+
+
 data(troModels)
 output = enaAll(troModels[[6]])
 names(output)
+
+
+}
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
+\seealso{
+\code{\link{enaAscendency},\link{enaControl},\link{enaEnviron},\link{enaFlow},\link{enaMTI},\link{enaStorage},\link{enaUtility}}
 }

@@ -7,11 +7,16 @@
 
 
 
+
+
+#' enaAll --- Conduct all ecological network analyses INPUT = network object
+#' OUTPUT = list of analytical output
+#' 
+#' M. Lau | May 2013 ---------------------------------------------------
 #' Conduct All Major ENA
 #' 
 #' Conducts all major ENA with default settings and returns the output as a
 #' named list.
-#' 
 #' 
 #' @param x A network object.
 #' @return \item{ascendency}{enaAscendency} \item{control}{enaControl}
@@ -23,9 +28,11 @@
 #' \code{\link{enaAscendency},\link{enaControl},\link{enaEnviron},\link{enaFlow},\link{enaMTI},\link{enaStorage},\link{enaUtility}}
 #' @examples
 #' 
+#' 
 #' data(troModels)
 #' output = enaAll(troModels[[6]])
 #' names(output)
+#' 
 #' 
 #' @export enaAll
 enaAll <- function(x = 'network object'){

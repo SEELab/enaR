@@ -1,30 +1,33 @@
+% Please edit documentation in R/scifix.R
 \name{scifix}
 \alias{scifix}
-\title{
-  Standardizes Scientific Notation from SCOR Formatted Files
-}
-\description{
-  This is a support function that corrects the scientific notation in SCOR formatted
-  data files.
-}
+\title{scifix --- corrects missing e or E in 
+scientific notation
+INPUT = scalar either in or not in 
+scientific notation
+OUTPUT = corrected numeric value
+M. Lau | July 2012
+------------------------------------
+scifix --- corrects missing e or E in scientific notation INPUT = scalar
+either in or not in scientific notation OUTPUT = corrected numeric value M.
+Lau | July 2012 ------------------------------------ Standardizes Scientific
+Notation from SCOR Formatted Files}
 \usage{
 scifix(x)
 }
 \arguments{
-  \item{x}{
-    A numeric or character scalar.
-  }
+\item{x}{A numeric or character scalar.}
 }
-
 \value{
-  Returns a numeric scalar in appropriate scientific notation.
+Returns a numeric scalar in appropriate scientific notation.
 }
-
+\description{
+This is a support function that corrects the scientific notation in SCOR
+formatted data files.
+}
 \author{
-  Matthew K. Lau 
+Matthew K. Lau
 }
-
 \seealso{
-  \code{\link{read.scor}}
+\code{\link{read.scor}}
 }
-
