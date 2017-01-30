@@ -6,6 +6,21 @@
 #' Re-written: M. Lau | 17Oct2013 
 #' ---------------------------------------------------
 
+
+
+#' Subfunction for Balancing by Either Inputs or Outputs
+#' 
+#' Dependency for the \code{balance} function.
+#' 
+#' 
+#' @param T.star Extended, unbalanced matrix.
+#' @param method Balance by inputs or outputs.
+#' @return Returns an extended matrix for balancing by inputs or outputs.
+#' @author Matthew K. Lau Stuart R. Borrett
+#' @seealso \code{\link{balance}}
+#' @references Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
+#' environ analysis. Environmental Modelling & Software 21:375-405.
+#' @export bal
 bal <- function(T.star='matrix',method=c('input','output')){
   
   if (length(method > 1)){method <- method[1]}

@@ -2,6 +2,27 @@
 ###http://eco.engr.uga.edu/DOC/econet2.html
 ###MKLau 17nov2014
 
+
+
+#' Write enaR models to an EcoNet formatted file.
+#' 
+#' Creates an EcoNet model from an enaR network object that can be used with
+#' the online interface for EcoNet.
+#' 
+#' 
+#' @param x Network object.
+#' @param file The file name or path. If a simple file name is given, this
+#' function uses the current working directory by default.
+#' @param mn The model name that EcoNet will use. The DEFAULT is 'ena_model'.
+#' @param zero.flows LOGICAL: should zero flow values be written?
+#' @return An EcoNet formatted text file is created from the model, which can
+#' be input at http://eco.engr.uga.edu.
+#' @author Matthew K. Lau
+#' @references About EcoNet (http://eco.engr.uga.edu/DOC/econet1.html)
+#' 
+#' Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT
+#' Press.
+#' @export write.EcoNet
 write.EcoNet <- function(x='model',file='file path',mn='ena_model',zero.flows=FALSE){
     x <- unpack(x)
 ###node names
