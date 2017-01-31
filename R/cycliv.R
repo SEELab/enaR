@@ -8,10 +8,15 @@
 
 
 
+
+
 #' ## Cycle Analysis for Feeding Cycles ## Singh P.  | July 2014 ## Algorithm
 #' Source : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow
-#' Networks ## --------------------------------------------- Analysis of
-#' Feeding Cycles in a Network
+#' Networks ## --------------------------------------------- ## Cycle Analysis
+#' for Feeding Cycles ## Singh P.  | July 2014 ## Algorithm Source : Ulanowicz
+#' 1991: A package for the Analysis of Ecosystem Flow Networks ##
+#' --------------------------------------------- Analysis of Feeding Cycles in
+#' a Network
 #' 
 #' Performs the full cycle analysis on the living subset of the network based
 #' on the algorithm described in Ulanowicz (1983) and implemented in NETWRK
@@ -67,12 +72,15 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' liv.cyc <- cycliv(troModels[[6]])
 #' attributes(liv.cyc)
+#' ##-----------------------------------------------------------------
+#' ##-----------------------------------------------------------------
+#' ## 2 Repeats start. rep3,4
+#' ## Backtrack to prev. level
 #' 
-#' 
-#' @export cycliv
 cycliv <- function(x){
 
 		 #Initials

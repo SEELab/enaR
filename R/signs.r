@@ -9,6 +9,8 @@
 
 
 
+
+
 #' Signs and summary of input matrix
 #' 
 #' Identifies the signs and pairwise relationsips of a given matrix.  This
@@ -31,9 +33,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(oyster)
 #' U <- enaUtility(oyster)$U
 #' s <- signs(U)
+#' 
 #' 
 #' 
 signs <- function(x="matrix"){

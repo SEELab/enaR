@@ -24,6 +24,9 @@ get.ns.R Input = network model Output = a vector of global network
 statistics from ena
 }
 \details{
+Borrett | July 4, 2012 ----------------------------------- get.ns.R Input =
+network model Output = a vector of global network statistics from ena
+
 Borrett | July 4, 2012 ----------------------------------- Quick Calculation
 of a Range of Network Statistics.
 
@@ -33,8 +36,10 @@ This is a high level function for calculated the main network analyses
 \examples{
 
 
+
 data(troModels)
 get.ns(troModels[[6]])
+
 
 
 }

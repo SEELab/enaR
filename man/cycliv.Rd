@@ -7,8 +7,11 @@
 ## ---------------------------------------------
 ## Cycle Analysis for Feeding Cycles ## Singh P.  | July 2014 ## Algorithm
 Source : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow
-Networks ## --------------------------------------------- Analysis of
-Feeding Cycles in a Network}
+Networks ## --------------------------------------------- ## Cycle Analysis
+for Feeding Cycles ## Singh P.  | July 2014 ## Algorithm Source : Ulanowicz
+1991: A package for the Analysis of Ecosystem Flow Networks ##
+--------------------------------------------- Analysis of Feeding Cycles in
+a Network}
 \usage{
 cycliv(x)
 }
@@ -59,9 +62,19 @@ The analysis requires all the non-living nodes to be placed at the end in
 the network object.
 }
 \examples{
+
+
+
 data(troModels)
 liv.cyc <- cycliv(troModels[[6]])
 attributes(liv.cyc)
+##-----------------------------------------------------------------
+##-----------------------------------------------------------------
+## 2 Repeats start. rep3,4 Backtrack to prev. level
+
+##-----------------------------------------------------------------
+##-----------------------------------------------------------------
+## 2 Repeats start. rep3,4 Backtrack to prev. level
 }
 \author{
 Pawandeep Singh

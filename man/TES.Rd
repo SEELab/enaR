@@ -26,6 +26,10 @@ throughput - unit and scaled
 }
 \details{
 Borrett | July 7, 2012 ---------------------------------------------------
+TES.R --- TOTAL ENVIRON STORAGE INPUT = network model OUTPUT = total environ
+throughput - unit and scaled
+
+Borrett | July 7, 2012 ---------------------------------------------------
 Calculate the Total Environ Storage
 
 Calculates the total storage in each n input and output environs.  This
@@ -36,9 +40,11 @@ realized input (output) environs.  Realized uses the observed inputs
 \examples{
 
 
+
 data(troModels)
 tes <- TES(troModels[[6]])
 tes
+
 
 
 }

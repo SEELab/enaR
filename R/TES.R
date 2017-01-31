@@ -9,6 +9,12 @@
 
 
 
+
+
+#' TES.R --- TOTAL ENVIRON STORAGE INPUT = network model OUTPUT = total environ
+#' throughput - unit and scaled
+#' 
+#' Borrett | July 7, 2012 ---------------------------------------------------
 #' TES.R --- TOTAL ENVIRON STORAGE INPUT = network model OUTPUT = total environ
 #' throughput - unit and scaled
 #' 
@@ -35,9 +41,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' tes <- TES(troModels[[6]])
 #' tes
+#' 
 #' 
 #' 
 #' @export TES

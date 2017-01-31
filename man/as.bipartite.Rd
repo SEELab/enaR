@@ -9,6 +9,9 @@ M. Lau July 2015
 ---------------------------------------------------
 as.bipartite --- convert a network object to a matrix for analysis with the
 bipartite package INPUT = network model OUTPUT = matrix representation M.
+Lau July 2015 ---------------------------------------------------
+as.bipartite --- convert a network object to a matrix for analysis with the
+bipartite package INPUT = network model OUTPUT = matrix representation M.
 Lau July 2015 --------------------------------------------------- Create a
 bipartite network.}
 \usage{
@@ -38,8 +41,10 @@ natural division to categorize species into distinct modes.
 \examples{
 
 
+
 data(oyster)
 as.bipartite(oyster, gl(2, 3))
+
 
 
 }

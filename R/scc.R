@@ -8,10 +8,14 @@
 
 
 
+
+
 #' scc --- find the strongly connected component INPUT = an adjacency matrix
 #' OUTPUT = list of membership and values S. Borrett | July 2011
-#' ------------------------------------ Find the Strongly Connected Component
-#' (SCC) in a Graph
+#' ------------------------------------ scc --- find the strongly connected
+#' component INPUT = an adjacency matrix OUTPUT = list of membership and values
+#' S. Borrett | July 2011 ------------------------------------ Find the
+#' Strongly Connected Component (SCC) in a Graph
 #' 
 #' This function finds the strongly connected components (SCCs) of an adjacency
 #' matrix A and returns a number of derived network statistics.
@@ -40,9 +44,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' A <- enaStructure(troModels[[6]])$A
 #' scc(A)
+#' 
 #' 
 #' 
 #' @export scc

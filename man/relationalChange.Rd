@@ -34,6 +34,7 @@ This function is called by enaUtility and enaMTI to summarize results.
 \examples{
 
 
+
 data(oyster)
 D <- enaUtility(oyster)$D
 U <- enaUtility(oyster)$U
@@ -44,6 +45,7 @@ rc <- relationalChange(D, U)
 ## sign matrices, you can use the table function
 
 count <- table(rc$Direct.Relations)
+
 
 
 

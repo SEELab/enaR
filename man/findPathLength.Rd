@@ -32,6 +32,11 @@ length INPUT = network object OUTPUT = a list of flow statistics over paths
 }
 \details{
 S. Borrett and M. Lau | July 2011
+--------------------------------------------------- findPathLength ---
+calculates the flows over a sequence up to a maximum path length INPUT =
+network object OUTPUT = a list of flow statistics over paths
+
+S. Borrett and M. Lau | July 2011
 --------------------------------------------------- Cumulative Flow over a
 Range of Path Lengths
 
@@ -40,10 +45,12 @@ Calculates the flow throughout the entire network over a given path length.
 \examples{
 
 
+
 data(troModels)
 pl10 <- findPathLength(troModels[[6]], plot.sw = TRUE, maxPath = 10)
 names(pl10)
 pl10$thresholds
+
 
 
 }

@@ -9,6 +9,8 @@
 
 
 
+
+
 #' Relational change compared between two matrices.
 #' 
 #' Identifies the signs and pairwise relationsips of two matrices and compares
@@ -35,6 +37,7 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(oyster)
 #' D <- enaUtility(oyster)$D
 #' U <- enaUtility(oyster)$U
@@ -45,6 +48,7 @@
 #' ## sign matrices, you can use the table function
 #' 
 #' count <- table(rc$Direct.Relations)
+#' 
 #' 
 #' 
 #' 

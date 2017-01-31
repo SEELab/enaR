@@ -8,10 +8,15 @@
 
 
 
+
+
 #' structure.statistics --- calculates structural statistics INPUT = an
 #' adjacency matrix OUTPUT = list of structural statistics S. Borrett | July
-#' 2011 ------------------------------------ Structural Statistics of an
-#' Ecological Network
+#' 2011 ------------------------------------ structure.statistics ---
+#' calculates structural statistics INPUT = an adjacency matrix OUTPUT = list
+#' of structural statistics S. Borrett | July 2011
+#' ------------------------------------ Structural Statistics of an Ecological
+#' Network
 #' 
 #' This function returns several network statistics that describe a network.
 #' 

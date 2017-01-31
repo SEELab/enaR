@@ -62,9 +62,11 @@ the network object.
 \examples{
 
 
+
 data(troModels)
 tro6 <- enaTroAgg(troModels[[6]])
 attributes(tro6)
+
 
 
 }

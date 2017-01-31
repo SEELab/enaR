@@ -6,9 +6,12 @@
 
 
 
+
+
 #' ## Function to order the nodes in a Network in enaR ## Singh P. | July 2014
-#' ## ----------------------------------------- Reorder Nodes in a Network in
-#' enaR
+#' ## ----------------------------------------- ## Function to order the nodes
+#' in a Network in enaR ## Singh P. | July 2014 ##
+#' ----------------------------------------- Reorder Nodes in a Network in enaR
 #' 
 #' Reorders nodes in a network either through a user defined node order vector
 #' or by default places the non-living nodes to the end of the node vector,
@@ -36,9 +39,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' new.network <- netOrder(troModels[[6]], c(1, 3, 2, 5, 4))
 #' # new.network is the required rearranged network with nodes in the desired order.
+#' 
 #' 
 #' 
 #' @export netOrder

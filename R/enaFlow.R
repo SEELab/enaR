@@ -9,6 +9,12 @@
 
 
 
+
+
+#' enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
+#' statistics
+#' 
+#' M. Lau | July 2011 ---------------------------------------------------
 #' enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
 #' statistics
 #' 
@@ -101,9 +107,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' F = enaFlow(troModels[[6]])  # completes the full analysis
 #' F$ns  # returns just the network statisics
+#' 
 #' 
 #' 
 #' @export enaFlow

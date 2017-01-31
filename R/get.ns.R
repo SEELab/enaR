@@ -9,8 +9,13 @@
 
 
 
+
+
 #' get.ns.R Input = network model Output = a vector of global network
 #' statistics from ena
+#' 
+#' Borrett | July 4, 2012 ----------------------------------- get.ns.R Input =
+#' network model Output = a vector of global network statistics from ena
 #' 
 #' Borrett | July 4, 2012 ----------------------------------- Quick Calculation
 #' of a Range of Network Statistics.
@@ -31,8 +36,10 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' get.ns(troModels[[6]])
+#' 
 #' 
 #' 
 #' @export get.ns

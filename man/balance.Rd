@@ -24,8 +24,10 @@ network models.
 \examples{
 
 
+
 data(troModels)
 balance(troModels[[6]])
+
 
 
 }

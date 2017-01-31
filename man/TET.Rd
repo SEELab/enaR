@@ -30,6 +30,10 @@ environ throughput - unit and scaled
 }
 \details{
 Borrett | July 7, 2012 ---------------------------------------------------
+TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
+environ throughput - unit and scaled
+
+Borrett | July 7, 2012 ---------------------------------------------------
 Calculates the Total Environ Throughflow for a Ecosystem Network Model
 
 Determines the total environ throughflow (TET) for each of the 2 x n
@@ -40,9 +44,11 @@ from a unit input (output) vector and from the observed or realized input
 \examples{
 
 
+
 data(troModels)
 tet <- TET(troModels[[6]])
 tet
+
 
 
 }

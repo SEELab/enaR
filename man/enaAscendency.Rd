@@ -52,6 +52,11 @@ network object OUTPUT = matrix of ascendency statistics
 }
 \details{
 D. Hines | December 2011 S.R. Borrett | May 2016 - updates
+--------------------------------------------------- enaAscendency ---
+calculates the ascendency statistics of Ulanowicz INPUT = network object
+OUTPUT = matrix of ascendency statistics
+
+D. Hines | December 2011 S.R. Borrett | May 2016 - updates
 --------------------------------------------------- Calculates the
 Ascendency of an Ecological Network
 
@@ -67,10 +72,32 @@ respiration components of output be separately quantified.
 \examples{
 
 
+
 data(troModels)
 enaAscendency(troModels[[6]])
+####### set initial conditions for calculations #########
+## calculate H & CAPACITY  #######################################
+H = Total Flow Diversity
+################### calculate AMI  #######################
+AMI = Average Mutual Informaiton
+################ calculate ascendency ###################
+################ calculate residual diversity  ####################
+################ calculate overhead  ####################
+################### calculate ratios ####################
+#####################################################################
+#####################################################################
 
-
+####### set initial conditions for calculations #########
+## calculate H & CAPACITY  #######################################
+H = Total Flow Diversity
+################### calculate AMI  #######################
+AMI = Average Mutual Informaiton
+################ calculate ascendency ###################
+################ calculate residual diversity  ####################
+################ calculate overhead  ####################
+################### calculate ratios ####################
+#####################################################################
+#####################################################################
 }
 \author{
 David E. Hines Matthew K. Lau Stuart R. Borrett

@@ -11,6 +11,16 @@
 
 
 
+
+
+#' Shannon Diversity Metrics These are based on entropy and build Shannon and
+#' Weaver 1949
+#' 
+#' Borrett | November 29, 2016
+#' 
+#' INPUT = Vector Output = set of network statistics to charcterize the
+#' diversity in the vector
+#' ================================================================================
 #' Shannon Diversity Metrics These are based on entropy and build Shannon and
 #' Weaver 1949
 #' 
@@ -44,6 +54,7 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(oyster)
 #' 
 #' #' throughflow diversity
@@ -53,6 +64,7 @@
 #' #' storage (biomass) biodiversity
 #' X <- oyster %v% "storage"
 #' ShannonDiversity(X)
+#' 
 #' 
 #' 
 ShannonDiversity <-  function(x){

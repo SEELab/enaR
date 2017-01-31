@@ -8,8 +8,11 @@ S. Borrett | July 2011
 ------------------------------------
 structure.statistics --- calculates structural statistics INPUT = an
 adjacency matrix OUTPUT = list of structural statistics S. Borrett | July
-2011 ------------------------------------ Structural Statistics of an
-Ecological Network}
+2011 ------------------------------------ structure.statistics ---
+calculates structural statistics INPUT = an adjacency matrix OUTPUT = list
+of structural statistics S. Borrett | July 2011
+------------------------------------ Structural Statistics of an Ecological
+Network}
 \usage{
 structure.statistics(A = "adjacency matrix")
 }

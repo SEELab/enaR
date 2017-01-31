@@ -9,10 +9,14 @@
 
 
 
+
+
 #' unpack --- extracts network object into a list INPUT = network object OUTPUT
 #' = list of network model components S. Borrett and M. Lau | July 2011
-#' ------------------------------------ "Unpacks" the Network Object into
-#' Separate Objects
+#' ------------------------------------ unpack --- extracts network object into
+#' a list INPUT = network object OUTPUT = list of network model components S.
+#' Borrett and M. Lau | July 2011 ------------------------------------
+#' "Unpacks" the Network Object into Separate Objects
 #' 
 #' Separates the components of a network object into separate components within
 #' a list. This includes inputs, exports, respirations, outputs (exports +
@@ -32,8 +36,10 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' unpack(troModels[[6]])
+#' 
 #' 
 #' 
 #' @export unpack

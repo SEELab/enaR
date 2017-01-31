@@ -29,9 +29,11 @@ generate more informative output from enaUtility and enaMTI.
 \examples{
 
 
+
 data(oyster)
 U <- enaUtility(oyster)$U
 s <- signs(U)
+
 
 
 }

@@ -9,8 +9,13 @@
 
 
 
+
+
 #' force.balance --- repeatedly applies balance until sub-tolerance is reached
 #' INPUT = network model OUTPUT = balanced model M. Lau 1 Oct 2012
+#' --------------------------------------------------- force.balance ---
+#' repeatedly applies balance until sub-tolerance is reached INPUT = network
+#' model OUTPUT = balanced model M. Lau 1 Oct 2012
 #' --------------------------------------------------- Repeated Application the
 #' Balance Function
 #' 
@@ -33,9 +38,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' ssCheck(troModels[[1]])
 #' fb.model = force.balance(troModels[[2]])  #produces a balanced model
+#' 
 #' 
 #' 
 #' @export force.balance
