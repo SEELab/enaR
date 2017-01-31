@@ -7,10 +7,15 @@
 
 
 
+
+
 #' R function to read in a matrix formatted as Mdloti (Ursula Sharler) Borrett
 #' | Sept. 12, 2012, MKL July 2013 Updated - Borrett, May 2016 - to use pack()
-#' to create the network data object. ------------------------ Read ENA Model
-#' from an Mdloti Formatted Excel File
+#' to create the network data object. ------------------------ R function to
+#' read in a matrix formatted as Mdloti (Ursula Sharler) Borrett | Sept. 12,
+#' 2012, MKL July 2013 Updated - Borrett, May 2016 - to use pack() to create
+#' the network data object. ------------------------ Read ENA Model from an
+#' Mdloti Formatted Excel File
 #' 
 #' This function reads network data from an excel file commonly used by Ursula
 #' Sharler.  The file has three header lines (name/source, number of

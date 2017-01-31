@@ -13,8 +13,11 @@ M. Lau | July 2011
 ssCheck --- checks if the given network is out of balance by a given
 tolerance threshold INPUT = network object OUTPUT = logical indicating
 violation of tolerance NOTE: used in the balancing process M. Lau | July
-2011 ------------------------------------ Checks the Balance of Inputs and
-Outputs from a Network}
+2011 ------------------------------------ ssCheck --- checks if the given
+network is out of balance by a given tolerance threshold INPUT = network
+object OUTPUT = logical indicating violation of tolerance NOTE: used in the
+balancing process M. Lau | July 2011 ------------------------------------
+Checks the Balance of Inputs and Outputs from a Network}
 \usage{
 ssCheck(x, tol = 5, more = FALSE, zero.na = TRUE)
 }
@@ -39,9 +42,11 @@ outputs of a given network model are within acceptable limits.
 \examples{
 
 
+
 data(troModels)
 ssCheck(troModels[[2]])
 ssCheck(troModels[[6]])
+
 
 
 }

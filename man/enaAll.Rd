@@ -23,6 +23,10 @@ enaAll --- Conduct all ecological network analyses INPUT = network object
 OUTPUT = list of analytical output
 }
 \details{
+M. Lau | May 2013 --------------------------------------------------- enaAll
+--- Conduct all ecological network analyses INPUT = network object OUTPUT =
+list of analytical output
+
 M. Lau | May 2013 ---------------------------------------------------
 Conduct All Major ENA
 
@@ -32,9 +36,11 @@ named list.
 \examples{
 
 
+
 data(troModels)
 output = enaAll(troModels[[6]])
 names(output)
+
 
 
 }

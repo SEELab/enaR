@@ -9,8 +9,10 @@ S. Borrett and M. Lau | July 2011
 ------------------------------------
 unpack --- extracts network object into a list INPUT = network object OUTPUT
 = list of network model components S. Borrett and M. Lau | July 2011
------------------------------------- "Unpacks" the Network Object into
-Separate Objects}
+------------------------------------ unpack --- extracts network object into
+a list INPUT = network object OUTPUT = list of network model components S.
+Borrett and M. Lau | July 2011 ------------------------------------
+"Unpacks" the Network Object into Separate Objects}
 \usage{
 unpack(x = "network object")
 }
@@ -36,8 +38,10 @@ Flows are oriented from row to column.
 \examples{
 
 
+
 data(troModels)
 unpack(troModels[[6]])
+
 
 
 }

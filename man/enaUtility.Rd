@@ -61,6 +61,10 @@ OUTPUT = list of utility statistics
 }
 \details{
 M. Lau | July 2011 ---------------------------------------------------
+enautility --- utility analysis of a flow network INPUT = network object
+OUTPUT = list of utility statistics
+
+M. Lau | July 2011 ---------------------------------------------------
 Utility Analysis of Ecological Networks
 
 Performs the flow and storage based utility analysis developed for
@@ -71,10 +75,12 @@ statistics.
 \examples{
 
 
+
 data(troModels)
 U <- enaUtility(troModels[[6]], type = "flow", eigen.check = FALSE)
 attributes(U)
 US <- enaUtility(troModels[[6]], type = "storage", eigen.check = FALSE)
+
 
 
 }

@@ -53,6 +53,7 @@
 #' @examples
 #' 
 #' 
+#' 
 #' ## # Three different ways to purtub all fluxes in a model by +/- 50% # Uniform
 #' ## edge uncertainty (50%) data(troModels) UA = enaUncertainty(x=troModels[[6]],
 #' ## p.err=50, iter=10000)
@@ -76,6 +77,7 @@
 #' 
 #' ## UA = enaUncertainty(troModels[[6]], Fu.bot=Fu.bot, zu.bot=zu.bot,
 #' ## yu.bot=yu.bot, Fu.top=Fu.top, zu.top=zu.top, yu.top=yu.top, iter=10000)
+#' 
 #' 
 #' 
 enaUncertainty <- function(x = 'network object', p.err=NA, Fu.sd=NA, zu.sd=NA, yu.sd=NA,

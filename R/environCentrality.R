@@ -10,6 +10,12 @@
 
 
 
+
+
+#' environCentrality --- calculates the centrality of flow network environs
+#' INPUT = environ matrix OUTPUT = in-going, out-going and average centralities
+#' 
+#' M. Lau | July 2011 ---------------------------------------------------
 #' environCentrality --- calculates the centrality of flow network environs
 #' INPUT = environ matrix OUTPUT = in-going, out-going and average centralities
 #' 
@@ -34,12 +40,14 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' F <- enaFlow(troModels[[6]])
 #' ec <- environCentrality(F$N)
 #' attributes(ec)
 #' barplot(sort(ec$AEC, decreasing = TRUE), col = 4, ylab = "Average Environ Centrality", 
 #'     ylim = c(0, 0.4))
+#' 
 #' 
 #' 
 #' @export environCentrality

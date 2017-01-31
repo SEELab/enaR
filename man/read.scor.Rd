@@ -9,7 +9,10 @@ S. Borrett and M. Lau | July 2011
 ------------------------------------
 read.scor --- SCOR formatted file into R in multiple formats INPUT = file
 path OUTPUT = network model in chosen format S. Borrett and M. Lau | July
-2011 ------------------------------------ Read SCOR Formatted Model}
+2011 ------------------------------------ read.scor --- SCOR formatted file
+into R in multiple formats INPUT = file path OUTPUT = network model in
+chosen format S. Borrett and M. Lau | July 2011
+------------------------------------ Read SCOR Formatted Model}
 \usage{
 read.scor(file, from.file = TRUE, warn = FALSE)
 }

@@ -5,8 +5,9 @@
 ## Singh P. | July 2014
 ## -----------------------------------------
 ## Function to order the nodes in a Network in enaR ## Singh P. | July 2014
-## ----------------------------------------- Reorder Nodes in a Network in
-enaR}
+## ----------------------------------------- ## Function to order the nodes
+in a Network in enaR ## Singh P. | July 2014 ##
+----------------------------------------- Reorder Nodes in a Network in enaR}
 \usage{
 netOrder(x, order = 0)
 }
@@ -41,9 +42,11 @@ nodes placed at the end so that the Trophic Aggregations analysis
 \examples{
 
 
+
 data(troModels)
 new.network <- netOrder(troModels[[6]], c(1, 3, 2, 5, 4))
 # new.network is the required rearranged network with nodes in the desired order.
+
 
 
 }

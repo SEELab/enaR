@@ -8,8 +8,13 @@
 
 
 
+
+
 #' ## NETWRK's Full Cycle Analysis ## Singh P. | July 2014 ## Algorithm Source
 #' : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow Networks ##
+#' ----------------------------------------------- ## NETWRK's Full Cycle
+#' Analysis ## Singh P. | July 2014 ## Algorithm Source : Ulanowicz 1991: A
+#' package for the Analysis of Ecosystem Flow Networks ##
 #' ----------------------------------------------- Full Cycle Analysis of
 #' Ecological Networks
 #' 
@@ -70,12 +75,15 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' cyc6 <- enaCycle(troModels[[6]])
 #' attributes(cyc6)
+#' ##-----------------------------------------------------------------
+#' ##-----------------------------------------------------------------
+#' ## 2 Repeats start. rep3,4
+#' ## Backtrack to prev. level
 #' 
-#' 
-#' @export enaCycle
 enaCycle <- function (x) {
 
                                         #Initials

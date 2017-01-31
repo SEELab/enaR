@@ -69,6 +69,10 @@ enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
 statistics
 }
 \details{
+M. Lau | July 2011 ---------------------------------------------------
+enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
+statistics
+
 M. Lau | July 2011 --------------------------------------------------- Flow
 Analyses of Ecological Networks
 
@@ -82,9 +86,11 @@ are a set of measures that describe the diversity of flows in the ecosystem
 \examples{
 
 
+
 data(troModels)
 F = enaFlow(troModels[[6]])  # completes the full analysis
 F$ns  # returns just the network statisics
+
 
 
 }

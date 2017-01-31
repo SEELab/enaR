@@ -11,8 +11,15 @@
 
 
 
+
+
 #' enaAscendency --- calculates the ascendency statistics of Ulanowicz INPUT =
 #' network object OUTPUT = matrix of ascendency statistics
+#' 
+#' D. Hines | December 2011 S.R. Borrett | May 2016 - updates
+#' --------------------------------------------------- enaAscendency ---
+#' calculates the ascendency statistics of Ulanowicz INPUT = network object
+#' OUTPUT = matrix of ascendency statistics
 #' 
 #' D. Hines | December 2011 S.R. Borrett | May 2016 - updates
 #' --------------------------------------------------- Calculates the
@@ -83,11 +90,21 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' enaAscendency(troModels[[6]])
+#' ####### set initial conditions for calculations #########
+#' ## calculate H & CAPACITY  #######################################
+#' H = Total Flow Diversity
+#' ################### calculate AMI  #######################
+#' AMI = Average Mutual Informaiton
+#' ################ calculate ascendency ###################
+#' ################ calculate residual diversity  ####################
+#' ################ calculate overhead  ####################
+#' ################### calculate ratios ####################
+#' #####################################################################
+#' #####################################################################
 #' 
-#' 
-#' @export enaAscendency
 enaAscendency <- function(x='network object'){
     if (class(x) != 'network'){warning('x is not a network class object')}
 

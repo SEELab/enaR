@@ -8,8 +8,10 @@ S. Borrett | July 2011
 ------------------------------------
 scc --- find the strongly connected component INPUT = an adjacency matrix
 OUTPUT = list of membership and values S. Borrett | July 2011
------------------------------------- Find the Strongly Connected Component
-(SCC) in a Graph}
+------------------------------------ scc --- find the strongly connected
+component INPUT = an adjacency matrix OUTPUT = list of membership and values
+S. Borrett | July 2011 ------------------------------------ Find the
+Strongly Connected Component (SCC) in a Graph}
 \usage{
 scc(A = "adjacency")
 }
@@ -34,9 +36,11 @@ Input matrix is assumed to be oriented from columns to rows.
 \examples{
 
 
+
 data(troModels)
 A <- enaStructure(troModels[[6]])$A
 scc(A)
+
 
 
 }

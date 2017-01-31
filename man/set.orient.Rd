@@ -23,6 +23,10 @@ cr) OUTPUT = sets the expected orientation of matrices
 }
 \details{
 M. Lau | Feb 2013 ---------------------------------------------------
+set.orient --- globally reorients matrices INPUT = matrix orientation (rc or
+cr) OUTPUT = sets the expected orientation of matrices
+
+M. Lau | Feb 2013 ---------------------------------------------------
 Globally Set the Output Matrix Orientation
 
 Changes the orientation of output matrices.
@@ -39,6 +43,7 @@ oriented) by setting the global orientation to "school" using this fuction.
 \examples{
 
 
+
 original.orientation = get.orient()
 original.orientation
 set.orient("school")
@@ -46,6 +51,7 @@ get.orient()
 set.orient("rc")
 get.orient()
 set.orient(original.orientation)
+
 
 
 }

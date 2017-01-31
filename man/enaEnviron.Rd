@@ -37,6 +37,11 @@ and/or output environs
 }
 \details{
 M. Lau July 2011 | DEH edited Feb 2013
+--------------------------------------------------- environ --- conducts
+environ analysis INPUT = network object OUTPUT = input and/or output
+environs
+
+M. Lau July 2011 | DEH edited Feb 2013
 --------------------------------------------------- Ecological Network
 Environs
 
@@ -45,8 +50,10 @@ Calculates the environs for an ecological network.
 \examples{
 
 
+
 data(troModels)
 enaEnviron(troModels[[6]])
+
 
 
 }

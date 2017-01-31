@@ -49,6 +49,10 @@ storage statistics
 }
 \details{
 M. Lau | July 2011 ---------------------------------------------------
+enaStorage --- storage analysis INPUT = network object OUTPUT = list of
+storage statistics
+
+M. Lau | July 2011 ---------------------------------------------------
 Storage Analyses of Ecological Networks
 
 Calculates storage-based Ecological Network Analyses.
@@ -56,11 +60,33 @@ Calculates storage-based Ecological Network Analyses.
 \examples{
 
 
+
 data(oyster)
 S <- enaStorage(oyster)
 attributes(S)
+calculate variance of expected residence times (Barber 1979)
+Amplification parameter
+Indirect effects parameter (srb fix 8.3.2011)
+Indirect effects parameter (realized)  (srb fix 8.3.2011)
+Tripartite walk-length division of storage
+Homogenization parameter
+Network Aggradation
+MODE Partition (Fath et al. 2001)
+packing up network statistics for output
+lam1P'=abs(lam1P),'rhoP'=abs(rhoP),
+lam1PP'=abs(lam1PP),'rhoPP'=abs(rhoPP),'AGG.S'=AGG.S)
 
-
+calculate variance of expected residence times (Barber 1979)
+Amplification parameter
+Indirect effects parameter (srb fix 8.3.2011)
+Indirect effects parameter (realized)  (srb fix 8.3.2011)
+Tripartite walk-length division of storage
+Homogenization parameter
+Network Aggradation
+MODE Partition (Fath et al. 2001)
+packing up network statistics for output
+lam1P'=abs(lam1P),'rhoP'=abs(rhoP),
+lam1PP'=abs(lam1PP),'rhoPP'=abs(rhoPP),'AGG.S'=AGG.S)
 }
 \author{
 Matthew K. Lau Stuart R. Borrett

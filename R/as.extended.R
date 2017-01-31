@@ -14,13 +14,21 @@
 
 
 
+
+
 #' as.extended --- convert a network object to extended format in Allesina and
 #' Bondavalli 2003 INPUT = network model OUTPUT = the same model in extended
 #' format with inputs and exports/respiration in the same matrix REFERENCE:
 #' Allesina, S., Bondavalli, C., 2003. Steady state of ecosystem flow networks:
 #' a comparison between balancing procedures. Ecological Modelling 165(2-3):
 #' 231-239. M. Lau July 2011
-#' --------------------------------------------------- Create an Extended
+#' --------------------------------------------------- as.extended --- convert
+#' a network object to extended format in Allesina and Bondavalli 2003 INPUT =
+#' network model OUTPUT = the same model in extended format with inputs and
+#' exports/respiration in the same matrix REFERENCE: Allesina, S., Bondavalli,
+#' C., 2003. Steady state of ecosystem flow networks: a comparison between
+#' balancing procedures. Ecological Modelling 165(2-3): 231-239. M. Lau July
+#' 2011 --------------------------------------------------- Create an Extended
 #' Format Matrix
 #' 
 #' Converts a network object to the extended format of Allesina and Bondavalli
@@ -39,8 +47,10 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' as.extended(troModels[[6]])
+#' 
 #' 
 #' 
 #' @export as.extended

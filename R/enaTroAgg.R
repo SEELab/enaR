@@ -65,9 +65,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' tro6 <- enaTroAgg(troModels[[6]])
 #' attributes(tro6)
+#' 
 #' 
 #' 
 #' @export enaTroAgg

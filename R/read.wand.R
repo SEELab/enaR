@@ -8,9 +8,13 @@
 
 
 
+
+
 #' read.wand --- WAND formatted file into R INPUT = file path OUTPUT = network
-#' object S. Borrett | May 2012 ------------------------------------ Read WAND
-#' Formatted Model
+#' object S. Borrett | May 2012 ------------------------------------ read.wand
+#' --- WAND formatted file into R INPUT = file path OUTPUT = network object S.
+#' Borrett | May 2012 ------------------------------------ Read WAND Formatted
+#' Model
 #' 
 #' Reads WAND formatted network models.
 #' 

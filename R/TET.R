@@ -9,6 +9,12 @@
 
 
 
+
+
+#' TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
+#' environ throughput - unit and scaled
+#' 
+#' Borrett | July 7, 2012 ---------------------------------------------------
 #' TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
 #' environ throughput - unit and scaled
 #' 
@@ -46,9 +52,11 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' tet <- TET(troModels[[6]])
 #' tet
+#' 
 #' 
 #' 
 #' @export TET

@@ -18,8 +18,10 @@
 #' @examples
 #' 
 #' 
+#' 
 #' data(troModels)
 #' balance(troModels[[6]])
+#' 
 #' 
 #' 
 #' @export balance

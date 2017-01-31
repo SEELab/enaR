@@ -9,8 +9,14 @@
 
 
 
+
+
 #' ' write.nea.R INPUT = enaR network data object Ouput = CSV formatted file
 #' with data arranged as expected input for NEA.m
+#' 
+#' Borrett | July 15, 2013 ---------------------------------------- '
+#' write.nea.R INPUT = enaR network data object Ouput = CSV formatted file with
+#' data arranged as expected input for NEA.m
 #' 
 #' Borrett | July 15, 2013 ---------------------------------------- Write a
 #' Network Object to File Using the NEA Data Format
