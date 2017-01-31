@@ -51,6 +51,7 @@
 #' such that the zero elements are now very small numbers, relative the
 #' original vector values.
 #' @author Stuart R. Borrett
+#' @export ShannonDiversity
 #' @examples
 #' 
 #' 

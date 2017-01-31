@@ -72,6 +72,7 @@
 #' 
 #' Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem
 #' flow networks. Environmental Software 6:131 -- 142.
+#' @export enaCycle
 #' @examples
 #' 
 #' 

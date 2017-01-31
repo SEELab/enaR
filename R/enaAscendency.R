@@ -87,6 +87,7 @@
 #' Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem trophic
 #' complexity: insights from ecological network analysis. Ecology Letters
 #' 17:127-136
+#' @export enaAscendency
 #' @examples
 #' 
 #' 

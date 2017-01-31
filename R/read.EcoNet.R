@@ -23,6 +23,7 @@
 #' @seealso \code{\link{EcoNetWeb}}
 #' @references Kazanci, C., 2007. EcoNet: A new software for ecological
 #' modeling, simulation and network analysis, Ecol. Model., Vol 208/1 pp 3-8.
+#' @export read.EcoNet
 read.EcoNet <- function(x,verbose=FALSE){
     if (!(verbose)){options(warn=-1)}
     x <- x[!(grepl('<',x)) & grepl('=',x)]

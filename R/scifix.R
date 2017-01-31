@@ -28,7 +28,6 @@
 #' @return Returns a numeric scalar in appropriate scientific notation.
 #' @author Matthew K. Lau
 #' @seealso \code{\link{read.scor}}
-#' @export scifix
 scifix <- function(x){
   x <- as.character(x)
                                         #e/E check

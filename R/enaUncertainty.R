@@ -50,6 +50,7 @@
 #' Soetaert, K., Van den Meersche, K. & van Oevelen, D. (2009) limSolve:
 #' Solving linear inverse models. R package version 1.5.1.
 #' @keywords Flow Linear Uncertainty analysis inverse modeling network
+#' @export enaUncertainty
 #' @examples
 #' 
 #' 

@@ -23,6 +23,7 @@
 #' @seealso \code{\link{read.EcoNet}}
 #' @references Kazanci, C., 2007. EcoNet: A new software for ecological
 #' modeling, simulation and network analysis, Ecol. Model., Vol 208/1 pp 3-8.
+#' @export EcoNetWeb
 EcoNetWeb <- function(x='http://eco.engr.uga.edu/Examples/examples.html',model.name='prompt'){
     x <- readLines(x)
     x <- x[1:(grep('<!-- Copy paste for new model',x)-1)]

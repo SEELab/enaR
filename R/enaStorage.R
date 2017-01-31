@@ -68,6 +68,7 @@
 #' Fath, B. D., Borrett, S. R. 2006. A MATLAB function for Network Environ
 #' Analysis.  Environmental Modelling & Software 21:375-405
 #' @keywords enaFlow read.scor
+#' @export enaStorage
 #' @examples
 #' 
 #' 
