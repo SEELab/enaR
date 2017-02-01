@@ -1,38 +1,47 @@
+% Please edit documentation in R/mExp.R
 \name{mExp}
 \alias{mExp}
-\title{
-  Calculates the Exponent of a Matrix
-}
-\description{
-  Function for calculating the pathway proliferation of flows in a network
-  model through matrix exponentiation.
-}
+\title{# mExp --- calculate the exponent of a given matrix
+# INPUT = a matrix (x) and the exponent (n)
+# OUTPUT = the resulting exponentiated matrix
+# 
+# Alberto Monteiro (https://stat.ethz.ch/pipermail/
+# r-help/2007-May/131330.html)
+# ___________________________________________________
+# mExp --- calculate the exponent of a given matrix # INPUT = a matrix (x)
+and the exponent (n) # OUTPUT = the resulting exponentiated matrix # #
+Alberto Monteiro (https://stat.ethz.ch/pipermail/ #
+r-help/2007-May/131330.html) #
+___________________________________________________ # mExp --- calculate the
+exponent of a given matrix # INPUT = a matrix (x) and the exponent (n) #
+OUTPUT = the resulting exponentiated matrix # # Alberto Monteiro
+(https://stat.ethz.ch/pipermail/ # r-help/2007-May/131330.html) #
+___________________________________________________ Calculates the Exponent
+of a Matrix}
 \usage{
-mExp(x='matrix', n=2)
+mExp(x = "matrix", n = 2)
 }
 \arguments{
-  \item{x}{
-    A matrix.
-  }
-  \item{n}{
-    Desired exponent (i.e. the path length).
-  }
-}
+\item{x}{A matrix.}
 
-\value{
-  Returns an exponentiated flow matrix.
+\item{n}{Desired exponent (i.e. the path length).}
 }
-\references{
-  This function was originally designed by Alberto Monteiro in the
-  following R help thread:
-  https://stat.ethz.ch/pipermail/r-help/2007-May/131330.html.
+\value{
+Returns an exponentiated flow matrix.
+}
+\description{
+Function for calculating the pathway proliferation of flows in a network
+model through matrix exponentiation.
 }
 \author{
-  Alberto Monteiro (https://stat.ethz.ch/pipermail/r-help/2007-May/131330.html)
-  Matthew K. Lau 
+Alberto Monteiro
+(https://stat.ethz.ch/pipermail/r-help/2007-May/131330.html) Matthew K. Lau
 }
-
+\references{
+This function was originally designed by Alberto Monteiro in the
+following R help thread:
+https://stat.ethz.ch/pipermail/r-help/2007-May/131330.html.
+}
 \seealso{
-  \code{\link{findPathLength}}
+\code{\link{findPathLength}}
 }
-

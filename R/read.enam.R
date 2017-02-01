@@ -3,6 +3,38 @@
 #' Updated - Borrett, May 2016 - to use pack() to create the network data object.
 #' ------------------------
 
+
+
+
+
+
+
+#' R function to read in a matrix formatted as Mdloti (Ursula Sharler) Borrett
+#' | Sept. 12, 2012, MKL July 2013 Updated - Borrett, May 2016 - to use pack()
+#' to create the network data object. ------------------------ R function to
+#' read in a matrix formatted as Mdloti (Ursula Sharler) Borrett | Sept. 12,
+#' 2012, MKL July 2013 Updated - Borrett, May 2016 - to use pack() to create
+#' the network data object. ------------------------ Read ENA Model from an
+#' Mdloti Formatted Excel File
+#' 
+#' This function reads network data from an excel file commonly used by Ursula
+#' Sharler.  The file has three header lines (name/source, number of
+#' compartments, number of living nodes) and then a n+2 x n+2 matrix of flows.
+#' This is the flow matrix with an additional row for imports and biomass each
+#' and additional columns for exports and respirations.
+#' 
+#' 
+#' @param file The name and path for the data file.  This function assumes the
+#' data are stored on the first sheet of an Microsoft Excel formatted. NOTE:
+#' this function depends on the read.xlsx function from the xlsx package, which
+#' requires that the entire path be specified from the root directory (i.e. the
+#' absolute path).
+#' @return Returns the network object.
+#' @author Stuart R. Borrett
+#' @seealso \code{\link{read.scor}}
+#' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
+#' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @export read.enam
 read.enam<- function(file="file path and name"){
                                         #I have assumed the file is formatted as an excel speadsheet.
                                         #The data must be on the first sheet in the workbook.

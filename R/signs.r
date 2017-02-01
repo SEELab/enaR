@@ -5,6 +5,41 @@
 # INPUT/OUPTUT - this function takes a numerical matrix and returns a matrix of its signs and a matrix of the relationships among the row/columns based on these signs
 # -------------------
 
+
+
+
+
+
+
+#' Signs and summary of input matrix
+#' 
+#' Identifies the signs and pairwise relationsips of a given matrix.  This
+#' includes also returns a summary table that provides the ecological name of
+#' each pairwise realtionship, and a summary of the counts.
+#' 
+#' 
+#' @param x x is a square matrix of real numbers.  While this function is more
+#' general, the initail intention was for this to be a utility matrix or the
+#' mixed trophic impacts matrix.
+#' @return \item{sign}{A sign matrix for matrix x.} \item{relations}{A matrix
+#' of the pairwise signed relationships in x.} \item{rs.tab}{Table summarizing
+#' the pairwise relationships and identifying their ecological label.}
+#' \item{relationship.counts}{A count of the different kinds of pairwise
+#' relationships found in matrix x.}
+#' @note This function is called by relationalChange, and was created to
+#' generate more informative output from enaUtility and enaMTI.
+#' @author Stuart R. Borrett
+#' @seealso \code{\link{relationalChange}}
+#' @examples
+#' 
+#' 
+#' 
+#' data(oyster)
+#' U <- enaUtility(oyster)$U
+#' s <- signs(U)
+#' 
+#' 
+#' 
 signs <- function(x="matrix"){
     vnames <- rownames(x)   # get row names
     d <- dim(x)             # find matrix dimensions

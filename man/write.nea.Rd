@@ -1,40 +1,48 @@
+% Please edit documentation in R/write.nea.R
 \name{write.nea}
 \alias{write.nea}
-\title{
-  Write a Network Object to File Using the NEA Data Format
-}
-\description{
-  This function writes a network object to a NEA formatted
-  data file (Fath and Borrett 2006). 
-}
+\title{' write.nea.R
+INPUT = enaR network data object
+Ouput = CSV formatted file with data arranged as expected input for NEA.m}
 \usage{
-write.nea(x, file.name, sep=',')
+write.nea(x, file.name, sep = ",")
 }
 \arguments{
-  \item{x}{
-    Network object.
-  }
-  \item{file.name}{
-    The file name or path. If a simple file name is given, this function
-    uses the current working directory by default.
-  }
-  \item{sep}{
-    The separation character used to delimit data values.
-  }
+\item{x}{Network object.}
+
+\item{file.name}{The file name or path. If a simple file name is given, this
+function uses the current working directory by default.}
+
+\item{sep}{The separation character used to delimit data values.}
 }
 \value{
-  Writes a network object to a NEA formatted file and returns the output
-  composite matrix.
+Writes a network object to a NEA formatted file and returns the
+output composite matrix.
 }
-\references{
-  Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
-  Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+\description{
+Borrett | July 15, 2013
+----------------------------------------
+' write.nea.R INPUT = enaR network data object Ouput = CSV formatted file
+with data arranged as expected input for NEA.m
+}
+\details{
+Borrett | July 15, 2013 ---------------------------------------- '
+write.nea.R INPUT = enaR network data object Ouput = CSV formatted file with
+data arranged as expected input for NEA.m
+
+Borrett | July 15, 2013 ---------------------------------------- Write a
+Network Object to File Using the NEA Data Format
+
+This function writes a network object to a NEA formatted data file (Fath and
+Borrett 2006).
 }
 \author{
-  Stuart R. Borrett 
+Stuart R. Borrett
 }
-
-
+\references{
+Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
+Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+}
 \seealso{
-  \code{\link{read.nea}}
+\code{\link{read.nea}}
 }

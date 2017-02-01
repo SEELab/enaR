@@ -1,40 +1,34 @@
+% Please edit documentation in R/write.EcoNet.R
 \name{write.EcoNet}
 \alias{write.EcoNet}
-\title{
-  Write enaR models to an EcoNet formatted file.
-}
-\description{
-  Creates an EcoNet model from an enaR network object that can be used
-  with the online interface for EcoNet.  
-}
+\title{Write enaR models to an EcoNet formatted file.}
 \usage{
-write.EcoNet(x='model',file='file path',mn='ena_model',zero.flows=FALSE)
+write.EcoNet(x = "model", file = "file path", mn = "ena_model", zero.flows = FALSE)
 }
 \arguments{
-  \item{x}{
-    Network object.
-  }
-  \item{file}{
-    The file name or path. If a simple file name is given, this function
-    uses the current working directory by default.
-  }
-  \item{mn}{
-    The model name that EcoNet will use. The DEFAULT is 'ena_model'.
-  }
-  \item{zero.flows}{
-    LOGICAL: should zero flow values be written?
-  }
+\item{x}{Network object.}
+
+\item{file}{The file name or path. If a simple file name is given, this
+function uses the current working directory by default.}
+
+\item{mn}{The model name that EcoNet will use. The DEFAULT is 'ena_model'.}
+
+\item{zero.flows}{LOGICAL: should zero flow values be written?}
 }
 \value{
-  An EcoNet formatted text file is created from the model, which can be
-  input at http://eco.engr.uga.edu.
+An EcoNet formatted text file is created from the model, which can
+be input at http://eco.engr.uga.edu.
 }
-\references{
-  About EcoNet (http://eco.engr.uga.edu/DOC/econet1.html)
-  
-  Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT Press.
+\description{
+Creates an EcoNet model from an enaR network object that can be used with
+the online interface for EcoNet.
 }
 \author{
-  Matthew K. Lau 
+Matthew K. Lau
 }
+\references{
+About EcoNet (http://eco.engr.uga.edu/DOC/econet1.html)
 
+Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT
+Press.
+}

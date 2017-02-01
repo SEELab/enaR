@@ -1,10 +1,14 @@
-#' eigenCentrality --- calculates the centrality of a network
-#' using an eigen vector approach
-#' INPUT = network matrix
-#' OUTPUT = list of centrality values (in-going, out-going
-#' and average)
-#' S. Borrett | July 2011
-#' ---------------------------------------------------
+#' Calculates the Eigen Centrality of a Network
+#' 
+#' Calculates the eigen centrality of a network.
+#' 
+#' 
+#' @param x A matrix defining a network graph.
+#' @return Returns the eigen based centrality of the network.
+#' @author Stuart R. Borrett Matthew K. Lau
+#' @references Bonacich, P., 1987. Power and centrality: a family of measures.
+#' American Journal of Sociology 92: 1170-1182.
+#' @export eigenCentrality
 eigenCentrality <- function(x='matrix'){
   if (class(x) != 'matrix'){warning('x is not a matrix class object')}
                                         # find dominant eigenvector of x

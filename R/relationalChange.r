@@ -5,6 +5,53 @@
 # February 25, 2016
 # ------------------------
 
+
+
+
+
+
+
+#' Relational change compared between two matrices.
+#' 
+#' Identifies the signs and pairwise relationsips of two matrices and compares
+#' the difference between them.
+#' 
+#' 
+#' @param x x is a square matrix of real numbers.  While this function is more
+#' general, the initial intention was for this to be the direct utility matrix.
+#' @param y y is a square matrix of real numbers.  While this function is more
+#' general, the initial intention was for this to be the integral utility
+#' matrix or the mixed trophic impacts matrix.
+#' @return \item{Direct.Signs}{A sign matrix for matrix x.}
+#' \item{Integral.Signs}{A sign matrix for matrix x.} \item{Direct.Relations}{A
+#' matrix of the pairwise sign relationships for matrix x.}
+#' \item{Integral.Relations}{A matrix of the pairwise signed relationships in
+#' matrix y.} \item{Relations.Table}{A table that summarizes the relations.}
+#' \item{Changed.Table}{A summary table of only the pariwise relationships that
+#' changed between x and y.} \item{ns}{A vector of network statisitcs which
+#' currently includes one whole-network statistic - a ratio of the
+#' relationships changed between x and y.}
+#' @note This function is called by enaUtility and enaMTI to summarize results.
+#' @author Stuart R. Borrett
+#' @seealso \code{\link{enaUtility}, \link{enaMTI}, \link{signs}}
+#' @examples
+#' 
+#' 
+#' 
+#' data(oyster)
+#' D <- enaUtility(oyster)$D
+#' U <- enaUtility(oyster)$U
+#' rc <- relationalChange(D, U)
+#' 
+#' 
+#' ## To get a count of the number of differnt pairwise relationships in one of the
+#' ## sign matrices, you can use the table function
+#' 
+#' count <- table(rc$Direct.Relations)
+#' 
+#' 
+#' 
+#' 
 relationalChange <- function(x="Direct.U",y="Integral.U"){
     vnames <- rownames(x)
     S1 <- signs(x)    # find the signs of the relationships in the direct utility matrix

@@ -10,6 +10,50 @@
 #' M. Lau July 2011
 #' ---------------------------------------------------
 
+
+
+
+
+
+
+#' as.extended --- convert a network object to extended format in Allesina and
+#' Bondavalli 2003 INPUT = network model OUTPUT = the same model in extended
+#' format with inputs and exports/respiration in the same matrix REFERENCE:
+#' Allesina, S., Bondavalli, C., 2003. Steady state of ecosystem flow networks:
+#' a comparison between balancing procedures. Ecological Modelling 165(2-3):
+#' 231-239. M. Lau July 2011
+#' --------------------------------------------------- as.extended --- convert
+#' a network object to extended format in Allesina and Bondavalli 2003 INPUT =
+#' network model OUTPUT = the same model in extended format with inputs and
+#' exports/respiration in the same matrix REFERENCE: Allesina, S., Bondavalli,
+#' C., 2003. Steady state of ecosystem flow networks: a comparison between
+#' balancing procedures. Ecological Modelling 165(2-3): 231-239. M. Lau July
+#' 2011 --------------------------------------------------- Create an Extended
+#' Format Matrix
+#' 
+#' Converts a network object to the extended format of Allesina and Bondavalli
+#' (2003).
+#' 
+#' Used in the balance function.
+#' 
+#' @param x A network object.
+#' @param zero.na Logical: should NA's be replaced with zeros?
+#' @return Returns an extended format matrix.
+#' @author Matthew K. Lau Stuart R. Borrett
+#' @seealso \code{\link{balance}}
+#' @references Allesina, S., Bondavalli, C., 2003. Steady state of ecosystem
+#' flow networks: a comparison between balancing procedures.Ecological
+#' Modelling 165(2-3):231-239.
+#' @examples
+#' 
+#' 
+#' 
+#' data(troModels)
+#' as.extended(troModels[[6]])
+#' 
+#' 
+#' 
+#' @export as.extended
 as.extended <- function(x,zero.na=TRUE){
                                         #Check for network class object
   if (class(x) != "network"){warning('x is not a network class object')}

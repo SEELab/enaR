@@ -1,53 +1,66 @@
+% Please edit documentation in R/enaEnviron.R
 \name{enaEnviron}
 \alias{enaEnviron}
-\title{
-  Ecological Network Environs
-}
-\description{
-  Calculates the environs for an ecological network.
-}
+\title{environ --- conducts environ analysis 
+INPUT = network object
+OUTPUT = input and/or output environs}
 \usage{
-enaEnviron(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE)
+enaEnviron(x, input = TRUE, output = TRUE, type = "unit", err.tol = 1e-10, 
+    balance.override = FALSE)
 }
 \arguments{
-  \item{x}{
-    A network object.
-  }
-  \item{input}{
-    Should the input environ be calculated? 
-  }
-  \item{output}{
-    Should the output environ be calculated?
-  }
-  \item{type}{
-    Specifies the type of environs ("unit" or "realized") to be calculated.
-  }
-  \item{err.tol}{
-    Error threshold for numerical error fluctuations in flows. Values below err.tol
-    will be set to zero.
-  }
-  \item{balance.override}{
-    Logical specifying whether (TRUE) or not (FALSE) the model needs to be
-    balanced prior to calculations. If TRUE and the model is not balanced,
-    environs will not be calculated.
-  }
+\item{x}{A network object.}
+
+\item{input}{Should the input environ be calculated?}
+
+\item{output}{Should the output environ be calculated?}
+
+\item{type}{Specifies the type of environs ("unit" or "realized") to be
+calculated.}
+
+\item{err.tol}{Error threshold for numerical error fluctuations in flows.
+Values below err.tol will be set to zero.}
+
+\item{balance.override}{Logical specifying whether (TRUE) or not (FALSE) the
+model needs to be balanced prior to calculations. If TRUE and the model is
+not balanced, environs will not be calculated.}
+}
+\value{
+The function returns the input, output or both environs depending
+upon which were requested.
+}
+\description{
+M. Lau July 2011 | DEH edited Feb 2013
+---------------------------------------------------
+environ --- conducts environ analysis INPUT = network object OUTPUT = input
+and/or output environs
+}
+\details{
+M. Lau July 2011 | DEH edited Feb 2013
+--------------------------------------------------- environ --- conducts
+environ analysis INPUT = network object OUTPUT = input and/or output
+environs
+
+M. Lau July 2011 | DEH edited Feb 2013
+--------------------------------------------------- Ecological Network
+Environs
+
+Calculates the environs for an ecological network.
+}
+\examples{
+
+
+
+data(troModels)
+enaEnviron(troModels[[6]])
+
+
 
 }
-
-\value{
-  The function returns the input, output or both environs
-  depending upon which were requested.
+\author{
+Stuart R. Borrett Matthew K. Lau
 }
 \references{
 Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
 environ analysis. Environmental Modelling & Software 21:375-405.
-}
-\author{
-Stuart R. Borrett 
-Matthew K. Lau 
-}
-
-\examples{
-data(troModels)
-enaEnviron(troModels[[6]])
 }

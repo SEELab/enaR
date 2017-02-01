@@ -7,6 +7,36 @@
 #' Borrett | July 15, 2013
 #' --------------------------------------------------
 
+
+
+
+
+
+
+#' read.nea.RData INPUT = Model Data (flows, inputs, outputs, storage)
+#' formatted as for NEA.m, saved as CSV file S= |[F][z][X]| |[y][0][0]| OUPUT =
+#' R Network data object for use with enaR
+#' 
+#' Borrett | July 15, 2013 --------------------------------------------------
+#' read.nea.RData INPUT = Model Data (flows, inputs, outputs, storage)
+#' formatted as for NEA.m, saved as CSV file S= |[F][z][X]| |[y][0][0]| OUPUT =
+#' R Network data object for use with enaR
+#' 
+#' Borrett | July 15, 2013 --------------------------------------------------
+#' Read NEA Formatted Network Model
+#' 
+#' This function reads in and creates a network object from a NEA formatted
+#' data file (Fath and Borrett 2006).
+#' 
+#' @param file The name and path for the data file.
+#' @param sep The separation character used to delimit data values.
+#' @param warn LOGICAL: should pack warnings be reported?
+#' @return Returns the network object.
+#' @author Stuart R. Borrett
+#' @seealso \code{\link{write.nea}}
+#' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
+#' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @export read.nea
 read.nea <- function(file="file name",sep=',',warn=TRUE){
   dat <- read.table(file,header=FALSE,sep=sep)  # assumes 
   n <- max(dim(dat)) - 2

@@ -6,6 +6,53 @@
 #' S. Borrett and M. Lau | July 2011
 #' ---------------------------------------------------
 
+
+
+
+
+
+
+#' findPathLength --- calculates the flows over a sequence up to a maximum path
+#' length INPUT = network object OUTPUT = a list of flow statistics over paths
+#' 
+#' S. Borrett and M. Lau | July 2011
+#' --------------------------------------------------- findPathLength ---
+#' calculates the flows over a sequence up to a maximum path length INPUT =
+#' network object OUTPUT = a list of flow statistics over paths
+#' 
+#' S. Borrett and M. Lau | July 2011
+#' --------------------------------------------------- Cumulative Flow over a
+#' Range of Path Lengths
+#' 
+#' Calculates the flow throughout the entire network over a given path length.
+#' 
+#' @param x Network model object.
+#' @param maxPath The maximum path length to calculate total flow.
+#' @param plot.sw LOGICAL: should a plot be generated showing flow
+#' accumulation?
+#' @return \item{thresholds}{thresholds indicating the development of
+#' throughflow as path length increases: the path length at which indirect flow
+#' exceeds direct flow (mID), path length at which 50\%, 90\%, and 95\% of
+#' total system throughflow is achieved (m50, m90, and m95, respectively)}
+#' \item{tf}{total flow across paths from length 0 (Boundary inputs) to
+#' maxPath} \item{ctf}{cumulative total flow from path length 0 to maxPath}
+#' @author Matthew K. Lau Stuart R. Borrett
+#' @seealso \code{\link{enaFlow}}
+#' @references Borrett, S.R, Patten, B.C., Whipple, S.J. 2010.  Rapid
+#' development of indirect effects in ecological networks.  Oikos
+#' 119:1136--1148.
+#' @examples
+#' 
+#' 
+#' 
+#' data(troModels)
+#' pl10 <- findPathLength(troModels[[6]], plot.sw = TRUE, maxPath = 10)
+#' names(pl10)
+#' pl10$thresholds
+#' 
+#' 
+#' 
+#' @export findPathLength
 findPathLength <- function(x,maxPath=100,plot.sw=FALSE){
   ##
   if(ssCheck(x)=="FALSE"){x = balance(x)}  # ensure the models is balanced
