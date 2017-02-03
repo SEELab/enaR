@@ -34,24 +34,6 @@
 #' @note This function is called by enaUtility and enaMTI to summarize results.
 #' @author Stuart R. Borrett
 #' @seealso \code{\link{enaUtility}, \link{enaMTI}, \link{signs}}
-#' @examples
-#' 
-#' 
-#' 
-#' data(oyster)
-#' D <- enaUtility(oyster)$D
-#' U <- enaUtility(oyster)$U
-#' rc <- relationalChange(D, U)
-#' 
-#' 
-#' ## To get a count of the number of differnt pairwise relationships in one of the
-#' ## sign matrices, you can use the table function
-#' 
-#' count <- table(rc$Direct.Relations)
-#' 
-#' 
-#' 
-#' 
 relationalChange <- function(x="Direct.U",y="Integral.U"){
     vnames <- rownames(x)
     S1 <- signs(x)    # find the signs of the relationships in the direct utility matrix
