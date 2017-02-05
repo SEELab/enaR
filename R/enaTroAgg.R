@@ -34,7 +34,8 @@
 #' combination.} \item{TE}{vector of the trophic efficiencies i.e. the ratio of
 #' input to a trophic level to the amount of flow that is passed on the next
 #' level from it. } \item{ns}{vector of trophic aggregations based network
-#' statistics. These include the average Trohic Level ("ATL"), "Detritivory" the flow from the detrital pool to
+#' statistics. These include the average Trohic Level ("ATL"), "Detritivory" the
+#' flow from the detrital pool to
 #' the second trophic level, "DetritalInput" the exogenous inputs to the
 #' detrital pool, "DetritalCirc" the circulation within the detrital pool,
 #' "NCYCS" the number of feeding cycles removed, "NNEX" the number of feeding
@@ -51,7 +52,7 @@
 #' @author Pawandeep Singh
 #' @seealso \code{\link{enaCycle}, \link{netOrder}}
 #' @references %% ~put references to the literature/web site here ~ Lindeman,
-a#' R.L. 1942. The trophic-dynamic aspect of ecology. Ecology 23:399--418.
+#' R.L. 1942. The trophic-dynamic aspect of ecology. Ecology 23:399--418.
 #'
 #' Ulanowicz, R.E. and Kemp, W.M.  1979. Towards canonical trophic
 #' aggregations. The American Naturalist. 114:871--883.
