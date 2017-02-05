@@ -74,9 +74,6 @@ packing up network statistics for output
 lam1P'=abs(lam1P),'rhoP'=abs(rhoP),
 lam1PP'=abs(lam1PP),'rhoPP'=abs(rhoPP),'AGG.S'=AGG.S)
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \references{
 Matis, J. H., Patten, B. C. 1981. Environ analysis of linear
 compartmental systems: the static, time invariant case.  Bulletin of the
@@ -94,6 +91,8 @@ Analysis.  Environmental Modelling & Software 21:375-405
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaFlow},\link{enaUtility}}
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \keyword{enaFlow}
 \keyword{read.scor}
-

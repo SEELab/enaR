@@ -76,9 +76,6 @@ attributes(mti)
 
 
 }
-\author{
-Stuart R. Borrett Matthew K. Lau
-}
 \references{
 %% ~put references to the literature/web site here ~ Ulanowicz,
 R.E. and C.J. Puccia.  1990. Mixed trophic impacts in ecosystems.  Coenoses
@@ -87,4 +84,6 @@ R.E. and C.J. Puccia.  1990. Mixed trophic impacts in ecosystems.  Coenoses
 \seealso{
 \code{\link{enaFlow},\link{enaUtility}}
 }
-
+\author{
+Stuart R. Borrett Matthew K. Lau
+}

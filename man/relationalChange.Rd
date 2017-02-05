@@ -51,10 +51,9 @@ count <- table(rc$Direct.Relations)
 
 
 }
-\author{
-Stuart R. Borrett
-}
 \seealso{
 \code{\link{enaUtility}, \link{enaMTI}, \link{signs}}
 }
-
+\author{
+Stuart R. Borrett
+}

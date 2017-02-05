@@ -44,9 +44,6 @@ get.ns(troModels[[6]])
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett David E. Hines
-}
 \references{
 Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 Environ Analysis.  Environ. Model. Softw. 21, 375-405.
@@ -54,4 +51,6 @@ Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 \seealso{
 \code{\link{enaStructure}},\code{\link{enaFlow}},\code{\link{enaAscendency}},\code{\link{enaUtility}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett David E. Hines
+}

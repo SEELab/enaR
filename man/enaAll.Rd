@@ -45,10 +45,9 @@ names(output)
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \seealso{
 \code{\link{enaAscendency},\link{enaControl},\link{enaEnviron},\link{enaFlow},\link{enaMTI},\link{enaStorage},\link{enaUtility}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

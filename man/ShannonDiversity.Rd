@@ -77,4 +77,3 @@ ShannonDiversity(X)
 \author{
 Stuart R. Borrett
 }
-

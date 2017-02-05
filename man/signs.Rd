@@ -38,10 +38,9 @@ s <- signs(U)
 
 
 }
-\author{
-Stuart R. Borrett
-}
 \seealso{
 \code{\link{relationalChange}}
 }
-
+\author{
+Stuart R. Borrett
+}

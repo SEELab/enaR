@@ -46,10 +46,9 @@ unpack(troModels[[6]])
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \seealso{
 \code{\link{pack},\link{read.scor}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

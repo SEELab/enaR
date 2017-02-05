@@ -55,9 +55,6 @@ as.extended(troModels[[6]])
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \references{
 Allesina, S., Bondavalli, C., 2003. Steady state of ecosystem
 flow networks: a comparison between balancing procedures.Ecological
@@ -66,4 +63,6 @@ Modelling 165(2-3):231-239.
 \seealso{
 \code{\link{balance}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

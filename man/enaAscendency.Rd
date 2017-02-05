@@ -71,9 +71,6 @@ This and other Ulanowicz school functions require that export and
 respiration components of output be separately quantified.
 }
 \examples{
-
-
-
 data(troModels)
 enaAscendency(troModels[[6]])
 ####### set initial conditions for calculations #########
@@ -87,21 +84,6 @@ AMI = Average Mutual Informaiton
 ################### calculate ratios ####################
 #####################################################################
 #####################################################################
-
-####### set initial conditions for calculations #########
-## calculate H & CAPACITY  #######################################
-H = Total Flow Diversity
-################### calculate AMI  #######################
-AMI = Average Mutual Informaiton
-################ calculate ascendency ###################
-################ calculate residual diversity  ####################
-################ calculate overhead  ####################
-################### calculate ratios ####################
-#####################################################################
-#####################################################################
-}
-\author{
-David E. Hines Matthew K. Lau Stuart R. Borrett
 }
 \references{
 Kay, J.J., Graham, L.A., Ulanowicz, R.E., 1989. A detailed guide
@@ -129,4 +111,6 @@ complexity: insights from ecological network analysis. Ecology Letters
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
 }
-
+\author{
+David E. Hines Matthew K. Lau Stuart R. Borrett
+}
