@@ -30,6 +30,6 @@ This function is intended to provide increase flexibility for users of both
 the Patten and Ulanowicz schools of ENA.
 }
 \author{
-%% ~~who you are~~ Matthew K. Lau Stuart R. Borrett
+M.K. Lau and S.R. Borrett
 }
 
