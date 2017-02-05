@@ -46,6 +46,7 @@
 #' \item{M}{Total (direct and indirect) tropic impacts of compartment i on j.}
 #' @note This and other Ulanowicz school functions require that export and
 #' respiration components of output be separately quantified.
+#' \item{Relations.Table}{A table indicating the qualitiative pairwise relationships between the nodes as determined from the net (direct) and the mixed (integral) perspectives.}
 #'
 #' This analysis is similar in concept to the ENA Utility analysis.
 #'
@@ -135,7 +136,7 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
     }
 
     out <- list('G'=G,'FP'=FP,'Q'=Q,'M'=M,
-                "Integral.Relations" = IR,
+                # "Integral.Relations" = IR,
                 "Relations.Table"=r.table)
   }
     return(out)

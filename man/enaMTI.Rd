@@ -53,6 +53,7 @@ considers both the direct and indirect trophic impacts.
 \note{
 This and other Ulanowicz school functions require that export and
 respiration components of output be separately quantified.
+\item{Relations.Table}{A table indicating the qualitiative pairwise relationships between the nodes as determined from the net (direct) and the mixed (integral) perspectives.}
 
 This analysis is similar in concept to the ENA Utility analysis.
 
