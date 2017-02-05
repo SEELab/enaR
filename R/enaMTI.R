@@ -18,12 +18,12 @@
 #' 1990. INPUT = network object OUTPUT = list of trophic impact statistics
 #' Borrett | June 2012, MKL | July 2013 ------------------------------------
 #' Mixed Trophic Impacts (MTI) Analysis
-#' 
+#'
 #' Calculates the Mixed Trophic Impacts of one species on another in the given
 #' ecosystem model following the algorithm of Ulanowicz and Puccia (1990). This
 #' considers both the direct and indirect trophic impacts.
-#' 
-#' 
+#'
+#'
 #' @param x a network object.  This includes all weighte dflows into and out of
 #' each node.  It must also include the "Living" vector that identifies the
 #' living (TRUE/FALSE) status of each node.
@@ -46,9 +46,9 @@
 #' \item{M}{Total (direct and indirect) tropic impacts of compartment i on j.}
 #' @note This and other Ulanowicz school functions require that export and
 #' respiration components of output be separately quantified.
-#' 
+#'
 #' This analysis is similar in concept to the ENA Utility analysis.
-#' 
+#'
 #' With regard to the eigen.check argument, like enaFlow, enaStorage and
 #' enaUtility, this analysis considers the trophic impact propigated over path
 #' lengths ranging for zero to infinity.  For the analysis to work properly,
@@ -63,15 +63,15 @@
 #' R.E. and C.J. Puccia.  1990. Mixed trophic impacts in ecosystems.  Coenoses
 #' 5, 7--16.
 #' @examples
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' data(troModels)
 #' mti <- enaMTI(troModels[[6]])
 #' attributes(mti)
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' @export enaMTI
 enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
                                         #Check for network class
@@ -136,7 +136,7 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
 
     out <- list('G'=G,'FP'=FP,'Q'=Q,'M'=M,
                 "Integral.Relations" = IR,
-                "Relational.Table"=r.table)
+                "Relations.Table"=r.table)
   }
     return(out)
 }
