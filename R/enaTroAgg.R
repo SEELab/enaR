@@ -1,13 +1,13 @@
 #' Trophic Aggregations (TroAgg) Analysis
-#' 
+#'
 #' It returns the data quantifying the underlying trophic structure of a given
 #' model based on the interaction of the living and non-living nodes. It is
 #' based on the Trophic Aggregations suggested by Lindeman (1942) and follows
 #' the algorithm by Ulanowicz and Kemp (1979) implemented in NETWRK 4.2b. It
 #' removes the Feeding cycles in the network beforehand to provide accurate
 #' results.
-#' 
-#' 
+#'
+#'
 #' @param x a network object.  This includes all weighted flows into and out of
 #' each node. It should include separate respiration and export values for the
 #' Canonical Exports and Canonical Respirations results respectively. It must
@@ -34,44 +34,44 @@
 #' combination.} \item{TE}{vector of the trophic efficiencies i.e. the ratio of
 #' input to a trophic level to the amount of flow that is passed on the next
 #' level from it. } \item{ns}{vector of trophic aggregations based network
-#' statistics. These include "Detritivory" the flow from the detrital pool to
+#' statistics. These include the average Trohic Level ("ATL"), "Detritivory" the flow from the detrital pool to
 #' the second trophic level, "DetritalInput" the exogenous inputs to the
 #' detrital pool, "DetritalCirc" the circulation within the detrital pool,
 #' "NCYCS" the number of feeding cycles removed, "NNEX" the number of feeding
 #' cycle Nexuses removed and "CI" the Cycling Index for the Feeding Cycles.  }
 #' @note This and other Ulanowicz school functions require that export and
 #' respiration components of output be separately quantified.
-#' 
+#'
 #' This analysis involves the ENA Cycle analysis for removal of the Feeding
 #' Cycles in the network. These are cycles amongst only the living nodes and
 #' cause error in the trophic aggregations.
-#' 
+#'
 #' The analysis requires all the non-living nodes to be placed at the end in
 #' the network object.
 #' @author Pawandeep Singh
 #' @seealso \code{\link{enaCycle}, \link{netOrder}}
 #' @references %% ~put references to the literature/web site here ~ Lindeman,
-#' R.L. 1942. The trophic-dynamic aspect of ecology. Ecology 23:399--418.
-#' 
+a#' R.L. 1942. The trophic-dynamic aspect of ecology. Ecology 23:399--418.
+#'
 #' Ulanowicz, R.E. and Kemp, W.M.  1979. Towards canonical trophic
 #' aggregations. The American Naturalist. 114:871--883.
-#' 
+#'
 #' Ulanowicz, R.E. 1995. Ecosystem trophic foundations: Lindeman exonerata. pp.
 #' 549--560. B.C. Patten and S.E. Jorgensen (eds.) Complex Ecology: The
 #' part-whole relation in ecosystems. Prentice Hall, New Jersey.
-#' 
+#'
 #' Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem
 #' flow networks. Environmental Software 6:131 -- 142.
 #' @examples
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' data(troModels)
 #' tro6 <- enaTroAgg(troModels[[6]])
 #' attributes(tro6)
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' @export enaTroAgg
 enaTroAgg <- function (x){
   if (class(x) != "network") {
@@ -220,8 +220,11 @@ enaTroAgg <- function (x){
   te[is.na(te)] <- 0
 
                                         # Output Listing
-  Detrivory<-dtry; DetritalInput<-dinp; DetritalCirc<-dcir
-  ns <- cbind(Detrivory, DetritalInput, DetritalCirc, Feeding_Cycles$ns)
+  ATL <- mean(etl) # average trophic level
+  Detrivory <- dtry
+  DetritalInput <- dinp
+  DetritalCirc <- dcir
+  ns <- cbind(ATL, Detrivory, DetritalInput, DetritalCirc, Feeding_Cycles$ns)
   if(NMIG>0) {
   	out <- list(Feeding_Cycles=Feeding_Cycles[1:(length(Feeding_Cycles)-1)], A = A[1:nl,1:nl], ETL = etl, M.Flow = mig.input, CI = ci, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
   }
