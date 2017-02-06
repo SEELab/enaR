@@ -51,7 +51,6 @@
 #' such that the zero elements are now very small numbers, relative the
 #' original vector values.
 #' @author Stuart R. Borrett
-#' @importFrom network network.extraction
 #' @export ShannonDiversity
 #' @examples
 #' 
@@ -62,8 +61,8 @@
 #' ShannonDiversity(T)
 #' 
 #' ## storage (biomass) biodiversity
-#' X <- oyster %v% "storage"
-#' ShannonDiversity(X)
+#' ## X <- oyster %v% "storage"
+#' ## ShannonDiversity(X)
 ShannonDiversity <-  function(x){
     p <- x/sum(x)  # relative proportion
     H <- -1 * sum(p * log(p) )  # results in nats (using natural log)  # Shannon Diversity

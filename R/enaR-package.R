@@ -56,7 +56,7 @@ NULL
 #' with multiple additions of functionality.
 #' 
 #' \tabular{ll}{ Package: \tab enaR \cr Type: \tab Package\cr Version: \tab
-#' 2.9.3\cr Date: \tab 2015-12-09\cr License: \tab GPL-3\cr }
+#' 2.10\cr Date: \tab 2017-02-06\cr License: \tab GPL-3\cr }
 #' 
 #' @name enaR-package
 #' @aliases enaR enaR-package

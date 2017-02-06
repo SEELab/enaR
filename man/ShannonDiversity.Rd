@@ -66,8 +66,8 @@ T <- enaFlow(oyster)$T
 ShannonDiversity(T)
 
 ## storage (biomass) biodiversity
-X <- oyster \%v\% "storage"
-ShannonDiversity(X)
+## X <- oyster \%v\% "storage"
+## ShannonDiversity(X)
 }
 \author{
 Stuart R. Borrett
