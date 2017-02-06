@@ -11,6 +11,8 @@ Depends:
     stringr,
     sna,
     network,
+    MASS,
+    gdata
 Suggests:
     codetools,
     igraph,

@@ -6,7 +6,7 @@
 INPUT = enaR network data object
 Ouput = CSV formatted file with data arranged as expected input for NEA.m}
 \usage{
-write.nea(x, file.name, sep = ",")
+\method{write}{nea}(x, file.name, sep = ",")
 }
 \arguments{
 \item{x}{Network object.}
