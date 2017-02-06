@@ -89,23 +89,8 @@
 #' 17:127-136
 #' @export enaAscendency
 #' @examples
-#' 
-#' 
-#' 
 #' data(troModels)
 #' enaAscendency(troModels[[6]])
-#' ####### set initial conditions for calculations #########
-#' ## calculate H & CAPACITY  #######################################
-#' H = Total Flow Diversity
-#' ################### calculate AMI  #######################
-#' AMI = Average Mutual Informaiton
-#' ################ calculate ascendency ###################
-#' ################ calculate residual diversity  ####################
-#' ################ calculate overhead  ####################
-#' ################### calculate ratios ####################
-#' #####################################################################
-#' #####################################################################
-#' 
 enaAscendency <- function(x='network object'){
     if (class(x) != 'network'){warning('x is not a network class object')}
 
