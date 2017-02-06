@@ -28,7 +28,7 @@
 #' This function is intended to provide increase flexibility for users of both
 #' the Patten and Ulanowicz schools of ENA.
 #' 
-#' @author %% ~~who you are~~ Matthew K. Lau Stuart R. Borrett
+#' @author M.K. Lau and S.R. Borrett
 #' @export get.orient
 get.orient <- function(){
   current.orientation <- get('orientation',envir=environment(set.orient))

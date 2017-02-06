@@ -3,13 +3,6 @@
 #'## Algorithm Source : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow Networks
 #'## ---------------------------------------------
 
-
-
-
-
-
-
-
 #' ## Cycle Analysis for Feeding Cycles ## Singh P.  | July 2014 ## Algorithm
 #' Source : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow
 #' Networks ## --------------------------------------------- ## Cycle Analysis
