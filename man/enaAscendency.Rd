@@ -71,23 +71,8 @@ This and other Ulanowicz school functions require that export and
 respiration components of output be separately quantified.
 }
 \examples{
-
-
-
 data(troModels)
 enaAscendency(troModels[[6]])
-####### set initial conditions for calculations #########
-## calculate H & CAPACITY  #######################################
-H = Total Flow Diversity
-################### calculate AMI  #######################
-AMI = Average Mutual Informaiton
-################ calculate ascendency ###################
-################ calculate residual diversity  ####################
-################ calculate overhead  ####################
-################### calculate ratios ####################
-#####################################################################
-#####################################################################
-
 ####### set initial conditions for calculations #########
 ## calculate H & CAPACITY  #######################################
 H = Total Flow Diversity

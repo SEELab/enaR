@@ -28,6 +28,7 @@
 #' @references Allesina, S., Bondavalli, C., 2004. WAND: an Ecological Network
 #' Analysis user-friendly tool. Environmental Modelling and Software
 #' 19(4):337-340.
+#' @importFrom gdata read.xls
 #' @export read.wand
 read.wand <- function(file='file name with path'){
                                         # file is the full excel file name

@@ -32,25 +32,6 @@ the difference between them.
 \note{
 This function is called by enaUtility and enaMTI to summarize results.
 }
-\examples{
-
-
-
-data(oyster)
-D <- enaUtility(oyster)$D
-U <- enaUtility(oyster)$U
-rc <- relationalChange(D, U)
-
-
-## To get a count of the number of differnt pairwise relationships in one of the
-## sign matrices, you can use the table function
-
-count <- table(rc$Direct.Relations)
-
-
-
-
-}
 \author{
 Stuart R. Borrett
 }

@@ -67,6 +67,7 @@
 #' 
 #' 
 #' 
+#' @importFrom MASS ginv
 #' @export enaControl
 enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
                                         #Check for network class

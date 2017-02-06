@@ -72,6 +72,7 @@
 #' 
 #' 
 #' 
+#' @importFrom MASS ginv
 #' @export enaMTI
 enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
                                         #Check for network class

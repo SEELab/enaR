@@ -34,6 +34,7 @@
 #' @seealso \code{\link{read.scor}}
 #' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 #' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @importFrom gdata read.xls
 #' @export read.enam
 read.enam<- function(file="file path and name"){
                                         #I have assumed the file is formatted as an excel speadsheet.
