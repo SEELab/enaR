@@ -102,7 +102,7 @@ enaAscendency <- function(x='network object'){
            warning('Respiration data is absent from the model.')
    }
 
-#'####### set initial conditions for calculations #########
+####### set initial conditions for calculations #########
   T.ulan <- as.extended(x)
   N <- ncol(T.ulan) # set up N
   r.td <- c.ld <- t.ulan <- ami <- mat.or.vec(N,N) # initialize ascendency matrix
@@ -111,8 +111,8 @@ enaAscendency <- function(x='network object'){
                                         #calculate total system throughPUT
   TSTp <- sum(T.ulan)
 
-#'## calculate H & CAPACITY  #######################################
-  #' H = Total Flow Diversity
+## calculate H & CAPACITY  #######################################
+## H = Total Flow Diversity
 
   h <- T.ulan/sum(T.ulan)
   h2 <- log2(h)
@@ -121,8 +121,8 @@ enaAscendency <- function(x='network object'){
 
   CAP <- H * TSTp     # Capactity
 
-#'################### calculate AMI  #######################
-  #' AMI = Average Mutual Informaiton
+################### calculate AMI  #######################
+## AMI = Average Mutual Informaiton
 
                                         # loop through T.ulan to calculate AMI
   for (i in 1:N){
@@ -137,15 +137,15 @@ enaAscendency <- function(x='network object'){
 
   AMI <- sum(ami)
 
-#'################ calculate ascendency ###################
+################ calculate ascendency ###################
 
   ASC <- TSTp * AMI
 
-#'################ calculate residual diversity  ####################
+################ calculate residual diversity  ####################
 
   Hr <- H - AMI
 
-#'################ calculate overhead  ####################
+################ calculate overhead  ####################
 
                                         # loop through T.ulan to calculate overhead
   for (i in 1:N){
@@ -161,7 +161,7 @@ enaAscendency <- function(x='network object'){
   OH <- -sum(oh)
 
 
-#'################### calculate ratios ####################
+################### calculate ratios ####################
 
                                         # ratio for ascendency/capacity
   ASC.CAP <- ASC/CAP
@@ -176,8 +176,8 @@ enaAscendency <- function(x='network object'){
 
 
 
-  ################# Calculating Effective Link Density and Trophic Depth ########
-  ## Calculate t.ulan 't'
+########### Calculating Effective Link Density and Trophic Depth ########
+## Calculate t.ulan 't'
 
   for (i in 1:N) {
         for (j in 1:N) {
@@ -190,7 +190,7 @@ enaAscendency <- function(x='network object'){
         }
     }
 
-    ## Effective Link Density (c)
+## Effective Link Density (c)
     for (i in 1:N) {
         for (j in 1:N) {
             if (t.ulan[i, j] == 0) {
@@ -203,7 +203,7 @@ enaAscendency <- function(x='network object'){
     }
     C.LD <- prod(c.ld)
 
-    ## Trophic Depth (r)
+## Trophic Depth (r)
     for (i in 1:N) {
         for (j in 1:N) {
             if (t.ulan[i, j] == 0) {
@@ -218,12 +218,10 @@ enaAscendency <- function(x='network object'){
 
     ELD <- C.LD
     TD <- R.TD
-    ##############################################################################
 
-
-  #'#####################################################################
+  #####################################################################
   # tetrad partition of A, C, O -> input, internal, export, respiration
-  #'#####################################################################
+  #####################################################################
   n <- N - 3
 
   # -- ASCENDENCY --
