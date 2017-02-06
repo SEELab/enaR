@@ -44,9 +44,11 @@
 #' production.  Also, if the receiver compartment is not living, the flux
 #' intensity is set to zero.} \item{Q}{direct net trophic impacts (G-t(FP)).}
 #' \item{M}{Total (direct and indirect) tropic impacts of compartment i on j.}
+#' \item{Relations.Table}{A table indicating the qualitiative pairwise
+#' relationships between the nodes as determined from the net (direct)
+#' and the mixed (integral) perspectives.}
 #' @note This and other Ulanowicz school functions require that export and
 #' respiration components of output be separately quantified.
-#' \item{Relations.Table}{A table indicating the qualitiative pairwise relationships between the nodes as determined from the net (direct) and the mixed (integral) perspectives.}
 #'
 #' This analysis is similar in concept to the ENA Utility analysis.
 #'
