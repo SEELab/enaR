@@ -27,16 +27,8 @@ each pairwise realtionship, and a summary of the counts.
 This function is called by relationalChange, and was created to
 generate more informative output from enaUtility and enaMTI.
 }
-\examples{
-
-
-
-data(oyster)
-U <- enaUtility(oyster)$U
-s <- signs(U)
-
-
-
+\author{
+Stuart R. Borrett
 }
 \seealso{
 \code{\link{relationalChange}}

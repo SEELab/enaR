@@ -34,6 +34,7 @@
 #' @seealso \code{\link{read.nea}}
 #' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 #' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @importFrom utils write.table
 #' @export write.nea
 write.nea <- function(x, file.name,sep=','){
                                         # Check for network class

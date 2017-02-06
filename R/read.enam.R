@@ -38,7 +38,7 @@
 read.enam<- function(file="file path and name"){
                                         #I have assumed the file is formatted as an excel speadsheet.
                                         #The data must be on the first sheet in the workbook.
-  x <- as.matrix(read.xls(file,sheet=1,header=FALSE))
+  x <- as.matrix(gdata::read.xls(file,sheet=1,header=FALSE))
   mname <- as.character(x[1,1]); # Get Model ID
   n <- as.numeric(as.character(x[2,2])) # number of nodes
   liv <- as.numeric(as.character(x[3,2])) # number of nodes

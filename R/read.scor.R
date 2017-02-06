@@ -44,6 +44,7 @@
 #' 
 #' Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network Environ
 #' Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @importFrom stringr str_trim
 #' @export read.scor
 read.scor <- function(file,from.file=TRUE,warn=FALSE){
   if (from.file){text <- readLines(file,warn=warn)}else{text <- file} # read in file

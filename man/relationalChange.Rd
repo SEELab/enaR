@@ -32,6 +32,7 @@ the difference between them.
 \note{
 This function is called by enaUtility and enaMTI to summarize results.
 }
+<<<<<<< HEAD
 \examples{
 
 
@@ -50,6 +51,10 @@ count <- table(rc$Direct.Relations)
 
 
 
+=======
+\author{
+Stuart R. Borrett
+>>>>>>> namespace
 }
 \seealso{
 \code{\link{enaUtility}, \link{enaMTI}, \link{signs}}

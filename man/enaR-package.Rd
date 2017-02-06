@@ -20,9 +20,12 @@ Network Analysis. Methods in Ecology and Evolution 5:1206-1213.
 }
 \seealso{
 % ~~ Optional links to other man pages, e.g. ~~ % ~~
+<<<<<<< HEAD
 \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~ %
 \code{\link[network:statnet-package]{statnet}}
 %\code{\link[igraph:igraph-package]{igraph}}
+=======
+>>>>>>> namespace
 \code{\link[network:network-package]{network}}
 }
 \author{

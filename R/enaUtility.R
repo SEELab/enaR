@@ -86,6 +86,7 @@
 #' 
 #' 
 #' 
+#' @importFrom MASS ginv
 #' @export enaUtility
 enaUtility <- function(x, type=c('flow','storage'),
                        eigen.check=TRUE,

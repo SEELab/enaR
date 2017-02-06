@@ -43,7 +43,6 @@ A <- enaStructure(troModels[[6]])$A
 scc(A)
 
 
-
 }
 \references{
 Allesina, S., Bodini, A., Bondavalli, C., 2005. Ecological

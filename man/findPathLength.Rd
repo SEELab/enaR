@@ -53,7 +53,6 @@ names(pl10)
 pl10$thresholds
 
 
-
 }
 \references{
 Borrett, S.R, Patten, B.C., Whipple, S.J. 2010.  Rapid

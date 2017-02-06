@@ -73,6 +73,7 @@ respiration components of output be separately quantified.
 \examples{
 data(troModels)
 enaAscendency(troModels[[6]])
+<<<<<<< HEAD
 ####### set initial conditions for calculations #########
 ## calculate H & CAPACITY  #######################################
 H = Total Flow Diversity
@@ -84,6 +85,11 @@ AMI = Average Mutual Informaiton
 ################### calculate ratios ####################
 #####################################################################
 #####################################################################
+=======
+}
+\author{
+David E. Hines Matthew K. Lau Stuart R. Borrett
+>>>>>>> namespace
 }
 \references{
 Kay, J.J., Graham, L.A., Ulanowicz, R.E., 1989. A detailed guide

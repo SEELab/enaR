@@ -56,7 +56,7 @@ NULL
 #' with multiple additions of functionality.
 #' 
 #' \tabular{ll}{ Package: \tab enaR \cr Type: \tab Package\cr Version: \tab
-#' 2.9.3\cr Date: \tab 2015-12-09\cr License: \tab GPL-3\cr }
+#' 2.10\cr Date: \tab 2017-02-06\cr License: \tab GPL-3\cr }
 #' 
 #' @name enaR-package
 #' @aliases enaR enaR-package
@@ -64,9 +64,6 @@ NULL
 #' @author Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David
 #' E. Hines Maintainer: Matthew K. Lau <enaR.maintainer@@gmail.com>
 #' @seealso % ~~ Optional links to other man pages, e.g. ~~ % ~~
-#' \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~ %
-#' \code{\link[network:statnet-package]{statnet}}
-#' %\code{\link[igraph:igraph-package]{igraph}}
 #' \code{\link[network:network-package]{network}}
 #' @references Borrett SR and Lau MK 2014. enaR: An r package for Ecosystem
 #' Network Analysis. Methods in Ecology and Evolution 5:1206-1213.

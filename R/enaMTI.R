@@ -70,9 +70,16 @@
 #' data(troModels)
 #' mti <- enaMTI(troModels[[6]])
 #' attributes(mti)
+<<<<<<< HEAD
 #'
 #'
 #'
+=======
+#' 
+#' 
+#' 
+#' @importFrom MASS ginv
+>>>>>>> namespace
 #' @export enaMTI
 enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
                                         #Check for network class

@@ -36,6 +36,7 @@
 #' @seealso \code{\link{write.nea}}
 #' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 #' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @importFrom utils read.table
 #' @export read.nea
 read.nea <- function(file="file name",sep=',',warn=TRUE){
   dat <- read.table(file,header=FALSE,sep=sep)  # assumes 
