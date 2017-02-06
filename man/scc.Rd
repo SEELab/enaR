@@ -43,7 +43,6 @@ A <- enaStructure(troModels[[6]])$A
 scc(A)
 
 
-
 }
 \author{
 Matthew K. Lau Stuart R. Borrett
