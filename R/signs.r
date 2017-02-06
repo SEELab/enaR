@@ -30,16 +30,6 @@
 #' generate more informative output from enaUtility and enaMTI.
 #' @author Stuart R. Borrett
 #' @seealso \code{\link{relationalChange}}
-#' @examples
-#' 
-#' 
-#' 
-#' data(oyster)
-#' U <- enaUtility(oyster)$U
-#' s <- signs(U)
-#' 
-#' 
-#' 
 signs <- function(x="matrix"){
     vnames <- rownames(x)   # get row names
     d <- dim(x)             # find matrix dimensions

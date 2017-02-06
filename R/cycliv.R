@@ -69,18 +69,6 @@
 #' 
 #' Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem
 #' flow networks. Environmental Software 6:131 -- 142.
-#' @examples
-#' 
-#' 
-#' 
-#' data(troModels)
-#' liv.cyc <- cycliv(troModels[[6]])
-#' attributes(liv.cyc)
-#' ##-----------------------------------------------------------------
-#' ##-----------------------------------------------------------------
-#' ## 2 Repeats start. rep3,4
-#' ## Backtrack to prev. level
-#' 
 cycliv <- function(x){
 
 		 #Initials

@@ -36,7 +36,6 @@
 #' @seealso \code{\link{enaStructure}},\code{\link{scc}}
 #' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 #' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
-#' @export structure.statistics
 structure.statistics <- function(A='adjacency matrix'){
   if (class(A) != 'matrix'){warning('A is not a matrix class object')}
                                         # 

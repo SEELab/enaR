@@ -10,7 +10,6 @@
 #' @seealso \code{\link{enaUtility}}
 #' @references Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
 #' environ analysis. Environmental Modelling & Software 21:375-405.
-#' @export bcratio
 bcratio <- function(x='matrix'){
 	r=sum(x[x>0])/sum(abs(x[x<0]))  # creates the ratio of positive elements to negative elements.
   return(r)
