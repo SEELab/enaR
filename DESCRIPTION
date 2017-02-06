@@ -8,15 +8,9 @@ Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 Description: Provides algorithms for the analysis of ecological networks.
 Depends:
     R (>= 2.10),
-    MASS,
     stringr,
     sna,
     network,
-    gdata,
-    stats,
-    utils,
-    graphics,
-    limSolve
 Suggests:
     codetools,
     igraph,
