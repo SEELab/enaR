@@ -66,6 +66,7 @@
 #' Analysis.  Environmental Modelling & Software 21:375-405
 #' @keywords enaFlow read.scor
 #' @importFrom MASS ginv
+#' @importFrom stats sd
 #' @export enaStorage
 #' @examples
 #' data(oyster)
