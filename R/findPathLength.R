@@ -51,7 +51,11 @@
 #' pl10$thresholds
 #' 
 #' 
-#' @importFrom("graphics", "axis", "box", "par", "plot", "points")
+#' @importFrom graphics axis 
+#' @importFrom graphics box 
+#' @importFrom graphics par 
+#' @importFrom graphics plot 
+#' @importFrom graphics points
 #' @export findPathLength
 findPathLength <- function(x,maxPath=100,plot.sw=FALSE){
   ##

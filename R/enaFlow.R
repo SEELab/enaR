@@ -115,7 +115,8 @@
 #' 
 #' 
 #' @importFrom MASS ginv
-#' @import network 
+#' @import network
+#' @importFrom stats sd
 #' @export enaFlow
 enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
                                         #Check for network class
