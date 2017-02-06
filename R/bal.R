@@ -32,6 +32,7 @@
 #' @seealso \code{\link{balance}}
 #' @references Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
 #' environ analysis. Environmental Modelling & Software 21:375-405.
+#' @importFrom MASS ginv
 bal <- function(T.star='matrix',method=c('input','output')){
   
   if (length(method > 1)){method <- method[1]}
