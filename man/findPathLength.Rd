@@ -53,7 +53,6 @@ names(pl10)
 pl10$thresholds
 
 
-
 }
 \author{
 Matthew K. Lau Stuart R. Borrett
