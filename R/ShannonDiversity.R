@@ -54,20 +54,15 @@
 #' @export ShannonDiversity
 #' @examples
 #' 
-#' 
-#' 
 #' data(oyster)
 #' 
-#' #' throughflow diversity
+#' ## throughflow diversity
 #' T <- enaFlow(oyster)$T
 #' ShannonDiversity(T)
 #' 
-#' #' storage (biomass) biodiversity
+#' ## storage (biomass) biodiversity
 #' X <- oyster %v% "storage"
 #' ShannonDiversity(X)
-#' 
-#' 
-#' 
 ShannonDiversity <-  function(x){
     p <- x/sum(x)  # relative proportion
     H <- -1 * sum(p * log(p) )  # results in nats (using natural log)  # Shannon Diversity

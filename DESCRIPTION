@@ -7,12 +7,16 @@ Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Singh
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 Description: Provides algorithms for the analysis of ecological networks.
 Depends:
-    R (>= 3.1.0),
+    R (>= 3.1.0)
+Imports:
     stringr,
     sna,
     network,
     MASS,
-    gdata
+    gdata,
+    graphics,
+    stats,
+    utils    
 Suggests:
     codetools,
     igraph,
