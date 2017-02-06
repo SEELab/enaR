@@ -15,10 +15,11 @@ Returns the eigen based centrality of the network.
 \description{
 Calculates the eigen centrality of a network.
 }
+\author{
+Stuart R. Borrett Matthew K. Lau
+}
 \references{
 Bonacich, P., 1987. Power and centrality: a family of measures.
 American Journal of Sociology 92: 1170-1182.
 }
-\author{
-Stuart R. Borrett Matthew K. Lau
-}
+

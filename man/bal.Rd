@@ -32,6 +32,9 @@ Returns an extended matrix for balancing by inputs or outputs.
 \description{
 Dependency for the \code{balance} function.
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
 environ analysis. Environmental Modelling & Software 21:375-405.
@@ -39,6 +42,4 @@ environ analysis. Environmental Modelling & Software 21:375-405.
 \seealso{
 \code{\link{balance}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
+

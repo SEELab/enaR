@@ -56,9 +56,10 @@ set.orient(original.orientation)
 
 
 }
-\seealso{
-\code{\link{get.orient}}
-}
 \author{
 Matthew K. Lau Stuart R. Borrett
 }
+\seealso{
+\code{\link{get.orient}}
+}
+

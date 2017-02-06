@@ -51,9 +51,10 @@ new.network <- netOrder(troModels[[6]], c(1, 3, 2, 5, 4))
 
 
 }
-\seealso{
-\code{\link{enaTroAgg}}
-}
 \author{
 Pawandeep Singh
 }
+\seealso{
+\code{\link{enaTroAgg}}
+}
+

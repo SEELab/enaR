@@ -85,6 +85,9 @@ US <- enaUtility(troModels[[6]], type = "storage", eigen.check = FALSE)
 
 
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Fath, B.D. and Patten, B.C. 1998. Network synergism: emergence
 of positive relations in ecological systems.  Ecol. Model. 107:127--143.
@@ -100,6 +103,4 @@ University Press.  New York.
 \seealso{
 \code{\link{enaFlow},\link{enaStorage},\link{enaMTI}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
+

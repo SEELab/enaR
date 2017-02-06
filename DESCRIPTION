@@ -16,7 +16,7 @@ Imports:
     gdata,
     graphics,
     stats,
-    utils    
+    utils
 Suggests:
     codetools,
     igraph,
@@ -24,4 +24,4 @@ Suggests:
 VignetteBuilder: R.rsp
 License: GPL-3
 URL: https://github.com/SEELab/enaR
-RoxygenNote: 6.0.0
+RoxygenNote: 5.0.1
