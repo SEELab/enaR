@@ -1,11 +1,4 @@
-### Reading models from the econet website
-### MKLau 31 Mar 2016
-
-
-
-
-
-
+#' ### MKLau 31Mar2016
 
 #' Access example EcoNet models from the EcoNet website.
 #' 

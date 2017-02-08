@@ -1,12 +1,4 @@
-###Function to output a model for EcoNet
-###http://eco.engr.uga.edu/DOC/econet2.html
-###MKLau 17nov2014
-
-
-
-
-
-
+#' ### MKLau 17nov2014
 
 #' Write enaR models to an EcoNet formatted file.
 #' 

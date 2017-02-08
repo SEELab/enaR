@@ -1,12 +1,4 @@
-### Reading econet models
-### 1 Mar 2016
-### mklau
-
-
-
-
-
-
+#' ### MKLau 1Mar2016
 
 #' Read an EcoNet model.
 #' 
