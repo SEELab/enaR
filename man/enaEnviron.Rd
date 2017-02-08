@@ -58,11 +58,10 @@ enaEnviron(troModels[[6]])
 
 
 }
-\author{
-Stuart R. Borrett Matthew K. Lau
-}
 \references{
 Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
 environ analysis. Environmental Modelling & Software 21:375-405.
 }
-
+\author{
+Stuart R. Borrett Matthew K. Lau
+}

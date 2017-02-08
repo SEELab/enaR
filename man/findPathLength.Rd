@@ -54,9 +54,6 @@ pl10$thresholds
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \references{
 Borrett, S.R, Patten, B.C., Whipple, S.J. 2010.  Rapid
 development of indirect effects in ecological networks.  Oikos
@@ -65,4 +62,6 @@ development of indirect effects in ecological networks.  Oikos
 \seealso{
 \code{\link{enaFlow}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

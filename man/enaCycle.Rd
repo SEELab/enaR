@@ -82,9 +82,6 @@ attributes(cyc6)
 ## 2 Repeats start. rep3,4
 ## Backtrack to prev. level
 }
-\author{
-Pawandeep Singh
-}
 \references{
 %% ~put references to the literature/web site here ~ Johnson,
 D.B. 1975. Finding all the elementary circuits of a directed graph. SIAM J.
@@ -99,4 +96,6 @@ flow networks. Environmental Software 6:131 -- 142.
 \seealso{
 \code{\link{enaTroAgg}}
 }
-
+\author{
+Pawandeep Singh
+}

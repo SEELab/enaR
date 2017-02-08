@@ -48,9 +48,6 @@ enaControl(troModels[[6]])
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett Pawandeep Singh
-}
 \references{
 Fath, B. D., Borrett, S. R. 2006. A MATLAB function for Network
 Environ Analysis.  Environmental Modelling & Software 21:375-405
@@ -78,4 +75,6 @@ analysis.  Applied Energy 138:99-107.
 \seealso{
 \code{\link{enaStorage}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett Pawandeep Singh
+}

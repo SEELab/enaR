@@ -53,9 +53,6 @@ tet
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \references{
 Gattie, D.K., Schramski, J.R., Borrett, S.R., Patten, B.C.,
 Bata, S.A., and Whipple, S.J. 2006. Indirect effects and distributed control
@@ -72,4 +69,6 @@ analysis. Ecol. Model. 206: 1--17.
 \seealso{
 \code{\link{enaEnviron}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

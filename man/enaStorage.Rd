@@ -63,9 +63,6 @@ data(oyster)
 S <- enaStorage(oyster)
 attributes(S)
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \references{
 Matis, J. H., Patten, B. C. 1981. Environ analysis of linear
 compartmental systems: the static, time invariant case.  Bulletin of the
@@ -83,6 +80,8 @@ Analysis.  Environmental Modelling & Software 21:375-405
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaFlow},\link{enaUtility}}
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \keyword{enaFlow}
 \keyword{read.scor}
-

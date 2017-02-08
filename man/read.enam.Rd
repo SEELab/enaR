@@ -33,9 +33,6 @@ compartments, number of living nodes) and then a n+2 x n+2 matrix of flows.
 This is the flow matrix with an additional row for imports and biomass each
 and additional columns for exports and respirations.
 }
-\author{
-Stuart R. Borrett
-}
 \references{
 Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 Environ Analysis.  Environ. Model. Softw. 21, 375-405.
@@ -43,4 +40,6 @@ Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 \seealso{
 \code{\link{read.scor}}
 }
-
+\author{
+Stuart R. Borrett
+}

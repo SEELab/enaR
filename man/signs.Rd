@@ -27,10 +27,9 @@ each pairwise realtionship, and a summary of the counts.
 This function is called by relationalChange, and was created to
 generate more informative output from enaUtility and enaMTI.
 }
-\author{
-Stuart R. Borrett
-}
 \seealso{
 \code{\link{relationalChange}}
 }
-
+\author{
+Stuart R. Borrett
+}
