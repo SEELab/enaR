@@ -7,17 +7,17 @@
 #' (http://eco.engr.uga.edu/), by Caner Kazanci at the University of Georgia.
 #' 
 #' 
-#' @param x The URL for the EcoNet examples.
 #' @param model.name The model to be accessed. If 'prompt' the user will be
 #' asked for the model they wish to use. Can also be a number for the model or
 #' the name of the model.
+#' @param url The URL for the EcoNet examples.
 #' @return Returns the model formatted as a network object.
 #' @author Matthew K. Lau
 #' @seealso \code{\link{read.EcoNet}}
 #' @references Kazanci, C., 2007. EcoNet: A new software for ecological
 #' modeling, simulation and network analysis, Ecol. Model., Vol 208/1 pp 3-8.
 #' @export EcoNetWeb
-EcoNetWeb <- function(x='http://eco.engr.uga.edu/Examples/examples.html',model.name='prompt'){
+EcoNetWeb <- function(model.name = 'prompt', url = 'http://eco.engr.uga.edu/Examples/examples.html'){
     x <- readLines(x)
     x <- x[1:(grep('<!-- Copy paste for new model',x)-1)]
     mod.names <- x[grep('<h2>',x)]
