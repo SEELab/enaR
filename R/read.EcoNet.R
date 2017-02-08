@@ -9,15 +9,16 @@
 #' 
 #' @param file Path to an EcoNet formatted file
 #' @param verbose LOGICAL: should warnings be suppressed?
+#' @param parse Is the file input parsed from a webpage? 
 #' @return Returns the model formatted as a network object.
 #' @author Matthew K. Lau
 #' @seealso \code{\link{EcoNetWeb}}
 #' @references Kazanci, C., 2007. EcoNet: A new software for ecological
 #' modeling, simulation and network analysis, Ecol. Model., Vol 208/1 pp 3-8.
 #' @export read.EcoNet
-read.EcoNet <- function(file = 'file path',verbose = FALSE){
+read.EcoNet <- function(file = 'file path',verbose = FALSE,parse = FALSE){
     if (!(verbose)){options(warn=-1)}
-    x <- readLines(file)
+    if (parse){x <- file}else{x <- readLines(file)}
     x <- x[!(grepl('<',x)) & grepl('=',x)]
     x <- x[!(grepl('\\#',x))]
     if (any(!(grepl('c=',x)) & grepl('=',x))){

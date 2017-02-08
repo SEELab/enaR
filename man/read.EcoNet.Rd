@@ -5,12 +5,14 @@
 \title{### MKLau 1Mar2016
 Read an EcoNet model.}
 \usage{
-read.EcoNet(file = "file path", verbose = FALSE)
+read.EcoNet(file = "file path", verbose = FALSE, parse = FALSE)
 }
 \arguments{
 \item{file}{Path to an EcoNet formatted file}
 
 \item{verbose}{LOGICAL: should warnings be suppressed?}
+
+\item{parse}{Is the file input parsed from a webpage?}
 }
 \value{
 Returns the model formatted as a network object.

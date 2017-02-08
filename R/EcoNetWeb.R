@@ -30,11 +30,11 @@ EcoNetWeb <- function(model.name = 'prompt', url = 'http://eco.engr.uga.edu/Exam
     if (model.name == 'prompt'){
         print(mod.names)
         model.name <- as.numeric(readline('Enter model number:'))
-        out <- read.EcoNet(mods[[model.name]])
+        out <- read.EcoNet(mods[[model.name]],parse = TRUE)
     }else if (is.numeric(model.name[1])){
-        out <- read.EcoNet(mods[[model.name[1]]])
+        out <- read.EcoNet(mods[[model.name[1]]],parse = TRUE)
     }else{
-        out <- read.EcoNet(mods[[agrep(model.name[1],mod.names,ignore.case=T)]])
+        out <- read.EcoNet(mods[[agrep(model.name[1],mod.names)]], parse = TRUE)
     }
     return(out)
 }
