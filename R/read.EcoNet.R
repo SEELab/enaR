@@ -7,8 +7,7 @@
 #' (http://eco.engr.uga.edu/), by Caner Kazanci at the University of Georgia.
 #' 
 #' 
-#' @param x An object with the EcoNet formatted file, which can be read into R
-#' using readLines.
+#' @param file Path to an EcoNet formatted file
 #' @param verbose LOGICAL: should warnings be suppressed?
 #' @return Returns the model formatted as a network object.
 #' @author Matthew K. Lau
@@ -16,8 +15,9 @@
 #' @references Kazanci, C., 2007. EcoNet: A new software for ecological
 #' modeling, simulation and network analysis, Ecol. Model., Vol 208/1 pp 3-8.
 #' @export read.EcoNet
-read.EcoNet <- function(x,verbose=FALSE){
+read.EcoNet <- function(file = 'file path',verbose = FALSE){
     if (!(verbose)){options(warn=-1)}
+    x <- readLines(file)
     x <- x[!(grepl('<',x)) & grepl('=',x)]
     x <- x[!(grepl('\\#',x))]
     if (any(!(grepl('c=',x)) & grepl('=',x))){
