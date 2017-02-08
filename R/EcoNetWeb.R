@@ -18,7 +18,7 @@
 #' modeling, simulation and network analysis, Ecol. Model., Vol 208/1 pp 3-8.
 #' @export EcoNetWeb
 EcoNetWeb <- function(model.name = 'prompt', url = 'http://eco.engr.uga.edu/Examples/examples.html'){
-    x <- readLines(x)
+    x <- readLines(url)
     x <- x[1:(grep('<!-- Copy paste for new model',x)-1)]
     mod.names <- x[grep('<h2>',x)]
     mod.names <- sub('<h2>','',mod.names);mod.names <- sub('</h2>','',mod.names)
