@@ -5,11 +5,10 @@
 \title{### MKLau 1Mar2016
 Read an EcoNet model.}
 \usage{
-read.EcoNet(x, verbose = FALSE)
+read.EcoNet(file = "file path", verbose = FALSE)
 }
 \arguments{
-\item{x}{An object with the EcoNet formatted file, which can be read into R
-using readLines.}
+\item{file}{Path to an EcoNet formatted file}
 
 \item{verbose}{LOGICAL: should warnings be suppressed?}
 }

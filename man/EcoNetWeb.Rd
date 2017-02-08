@@ -5,15 +5,15 @@
 \title{### MKLau 31Mar2016
 Access example EcoNet models from the EcoNet website.}
 \usage{
-EcoNetWeb(x = "http://eco.engr.uga.edu/Examples/examples.html",
-  model.name = "prompt")
+EcoNetWeb(model.name = "prompt",
+  url = "http://eco.engr.uga.edu/Examples/examples.html")
 }
 \arguments{
-\item{x}{The URL for the EcoNet examples.}
-
 \item{model.name}{The model to be accessed. If 'prompt' the user will be
 asked for the model they wish to use. Can also be a number for the model or
 the name of the model.}
+
+\item{url}{The URL for the EcoNet examples.}
 }
 \value{
 Returns the model formatted as a network object.
