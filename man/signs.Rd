@@ -7,7 +7,7 @@
 signs(x = "matrix")
 }
 \arguments{
-\item{x}{x is a square matrix of real numbers.  While this function is more
+\item{\item{x}}{a square matrix of real numbers.  While this function is more
 general, the initail intention was for this to be a utility matrix or the
 mixed trophic impacts matrix.}
 }
