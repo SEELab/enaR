@@ -6,6 +6,7 @@ Updates v2.10.0
 - Switches package documentation to Roxygen format
 - Adds ascendency metrics to network statistics in enaFlow
 - Fixes bugs in enaTroAgg
+- Adds signs function 
 - Adds average trophic length to enaTroAgg ns
 - Fixes enaStorage example
 - Fixes bug in get.ns
