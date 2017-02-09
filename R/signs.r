@@ -13,7 +13,7 @@
 #' each pairwise realtionship, and a summary of the counts.
 #' 
 #' 
-#' @param \item{x} a square matrix of real numbers.  While this function is more
+#' @param x a square matrix of real numbers.  While this function is more
 #' general, the initail intention was for this to be a utility matrix or the
 #' mixed trophic impacts matrix.
 #' @return \item{sign}{A sign matrix for matrix x.} \item{relations}{A matrix
