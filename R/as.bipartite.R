@@ -44,7 +44,7 @@
 #' 
 #' 
 #' @export as.bipartite
-as.bipartite <- function(x,y){
+as.bipartite <- function(x = 'network object',y = 'membership vector'){
     y <- factor(y)
     unpack(x)$F[y == levels(y)[1],y == levels(y)[2]]
 }

@@ -3,11 +3,6 @@
 #'## -----------------------------------------
 
 
-
-
-
-
-
 #' ## Function to order the nodes in a Network in enaR ## Singh P. | July 2014
 #' ## ----------------------------------------- ## Function to order the nodes
 #' in a Network in enaR ## Singh P. | July 2014 ##
@@ -47,7 +42,7 @@
 #' 
 #' 
 #' @export netOrder
-netOrder <- function(x,order=0) {
+netOrder <- function(x = 'network object',order = 0) {
     if (class(x) != "network") {
         stop("x is not a network class object")
     }
