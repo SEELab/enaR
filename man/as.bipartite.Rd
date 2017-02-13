@@ -16,7 +16,7 @@ bipartite package INPUT = network model OUTPUT = matrix representation M.
 Lau July 2015 --------------------------------------------------- Create a
 bipartite network.}
 \usage{
-as.bipartite(x, y)
+as.bipartite(x = "network object", y = "membership vector")
 }
 \arguments{
 \item{x}{A network object.}

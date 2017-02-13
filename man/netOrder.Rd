@@ -10,7 +10,7 @@
 in a Network in enaR ## Singh P. | July 2014 ##
 ----------------------------------------- Reorder Nodes in a Network in enaR}
 \usage{
-netOrder(x, order = 0)
+netOrder(x = "network object", order = 0)
 }
 \arguments{
 \item{x}{A network object. This includes all weighted flows into and out of
