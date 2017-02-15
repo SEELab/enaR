@@ -175,7 +175,7 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
 
   ## Total Flows (Szyrmer & Ulanowicz 1987) as implimented in Kay, Graham, & Ulanowicz 1989 "A detailed guide to netwokr analysis"
 
-  TF.in <- (NP-I) %*% ginv(diag(diag(NP))) %*% diag(T.) # total flows - inputs
+  TF.in <- ((t(NP)-I) %*% ginv(diag(diag(t(NP))))) %*% diag(T.) # total flows - inputs
   TCC <- ginv(diag(T.)) %*% TF.in                       # total contribution coefficients
 
   TF.out <-(N-I) %*% ginv(diag(diag(N))) %*% diag(T.)   # total flows - ouptuts
