@@ -13,21 +13,21 @@
 
 #' enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
 #' statistics
-#' 
+#'
 #' M. Lau | July 2011 ---------------------------------------------------
 #' enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
 #' statistics
-#' 
+#'
 #' M. Lau | July 2011 --------------------------------------------------- Flow
 #' Analyses of Ecological Networks
-#' 
+#'
 #' Performs the primary throughflow analysis developed for input-output
 #' systems.  It returns a vector of throughflows, the input and output oriented
 #' matrices for "direct flow intensities" and "integral flow intensities", and
 #' a set of flow based network statistics.  Included in the network statistics
 #' are a set of measures that describe the diversity of flows in the ecosystem
 #' (Ulanowicz's Ascendendy measures).
-#' 
+#'
 #' @param x a network object.  This includes all weighted flows into and out of
 #' each node.
 #' @param zero.na LOGICAL: should NA values be converted to zeros.
@@ -82,38 +82,38 @@
 #' \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
 #' @references Borrett, S. R., Freeze, M. A., 2011. Reconnecting environs to
 #' their environment. Ecol. Model. 222, 2393-2403.
-#' 
+#'
 #' Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network Environ
 #' Analysis.  Environ. Model. Softw. 21, 375-405.
-#' 
+#'
 #' Fath, B. D., Patten, B. C., 1999. Review of the foundations of network
 #' environ analysis. Ecosystems 2, 167-179.
-#' 
+#'
 #' Finn, J. T., 1976. Measures of ecosystem structure and function derived from
 #' analysis of flows. J. Theor. Biol. 56, 363-380.
-#' 
+#'
 #' Patten, B.C. Higashi, M., Burns, T. P. 1990. Trophic dynamics in ecosystem
 #' networks: significance of cycles and storage.  Ecol. Model. 51, 1-28.
-#' 
+#'
 #' Schramski, J. R., Kazanci, C., Tollner, E. W., 2011. Network environ theory,
 #' simulation and EcoNet 2.0. Environ. Model. Softw. 26, 419-428.
-#' 
+#'
 #' Ulanowicz, R.E., 2004. Quantitative methods for ecological network analysis.
 #' Comput. Biol. Chem. 28, 321-33
-#' 
+#'
 #' Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem trophic
 #' complexity: insights from ecological network analysis.  Ecology Letters
 #' 17:127-136.
 #' @examples
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' data(troModels)
 #' F = enaFlow(troModels[[6]])  # completes the full analysis
 #' F$ns  # returns just the network statisics
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' @importFrom MASS ginv
 #' @import network
 #' @importFrom stats sd
@@ -161,7 +161,15 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
   NP <- round(NP,tol)
 
 
-  ## Network Statistics
+  ## Total Flows (Szyrmer & Ulanowicz 1987) as implimented in Kay, Graham, & Ulanowicz 1989 "A detailed guide to netwokr analysis"
+
+  TF.in <- (NP-I) %*% ginv(diag(diag(NP))) %*% diag(T.) # total flows - inputs
+  TCC <- ginv(diag(T.)) %*% TF.in                       # total contribution coefficients
+
+  TF.out <-(N-I) %*% ginv(diag(diag(N))) %*% diag(T.)   # total flows - ouptuts
+  TDC <- ginv(diag(T.)) %*% TF.out
+
+  ## Network Statistics ---------------------------------------------
   TST <- sum(T.)  # total system throughflow
   TSTp <- sum(Flow) + sum(x%v%'input') + sum(x%v%'output') # total system throughput
 
@@ -205,6 +213,8 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
       GP <- t(GP)
       N <- t(N)
       NP <- t(NP)
+      TCC <- t(TCC)
+      TDC <- t(TDC)
   }
 
 
@@ -218,7 +228,7 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
               mode0.F,mode1.F,mode2.F,mode3.F,mode4.F, asc)
 
                                         #output
-  return(list('T'=T.,'G'=G,'GP'=GP,'N'=N,'NP'=NP,'ns'=ns))
+  return(list('T'=T.,'G'=G,'GP'=GP,'N'=N,'NP'=NP, 'TCC'=TCC, 'TDC'=TDC, 'ns'=ns))
 }
 
 
