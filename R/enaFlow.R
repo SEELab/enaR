@@ -225,7 +225,6 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
       GP <- t(GP)
       N <- t(N)
       NP <- t(NP)
-      TCC <- t(TCC)
       TDC <- t(TDC)
   }
 
