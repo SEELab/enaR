@@ -34,49 +34,59 @@
 #' @param balance.override Flow analysis assumes the network model is at
 #' steady-state (inputs = outputs).  Setting balance.override = TRUE allows the
 #' function to be run on unbalanced models.
-#' @return \item{T}{vector of node throughflows - total amount of energy-matter
-#' flowing into or out of each node} \item{G}{matrix of the output oriented
-#' direct flow intensities} \item{GP}{matrix of the input oriented direct flow
-#' intensities} \item{N}{matrix of the ouput oriented integral
-#' (boundary+direct+indirect) flow intensities} \item{NP}{matrix of the input
-#' oriented integral flow intensities} \item{ns}{vector of flow based network
-#' statistics.  These include "Boundary" the total input into or output from
-#' the system, "TST" the total system throughflow, "TSTp" total system
-#' throughPUT,"APL" is the network aggradation TST/Boundary which is also
-#' called average path length, "FCI" (Finn Cycling Index) is a metric of the
-#' amount of cycling in a system, "BFI" is the boundary flow intensity
-#' Boundary/TST, "DFI" is the direct flow intensity Direct/TST, "IFI" is the
-#' indirect flow intensity Indirect/TST, "ID.F" is the realized indirect to
-#' direct flow intensity, "ID.F.I" is the input idealized indirect flow
-#' intensity, "id.F.O"is the output idealized indirect flow intensity, "HMG.I"
-#' is the input network homogenization, "HMG.O" is the output network
-#' homogenization, "AMP.I" is the strong measure of input network amplifiation,
-#' "AMP.O" is the strong measure of output network amplification, "mode0.F" is
-#' the boundary flow - flow that reaches a compartment from across the system
-#' boundary, "mode1.F" is internal first passage flow, "mode2.F" is cycled
-#' flow, "mode3.F" is the dissipative eqivalent to mode2, and "mode4.F" is the
-#' dissipative equivalent ot mode0. "H" is the total flow diversity (MacArthur
-#' 1955).  Uses the Shannon Information measure (aka Boltzmann entropy) applied
-#' to the individual flows, "AMI", is the Average Mutual Information (AMI) in a
-#' network. "Hr", is the residual uncertainty that remains about the flow
-#' distribution once the ecosystem structure is specified (Hr = H - AMI),
-#' "ASC", Returns the ascendnecy of a network, "OH", is the overhead of a
-#' network (Ulanowicz 2004), "CAP", is the capacity of a network, "ACS.CAP", is
-#' the proportion of capacity used by ascendency, "OH.CAP", Returns the
-#' proportion of capacity used by overhead, "robustness", is the robustness of
-#' the network, "ELD" Returns the Effective Link Density of the network(c)
-#' (Ulanowicz et al. 2014), "TD", Returns the Trophic Depth of the network(r)
-#' (Ulanowicz et al. 2014), "A.input", Returns the input ascendnecy of a
-#' network, "A.internal", Returns the internal ascendnecy of a network,
-#' "A.export", Returns the export ascendnecy of a network, "A.respiration",
-#' Returns the respiration ascendnecy of a network, "OH.input", Returns the
-#' input overhead of a network, "OH.internal", Returns the internal overhead of
-#' a network, "OH.export", Returns the export overhead of a network,
-#' "OH.respiration", Returns the respiration overhead of a network,
-#' "CAP.input", Returns the input capacity of a network, "CAP.internal",
-#' Returns the internal capacity of a network, "CAP.export", Returns the export
-#' capacity of a network, "CAP.respiration", Returns the respiration capacity
-#' of a network}
+#' @return \item{T}{vector of node throughflows - total amount of
+#' energy-matter flowing into or out of each node} \item{G}{matrix of
+#' the output oriented direct flow intensities} \item{GP}{matrix of
+#' the input oriented direct flow intensities} \item{N}{matrix of the
+#' ouput oriented integral (boundary+direct+indirect) flow
+#' intensities} \item{NP}{matrix of the input oriented integral flow
+#' intensities} \item{TCC}{matrix of total contribution coefficients
+#' (Szyrmer & Ulanowicz 1986).  The elements of TCC indicate the
+#' fraction of total output of i whihc reaches j} \item{TDC}{matrix of
+#' total dependency coefficients (Szyrmer & Ulanowicz 1986).  The
+#' elements of TDC indicate the fraction j's total consuption which
+#' passes through i} \item{ns}{vector of flow based network
+#' statistics.  These include "Boundary" the total input into or
+#' output from the system, "TST" the total system throughflow, "TSTp"
+#' total system throughPUT,"APL" is the network aggradation
+#' TST/Boundary which is also called average path length, "FCI" (Finn
+#' Cycling Index) is a metric of the amount of cycling in a system,
+#' "BFI" is the boundary flow intensity Boundary/TST, "DFI" is the
+#' direct flow intensity Direct/TST, "IFI" is the indirect flow
+#' intensity Indirect/TST, "ID.F" is the realized indirect to direct
+#' flow intensity, "ID.F.I" is the input idealized indirect flow
+#' intensity, "id.F.O"is the output idealized indirect flow intensity,
+#' "HMG.I" is the input network homogenization, "HMG.O" is the output
+#' network homogenization, "AMP.I" is the strong measure of input
+#' network amplifiation, "AMP.O" is the strong measure of output
+#' network amplification, "mode0.F" is the boundary flow - flow that
+#' reaches a compartment from across the system boundary, "mode1.F" is
+#' internal first passage flow, "mode2.F" is cycled flow, "mode3.F" is
+#' the dissipative eqivalent to mode2, and "mode4.F" is the
+#' dissipative equivalent ot mode0. "H" is the total flow diversity
+#' (MacArthur 1955).  Uses the Shannon Information measure (aka
+#' Boltzmann entropy) applied to the individual flows, "AMI", is the
+#' Average Mutual Information (AMI) in a network. "Hr", is the
+#' residual uncertainty that remains about the flow distribution once
+#' the ecosystem structure is specified (Hr = H - AMI), "ASC", Returns
+#' the ascendnecy of a network, "OH", is the overhead of a network
+#' (Ulanowicz 2004), "CAP", is the capacity of a network, "ACS.CAP",
+#' is the proportion of capacity used by ascendency, "OH.CAP", Returns
+#' the proportion of capacity used by overhead, "robustness", is the
+#' robustness of the network, "ELD" Returns the Effective Link Density
+#' of the network(c) (Ulanowicz et al. 2014), "TD", Returns the
+#' Trophic Depth of the network(r) (Ulanowicz et al. 2014), "A.input",
+#' Returns the input ascendnecy of a network, "A.internal", Returns
+#' the internal ascendnecy of a network, "A.export", Returns the
+#' export ascendnecy of a network, "A.respiration", Returns the
+#' respiration ascendnecy of a network, "OH.input", Returns the input
+#' overhead of a network, "OH.internal", Returns the internal overhead
+#' of a network, "OH.export", Returns the export overhead of a
+#' network, "OH.respiration", Returns the respiration overhead of a
+#' network, "CAP.input", Returns the input capacity of a network,
+#' "CAP.internal", Returns the internal capacity of a network,
+#' "CAP.export", Returns the export capacity of a network,
+#' "CAP.respiration", Returns the respiration capacity of a network}
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso
 #' \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
@@ -97,6 +107,8 @@
 #'
 #' Schramski, J. R., Kazanci, C., Tollner, E. W., 2011. Network environ theory,
 #' simulation and EcoNet 2.0. Environ. Model. Softw. 26, 419-428.
+#'
+#' Szyrmer, J., Ulanowicz, R. E., 1986. "Total Flows in Ecosystems". Ecol. Mod. 35:123-136.
 #'
 #' Ulanowicz, R.E., 2004. Quantitative methods for ecological network analysis.
 #' Comput. Biol. Chem. 28, 321-33
