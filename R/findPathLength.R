@@ -99,7 +99,7 @@ findPathLength <- function(x, maxPath=100, plot.sw=FALSE){
     par(opar)
     rm(opar)
   }
-  thresholds <- c("mID"=mID,"m50"=m50,"m90"=m80,"m95"=m95)
+  thresholds <- c("mID"=mID,"m50"=m50,"m80"=m80,"m95"=m95)
  return(list("thresholds"=thresholds,"tf"=tf,"ctf"=ctf))
 
 }
