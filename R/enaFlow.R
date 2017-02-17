@@ -41,9 +41,9 @@
 #' ouput oriented integral (boundary+direct+indirect) flow
 #' intensities} \item{NP}{matrix of the input oriented integral flow
 #' intensities} \item{TCC}{matrix of total contribution coefficients
-#' (Szyrmer & Ulanowicz 1986).  The elements of TCC indicate the
+#' (Szyrmer & Ulanowicz 1987).  The elements of TCC indicate the
 #' fraction of total output of i whihc reaches j} \item{TDC}{matrix of
-#' total dependency coefficients (Szyrmer & Ulanowicz 1986).  The
+#' total dependency coefficients (Szyrmer & Ulanowicz 1987).  The
 #' elements of TDC indicate the fraction j's total consuption which
 #' passes through i} \item{ns}{vector of flow based network
 #' statistics.  These include "Boundary" the total input into or
@@ -108,7 +108,7 @@
 #' Schramski, J. R., Kazanci, C., Tollner, E. W., 2011. Network environ theory,
 #' simulation and EcoNet 2.0. Environ. Model. Softw. 26, 419-428.
 #'
-#' Szyrmer, J., Ulanowicz, R. E., 1986. "Total Flows in Ecosystems". Ecol. Mod. 35:123-136.
+#' Szyrmer, J., Ulanowicz, R. E., 1987. "Total Flows in Ecosystems". Ecol. Mod. 35:123-136.
 #'
 #' Ulanowicz, R.E., 2004. Quantitative methods for ecological network analysis.
 #' Comput. Biol. Chem. 28, 321-33
