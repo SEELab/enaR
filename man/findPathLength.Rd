@@ -2,7 +2,7 @@
 % Please edit documentation in R/findPathLength.R
 \name{findPathLength}
 \alias{findPathLength}
-\title{findPathLength --- calculates the flows over a 
+\title{findPathLength --- calculates the flows over a
 sequence up to a maximum path length
 INPUT = network object
 OUTPUT = a list of flow statistics over paths}
@@ -32,8 +32,7 @@ findPathLength --- calculates the flows over a sequence up to a maximum path
 length INPUT = network object OUTPUT = a list of flow statistics over paths
 }
 \details{
-S. Borrett and M. Lau | July 2011
---------------------------------------------------- findPathLength ---
+--- findPathLength ---
 calculates the flows over a sequence up to a maximum path length INPUT =
 network object OUTPUT = a list of flow statistics over paths
 
