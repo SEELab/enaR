@@ -15,21 +15,21 @@
 
 #' enaAscendency --- calculates the ascendency statistics of Ulanowicz INPUT =
 #' network object OUTPUT = matrix of ascendency statistics
-#' 
+#'
 #' D. Hines | December 2011 S.R. Borrett | May 2016 - updates
 #' --------------------------------------------------- enaAscendency ---
 #' calculates the ascendency statistics of Ulanowicz INPUT = network object
 #' OUTPUT = matrix of ascendency statistics
-#' 
+#'
 #' D. Hines | December 2011 S.R. Borrett | May 2016 - updates
 #' --------------------------------------------------- Calculates the
 #' Ascendency of an Ecological Network
-#' 
+#'
 #' Calculates the average mutual information (AMI), ascendency, overhead, and
 #' capacity of input-output networks.  It also returns the ratios of ascendency
 #' and overhead to capacity. These metrics describe the organization of flow in
 #' an ecological network (Ulanowicz 1997).
-#' 
+#'
 #' @param x A network object.
 #' @return \item{H}{Total flow diversity (MacArthur 1955).  Uses the Shannon
 #' Information measure (aka Boltzmann entropy) applied to the individual flows.
@@ -70,20 +70,20 @@
 #' to network analysis. p. 15-61 In: Wulff, F., Field, J.G., Man, K.H. (eds.)
 #' Network analysis in marine ecology. Coastal Estuarine Study Serries.
 #' Springer-Verlag, Berlin.
-#' 
+#'
 #' Patrico, J., Ulanowicz, R.E., Pardal, M.A., Marques J.C., 2004. Ascendency
 #' as an ecological indicator: a case study of estuarine pulse eutrophication.
 #' Estuar. Coast Shelf S. 60, 23-35.
-#' 
+#'
 #' Ulanowicz, R.E. and Norden, J.S., 1990. Symmetrical overhead in flow
 #' networks. International Journal of Systems Science, 21(2), pp.429-437.
-#' 
+#'
 #' Ulanowicz, R.E., 1997. Ecology, The Ascendent Perspective. Columbia
 #' University Press, New York.
-#' 
+#'
 #' Ulanowicz, R.E., 2004. Quantitative methods for ecological network analysis.
 #' Comput. Biol. Chem. 28, 321-33
-#' 
+#'
 #' Ulanowicz, R.E., Holt, R.D., Barfield, M., 2014. Limits on ecosystem trophic
 #' complexity: insights from ecological network analysis. Ecology Letters
 #' 17:127-136
@@ -95,12 +95,12 @@ enaAscendency <- function(x='network object'){
     if (class(x) != 'network'){warning('x is not a network class object')}
 
 
-    if (any(is.na(x%v%'export'))){
-        warning('Export data is absent from the model.')
-    }
-    if(any(is.na(x%v%'respiration'))){
-           warning('Respiration data is absent from the model.')
-   }
+#    if (any(is.na(x%v%'export'))){
+#        warning('Export data is absent from the model.')
+#    }
+#    if(any(is.na(x%v%'respiration'))){
+#           warning('Respiration data is absent from the model.')
+#   }
 
 ####### set initial conditions for calculations #########
   T.ulan <- as.extended(x)
