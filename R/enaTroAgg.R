@@ -74,6 +74,7 @@
 #'
 #'
 #' @export enaTroAgg
+#' @import network
 enaTroAgg <- function (x){
   if (class(x) != "network") {
     stop("x is not a network class object")

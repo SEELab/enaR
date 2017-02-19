@@ -75,6 +75,7 @@
 #' 
 #' @importFrom MASS ginv
 #' @export enaMTI
+#' @import network
 enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}

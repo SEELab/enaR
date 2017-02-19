@@ -88,6 +88,7 @@
 #' 
 #' @importFrom MASS ginv
 #' @export enaUtility
+#' @import network
 enaUtility <- function(x, type=c('flow','storage'),
                        eigen.check=TRUE,
                        balance.override=FALSE,tol=10){

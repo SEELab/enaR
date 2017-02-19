@@ -50,6 +50,7 @@
 #' 
 #' 
 #' @export enaEnviron
+#' @import network
 enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){
                                         #check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}

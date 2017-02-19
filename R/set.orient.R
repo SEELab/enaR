@@ -55,6 +55,7 @@
 #' 
 #' 
 #' @export set.orient
+#' @import network
 set.orient <- local({
   orientation <- 'rc'
   warn <- ''

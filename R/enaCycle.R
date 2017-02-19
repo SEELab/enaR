@@ -85,7 +85,8 @@
 #' ## 2 Repeats start. rep3,4
 #' ## Backtrack to prev. level
 #' 
-enaCycle <- function (x) {
+#' @import network
+enaCycle <- function(x){
 
                                         #Initials
 

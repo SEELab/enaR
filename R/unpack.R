@@ -43,6 +43,7 @@
 #' 
 #' 
 #' @export unpack
+#' @import network
 unpack <- function(x='network object'){
   flow <- as.matrix(x, attrname = 'flow')
   input <- x%v%'input'

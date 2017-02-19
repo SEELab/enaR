@@ -130,6 +130,7 @@
 #' @import network
 #' @importFrom stats sd
 #' @export enaFlow
+#' @import network
 enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}

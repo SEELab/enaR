@@ -42,6 +42,7 @@
 #' 
 #' 
 #' @export netOrder
+#' @import network
 netOrder <- function(x = 'network object',order = 0) {
     if (class(x) != "network") {
         stop("x is not a network class object")

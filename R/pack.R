@@ -28,6 +28,7 @@
 #' @return Returns a network object for the supplied model.
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso \code{\link{unpack}}
+#' @import network
 #' @export pack
 pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
                                         #Warn if missing both

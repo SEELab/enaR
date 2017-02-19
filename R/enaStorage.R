@@ -84,6 +84,7 @@
 #' data(oyster)
 #' S <- enaStorage(oyster)
 #' attributes(S)
+#' @import network
 enaStorage <- function(x,balance.override=FALSE){
                                         #Missing Data Check
   if (any(is.na(x%v%'storage'))){

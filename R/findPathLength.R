@@ -52,6 +52,7 @@
 #' @importFrom graphics par
 #' @importFrom graphics plot
 #' @importFrom graphics points
+#' @import network
 #' @export findPathLength
 findPathLength <- function(x, maxPath=100, plot.sw=FALSE){
   ##

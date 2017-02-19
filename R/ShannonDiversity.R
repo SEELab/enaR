@@ -63,6 +63,7 @@
 #' ## storage (biomass) biodiversity
 #' ## X <- oyster %v% "storage"
 #' ## ShannonDiversity(X)
+#' @import network
 ShannonDiversity <-  function(x){
     p <- x/sum(x)  # relative proportion
     H <- -1 * sum(p * log(p) )  # results in nats (using natural log)  # Shannon Diversity

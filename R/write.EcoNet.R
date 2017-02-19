@@ -19,6 +19,7 @@
 #' Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT
 #' Press.
 #' @export write.EcoNet
+#' @import network
 write.EcoNet <- function(x = 'model',file = 'file path',mn = 'ena_model',zero.flows = FALSE){
     x <- unpack(x)
 ###node names

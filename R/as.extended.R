@@ -54,6 +54,7 @@
 #' 
 #' 
 #' @export as.extended
+#' @import network
 as.extended <- function(x,zero.na=TRUE){
                                         #Check for network class object
   if (class(x) != "network"){warning('x is not a network class object')}

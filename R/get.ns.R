@@ -41,7 +41,7 @@
 #' get.ns(troModels[[6]])
 #' 
 #' 
-#' 
+#' @import network
 #' @export get.ns
 get.ns <- function(x,balance.override=FALSE){
                                         #Check for network class

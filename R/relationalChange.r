@@ -34,6 +34,7 @@
 #' @note This function is called by enaUtility and enaMTI to summarize results.
 #' @author Stuart R. Borrett
 #' @seealso \code{\link{enaUtility}, \link{enaMTI}, \link{signs}}
+#' @import network
 relationalChange <- function(x = "Direct.U",y  = "Integral.U"){
     vnames <- rownames(x)
     S1 <- signs(x)    # find the signs of the relationships in the direct utility matrix

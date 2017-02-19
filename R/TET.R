@@ -60,6 +60,7 @@
 #' 
 #' 
 #' @export TET
+#' @import network
 TET <- function(x,balance.override=FALSE){
 
                                         #Check for network class

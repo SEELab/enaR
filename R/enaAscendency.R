@@ -91,6 +91,7 @@
 #' @examples
 #' data(troModels)
 #' enaAscendency(troModels[[6]])
+#' @import network
 enaAscendency <- function(x='network object'){
     if (class(x) != 'network'){warning('x is not a network class object')}
 

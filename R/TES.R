@@ -49,6 +49,7 @@
 #' 
 #' 
 #' @export TES
+#' @import network
 TES <- function(x,balance.override=FALSE){
 
                                         #Check for network class
