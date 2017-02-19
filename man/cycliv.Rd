@@ -62,6 +62,9 @@ by the cycles for the next nexus.
 The analysis requires all the non-living nodes to be placed at the end in
 the network object.
 }
+\author{
+Pawandeep Singh
+}
 \references{
 %% ~put references to the literature/web site here ~ Johnson,
 D.B. 1975. Finding all the elementary circuits of a directed graph. SIAM J.
@@ -72,14 +75,8 @@ Methematical Biosciences 65:219--237
 
 Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem
 flow networks. Environmental Software 6:131 -- 142.
-##-----------------------------------------------------------------
-##-----------------------------------------------------------------
-## 2 Repeats start. rep3,4
-## Backtrack to prev. level
 }
 \seealso{
 \code{\link{enaTroAgg}, \link{enaCycle}, \link{netOrder}}
 }
-\author{
-Pawandeep Singh
-}
+

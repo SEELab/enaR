@@ -68,6 +68,9 @@ data(oyster)
 S <- enaStorage(oyster)
 attributes(S)
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Barber, M. C. 1978a. A Markovian Model for Ecosystem Flow Analysis. Ecol. Model. 5(3):193–206.
 
@@ -91,8 +94,6 @@ Analysis.  Environmental Modelling & Software 21:375-405
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaFlow},\link{enaUtility}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \keyword{enaFlow}
 \keyword{read.scor}
+

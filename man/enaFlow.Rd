@@ -105,6 +105,9 @@ F$ns  # returns just the network statisics
 
 
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Borrett, S. R., Freeze, M. A., 2011. Reconnecting environs to
 their environment. Ecol. Model. 222, 2393-2403.
@@ -136,6 +139,4 @@ complexity: insights from ecological network analysis.  Ecology Letters
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
+
