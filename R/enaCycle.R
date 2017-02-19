@@ -17,14 +17,14 @@
 #' package for the Analysis of Ecosystem Flow Networks ##
 #' ----------------------------------------------- Full Cycle Analysis of
 #' Ecological Networks
-#' 
+#'
 #' It performs the full cycle analysis on the network based on the algorithm
 #' described in Ulanowicz (1983) and implemented in NETWRK 4.2b. It returns
 #' data.frames with details of the simple cycles and nexus, vectors of Cycle
 #' distributions and Normalized distribution and matrices of Residual Flows and
 #' Aggregated Cycles.
-#' 
-#' 
+#'
+#'
 #' @param x a network object.  This includes all weighted flows into and out of
 #' each node.
 #' @return \item{Table.cycle}{data.frame that presents the details of the
@@ -47,18 +47,18 @@
 #' detected in the network and "CI" the cycling index of the network.}
 #' @note The "NODES" in "Table.cycle" are arranged such that the weak arc for
 #' the nexus is the arc between the first two nodes of the cycle.
-#' 
+#'
 #' This function uses the backtracking procedure for the identification of
 #' simple cycles, which are cycles that cross a node only once except the
 #' starting node. The backtracking process is a depth-first search algorithm.
-#' 
+#'
 #' In the data.frame "Table.cycle", if the number of cycles in a nexus is more
 #' than 50, then a blank line is displayed after 50 cycles of the nexus,
 #' followed by the cycles of the next nexus.
-#' 
+#'
 #' The results of the analysis of Feeding Cycles can be obtained as a byproduct
 #' of the enaTroAgg function that analyzes the trophic dynamics of a network.
-#' 
+#'
 #' At every multiple of 5000 cycles in a nexus, the program prints an
 #' indication for the user to know that it is still running.
 #' @author Pawandeep Singh
@@ -66,17 +66,14 @@
 #' @references %% ~put references to the literature/web site here ~ Johnson,
 #' D.B. 1975. Finding all the elementary circuits of a directed graph. SIAM J.
 #' Comput. 4:77--84
-#' 
+#'
 #' Ulanowicz, R.E. 1983. Identifying the structure of cycling in ecosystems.
 #' Methematical Biosciences 65:219--237
-#' 
+#'
 #' Ulanowicz, R.E. and Kay, J.J. 1991. A package for the analysis of ecosystem
 #' flow networks. Environmental Software 6:131 -- 142.
-#' @export enaCycle
 #' @examples
-#' 
-#' 
-#' 
+#'
 #' data(troModels)
 #' cyc6 <- enaCycle(troModels[[6]])
 #' attributes(cyc6)
@@ -84,8 +81,11 @@
 #' ##-----------------------------------------------------------------
 #' ## 2 Repeats start. rep3,4
 #' ## Backtrack to prev. level
-#' 
+#'
+#' @export enaCycle
 #' @import network
+
+
 enaCycle <- function(x){
 
                                         #Initials
