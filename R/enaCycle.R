@@ -77,13 +77,10 @@
 #' data(troModels)
 #' cyc6 <- enaCycle(troModels[[6]])
 #' attributes(cyc6)
-#' ##-----------------------------------------------------------------
-#' ##-----------------------------------------------------------------
-#' ## 2 Repeats start. rep3,4
-#' ## Backtrack to prev. level
 #'
 #' @export enaCycle
 #' @import network
+#'
 
 
 enaCycle <- function(x){
@@ -103,13 +100,13 @@ enaCycle <- function(x){
     TST <- sum(web)+sum(y)+sum(z)
     df<-data.frame(NULL)
     df.cycle<-data.frame(0,0,'cycle', stringsAsFactors=FALSE)
-#'##-----------------------------------------------------------------
+###-----------------------------------------------------------------
 
                                         #Zero Global Variables
     NFST <- NEXNUM <- NCYC <- 0
     CYCS <- rep(0,N)
 
-#'##-----------------------------------------------------------------
+###-----------------------------------------------------------------
 
                                         #Start primary repeat loop
     repeat {
@@ -294,7 +291,7 @@ enaCycle <- function(x){
                         LEVEL       <- LEVEL+1
                         NODE[LEVEL] <- 1
                     }
-#'## 2 Repeats start. rep3,4
+### 2 Repeats start. rep3,4
                     repeat { #rep3
                         repeat { #rep4
                             ## Check for conn. b/w nodes at prsnt levels
@@ -321,7 +318,7 @@ enaCycle <- function(x){
                             conn.chk <- FALSE
                             break #rep3
                         }
-#'## Backtrack to prev. level
+                        # Backtrack to prev. level
                         LEVEL <- LEVEL-1
                         LM1   <- LEVEL-1
                         ## if further backtracking is impossible,
