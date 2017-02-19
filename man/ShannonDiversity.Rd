@@ -72,4 +72,3 @@ ShannonDiversity(T)
 \author{
 Stuart R. Borrett
 }
-

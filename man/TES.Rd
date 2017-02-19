@@ -49,9 +49,6 @@ tes
 
 
 }
-\author{
-Matthew K. Lau Stuart R. Borrett David E. Hines
-}
 \references{
 Matis, J.H. and Patten, B.C. 1981.  Environ analysis of linear
 compartmenal systems: the static, time invariant case.  Bulletin of the
@@ -61,4 +58,6 @@ International Statistical Institute. 48, 527--565.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 \code{\link{enaStorage},\link{enaEnviron}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett David E. Hines
+}

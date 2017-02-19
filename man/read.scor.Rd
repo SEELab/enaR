@@ -45,9 +45,6 @@ of nodes and the number of living nodes, respectively. Thus, if the total
 number of nodes is 10 and the number of living nodes is 1, then the second
 line should read, " 10 1."
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \references{
 Ulanowicz, R.E. and J.J. Kay. 1991. A package for the analysis
 of ecosystem flow networks. Environmental Software 6:131-142.
@@ -55,4 +52,6 @@ of ecosystem flow networks. Environmental Software 6:131-142.
 Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network Environ
 Analysis.  Environ. Model. Softw. 21, 375-405.
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

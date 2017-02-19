@@ -26,13 +26,12 @@ be input at http://eco.engr.uga.edu.
 Creates an EcoNet model from an enaR network object that can be used with
 the online interface for EcoNet.
 }
-\author{
-Matthew K. Lau
-}
 \references{
 About EcoNet (http://eco.engr.uga.edu/DOC/econet1.html)
 
 Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT
 Press.
 }
-
+\author{
+Matthew K. Lau
+}

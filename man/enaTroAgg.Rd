@@ -72,9 +72,6 @@ attributes(tro6)
 
 
 }
-\author{
-Pawandeep Singh
-}
 \references{
 %% ~put references to the literature/web site here ~ Lindeman,
 R.L. 1942. The trophic-dynamic aspect of ecology. Ecology 23:399--418.
@@ -92,4 +89,6 @@ flow networks. Environmental Software 6:131 -- 142.
 \seealso{
 \code{\link{enaCycle}, \link{netOrder}}
 }
-
+\author{
+Pawandeep Singh
+}

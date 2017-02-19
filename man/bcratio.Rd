@@ -16,9 +16,6 @@ matrix.
 \description{
 Dependent function for the enaUtility function.
 }
-\author{
-Stuart R. Borrett
-}
 \references{
 Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
 environ analysis. Environmental Modelling & Software 21:375-405.
@@ -26,4 +23,6 @@ environ analysis. Environmental Modelling & Software 21:375-405.
 \seealso{
 \code{\link{enaUtility}}
 }
-
+\author{
+Stuart R. Borrett
+}

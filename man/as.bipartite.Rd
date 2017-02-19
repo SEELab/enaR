@@ -52,4 +52,3 @@ as.bipartite(oyster, gl(2, 3))
 \author{
 Matthew K. Lau
 }
-
