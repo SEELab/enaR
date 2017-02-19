@@ -67,15 +67,9 @@ indication for the user to know that it is still running.
 }
 \examples{
 
-
-
 data(troModels)
 cyc6 <- enaCycle(troModels[[6]])
 attributes(cyc6)
-##-----------------------------------------------------------------
-##-----------------------------------------------------------------
-## 2 Repeats start. rep3,4
-## Backtrack to prev. level
 
 }
 \references{
