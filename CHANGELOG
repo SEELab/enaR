@@ -1,5 +1,7 @@
 Updates v2.10.0
 
+- Updates enaR-vignette.pdf
+- Adds support for bipartite
 - Adds ShannonDiversity function
 - Adds Relations.Table to enaUtility and enaMTI
 - Adjusts NAMESPACE and dependencies to meet current CRAN standards
