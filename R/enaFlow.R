@@ -7,10 +7,6 @@
 
 
 
-
-
-
-
 #' enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
 #' statistics
 #'
@@ -24,9 +20,7 @@
 #' Performs the primary throughflow analysis developed for input-output
 #' systems.  It returns a vector of throughflows, the input and output oriented
 #' matrices for "direct flow intensities" and "integral flow intensities", and
-#' a set of flow based network statistics.  Included in the network statistics
-#' are a set of measures that describe the diversity of flows in the ecosystem
-#' (Ulanowicz's Ascendendy measures).
+#' a set of flow based network statistics.
 #'
 #' @param x a network object.  This includes all weighted flows into and out of
 #' each node.
@@ -63,30 +57,7 @@
 #' reaches a compartment from across the system boundary, "mode1.F" is
 #' internal first passage flow, "mode2.F" is cycled flow, "mode3.F" is
 #' the dissipative eqivalent to mode2, and "mode4.F" is the
-#' dissipative equivalent ot mode0. "H" is the total flow diversity
-#' (MacArthur 1955).  Uses the Shannon Information measure (aka
-#' Boltzmann entropy) applied to the individual flows, "AMI", is the
-#' Average Mutual Information (AMI) in a network. "Hr", is the
-#' residual uncertainty that remains about the flow distribution once
-#' the ecosystem structure is specified (Hr = H - AMI), "ASC", Returns
-#' the ascendnecy of a network, "OH", is the overhead of a network
-#' (Ulanowicz 2004), "CAP", is the capacity of a network, "ACS.CAP",
-#' is the proportion of capacity used by ascendency, "OH.CAP", Returns
-#' the proportion of capacity used by overhead, "robustness", is the
-#' robustness of the network, "ELD" Returns the Effective Link Density
-#' of the network(c) (Ulanowicz et al. 2014), "TD", Returns the
-#' Trophic Depth of the network(r) (Ulanowicz et al. 2014), "A.input",
-#' Returns the input ascendnecy of a network, "A.internal", Returns
-#' the internal ascendnecy of a network, "A.export", Returns the
-#' export ascendnecy of a network, "A.respiration", Returns the
-#' respiration ascendnecy of a network, "OH.input", Returns the input
-#' overhead of a network, "OH.internal", Returns the internal overhead
-#' of a network, "OH.export", Returns the export overhead of a
-#' network, "OH.respiration", Returns the respiration overhead of a
-#' network, "CAP.input", Returns the input capacity of a network,
-#' "CAP.internal", Returns the internal capacity of a network,
-#' "CAP.export", Returns the export capacity of a network,
-#' "CAP.respiration", Returns the respiration capacity of a network}
+#' dissipative equivalent ot mode0.
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso
 #' \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
@@ -230,14 +201,14 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
   }
 
 
-  asc <- enaAscendency(x)
+  # asc <- enaAscendency(x)
                                         #network statistics
   ns <- cbind(Boundary,TST,TSTp,APL,FCI,
               BFI,DFI,IFI,
               ID.F,ID.F.I,ID.F.O,
               HMG.I,HMG.O,
               AMP.I,AMP.O,
-              mode0.F,mode1.F,mode2.F,mode3.F,mode4.F, asc)
+              mode0.F,mode1.F,mode2.F,mode3.F,mode4.F)
 
                                         #output
   return(list('T'=T.,'G'=G,'GP'=GP,'N'=N,'NP'=NP, 'TCC'=TCC, 'TDC'=TDC, 'ns'=ns))

@@ -13,16 +13,16 @@
 
 #' get.ns.R Input = network model Output = a vector of global network
 #' statistics from ena
-#' 
+#'
 #' Borrett | July 4, 2012 ----------------------------------- get.ns.R Input =
 #' network model Output = a vector of global network statistics from ena
-#' 
+#'
 #' Borrett | July 4, 2012 ----------------------------------- Quick Calculation
 #' of a Range of Network Statistics.
-#' 
+#'
 #' This is a high level function for calculated the main network analyses
 #' (Ascendancy, Flow, Structure, Storage and Utility) on an ecological network.
-#' 
+#'
 #' @param x A network object.
 #' @param balance.override Turns off balancing and balance checking.
 #' @return Returns the network statistics (ns) of all of the major ENA
@@ -34,13 +34,13 @@
 #' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 #' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 #' @examples
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' data(troModels)
 #' get.ns(troModels[[6]])
-#' 
-#' 
+#'
+#'
 #' @import network
 #' @export get.ns
 get.ns <- function(x,balance.override=FALSE){
@@ -55,11 +55,11 @@ get.ns <- function(x,balance.override=FALSE){
   # runs selected ena analyses that return global network statistics
   st <- enaStructure(x)$ns
   Flow <- enaFlow(x)$ns
-#  asc <- enaAscendency(x)  # enaFlow now includes the ascendency measures
+  asc <- enaAscendency(x)
   s <- enaStorage(x)$ns
   u.f <- enaUtility(x,type='flow',eigen.check=FALSE)$ns
   u.s <- enaUtility(x,type='storage',eigen.check=FALSE)$ns
-  ns <- data.frame(st,Flow,s,u.f,u.s)
+  ns <- data.frame(st,Flow,asc,s,u.f,u.s)
   rownames(ns) <- ""
   return(ns)
 }
