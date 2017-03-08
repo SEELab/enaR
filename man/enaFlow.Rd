@@ -18,6 +18,45 @@ each node.}
 steady-state (inputs = outputs).  Setting balance.override = TRUE allows the
 function to be run on unbalanced models.}
 }
+\value{
+\item{T}{vector of node throughflows total amount of
+energy-matter flowing into or out of each node} 
+\item{G}{matrix of
+the output oriented direct flow intensities} 
+\item{GP}{matrix of
+the input oriented direct flow intensities} 
+\item{N}{matrix of the
+ouput oriented integral (boundary+direct+indirect) flow
+intensities} 
+\item{NP}{matrix of the input oriented integral flow
+intensities} 
+\item{TCC}{matrix of total contribution coefficients
+(Szyrmer & Ulanowicz 1987).  The elements of TCC indicate the
+fraction of total output of i which reaches j} 
+\item{TDC}{matrix of
+total dependency coefficients (Szyrmer & Ulanowicz 1987).  The
+elements of TDC indicate the fraction j's total consuption which
+passes through i} 
+\item{ns}{vector of flow based network
+statistics.  These include "Boundary" the total input into or
+output from the system, "TST" the total system throughflow, "TSTp"
+total system throughPUT,"APL" is the network aggradation
+TST/Boundary which is also called average path length, "FCI" (Finn
+Cycling Index) is a metric of the amount of cycling in a system,
+"BFI" is the boundary flow intensity Boundary/TST, "DFI" is the
+direct flow intensity Direct/TST, "IFI" is the indirect flow
+intensity Indirect/TST, "ID.F" is the realized indirect to direct
+flow intensity, "ID.F.I" is the input idealized indirect flow
+intensity, "id.F.O"is the output idealized indirect flow intensity,
+"HMG.I" is the input network homogenization, "HMG.O" is the output
+network homogenization, "AMP.I" is the strong measure of input
+network amplifiation, "AMP.O" is the strong measure of output
+network amplification, "mode0.F" is the boundary flow - flow that
+reaches a compartment from across the system boundary, "mode1.F" is
+internal first passage flow, "mode2.F" is cycled flow, "mode3.F" is
+the dissipative eqivalent to mode2, and "mode4.F" is the
+dissipative equivalent ot mode0.}
+}
 \description{
 M. Lau | July 2011
 ---------------------------------------------------
@@ -47,6 +86,9 @@ F$ns  # returns just the network statisics
 
 
 
+}
+\author{
+Matthew K. Lau Stuart R. Borrett
 }
 \references{
 Borrett, S. R., Freeze, M. A., 2011. Reconnecting environs to
@@ -79,6 +121,4 @@ complexity: insights from ecological network analysis.  Ecology Letters
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
+

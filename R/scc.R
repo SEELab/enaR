@@ -51,6 +51,7 @@
 #'
 #'
 #' @importFrom sna component.dist
+#' @importFrom utils capture.output
 #' @export scc
 scc <- function(A="adjacency"){
                                         #Check for network class

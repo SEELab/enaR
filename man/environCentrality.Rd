@@ -51,6 +51,9 @@ barplot(sort(ec$AEC, decreasing = TRUE), col = 4, ylab = "Average Environ Centra
 
 
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Fann, S.L. and Borrett, S.R. 2012. Environ centrality reveals
 the tendency of indirect effects to homogenize the functional importance of
@@ -59,6 +62,4 @@ species in ecosystems.  Journal of Theoretical Biology 294: 74-86.
 \seealso{
 \code{\link{enaFlow}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
+

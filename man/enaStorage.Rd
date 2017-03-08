@@ -68,12 +68,15 @@ data(oyster)
 S <- enaStorage(oyster)
 attributes(S)
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
-Barber, M. C. 1978a. A Markovian Model for Ecosystem Flow Analysis. Ecol. Model. 5(3):193–206.
+Barber, M. C. 1978a. A Markovian Model for Ecosystem Flow Analysis. Ecol. Model. 5(3):193-206.
 
-Barber, M. C. 1978b. A Retrospective Markovian Model for Ecosystem Resource Flow. Ecol. Model. 5(2): 125–35.
+Barber, M. C. 1978b. A Retrospective Markovian Model for Ecosystem Resource Flow. Ecol. Model. 5(2): 125-35.
 
-Barber, M. C. 1979. A Note Concerning Time Parameterization of Markovian Models of Ecosystem Flow Analysis. Ecol. Model. 6(4): 323–28.
+Barber, M. C. 1979. A Note Concerning Time Parameterization of Markovian Models of Ecosystem Flow Analysis. Ecol. Model. 6(4): 323-28.
 
 Matis, J. H., Patten, B. C. 1981. Environ analysis of linear
 compartmental systems: the static, time invariant case.  Bulletin of the
@@ -86,13 +89,11 @@ Fath, B. D. Patten, B. C., Choi, J. 2001.  Compementarity of ecological goal
 functions.  Journal of Theoretical Biology 208: 493-506.
 
 Fath, B. D., Borrett, S. R. 2006. A MATLAB function for Network Environ
-Analysis.  Environmental Modelling & Software 21:375-405
+Analysis.  Environmental Modelling & Software 21:375-405.
 }
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaFlow},\link{enaUtility}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \keyword{enaFlow}
 \keyword{read.scor}
+

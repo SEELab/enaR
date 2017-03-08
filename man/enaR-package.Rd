@@ -2,8 +2,8 @@
 % Please edit documentation in R/enaR-package.R
 \docType{package}
 \name{enaR-package}
-\alias{enaR-package}
 \alias{enaR}
+\alias{enaR-package}
 \title{Tools for Ecological Network Analysis (ena)}
 \description{
 This package compiles functions for the analysis of ecological networks,
@@ -14,6 +14,10 @@ with multiple additions of functionality.
 \tabular{ll}{ Package: \tab enaR \cr Type: \tab Package\cr Version: \tab
 2.10\cr Date: \tab 2017-02-06\cr License: \tab GPL-3\cr }
 }
+\author{
+Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David
+E. Hines Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
+}
 \references{
 Borrett SR and Lau MK 2014. enaR: An r package for Ecosystem
 Network Analysis. Methods in Ecology and Evolution 5:1206-1213.
@@ -22,8 +26,5 @@ Network Analysis. Methods in Ecology and Evolution 5:1206-1213.
 % ~~ Optional links to other man pages, e.g. ~~ % ~~
 \code{\link[network:network-package]{network}}
 }
-\author{
-Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David
-E. Hines Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
-}
 \keyword{package}
+

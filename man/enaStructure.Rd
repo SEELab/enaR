@@ -53,6 +53,9 @@ enaStructure(troModels[[6]])
 
 
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 Environ Analysis.  Environ. Model. Softw. 21, 375-405.
@@ -60,6 +63,4 @@ Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 \seealso{
 \code{\link{structure.statistics}}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
+
