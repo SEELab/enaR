@@ -28,18 +28,25 @@
 #' @param balance.override Flow analysis assumes the network model is at
 #' steady-state (inputs = outputs).  Setting balance.override = TRUE allows the
 #' function to be run on unbalanced models.
-#' @return \item{T}{vector of node throughflows - total amount of
-#' energy-matter flowing into or out of each node} \item{G}{matrix of
-#' the output oriented direct flow intensities} \item{GP}{matrix of
-#' the input oriented direct flow intensities} \item{N}{matrix of the
+#' @return \item{T}{vector of node throughflows total amount of
+#' energy-matter flowing into or out of each node} 
+#' \item{G}{matrix of
+#' the output oriented direct flow intensities} 
+#' \item{GP}{matrix of
+#' the input oriented direct flow intensities} 
+#' \item{N}{matrix of the
 #' ouput oriented integral (boundary+direct+indirect) flow
-#' intensities} \item{NP}{matrix of the input oriented integral flow
-#' intensities} \item{TCC}{matrix of total contribution coefficients
+#' intensities} 
+#' \item{NP}{matrix of the input oriented integral flow
+#' intensities} 
+#' \item{TCC}{matrix of total contribution coefficients
 #' (Szyrmer & Ulanowicz 1987).  The elements of TCC indicate the
-#' fraction of total output of i whihc reaches j} \item{TDC}{matrix of
+#' fraction of total output of i which reaches j} 
+#' \item{TDC}{matrix of
 #' total dependency coefficients (Szyrmer & Ulanowicz 1987).  The
 #' elements of TDC indicate the fraction j's total consuption which
-#' passes through i} \item{ns}{vector of flow based network
+#' passes through i} 
+#' \item{ns}{vector of flow based network
 #' statistics.  These include "Boundary" the total input into or
 #' output from the system, "TST" the total system throughflow, "TSTp"
 #' total system throughPUT,"APL" is the network aggradation
@@ -57,7 +64,8 @@
 #' reaches a compartment from across the system boundary, "mode1.F" is
 #' internal first passage flow, "mode2.F" is cycled flow, "mode3.F" is
 #' the dissipative eqivalent to mode2, and "mode4.F" is the
-#' dissipative equivalent ot mode0.
+#' dissipative equivalent ot mode0.}
+
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso
 #' \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
