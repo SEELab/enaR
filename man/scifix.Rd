@@ -29,9 +29,10 @@ Returns a numeric scalar in appropriate scientific notation.
 This is a support function that corrects the scientific notation in SCOR
 formatted data files.
 }
-\seealso{
-\code{\link{read.scor}}
-}
 \author{
 Matthew K. Lau
 }
+\seealso{
+\code{\link{read.scor}}
+}
+

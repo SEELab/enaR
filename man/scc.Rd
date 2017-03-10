@@ -44,6 +44,9 @@ scc(A)
 
 
 }
+\author{
+Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Allesina, S., Bodini, A., Bondavalli, C., 2005. Ecological
 subsystems via graph theory: the role of strongly connected components.
@@ -59,6 +62,4 @@ Biology 245, 98-111.
 \seealso{
 \link{enaStructure}
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
+

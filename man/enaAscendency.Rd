@@ -74,6 +74,9 @@ respiration components of output be separately quantified.
 data(troModels)
 enaAscendency(troModels[[6]])
 }
+\author{
+David E. Hines Matthew K. Lau Stuart R. Borrett
+}
 \references{
 Kay, J.J., Graham, L.A., Ulanowicz, R.E., 1989. A detailed guide
 to network analysis. p. 15-61 In: Wulff, F., Field, J.G., Man, K.H. (eds.)
@@ -100,6 +103,4 @@ complexity: insights from ecological network analysis. Ecology Letters
 \seealso{
 \code{\link{read.scor},\link{read.wand},\link{enaStorage},\link{enaUtility}}
 }
-\author{
-David E. Hines Matthew K. Lau Stuart R. Borrett
-}
+
