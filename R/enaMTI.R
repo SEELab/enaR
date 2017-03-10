@@ -5,6 +5,77 @@
 #' Borrett | June 2012, MKL | July 2013
 #' ------------------------------------
 
+
+
+
+
+
+
+#' enaMTI --- Mixed Trophic Impacts Analysis follows Ulanowicz and Puccia,
+#' 1990. INPUT = network object OUTPUT = list of trophic impact statistics
+#' Borrett | June 2012, MKL | July 2013 ------------------------------------
+#' enaMTI --- Mixed Trophic Impacts Analysis follows Ulanowicz and Puccia,
+#' 1990. INPUT = network object OUTPUT = list of trophic impact statistics
+#' Borrett | June 2012, MKL | July 2013 ------------------------------------
+#' Mixed Trophic Impacts (MTI) Analysis
+#'
+#' Calculates the Mixed Trophic Impacts of one species on another in the given
+#' ecosystem model following the algorithm of Ulanowicz and Puccia (1990). This
+#' considers both the direct and indirect trophic impacts.
+#'
+#'
+#' @param x a network object.  This includes all weighte dflows into and out of
+#' each node.  It must also include the "Living" vector that identifies the
+#' living (TRUE/FALSE) status of each node.
+#' @param eigen.check LOGICAL: should the dominant eigen value be checked?  By
+#' default, the function will not return utility values if the eigenvalue is
+#' larger than one; however, if eigen.check is set to FALSE, then the function
+#' will be applied regardless of the mathematic concern.
+#' @param zero.na A logical parameter that specifies if NAs generated in the
+#' analysis should be reset to zero.  The default is TRUE.
+#' @param balance.override Mixed Trophic Impacts analysis builds on flow
+#' analysis and thus assumes the network model is at steady-state (inputs =
+#' outputs).  Setting balance.override = TRUE allows the function to be run on
+#' unbalanced models, though this is unadvised.
+#' @return \item{G}{output-oriented direct flow intensity matrix as in enaFlow,
+#' except oriented from row to column.} \item{FP}{input-oriented direct flow
+#' intensity matrix similar to enaFlow; however, the calculation exclude
+#' respiration losses from the throughflow in the denominator to focus on NET
+#' production.  Also, if the receiver compartment is not living, the flux
+#' intensity is set to zero.} \item{Q}{direct net trophic impacts (G-t(FP)).}
+#' \item{M}{Total (direct and indirect) tropic impacts of compartment i on j.}
+#' \item{Relations.Table}{A table indicating the qualitiative pairwise
+#' relationships between the nodes as determined from the net (direct)
+#' and the mixed (integral) perspectives.}
+#' @note This and other Ulanowicz school functions require that export and
+#' respiration components of output be separately quantified.
+#'
+#' This analysis is similar in concept to the ENA Utility analysis.
+#'
+#' With regard to the eigen.check argument, like enaFlow, enaStorage and
+#' enaUtility, this analysis considers the trophic impact propigated over path
+#' lengths ranging for zero to infinity.  For the analysis to work properly,
+#' the path sequence must converge.  This function checks to see if the path
+#' sequence is convergent by finding the dominant eigenvalue of the direct
+#' matrix.  If this eigenvalue is less than 1, the sequence is convergent and
+#' the analysis can be applied; if the dominant eigenvalue is greater than one,
+#' then the anlysis cannot be applied.
+#' @author Stuart R. Borrett Matthew K. Lau
+#' @seealso \code{\link{enaFlow},\link{enaUtility}}
+#' @references %% ~put references to the literature/web site here ~ Ulanowicz,
+#' R.E. and C.J. Puccia.  1990. Mixed trophic impacts in ecosystems.  Coenoses
+#' 5, 7--16.
+#' @examples
+#'
+#'
+#'
+#' data(troModels)
+#' mti <- enaMTI(troModels[[6]])
+#' attributes(mti)
+#' 
+#' @importFrom MASS ginv
+#' @export enaMTI
+#' @import network
 enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
@@ -30,20 +101,22 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
     diag(I) <- 1 #create the identity matrix
     T. <- input + apply(Flow,2,sum)
                                         #
-    G <- t(t(Flow)/T.)        # this is now oriented as in ulanowicz and puccia row to column
-    FP <- Flow / (T.-resp)    # Authors exclude respiration to divide only by the NET production of the compartment.
+    G <- t(t(Flow)/T.)        # input oriented direct flow intensity matrix
+    FP <- Flow / (T.-resp)    # modified output oriented direct flow intensity matrix.  Authors exclude respiration to divide only by the NET production of the compartment.
 
                                         # check and replace NA values with 0 if zero.na
     if (zero.na){
       G[is.na(G)] <- 0
       FP[is.na(FP)] <- 0
     }
-                                        #Make infinity values equal to zero
-  G[is.infinite(G)] <- 0
-  FP[is.infinite(FP)] <- 0
-                                        # Set FP to zero when receiver compartment (j) is non-living
+
+    # Make infinity values equal to zero
+    G[is.infinite(G)] <- 0
+    FP[is.infinite(FP)] <- 0
+
+    # Set FP to zero when receiver compartment (j) is non-living
     FP[,which(x%v%'living'==FALSE)] <- 0
-    Q <- G- t(FP)
+    Q <- G - t(FP)
     dom1Q <- abs(eigen(Q)$values[1])
     if(dom1Q <= 1 ){
       M <- ginv(I-Q)-I              # Total Impacts of i on j.
@@ -51,8 +124,22 @@ enaMTI <- function(x,eigen.check=TRUE,zero.na=TRUE, balance.override=FALSE){
       if(eigen.check==FALSE){
         M <- ginv(I-Q)-I              # Total Impacts of i on j.
       } else { M <- NA}
+  }
+
+    if(!any(is.na(M))){
+        r <- relationalChange(Q,M)
+        IR <- r$Integral.Relations
+        r.table <- r$Relations.Table
+        names(r.table) <- c("From","To","Net (direct)","Mixed (integral)","changed")
+        rownames(r.table) <- c(1:dim(r.table)[1])
+    } else {
+        IR <- NA
+        r.table <- NA
     }
-    out <- list('G'=G,'FP'=FP,'Q'=Q,'M'=M)
+
+    out <- list('G'=G,'FP'=FP,'Q'=Q,'M'=M,
+                # "Integral.Relations" = IR,
+                "Relations.Table"=r.table)
   }
     return(out)
 }

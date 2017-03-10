@@ -1,0 +1,24 @@
+Updates v2.10.0
+
+- Updates enaR-vignette.pdf
+- Adds support for bipartite
+- Adds ShannonDiversity function
+- Adds Relations.Table to enaUtility and enaMTI
+- Adjusts NAMESPACE and dependencies to meet current CRAN standards
+- Switches package documentation to Roxygen format
+- Adds ascendency metrics to network statistics in enaFlow
+- Fixes bugs in enaTroAgg
+- Adds signs function 
+- Adds average trophic length to enaTroAgg ns
+- Fixes enaStorage example
+- Fixes bug in get.ns
+- Fixes bug in read.enam
+- Adds control allocation and dependency
+- Modifies enaControl
+- Adds tetra-partite partition of ascendency
+- Changes enaUtility check for storage
+- Fixes unpack living vector
+
+Known Bugs
+
+- Currently none.

@@ -1,11 +1,32 @@
-#' balance --- balances a flow model using several methods
-#' INPUT = network model
-#' OUTPUT = balanced model
-#'
-#' M. Lau | July 2011
-#' ---------------------------------------------------
-balance <-
-  function(x,method=c('AVG2','AVG','IO','OI','I','O'),tol=5){
+#' Balance Flow Network Models
+#' 
+#' Applies the methods of Allesina and Bondavalli (2003) for balancing flow
+#' network models.
+#' 
+#' 
+#' @param x A network object.
+#' @param method Methods for model balancing, see Allesina and Bondavalli
+#' (2003).
+#' @param tol Percent error tolerance used in the steady state check prior to
+#' balancing.
+#' @return Returns a network object with a balanced flow network model.
+#' @author Matthew K. Lau Stuart R. Borrett
+#' @seealso \code{\link{bal}}
+#' @references Allesina, S., Bondavalli, C., 2003. Steady state of ecosystem
+#' flow networks: a comparison between balancing procedures. Ecological
+#' Modelling 165(2-3):231-239.
+#' @examples
+#' 
+#' 
+#' 
+#' data(troModels)
+#' balance(troModels[[6]])
+#' 
+#' 
+#' 
+#' @import network
+#' @export balance
+balance <- function(x,method=c('AVG2','AVG','IO','OI','I','O'),tol=5){
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
   eT <- as.extended(x) #convert to extended format

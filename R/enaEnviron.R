@@ -5,6 +5,52 @@
 #' M. Lau July 2011 | DEH edited Feb 2013
 #' ---------------------------------------------------
 
+
+
+
+
+
+
+#' environ --- conducts environ analysis INPUT = network object OUTPUT = input
+#' and/or output environs
+#' 
+#' M. Lau July 2011 | DEH edited Feb 2013
+#' --------------------------------------------------- environ --- conducts
+#' environ analysis INPUT = network object OUTPUT = input and/or output
+#' environs
+#' 
+#' M. Lau July 2011 | DEH edited Feb 2013
+#' --------------------------------------------------- Ecological Network
+#' Environs
+#' 
+#' Calculates the environs for an ecological network.
+#' 
+#' @param x A network object.
+#' @param input Should the input environ be calculated?
+#' @param output Should the output environ be calculated?
+#' @param type Specifies the type of environs ("unit" or "realized") to be
+#' calculated.
+#' @param err.tol Error threshold for numerical error fluctuations in flows.
+#' Values below err.tol will be set to zero.
+#' @param balance.override Logical specifying whether (TRUE) or not (FALSE) the
+#' model needs to be balanced prior to calculations. If TRUE and the model is
+#' not balanced, environs will not be calculated.
+#' @return The function returns the input, output or both environs depending
+#' upon which were requested.
+#' @author Stuart R. Borrett Matthew K. Lau
+#' @references Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
+#' environ analysis. Environmental Modelling & Software 21:375-405.
+#' @examples
+#' 
+#' 
+#' 
+#' data(troModels)
+#' enaEnviron(troModels[[6]])
+#' 
+#' 
+#' 
+#' @export enaEnviron
+#' @import network
 enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){
                                         #check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
