@@ -32,10 +32,9 @@ the difference between them.
 \note{
 This function is called by enaUtility and enaMTI to summarize results.
 }
-\author{
-Stuart R. Borrett
-}
 \seealso{
 \code{\link{enaUtility}, \link{enaMTI}, \link{signs}}
 }
-
+\author{
+Stuart R. Borrett
+}

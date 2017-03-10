@@ -35,9 +35,6 @@ participating in a strongly connected component.}
 \description{
 This function returns several network statistics that describe a network.
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \references{
 Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
 Environ Analysis.  Environ. Model. Softw. 21, 375-405.
@@ -45,4 +42,6 @@ Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 \seealso{
 \code{\link{enaStructure}},\code{\link{scc}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

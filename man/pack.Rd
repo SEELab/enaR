@@ -30,10 +30,9 @@ Returns a network object for the supplied model.
 This function provides a flexible framework for importing flow network
 information into a network class object for analyses.
 }
-\author{
-Matthew K. Lau Stuart R. Borrett
-}
 \seealso{
 \code{\link{unpack}}
 }
-
+\author{
+Matthew K. Lau Stuart R. Borrett
+}

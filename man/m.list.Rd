@@ -12,4 +12,3 @@ Borrett, S. R., and M. K. Lau. In Prep. enaR: An R package for
 Ecological Network Analysis. Ecological Modeling and Software.
 }
 \keyword{datasets}
-
