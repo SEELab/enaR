@@ -14,14 +14,14 @@
 #' Connects enaR to limSolve to apply Linear Inverse Modelling to conduct an uncertainty analysis for Ecological Network Analysis. Users supply an initial ecosystem model (in the enaR format) and uncertainty informaiton (several ways of specifying), and the function returns a list (length = "iter") of balanced plausible instantiations of the model.  This has been used to determine the 95% confidnece intervals for network analysis results and to determine the statistical significance of selected comaprisons (Hines et al. 2015, 2016).
 #'
 #' @param x a network object.  This includes all weighted flows into and out of each node.
-#' @param type is a paramter to switch the kind of uncertainty analysis to complete: "percent", "sdved", "asym".  The "percent" options explores the parameter space for all parameters by a fixed percentage.  The "sdved" options let the user specify an amount to explore around each flow estimate (internal flows (F) and boundary flows (inputs, exports, respirations).  This option assuems that the possible deviation is symmetric around the original values.  The "asym" lets the user specify upper and lower limits for each flow value.
+#' @param type is a paramter to switch the kind of uncertainty analysis to complete: "percent", "sym", "asym".  The "percent" options explores the parameter space for all parameters by a fixed percentage.  The "sym" options let the user specify an amount to explore around each flow estimate (internal flows (F) and boundary flows (inputs, exports, respirations).  This option assuems that the possible deviation is symmetric around the original values.  The "asym" lets the user specify upper and lower limits for each flow value.
 #' @param iter is the number of plausible models to sample (number of iterations of the sampling algorithm).  The default is 10000, which is often a sufficient sample size for Monte Carlo sampling.
 #' @param p.err If the user selects the "percent" type, they must also specify the percent change with this parameter.
-#' @param F.sd If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each internal flow.  This should be specified as a data frame in a sparse matrix format with columns identifying the starting node, the target node, and the change value (in same units as flows).
-#' @param z.sd If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each input flow. This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
-#' @param y.sd If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each output flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
-#' @param e.sd If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each export flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
-#' @param r.sd If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each respiration flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
+#' @param F.sym If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each internal flow.  This should be specified as a data frame in a sparse matrix format with columns identifying the starting node, the target node, and the change value (in same units as flows).
+#' @param z.sym If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each input flow. This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
+#' @param y.sym If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each output flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
+#' @param e.sym If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each export flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
+#' @param r.sym If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each respiration flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).
 #' @param F.bot If the user selects the "asym" type, then this data.frame specifies the minimum possible value for each internal flows.  This should be specified as a data frame in a sparse matrix format with columns identifying the starting node, the target node, and the change value (in same units as flows).
 #' @param z.bot  If the user selects the "asym" type, then this data.frame specifies the minimum value for each non-zero model input.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and minimum value (in same units as flows).
 #' @param y.bot If the user selects the "asym" type, then this data.frame specifies the minimum value for each non-zero model output.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and minimum value (in same units as flows).
@@ -109,73 +109,73 @@
 
 enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                         p.err=NA,
-                        F.sd=NA, z.sd=NA, y.sd=NA, e.sd=NA, r.sd=NA,
+                        F.sym=NA, z.sym=NA, y.sym=NA, e.sym=NA, r.sym=NA,
                         F.bot=NA, z.bot=NA, y.bot=NA, e.bot=NA, r.bot=NA,
                         F.top=NA, z.top=NA, y.top=NA, e.top=NA, r.top=NA){
 
   # data input warnings
    if (class(x) != 'network'){warning('x is not a network class object')}					   # check object class
 
-   if (is.na(F.sd)[1] == FALSE && is.na(z.sd)[1] == TRUE){warning('Insufficient uncertainty data')}					      # check uncertainty data inputs
-   if (is.na(F.sd)[1] == FALSE && is.na(y.sd)[1] == TRUE){warning('Insufficient uncertainty data')}					      # check uncertainty data inputs
+   if (is.na(F.sym)[1] == FALSE && is.na(z.sym)[1] == TRUE){warning('Insufficient uncertainty data')}					      # check uncertainty data inputs
+   if (is.na(F.sym)[1] == FALSE && is.na(y.sym)[1] == TRUE){warning('Insufficient uncertainty data')}					      # check uncertainty data inputs
    if (is.na(F.bot)[1] == FALSE && is.na(z.bot)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
    if (is.na(F.bot)[1] == FALSE && is.na(y.bot)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
    if (is.na(F.top)[1] == FALSE && is.na(z.top)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
    if (is.na(F.top)[1] == FALSE && is.na(y.top)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
    if (is.na(F.top)[1] == FALSE && is.na(F.bot)[1] == TRUE){warning('Lower limit uncertainty data not detected')}	# check uncertainty data inputs
    if (is.na(F.bot)[1] == FALSE && is.na(F.top)[1] == TRUE){warning('Upper limit uncertainty data not detected')} # check uncertainty data inputs
-   if (is.na(y.sd)[1] == FALSE && is.na(e.sd)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
-   if (is.na(y.sd)[1] == FALSE && is.na(r.sd)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
+   if (is.na(y.sym)[1] == FALSE && is.na(e.sym)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
+   if (is.na(y.sym)[1] == FALSE && is.na(r.sym)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
    if (is.na(y.top)[1] == FALSE && is.na(e.top)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
    if (is.na(y.top)[1] == FALSE && is.na(r.top)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
 
 
    # --- Begin ---
   # initialize indices
-	U = unpack(x)                                               # unpack network object
-	fluxes = which(U$F!=0, arr.ind=TRUE)                        # identify internal fluxes (from,to)
-	inputs = seq(from=1, to=length(U$z), by=1)                  # identify inputs
-	outputs = seq(from=1, to=length(U$y), by=1)                 # identify outputs (respiration + exports)
-  exports = seq(from=1, to=length(U$e), by=1)                 # identify exports
-  respirations = seq(from=1, to=length(U$r), by=1)            # identify respirations
-	living=U$living
-	storage=U$X
+   U = unpack(x)                                               # unpack network object
+   fluxes = which(U$F!=0, arr.ind=TRUE)                        # identify internal fluxes (from,to)
+   inputs = seq(from=1, to=length(U$z), by=1)                  # identify inputs
+   outputs = seq(from=1, to=length(U$y), by=1)                 # identify outputs (respiration + exports)
+   exports = seq(from=1, to=length(U$e), by=1)                 # identify exports
+   respirations = seq(from=1, to=length(U$r), by=1)            # identify respirations
+   living=U$living
+   storage=U$X
 
-  vertex.names = rep(0, x$gal$n)
-	for(i in 1:x$gal$n){
-		vertex.names[i]=x$val[[i]]$vertex.names                   # get names
-		}
+   vertex.names = rep(0, x$gal$n)
+   for(i in 1:x$gal$n){
+       vertex.names[i]=x$val[[i]]$vertex.names                   # get names
+   }
 
-   # -- Build required inputs to limSolve
+                                        # -- Build required inputs to limSolve
   E = matrix(0, nrow=x$gal$n, ncol=(nrow(fluxes)+length(inputs)+length(exports)+length(respirations))) # initialize E
 
-  for(i in 1:length(U$z)){  ## environmental inputs
-    E[i,i] = U$z[i]
-  }
+   for(i in 1:length(U$z)){  ## environmental inputs
+       E[i,i] = U$z[i]
+   }
 
-  for(i in 1:nrow(E)){	## export losses
-    E[i,length(U$z)+exports[i]] = -U$e[i]
-  }
+   for(i in 1:nrow(E)){	## export losses
+       E[i,length(U$z)+exports[i]] = -U$e[i]
+   }
 
-  for(i in 1:nrow(E)){	## respiration losses
-    E[i,length(U$z)+length(exports)+respirations[i]] = -U$r[i]
-  }
+   for(i in 1:nrow(E)){	## respiration losses
+       E[i,length(U$z)+length(exports)+respirations[i]] = -U$r[i]
+   }
 
 
-  for(f in 1:nrow(fluxes)){	 ## internal node inputs
-    E[fluxes[f,2],(length(U$z)+length(exports)+length(respirations)+f)] = U$F[fluxes[f,1],fluxes[f,2]]
-  }
+   for(f in 1:nrow(fluxes)){	 ## internal node inputs
+       E[fluxes[f,2],(length(U$z)+length(exports)+length(respirations)+f)] = U$F[fluxes[f,1],fluxes[f,2]]
+   }
 
-  for(f in 1:nrow(fluxes)){	 ## internal node outputs
-    E[fluxes[f,1],(length(U$z)+length(exports)+length(respirations)+f)] = -U$F[fluxes[f,1],fluxes[f,2]]
-  }
+   for(f in 1:nrow(fluxes)){	 ## internal node outputs
+       E[fluxes[f,1],(length(U$z)+length(exports)+length(respirations)+f)] = -U$F[fluxes[f,1],fluxes[f,2]]
+   }
 
-  F = rep(0,x$gal$n) # create F
+   F = rep(0,x$gal$n) # create F
 
   G = rbind(diag(rep(1, ncol(E))), diag(rep(-1, ncol(E)))) # create G
 
    # ================================================================================================
-   # Alternative Ways to Construct H (uncertainty) based on "type" = {"percent", "sdved", "asym"}
+   # Alternative Ways to Construct H (uncertainty) based on "type" = {"percent", "sym", "asym"}
 
    # initilize parameters
    lower.percent=0
@@ -202,54 +202,54 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        if(identical(type,"stdev") == TRUE){ ## error by standard deviations
 
     # convert sparse data to matrix and vector form to ensure order stays correct
-           if(is.na(y.sd)[1] == FALSE){ # if y is given, fill in e and r
-               e.sd = y.sd
-               r.sd = data.frame(1,0)
+           if(is.na(y.sym)[1] == FALSE){ # if y is given, fill in e and r
+               e.sym = y.sym
+               r.sym = data.frame(1,0)
            }
 
            mat.size=length(inputs) # number of nodes
     # flow matrix uncertainty
-           Fu.sd=matrix(0, nrow=mat.size, ncol=mat.size)
-           for(i in 1:nrow(F.sd)){
-               Fu.sd[F.sd[i,1],F.sd[i,2]]=F.sd[i,3]
+           Fu.sym = matrix(0, nrow=mat.size, ncol=mat.size)
+           for(i in 1:nrow(F.sym)){
+               Fu.sym[F.sym[i,1],F.sym[i,2]]=F.sym[i,3]
            }
 
     # input flow uncertainty
-           zu.sd=rep(0,mat.size)
-           for(i in 1:nrow(z.sd)){
-               zu.sd[z.sd[i,1]]=z.sd[i,2]
+           zu.sym=rep(0,mat.size)
+           for(i in 1:nrow(z.sym)){
+               zu.sym[z.sym[i,1]]=z.sym[i,2]
            }
 
     # output flow uncertainty (y) calculated as sum of exports (e) and respirations (r)
 
     # export flow uncertainty
-           eu.sd=rep(0,mat.size)
-           for(i in 1:nrow(e.sd)){
-               eu.sd[e.sd[i,1]]=e.sd[i,2]
+           eu.sym=rep(0,mat.size)
+           for(i in 1:nrow(e.sym)){
+               eu.sym[e.sym[i,1]]=e.sym[i,2]
            }
 
     # respiration flow uncertainty
-           ru.sd=rep(0,mat.size)
-           for(i in 1:nrow(r.sd)){
-               ru.sd[r.sd[i,1]]=r.sd[i,2]
+           ru.sym=rep(0,mat.size)
+           for(i in 1:nrow(r.sym)){
+               ru.sym[r.sym[i,1]]=r.sym[i,2]
            }
 
     # use matrix and vector format to construct H
            for(h in 1:(length(U$z))){
-               lower.percent[h] = ((U$z[h]-zu.sd[h])/U$z[h])
+               lower.percent[h] = ((U$z[h]-zu.sym[h])/U$z[h])
            }
 
            for(h in (length(U$z)+1):(length(U$z)+length(exports))){
-               lower.percent[h] = ((U$e[h-length(U$z)]-eu.sd[h-length(U$z)])/U$e[h-length(U$z)])
+               lower.percent[h] = ((U$e[h-length(U$z)]-eu.sym[h-length(U$z)])/U$e[h-length(U$z)])
            }
 
            for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
-               lower.percent[h] = ((U$r[h-length(U$z)-length(exports)]-ru.sd[h-length(U$z)-length(exports)])/U$r[h-length(U$z)-length(exports)])
+               lower.percent[h] = ((U$r[h-length(U$z)-length(exports)]-ru.sym[h-length(U$z)-length(exports)])/U$r[h-length(U$z)-length(exports)])
            }
 
            for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
                lower.percent[h] = ((U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]-
-                                        Fu.sd[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
+                                        Fu.sym[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
                                        U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])
            }
 
@@ -258,20 +258,20 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
     # order of H = all z, all e, all r, f by fluxes
            for(h in 1:(length(U$z))){
-               upper.percent[h] = ((U$z[h]+zu.sd[h])/U$z[h])
+               upper.percent[h] = ((U$z[h]+zu.sym[h])/U$z[h])
            }
 
            for(h in (length(U$z)+1):(length(U$z)+length(exports))){
-               upper.percent[h] = ((U$e[h-length(U$z)]+eu.sd[h-length(U$z)])/U$e[h-length(U$z)])
+               upper.percent[h] = ((U$e[h-length(U$z)]+eu.sym[h-length(U$z)])/U$e[h-length(U$z)])
            }
 
            for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
-               upper.percent[h] = ((U$r[h-length(U$z)-length(exports)]+ru.sd[h-length(U$z)-length(exports)])/U$r[h-length(U$z)-length(exports)])
+               upper.percent[h] = ((U$r[h-length(U$z)-length(exports)]+ru.sym[h-length(U$z)-length(exports)])/U$r[h-length(U$z)-length(exports)])
            }
 
            for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
                upper.percent[h] = ((U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]+
-                                        Fu.sd[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
+                                        Fu.sym[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
                                        U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])
            }
 
@@ -367,7 +367,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
            H=c(lower.percent,-upper.percent)
 
-	} else{warning('Please use type "percent", "stdev", or "asym"')}
+	} else{warning('Please use type "percent", "sym", or "asym"')}
 
 
 # -- UNCERTAINTY ANALYSIS --

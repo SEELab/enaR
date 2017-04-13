@@ -7,28 +7,29 @@ INPUT = network object and uncertainty data
 OUTPUT = list of plausible network models}
 \usage{
 enaUncertainty(x = "network object", type = "percent", iter = 10000,
-  p.err = NA, F.sd = NA, z.sd = NA, y.sd = NA, e.sd = NA, r.sd = NA,
-  F.bot = NA, z.bot = NA, y.bot = NA, e.bot = NA, r.bot = NA,
-  F.top = NA, z.top = NA, y.top = NA, e.top = NA, r.top = NA)
+  p.err = NA, F.sym = NA, z.sym = NA, y.sym = NA, e.sym = NA,
+  r.sym = NA, F.bot = NA, z.bot = NA, y.bot = NA, e.bot = NA,
+  r.bot = NA, F.top = NA, z.top = NA, y.top = NA, e.top = NA,
+  r.top = NA)
 }
 \arguments{
 \item{x}{a network object.  This includes all weighted flows into and out of each node.}
 
-\item{type}{is a paramter to switch the kind of uncertainty analysis to complete: "percent", "sdved", "asym".  The "percent" options explores the parameter space for all parameters by a fixed percentage.  The "sdved" options let the user specify an amount to explore around each flow estimate (internal flows (F) and boundary flows (inputs, exports, respirations).  This option assuems that the possible deviation is symmetric around the original values.  The "asym" lets the user specify upper and lower limits for each flow value.}
+\item{type}{is a paramter to switch the kind of uncertainty analysis to complete: "percent", "sym", "asym".  The "percent" options explores the parameter space for all parameters by a fixed percentage.  The "sym" options let the user specify an amount to explore around each flow estimate (internal flows (F) and boundary flows (inputs, exports, respirations).  This option assuems that the possible deviation is symmetric around the original values.  The "asym" lets the user specify upper and lower limits for each flow value.}
 
 \item{iter}{is the number of plausible models to sample (number of iterations of the sampling algorithm).  The default is 10000, which is often a sufficient sample size for Monte Carlo sampling.}
 
 \item{p.err}{If the user selects the "percent" type, they must also specify the percent change with this parameter.}
 
-\item{F.sd}{If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each internal flow.  This should be specified as a data frame in a sparse matrix format with columns identifying the starting node, the target node, and the change value (in same units as flows).}
+\item{F.sym}{If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each internal flow.  This should be specified as a data frame in a sparse matrix format with columns identifying the starting node, the target node, and the change value (in same units as flows).}
 
-\item{z.sd}{If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each input flow. This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
+\item{z.sym}{If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each input flow. This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
 
-\item{y.sd}{If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each output flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
+\item{y.sym}{If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each output flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
 
-\item{e.sd}{If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each export flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
+\item{e.sym}{If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each export flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
 
-\item{r.sd}{If the user selects the "sdved" type, then this parameter specifies the 1/2 the symmetric parameter range for each respiration flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
+\item{r.sym}{If the user selects the "sym" type, then this parameter specifies the 1/2 the symmetric parameter range for each respiration flows.  This is specified as a data frame in a sparse matrix format with columns identifying the node number and the change value (in same units as flows).}
 
 \item{F.bot}{If the user selects the "asym" type, then this data.frame specifies the minimum possible value for each internal flows.  This should be specified as a data frame in a sparse matrix format with columns identifying the starting node, the target node, and the change value (in same units as flows).}
 
