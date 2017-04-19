@@ -103,6 +103,7 @@
 #'
 #' hist(ns$TST, col = "blue")
 #'
+#' @import network
 #' @import limSolve
 #' @export enaUncertainty
 
@@ -113,25 +114,20 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                         F.bot=NA, z.bot=NA, y.bot=NA, e.bot=NA, r.bot=NA,
                         F.top=NA, z.top=NA, y.top=NA, e.top=NA, r.top=NA){
 
+    # check data input ----------------
   # data input warnings
-   if (class(x) != 'network'){warning('x is not a network class object')}					   # check object class
+   if (class(x) != 'network'){warning('x is not a network class object')} # check object class
 
-   if (is.na(F.sym)[1] == FALSE && is.na(z.sym)[1] == TRUE){warning('Insufficient uncertainty data')}					      # check uncertainty data inputs
-   if (is.na(F.sym)[1] == FALSE && is.na(y.sym)[1] == TRUE){warning('Insufficient uncertainty data')}					      # check uncertainty data inputs
-   if (is.na(F.bot)[1] == FALSE && is.na(z.bot)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
-   if (is.na(F.bot)[1] == FALSE && is.na(y.bot)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
-   if (is.na(F.top)[1] == FALSE && is.na(z.top)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
-   if (is.na(F.top)[1] == FALSE && is.na(y.top)[1] == TRUE){warning('Insufficient uncertainty data')}					    # check uncertainty data inputs
-   if (is.na(F.top)[1] == FALSE && is.na(F.bot)[1] == TRUE){warning('Lower limit uncertainty data not detected')}	# check uncertainty data inputs
-   if (is.na(F.bot)[1] == FALSE && is.na(F.top)[1] == TRUE){warning('Upper limit uncertainty data not detected')} # check uncertainty data inputs
-   if (is.na(y.sym)[1] == FALSE && is.na(e.sym)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
-   if (is.na(y.sym)[1] == FALSE && is.na(r.sym)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
-   if (is.na(y.top)[1] == FALSE && is.na(e.top)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
-   if (is.na(y.top)[1] == FALSE && is.na(r.top)[1] == FALSE){warning('please provide uncertainty information for y OR e and r')} # check uncertainty data inputs
+   # check "type"
+   if( (type %in% c("percent", "sym", "asym")) == FALSE){
+       return(warning('type must be "percent", "sym", or "asym".'))
+   }
 
 
-   # --- Begin ---
-  # initialize indices
+
+   # ===  Main Action ===
+
+   # initialize indices
    U = unpack(x)                                               # unpack network object
    fluxes = which(U$F!=0, arr.ind=TRUE)                        # identify internal fluxes (from,to)
    inputs = seq(from=1, to=length(U$z), by=1)                  # identify inputs
@@ -141,13 +137,11 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
    living=U$living
    storage=U$X
 
-   vertex.names = rep(0, x$gal$n)
-   for(i in 1:x$gal$n){
-       vertex.names[i]=x$val[[i]]$vertex.names                   # get names
-   }
+   vertex.names <- x%v%'vertex.names'
 
-                                        # -- Build required inputs to limSolve
-  E = matrix(0, nrow=x$gal$n, ncol=(nrow(fluxes)+length(inputs)+length(exports)+length(respirations))) # initialize E
+   # Build required inputs to limSolve (E, F, G)
+   E = matrix(0, nrow=x$gal$n,
+       ncol=(nrow(fluxes)+length(inputs)+length(exports)+length(respirations))) # initialize E
 
    for(i in 1:length(U$z)){  ## environmental inputs
        E[i,i] = U$z[i]
@@ -172,18 +166,24 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
    F = rep(0,x$gal$n) # create F
 
-  G = rbind(diag(rep(1, ncol(E))), diag(rep(-1, ncol(E)))) # create G
+   G = rbind(diag(rep(1, ncol(E))), diag(rep(-1, ncol(E)))) # create G
 
-   # ================================================================================================
-   # Alternative Ways to Construct H (uncertainty) based on "type" = {"percent", "sym", "asym"}
+
+   # Alternative ways to construct H (uncertainty) based on "type" = {"percent", "sym", "asym"}
+   # ---------------------------------------------------------------------------------------------
 
    # initilize parameters
    lower.percent=0
    upper.percent=0
 
-   if(identical(type,"percent") == TRUE){ ## uniform error by percent
-       if(is.na(p.err)[1] == FALSE ){
+   # type = percent -------------------
 
+   if(identical(type,"percent") == TRUE){ ## uniform error by percent
+
+       if(is.na(p.err) == TRUE) {
+           return(warning('missing p.err while type="percent"'))
+
+       } else {
            if(p.err < 100 && p.err > 0){
                lower.percent = 1-(p.err/100)
                upper.percent = 1+(p.err/100)
@@ -197,186 +197,272 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
            H = c(rep(lower.percent, ncol(E)),rep(-upper.percent, ncol(E)))	# create H
 
-       }else{warning('missing p.err while type="percent"')}
-   } else
-       if(identical(type,"stdev") == TRUE){ ## error by standard deviations
+       }
+   }
 
-    # convert sparse data to matrix and vector form to ensure order stays correct
-           if(is.na(y.sym)[1] == FALSE){ # if y is given, fill in e and r
-               e.sym = y.sym
-               r.sym = data.frame(1,0)
+   # type = symmetric ---------------
+
+   if(identical(type, "sym") == TRUE){ ## error by symmetric amount
+
+       # --- Check Data Inputs ---
+       if (is.na(F.sym)[1] == TRUE){
+           warning('please provide symmetric uncertainty data for internal flows')} else {
+
+                                        # Check Boundary flow uncertainties
+               if (is.na(z.sym)[1] == TRUE){
+                   warning('please provide symmetric uncertainty data for model inputs')
+               }					      # check uncertainty data inputs
+
+               if (is.na(y.sym)[1] == TRUE) {
+                   if (is.na(r.sym) == TRUE || is.na(e.sym) == TRUE ){
+                       warning('please provide symmetric cuncertainty data for model outputs')
+                   }					      # check uncertainty data inputs
+               }
            }
 
-           mat.size=length(inputs) # number of nodes
-    # flow matrix uncertainty
-           Fu.sym = matrix(0, nrow=mat.size, ncol=mat.size)
-           for(i in 1:nrow(F.sym)){
-               Fu.sym[F.sym[i,1],F.sym[i,2]]=F.sym[i,3]
-           }
+
+#       is.na(f.df) == FALSE &&  (is.na(y.df) == FALSE || (is.na(e.df) == FALSE && is.na(r.df) == FALSE))
+
+       #if (is.na(y.sym)[1] == FALSE && is.na(e.sym)[1] == FALSE){
+       #    warning('please provide uncertainty information for y OR e and r')
+       #} # check uncertainty data inputs
+       #if (is.na(y.sym)[1] == FALSE && is.na(r.sym)[1] == FALSE){
+       #    warning('please provide uncertainty information for y OR e and r')
+       #} # check uncertainty data inputs
+
+
+       # --- reshape data ---
+       # convert sparse data to matrix and vector form to ensure order stays correct
+       if(is.na(y.sym)[1] == FALSE){ # if y is given, fill in e and r
+           e.sym = y.sym
+           r.sym = data.frame(1,0)
+       }
+
+       mat.size = length(inputs) # number of nodes
+       # flow matrix uncertainty
+       Fu.sym = matrix(0, nrow=mat.size, ncol=mat.size)
+       for(i in 1:nrow(F.sym)){
+           Fu.sym[F.sym[i,1],F.sym[i,2]] = F.sym[i,3]
+       }
 
     # input flow uncertainty
-           zu.sym=rep(0,mat.size)
-           for(i in 1:nrow(z.sym)){
-               zu.sym[z.sym[i,1]]=z.sym[i,2]
-           }
+       zu.sym = rep(0, mat.size)
+       for(i in 1:nrow(z.sym)){
+           zu.sym[z.sym[i,1]] = z.sym[i,2]
+       }
 
     # output flow uncertainty (y) calculated as sum of exports (e) and respirations (r)
 
     # export flow uncertainty
-           eu.sym=rep(0,mat.size)
-           for(i in 1:nrow(e.sym)){
-               eu.sym[e.sym[i,1]]=e.sym[i,2]
-           }
+       eu.sym=rep(0,mat.size)
+       for(i in 1:nrow(e.sym)){
+           eu.sym[e.sym[i,1]] = e.sym[i,2]
+       }
 
     # respiration flow uncertainty
-           ru.sym=rep(0,mat.size)
-           for(i in 1:nrow(r.sym)){
-               ru.sym[r.sym[i,1]]=r.sym[i,2]
-           }
+       ru.sym=rep(0,mat.size)
+       for(i in 1:nrow(r.sym)){
+           ru.sym[r.sym[i,1]] = r.sym[i,2]
+       }
 
+           # Construct H -----
     # use matrix and vector format to construct H
-           for(h in 1:(length(U$z))){
-               lower.percent[h] = ((U$z[h]-zu.sym[h])/U$z[h])
+       for(h in 1:(length(U$z))){
+           lower.percent[h] = ((U$z[h]-zu.sym[h])/U$z[h])
+       }
+
+       for(h in (length(U$z)+1):(length(U$z)+length(exports))){
+           lower.percent[h] = ((U$e[h-length(U$z)] - eu.sym[h-length(U$z)]) / U$e[h-length(U$z)])
+       }
+
+       for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
+           lower.percent[h] = ((U$r[h-length(U$z)-length(exports)]-ru.sym[h-length(U$z)-length(exports)])/U$r[h-length(U$z)-length(exports)])
+       }
+
+       for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
+           lower.percent[h] = ((U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]-
+                                    Fu.sym[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
+                                   U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])
+       }
+
+       lower.percent[is.na(lower.percent)] = 0
+       lower.percent[which(lower.percent < 0)] = 0.0001 # restrict values to be positive
+       lower.percent[is.infinite(lower.percent)] = 1
+
+       # order of H = all z, all e, all r, f by fluxes
+       # inputs
+       for(h in 1:(length(U$z))){
+           upper.percent[h] = ( (U$z[h] + zu.sym[h]) / U$z[h])
+       }
+
+       # exports
+       for(h in (length(U$z)+1):(length(U$z) + length(exports))){
+           upper.percent[h] = ((U$e[h - length(U$z)] + eu.sym[h-length(U$z)]) / U$e[h - length(U$z)])
+       }
+
+       # respirations
+       for(h in (length(U$z)+length(exports)+1):(length(U$z) + length(exports) + length(respirations))){
+           upper.percent[h] = ((U$r[h-length(U$z)-length(exports)]+ru.sym[h-length(U$z)-length(exports)]) / U$r[h-length(U$z)-length(exports)])
+       }
+
+       # internal flows
+       for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
+           upper.percent[h] = ((U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]+
+                                    Fu.sym[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
+                                   U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])
+       }
+
+       upper.percent[is.na(upper.percent)] = 0
+       upper.percent[is.infinite(upper.percent)] = 100 # constrain infinite values to be 100%
+
+       H=c(lower.percent,-upper.percent)
+   }
+
+# Asymmetric ---------------------------------------------------------
+   if(identical(type,"asym") ==TRUE){ ## asymetrical error
+
+      # --- Check Data Inputs ---
+       if (is.na(F.bot)[1] == TRUE || is.na(F.top)[1] == TRUE){
+           warning('please provide top and bottom uncertainty data for internal flows')} else {
+
+                                        # Check Boundary flow uncertainties
+               if (is.na(z.bot)[1] == TRUE || is.na(z.top)[1] == TRUE ){
+                   warning('please provide top and bottom uncertainty data for model inputs')
+               }					      # check uncertainty data inputs
+
+               if (is.na(y.top)[1] == TRUE || is.na(y.bot)[1] == TRUE) {
+                   if (is.na(r.top) == TRUE || is.na(r.bot) == TRUE ||
+                       is.na(e.top) == TRUE || is.na(e.bot) == TRUE ){
+                           warning('please provide top and bottom uncertainty data for model outputs')
+                   }					      # check uncertainty data inputs
+               }
            }
 
-           for(h in (length(U$z)+1):(length(U$z)+length(exports))){
-               lower.percent[h] = ((U$e[h-length(U$z)]-eu.sym[h-length(U$z)])/U$e[h-length(U$z)])
-           }
+       # check data inputs
+#       if (is.na(F.bot)[1] == FALSE && is.na(z.bot)[1] == TRUE){
+#           warning('Insufficient uncertainty data')
+#       }					    # check uncertainty data inputs
+#       if (is.na(F.bot)[1] == FALSE && is.na(y.bot)[1] == TRUE){
+#           warning('Insufficient uncertainty data')
+#       }					    # check uncertainty data inputs
+#       if (is.na(F.top)[1] == FALSE && is.na(z.top)[1] == TRUE){
+#           warning('Insufficient uncertainty data')
+#       }					    # check uncertainty data inputs
+#       if (is.na(F.top)[1] == FALSE && is.na(y.top)[1] == TRUE){
+#       }					    # check uncertainty data inputs
+#       if (is.na(F.top)[1] == FALSE && is.na(F.bot)[1] == TRUE){
+#           warning('Lower limit uncertainty data not detected')
+#       }	# check uncertainty data inputs
+#       if (is.na(F.bot)[1] == FALSE && is.na(F.top)[1] == TRUE){
+#           warning('Upper limit uncertainty data not detected')
+#       } # check uncertainty data inputs
+#       if (is.na(y.top)[1] == FALSE && is.na(e.top)[1] == FALSE){
+#       } # check uncertainty data inputs
+#       if (is.na(y.top)[1] == FALSE && is.na(r.top)[1] == FALSE){
+#           warning('please provide uncertainty information for y OR e and r')
+#       } # check uncertainty data inputs
 
-           for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
-               lower.percent[h] = ((U$r[h-length(U$z)-length(exports)]-ru.sym[h-length(U$z)-length(exports)])/U$r[h-length(U$z)-length(exports)])
-           }
 
-           for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
-               lower.percent[h] = ((U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]-
-                                        Fu.sym[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
-                                       U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])
-           }
-
-           lower.percent[is.na(lower.percent)] = 0
-           lower.percent[which(lower.percent < 0)] = 0.0001 # restrict values to be positive
-
-    # order of H = all z, all e, all r, f by fluxes
-           for(h in 1:(length(U$z))){
-               upper.percent[h] = ((U$z[h]+zu.sym[h])/U$z[h])
-           }
-
-           for(h in (length(U$z)+1):(length(U$z)+length(exports))){
-               upper.percent[h] = ((U$e[h-length(U$z)]+eu.sym[h-length(U$z)])/U$e[h-length(U$z)])
-           }
-
-           for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
-               upper.percent[h] = ((U$r[h-length(U$z)-length(exports)]+ru.sym[h-length(U$z)-length(exports)])/U$r[h-length(U$z)-length(exports)])
-           }
-
-           for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
-               upper.percent[h] = ((U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]+
-                                        Fu.sym[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])/
-                                       U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]])
-           }
-
-           upper.percent[is.na(upper.percent)] = 0
-
-           H=c(lower.percent,-upper.percent)
-
-       }else if(identical(type,"asym") ==TRUE){ ## asymetrical error
 
     # convert sparse data to matrix and vector form to ensure order stays correct
-           if(is.na(y.top)[1] == FALSE){ # if y is given, fill in e and r
-               e.top = y.top
-               r.top = data.frame(1,0)
-               e.bot = y.bot
-               r.bot = data.frame(1,0)
-           }
+       if(is.na(y.top)[1] == FALSE){ # if y is given, fill in e and r
+           e.top = y.top
+           r.top = data.frame(1,0)
+           e.bot = y.bot
+           r.bot = data.frame(1,0)
+       }
 
-           mat.size=length(inputs) # number of nodes
+       mat.size=length(inputs) # number of nodes
     # flow matrix uncertainty
-           Fu.top=matrix(0, nrow=mat.size, ncol=mat.size)
-           Fu.bot=matrix(0, nrow=mat.size, ncol=mat.size)
-           for(i in 1:nrow(F.top)){
-               Fu.top[F.top[i,1],F.top[i,2]]=F.top[i,3]
-               Fu.bot[F.bot[i,1],F.bot[i,2]]=F.bot[i,3]
-           }
+       Fu.top=matrix(0, nrow=mat.size, ncol=mat.size)
+       Fu.bot=matrix(0, nrow=mat.size, ncol=mat.size)
+       for(i in 1:nrow(F.top)){
+           Fu.top[F.top[i,1],F.top[i,2]]=F.top[i,3]
+           Fu.bot[F.bot[i,1],F.bot[i,2]]=F.bot[i,3]
+       }
 
     # input flow uncertainty
-           zu.top=rep(0,mat.size)
-           zu.bot=rep(0,mat.size)
-           for(i in 1:nrow(z.top)){
-               zu.top[z.top[i,1]]=z.top[i,2]
-               zu.bot[z.bot[i,1]]=z.bot[i,2]
-           }
+       zu.top=rep(0,mat.size)
+       zu.bot=rep(0,mat.size)
+       for(i in 1:nrow(z.top)){
+           zu.top[z.top[i,1]]=z.top[i,2]
+           zu.bot[z.bot[i,1]]=z.bot[i,2]
+       }
 
     # output flow uncertainty (y) calculated as sum of exports (e) and respirations (r)
 
     # export flow uncertainty
-           eu.top=rep(0,mat.size)
-           eu.bot=rep(0,mat.size)
-           for(i in 1:nrow(e.top)){
-               eu.top[e.top[i,1]]=e.top[i,2]
-               eu.bot[e.bot[i,1]]=e.bot[i,2]
-           }
+       eu.top=rep(0,mat.size)
+       eu.bot=rep(0,mat.size)
+       for(i in 1:nrow(e.top)){
+           eu.top[e.top[i,1]]=e.top[i,2]
+           eu.bot[e.bot[i,1]]=e.bot[i,2]
+       }
 
     # respiration flow uncertainty
-           ru.top=rep(0,mat.size)
-           ru.bot=rep(0,mat.size)
-           for(i in 1:nrow(r.top)){
-               ru.top[r.top[i,1]]=r.top[i,2]
-               ru.bot[r.bot[i,1]]=r.bot[i,2]
-           }
+       ru.top=rep(0,mat.size)
+       ru.bot=rep(0,mat.size)
+       for(i in 1:nrow(r.top)){
+           ru.top[r.top[i,1]]=r.top[i,2]
+           ru.bot[r.bot[i,1]]=r.bot[i,2]
+       }
 
     # use matrix and vector format to construct H
-           for(h in 1:(length(U$z))){
-               lower.percent[h] = zu.bot[h]/U$z[h]
-           }
+       for(h in 1:(length(U$z))){
+           lower.percent[h] = zu.bot[h]/U$z[h]
+       }
 
-           for(h in (length(U$z)+1):(length(U$z)+length(exports))){
-               lower.percent[h] = eu.bot[h-length(U$z)]/U$e[h-length(U$z)]
-           }
+       for(h in (length(U$z)+1):(length(U$z)+length(exports))){
+           lower.percent[h] = eu.bot[h-length(U$z)]/U$e[h-length(U$z)]
+       }
 
-           for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
-               lower.percent[h] = ru.bot[h-length(U$z)-length(exports)]/U$r[h-length(U$z)-length(exports)]
-           }
+       for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
+           lower.percent[h] = ru.bot[h-length(U$z)-length(exports)]/U$r[h-length(U$z)-length(exports)]
+       }
 
-           for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
-               lower.percent[h] = Fu.bot[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]/
-                   U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]
-           }
+       for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
+           lower.percent[h] = Fu.bot[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]/
+               U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]
+       }
 
-           lower.percent[is.na(lower.percent)] = 0
-           lower.percent[which(lower.percent < 0)] = 0.0001 # restrict values to be positive
+       lower.percent[is.na(lower.percent)] = 0
+       lower.percent[which(lower.percent < 0)] = 0.0001 # restrict values to be positive
+       lower.percent[is.infinite(lower.percent)] = 0.0001
 
 	  # order of H = all z, all e, all r, f by fluxes
-           for(h in 1:(length(U$z))){
-               upper.percent[h] = zu.top[h]/U$z[h]
-           }
+       for(h in 1:(length(U$z))){
+           upper.percent[h] = zu.top[h]/U$z[h]
+       }
 
-           for(h in (length(U$z)+1):(length(U$z)+length(exports))){
-               upper.percent[h] = eu.top[h-length(U$z)]/U$e[h-length(U$z)]
-           }
+       for(h in (length(U$z)+1):(length(U$z)+length(exports))){
+           upper.percent[h] = eu.top[h-length(U$z)]/U$e[h-length(U$z)]
+       }
 
-           for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
-               upper.percent[h] = ru.top[h-length(U$z)-length(exports)]/U$r[h-length(U$z)-length(exports)]
-           }
+       for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
+           upper.percent[h] = ru.top[h-length(U$z)-length(exports)]/U$r[h-length(U$z)-length(exports)]
+       }
 
-           for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
-               upper.percent[h] = Fu.top[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]/
-                   U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]
-           }
+       for(h in (length(U$z)+length(exports)+length(respirations)+1):(length(U$z)+length(exports)+length(respirations)+nrow(fluxes))){
+           upper.percent[h] = Fu.top[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]/
+               U$F[fluxes[(h-length(U$z)-length(exports)-length(respirations)),1],fluxes[(h-length(U$z)-length(exports)-length(respirations)),2]]
+       }
 
-           upper.percent[is.na(upper.percent)] = 0
+       upper.percent[is.na(upper.percent)] = 0
+       upper.percent[is.infinite(upper.percent)] = 100 # constrain infinite values to be 100%
 
-           H=c(lower.percent,-upper.percent)
+       H=c(lower.percent,-upper.percent)
 
-	} else{warning('Please use type "percent", "sym", or "asym"')}
+   }
 
 
-# -- UNCERTAINTY ANALYSIS --
-# Monte Carlo Model Sampling (using limSolve functions)
+
+   # --- UNCERTAINTY ANALYSIS --
+   # Monte Carlo Model Sampling (using limSolve functions)
 
 
    xs = xsample(E=E, F=F, G=G, H=H, iter=iter)	# calculate plausible coefficients
 
-# -- OUTPUT -- return plausible models to enaR --
+   # --- OUTPUT -- return plausible models to enaR --
 
    # initialize input objects for enaR
    z.ena = rep(0, x$gal$n)
@@ -405,8 +491,15 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        rownames(F.ena) = vertex.names
        colnames(F.ena) = vertex.names
 
-       plausible.models[[k]] = pack(flow=F.ena, input=z.ena, export=e.ena, respiration=r.ena, living=living, output=y.ena, storage=storage)
+       plausible.models[[k]] = pack(flow=F.ena,
+                           input=z.ena,
+                           export=e.ena,
+                           respiration=r.ena,
+                           living=living,
+                           output=y.ena,
+                           storage=storage)
    }
+
 
    return(plausible.models)
 }
