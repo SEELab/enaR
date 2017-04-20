@@ -427,7 +427,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
        lower.percent[is.na(lower.percent)] = 0
        lower.percent[which(lower.percent < 0)] = 0.0001 # restrict values to be positive
-       lower.percent[is.infinite(lower.percent)] = 0.0001
+       lower.percent[is.infinite(lower.percent)] = 0
 
 	  # order of H = all z, all e, all r, f by fluxes
        for(h in 1:(length(U$z))){
@@ -448,7 +448,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        }
 
        upper.percent[is.na(upper.percent)] = 0
-       upper.percent[is.infinite(upper.percent)] = 100 # constrain infinite values to be 100%
+       upper.percent[is.infinite(upper.percent)] = 0 # constrain infinite values to be 100%
 
        H=c(lower.percent,-upper.percent)
 
