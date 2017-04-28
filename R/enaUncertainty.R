@@ -116,7 +116,8 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
     # check data input - Part 1 ----------------
     # data input warnings
-    if (class(x) != 'network'){warning('x is not a network class object')} # check object class
+    if (class(x) != 'network'){
+        return(warning('x is not a network class object'))} # check object class
 
     # check "type"
     if( ( type %in% c("percent", "sym", "asym") ) == FALSE){
@@ -205,16 +206,16 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
        # --- Check Data Inputs ---
        if (any(is.na(F.sym)) == TRUE){
-           warning('please provide symmetric uncertainty data for internal flows')} else {
+           return(warning('please provide symmetric uncertainty data for internal flows'))} else {
 
                                         # Check Boundary flow uncertainties
                if (any(is.na(z.sym)) == TRUE){
-                   warning('please provide symmetric uncertainty data for model inputs')
+                   return(warning('please provide symmetric uncertainty data for model inputs'))
                }					      # check uncertainty data inputs
 
                if (any(is.na(y.sym))) {
                    if (any(is.na(r.sym)) || any(is.na(e.sym)) ){
-                       warning('please provide symmetric uncertainty data for model outputs')
+                       return(warning('please provide symmetric uncertainty data for model outputs'))
                    }					      # check uncertainty data inputs
                }
            }
@@ -331,17 +332,17 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
       # --- Check Data Inputs ---
        if (is.na(F.bot)[1] == TRUE || is.na(F.top)[1] == TRUE){
-           warning('please provide top and bottom uncertainty data for internal flows')} else {
+           return(warning('please provide top and bottom uncertainty data for internal flows'))} else {
 
                                         # Check Boundary flow uncertainties
                if (is.na(z.bot)[1] == TRUE || is.na(z.top)[1] == TRUE ){
-                   warning('please provide top and bottom uncertainty data for model inputs')
+                   return(warning('please provide top and bottom uncertainty data for model inputs'))
                }					      # check uncertainty data inputs
 
                if (is.na(y.top)[1] == TRUE || is.na(y.bot)[1] == TRUE) {
                    if (is.na(r.top) == TRUE || is.na(r.bot) == TRUE ||
                        is.na(e.top) == TRUE || is.na(e.bot) == TRUE ){
-                       warning('please provide top and bottom uncertainty data for model outputs')
+                       return(warning('please provide top and bottom uncertainty data for model outputs'))
                    }					      # check uncertainty data inputs
                }
            }
