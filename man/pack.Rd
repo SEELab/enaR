@@ -5,7 +5,7 @@
 \title{Compile Network Information into a Network Class}
 \usage{
 pack(flow, input = NA, respiration = NA, export = NA, output = NA,
-  storage = NA, living = NA)
+  ustorage = NA, living = NA)
 }
 \arguments{
 \item{flow}{The flow matrix.}
@@ -18,10 +18,10 @@ pack(flow, input = NA, respiration = NA, export = NA, output = NA,
 
 \item{output}{The output (i.e. exports + respiration) from the system.}
 
-\item{storage}{The quantities stored in compartments within the system.}
-
 \item{living}{A logical vector indicating whether a node is either 'living'
 (= TRUE) or 'dead' (=FALSE).}
+
+\item{storage}{The quantities stored in compartments within the system.}
 }
 \value{
 Returns a network object for the supplied model.

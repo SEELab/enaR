@@ -153,8 +153,6 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
     }
 
 
-
-
    # Build required inputs to limSolve (E, F, G)
    E = matrix(0, nrow=x$gal$n,
        ncol=(nrow(fluxes)+length(inputs)+length(exports)+length(respirations))) # initialize E
