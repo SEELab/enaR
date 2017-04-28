@@ -119,7 +119,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
     if (class(x) != 'network'){warning('x is not a network class object')} # check object class
 
     # check "type"
-    if( (type %in% c("percent", "sym", "asym")) == FALSE){
+    if( type %in% c("percent", "sym", "asym") ) == FALSE){
         return(warning('type must be "percent", "sym", or "asym".'))
     }
 
