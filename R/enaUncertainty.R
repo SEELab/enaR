@@ -133,8 +133,8 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
    outputs = seq(from=1, to=length(U$y), by=1)                 # identify outputs (respiration + exports)
    exports = seq(from=1, to=length(U$e), by=1)                 # identify exports
    respirations = seq(from=1, to=length(U$r), by=1)            # identify respirations
-   living=U$living                                             # extract living vector
-   storage=U$X                                                 # extract storage or biomass
+   living = U$living                                           # extract living vector
+   storage = U$X                                               # extract storage or biomass
    vertex.names <- x%v%'vertex.names'                          # get vertex (node) names
 
 
@@ -495,13 +495,13 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        rownames(F.ena) = vertex.names
        colnames(F.ena) = vertex.names
 
-       plausible.models[[k]] = pack(flow=F.ena,
-                           input=z.ena,
-                           export=e.ena,
-                           respiration=r.ena,
-                           living=living,
-                           output=y.ena,
-                           storage=storage)
+       plausible.models[[k]] = pack(flow = F.ena,
+                           input = z.ena,
+                           export = e.ena,
+                           respiration = r.ena,
+                           living = living,
+                           output = y.ena,
+                           storage = storage)
    }
 
 
