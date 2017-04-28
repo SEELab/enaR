@@ -119,7 +119,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
     if (class(x) != 'network'){warning('x is not a network class object')} # check object class
 
     # check "type"
-    if( type %in% c("percent", "sym", "asym") ) == FALSE){
+    if( ( type %in% c("percent", "sym", "asym") ) == FALSE){
         return(warning('type must be "percent", "sym", or "asym".'))
     }
 
@@ -214,7 +214,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
                if (any(is.na(y.sym)) == TRUE) {
                    if (is.na(r.sym) == TRUE || is.na(e.sym) == TRUE ){
-                       warning('please provide symmetric cuncertainty data for model outputs')
+                       warning('please provide symmetric uncertainty data for model outputs')
                    }					      # check uncertainty data inputs
                }
            }
