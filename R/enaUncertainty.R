@@ -138,21 +138,6 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
    vertex.names <- x%v%'vertex.names'                          # get vertex (node) names
 
 
-    # check input data - Part 2 -----------------
-    # the specification of the uncertainty data must match the specification of the model data
-
-    if(sum(U$y)> 0 && ( (all(U$e == U$y) || all(U$r == U$y)) || ( all(is.na(U$e)) && all(is.na(U$r) ) )) ){ # if TRUE implies that only y-output values are specified in the model
-        if( any(is.na(y.sym))  && ( any(is.na(y.top)) ||  any(is.na(y.bot))) ){
-            return(warning('Uncertainty data must match the model data. \n Because your model only has output valeues (y), please specify your model output undertainty data using the output vector (y)'))
-        }
-    } else {
-        if( (any(is.na(e.sym)) && any(is.na(r.sym)) ) &&
-           ( any(is.na(e.top)) && any(is.na(e.bot)) && any(is.na(r.top)) && any(is.na(r.bot)))) {
-            return(warning('Exports or Respiration values are specified for your model. \n Uncertainty data for losses must match the model output specifications (y vs. exports and respirations).'))
-        }
-    }
-
-
    # Build required inputs to limSolve (E, F, G)
    E = matrix(0, nrow=x$gal$n,
        ncol=(nrow(fluxes)+length(inputs)+length(exports)+length(respirations))) # initialize E
@@ -219,20 +204,34 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
    if(identical(type, "sym") == TRUE){ ## error by symmetric amount
 
        # --- Check Data Inputs ---
-       if (is.na(F.sym)[1] == TRUE){
+       if (any(is.na(F.sym)) == TRUE){
            warning('please provide symmetric uncertainty data for internal flows')} else {
 
                                         # Check Boundary flow uncertainties
-               if (is.na(z.sym)[1] == TRUE){
+               if (any(is.na(z.sym)) == TRUE){
                    warning('please provide symmetric uncertainty data for model inputs')
                }					      # check uncertainty data inputs
 
-               if (is.na(y.sym)[1] == TRUE) {
+               if (any(is.na(y.sym)) == TRUE) {
                    if (is.na(r.sym) == TRUE || is.na(e.sym) == TRUE ){
                        warning('please provide symmetric cuncertainty data for model outputs')
                    }					      # check uncertainty data inputs
                }
            }
+
+
+    # check input data - Part 2 -----------------
+    # the specification of the uncertainty data must match the specification of the model data
+
+       if(sum(U$y)> 0 && ( (all(U$e == U$y) || all(U$r == U$y)) || ( all(is.na(U$e)) && all(is.na(U$r) ) )) ){ # if TRUE implies that only y-output values are specified in the model
+           if( any(is.na(y.sym))  ){
+               return(warning('Uncertainty data must match the model data. \n Because your model only has output values (y), please specify your model output undertainty data using the output vector (y.sym)'))
+           }
+       } else {
+           if( any(is.na(e.sym)) && any(is.na(r.sym)) ) {
+               return(warning('Exports or Respiration values are specified for your model. \n Uncertainty data for losses must match the model output specifications (y vs. exports and respirations).'))
+           }
+       }
 
 
            # convert sparse data to matrix and vector form to ensure order stays correct
@@ -346,6 +345,22 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                    }					      # check uncertainty data inputs
                }
            }
+
+
+           # check input data - Part 2 -----------------
+    # the specification of the uncertainty data must match the specification of the model data
+
+    if(sum(U$y)> 0 && ( (all(U$e == U$y) || all(U$r == U$y)) || ( all(is.na(U$e)) && all(is.na(U$r) ) )) ){ # if TRUE implies that only y-output values are specified in the model
+        if( any(is.na(y.top)) ||  any(is.na(y.bot)) ){
+            return(warning('Uncertainty data must match the model data. \n Because your model only has output valeues (y), please specify your model output undertainty data using the output vector (y)'))
+        }
+    } else {
+        if( any(is.na(e.top)) && any(is.na(e.bot)) && any(is.na(r.top)) && any(is.na(r.bot)) ) {
+            return(warning('Exports or Respiration values are specified for your model. \n Uncertainty data for losses must match the model output specifications (y vs. exports and respirations).'))
+        }
+    }
+
+
 
     # convert sparse data to matrix and vector form to ensure order stays correct
        if(is.na(y.top)[1] == FALSE){ # if y is given, fill in e and r
