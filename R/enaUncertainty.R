@@ -212,8 +212,8 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                    warning('please provide symmetric uncertainty data for model inputs')
                }					      # check uncertainty data inputs
 
-               if (any(is.na(y.sym)) == TRUE) {
-                   if (is.na(r.sym) == TRUE || is.na(e.sym) == TRUE ){
+               if (any(is.na(y.sym))) {
+                   if (any(is.na(r.sym)) || any(is.na(e.sym)) ){
                        warning('please provide symmetric uncertainty data for model outputs')
                    }					      # check uncertainty data inputs
                }
