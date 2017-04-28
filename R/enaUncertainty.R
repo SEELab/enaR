@@ -104,7 +104,6 @@
 #' hist(ns$TST, col = "blue")
 #'
 #' @import network
-#' @import limSolve
 #' @export enaUncertainty
 
 
@@ -444,7 +443,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
    # Monte Carlo Model Sampling (using limSolve functions)
    # ===========================================================
 
-   xs = xsample(E=E, F=F, G=G, H=H, iter=iter)	# calculate plausible coefficients
+   xs = limSolve::xsample(E=E, F=F, G=G, H=H, iter=iter)	# calculate plausible coefficients
 
    # ===========================================================
    # --- OUTPUT -- return plausible models to enaR --
