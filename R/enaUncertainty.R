@@ -213,12 +213,24 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                    return(warning('please provide symmetric uncertainty data for model inputs'))
                }					      # check uncertainty data inputs
 
-               if (any(is.na(y.sym))) {
-                   if (any(is.na(r.sym)) || any(is.na(e.sym)) ){
-                       return(warning('please provide symmetric uncertainty data for model outputs'))
-                   }					      # check uncertainty data inputs
+               if(sum(U$y)> 0 && ( (all(U$e == U$y) || all(U$r == U$y)) || ( all(is.na(U$e)) && all(is.na(U$r) ) )) ){ # if TRUE implies that only y-output values are specified in the model
+                   if( any(is.na(y.sym))  ){
+                       return(warning('Uncertainty data must match the model data. \n Because your model only has output values (y), please specify your model output undertainty data using the output vector (y.sym)'))
+                   }
+               } else {
+                   if( any(is.na(e.sym)) && any(is.na(r.sym)) ) {
+                       return(warning('Exports or Respiration values are specified for your model. \n Uncertainty data for losses must match the model output specifications (y vs. exports and respirations).'))
+                   }
                }
-           }
+
+
+
+#               if (any(is.na(y.sym)) ) {
+#                   if (any(is.na(r.sym)) || any(is.na(e.sym)) ){
+#                       return(warning('please provide symmetric uncertainty data for model outputs'))
+#                   }					      # check uncertainty data inputs
+#               }
+#           }
 
 
     # check input data - Part 2 -----------------
