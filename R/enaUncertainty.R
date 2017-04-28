@@ -114,15 +114,14 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                         F.bot=NA, z.bot=NA, y.bot=NA, e.bot=NA, r.bot=NA,
                         F.top=NA, z.top=NA, y.top=NA, e.top=NA, r.top=NA){
 
-    # check data input ----------------
-  # data input warnings
-   if (class(x) != 'network'){warning('x is not a network class object')} # check object class
+    # check data input - Part 1 ----------------
+    # data input warnings
+    if (class(x) != 'network'){warning('x is not a network class object')} # check object class
 
-   # check "type"
-   if( (type %in% c("percent", "sym", "asym")) == FALSE){
-       return(warning('type must be "percent", "sym", or "asym".'))
-   }
-
+    # check "type"
+    if( (type %in% c("percent", "sym", "asym")) == FALSE){
+        return(warning('type must be "percent", "sym", or "asym".'))
+    }
 
 
    # ===  Main Action ===
@@ -134,10 +133,27 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
    outputs = seq(from=1, to=length(U$y), by=1)                 # identify outputs (respiration + exports)
    exports = seq(from=1, to=length(U$e), by=1)                 # identify exports
    respirations = seq(from=1, to=length(U$r), by=1)            # identify respirations
-   living=U$living
-   storage=U$X
+   living=U$living                                             # extract living vector
+   storage=U$X                                                 # extract storage or biomass
+   vertex.names <- x%v%'vertex.names'                          # get vertex (node) names
 
-   vertex.names <- x%v%'vertex.names'
+
+    # check input data - Part 2 -----------------
+    # the specification of the uncertainty data must match the specification of the model data
+
+    if(sum(U$y)> 0 && ( (all(U$e == U$y) || all(U$r == U$y)) || ( all(is.na(U$e)) && all(is.na(U$r) ) )) ){ # if TRUE implies that only y-output values are specified in the model
+        if( any(is.na(y.sym))  && ( any(is.na(y.top)) ||  any(is.na(y.bot))) ){
+            return(warning('Uncertainty data must match the model data. \n Because your model only has output valeues (y), please specify your model output undertainty data using the output vector (y)'))
+        }
+    } else {
+        if( (any(is.na(e.sym)) && any(is.na(r.sym)) ) &&
+           ( any(is.na(e.top)) && any(is.na(e.bot)) && any(is.na(r.top)) && any(is.na(r.bot)))) {
+            return(warning('Exports or Respiration values are specified for your model. \n Uncertainty data for losses must match the model output specifications (y vs. exports and respirations).'))
+        }
+    }
+
+
+
 
    # Build required inputs to limSolve (E, F, G)
    E = matrix(0, nrow=x$gal$n,
@@ -200,7 +216,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        }
    }
 
-   # type = symmetric ---------------
+   # type = symmetric ----------------------------------------------------------------
 
    if(identical(type, "sym") == TRUE){ ## error by symmetric amount
 
@@ -221,21 +237,15 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
            }
 
 
-#       is.na(f.df) == FALSE &&  (is.na(y.df) == FALSE || (is.na(e.df) == FALSE && is.na(r.df) == FALSE))
-
-       #if (is.na(y.sym)[1] == FALSE && is.na(e.sym)[1] == FALSE){
-       #    warning('please provide uncertainty information for y OR e and r')
-       #} # check uncertainty data inputs
-       #if (is.na(y.sym)[1] == FALSE && is.na(r.sym)[1] == FALSE){
-       #    warning('please provide uncertainty information for y OR e and r')
-       #} # check uncertainty data inputs
-
-
-       # --- reshape data ---
-       # convert sparse data to matrix and vector form to ensure order stays correct
+           # convert sparse data to matrix and vector form to ensure order stays correct
        if(is.na(y.sym)[1] == FALSE){ # if y is given, fill in e and r
+         if(sum(U$e)>0){
            e.sym = y.sym
            r.sym = data.frame(1,0)
+         }else{
+           e.sym = data.frame(1,0)
+           r.sym = y.sym
+         }
        }
 
        mat.size = length(inputs) # number of nodes
@@ -272,7 +282,8 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        }
 
        for(h in (length(U$z)+1):(length(U$z)+length(exports))){
-           lower.percent[h] = ((U$e[h-length(U$z)] - eu.sym[h-length(U$z)]) / U$e[h-length(U$z)])
+           lower.percent[h] =
+               ((U$e[h-length(U$z)] - eu.sym[h-length(U$z)]) / U$e[h-length(U$z)])
        }
 
        for(h in (length(U$z)+length(exports)+1):(length(U$z)+length(exports)+length(respirations))){
@@ -287,7 +298,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
        lower.percent[is.na(lower.percent)] = 0
        lower.percent[which(lower.percent < 0)] = 0.0001 # restrict values to be positive
-       lower.percent[is.infinite(lower.percent)] = 1
+#       lower.percent[is.infinite(lower.percent)] = 1
 
        # order of H = all z, all e, all r, f by fluxes
        # inputs
@@ -313,7 +324,7 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        }
 
        upper.percent[is.na(upper.percent)] = 0
-       upper.percent[is.infinite(upper.percent)] = 100 # constrain infinite values to be 100%
+#       upper.percent[is.infinite(upper.percent)] = 100 # constrain infinite values to be 100%
 
        H=c(lower.percent,-upper.percent)
    }
@@ -333,43 +344,24 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                if (is.na(y.top)[1] == TRUE || is.na(y.bot)[1] == TRUE) {
                    if (is.na(r.top) == TRUE || is.na(r.bot) == TRUE ||
                        is.na(e.top) == TRUE || is.na(e.bot) == TRUE ){
-                           warning('please provide top and bottom uncertainty data for model outputs')
+                       warning('please provide top and bottom uncertainty data for model outputs')
                    }					      # check uncertainty data inputs
                }
            }
 
-       # check data inputs
-#       if (is.na(F.bot)[1] == FALSE && is.na(z.bot)[1] == TRUE){
-#           warning('Insufficient uncertainty data')
-#       }					    # check uncertainty data inputs
-#       if (is.na(F.bot)[1] == FALSE && is.na(y.bot)[1] == TRUE){
-#           warning('Insufficient uncertainty data')
-#       }					    # check uncertainty data inputs
-#       if (is.na(F.top)[1] == FALSE && is.na(z.top)[1] == TRUE){
-#           warning('Insufficient uncertainty data')
-#       }					    # check uncertainty data inputs
-#       if (is.na(F.top)[1] == FALSE && is.na(y.top)[1] == TRUE){
-#       }					    # check uncertainty data inputs
-#       if (is.na(F.top)[1] == FALSE && is.na(F.bot)[1] == TRUE){
-#           warning('Lower limit uncertainty data not detected')
-#       }	# check uncertainty data inputs
-#       if (is.na(F.bot)[1] == FALSE && is.na(F.top)[1] == TRUE){
-#           warning('Upper limit uncertainty data not detected')
-#       } # check uncertainty data inputs
-#       if (is.na(y.top)[1] == FALSE && is.na(e.top)[1] == FALSE){
-#       } # check uncertainty data inputs
-#       if (is.na(y.top)[1] == FALSE && is.na(r.top)[1] == FALSE){
-#           warning('please provide uncertainty information for y OR e and r')
-#       } # check uncertainty data inputs
-
-
-
     # convert sparse data to matrix and vector form to ensure order stays correct
        if(is.na(y.top)[1] == FALSE){ # if y is given, fill in e and r
+         if(sum(U$e)>0){
            e.top = y.top
            r.top = data.frame(1,0)
            e.bot = y.bot
            r.bot = data.frame(1,0)
+         }else{
+           e.top = data.frame(1,0)
+           r.top = y.top
+           e.bot = data.frame(1,0)
+           r.bot = y.bot
+         }
        }
 
        mat.size=length(inputs) # number of nodes
@@ -427,7 +419,6 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
 
        lower.percent[is.na(lower.percent)] = 0
        lower.percent[which(lower.percent < 0)] = 0.0001 # restrict values to be positive
-       lower.percent[is.infinite(lower.percent)] = 0
 
 	  # order of H = all z, all e, all r, f by fluxes
        for(h in 1:(length(U$z))){
@@ -448,20 +439,20 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        }
 
        upper.percent[is.na(upper.percent)] = 0
-       upper.percent[is.infinite(upper.percent)] = 0 # constrain infinite values to be 100%
 
        H=c(lower.percent,-upper.percent)
 
    }
 
 
-
+   # ===========================================================
    # --- UNCERTAINTY ANALYSIS --
    # Monte Carlo Model Sampling (using limSolve functions)
-
+   # ===========================================================
 
    xs = xsample(E=E, F=F, G=G, H=H, iter=iter)	# calculate plausible coefficients
 
+   # ===========================================================
    # --- OUTPUT -- return plausible models to enaR --
 
    # initialize input objects for enaR

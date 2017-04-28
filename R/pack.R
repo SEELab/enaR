@@ -7,16 +7,12 @@
 
 
 
-
-
-
-
 #' Compile Network Information into a Network Class
-#' 
+#'
 #' This function provides a flexible framework for importing flow network
 #' information into a network class object for analyses.
-#' 
-#' 
+#'
+#'
 #' @param flow The flow matrix.
 #' @param input The inputs into the system.
 #' @param respiration The quantities respired from the system.
@@ -30,14 +26,20 @@
 #' @seealso \code{\link{unpack}}
 #' @import network
 #' @export pack
-pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
+pack <- function(flow,
+                 input = NA,
+                 respiration = NA,
+                 export = NA,
+                 output = NA,
+                 ustorage = NA,
+                 living=NA){
                                         #Warn if missing both
   if (all(is.na(respiration)) & all(is.na(export))){
     warning('Missing or NA resipiration/export values.')
-  }else if (any(is.na(output) == FALSE) & 
+  }else if (any(is.na(output) == FALSE) &
             any(is.na(export) == FALSE)){
                 respiration <- output - export
-            }else if (any(is.na(output) == FALSE) & 
+            }else if (any(is.na(output) == FALSE) &
                       any(is.na(respiration) == FALSE)){
                 export <- output - respiration
             }else if (all(is.na(output)) & any(c(is.na(respiration), is.na(export)) == FALSE)){
