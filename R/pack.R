@@ -31,7 +31,7 @@ pack <- function(flow,
                  respiration = NA,
                  export = NA,
                  output = NA,
-                 ustorage = NA,
+                 storage = NA,
                  living=NA){
                                         #Warn if missing both
   if (all(is.na(respiration)) & all(is.na(export))){
