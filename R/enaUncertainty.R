@@ -50,7 +50,8 @@
 #' m <- troModels[[6]] # cone sping model (Kay et al. 1989; from Tilly)
 #'
 #' # Set Uncertainty Analysis parameters
-#' no.samples = 150 # the number of plausible models to return (number of samples); 10,000 would be better.
+#' no.samples = 150 # the number of plausible models to return (number of samples); 
+#'                  # 10,000 would be better.
 #' f.error = 25   # flow parameters percent error to investigate
 #'
 #' # === ACTION ===
