@@ -16,6 +16,7 @@ Imports:
     gdata,
     graphics,
     stats,
+    limSolve,
     utils
 Suggests:
     codetools,
