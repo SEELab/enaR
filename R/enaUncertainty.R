@@ -78,10 +78,10 @@
 #' rm(opar)
 #'
 #' # Lets use the 95% CI to make statisitcal inferences about the
-#' hypothesized "dominance of indirect effects" (Higashi and Patten
-#' 1991, Salas and Borrett 2010, Borrett et al. 2016), and "network
-#' homogenization" (Fath and Patten 1999, Borrett and Salas 2010,
-#' Borrett et al. 2016)
+#' # hypothesized "dominance of indirect effects" (Higashi and Patten
+#' # 1991, Salas and Borrett 2010, Borrett et al. 2016), and "network
+#' # homogenization" (Fath and Patten 1999, Borrett and Salas 2010,
+#' # Borrett et al. 2016)
 #'
 #' # find 95% confidence intervals
 #' id.95ci <- quantile(ns$ID.F, probs = c(0.025, 0.975))
@@ -113,10 +113,10 @@
 #'
 
 #' # Lets use the 95% CI to make statisitcal inferences about the
-#' hypothesized "dominance of indirect effects" (Higashi and Patten
-#' 1991, Salas and Borrett 2010, Borrett et al. 2016), and "network
-#' homogenization" (Fath and Patten 1999, Borrett and Salas 2010,
-#' Borrett et al. 2016)
+#' # hypothesized "dominance of indirect effects" (Higashi and Patten
+#' # 1991, Salas and Borrett 2010, Borrett et al. 2016), and "network
+#' # homogenization" (Fath and Patten 1999, Borrett and Salas 2010,
+#' # Borrett et al. 2016)
 
 #'
 #' # find 95% confidence intervals
@@ -137,16 +137,16 @@
 #'        bp, c(id.95ci[2], hmg.95ci[2]),
 #'        code = 3, lwd = 1.5, angle = 90, length = 0.2, col = "black")
 #'
-#'# the results show that the orignial value of the Indirect-to-Direct
-#' flows ratio is larger than one, indicating the "dominance of
-#' indirect effects"; however, the 95% confidence interval for this
-#' indicator with a 25% uniform uncertainty spans the threshold value
-#' of 1 (ranging from 0.9 to 1.16).  Thus, we are not confident that
-#' this parameter exceeds the interpretation threshold given this
-#' level of uncertainty.  In contast, the network homogenizaiton
-#' pameter exceeds the interpretation threshold of 1.0, and the 95% CI
-#' for our level of uncertainty suggests that we are confident that
-#' this interpretation is correct.
+#' # The results show that the orignial value of the Indirect-to-Direct
+#' # flows ratio is larger than one, indicating the "dominance of
+#' # indirect effects"; however, the 95% confidence interval for this
+#' # indicator with a 25% uniform uncertainty spans the threshold value
+#' # of 1 (ranging from 0.9 to 1.16).  Thus, we are not confident that
+#' # this parameter exceeds the interpretation threshold given this
+#' # level of uncertainty.  In contast, the network homogenizaiton
+#' # pameter exceeds the interpretation threshold of 1.0, and the 95% CI
+#' # for our level of uncertainty suggests that we are confident that
+#' # this interpretation is correct.
 #'
 #' hist(ns$TST, col = "blue")
 #'
