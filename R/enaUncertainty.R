@@ -151,6 +151,7 @@
 #'
 #' hist(ns$TST, col = "blue")
 #'
+#' @import limSolve
 #' @import network
 #' @export enaUncertainty
 
