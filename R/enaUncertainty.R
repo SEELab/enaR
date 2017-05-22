@@ -160,9 +160,17 @@ enaUncertainty=function(x = 'network object', type="percent", iter=10000,
        E[fluxes[f,2],(length(U$z)+length(exports)+length(respirations)+f)] = U$F[fluxes[f,1],fluxes[f,2]]
    }
 
-   for(f in 1:nrow(fluxes)){	 ## internal node outputs
-       E[fluxes[f,1],(length(U$z)+length(exports)+length(respirations)+f)] = -U$F[fluxes[f,1],fluxes[f,2]]
-   }
+#   for(f in 1:nrow(fluxes)){	 ## internal node outputs
+#       E[fluxes[f,1],(length(U$z)+length(exports)+length(respirations)+f)] = -U$F[fluxes[f,1],fluxes[f,2]]
+#   }
+
+    for(f in 1:nrow(fluxes)){	 ## internal node outputs
+        if(fluxes[f,1] == fluxes[f,2]){
+            E[fluxes[f,1],(length(U$z)+length(exports)+length(respirations)+f)] = 0
+        }else{
+            E[fluxes[f,1],(length(U$z)+length(exports)+length(respirations)+f)] = -U$F[fluxes[f,1],fluxes[f,2]]
+        }
+    }
 
    F = rep(0,x$gal$n) # create F
 
