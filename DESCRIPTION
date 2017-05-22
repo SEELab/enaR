@@ -1,8 +1,8 @@
 Package: enaR
 Type: Package
 Title: Tools for Ecological Network Analysis
-Version: 2.10.0
-Date: 2017-03-10
+Version: 3.0.0
+Date: 2017-04-28
 Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Singh
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 Description: Provides algorithms for the analysis of ecological networks.
@@ -16,6 +16,7 @@ Imports:
     gdata,
     graphics,
     stats,
+    limSolve,
     utils
 Suggests:
     codetools,
