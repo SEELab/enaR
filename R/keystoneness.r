@@ -11,9 +11,6 @@
 #' input network model represents a food web.
 #'
 #' @param x a network object.
-#' @param eigen.check Logical: should the mixed trophic imapcts
-#' function check the convergence criterion?  The default is not to
-#' check.
 #' @return \item{ks}{vector of the keystoneness values}
 #' @author Stuart R. Borrett
 #' @seealso \code{\link{enaMTI}}
@@ -29,13 +26,13 @@
 #'
 #' @import network
 #' @export keystoneness
-keystoneness <- function(x = "model", eigen.check=FALSE){
+keystoneness <- function(x = "model"){
   if (class(x) != 'network'){warning('x is not a network class object')}
                                         #Check for balancing
     if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
     if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
 
-    m <- enaMTI(x, eigen.check = eigen.check)$M  # perform Mixed Trophic Impacts analysis
+    m <- enaMTI(x, eigen.check=FALSE)$M  # perform Mixed Trophic Impacts analysis
     m <- m - diag(diag(m))
     e <- sqrt(apply(m^2, 1, sum))
     b <- x%v%'storage'
