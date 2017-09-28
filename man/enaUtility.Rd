@@ -17,18 +17,6 @@ amount of energy--matter stored at each node (biomass).}
 \item{type}{Determines whether the flow or storage utility analysis is
 returned.}
 
-\item{eigen.check}{LOGICAL: should the dominant eigenvalue be checked.  Like
-enaFlow and enaStorage analyses, enaUtility analysis considers the utility
-propigated over path lengths ranging for zero to infinity.  For utility
-analysis to work properly, the path sequence must converge.  enaUtility
-checks to see if the utility path sequence is convergent by finding the
-dominant eigenvalue of the direct utility matrix.  If this eigenvalue is
-less than 1, the sequence is convergent and the analysis can be applied; if
-the dominant eigenvalue is greater than one, then the anlysis cannot be
-applied.  By default, the function will not return utility values if the
-eigenvalue is larger than one; however, if eigen.check is set to FALSE, then
-the function will be applied regardless of the mathematic validity.}
-
 \item{balance.override}{LOGICAL: should model balancing be ignored.
 enaUtility assumes that the network model is at steady-state.  The default
 setting will not allow the function to be applied to models not at

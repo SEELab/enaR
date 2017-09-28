@@ -16,17 +16,12 @@ enaMTI --- Mixed Trophic Impacts Analysis follows Ulanowicz and Puccia,
 Borrett | June 2012, MKL | July 2013 ------------------------------------
 Mixed Trophic Impacts (MTI) Analysis}
 \usage{
-enaMTI(x, eigen.check = TRUE, zero.na = TRUE, balance.override = FALSE)
+enaMTI(x, zero.na = TRUE, balance.override = FALSE)
 }
 \arguments{
 \item{x}{a network object.  This includes all weighte dflows into and out of
 each node.  It must also include the "Living" vector that identifies the
 living (TRUE/FALSE) status of each node.}
-
-\item{eigen.check}{LOGICAL: should the dominant eigen value be checked?  By
-default, the function will not return utility values if the eigenvalue is
-larger than one; however, if eigen.check is set to FALSE, then the function
-will be applied regardless of the mathematic concern.}
 
 \item{zero.na}{A logical parameter that specifies if NAs generated in the
 analysis should be reset to zero.  The default is TRUE.}
@@ -58,15 +53,6 @@ This and other Ulanowicz school functions require that export and
 respiration components of output be separately quantified.
 
 This analysis is similar in concept to the ENA Utility analysis.
-
-With regard to the eigen.check argument, like enaFlow, enaStorage and
-enaUtility, this analysis considers the trophic impact propigated over path
-lengths ranging for zero to infinity.  For the analysis to work properly,
-the path sequence must converge.  This function checks to see if the path
-sequence is convergent by finding the dominant eigenvalue of the direct
-matrix.  If this eigenvalue is less than 1, the sequence is convergent and
-the analysis can be applied; if the dominant eigenvalue is greater than one,
-then the anlysis cannot be applied.
 }
 \examples{
 

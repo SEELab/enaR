@@ -14,6 +14,9 @@
 #' also include the "Living" vector that identifies the living (TRUE/FALSE)
 #' status of each node. It must contain the non-living nodes at the end of the
 #' node vector, the function \code{\link{netOrder}} can be used for the same.
+#' @param balance.override Flow analysis assumes the network model is at
+#' steady-state (inputs = outputs).  Setting balance.override = TRUE allows the
+#' function to be run on unbalanced models.
 #' @return \item{Feeding_Cycles}{List that gives the details of the Feeding
 #' Cycles in the network. The output being according to the enaCycle function
 #' applied to the Living components in the network} \item{A}{matrix that
@@ -75,10 +78,17 @@
 #'
 #' @export enaTroAgg
 #' @import network
-enaTroAgg <- function (x){
+enaTroAgg <- function (x, balance.override = FALSE){
   if (class(x) != "network") {
     stop("x is not a network class object")
   }
+                                        #Check for balancing -- Requried for Lindeman Spine calculations.
+  if (balance.override){}else{
+    if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
+    if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
+  }
+
+
 
                                         # Initials
 
