@@ -7,7 +7,7 @@
 set.orient(x = c("rc", "school"))
 }
 \arguments{
-\item{x}{}
+\item{x}{The school determining the orientation}
 }
 \description{
 Changes the orientation of output matrices.
