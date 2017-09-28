@@ -47,14 +47,14 @@ detrital pool, "DetritalCirc" the circulation within the detrital pool,
 cycle Nexuses removed and "CI" the Cycling Index for the Feeding Cycles.  }
 }
 \description{
-It returns the data quantifying the underlying trophic structure of a given
-model based on the interaction of the living and non-living nodes. It is
-based on the Trophic Aggregations suggested by Lindeman (1942) and follows
-the algorithm by Ulanowicz and Kemp (1979) implemented in NETWRK 4.2b. It
-removes the Feeding cycles in the network beforehand to provide accurate
-results.
+It returns the data quantifying the underlying trophic structure of
+a given model based on the interaction of the living and non-living
+nodes. It is based on the Trophic Aggregations suggested by
+Lindeman (1942) and follows the algorithm by Ulanowicz and Kemp
+(1979) implemented in NETWRK 4.2b. It removes the Feeding cycles in
+the network beforehand to provide accurate results.
 }
-\note{
+\details{
 This and other Ulanowicz school functions require that export and
 respiration components of output be separately quantified.
 

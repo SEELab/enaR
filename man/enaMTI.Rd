@@ -2,19 +2,7 @@
 % Please edit documentation in R/enaMTI.R
 \name{enaMTI}
 \alias{enaMTI}
-\title{enaMTI --- Mixed Trophic Impacts Analysis
-follows Ulanowicz and Puccia, 1990.
-INPUT = network object
-OUTPUT = list of trophic impact statistics
-Borrett | June 2012, MKL | July 2013
-------------------------------------
-enaMTI --- Mixed Trophic Impacts Analysis follows Ulanowicz and Puccia,
-1990. INPUT = network object OUTPUT = list of trophic impact statistics
-Borrett | June 2012, MKL | July 2013 ------------------------------------
-enaMTI --- Mixed Trophic Impacts Analysis follows Ulanowicz and Puccia,
-1990. INPUT = network object OUTPUT = list of trophic impact statistics
-Borrett | June 2012, MKL | July 2013 ------------------------------------
-Mixed Trophic Impacts (MTI) Analysis}
+\title{Mixed Trophic Impacts (MTI) Analysis}
 \usage{
 enaMTI(x, zero.na = TRUE, balance.override = FALSE)
 }
@@ -48,7 +36,7 @@ Calculates the Mixed Trophic Impacts of one species on another in the given
 ecosystem model following the algorithm of Ulanowicz and Puccia (1990). This
 considers both the direct and indirect trophic impacts.
 }
-\note{
+\details{
 This and other Ulanowicz school functions require that export and
 respiration components of output be separately quantified.
 

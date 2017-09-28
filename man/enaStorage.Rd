@@ -2,9 +2,7 @@
 % Please edit documentation in R/enaStorage.R
 \name{enaStorage}
 \alias{enaStorage}
-\title{enaStorage --- storage analysis
-INPUT = network object
-OUTPUT = list of storage statistics}
+\title{Storage Analyses of Ecological Networks}
 \usage{
 enaStorage(x, balance.override = FALSE)
 }
@@ -48,19 +46,6 @@ cycled flow (mode2.S), dissipative equivalent to mode1.S (mode3.S),
 dissipative equivalent to mode0.S (mode4.S).}
 }
 \description{
-M. Lau | July 2011
----------------------------------------------------
-enaStorage --- storage analysis INPUT = network object OUTPUT = list of
-storage statistics
-}
-\details{
-M. Lau | July 2011 ---------------------------------------------------
-enaStorage --- storage analysis INPUT = network object OUTPUT = list of
-storage statistics
-
-M. Lau | July 2011 ---------------------------------------------------
-Storage Analyses of Ecological Networks
-
 Calculates storage-based Ecological Network Analyses.
 }
 \examples{

@@ -2,10 +2,7 @@
 % Please edit documentation in R/enaStructure.R
 \name{enaStructure}
 \alias{enaStructure}
-\title{enaStructure --- performes strucutral analysis of the
-network graph (see Borrett et al. 2007)
-INPUT = network object
-OUTPUT = list of structure statistics}
+\title{Structure Analyses of Ecological Network}
 \usage{
 enaStructure(x = "network object")
 }
@@ -25,22 +22,6 @@ components, no.scc.big = number of strongly connected components with more
 than one node, pscc = percent of nodes in strongly connected components.  }
 }
 \description{
-S. Borrett and M. Lau | March 2011
----------------------------------------------------
-enaStructure --- performes strucutral analysis of the network graph (see
-Borrett et al. 2007) INPUT = network object OUTPUT = list of structure
-statistics
-}
-\details{
-S. Borrett and M. Lau | March 2011
---------------------------------------------------- enaStructure ---
-performes strucutral analysis of the network graph (see Borrett et al. 2007)
-INPUT = network object OUTPUT = list of structure statistics
-
-S. Borrett and M. Lau | March 2011
---------------------------------------------------- Structure Analyses of
-Ecological Network
-
 Analysis of the structure of an ecological flow network.
 }
 \examples{

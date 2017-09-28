@@ -2,9 +2,7 @@
 % Please edit documentation in R/enaUncertainty.R
 \name{enaUncertainty}
 \alias{enaUncertainty}
-\title{enaUncertainty
-INPUT = network object and uncertainty data
-OUTPUT = list of plausible network models}
+\title{Produce a set of plausible network models}
 \usage{
 enaUncertainty(x = "network object", type = "percent", iter = 10000,
   p.err = NA, F.sym = NA, z.sym = NA, y.sym = NA, e.sym = NA,
@@ -55,16 +53,15 @@ enaUncertainty(x = "network object", type = "percent", iter = 10000,
 \item{plausible.models}{A length=iter list of the plausible models in the network data object format spcified for enaR}
 }
 \description{
-David Hines | April 2017
-edits by Stuart R. Borrett | April 2017
----------------------------------------------------------------------------
-enaUncertainty --- INPUT = network object and uncertainty data
-OUTPUT = list of plausible network models
-}
-\details{
-Hines, April 2017
-
-Connects enaR to limSolve to apply Linear Inverse Modelling to conduct an uncertainty analysis for Ecological Network Analysis. Users supply an initial ecosystem model (in the enaR format) and uncertainty informaiton (several ways of specifying), and the function returns a list (length = "iter") of balanced plausible instantiations of the model.  This has been used to determine the 95% confidnece intervals for network analysis results and to determine the statistical significance of selected comaprisons (Hines et al. 2015, 2016).
+Connects enaR to limSolve to apply Linear Inverse Modelling to
+conduct an uncertainty analysis for Ecological Network
+Analysis. Users supply an initial ecosystem model (in the enaR
+format) and uncertainty informaiton (several ways of specifying),
+and the function returns a list (length = "iter") of balanced
+plausible instantiations of the model.  This has been used to
+determine the 95% confidnece intervals for network analysis results
+and to determine the statistical significance of selected
+comaprisons (Hines et al. 2015, 2016).
 }
 \examples{
 

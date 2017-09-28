@@ -2,20 +2,7 @@
 % Please edit documentation in R/scifix.R
 \name{scifix}
 \alias{scifix}
-\title{scifix --- corrects missing e or E in 
-scientific notation
-INPUT = scalar either in or not in 
-scientific notation
-OUTPUT = corrected numeric value
-M. Lau | July 2012
-------------------------------------
-scifix --- corrects missing e or E in scientific notation INPUT = scalar
-either in or not in scientific notation OUTPUT = corrected numeric value M.
-Lau | July 2012 ------------------------------------ scifix --- corrects
-missing e or E in scientific notation INPUT = scalar either in or not in
-scientific notation OUTPUT = corrected numeric value M. Lau | July 2012
------------------------------------- Standardizes Scientific Notation from
-SCOR Formatted Files}
+\title{scifix Corrects missing e or E in scientific notation}
 \usage{
 scifix(x)
 }
