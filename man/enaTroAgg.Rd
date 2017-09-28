@@ -4,7 +4,7 @@
 \alias{enaTroAgg}
 \title{Trophic Aggregations (TroAgg) Analysis}
 \usage{
-enaTroAgg(x)
+enaTroAgg(x, balance.override = FALSE)
 }
 \arguments{
 \item{x}{a network object.  This includes all weighted flows into and out of
@@ -13,6 +13,10 @@ Canonical Exports and Canonical Respirations results respectively. It must
 also include the "Living" vector that identifies the living (TRUE/FALSE)
 status of each node. It must contain the non-living nodes at the end of the
 node vector, the function \code{\link{netOrder}} can be used for the same.}
+
+\item{balance.override}{Flow analysis assumes the network model is at
+steady-state (inputs = outputs).  Setting balance.override = TRUE allows the
+function to be run on unbalanced models.}
 }
 \value{
 \item{Feeding_Cycles}{List that gives the details of the Feeding
