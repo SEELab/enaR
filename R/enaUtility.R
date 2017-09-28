@@ -40,25 +40,14 @@
 #' Analysis. Environ. Model. Soft. 21: 375--405.
 #'
 #' Patten, B.C. 1991.  Network ecology: Indirect determination of the
-#' life-environment relationship in ecosystems.  In: Higashi, M. and Burns, T.
-#' (eds). Theoretical Studies of Ecosystems: The Network Perspective. Cambridge
-#' University Press.  New York.
-#' @examples
-#'
-#'
-#'
-#' data(troModels)
-#' U <- enaUtility(troModels[[6]], type = "flow", eigen.check = FALSE)
-#' attributes(U)
-#' US <- enaUtility(troModels[[6]], type = "storage", eigen.check = FALSE)
-#'
-#'
+#' life-environment relationship in ecosystems.  In: Higashi, M. and
+#' Burns, T.  (eds). Theoretical Studies of Ecosystems: The Network
+#' Perspective. Cambridge University Press.  New York.
 #'
 #' @importFrom MASS ginv
 #' @export enaUtility
 #' @import network
 enaUtility <- function(x, type=c('flow','storage'),
-                       eigen.check=TRUE,
                        balance.override=FALSE,tol=10){
                                         #Missing Data Check
     if (type == 'storage' && any(is.na(x%v%'storage'))){
