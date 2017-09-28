@@ -30,6 +30,6 @@ enaAll <- function(x = 'network object'){
               mti = enaMTI(x),
               storage = enaStorage(x),
               structure = enaStructure(x),
-              utility = enaUtility(x,eigen.check=FALSE))
+              utility = enaUtility(x))
   return(out)
 }
