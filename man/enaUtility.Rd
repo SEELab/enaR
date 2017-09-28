@@ -2,9 +2,7 @@
 % Please edit documentation in R/enaUtility.R
 \name{enaUtility}
 \alias{enaUtility}
-\title{enautility --- utility analysis of a flow network
-INPUT = network object
-OUTPUT = list of utility statistics}
+\title{Utility Analysis of Ecological Networks}
 \usage{
 enaUtility(x, type = c("flow", "storage"), eigen.check = TRUE,
   balance.override = FALSE, tol = 10)
@@ -43,23 +41,10 @@ including: the dominant eigenvalue of DS (lambda_1DS), storage based network
 synergism (synergism.S), and storage based network mutualism (mutualism.S).}
 }
 \description{
-M. Lau | July 2011
----------------------------------------------------
-enautility --- utility analysis of a flow network INPUT = network object
-OUTPUT = list of utility statistics
-}
-\details{
-M. Lau | July 2011 ---------------------------------------------------
-enautility --- utility analysis of a flow network INPUT = network object
-OUTPUT = list of utility statistics
-
-M. Lau | July 2011 ---------------------------------------------------
-Utility Analysis of Ecological Networks
-
 Performs the flow and storage based utility analysis developed for
-input-output network models of ecosystems.  It returns a set of matrices for
-the direct and integral utilities as well as a set of utility based network
-statistics.
+input-output network models of ecosystems.  It returns a set of
+matrices for the direct and integral utilities as well as a set of
+utility based network statistics.
 }
 \examples{
 

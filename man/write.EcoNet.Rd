@@ -2,8 +2,7 @@
 % Please edit documentation in R/write.EcoNet.R
 \name{write.EcoNet}
 \alias{write.EcoNet}
-\title{### MKLau 17nov2014
-Write enaR models to an EcoNet formatted file.}
+\title{Write enaR models to an EcoNet formatted file.}
 \usage{
 write.EcoNet(x = "model", file = "file path", mn = "ena_model",
   zero.flows = FALSE)
@@ -27,10 +26,7 @@ Creates an EcoNet model from an enaR network object that can be used with
 the online interface for EcoNet.
 }
 \references{
-About EcoNet (http://eco.engr.uga.edu/DOC/econet1.html)
-
-Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT
-Press.
+About EcoNet (http://eco.engr.uga.edu/DOC/econet1.html) Kazanci, C. 2009. Handbook of Ecological Modelling and Informatics, by WIT Press.
 }
 \author{
 Matthew K. Lau

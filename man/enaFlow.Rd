@@ -2,9 +2,7 @@
 % Please edit documentation in R/enaFlow.R
 \name{enaFlow}
 \alias{enaFlow}
-\title{enaFlow --- flow analysis
-INPUT = network object
-OUTPUT = list of flow statistics}
+\title{Analyses of Ecological Networks}
 \usage{
 enaFlow(x, zero.na = TRUE, balance.override = FALSE)
 }
@@ -58,23 +56,11 @@ the dissipative eqivalent to mode2, and "mode4.F" is the
 dissipative equivalent ot mode0.}
 }
 \description{
-M. Lau | July 2011
----------------------------------------------------
-enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
-statistics
-}
-\details{
-M. Lau | July 2011 ---------------------------------------------------
-enaFlow --- flow analysis INPUT = network object OUTPUT = list of flow
-statistics
-
-M. Lau | July 2011 --------------------------------------------------- Flow
-Analyses of Ecological Networks
-
-Performs the primary throughflow analysis developed for input-output
-systems.  It returns a vector of throughflows, the input and output oriented
-matrices for "direct flow intensities" and "integral flow intensities", and
-a set of flow based network statistics.
+Performs the primary throughflow analysis developed for
+input-output systems.  It returns a vector of throughflows, the
+input and output oriented matrices for "direct flow intensities"
+and "integral flow intensities", and a set of flow based network
+statistics.
 }
 \examples{
 
