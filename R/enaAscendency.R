@@ -1,34 +1,10 @@
-#' enaAscendency --- calculates the ascendency statistics
-#' of Ulanowicz
-#' INPUT = network object
-#' OUTPUT = matrix of ascendency statistics
+#' Calculates the Ascendency of an Ecological Network
 #'
-#' D. Hines | December 2011
-#' S.R. Borrett | May 2016 - updates
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' enaAscendency --- calculates the ascendency statistics of Ulanowicz INPUT =
-#' network object OUTPUT = matrix of ascendency statistics
-#'
-#' D. Hines | December 2011 S.R. Borrett | May 2016 - updates
-#' --------------------------------------------------- enaAscendency ---
-#' calculates the ascendency statistics of Ulanowicz INPUT = network object
-#' OUTPUT = matrix of ascendency statistics
-#'
-#' D. Hines | December 2011 S.R. Borrett | May 2016 - updates
-#' --------------------------------------------------- Calculates the
-#' Ascendency of an Ecological Network
-#'
-#' Calculates the average mutual information (AMI), ascendency, overhead, and
-#' capacity of input-output networks.  It also returns the ratios of ascendency
-#' and overhead to capacity. These metrics describe the organization of flow in
-#' an ecological network (Ulanowicz 1997).
+#' Calculates the average mutual information (AMI), ascendency,
+#' overhead, and capacity of input-output networks.  It also returns
+#' the ratios of ascendency and overhead to capacity. These metrics
+#' describe the organization of flow in an ecological network
+#' (Ulanowicz 1997).
 #'
 #' @param x A network object.
 #' @return \item{H}{Total flow diversity (MacArthur 1955).  Uses the Shannon
@@ -61,7 +37,7 @@
 #' \item{CAP.internal}{Returns the internal capacity of a network.}
 #' \item{CAP.export}{Returns the export capacity of a network.}
 #' \item{CAP.respiration}{Returns the respiration capacity of a network.}
-#' @note This and other Ulanowicz school functions require that export and
+#' @details This and other Ulanowicz school functions require that export and
 #' respiration components of output be separately quantified.
 #' @author David E. Hines Matthew K. Lau Stuart R. Borrett
 #' @seealso

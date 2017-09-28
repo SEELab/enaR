@@ -1,40 +1,9 @@
-#' Shannon Diversity Metrics
-#' These are based on entropy and build Shannon and Weaver 1949
-#'
-#' Borrett | November 29, 2016
-#'
-#' INPUT = Vector
-#' Output = set of network statistics to charcterize the diversity in the vector
-#' ================================================================================
-
-
-
-
-
-
-
-#' Shannon Diversity Metrics These are based on entropy and build Shannon and
-#' Weaver 1949
-#' 
-#' Borrett | November 29, 2016
-#' 
-#' INPUT = Vector Output = set of network statistics to charcterize the
-#' diversity in the vector
-#' ================================================================================
-#' Shannon Diversity Metrics These are based on entropy and build Shannon and
-#' Weaver 1949
-#' 
-#' Borrett | November 29, 2016
-#' 
-#' INPUT = Vector Output = set of network statistics to charcterize the
-#' diversity in the vector
-#' ================================================================================
-#' Shannon information entropy
+#' ShannonDiversity Shannon Diversity Metrics
 #' 
 #' Calculates a number of metrics based on the Shannon information entropy
 #' measure of diversity in a vector, x.
 #' 
-#' @param x a 1 x n vector.
+#' @param x 1 x n vector.
 #' @return \item{H}{Shannon entropy-based metric of diversity.  This captures
 #' the effects of both richnes (the length of the vector, n) and the evenennes
 #' of the distribution.} \item{Hmax}{The maximum possible value of H given a

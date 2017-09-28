@@ -1,21 +1,3 @@
-#' enaStorage --- storage analysis
-#' INPUT = network object
-#' OUTPUT = list of storage statistics
-#'
-#' M. Lau | July 2011
-#' ---------------------------------------------------
-
-
-
-
-#' enaStorage --- storage analysis INPUT = network object OUTPUT = list of
-#' storage statistics
-#'
-#' M. Lau | July 2011 ---------------------------------------------------
-#' enaStorage --- storage analysis INPUT = network object OUTPUT = list of
-#' storage statistics
-#'
-#' M. Lau | July 2011 ---------------------------------------------------
 #' Storage Analyses of Ecological Networks
 #'
 #' Calculates storage-based Ecological Network Analyses.
@@ -77,13 +59,13 @@
 #' Analysis.  Environmental Modelling & Software 21:375-405.
 #'
 #' @keywords enaFlow read.scor
-#' @importFrom MASS ginv
-#' @importFrom stats sd
-#' @export enaStorage
 #' @examples
 #' data(oyster)
 #' S <- enaStorage(oyster)
 #' attributes(S)
+#' @export enaStorage
+#' @importFrom MASS ginv
+#' @importFrom stats sd
 #' @import network
 enaStorage <- function(x,balance.override=FALSE){
                                         #Missing Data Check

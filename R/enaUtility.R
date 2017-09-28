@@ -1,27 +1,10 @@
-#' enautility --- utility analysis of a flow network
-#' INPUT = network object
-#' OUTPUT = list of utility statistics
-#'
-#' M. Lau | July 2011
-#' ---------------------------------------------------
-
-
-
-#' enautility --- utility analysis of a flow network INPUT = network object
-#' OUTPUT = list of utility statistics
-#'
-#' M. Lau | July 2011 ---------------------------------------------------
-#' enautility --- utility analysis of a flow network INPUT = network object
-#' OUTPUT = list of utility statistics
-#'
-#' M. Lau | July 2011 ---------------------------------------------------
 #' Utility Analysis of Ecological Networks
 #'
 #' Performs the flow and storage based utility analysis developed for
-#' input-output network models of ecosystems.  It returns a set of matrices for
-#' the direct and integral utilities as well as a set of utility based network
-#' statistics.
-#'
+#' input-output network models of ecosystems.  It returns a set of
+#' matrices for the direct and integral utilities as well as a set of
+#' utility based network statistics.
+#' 
 #' @param x a network object.  This includes all weighted flows into and out of
 #' each node.  For the storage utility analysis this must also include the
 #' amount of energy--matter stored at each node (biomass).
