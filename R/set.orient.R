@@ -2,7 +2,7 @@
 #' 
 #' Changes the orientation of output matrices.
 #' 
-#' @param x 
+#' @param x The school determining the orientation
 #' @details The enaR package as a whole, and the broader network
 #' analysis community, assumes a row to column orientation; thus, the
 #' default orientation for the package is row to column (DEFAULT =

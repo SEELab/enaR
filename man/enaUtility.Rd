@@ -4,8 +4,8 @@
 \alias{enaUtility}
 \title{Utility Analysis of Ecological Networks}
 \usage{
-enaUtility(x, type = c("flow", "storage"), eigen.check = TRUE,
-  balance.override = FALSE, tol = 10)
+enaUtility(x, type = c("flow", "storage"), balance.override = FALSE,
+  tol = 10)
 }
 \arguments{
 \item{x}{a network object.  This includes all weighted flows into and out of
@@ -46,18 +46,6 @@ input-output network models of ecosystems.  It returns a set of
 matrices for the direct and integral utilities as well as a set of
 utility based network statistics.
 }
-\examples{
-
-
-
-data(troModels)
-U <- enaUtility(troModels[[6]], type = "flow", eigen.check = FALSE)
-attributes(U)
-US <- enaUtility(troModels[[6]], type = "storage", eigen.check = FALSE)
-
-
-
-}
 \references{
 Fath, B.D. and Patten, B.C. 1998. Network synergism: emergence
 of positive relations in ecological systems.  Ecol. Model. 107:127--143.
@@ -66,9 +54,9 @@ Fath, B.D. and Borrett, S.R. 2006. A Matlab function for Network Environ
 Analysis. Environ. Model. Soft. 21: 375--405.
 
 Patten, B.C. 1991.  Network ecology: Indirect determination of the
-life-environment relationship in ecosystems.  In: Higashi, M. and Burns, T.
-(eds). Theoretical Studies of Ecosystems: The Network Perspective. Cambridge
-University Press.  New York.
+life-environment relationship in ecosystems.  In: Higashi, M. and
+Burns, T.  (eds). Theoretical Studies of Ecosystems: The Network
+Perspective. Cambridge University Press.  New York.
 }
 \seealso{
 \code{\link{enaFlow},\link{enaStorage},\link{enaMTI}}

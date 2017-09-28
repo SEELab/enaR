@@ -38,8 +38,8 @@ get.ns <- function(x,balance.override=FALSE){
   Flow <- enaFlow(x)$ns
   asc <- enaAscendency(x)
   s <- enaStorage(x)$ns
-  u.f <- enaUtility(x,type='flow',eigen.check=FALSE)$ns
-  u.s <- enaUtility(x,type='storage',eigen.check=FALSE)$ns
+  u.f <- enaUtility(x,type='flow')$ns
+  u.s <- enaUtility(x,type='storage')$ns
   ns <- data.frame(st,Flow,asc,s,u.f,u.s)
   rownames(ns) <- ""
   return(ns)
