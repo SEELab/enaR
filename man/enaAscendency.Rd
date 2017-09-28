@@ -2,10 +2,7 @@
 % Please edit documentation in R/enaAscendency.R
 \name{enaAscendency}
 \alias{enaAscendency}
-\title{enaAscendency --- calculates the ascendency statistics
-of Ulanowicz
-INPUT = network object
-OUTPUT = matrix of ascendency statistics}
+\title{Calculates the Ascendency of an Ecological Network}
 \usage{
 enaAscendency(x = "network object")
 }
@@ -45,28 +42,13 @@ of a network.} \item{A.export}{Returns the export ascendnecy of a network.}
 \item{CAP.respiration}{Returns the respiration capacity of a network.}
 }
 \description{
-D. Hines | December 2011
-S.R. Borrett | May 2016 - updates
----------------------------------------------------
-enaAscendency --- calculates the ascendency statistics of Ulanowicz INPUT =
-network object OUTPUT = matrix of ascendency statistics
+Calculates the average mutual information (AMI), ascendency,
+overhead, and capacity of input-output networks.  It also returns
+the ratios of ascendency and overhead to capacity. These metrics
+describe the organization of flow in an ecological network
+(Ulanowicz 1997).
 }
 \details{
-D. Hines | December 2011 S.R. Borrett | May 2016 - updates
---------------------------------------------------- enaAscendency ---
-calculates the ascendency statistics of Ulanowicz INPUT = network object
-OUTPUT = matrix of ascendency statistics
-
-D. Hines | December 2011 S.R. Borrett | May 2016 - updates
---------------------------------------------------- Calculates the
-Ascendency of an Ecological Network
-
-Calculates the average mutual information (AMI), ascendency, overhead, and
-capacity of input-output networks.  It also returns the ratios of ascendency
-and overhead to capacity. These metrics describe the organization of flow in
-an ecological network (Ulanowicz 1997).
-}
-\note{
 This and other Ulanowicz school functions require that export and
 respiration components of output be separately quantified.
 }

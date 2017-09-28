@@ -1,21 +1,4 @@
-#' enaControl --- control analyses
-#' INPUT = network object
-#' OUTPUT = list of control statistics
-#' M. Lau | July 2011
-#' P. Singh | Update Summer 2013
-#' S.R. Borrett | Update March 2016
-
-#' ---------------------------------------------------
-
-
-#' enaControl --- control analyses INPUT = network object OUTPUT = list of
-#' control statistics M. Lau | July 2011 P. Singh | Update Summer 2013 S.R.
-#' Borrett | Update March 2016
-#' --------------------------------------------------- enaControl --- control
-#' analyses INPUT = network object OUTPUT = list of control statistics M. Lau |
-#' July 2011 P. Singh | Update Summer 2013 S.R. Borrett | Update March 2016
-#' --------------------------------------------------- Control Analyses of
-#' Ecological Networks
+#' Control Analyses of Ecological Networks
 #'
 #' Analyses for analyzing the control amongst the nodes in ecological networks.
 #'
@@ -62,8 +45,8 @@
 #'
 #'
 #'
-#' @importFrom MASS ginv
 #' @export enaControl
+#' @importFrom MASS ginv
 #' @import network
 enaControl <- function(x, zero.na=TRUE,balance.override=FALSE){
                                         #Check for network class

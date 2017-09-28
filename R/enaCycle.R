@@ -1,28 +1,10 @@
-#'## NETWRK's Full Cycle Analysis
-#'## Singh P. | July 2014
-#'## Algorithm Source : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow Networks
-#'## -----------------------------------------------
-
-
-
-
-
-
-
-
-#' ## NETWRK's Full Cycle Analysis ## Singh P. | July 2014 ## Algorithm Source
-#' : Ulanowicz 1991: A package for the Analysis of Ecosystem Flow Networks ##
-#' ----------------------------------------------- ## NETWRK's Full Cycle
-#' Analysis ## Singh P. | July 2014 ## Algorithm Source : Ulanowicz 1991: A
-#' package for the Analysis of Ecosystem Flow Networks ##
-#' ----------------------------------------------- Full Cycle Analysis of
-#' Ecological Networks
-#'
-#' It performs the full cycle analysis on the network based on the algorithm
-#' described in Ulanowicz (1983) and implemented in NETWRK 4.2b. It returns
-#' data.frames with details of the simple cycles and nexus, vectors of Cycle
-#' distributions and Normalized distribution and matrices of Residual Flows and
-#' Aggregated Cycles.
+#' Full Cycle Analysis of Ecological Networks
+#' 
+#' It performs the full cycle analysis on the network based on the
+#' algorithm described in Ulanowicz (1983) and implemented in NETWRK
+#' 4.2b. It returns data.frames with details of the simple cycles and
+#' nexus, vectors of Cycle distributions and Normalized distribution
+#' and matrices of Residual Flows and Aggregated Cycles.
 #'
 #'
 #' @param x a network object.  This includes all weighted flows into and out of
@@ -45,19 +27,21 @@
 #' statistics. These include "NCYCS" the number of simple cycles identified in
 #' the network, "NNEX" the number of the disjoint cycles or number of Nexuses
 #' detected in the network and "CI" the cycling index of the network.}
-#' @note The "NODES" in "Table.cycle" are arranged such that the weak arc for
-#' the nexus is the arc between the first two nodes of the cycle.
+#' @details The "NODES" in "Table.cycle" are arranged such that the
+#' weak arc for the nexus is the arc between the first two nodes of
+#' the cycle.
+#' This function uses the backtracking procedure for the
+#' identification of simple cycles, which are cycles that cross a node
+#' only once except the starting node. The backtracking process is a
+#' depth-first search algorithm.
 #'
-#' This function uses the backtracking procedure for the identification of
-#' simple cycles, which are cycles that cross a node only once except the
-#' starting node. The backtracking process is a depth-first search algorithm.
+#' In the data.frame "Table.cycle", if the number of cycles in a nexus
+#' is more than 50, then a blank line is displayed after 50 cycles of
+#' the nexus, followed by the cycles of the next nexus.
 #'
-#' In the data.frame "Table.cycle", if the number of cycles in a nexus is more
-#' than 50, then a blank line is displayed after 50 cycles of the nexus,
-#' followed by the cycles of the next nexus.
-#'
-#' The results of the analysis of Feeding Cycles can be obtained as a byproduct
-#' of the enaTroAgg function that analyzes the trophic dynamics of a network.
+#' The results of the analysis of Feeding Cycles can be obtained as a
+#' byproduct of the enaTroAgg function that analyzes the trophic
+#' dynamics of a network.
 #'
 #' At every multiple of 5000 cycles in a nexus, the program prints an
 #' indication for the user to know that it is still running.
@@ -81,8 +65,6 @@
 #' @export enaCycle
 #' @import network
 #'
-
-
 enaCycle <- function(x){
 
                                         #Initials

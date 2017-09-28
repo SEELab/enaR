@@ -2,8 +2,7 @@
 % Please edit documentation in R/read.EcoNet.R
 \name{read.EcoNet}
 \alias{read.EcoNet}
-\title{### MKLau 1Mar2016
-Read an EcoNet model.}
+\title{Read an EcoNet model.}
 \usage{
 read.EcoNet(file = "file path", verbose = FALSE, parse = FALSE)
 }

@@ -1,11 +1,11 @@
 #' Trophic Aggregations (TroAgg) Analysis
 #'
-#' It returns the data quantifying the underlying trophic structure of a given
-#' model based on the interaction of the living and non-living nodes. It is
-#' based on the Trophic Aggregations suggested by Lindeman (1942) and follows
-#' the algorithm by Ulanowicz and Kemp (1979) implemented in NETWRK 4.2b. It
-#' removes the Feeding cycles in the network beforehand to provide accurate
-#' results.
+#' It returns the data quantifying the underlying trophic structure of
+#' a given model based on the interaction of the living and non-living
+#' nodes. It is based on the Trophic Aggregations suggested by
+#' Lindeman (1942) and follows the algorithm by Ulanowicz and Kemp
+#' (1979) implemented in NETWRK 4.2b. It removes the Feeding cycles in
+#' the network beforehand to provide accurate results.
 #'
 #'
 #' @param x a network object.  This includes all weighted flows into and out of
@@ -14,6 +14,9 @@
 #' also include the "Living" vector that identifies the living (TRUE/FALSE)
 #' status of each node. It must contain the non-living nodes at the end of the
 #' node vector, the function \code{\link{netOrder}} can be used for the same.
+#' @param balance.override Flow analysis assumes the network model is at
+#' steady-state (inputs = outputs).  Setting balance.override = TRUE allows the
+#' function to be run on unbalanced models.
 #' @return \item{Feeding_Cycles}{List that gives the details of the Feeding
 #' Cycles in the network. The output being according to the enaCycle function
 #' applied to the Living components in the network} \item{A}{matrix that
@@ -40,7 +43,7 @@
 #' detrital pool, "DetritalCirc" the circulation within the detrital pool,
 #' "NCYCS" the number of feeding cycles removed, "NNEX" the number of feeding
 #' cycle Nexuses removed and "CI" the Cycling Index for the Feeding Cycles.  }
-#' @note This and other Ulanowicz school functions require that export and
+#' @details This and other Ulanowicz school functions require that export and
 #' respiration components of output be separately quantified.
 #'
 #' This analysis involves the ENA Cycle analysis for removal of the Feeding
@@ -75,10 +78,17 @@
 #'
 #' @export enaTroAgg
 #' @import network
-enaTroAgg <- function (x){
+enaTroAgg <- function (x, balance.override = FALSE){
   if (class(x) != "network") {
     stop("x is not a network class object")
   }
+                                        #Check for balancing -- Requried for Lindeman Spine calculations.
+  if (balance.override){}else{
+    if (any(list.network.attributes(x) == 'balanced') == FALSE){x%n%'balanced' <- ssCheck(x)}
+    if (x%n%'balanced' == FALSE){warning('Model is not balanced'); stop}
+  }
+
+
 
                                         # Initials
 
