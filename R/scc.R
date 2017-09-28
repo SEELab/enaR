@@ -1,25 +1,8 @@
-#' scc --- find the strongly connected component
-#' INPUT = an adjacency matrix
-#' OUTPUT = list of membership and values
-#' S. Borrett | July 2011
-#' ------------------------------------
-
-
-
-
-
-
-
-#' scc --- find the strongly connected component INPUT = an adjacency matrix
-#' OUTPUT = list of membership and values S. Borrett | July 2011
-#' ------------------------------------ scc --- find the strongly connected
-#' component INPUT = an adjacency matrix OUTPUT = list of membership and values
-#' S. Borrett | July 2011 ------------------------------------ Find the
-#' Strongly Connected Component (SCC) in a Graph
+#' Find the strongly connected component
 #'
-#' This function finds the strongly connected components (SCCs) of an adjacency
-#' matrix A and returns a number of derived network statistics.
-#'
+#' This function finds the strongly connected components (SCCs) of an
+#' adjacency matrix A and returns a number of derived network
+#' statistics.
 #'
 #' @param A an n x n adjacency matrix.
 #' @return \item{sp}{a list of structural properties including: the number of

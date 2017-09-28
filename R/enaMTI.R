@@ -1,22 +1,3 @@
-#' enaMTI --- Mixed Trophic Impacts Analysis
-#' follows Ulanowicz and Puccia, 1990.
-#' INPUT = network object
-#' OUTPUT = list of trophic impact statistics
-#' Borrett | June 2012, MKL | July 2013
-#' ------------------------------------
-
-
-
-
-
-
-
-#' enaMTI --- Mixed Trophic Impacts Analysis follows Ulanowicz and Puccia,
-#' 1990. INPUT = network object OUTPUT = list of trophic impact statistics
-#' Borrett | June 2012, MKL | July 2013 ------------------------------------
-#' enaMTI --- Mixed Trophic Impacts Analysis follows Ulanowicz and Puccia,
-#' 1990. INPUT = network object OUTPUT = list of trophic impact statistics
-#' Borrett | June 2012, MKL | July 2013 ------------------------------------
 #' Mixed Trophic Impacts (MTI) Analysis
 #'
 #' Calculates the Mixed Trophic Impacts of one species on another in the given
@@ -47,7 +28,7 @@
 #' \item{Relations.Table}{A table indicating the qualitiative pairwise
 #' relationships between the nodes as determined from the net (direct)
 #' and the mixed (integral) perspectives.}
-#' @note This and other Ulanowicz school functions require that export and
+#' @details This and other Ulanowicz school functions require that export and
 #' respiration components of output be separately quantified.
 #'
 #' This analysis is similar in concept to the ENA Utility analysis.

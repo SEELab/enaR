@@ -1,24 +1,3 @@
-#' enaAll --- Conduct all ecological network analyses
-#' INPUT = network object
-#' OUTPUT = list of analytical output
-#' 
-#' M. Lau | May 2013
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' enaAll --- Conduct all ecological network analyses INPUT = network object
-#' OUTPUT = list of analytical output
-#' 
-#' M. Lau | May 2013 --------------------------------------------------- enaAll
-#' --- Conduct all ecological network analyses INPUT = network object OUTPUT =
-#' list of analytical output
-#' 
-#' M. Lau | May 2013 ---------------------------------------------------
 #' Conduct All Major ENA
 #' 
 #' Conducts all major ENA with default settings and returns the output as a

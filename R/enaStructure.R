@@ -1,29 +1,4 @@
-#' enaStructure --- performes strucutral analysis of the
-#' network graph (see Borrett et al. 2007)
-#' INPUT = network object
-#' OUTPUT = list of structure statistics
-#'
-#' S. Borrett and M. Lau | March 2011
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' enaStructure --- performes strucutral analysis of the network graph (see
-#' Borrett et al. 2007) INPUT = network object OUTPUT = list of structure
-#' statistics
-#' 
-#' S. Borrett and M. Lau | March 2011
-#' --------------------------------------------------- enaStructure ---
-#' performes strucutral analysis of the network graph (see Borrett et al. 2007)
-#' INPUT = network object OUTPUT = list of structure statistics
-#' 
-#' S. Borrett and M. Lau | March 2011
-#' --------------------------------------------------- Structure Analyses of
-#' Ecological Network
+#' Structure Analyses of Ecological Network
 #' 
 #' Analysis of the structure of an ecological flow network.
 #' 
