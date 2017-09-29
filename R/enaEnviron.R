@@ -1,27 +1,4 @@
-#' environ --- conducts environ analysis 
-#' INPUT = network object
-#' OUTPUT = input and/or output environs
-#' 
-#' M. Lau July 2011 | DEH edited Feb 2013
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' environ --- conducts environ analysis INPUT = network object OUTPUT = input
-#' and/or output environs
-#' 
-#' M. Lau July 2011 | DEH edited Feb 2013
-#' --------------------------------------------------- environ --- conducts
-#' environ analysis INPUT = network object OUTPUT = input and/or output
-#' environs
-#' 
-#' M. Lau July 2011 | DEH edited Feb 2013
-#' --------------------------------------------------- Ecological Network
-#' Environs
+#' Ecological Network Environs
 #' 
 #' Calculates the environs for an ecological network.
 #' 
@@ -50,6 +27,7 @@
 #' 
 #' 
 #' @export enaEnviron
+#' @import network
 enaEnviron <- function(x,input=TRUE,output=TRUE,type='unit',err.tol=1e-10,balance.override=FALSE){
                                         #check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}

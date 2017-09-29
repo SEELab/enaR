@@ -1,27 +1,8 @@
-#' unpack --- extracts network object into
-#' a list
-#' INPUT = network object
-#' OUTPUT = list of network model components
-#' S. Borrett and M. Lau | July 2011
-#' ------------------------------------
-
-
-
-
-
-
-
-#' unpack --- extracts network object into a list INPUT = network object OUTPUT
-#' = list of network model components S. Borrett and M. Lau | July 2011
-#' ------------------------------------ unpack --- extracts network object into
-#' a list INPUT = network object OUTPUT = list of network model components S.
-#' Borrett and M. Lau | July 2011 ------------------------------------
-#' "Unpacks" the Network Object into Separate Objects
+#' Extracts network object into a list 
 #' 
-#' Separates the components of a network object into separate components within
-#' a list. This includes inputs, exports, respirations, outputs (exports +
-#' respirations), storage, and internal flows.
-#' 
+#' Separates the components of a network object into separate
+#' components within a list. This includes inputs, exports,
+#' respirations, outputs (exports + respirations), storage, and internal flows.
 #' 
 #' @param x A network object.  This includes all weighted flows into and out of
 #' each node.
@@ -30,19 +11,15 @@
 #' respiration.} \item{e}{Node boundary loss due to exportation} \item{y}{Node
 #' boundary loss; summation of r and e} \item{X}{Node storage or biomass}
 #' \item{living}{Logical vector indicating whether each node is living or not}
-#' @note Flows are oriented from row to column.
+#' @details Flows are oriented from row to column.
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso \code{\link{pack},\link{read.scor}}
 #' @examples
-#' 
-#' 
-#' 
 #' data(troModels)
 #' unpack(troModels[[6]])
 #' 
-#' 
-#' 
 #' @export unpack
+#' @import network
 unpack <- function(x='network object'){
   flow <- as.matrix(x, attrname = 'flow')
   input <- x%v%'input'

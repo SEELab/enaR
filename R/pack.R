@@ -1,42 +1,35 @@
-# pack --- helper function for inputing flow
-# network information into a network object
-# INPUT = flow network model components
-# OUTPUT = a network object
-# M.Lau & S.R. Borrett | July 2014
-# ------------------------------------
-
-
-
-
-
-
-
 #' Compile Network Information into a Network Class
-#' 
+#'
 #' This function provides a flexible framework for importing flow network
 #' information into a network class object for analyses.
-#' 
-#' 
+#'
 #' @param flow The flow matrix.
 #' @param input The inputs into the system.
 #' @param respiration The quantities respired from the system.
 #' @param export The exports from the system.
 #' @param output The output (i.e. exports + respiration) from the system.
 #' @param storage The quantities stored in compartments within the system.
-#' @param living A logical vector indicating whether a node is either 'living'
-#' (= TRUE) or 'dead' (=FALSE).
+#' @param living A logical vector indicating whether a node is either
+#' 'living' (= TRUE) or 'dead' (=FALSE).
 #' @return Returns a network object for the supplied model.
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso \code{\link{unpack}}
+#' @import network
 #' @export pack
-pack <- function(flow,input=NA,respiration=NA,export=NA,output=NA,storage=NA,living=NA){
+pack <- function(flow,
+                 input = NA,
+                 respiration = NA,
+                 export = NA,
+                 output = NA,
+                 storage = NA,
+                 living=NA){
                                         #Warn if missing both
   if (all(is.na(respiration)) & all(is.na(export))){
     warning('Missing or NA resipiration/export values.')
-  }else if (any(is.na(output) == FALSE) & 
+  }else if (any(is.na(output) == FALSE) &
             any(is.na(export) == FALSE)){
                 respiration <- output - export
-            }else if (any(is.na(output) == FALSE) & 
+            }else if (any(is.na(output) == FALSE) &
                       any(is.na(respiration) == FALSE)){
                 export <- output - respiration
             }else if (all(is.na(output)) & any(c(is.na(respiration), is.na(export)) == FALSE)){

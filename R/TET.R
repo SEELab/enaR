@@ -1,25 +1,4 @@
-#' TET.R  --- TOTAL ENVIRON THROUGHFLOW
-#' INPUT = network model
-#' OUTPUT = total environ throughput - unit and scaled
-#'
-#' Borrett | July 7, 2012
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
-#' environ throughput - unit and scaled
-#' 
-#' Borrett | July 7, 2012 ---------------------------------------------------
-#' TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
-#' environ throughput - unit and scaled
-#' 
-#' Borrett | July 7, 2012 ---------------------------------------------------
-#' Calculates the Total Environ Throughflow for a Ecosystem Network Model
+#' Calculate the Total Environ Throughflow
 #' 
 #' Determines the total environ throughflow (TET) for each of the 2 x n
 #' environs of the selected network model. It returns both the TET calculated
@@ -50,16 +29,11 @@
 #' model of nitrogen flow in the Neuse River Estuary, USA---Time series
 #' analysis. Ecol. Model. 206: 1--17.
 #' @examples
-#' 
-#' 
-#' 
 #' data(troModels)
 #' tet <- TET(troModels[[6]])
 #' tet
-#' 
-#' 
-#' 
 #' @export TET
+#' @import network
 TET <- function(x,balance.override=FALSE){
 
                                         #Check for network class

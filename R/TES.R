@@ -1,30 +1,6 @@
-#' TES.R  --- TOTAL ENVIRON STORAGE
-#' INPUT = network model
-#' OUTPUT = total environ throughput - unit and scaled
-#'
-#' Borrett | July 7, 2012
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' TES.R --- TOTAL ENVIRON STORAGE INPUT = network model OUTPUT = total environ
-#' throughput - unit and scaled
+#' Calculates the Total Environ Storage
 #' 
-#' Borrett | July 7, 2012 ---------------------------------------------------
-#' TES.R --- TOTAL ENVIRON STORAGE INPUT = network model OUTPUT = total environ
-#' throughput - unit and scaled
-#' 
-#' Borrett | July 7, 2012 ---------------------------------------------------
-#' Calculate the Total Environ Storage
-#' 
-#' Calculates the total storage in each n input and output environs.  This
-#' function calculates the storage for both the unit input (output) and the
-#' realized input (output) environs.  Realized uses the observed inputs
-#' (outputs) rather than an assumed unit input (output) to each node.
+#' Calculates the total storage in each n input and output environs. This function calculates the storage for both the unit input (output) and the realized input (output) environs.  Realized uses the observed inputs (outputs) rather than an assumed unit input (output) to each node.
 #' 
 #' @param x A network object.
 #' @param balance.override LOGICAL: should balancing being ignored.
@@ -39,18 +15,12 @@
 #' compartmenal systems: the static, time invariant case.  Bulletin of the
 #' International Statistical Institute. 48, 527--565.
 #' @examples
-#' 
-#' 
-#' 
 #' data(troModels)
 #' tes <- TES(troModels[[6]])
 #' tes
-#' 
-#' 
-#' 
 #' @export TES
+#' @import network
 TES <- function(x,balance.override=FALSE){
-
                                         #Check for network class
   if (class(x) != 'network'){warning('x is not a network class object')}
 

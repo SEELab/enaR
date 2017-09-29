@@ -2,19 +2,7 @@
 % Please edit documentation in R/force.balance.R
 \name{force.balance}
 \alias{force.balance}
-\title{force.balance --- repeatedly applies balance until 
-sub-tolerance is reached
-INPUT = network model
-OUTPUT = balanced model
-M. Lau 1 Oct 2012
----------------------------------------------------
-force.balance --- repeatedly applies balance until sub-tolerance is reached
-INPUT = network model OUTPUT = balanced model M. Lau 1 Oct 2012
---------------------------------------------------- force.balance ---
-repeatedly applies balance until sub-tolerance is reached INPUT = network
-model OUTPUT = balanced model M. Lau 1 Oct 2012
---------------------------------------------------- Repeated Application the
-Balance Function}
+\title{Repeated Application the Balance Function}
 \usage{
 force.balance(x, tol = 5, max.itr = 10, method = "AVG2")
 }

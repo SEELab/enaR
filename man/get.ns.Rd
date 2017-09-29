@@ -2,9 +2,7 @@
 % Please edit documentation in R/get.ns.R
 \name{get.ns}
 \alias{get.ns}
-\title{get.ns.R
-Input = network model
-Output = a vector of global network statistics from ena}
+\title{Quick Calculation of a Range of Network Statistics.}
 \usage{
 get.ns(x, balance.override = FALSE)
 }
@@ -19,20 +17,9 @@ functions: enaStructure, enaFlow, enaAscendency, enaStorage and enaUtility
 (both flow and storage).
 }
 \description{
-Borrett | July 4, 2012
------------------------------------
-get.ns.R Input = network model Output = a vector of global network
-statistics from ena
-}
-\details{
-Borrett | July 4, 2012 ----------------------------------- get.ns.R Input =
-network model Output = a vector of global network statistics from ena
-
-Borrett | July 4, 2012 ----------------------------------- Quick Calculation
-of a Range of Network Statistics.
-
-This is a high level function for calculated the main network analyses
-(Ascendancy, Flow, Structure, Storage and Utility) on an ecological network.
+This is a high level function for calculated the main network
+analyses (Ascendancy, Flow, Structure, Storage and Utility) on an
+ecological network.
 }
 \examples{
 
@@ -42,11 +29,10 @@ data(troModels)
 get.ns(troModels[[6]])
 
 
-
 }
 \references{
-Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
-Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+Fath, B. D., Borrett, S. R. 2006. A Matlab function for
+Network Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 }
 \seealso{
 \code{\link{enaStructure}},\code{\link{enaFlow}},\code{\link{enaAscendency}},\code{\link{enaUtility}}

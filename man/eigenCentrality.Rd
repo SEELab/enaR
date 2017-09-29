@@ -2,7 +2,7 @@
 % Please edit documentation in R/eigenCentrality.R
 \name{eigenCentrality}
 \alias{eigenCentrality}
-\title{Calculates the Eigen Centrality of a Network}
+\title{the Eigen Centrality of a Network}
 \usage{
 eigenCentrality(x = "matrix")
 }
@@ -13,7 +13,7 @@ eigenCentrality(x = "matrix")
 Returns the eigen based centrality of the network.
 }
 \description{
-Calculates the eigen centrality of a network.
+Calculates the centrality of a network using eigen vectors.
 }
 \references{
 Bonacich, P., 1987. Power and centrality: a family of measures.

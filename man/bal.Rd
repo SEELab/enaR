@@ -2,22 +2,7 @@
 % Please edit documentation in R/bal.R
 \name{bal}
 \alias{bal}
-\title{bal --- balances a flow model
-INPUT = network model in extended format
-OUTPUT = balanced model in extended format
-NOTE: this is the work horse for balance.R
-Original: M. Lau | July 2011
-Re-written: M. Lau | 17Oct2013 
----------------------------------------------------
-bal --- balances a flow model INPUT = network model in extended format
-OUTPUT = balanced model in extended format NOTE: this is the work horse for
-balance.R Original: M. Lau | July 2011 Re-written: M. Lau | 17Oct2013
---------------------------------------------------- bal --- balances a flow
-model INPUT = network model in extended format OUTPUT = balanced model in
-extended format NOTE: this is the work horse for balance.R Original: M. Lau
-| July 2011 Re-written: M. Lau | 17Oct2013
---------------------------------------------------- Subfunction for
-Balancing by Either Inputs or Outputs}
+\title{Balancing by Either Inputs or Outputs}
 \usage{
 bal(T.star = "matrix", method = c("input", "output"))
 }

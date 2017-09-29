@@ -2,10 +2,7 @@
 % Please edit documentation in R/environCentrality.R
 \name{environCentrality}
 \alias{environCentrality}
-\title{environCentrality --- calculates the centrality of 
-flow network environs
-INPUT = environ matrix
-OUTPUT = in-going, out-going and average centralities}
+\title{Environ Centrality an Ecological Network}
 \usage{
 environCentrality(x = "matrix")
 }
@@ -19,19 +16,6 @@ oriented environ centraility} \item{AEC}{average environ centrality (average
 of input and output)}
 }
 \description{
-M. Lau | July 2011
----------------------------------------------------
-environCentrality --- calculates the centrality of flow network environs
-INPUT = environ matrix OUTPUT = in-going, out-going and average centralities
-}
-\details{
-M. Lau | July 2011 ---------------------------------------------------
-environCentrality --- calculates the centrality of flow network environs
-INPUT = environ matrix OUTPUT = in-going, out-going and average centralities
-
-M. Lau | July 2011 ---------------------------------------------------
-Environ Centrality an Ecological Network
-
 This function calculates the input, output, and average environ centrality
 of the nodes in the network (Fath and Borret, 2012).  This is a type of
 weighted degree centrality that indicates the relative importance of the

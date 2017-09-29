@@ -2,31 +2,7 @@
 % Please edit documentation in R/as.extended.R
 \name{as.extended}
 \alias{as.extended}
-\title{as.extended  --- convert a network object to extended format
-in Allesina and Bondavalli 2003
-INPUT = network model
-OUTPUT = the same model in extended format with inputs and
-exports/respiration in the same matrix
-REFERENCE: Allesina, S., Bondavalli, C., 2003.
-Steady state of ecosystem flow networks: a comparison
-between balancing procedures. Ecological Modelling 165(2-3):
-231-239.
-M. Lau July 2011
----------------------------------------------------
-as.extended --- convert a network object to extended format in Allesina and
-Bondavalli 2003 INPUT = network model OUTPUT = the same model in extended
-format with inputs and exports/respiration in the same matrix REFERENCE:
-Allesina, S., Bondavalli, C., 2003. Steady state of ecosystem flow networks:
-a comparison between balancing procedures. Ecological Modelling 165(2-3):
-231-239. M. Lau July 2011
---------------------------------------------------- as.extended --- convert
-a network object to extended format in Allesina and Bondavalli 2003 INPUT =
-network model OUTPUT = the same model in extended format with inputs and
-exports/respiration in the same matrix REFERENCE: Allesina, S., Bondavalli,
-C., 2003. Steady state of ecosystem flow networks: a comparison between
-balancing procedures. Ecological Modelling 165(2-3): 231-239. M. Lau July
-2011 --------------------------------------------------- Create an Extended
-Format Matrix}
+\title{Create an Extended Format Matrix}
 \usage{
 as.extended(x, zero.na = TRUE)
 }
@@ -39,11 +15,8 @@ as.extended(x, zero.na = TRUE)
 Returns an extended format matrix.
 }
 \description{
-Converts a network object to the extended format of Allesina and Bondavalli
-(2003).
-}
-\details{
-Used in the balance function.
+Converts a network object to the extended format of Allesina and
+Bondavalli (2003).  Used in the balance function.
 }
 \examples{
 

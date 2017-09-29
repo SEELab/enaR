@@ -2,13 +2,12 @@
 % Please edit documentation in R/ShannonDiversity.R
 \name{ShannonDiversity}
 \alias{ShannonDiversity}
-\title{Shannon Diversity Metrics
-These are based on entropy and build Shannon and Weaver 1949}
+\title{ShannonDiversity Shannon Diversity Metrics}
 \usage{
 ShannonDiversity(x)
 }
 \arguments{
-\item{x}{a 1 x n vector.}
+\item{x}{1 x n vector.}
 }
 \value{
 \item{H}{Shannon entropy-based metric of diversity.  This captures
@@ -21,30 +20,6 @@ n elements} \item{n}{Number of elements in the vector.}
 distribution of the relative weights.}
 }
 \description{
-Borrett | November 29, 2016
-}
-\details{
-INPUT = Vector
-Output = set of network statistics to charcterize the diversity in the vector
-================================================================================
-Shannon Diversity Metrics These are based on entropy and build Shannon and
-Weaver 1949
-
-Borrett | November 29, 2016
-
-INPUT = Vector Output = set of network statistics to charcterize the
-diversity in the vector
-================================================================================
-Shannon Diversity Metrics These are based on entropy and build Shannon and
-Weaver 1949
-
-Borrett | November 29, 2016
-
-INPUT = Vector Output = set of network statistics to charcterize the
-diversity in the vector
-================================================================================
-Shannon information entropy
-
 Calculates a number of metrics based on the Shannon information entropy
 measure of diversity in a vector, x.
 }

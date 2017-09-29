@@ -2,12 +2,10 @@
 % Please edit documentation in R/enaUtility.R
 \name{enaUtility}
 \alias{enaUtility}
-\title{enautility --- utility analysis of a flow network
-INPUT = network object
-OUTPUT = list of utility statistics}
+\title{Utility Analysis of Ecological Networks}
 \usage{
-enaUtility(x, type = c("flow", "storage"), eigen.check = TRUE,
-  balance.override = FALSE, tol = 10)
+enaUtility(x, type = c("flow", "storage"), balance.override = FALSE,
+  tol = 10)
 }
 \arguments{
 \item{x}{a network object.  This includes all weighted flows into and out of
@@ -16,18 +14,6 @@ amount of energy--matter stored at each node (biomass).}
 
 \item{type}{Determines whether the flow or storage utility analysis is
 returned.}
-
-\item{eigen.check}{LOGICAL: should the dominant eigenvalue be checked.  Like
-enaFlow and enaStorage analyses, enaUtility analysis considers the utility
-propigated over path lengths ranging for zero to infinity.  For utility
-analysis to work properly, the path sequence must converge.  enaUtility
-checks to see if the utility path sequence is convergent by finding the
-dominant eigenvalue of the direct utility matrix.  If this eigenvalue is
-less than 1, the sequence is convergent and the analysis can be applied; if
-the dominant eigenvalue is greater than one, then the anlysis cannot be
-applied.  By default, the function will not return utility values if the
-eigenvalue is larger than one; however, if eigen.check is set to FALSE, then
-the function will be applied regardless of the mathematic validity.}
 
 \item{balance.override}{LOGICAL: should model balancing be ignored.
 enaUtility assumes that the network model is at steady-state.  The default
@@ -55,35 +41,10 @@ including: the dominant eigenvalue of DS (lambda_1DS), storage based network
 synergism (synergism.S), and storage based network mutualism (mutualism.S).}
 }
 \description{
-M. Lau | July 2011
----------------------------------------------------
-enautility --- utility analysis of a flow network INPUT = network object
-OUTPUT = list of utility statistics
-}
-\details{
-M. Lau | July 2011 ---------------------------------------------------
-enautility --- utility analysis of a flow network INPUT = network object
-OUTPUT = list of utility statistics
-
-M. Lau | July 2011 ---------------------------------------------------
-Utility Analysis of Ecological Networks
-
 Performs the flow and storage based utility analysis developed for
-input-output network models of ecosystems.  It returns a set of matrices for
-the direct and integral utilities as well as a set of utility based network
-statistics.
-}
-\examples{
-
-
-
-data(troModels)
-U <- enaUtility(troModels[[6]], type = "flow", eigen.check = FALSE)
-attributes(U)
-US <- enaUtility(troModels[[6]], type = "storage", eigen.check = FALSE)
-
-
-
+input-output network models of ecosystems.  It returns a set of
+matrices for the direct and integral utilities as well as a set of
+utility based network statistics.
 }
 \references{
 Fath, B.D. and Patten, B.C. 1998. Network synergism: emergence
@@ -93,9 +54,9 @@ Fath, B.D. and Borrett, S.R. 2006. A Matlab function for Network Environ
 Analysis. Environ. Model. Soft. 21: 375--405.
 
 Patten, B.C. 1991.  Network ecology: Indirect determination of the
-life-environment relationship in ecosystems.  In: Higashi, M. and Burns, T.
-(eds). Theoretical Studies of Ecosystems: The Network Perspective. Cambridge
-University Press.  New York.
+life-environment relationship in ecosystems.  In: Higashi, M. and
+Burns, T.  (eds). Theoretical Studies of Ecosystems: The Network
+Perspective. Cambridge University Press.  New York.
 }
 \seealso{
 \code{\link{enaFlow},\link{enaStorage},\link{enaMTI}}

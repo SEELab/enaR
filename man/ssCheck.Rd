@@ -2,31 +2,14 @@
 % Please edit documentation in R/ssCheck.R
 \name{ssCheck}
 \alias{ssCheck}
-\title{ssCheck --- checks if the given network
-is out of balance by a given tolerance
-threshold
-INPUT = network object
-OUTPUT = logical indicating violation of
-tolerance
-NOTE: used in the balancing process
-M. Lau | July 2011
-------------------------------------
-ssCheck --- checks if the given network is out of balance by a given
-tolerance threshold INPUT = network object OUTPUT = logical indicating
-violation of tolerance NOTE: used in the balancing process M. Lau | July
-2011 ------------------------------------ ssCheck --- checks if the given
-network is out of balance by a given tolerance threshold INPUT = network
-object OUTPUT = logical indicating violation of tolerance NOTE: used in the
-balancing process M. Lau | July 2011 ------------------------------------
-Checks the Balance of Inputs and Outputs from a Network}
+\title{Checks if the given network is out of balance by a given tolerance threshold}
 \usage{
 ssCheck(x, tol = 5, more = FALSE, zero.na = TRUE)
 }
 \arguments{
 \item{x}{A network object.}
 
-\item{tol}{The threshold for balance in percent difference between input and
-outputs.}
+\item{tol}{The threshold for balance in percent difference between input and outputs.}
 
 \item{more}{LOGICAL: should more detailed results be returned?}
 
@@ -37,23 +20,17 @@ Returns a logical value stating if the model is within acceptable
 limits of balance (TRUE) or if it is not (FALSE).
 }
 \description{
-This function supports the balancing process by checking if the inputs and
-outputs of a given network model are within acceptable limits.
+This function supports the balancing process by checking if the inputs and outputs of a given network model are within acceptable limits.
 }
 \examples{
-
-
 
 data(troModels)
 ssCheck(troModels[[2]])
 ssCheck(troModels[[6]])
 
-
-
 }
 \references{
-Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network
-environ analysis. Environmental Modelling & Software 21:375-405.
+Fath, B.D. and S.R. Borrett. 2006. A MATLAB function for network environ analysis. Environmental Modelling & Software 21:375-405.
 }
 \seealso{
 \code{\link{balance}}
