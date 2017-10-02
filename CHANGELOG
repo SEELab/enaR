@@ -1,5 +1,6 @@
 Updates v3.0.2
 - Adds Detritiory/Herbivory ratio to enaTroAgg
+- Adds Residence Time and Average Residence Time (ART) to enaStorage
 
 Updates v3.0.1
 - Adjusts utility function usage
