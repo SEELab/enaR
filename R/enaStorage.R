@@ -89,7 +89,7 @@ enaStorage <- function(x,balance.override=FALSE){
     T. <- apply(Flow,1,sum) + input
     FD <- Flow - diag(T.) #flow matrix with negative throughflows on the diagonal
     I <- diag(1,nrow(Flow),ncol(Flow)) #create the identity matrix
-    RT <- x%v%'storage' / x%v%'export' # residence time
+    RT <- x%v%'storage' / x%v%'output' # residence time
     ART <- mean(RT)
 
                                         #Compute the Jacobian matrix
