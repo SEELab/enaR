@@ -21,7 +21,8 @@
 #' input-oriented residance times (Barber 1979)} \item{QP}{integral
 #' input storage matrix - non-dimensional} \item{dt}{selected time
 #' step to create P, PP, Q and QP - smallest whole number to make
-#' diag(C) nonnegative} \item{ns}{vector of the storage based whole
+#' diag(C) nonnegative \item{RT}{node residence time (storage/outputs),
+#' units of inverse time} \item{ns}{vector of the storage based whole
 #' system network statistics.  These statistics include total system
 #' storage (TSS), storage cycling index (CIS), Boundary storage
 #' intensity (BSI), Direct storage intensity (DSI), Indirect storage
@@ -35,7 +36,7 @@
 #' amplification (AMP.S.O), Storage from Boundary flow (mode0.S),
 #' storage from internal first passage flow (mode1.S), storage from
 #' cycled flow (mode2.S), dissipative equivalent to mode1.S (mode3.S),
-#' dissipative equivalent to mode0.S (mode4.S).}
+#' dissipative equivalent to mode0.S (mode4.S), Average Residence Time (ART)}
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso
 #' \code{\link{read.scor},\link{read.wand},\link{enaFlow},\link{enaUtility}}
@@ -88,6 +89,8 @@ enaStorage <- function(x,balance.override=FALSE){
     T. <- apply(Flow,1,sum) + input
     FD <- Flow - diag(T.) #flow matrix with negative throughflows on the diagonal
     I <- diag(1,nrow(Flow),ncol(Flow)) #create the identity matrix
+    RT <- x%v%'storage' / x%v%'output' # residence time
+    ART <- mean(RT)
 
                                         #Compute the Jacobian matrix
     C <- FD %*% ginv(diag(stor)) #output matrix
@@ -194,7 +197,7 @@ enaStorage <- function(x,balance.override=FALSE){
                 'ID.S'=ID.S, 'ID.S.I'=ID.S.I,'ID.S.O'=ID.S.O,
                 'HMG.S.O'=HMG.S.O,'HMG.S.I'=HMG.S.I,
                 'NAS'=NAS,'NASP'=NASP,
-                mode0.S,mode1.S,mode2.S,mode3.S,mode4.S)
+                mode0.S,mode1.S,mode2.S,mode3.S,mode4.S, 'ART' = ART)
 
                                         #lam1P'=abs(lam1P),'rhoP'=abs(rhoP),
                                         #lam1PP'=abs(lam1PP),'rhoPP'=abs(rhoPP),'AGG.S'=AGG.S)
@@ -215,7 +218,7 @@ enaStorage <- function(x,balance.override=FALSE){
 
     out <- list('X'=stor,'C'=C,'P'=P,'S'=S, 'VS'=VS,
                 'Q'=Q,'CP'=CP,'PP'=PP,'SP'=SP, 'VSP'=VSP,
-                'QP'=QP,'dt'=dt,'ns'=ns)
+                'QP'=QP,'dt'=dt,'RT' = RT, 'ns'=ns)
 
     return(out)
   }
