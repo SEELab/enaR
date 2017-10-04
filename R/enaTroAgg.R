@@ -238,8 +238,8 @@ enaTroAgg <- function (x, balance.override = FALSE){
                                         # Output Listing
   ATL <- mean(etl) # average trophic level
   Detritivory <- dtry
-  Herbivory <- gc[1]
-  DH = dtry/gc[1]
+  Herbivory <- gc[2]
+  DH = dtry/gc[2]
   DetritalInput <- dinp
   DetritalCirc <- dcir
   ns <- cbind(ATL, 'Detritivory' = Detritivory, DetritalInput, DetritalCirc, Feeding_Cycles$ns, Herbivory, DH)
