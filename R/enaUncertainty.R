@@ -1,17 +1,14 @@
-#' enaUncertainty
-#' INPUT = network object and uncertainty data
-#' OUTPUT = list of plausible network models
+#' Produce a set of plausible network models
 #'
-#' David Hines | April 2017
-#' edits by Stuart R. Borrett | April 2017
-#' ---------------------------------------------------------------------------
-
-#' enaUncertainty --- INPUT = network object and uncertainty data
-#' OUTPUT = list of plausible network models
-#'
-#' Hines, April 2017
-#'
-#' Connects enaR to limSolve to apply Linear Inverse Modelling to conduct an uncertainty analysis for Ecological Network Analysis. Users supply an initial ecosystem model (in the enaR format) and uncertainty informaiton (several ways of specifying), and the function returns a list (length = "iter") of balanced plausible instantiations of the model.  This has been used to determine the 95% confidnece intervals for network analysis results and to determine the statistical significance of selected comaprisons (Hines et al. 2015, 2016).
+#' Connects enaR to limSolve to apply Linear Inverse Modelling to
+#' conduct an uncertainty analysis for Ecological Network
+#' Analysis. Users supply an initial ecosystem model (in the enaR
+#' format) and uncertainty informaiton (several ways of specifying),
+#' and the function returns a list (length = "iter") of balanced
+#' plausible instantiations of the model.  This has been used to
+#' determine the 95% confidnece intervals for network analysis results
+#' and to determine the statistical significance of selected
+#' comaprisons (Hines et al. 2015, 2016).
 #'
 #' @param x a network object.  This includes all weighted flows into and out of each node.
 #' @param type is a paramter to switch the kind of uncertainty analysis to complete: "percent", "sym", "asym".  The "percent" options explores the parameter space for all parameters by a fixed percentage.  The "sym" options let the user specify an amount to explore around each flow estimate (internal flows (F) and boundary flows (inputs, exports, respirations).  This option assuems that the possible deviation is symmetric around the original values.  The "asym" lets the user specify upper and lower limits for each flow value.
@@ -154,13 +151,12 @@
 #' @import limSolve
 #' @import network
 #' @export enaUncertainty
-
-
 enaUncertainty=function(x = 'network object', type="percent", iter=10000,
                         p.err=NA,
                         F.sym=NA, z.sym=NA, y.sym=NA, e.sym=NA, r.sym=NA,
                         F.bot=NA, z.bot=NA, y.bot=NA, e.bot=NA, r.bot=NA,
                         F.top=NA, z.top=NA, y.top=NA, e.top=NA, r.top=NA){
+    ## D.E. Hines, April 2017
 
     # check data input - Part 1 ----------------
     # data input warnings

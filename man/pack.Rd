@@ -20,8 +20,8 @@ pack(flow, input = NA, respiration = NA, export = NA, output = NA,
 
 \item{storage}{The quantities stored in compartments within the system.}
 
-\item{living}{A logical vector indicating whether a node is either 'living'
-(= TRUE) or 'dead' (=FALSE).}
+\item{living}{A logical vector indicating whether a node is either
+'living' (= TRUE) or 'dead' (=FALSE).}
 }
 \value{
 Returns a network object for the supplied model.

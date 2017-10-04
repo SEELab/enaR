@@ -1,6 +1,6 @@
-#' Calculates the Eigen Centrality of a Network
+#' the Eigen Centrality of a Network
 #' 
-#' Calculates the eigen centrality of a network.
+#' Calculates the centrality of a network using eigen vectors.
 #' 
 #' 
 #' @param x A matrix defining a network graph.

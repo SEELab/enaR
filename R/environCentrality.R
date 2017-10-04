@@ -1,25 +1,3 @@
-#' environCentrality --- calculates the centrality of 
-#' flow network environs
-#' INPUT = environ matrix
-#' OUTPUT = in-going, out-going and average centralities
-#' 
-#' M. Lau | July 2011
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' environCentrality --- calculates the centrality of flow network environs
-#' INPUT = environ matrix OUTPUT = in-going, out-going and average centralities
-#' 
-#' M. Lau | July 2011 ---------------------------------------------------
-#' environCentrality --- calculates the centrality of flow network environs
-#' INPUT = environ matrix OUTPUT = in-going, out-going and average centralities
-#' 
-#' M. Lau | July 2011 ---------------------------------------------------
 #' Environ Centrality an Ecological Network
 #' 
 #' This function calculates the input, output, and average environ centrality

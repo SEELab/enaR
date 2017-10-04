@@ -1,11 +1,8 @@
-#' ### MKLau 1Mar2016
-
 #' Read an EcoNet model.
 #' 
 #' This function allows the user to access models that are formatted for
 #' EcoNet, the web-based interface for conducting ENA
 #' (http://eco.engr.uga.edu/), by Caner Kazanci at the University of Georgia.
-#' 
 #' 
 #' @param file Path to an EcoNet formatted file
 #' @param verbose LOGICAL: should warnings be suppressed?

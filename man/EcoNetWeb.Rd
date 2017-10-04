@@ -2,8 +2,7 @@
 % Please edit documentation in R/EcoNetWeb.R
 \name{EcoNetWeb}
 \alias{EcoNetWeb}
-\title{### MKLau 31Mar2016
-Access example EcoNet models from the EcoNet website.}
+\title{Access example EcoNet models from the EcoNet website.}
 \usage{
 EcoNetWeb(model.name = "prompt",
   url = "http://eco.engr.uga.edu/Examples/examples.html")

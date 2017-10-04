@@ -1,24 +1,4 @@
-#' findPathLength --- calculates the flows over a
-#' sequence up to a maximum path length
-#' INPUT = network object
-#' OUTPUT = a list of flow statistics over paths
-#'
-#' S. Borrett and M. Lau | July 2011
-#' ---------------------------------------------------
-
-
-
-
-#' findPathLength --- calculates the flows over a sequence up to a maximum path
-#' length INPUT = network object OUTPUT = a list of flow statistics over paths
-#'
-#' --- findPathLength ---
-#' calculates the flows over a sequence up to a maximum path length INPUT =
-#' network object OUTPUT = a list of flow statistics over paths
-#'
-#' S. Borrett and M. Lau | July 2011
-#' --------------------------------------------------- Cumulative Flow over a
-#' Range of Path Lengths
+#' Cumulative Flow over a Range of Path Lengths
 #'
 #' Calculates the flow throughout the entire network over a given path length.
 #'

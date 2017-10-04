@@ -2,17 +2,7 @@
 % Please edit documentation in R/scc.R
 \name{scc}
 \alias{scc}
-\title{scc --- find the strongly connected component
-INPUT = an adjacency matrix
-OUTPUT = list of membership and values
-S. Borrett | July 2011
-------------------------------------
-scc --- find the strongly connected component INPUT = an adjacency matrix
-OUTPUT = list of membership and values S. Borrett | July 2011
------------------------------------- scc --- find the strongly connected
-component INPUT = an adjacency matrix OUTPUT = list of membership and values
-S. Borrett | July 2011 ------------------------------------ Find the
-Strongly Connected Component (SCC) in a Graph}
+\title{Find the strongly connected component}
 \usage{
 scc(A = "adjacency")
 }
@@ -28,8 +18,9 @@ belongs (as in igraph:clusters)} \item{scc.id}{numeric vector of the numeric
 identity in "membership" of SCCs with more than 1 node}
 }
 \description{
-This function finds the strongly connected components (SCCs) of an adjacency
-matrix A and returns a number of derived network statistics.
+This function finds the strongly connected components (SCCs) of an
+adjacency matrix A and returns a number of derived network
+statistics.
 }
 \note{
 Input matrix is assumed to be oriented from columns to rows.

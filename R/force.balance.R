@@ -1,28 +1,8 @@
-#' force.balance --- repeatedly applies balance until 
-#' sub-tolerance is reached
-#' INPUT = network model
-#' OUTPUT = balanced model
-#' M. Lau 1 Oct 2012
-#' ---------------------------------------------------
-
-
-
-
-
-
-
-#' force.balance --- repeatedly applies balance until sub-tolerance is reached
-#' INPUT = network model OUTPUT = balanced model M. Lau 1 Oct 2012
-#' --------------------------------------------------- force.balance ---
-#' repeatedly applies balance until sub-tolerance is reached INPUT = network
-#' model OUTPUT = balanced model M. Lau 1 Oct 2012
-#' --------------------------------------------------- Repeated Application the
-#' Balance Function
+#' Repeated Application the Balance Function
 #' 
 #' This function repeatedly balances a model, sequentially with the output
 #' being passed back to the balance function, until it is within tolerance or
 #' the maximum number of iterations is reached.
-#' 
 #' 
 #' @param x A network object.
 #' @param tol Percent error tolerance for difference between inputs and
