@@ -237,18 +237,20 @@ enaTroAgg <- function (x, balance.override = FALSE){
 
                                         # Output Listing
   ATL <- mean(etl) # average trophic level
-  Detrivory <- dtry
-  Herbivory <- gc[1]
-  DH = dtry/gc[1]
+  Detritivory <- dtry
+  Herbivory <- gc[2]
+  DH = dtry/gc[2]
   DetritalInput <- dinp
   DetritalCirc <- dcir
-  ns <- cbind(ATL, Detrivory, DetritalInput, DetritalCirc, Feeding_Cycles$ns, Herbivory, DH)
+  ns <- cbind(ATL, 'Detritivory' = Detritivory, DetritalInput, DetritalCirc, Feeding_Cycles$ns, Herbivory, DH)
   if(NMIG>0) {
-  	out <- list(Feeding_Cycles=Feeding_Cycles[1:(length(Feeding_Cycles)-1)], A = A[1:nl,1:nl], ETL = etl, M.Flow = mig.input, CI = ci, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
+      out <- list(Feeding_Cycles=Feeding_Cycles[1:(length(Feeding_Cycles)-1)],
+                  A = A[1:nl,1:nl], ETL = etl, M.Flow = mig.input, CI = ci, CE = ce1, CR = cr1,
+                  GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
   }
   else{
-  	out <- list(Feeding_Cycles=Feeding_Cycles[1:(length(Feeding_Cycles)-1)], A = A[1:nl,1:nl], ETL = etl, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
-
+      out <- list(Feeding_Cycles=Feeding_Cycles[1:(length(Feeding_Cycles)-1)],
+                  A = A[1:nl,1:nl], ETL = etl, CE = ce1, CR = cr1, GC = gc, RDP = rtd, LS = ls,TE = te, ns=ns)
   }
 
   return(out)
