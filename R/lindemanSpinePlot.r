@@ -37,7 +37,7 @@
 #' @import network
 
 
-plot.lindeman <- function(x=){
+plot.lindeman <- function(x = 'model'){
   if (class(x) != 'network'){warning('x is not a network class object')}
   #  Check for balancing
   if (balance.override){}else{
