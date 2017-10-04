@@ -2,9 +2,7 @@
 % Please edit documentation in R/enaEnviron.R
 \name{enaEnviron}
 \alias{enaEnviron}
-\title{environ --- conducts environ analysis 
-INPUT = network object
-OUTPUT = input and/or output environs}
+\title{Ecological Network Environs}
 \usage{
 enaEnviron(x, input = TRUE, output = TRUE, type = "unit",
   err.tol = 1e-10, balance.override = FALSE)
@@ -31,21 +29,6 @@ The function returns the input, output or both environs depending
 upon which were requested.
 }
 \description{
-M. Lau July 2011 | DEH edited Feb 2013
----------------------------------------------------
-environ --- conducts environ analysis INPUT = network object OUTPUT = input
-and/or output environs
-}
-\details{
-M. Lau July 2011 | DEH edited Feb 2013
---------------------------------------------------- environ --- conducts
-environ analysis INPUT = network object OUTPUT = input and/or output
-environs
-
-M. Lau July 2011 | DEH edited Feb 2013
---------------------------------------------------- Ecological Network
-Environs
-
 Calculates the environs for an ecological network.
 }
 \examples{

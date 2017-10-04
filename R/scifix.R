@@ -1,28 +1,7 @@
-#' scifix --- corrects missing e or E in 
-#' scientific notation
-#' INPUT = scalar either in or not in 
-#' scientific notation
-#' OUTPUT = corrected numeric value
-#' M. Lau | July 2012
-#' ------------------------------------
-
-
-
-
-
-
-
-#' scifix --- corrects missing e or E in scientific notation INPUT = scalar
-#' either in or not in scientific notation OUTPUT = corrected numeric value M.
-#' Lau | July 2012 ------------------------------------ scifix --- corrects
-#' missing e or E in scientific notation INPUT = scalar either in or not in
-#' scientific notation OUTPUT = corrected numeric value M. Lau | July 2012
-#' ------------------------------------ Standardizes Scientific Notation from
-#' SCOR Formatted Files
+#' scifix Corrects missing e or E in scientific notation
 #' 
 #' This is a support function that corrects the scientific notation in SCOR
 #' formatted data files.
-#' 
 #' 
 #' @param x A numeric or character scalar.
 #' @return Returns a numeric scalar in appropriate scientific notation.

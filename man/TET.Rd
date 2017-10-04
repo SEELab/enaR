@@ -2,9 +2,7 @@
 % Please edit documentation in R/TET.R
 \name{TET}
 \alias{TET}
-\title{TET.R  --- TOTAL ENVIRON THROUGHFLOW
-INPUT = network model
-OUTPUT = total environ throughput - unit and scaled}
+\title{Calculate the Total Environ Throughflow}
 \usage{
 TET(x, balance.override = FALSE)
 }
@@ -24,34 +22,15 @@ total environ throughflows for the n input oriented environs.}
 output oriented environs.}
 }
 \description{
-Borrett | July 7, 2012
----------------------------------------------------
-TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
-environ throughput - unit and scaled
-}
-\details{
-Borrett | July 7, 2012 ---------------------------------------------------
-TET.R --- TOTAL ENVIRON THROUGHFLOW INPUT = network model OUTPUT = total
-environ throughput - unit and scaled
-
-Borrett | July 7, 2012 ---------------------------------------------------
-Calculates the Total Environ Throughflow for a Ecosystem Network Model
-
 Determines the total environ throughflow (TET) for each of the 2 x n
 environs of the selected network model. It returns both the TET calculated
 from a unit input (output) vector and from the observed or realized input
 (output) vector.
 }
 \examples{
-
-
-
 data(troModels)
 tet <- TET(troModels[[6]])
 tet
-
-
-
 }
 \references{
 Gattie, D.K., Schramski, J.R., Borrett, S.R., Patten, B.C.,

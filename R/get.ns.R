@@ -1,27 +1,8 @@
-#' get.ns.R
-#' Input = network model
-#' Output = a vector of global network statistics from ena
+#' Quick Calculation of a Range of Network Statistics.
 #'
-#' Borrett | July 4, 2012
-#' -----------------------------------
-
-
-
-
-
-
-
-#' get.ns.R Input = network model Output = a vector of global network
-#' statistics from ena
-#'
-#' Borrett | July 4, 2012 ----------------------------------- get.ns.R Input =
-#' network model Output = a vector of global network statistics from ena
-#'
-#' Borrett | July 4, 2012 ----------------------------------- Quick Calculation
-#' of a Range of Network Statistics.
-#'
-#' This is a high level function for calculated the main network analyses
-#' (Ascendancy, Flow, Structure, Storage and Utility) on an ecological network.
+#' This is a high level function for calculated the main network
+#' analyses (Ascendancy, Flow, Structure, Storage and Utility) on an
+#' ecological network.
 #'
 #' @param x A network object.
 #' @param balance.override Turns off balancing and balance checking.
@@ -31,8 +12,8 @@
 #' @author Matthew K. Lau Stuart R. Borrett David E. Hines
 #' @seealso
 #' \code{\link{enaStructure}},\code{\link{enaFlow}},\code{\link{enaAscendency}},\code{\link{enaUtility}}
-#' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
-#' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for
+#' Network Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 #' @examples
 #'
 #'
@@ -57,8 +38,8 @@ get.ns <- function(x,balance.override=FALSE){
   Flow <- enaFlow(x)$ns
   asc <- enaAscendency(x)
   s <- enaStorage(x)$ns
-  u.f <- enaUtility(x,type='flow',eigen.check=FALSE)$ns
-  u.s <- enaUtility(x,type='storage',eigen.check=FALSE)$ns
+  u.f <- enaUtility(x,type='flow')$ns
+  u.s <- enaUtility(x,type='storage')$ns
   ns <- data.frame(st,Flow,asc,s,u.f,u.s)
   rownames(ns) <- ""
   return(ns)

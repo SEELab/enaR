@@ -2,10 +2,7 @@
 % Please edit documentation in R/findPathLength.R
 \name{findPathLength}
 \alias{findPathLength}
-\title{findPathLength --- calculates the flows over a
-sequence up to a maximum path length
-INPUT = network object
-OUTPUT = a list of flow statistics over paths}
+\title{Cumulative Flow over a Range of Path Lengths}
 \usage{
 findPathLength(x, maxPath = 100, plot.sw = FALSE)
 }
@@ -26,20 +23,6 @@ total system throughflow is achieved (m50, m90, and m95, respectively)}
 maxPath} \item{ctf}{cumulative total flow from path length 0 to maxPath}
 }
 \description{
-S. Borrett and M. Lau | July 2011
----------------------------------------------------
-findPathLength --- calculates the flows over a sequence up to a maximum path
-length INPUT = network object OUTPUT = a list of flow statistics over paths
-}
-\details{
---- findPathLength ---
-calculates the flows over a sequence up to a maximum path length INPUT =
-network object OUTPUT = a list of flow statistics over paths
-
-S. Borrett and M. Lau | July 2011
---------------------------------------------------- Cumulative Flow over a
-Range of Path Lengths
-
 Calculates the flow throughout the entire network over a given path length.
 }
 \examples{

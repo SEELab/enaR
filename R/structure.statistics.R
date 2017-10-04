@@ -1,41 +1,19 @@
-#' structure.statistics --- calculates structural statistics
-#' INPUT = an adjacency matrix
-#' OUTPUT = list of structural statistics
-#' S. Borrett | July 2011
-#' ------------------------------------
-
-
-
-
-
-
-
-#' structure.statistics --- calculates structural statistics INPUT = an
-#' adjacency matrix OUTPUT = list of structural statistics S. Borrett | July
-#' 2011 ------------------------------------ structure.statistics ---
-#' calculates structural statistics INPUT = an adjacency matrix OUTPUT = list
-#' of structural statistics S. Borrett | July 2011
-#' ------------------------------------ Structural Statistics of an Ecological
-#' Network
+#' structural statistics
 #'
 #' This function returns several network statistics that describe a network.
-#'
 #'
 #' @param A An adjacency matrix.
 #' @return \item{n}{Number of nodes in A.} \item{L}{Number of direct
 #' connections in A.} \item{C}{Connectivity of A.} \item{LD}{Link density.}
-#' \item{lam1A}{First dominant eigenvalue of A.} \item{mlam1A}{Multiplicity of
-#' the dominant eigenvalue.} \item{lam2A}{Magnitude of the second largest
-#' eigenvalue.} \item{rho}{Damping ratio (see Caswell 2001).} \item{R}{Distance
-#' of lam1A from the bulk of the eigen spectrum.} \item{d}{Difference between
+#' \item{lam1A}{First dominant eigenvalue of A.} \item{mlam1A}{Multiplicity of the dominant eigenvalue.} \item{lam2A}{Magnitude of the second largest
+#' eigenvalue.} \item{rho}{Damping ratio (see Caswell 2001).} \item{R}{Distance of lam1A from the bulk of the eigen spectrum.} \item{d}{Difference between
 #' the dominant eigenvalue and the link density.} \item{no.scc}{Number of
 #' strongly connected components.} \item{no.scc.big}{Number of strongly
 #' connected components greater than 1.} \item{pscc}{Precent of nodes
 #' participating in a strongly connected component.}
 #' @author Matthew K. Lau Stuart R. Borrett
 #' @seealso \code{\link{enaStructure}},\code{\link{scc}}
-#' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network
-#' Environ Analysis.  Environ. Model. Softw. 21, 375-405.
+#' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 structure.statistics <- function(A='adjacency matrix'){
   if (class(A) != 'matrix'){warning('A is not a matrix class object')}
                                         #

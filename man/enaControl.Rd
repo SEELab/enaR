@@ -2,21 +2,7 @@
 % Please edit documentation in R/enaControl.R
 \name{enaControl}
 \alias{enaControl}
-\title{enaControl --- control analyses
-INPUT = network object
-OUTPUT = list of control statistics
-M. Lau | July 2011
-P. Singh | Update Summer 2013
-S.R. Borrett | Update March 2016
----------------------------------------------------
-enaControl --- control analyses INPUT = network object OUTPUT = list of
-control statistics M. Lau | July 2011 P. Singh | Update Summer 2013 S.R.
-Borrett | Update March 2016
---------------------------------------------------- enaControl --- control
-analyses INPUT = network object OUTPUT = list of control statistics M. Lau |
-July 2011 P. Singh | Update Summer 2013 S.R. Borrett | Update March 2016
---------------------------------------------------- Control Analyses of
-Ecological Networks}
+\title{Control Analyses of Ecological Networks}
 \usage{
 enaControl(x, zero.na = TRUE, balance.override = FALSE)
 }

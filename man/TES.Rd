@@ -2,9 +2,7 @@
 % Please edit documentation in R/TES.R
 \name{TES}
 \alias{TES}
-\title{TES.R  --- TOTAL ENVIRON STORAGE
-INPUT = network model
-OUTPUT = total environ throughput - unit and scaled}
+\title{Calculates the Total Environ Storage}
 \usage{
 TES(x, balance.override = FALSE)
 }
@@ -20,34 +18,12 @@ environ.} \item{unit.input }{input oriented, unit storage in each environ.}
 \item{unit.output}{input oriented, unit storage in each environ.}
 }
 \description{
-Borrett | July 7, 2012
----------------------------------------------------
-TES.R --- TOTAL ENVIRON STORAGE INPUT = network model OUTPUT = total environ
-throughput - unit and scaled
-}
-\details{
-Borrett | July 7, 2012 ---------------------------------------------------
-TES.R --- TOTAL ENVIRON STORAGE INPUT = network model OUTPUT = total environ
-throughput - unit and scaled
-
-Borrett | July 7, 2012 ---------------------------------------------------
-Calculate the Total Environ Storage
-
-Calculates the total storage in each n input and output environs.  This
-function calculates the storage for both the unit input (output) and the
-realized input (output) environs.  Realized uses the observed inputs
-(outputs) rather than an assumed unit input (output) to each node.
+Calculates the total storage in each n input and output environs. This function calculates the storage for both the unit input (output) and the realized input (output) environs.  Realized uses the observed inputs (outputs) rather than an assumed unit input (output) to each node.
 }
 \examples{
-
-
-
 data(troModels)
 tes <- TES(troModels[[6]])
 tes
-
-
-
 }
 \references{
 Matis, J.H. and Patten, B.C. 1981.  Environ analysis of linear

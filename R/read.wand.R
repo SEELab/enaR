@@ -1,33 +1,16 @@
-#' read.wand --- WAND formatted file into R
-#' INPUT = file path
-#' OUTPUT = network object
-#' S. Borrett | May 2012
-#' ------------------------------------
-
-
-
-
-
-
-
-#' read.wand --- WAND formatted file into R INPUT = file path OUTPUT = network
-#' object S. Borrett | May 2012 ------------------------------------ read.wand
-#' --- WAND formatted file into R INPUT = file path OUTPUT = network object S.
-#' Borrett | May 2012 ------------------------------------ Read WAND Formatted
-#' Model
+#' WAND formatted file into R
 #' 
 #' Reads WAND formatted network models.
 #' 
-#' 
 #' @param file File path to WAND formatted data file.
 #' @return Returns a network object from a WAND formatted data file.
-#' @note IMPORTANT: this function depends on the read.xlsx function from the
-#' xlsx package, which requires that the entire path be specified from the root
-#' directory (i.e. the absolute path).
+#' @note IMPORTANT: this function depends on the read.xlsx function
+#' from the xlsx package, which requires that the entire path be
+#' specified from the root directory (i.e. the absolute path).
 #' @author Matthew K. Lau Stuart R. Borrett
-#' @references Allesina, S., Bondavalli, C., 2004. WAND: an Ecological Network
-#' Analysis user-friendly tool. Environmental Modelling and Software
-#' 19(4):337-340.
+#' @references Allesina, S., Bondavalli, C., 2004. WAND: an Ecological
+#' Network Analysis user-friendly tool. Environmental Modelling and
+#' Software 19(4):337-340.
 #' @importFrom gdata read.xls
 #' @export read.wand
 #' @import network
