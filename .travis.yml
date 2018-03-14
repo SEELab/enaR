@@ -3,3 +3,7 @@
 language: R
 sudo: false
 cache: packages
+<<<<<<< HEAD
+=======
+warnings_are_errors: false
+>>>>>>> hotfix
