@@ -2,7 +2,9 @@
 #' INPUT = network object
 #' OUTPUT = plot of the lindeman spine
 #'
-#' Dr. Ulrike Schückel, Landesbetrieb für Küstenschutz, Nationalpark und Meeresschutz Schleswig-Holstein, Nationalparkverwaltung, Schlossgarten 1, 25832 Tönning
+#' Dr. Ulrike Schückel, Landesbetrieb für Küstenschutz, Nationalpark
+#' und Meeresschutz Schleswig-Holstein, Nationalparkverwaltung,
+#' Schlossgarten 1, 25832 Tönning
 #'
 #' Applies the enaTroAgg function and creates a plot of the Lindeman Spine
 #'
