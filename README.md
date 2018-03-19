@@ -63,6 +63,8 @@ View(model.ena$structure)
 
 For a more in-depth introduction to ENA and how to use the
 [enaR](https://cran.r-project.org/package=enaR) package, you can view
-our extensive [vignette](http://198.199.73.21:3838/ena-tutorial/)
-(http://198.199.73.21:3838/ena-tutorial/).
+our short [tutorial](http://198.199.73.21:3838/ena-tutorial/) or our
+more extensive [wiki](https://github.com/SEELab/enaR/wiki). 
+
+
 
