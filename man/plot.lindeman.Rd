@@ -16,8 +16,7 @@ OUTPUT = plot of the lindeman spine}
 
 \item{primprod}{a vector of the nodes that are primary producers}
 
-\item{type}{switches beteween two types of plots: 1 = I and D are separate, 2 = I and D are combined
-#' @return}
+\item{type}{switches beteween two types of plots: 1 = I and D are separate, 2 = I and D are combined}
 }
 \description{
 Dr. Ulrike Schückel, Landesbetrieb für Küstenschutz, Nationalpark
@@ -36,6 +35,9 @@ plot.lindeman(model)
 }
 \references{
 Style of the plot according to Baird et al., 2004, 2007
+}
+\seealso{
+\code{\link{enaTroAgg}}
 }
 \author{
 Ulrike Schuckel,  Stuart R. Borrett
