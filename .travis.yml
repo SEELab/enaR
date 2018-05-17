@@ -3,7 +3,5 @@
 language: R
 sudo: false
 cache: packages
-<<<<<<< HEAD
-=======
 warnings_are_errors: false
->>>>>>> hotfix
+r_build_args: --resave-data=best

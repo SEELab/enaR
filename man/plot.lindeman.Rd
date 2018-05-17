@@ -20,13 +20,18 @@ OUTPUT = plot of the lindeman spine}
 #' @return}
 }
 \description{
-Dr. Ulrike Schückel, Landesbetrieb für Küstenschutz, Nationalpark und Meeresschutz Schleswig-Holstein, Nationalparkverwaltung, Schlossgarten 1, 25832 Tönning
+Dr. Ulrike Schückel, Landesbetrieb für Küstenschutz, Nationalpark
+und Meeresschutz Schleswig-Holstein, Nationalparkverwaltung,
+Schlossgarten 1, 25832 Tönning
 }
 \details{
 Applies the enaTroAgg function and creates a plot of the Lindeman Spine
 }
 \examples{
 
+data(enaModels)
+model <- enaModels[[8]]
+plot.lindeman(model)
 
 }
 \references{

@@ -12,11 +12,11 @@
 #' @param enatroagg the resutls of the enaTroAgg function applied to the model
 #' @param primprod a vector of the nodes that are primary producers
 #' @param type switches beteween two types of plots: 1 = I and D are separate, 2 = I and D are combined
-#' #' @return
+#' 
 #'
 #' @author Ulrike Schuckel,  Stuart R. Borrett
 #' @seealso
-#' \code{\link{enaTroAgg}
+#' \code{\link{enaTroAgg}}
 #' @references
 #'
 #' Style of the plot according to Baird et al., 2004, 2007
