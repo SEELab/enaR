@@ -28,9 +28,10 @@
 #' plot.lindeman(model)
 #' 
 #' @export plot.lindeman
-#' @importFrom MASS ginv
 #' @import network
-
+#' @importFrom MASS ginv
+#' @importFrom graphics rect text arrows polygon
+#' @importFrom utils as.roman
 
 plot.lindeman <- function(x = 'model', enatroagg='troagg', primprod, type = 1){
     if (class(x) != 'network'){warning('x is not a network class object')}
