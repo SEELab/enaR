@@ -21,7 +21,7 @@
 #' input-oriented residance times (Barber 1979)} \item{QP}{integral
 #' input storage matrix - non-dimensional} \item{dt}{selected time
 #' step to create P, PP, Q and QP - smallest whole number to make
-#' diag(C) nonnegative \item{RT}{node residence time (storage/outputs),
+#' diag(C) nonnegative} \item{RT}{node residence time (storage/outputs),
 #' units of inverse time} \item{ns}{vector of the storage based whole
 #' system network statistics.  These statistics include total system
 #' storage (TSS), storage cycling index (CIS), Boundary storage
