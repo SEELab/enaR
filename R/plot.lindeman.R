@@ -23,10 +23,12 @@
 #'
 #' @examples
 #'
-#'
-#' @importFrom MASS ginv
-#' @import network
+#' data(enaModels)
+#' model <- enaModels[[8]]
+#' plot.lindeman(model)
+#' 
 #' @export plot.lindeman
+#' @importFrom MASS ginv
 #' @import network
 
 
@@ -39,12 +41,17 @@ plot.lindeman <- function(x = 'model', enatroagg='troagg', primprod, type = 1){
     nonliving = which(u$living == FALSE)
     ns <- as.data.frame(enatroagg$ns)
 
-      # apply Trophic Aggregation
-  # enatroagg <- enaTroAgg(x)  # assume the user supplies this
+    ## apply Trophic Aggregation
+    if (enatroagg == "troagg"){
+        enatroagg <- enaTroAgg(x)  
+    }else{}
 
+    ## primprod?
+    if (exists("primprod")){
+        warning("Please supply a vector of primary producers as 'primprod'.")
+    }else{}
 
-
-  # count number of compartments for LS
+    ## count number of compartments for LS
     ntl = length(enatroagg$GC[enatroagg$GC >0])
 
     # text scaling  -  to make nicer plots when NTL is large
