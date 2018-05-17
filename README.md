@@ -1,6 +1,8 @@
 enaR: Tools for Ecological Network Analysis
 ===========================================
 
+[![DOI](https://zenodo.org/badge/12623293.svg)](https://zenodo.org/badge/latestdoi/12623293)
+
 Build Status
 ============
 
