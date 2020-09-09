@@ -4,8 +4,14 @@
 \alias{enaEnviron}
 \title{Ecological Network Environs}
 \usage{
-enaEnviron(x, input = TRUE, output = TRUE, type = "unit",
-  err.tol = 1e-10, balance.override = FALSE)
+enaEnviron(
+  x,
+  input = TRUE,
+  output = TRUE,
+  type = "unit",
+  err.tol = 1e-10,
+  balance.override = FALSE
+)
 }
 \arguments{
 \item{x}{A network object.}

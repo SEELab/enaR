@@ -4,8 +4,7 @@
 \alias{enaUtility}
 \title{Utility Analysis of Ecological Networks}
 \usage{
-enaUtility(x, type = c("flow", "storage"), balance.override = FALSE,
-  tol = 10)
+enaUtility(x, type = c("flow", "storage"), balance.override = FALSE, tol = 10)
 }
 \arguments{
 \item{x}{a network object.  This includes all weighted flows into and out of

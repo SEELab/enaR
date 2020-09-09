@@ -1,3 +1,6 @@
 .travis.yml
 README.md
 NEWS.md
+.git
+.review_*
+.CHANGELOG

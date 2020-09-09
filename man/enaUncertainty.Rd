@@ -4,11 +4,27 @@
 \alias{enaUncertainty}
 \title{Produce a set of plausible network models}
 \usage{
-enaUncertainty(x = "network object", type = "percent", iter = 10000,
-  p.err = NA, F.sym = NA, z.sym = NA, y.sym = NA, e.sym = NA,
-  r.sym = NA, F.bot = NA, z.bot = NA, y.bot = NA, e.bot = NA,
-  r.bot = NA, F.top = NA, z.top = NA, y.top = NA, e.top = NA,
-  r.top = NA)
+enaUncertainty(
+  x = "network object",
+  type = "percent",
+  iter = 10000,
+  p.err = NA,
+  F.sym = NA,
+  z.sym = NA,
+  y.sym = NA,
+  e.sym = NA,
+  r.sym = NA,
+  F.bot = NA,
+  z.bot = NA,
+  y.bot = NA,
+  e.bot = NA,
+  r.bot = NA,
+  F.top = NA,
+  z.top = NA,
+  y.top = NA,
+  e.top = NA,
+  r.top = NA
+)
 }
 \arguments{
 \item{x}{a network object.  This includes all weighted flows into and out of each node.}
