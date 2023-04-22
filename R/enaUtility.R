@@ -169,7 +169,7 @@ enaUtility <- function(x, type=c('flow','storage'),
                                         #labeling
         if (length(out)>1){
             for (i in 1:(length(out)-1)){
-                if (class(out[[i]])=='matrix'){
+                if (class(out[[i]])[[1]]=='matrix'){
                     rownames(out[[i]]) <- colnames(out[[i]]) <- colnames(Flow)
                 }
             }
