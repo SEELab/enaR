@@ -60,7 +60,6 @@ NULL
 #' 
 #' @name enaR-package
 #' @aliases enaR enaR-package
-#' @docType package
 #' @author Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David
 #' E. Hines Maintainer: Matthew K. Lau <enaR.maintainer@@gmail.com>
 #' @seealso % ~~ Optional links to other man pages, e.g. ~~ % ~~
@@ -68,7 +67,7 @@ NULL
 #' @references Borrett SR and Lau MK 2014. enaR: An r package for Ecosystem
 #' Network Analysis. Methods in Ecology and Evolution 5:1206-1213.
 #' @keywords package
-NULL
+"_PACKAGE"
 
 
 
