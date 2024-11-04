@@ -1,0 +1,98 @@
+---
+title: "Utility and Mixed Trophic Analyses"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Utility and Mixed Trophic Analyses}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = F,
+  message = F
+)
+```
+
+```{r setup}
+library(enaR)
+library(network)
+```
+
+This page illustrates how to use the _enaUtility()_ and _enaMTI()_ functions to find the integral or net impact of one species on another.  These also characterize the resultant qualitative relationships.  
+
+
+## Load Model
+
+We can load the library of models and select one to use for this illustration.
+
+```{r uncertsymm1, eval = T}
+# load data
+data(enaModels)        # load library of Ecosystem Networks
+names(enaModels)       # view model names
+NET <- enaModels[[9]]  # select the oyster NET
+```
+
+## Utility Analysis
+
+Next, we apply the utility network analysis.
+
+```{r uncertsymm2, eval = T}
+u <- enaUtility(NET)  # perform the ENA flow analysis
+attributes(u)
+```
+
+We can examine the througflow scaled integral utility matrix
+
+```{r uncertsymm3, eval = T}
+show(u$Y)  # dimesionalized integral utiilty matrix
+```
+
+The related sign matrix is
+
+```{r uncertsymm4, eval = T}
+show(u$SY)  # the sign matrix assoicated with U
+```
+
+These elements are essentially intermediate results.  The "Relations.Table" summarizes the key results
+
+```{r uncertsymm5, eval = T}
+u$Relations.Table
+```
+
+
+This table summarizes the pairwise relationship between each of the pairwise interactions in the network when considering just the direct interactions and the integral interactions, which consider all of the indirect interactions as well.  Often these indirect interactions have the power to transform a relationship that it is different than it first appears.   
+
+Several whole network metrics are derived from this information.
+
+
+```{r uncertsymm6, eval = T}
+u$ns
+```
+
+The synergism.F parameter is a cost-benefit ratio.  When it is greater than 1, it indicates that there is more integral positive utility in the system than negative utility.  The mutualism parameter is a similar ratio.  When it is greater than 1 in indicates that there are more integral positive relationships in the network than negative ones.  The stars in the right hand column indicate if this relationship has changed.        
+ 
+
+## Mixed Trophic Impacts
+
+The Mixed Trophic Impacts analysis of Ulanowicz and Puccia (1990) is executed with the _enaMTI()_ function as follows.
+
+```{r uncertsymm7, eval = T}
+mti <- enaMTI(NET)  # apply mixed trophic analysis 
+attributes(mti)
+```
+
+Like with the Utility analysis, we can ascertain the mixed impacts (integral) from the M matrix.  Note that I have rounded the values to 3 decimal places for brevity.
+
+```{r uncertsymm8, eval = T}
+round(mti$M,3)
+```
+                       
+Again, the key results are summarized in the _Relations.Table_
+
+```{r uncertsymm9, eval = T}
+mti$Relations.Table
+```
+

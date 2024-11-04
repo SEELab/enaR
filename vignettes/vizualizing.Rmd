@@ -1,0 +1,81 @@
+---
+title: "Vizualizing your Network"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vizualizing your Network}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = F,
+  message = F
+)
+```
+
+```{r setup}
+library(enaR)
+library(network)
+```
+
+This page illustrates how to use visualize a network model using the tools in _enaR_ and the _network_ package. 
+
+
+Load the library of models and select one to use for this illustration.
+
+```{r vizual1, eval = T}
+# load data
+data(enaModels)        # load library of Ecosystem Networks
+names(enaModels)       # view model names
+m <- enaModels[[9]]    # select the oyster model
+```
+
+## Simple Plot
+
+We can then create a simple plot of the model with the default graphics parameters as
+
+```{r vizual2, eval = T}
+# Set the random seed to control plot output
+set.seed(2)  # this is only used to ensure our plots look the same. 
+
+# Plot network data object (uses plot.network)
+plot(m)
+```
+
+## Fancy Plot
+
+We can create a fancier plot by exerting more control on the plotting parameters.  Here is an example.
+
+```{r vizual3, eval = T}
+
+  ## Set colors to use
+  my.col <- c('red','yellow',rgb(204,204,153,maxColorValue=255),'grey22')
+  ## Extract flow information for later use.
+  F <- as.matrix(m,attrname='flow')
+  ## Get indices of positive flows
+  f <- which(F!=0, arr.ind=T)
+  opar <- par(las=1,bg=my.col[4],xpd=TRUE,mai=c(1.02, 0.62, 0.82, 0.42))
+  ## Set the random seed to control plot output
+  set.seed(2)
+  plot(m,
+  ## Scale nodes with storage
+       vertex.cex=log(m%v%'storage'),
+  ## Add node labels
+       label= m%v%'vertex.names',
+       boxed.labels=FALSE,
+       label.cex=0.65,
+  ## Make rounded nodes
+       vertex.sides=45,
+  ## Scale arrows to flow magnitude
+       edge.lwd=log10(abs(F[f])),
+       edge.col=my.col[3],
+       vertex.col=my.col[1],
+       label.col='white',
+       vertex.border = my.col[3],
+       vertex.lty = 1,
+       xlim=c(-4,1),ylim=c(-2,-2))
+  
+```

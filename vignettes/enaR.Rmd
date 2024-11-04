@@ -1,0 +1,28 @@
+---
+title: "Getting Started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+`enaR` is an R function library for analyzing (ecosystem) network models.  It helps you apply algorithms developed for **Ecosystem Network Analysis** to better understand the structure, function, and behavior of ecosystems.  enaR was designed to bring together the many algorithms for ENA, including those developed by the  [Patten](http://www.ecology.uga.edu/facultyMember.php?Patten-31) and [Ulanowicz](http://www.cbl.umces.edu/~ulan/) schools of analyses, and better connect them to the rapidly developing tools and analyses for network science (such as the R packages like [statnet](https://statnet.csde.washington.edu) and [iGraph](http://igraph.org)).  ENA has potential applications for network science beyond ecosystems, and we are excited to see your applications and future development of this tool.   
+
+## Documentation to Get You Started
+
+* [Vignette](https://github.com/SEELab/enaR/blob/develop/vignettes/enaR-vignette.pdf) (tutorial)
+
+* [Scholarly Introduction](http://dx.doi.org/10.1111/2041-210X.12282) -- Borrett & Lau (2014) enaR: An r package for Ecosystem Network Analysis. Methods in Ecology and Evolution 5: 1206-1213.
+
+* [Comprehensive R Archival Network](https://cran.r-project.org)
+
+

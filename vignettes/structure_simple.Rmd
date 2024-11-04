@@ -1,0 +1,50 @@
+---
+title: "Structure Analysis: Simple"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Structure Analysis: Simple}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = F,
+  message = F
+)
+```
+
+```{r setup}
+library(enaR)
+library(network)
+```
+
+
+This page illustrates how to use the enaStructure() function to find selected structural properties of a network model.
+
+Load the library of models and select one to use for this illustration.
+
+# load data
+
+```{r structsimple1 , eval = T}
+data(enaModels)        # load library of Ecosystem Networks
+names(enaModels)       # view model names
+NET <- enaModels[[9]]  # select the oyster NET
+```
+Next, we apply the structural network analysis.
+
+```{r structsimple2, eval = T}
+s <- enaStructure(NET)
+attributes(s)
+```
+
+The s data object contains two objects: the adjacency matrix A and a vector of network statistics called ns.
+
+```{r structsimple3, eval = T}
+# Adjacency matrix
+show(s$A)
+# network stats
+show(s$ns)
+```
