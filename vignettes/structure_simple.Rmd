@@ -22,7 +22,7 @@ library(network)
 ```
 
 
-This page illustrates how to use the enaStructure() function to find selected structural properties of a network model.
+This page illustrates how to use the `enaStructure()` function to find selected structural properties of a network model.
 
 Load the library of models and select one to use for this illustration.
 

@@ -21,7 +21,7 @@ library(enaR)
 library(network)
 ```
 
-This page illustrates how to use visualize a network model using the tools in _enaR_ and the _network_ package. 
+This page illustrates how to use visualize a network model using the tools in `enaR` and the `network` package. 
 
 
 Load the library of models and select one to use for this illustration.

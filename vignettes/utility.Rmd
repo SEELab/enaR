@@ -21,7 +21,7 @@ library(enaR)
 library(network)
 ```
 
-This page illustrates how to use the _enaUtility()_ and _enaMTI()_ functions to find the integral or net impact of one species on another.  These also characterize the resultant qualitative relationships.  
+This page illustrates how to use the `enaUtility()` and `enaMTI()` functions to find the integral or net impact of one species on another.  These also characterize the resultant qualitative relationships.  
 
 
 ## Load Model

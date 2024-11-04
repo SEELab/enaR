@@ -83,7 +83,7 @@ degree(NET, cmode = "outdegree")
 degree(NET, cmode = "freeman")  # total
 ```
 
-** Using enaStructure() **
+## Using `enaStructure()`
 
 The `enaR` package includes a function that extracts the adjacency matrix and calculates a number of network statistics.
 
