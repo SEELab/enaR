@@ -1,0 +1,15 @@
+pandoc: 3.1.11
+pkgdown: 2.0.9
+pkgdown_sha: ~
+articles:
+  enaR: enaR.html
+  enterData: enterData.html
+  flow_simple: flow_simple.html
+  structure_advanced: structure_advanced.html
+  structure_simple: structure_simple.html
+  uncertainty_simple: uncertainty_simple.html
+  uncertainty_symmetric: uncertainty_symmetric.html
+  utility: utility.html
+  vizualizing: vizualizing.html
+last_built: 2024-11-04T15:41Z
+

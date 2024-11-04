@@ -1,0 +1,82 @@
+url: ~ # change to site io
+
+template:
+  bootstrap: 5
+  
+  
+deploy:
+  install_metadata: true
+
+reference:
+- title: "Calculate Metrics"
+  desc: ""
+- contents:
+  - enaAscendency
+  - eigenCentrality
+  - bcratio
+  - get.ns
+  - get.orient
+  - meanTrophicLevel
+  - mExp
+  - relationalChange
+  - scc
+  - ShannonDiversity
+  - structure.statistics
+  - TES
+  - TET
+- title: "Network Analyses"
+  desc: ""
+- contents:
+  - enaControl
+  - enaFlow
+  - enaStorage
+  - enaStructure
+  - enaAll
+  - cycliv
+  - enaCycle
+  - enaMTI
+  - enaTroAgg
+  - enaUtility
+  - bal
+  - balance
+  - enaEnviron
+  - enaUncertainty
+  - environCentrality
+  - force.balance
+  
+- title: "Bundled Models"
+  desc: ""
+- contents:
+  - troModels
+  - EcoNetWeb
+  - bgcModels
+  - enaModelInfo
+  - enaModels
+  - oyster
+  - enaR-package
+
+- title: "Import/Read Models"
+  desc: ""
+- contents:
+  - starts_with("read")
+- title: "Utility Functions"
+  desc: ""
+- contents:
+  - unpack
+  - pack
+  - starts_with("write")
+  - starts_with("as.")
+  - findPathLength
+  - m.list
+  - scifix
+  - netOrder
+  - set.orient
+  - signs
+  - ssCheck
+- title: "Plotting"
+  desc: ""
+- contents:
+  - starts_with("plot")
+
+
+
