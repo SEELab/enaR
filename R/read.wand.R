@@ -16,7 +16,7 @@
 read.wand <- function(file='file name with path'){
                                         # file is the full excel file name
                                         # asssumes that first sheet is "Main" and second sheet is "Flows".
-  x <- as.matrix(readxl::read_xls(file,sheet="Main"))
+  x <- as.matrix(readxl::read_xlsx(file,sheet="Main"))
   d1 <- x[1:8,1] #model info
   n <- as.numeric(as.character(d1[3])) #Number of compartments
   dat.main <- x[8:(n+9),2:6] #isolate the stocks,imports,exports,respirations
