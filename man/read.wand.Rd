@@ -16,8 +16,8 @@ Returns a network object from a WAND formatted data file.
 Reads WAND formatted network models.
 }
 \note{
-IMPORTANT: this function depends on the read.xlsx function
-from the xlsx package, which requires that the entire path be
+IMPORTANT: this function depends on the read_xlsx function
+from the readxl package, which requires that the entire path be
 specified from the root directory (i.e. the absolute path).
 }
 \references{

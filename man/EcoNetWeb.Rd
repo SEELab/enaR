@@ -4,8 +4,10 @@
 \alias{EcoNetWeb}
 \title{Access example EcoNet models from the EcoNet website.}
 \usage{
-EcoNetWeb(model.name = "prompt",
-  url = "http://eco.engr.uga.edu/Examples/examples.html")
+EcoNetWeb(
+  model.name = "prompt",
+  url = "http://eco.engr.uga.edu/Examples/examples.html"
+)
 }
 \arguments{
 \item{model.name}{The model to be accessed. If 'prompt' the user will be

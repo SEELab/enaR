@@ -6,8 +6,7 @@
 INPUT = network object
 OUTPUT = plot of the lindeman spine}
 \usage{
-\method{plot}{lindeman}(x = "model", enatroagg = "troagg", primprod,
-  type = 1)
+\method{plot}{lindeman}(x = "model", enatroagg = "troagg", primprod, type = 1)
 }
 \arguments{
 \item{x}{an ENA network object.}

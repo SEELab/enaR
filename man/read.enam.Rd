@@ -9,8 +9,8 @@ read.enam(file = "file path and name")
 \arguments{
 \item{file}{The name and path for the data file.  This function
 assumes the data are stored on the first sheet of an Microsoft
-Excel formatted. NOTE:  this function depends on the read.xlsx
-function from the xlsx package, which requires that the entire path
+Excel formatted. NOTE:  this function depends on the read_xls
+function from the readxl package, which requires that the entire path
 be specified from the root directory (i.e. the absolute path).}
 }
 \value{
