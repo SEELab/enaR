@@ -24,7 +24,7 @@ read.wand <- function(file='file name with path'){
   vn <- dat.main[1:n,1] #vertex names
   dat.main <- apply(dat.main[,2:5],2,as.numeric)
                                         # get flows
-  Flow <- read.xls(file,sheet="Flows")
+  Flow <- readxl::read_xlsx(file,sheet="Flows")
   flow.mat <- as.matrix(Flow[1:(n),2:(n+1)])
   flow.mat[is.na(flow.mat)] <- 0
   flow.mat <- apply(flow.mat,2,as.numeric)
