@@ -22,7 +22,7 @@
 read.enam<- function(file="file path and name"){
                                         #I have assumed the file is formatted as an excel speadsheet.
                                         #The data must be on the first sheet in the workbook.
-  x <- as.matrix(readxl::read_xls(file,sheet=1,col_names=FALSE))
+  x <- as.matrix(readxl::read_xlsx(file,sheet=1,col_names=FALSE))
   mname <- as.character(x[1,1]); # Get Model ID
   n <- as.numeric(as.character(x[2,2])) # number of nodes
   liv <- as.numeric(as.character(x[3,2])) # number of nodes

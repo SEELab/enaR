@@ -3,3 +3,7 @@ README.md
 NEWS.md
 ^.*\.Rproj$
 ^\.Rproj\.user$
+.git
+.review_*
+.CHANGELOG
+
