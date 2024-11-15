@@ -50,7 +50,7 @@
 enaUtility <- function(x, type=c('flow','storage'),
                        balance.override=FALSE,tol=10){
                                         #Missing Data Check
-    if (type == 'storage' && any(is.na(x%v%'storage'))){
+    if (any(type == 'storage') && any(is.na(x%v%'storage'))){
         warning('This function requires quantified storage values.')
     }else{
         orient <- get.orient()
@@ -169,7 +169,7 @@ enaUtility <- function(x, type=c('flow','storage'),
                                         #labeling
         if (length(out)>1){
             for (i in 1:(length(out)-1)){
-                if (class(out[[i]])=='matrix'){
+                if (class(out[[i]])[[1]]=='matrix'){
                     rownames(out[[i]]) <- colnames(out[[i]]) <- colnames(Flow)
                 }
             }

@@ -38,7 +38,7 @@
 #' @export scc
 scc <- function(A="adjacency"){
                                         #Check for network class
-  if (class(A) != 'matrix'){warning('A is not a matrix class object')}
+  if (class(A)[[1]] != 'matrix'){warning('A is not a matrix class object')}
   n <- dim(A)[1]
 
   log <- capture.output({  # supresses print to screen

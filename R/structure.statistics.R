@@ -15,7 +15,7 @@
 #' @seealso \code{\link{enaStructure}},\code{\link{scc}}
 #' @references Fath, B. D., Borrett, S. R. 2006. A Matlab function for Network Environ Analysis.  Environ. Model. Softw. 21, 375-405.
 structure.statistics <- function(A='adjacency matrix'){
-  if (class(A) != 'matrix'){warning('A is not a matrix class object')}
+  if (class(A)[[1]] != 'matrix'){warning('A is not a matrix class object')}
                                         #
   n <- dim(A)[1] #number of nodes in A
   L <- sum(A)    #length(A[A!=0]) #number of direct connections in A
