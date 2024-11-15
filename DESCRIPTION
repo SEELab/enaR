@@ -27,8 +27,4 @@ VignetteBuilder: R.rsp
 License: GPL-3
 URL: https://github.com/SEELab/enaR
 Encoding: UTF-8
-<<<<<<< HEAD
 RoxygenNote: 7.3.1
-=======
-RoxygenNote: 7.1.1
->>>>>>> review
