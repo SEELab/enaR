@@ -17,7 +17,8 @@ Imports:
     graphics,
     stats,
     limSolve,
-    utils
+    utils,
+    readxl
 Suggests:
     codetools,
     igraph,
@@ -26,4 +27,4 @@ VignetteBuilder: R.rsp
 License: GPL-3
 URL: https://github.com/SEELab/enaR
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.1

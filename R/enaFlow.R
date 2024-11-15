@@ -141,9 +141,11 @@ enaFlow <- function(x,zero.na=TRUE,balance.override=FALSE){
 
   TF.in <- ((t(NP)-I) %*% ginv(diag(diag(t(NP))))) %*% diag(T.) # total flows - inputs
   TCC <- ginv(diag(T.)) %*% TF.in                       # total contribution coefficients
+  rownames(TCC) <- colnames(TCC) <- colnames(NP)
 
   TF.out <-(N-I) %*% ginv(diag(diag(N))) %*% diag(T.)   # total flows - ouptuts
   TDC <- ginv(diag(T.)) %*% TF.out
+  rownames(TDC) <- colnames(TDC) <- colnames(N)
 
   ## Network Statistics ---------------------------------------------
   TST <- sum(T.)  # total system throughflow
