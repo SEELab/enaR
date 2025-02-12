@@ -1,6 +1,6 @@
 Package: enaR
 Title: Tools for Ecological Network Analysis
-Version: 3.0.5
+Version: 3.1.0
 Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Singh
 Authors@R: c(person(given = "Matthew K.",
                     family = "Lau", 
