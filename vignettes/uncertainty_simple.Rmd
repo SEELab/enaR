@@ -57,7 +57,7 @@ ns.original <- as.data.frame(get.ns(m))  # find the original model results.
 We can now use these results. First, lets look at a histogram of the Boundary input values and the Total System throughflow values. This code generates an orange vertical line on the histogram indicating the indicator value in the original model.
 
 ```{r uncertsimp4, eval = T}
-opar <- par(las = 1, mfcol = c(2,1))
+
 hist(ns$Boundary, col = "steelblue", border = "white", main = "Total Boundary Input")
 abline(v = ns.original$Boundary, col = "orange", lwd = 2)
 hist(ns$TST, col = "blue2", border = "white", main = "Total System ThroughFLOW")
