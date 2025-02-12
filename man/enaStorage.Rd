@@ -29,7 +29,8 @@ input community matrix} \item{VSP}{variance in expected
 input-oriented residance times (Barber 1979)} \item{QP}{integral
 input storage matrix - non-dimensional} \item{dt}{selected time
 step to create P, PP, Q and QP - smallest whole number to make
-diag(C) nonnegative} \item{ns}{vector of the storage based whole
+diag(C) nonnegative} \item{RT}{node residence time (storage/outputs),
+units of inverse time} \item{ns}{vector of the storage based whole
 system network statistics.  These statistics include total system
 storage (TSS), storage cycling index (CIS), Boundary storage
 intensity (BSI), Direct storage intensity (DSI), Indirect storage
@@ -43,7 +44,7 @@ amplification (AMP.S.I), output-oriented storage-based network
 amplification (AMP.S.O), Storage from Boundary flow (mode0.S),
 storage from internal first passage flow (mode1.S), storage from
 cycled flow (mode2.S), dissipative equivalent to mode1.S (mode3.S),
-dissipative equivalent to mode0.S (mode4.S).}
+dissipative equivalent to mode0.S (mode4.S), Average Residence Time (ART)}
 }
 \description{
 Calculates storage-based Ecological Network Analyses.

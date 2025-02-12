@@ -4,8 +4,15 @@
 \alias{pack}
 \title{Compile Network Information into a Network Class}
 \usage{
-pack(flow, input = NA, respiration = NA, export = NA, output = NA,
-  storage = NA, living = NA)
+pack(
+  flow,
+  input = NA,
+  respiration = NA,
+  export = NA,
+  output = NA,
+  storage = NA,
+  living = NA
+)
 }
 \arguments{
 \item{flow}{The flow matrix.}

@@ -1,8 +1,8 @@
 Package: enaR
 Type: Package
 Title: Tools for Ecological Network Analysis
-Version: 3.0.0
-Date: 2017-09-28
+Version: 3.0.4
+Date: 2018-16-03
 Author: M.K. Lau, S.R. Borrett, D.E. Hines, P. Singh
 Maintainer: Matthew K. Lau <enaR.maintainer@gmail.com>
 Description: Provides algorithms for the analysis of ecological networks.
@@ -17,7 +17,8 @@ Imports:
     graphics,
     stats,
     limSolve,
-    utils
+    utils,
+    readxl
 Suggests:
     codetools,
     igraph,
@@ -25,4 +26,5 @@ Suggests:
 VignetteBuilder: R.rsp
 License: GPL-3
 URL: https://github.com/SEELab/enaR
-RoxygenNote: 6.0.1
+Encoding: UTF-8
+RoxygenNote: 7.3.1

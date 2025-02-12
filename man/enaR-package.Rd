@@ -7,7 +7,7 @@
 \title{Tools for Ecological Network Analysis (ena)}
 \description{
 This package compiles functions for the analysis of ecological networks,
-building on tools previously developed in the MatLab language Borrett 2006)
+building on tools previously developed in the MatLab language (Borrett 2006)
 with multiple additions of functionality.
 }
 \details{

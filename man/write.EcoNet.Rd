@@ -4,8 +4,12 @@
 \alias{write.EcoNet}
 \title{Write enaR models to an EcoNet formatted file.}
 \usage{
-write.EcoNet(x = "model", file = "file path", mn = "ena_model",
-  zero.flows = FALSE)
+write.EcoNet(
+  x = "model",
+  file = "file path",
+  mn = "ena_model",
+  zero.flows = FALSE
+)
 }
 \arguments{
 \item{x}{Network object.}

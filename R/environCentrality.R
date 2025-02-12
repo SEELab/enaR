@@ -30,7 +30,7 @@
 #' 
 #' @export environCentrality
 environCentrality <- function(x='matrix'){
-  if (class(x) != 'matrix'){warning('x is not a matrix class object')}
+  if (class(x)[[1]] != 'matrix'){warning('x is not a matrix class object')}
   ECin <- rowSums(x)/sum(rowSums(x))
   ECout <- colSums(x)/sum(rowSums(x))
   AEC <- (ECin + ECout)/2

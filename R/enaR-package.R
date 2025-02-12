@@ -52,7 +52,7 @@ NULL
 #' Tools for Ecological Network Analysis (ena)
 #' 
 #' This package compiles functions for the analysis of ecological networks,
-#' building on tools previously developed in the MatLab language Borrett 2006)
+#' building on tools previously developed in the MatLab language (Borrett 2006)
 #' with multiple additions of functionality.
 #' 
 #' \tabular{ll}{ Package: \tab enaR \cr Type: \tab Package\cr Version: \tab
@@ -60,7 +60,6 @@ NULL
 #' 
 #' @name enaR-package
 #' @aliases enaR enaR-package
-#' @docType package
 #' @author Authors: Stuart R. Borrett, Matthew K. Lau, Pawandeep Singh, David
 #' E. Hines Maintainer: Matthew K. Lau <enaR.maintainer@@gmail.com>
 #' @seealso % ~~ Optional links to other man pages, e.g. ~~ % ~~
@@ -68,7 +67,7 @@ NULL
 #' @references Borrett SR and Lau MK 2014. enaR: An r package for Ecosystem
 #' Network Analysis. Methods in Ecology and Evolution 5:1206-1213.
 #' @keywords package
-NULL
+"_PACKAGE"
 
 
 

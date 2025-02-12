@@ -1,6 +1,10 @@
+Updates v3.0.2
+- Adds Detritiory/Herbivory ratio to enaTroAgg
+- Adds Residence Time and Average Residence Time (ART) to enaStorage
+
 Updates v3.0.1
 - Adjusts utility function usage
-- Fixes documentation bugs	
+- Fixes documentation bugs
 - Adds enaUncertainty
 - Fixes asym warnings
 - Fixes pack
@@ -11,6 +15,6 @@ Updates v3.0.1
 - Adds steady state check to enaTroAgg
 - Adds meanTrophicLevel function
 - removes convergence check from enaUtility and enaMTI
-	
+
 Known Bugs
 - Currently none.
