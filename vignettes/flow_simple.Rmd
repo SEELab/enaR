@@ -43,7 +43,7 @@ show(f$ns) # vector of flow-based network statisics
 
 ```
 
-##Ascendency Metrics
+## Ascendency Metrics
 
 The ascendancy metrics proposed by Dr. Ulanowicz are also most often applied to the network flow distributions. In `enaR` this is done as follows.
 
