@@ -1,3 +1,7 @@
+# v3.0.5
+
+- bug fixes to `plot.linderman.r()`
+
 # v3.0.2
 
 - Adds Detritiory/Herbivory ratio to enaTroAgg
