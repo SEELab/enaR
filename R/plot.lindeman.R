@@ -12,7 +12,7 @@
 #' @param enatroagg the resutls of the enaTroAgg function applied to the model
 #' @param primprod a vector of the nodes that are primary producers
 #' @param type switches beteween two types of plots: 1 = I and D are separate, 2 = I and D are combined
-#' 
+#'
 #'
 #' @author Ulrike Schuckel,  Stuart R. Borrett
 #' @seealso
@@ -22,11 +22,12 @@
 #' Style of the plot according to Baird et al., 2004, 2007
 #'
 #' @examples
-#'
+#' \dontrun{
 #' data(enaModels)
 #' model <- enaModels[[8]]
 #' plot.lindeman(model)
-#' 
+#' }
+#'
 #' @export plot.lindeman
 #' @import network
 #' @importFrom MASS ginv
@@ -44,7 +45,7 @@ plot.lindeman <- function(x = 'model', enatroagg='troagg', primprod, type = 1){
 
     ## apply Trophic Aggregation
     if (enatroagg == "troagg"){
-        enatroagg <- enaTroAgg(x)  
+        enatroagg <- enaTroAgg(x)
     }else{}
 
     ## primprod?
