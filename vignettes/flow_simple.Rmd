@@ -1,0 +1,53 @@
+---
+title: "Flow Analysis: Simple"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Flow Analysis: Simple}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = F,
+  message = F
+)
+```
+
+```{r setup}
+library(enaR)
+library(network)
+```
+
+
+The `enaR` library can be used to perform the Flow Analysis of Ecological Network Analysis. This includes finding the node throughflows, calculating the Input and Output analyses, and determining a set of whole-network metrics.
+
+## Load the data
+
+```{r flowsim1, eval=T}
+# load a model
+data(enaModels)
+m <- enaModels[[9]] # select the oyster reef model
+```
+
+## Perform the analysis
+
+```{r flowsim2, eval=T}
+f <- enaFlow(m)  # peform the ENA flow analysis
+attributes(f)
+show(f$N)  # integral output-oriented flow intensity
+
+show(f$ns) # vector of flow-based network statisics
+
+```
+
+##Ascendency Metrics
+
+The ascendancy metrics proposed by Dr. Ulanowicz are also most often applied to the network flow distributions. In `enaR` this is done as follows.
+
+```{r flowsim3, eval=T}
+a <- enaAscendency(m)  # calculate the Ascendnecy metrics
+show(a)
+```
