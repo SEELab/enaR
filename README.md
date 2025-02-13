@@ -4,13 +4,15 @@
 # enaR: Tools for Ecological Network Analysis
 
 <!-- badges: start -->
+
+[![pkgdown](https://github.com/SEELab/enaR/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/SEELab/enaR/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
 [![DOI](https://zenodo.org/badge/12623293.svg)](https://zenodo.org/badge/latestdoi/12623293)
 
 ## Installation
 
-You can install the development version of enaR like so:
+You can install the current release `enaR` like so:
 
 ``` r
 remotes::install_github("SEELab/enaR")
@@ -56,4 +58,4 @@ model.ena$structure
 
 For a more in-depth introduction to ENA and how to use the
 [enaR](https://cran.r-project.org/package=enaR) package, you can view
-our [website](url)
+our [website](https://seelab.github.io/enaR/)
