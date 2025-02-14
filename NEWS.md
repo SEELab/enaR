@@ -1,18 +1,16 @@
-
-# v3.1
+# enaR 3.1
 
 - update functions to switch dependency on `gdata` to `readxl` (for reading xls files)
 - fixes bugs in matrix class dependencies
 
-# v3.0.5
+# enaR 3.0.5
 
 - bug fixes to `plot.linderman.r()`
 
-# v3.0.2
+# enaR 3.0.2
 
 - Adds Detritiory/Herbivory ratio to enaTroAgg
 - Adds Residence Time and Average Residence Time (ART) to enaStorage
-
 
 # enaR 3.0.1
 
