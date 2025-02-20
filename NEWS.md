@@ -1,22 +1,18 @@
-# v3.1
+# enaR 3.1
 
 - update functions to switch dependency on `gdata` to `readxl` (for reading xls files)
 - fixes bugs in matrix class dependencies
 
-# v3.0.5
+# enaR 3.0.5
 
 - bug fixes to `plot.linderman.r()`
 
-# v3.0.2
+# enaR 3.0.2
 
 - Adds Detritiory/Herbivory ratio to enaTroAgg
 - Adds Residence Time and Average Residence Time (ART) to enaStorage
 
-Known Bugs
-
-- Currently none
-
-# v3.0.1
+# enaR 3.0.1
 
 - Adjusts utility function usage
 - Fixes documentation bugs
@@ -31,11 +27,7 @@ Known Bugs
 - Adds meanTrophicLevel function
 - removes convergence check from enaUtility and enaMTI
 
-Known Bugs
-
-- Currently none
-
-# v3.0.0
+# enaR 3.0.0
 
 - Adjusts utility function usage
 - Fixes documentation bugs	
@@ -49,12 +41,9 @@ Known Bugs
 - Adds steady state check to enaTroAgg
 - Adds meanTrophicLevel function
 - removes convergence check from enaUtility and enaMTI
-	
-Known Bugs
 
-- Currently none
 
-# v2.10.0
+# enaR 2.10.0
 
 - Updates enaR-vignette.pdf
 - Adds support for bipartite
@@ -74,7 +63,3 @@ Known Bugs
 - Adds tetra-partite partition of ascendency
 - Changes enaUtility check for storage
 - Fixes unpack living vector
-
-Known Bugs
-
-- Currently none

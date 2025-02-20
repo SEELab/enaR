@@ -2,4 +2,7 @@
 *.Rhistory
 *#*
 *.DS_Store
+*.Rproj
 .Rproj.user
+docs
+inst/doc

@@ -1,0 +1,96 @@
+---
+title: "Structure Analysis: Advanced"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Structure Analysis: Advanced}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = F,
+  message = F
+)
+```
+
+```{r setup}
+library(enaR)
+library(network)
+library(sna)
+```
+
+This tutorial illustrates how to use the `enaR` package to perform a selected structural analyses on an ecosystem model.
+
+Load and select a model to analyze
+
+```{r structadv1, eval = T}
+# load data
+data(enaModels)        # load library of Ecosystem Networks
+names(enaModels)       # view model names
+NET <- enaModels[[9]]  # select the Oyster Reef model (Dame & Patten 1981) and save it as NET
+NET%v%'vertex.names'
+
+```
+
+This gives us a model to analyze. If you have your own model to analyze, you can use it instead.
+
+As a first step in our analysis, lets find the size of the network, the number of edges, its conductance or network density, and a metric called link density.
+
+```{r structadv2, eval = T}
+# --- NETWORK DESCRIPTIVE STATISTICS ---
+# example analyses
+n  <-  network.size(NET)       # number of nodes
+L <-  network.edgecount(NET)  # number of edges (links)
+C <-  L/n^2                      # connectance
+LD <-  L/n                       # link density (average links per node)
+
+ns <-  c("n"=n, "L"=L, "C"=C, "LD"=LD)            # create a summary vector of the network statistics
+show(ns)
+
+```
+
+This tells us that the Oyster Reef model has 6 nodes and an edge density of 0.33. On average, there are two edges per node in the network. We can also extract the Adjacency matrix from the model as follows
+
+```{r structadv3, eval = T}
+A <- as.matrix(NET)            # get adjacency matrix
+show(A)
+                   
+```
+
+The elements of the adjacency matrix are 1 if there is a direct connection from node i to j. Otherwise, the element is zero.
+
+### Distance
+
+We can use tools from the network package to learn more about the graph. For example we can find the geodesic distance between each of the nodes (ignoring edge weights).
+
+```{r structadv4, eval = T}
+# -- DISTANCE ---
+geodist(NET)       # returns counts of geodesics and length of geodesics
+```
+
+This tells us that the maximum geodesic distance from nodes 2, 3, 4, 5, and 6 to the others is a walk of length 2, but that node 1 is unreachable from the other nodes. While there is a single geodesic between most of the nodes, there are two walks of length 2 from node 2 (Microbiota) to node 6 (Deposited Detritus).
+
+### Degree
+
+We can also find the unweighted node degree (positional importance). As this is a directed network, we can find the input, output, and total degree
+
+```{r structadv5, eval = T}
+degree(NET, cmode = "indegree")
+degree(NET, cmode = "outdegree")
+degree(NET, cmode = "freeman")  # total
+```
+
+## Using `enaStructure()`
+
+The `enaR` package includes a function that extracts the adjacency matrix and calculates a number of network statistics.
+
+```{r structadv6, eval = T}
+s <- enaStructure(NET)
+attributes(s)
+
+show(s$A)
+show(s$ns)
+```

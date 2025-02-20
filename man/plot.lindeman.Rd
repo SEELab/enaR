@@ -26,10 +26,11 @@ Schlossgarten 1, 25832 Tönning
 Applies the enaTroAgg function and creates a plot of the Lindeman Spine
 }
 \examples{
-
+\dontrun{
 data(enaModels)
 model <- enaModels[[8]]
 plot.lindeman(model)
+}
 
 }
 \references{
