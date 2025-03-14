@@ -1,5 +1,5 @@
 pandoc: 3.1.11
-pkgdown: 2.0.9
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   enaR: enaR.html
@@ -11,5 +11,7 @@ articles:
   uncertainty_symmetric: uncertainty_symmetric.html
   utility: utility.html
   vizualizing: vizualizing.html
-last_built: 2025-02-12T20:41Z
-
+last_built: 2025-03-14T22:11Z
+urls:
+  reference: https://seelab.github.io/enaR/reference
+  article: https://seelab.github.io/enaR/articles
