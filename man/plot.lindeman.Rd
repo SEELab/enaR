@@ -2,35 +2,34 @@
 % Please edit documentation in R/plot.lindeman.R
 \name{plot.lindeman}
 \alias{plot.lindeman}
-\title{plot.lindeman
-INPUT = network object
-OUTPUT = plot of the lindeman spine}
+\title{plot.lindeman}
 \usage{
-\method{plot}{lindeman}(x = "model", enatroagg = "troagg", primprod, type = 1)
+\method{plot}{lindeman}(x = "model", enatroagg = "troagg", primprod = NULL, type = 1)
 }
 \arguments{
 \item{x}{an ENA network object.}
 
-\item{enatroagg}{the resutls of the enaTroAgg function applied to the model}
+\item{enatroagg}{the results of the enaTroAgg function applied to the model}
 
 \item{primprod}{a vector of the nodes that are primary producers}
 
-\item{type}{switches beteween two types of plots: 1 = I and D are separate, 2 = I and D are combined}
+\item{type}{switches between two types of plots: 1 = I and D are separate, 2 = I and D are combined}
 }
 \description{
+INPUT = network object
+OUTPUT = plot of the lindeman spine
+
 Dr. Ulrike Schückel, Landesbetrieb für Küstenschutz, Nationalpark
 und Meeresschutz Schleswig-Holstein, Nationalparkverwaltung,
 Schlossgarten 1, 25832 Tönning
-}
-\details{
+
 Applies the enaTroAgg function and creates a plot of the Lindeman Spine
 }
 \examples{
-\dontrun{
 data(enaModels)
 model <- enaModels[[8]]
-plot.lindeman(model)
-}
+enatroagg <- enaTroAgg(model)
+plot.lindeman(model,enatroagg, type = 1)
 
 }
 \references{
