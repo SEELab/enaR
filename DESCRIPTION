@@ -41,7 +41,8 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 License: GPL-3
-URL: https://github.com/SEELab/enaR
+URL: https://github.com/SEELab/enaR, https://seelab.github.io/enaR/
+BugReports: https://github.com/SEELab/enaR/issues
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Config/testthat/edition: 3
