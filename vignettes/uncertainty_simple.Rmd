@@ -56,7 +56,7 @@ ns.original <- as.data.frame(get.ns(m))  # find the original model results.
 
 We can now use these results. First, lets look at a histogram of the Boundary input values and the Total System throughflow values. This code generates an orange vertical line on the histogram indicating the indicator value in the original model.
 
-```{r uncertsimp4, eval = T}
+```{r uncertsimp4, eval = T, fig.alt = "Histograms of Boundary Input and Total System Throughflow"}
 
 hist(ns$Boundary, col = "steelblue", border = "white", main = "Total Boundary Input")
 abline(v = ns.original$Boundary, col = "orange", lwd = 2)
@@ -75,7 +75,7 @@ Beyond visualizing the effects of the model flow parameter uncertainty on the EN
 
 We then construct a bar plot of the calculated values for the original model and add the 95% CI error bars from Uncertainty Analysis
 
-```{r uncertsimp6, eval = T}
+```{r uncertsimp6, eval = T, fig.alt = "Barplot of Uncertainty Analysis Results with 95\\% CI Error Bars"}
 opar <- par(las = 1)
 bp <- barplot(c(ns.original$ID.F, ns.original$HMG.O),
       ylim = c(0,3),

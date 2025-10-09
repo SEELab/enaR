@@ -37,7 +37,7 @@ m <- enaModels[[9]]    # select the oyster model
 
 We can then create a simple plot of the model with the default graphics parameters as
 
-```{r vizual2, eval = T}
+```{r vizual2, eval = T,fig.alt="Simple Plot of the Model"}
 # Set the random seed to control plot output
 set.seed(2)  # this is only used to ensure our plots look the same. 
 
@@ -49,7 +49,7 @@ plot(m)
 
 We can create a fancier plot by exerting more control on the plotting parameters.  Here is an example.
 
-```{r vizual3, eval = T}
+```{r vizual3, eval = T,fig.alt="Fancy Plot of the Model"}
 
   ## Set colors to use
   my.col <- c('red','yellow',rgb(204,204,153,maxColorValue=255),'grey22')
