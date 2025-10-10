@@ -1,3 +1,7 @@
+# enaR 3.1.1
+
+- bug fix for `plot.lindeman()`
+
 # enaR 3.1
 
 - update functions to switch dependency on `gdata` to `readxl` (for reading xls files)
@@ -5,7 +9,7 @@
 
 # enaR 3.0.5
 
-- bug fixes to `plot.linderman.r()`
+- bug fixes to `plot.lindeman()`
 
 # enaR 3.0.2
 
