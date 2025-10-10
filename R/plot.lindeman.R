@@ -1,4 +1,7 @@
 #' plot.lindeman
+#'
+#' @description
+#'
 #' INPUT = network object
 #' OUTPUT = plot of the lindeman spine
 #'
@@ -9,49 +12,60 @@
 #' Applies the enaTroAgg function and creates a plot of the Lindeman Spine
 #'
 #' @param x an ENA network object.
-#' @param enatroagg the resutls of the enaTroAgg function applied to the model
+#' @param enatroagg the results of the enaTroAgg function applied to the model
 #' @param primprod a vector of the nodes that are primary producers
-#' @param type switches beteween two types of plots: 1 = I and D are separate, 2 = I and D are combined
+#' @param type switches between two types of plots: 1 = I and D are separate, 2 = I and D are combined
 #'
+#'
+#' @import network
+#' @importFrom MASS ginv
+#' @importFrom graphics rect text arrows polygon
+#' @importFrom utils as.roman
 #'
 #' @author Ulrike Schuckel,  Stuart R. Borrett
+#'
 #' @seealso
 #' \code{\link{enaTroAgg}}
+#'
 #' @references
 #'
 #' Style of the plot according to Baird et al., 2004, 2007
 #'
 #' @examples
-#' \dontrun{
 #' data(enaModels)
 #' model <- enaModels[[8]]
-#' plot.lindeman(model)
-#' }
+#' enatroagg <- enaTroAgg(model)
+#' plot.lindeman(model,enatroagg, type = 1)
 #'
 #' @export plot.lindeman
-#' @import network
-#' @importFrom MASS ginv
-#' @importFrom graphics rect text arrows polygon
-#' @importFrom utils as.roman
 
-plot.lindeman <- function(x = 'model', enatroagg='troagg', primprod, type = 1){
+
+plot.lindeman <- function(x = 'model', enatroagg='troagg', primprod = NULL, type = 1){
     if (class(x) != 'network'){warning('x is not a network class object')}
+
+    # error checking
+    if (is.null(primprod) & type != 1) {
+      stop("For 'Type = 2, please supply a vector of primary producers as 'primprod'.")
+    }
 
     # define primary producers & nonliving (by name)
     u <- unpack(x)
     vn <- x%v%'vertex.names'
     nonliving = which(u$living == FALSE)
-    ns <- as.data.frame(enatroagg$ns)
 
     ## apply Trophic Aggregation
-    if (enatroagg == "troagg"){
-        enatroagg <- enaTroAgg(x)
-    }else{}
+    if ((is.character(enatroagg)) && (enatroagg == "troagg")){
+      enatroagg <- enaTroAgg(x)
+    } else if (!is.list(enatroagg)) {
+      stop(paste0("The argument 'enatroagg' can not be = ",enatroagg))
+    }
+
+    ns <- as.data.frame(enatroagg$ns)
 
     ## primprod?
-    if (exists("primprod")){
-        warning("Please supply a vector of primary producers as 'primprod'.")
-    }else{}
+    # if (exists("primprod")){
+    #     warning("Please supply a vector of primary producers as 'primprod'.")
+    # }else{}
 
     ## count number of compartments for LS
     ntl = length(enatroagg$GC[enatroagg$GC >0])

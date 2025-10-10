@@ -1,9 +1,8 @@
-url: ~ # change to site io
+url: https://seelab.github.io/enaR/
 
 template:
   bootstrap: 5
-  
-  
+
 deploy:
   install_metadata: true
 
@@ -43,7 +42,7 @@ reference:
   - enaUncertainty
   - environCentrality
   - force.balance
-  
+
 - title: "Bundled Models"
   desc: ""
 - contents:
